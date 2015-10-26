@@ -1,0 +1,3 @@
+---
+- name: Check installed software version
+  set_fact: task="{{ lookup('csvfile', 'id file=/var/lib/ansible/ansibleSoftwareList.csv delimiter=, col=2') }}" version="{{ lookup('csvfile', 'id file=/var/lib/ansible/ansibleSoftwareList.csv delimiter=, col=3') }}"

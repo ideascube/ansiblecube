@@ -1,0 +1,35 @@
+#! /bin/sh
+
+# Author: Jamie Alexandre, 2012
+#
+# /etc/init.d/appinventor
+
+### BEGIN INIT INFO
+# Provides:          appinventor
+# Required-Start:    $local_fs $remote_fs $network $syslog $named
+# Required-Stop:
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Software for creating android Apps
+### END INIT INFO
+
+set -e
+. /lib/lsb/init-functions
+case "$1" in
+    start)
+        cd /home/{{ username }}/Ai2LiveComplete
+        su {{ username }} -c "./startAIServer.sh & "
+        su {{ username }} -c "./startBuildServer.sh &"
+        ;;
+    stop)
+        echo "Kill manually the server"
+        ;;
+  restart)
+    $0 stop
+    sleep 1
+    $0 start
+    ;;
+  *)
+    log_success_msg "Usage: /etc/init.d/kalite {start|stop|restart}"
+    exit 1
+esac

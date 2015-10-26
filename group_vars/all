@@ -1,0 +1,39 @@
+---
+#Apps path
+framadvd_path: /media/hdd/framadvd/
+mook_path: /home/
+
+#Network
+hostname: koombook.lan
+hotspot_name: koombook
+hotspotip: 192.168.2.1
+hotspot_interface: wlan0
+lan_interface: eth0
+client_interface: wlan1
+
+#System
+username: koombook
+#username: ideasbox
+nginx_port: 80
+nginx_remove_default_vhost: true
+repo_url: https://github.com/fheslouin/ansible-koombook.git
+central_server: ansible@37.187.151.52
+filer_bsf: http://filer.bsf-intranet.org
+
+#Domaine name 
+kalite_server_name: kalite.{{hostname}}
+mook_front_server_name: bsfcampus.{{ hostname }}
+mook_api_server_name: api.{{ mook_name }}.{{ hostname }}
+appinventor_server_name: appinventor.{{hostname}}
+framadvd_server_name: software.{{hostname}}
+
+#Hardware battery
+battery_capacity: 7800
+charging_current: 750
+power_on_button_delay: 500
+power_off_button_delay: 8000
+enable_power_button_power_off: 1
+
+# Ansible distant configuration 
+logfile: /var/log/ansible-pull.log
+workdir: /var/lib/ansible/local

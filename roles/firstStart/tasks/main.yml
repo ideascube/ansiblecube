@@ -1,0 +1,54 @@
+---
+
+- stat: path=/etc/firstStart.csv
+  register: st
+
+- set_fact: kbname="{{ username }}{{ 1000 | random }}" UUID="{{ ansible_default_ipv4["macaddress"] | hash('md5') }}"
+  when: st.stat.exists == False
+
+- hostname: name="{{ kbname }}"
+  when: st.stat.exists == False
+
+- lineinfile: dest=/etc/hosts regexp='^127.0.0.1' insertafter='127.0.0.1' line='127.0.0.1 localhost {{ kbname }} {{ hostname }}' owner=root group=root mode=0644
+  when: st.stat.exists == False
+
+- stat: path=/media/hdd/ubuntudoc_fr_2009-01.zim
+  register: p
+
+- set_fact: hdd_access="0"
+  when: p.stat.isdir is not defined and st.stat.exists == False
+
+- set_fact: hdd_access="1"
+  when: p.stat.isdir is defined and st.stat.exists == False
+
+- shell: wget -qO- http://ipecho.net/plain ; echo
+  register: public_ip
+  when: st.stat.exists == False
+
+- copy: content=id,{{ kbname }},{{ UUID }},{{hdd_access}},{{ ansible_default_ipv4["macaddress"] }},{{ ansible_default_ipv4["address"] }},{{ public_ip.stdout }}\n dest=/etc/firstStart.csv
+  when: st.stat.exists == False
+
+- raw: cat /etc/firstStart.csv | ssh -p 443 {{ central_server }} "cat >> ./ansible/UUID/firstStart.csv"
+  when: st.stat.exists == False
+
+- raw: ssh -p 443 {{ central_server }} mkdir ./ansible/logs/"{{ kbname }}"
+  when: st.stat.exists == False
+
+- lineinfile: dest=/etc/network/interfaces regexp='wpa' state=absent
+  when: st.stat.exists == False
+
+- file: path=/etc/localtime state=absent
+  when: st.stat.exists == False
+
+- name: set /etc/localtime
+  file: src=/usr/share/zoneinfo/{{ timezone }} dest=/etc/localtime state=link
+  when: st.stat.exists == False
+
+- name: Set timezone variables
+  copy: content={{ timezone }} dest=/etc/timezone owner=root group=root mode=0644 backup=yes
+  notify: update timezone
+  when: st.stat.exists == False
+  
+#- command: /sbin/shutdown -h now
+- command: /sbin/reboot
+  when: st.stat.exists == False

@@ -1,0 +1,149 @@
+---
+  - name: Install specific packages
+    apt: name={{ item }} state=latest
+    with_items:
+      - python-pip
+      - python-dev
+      - python-pkg-resources
+      - unzip
+
+  - name: Installe virtualenv
+    pip: name=virtualenv
+
+####
+# BACK END CONFIGURATION
+####
+  - git: repo=ssh://git@altssh.bitbucket.org:443/gryzzlab/mook-bsf-api.git dest={{ mook_path }}{{ mook_name }}/api accept_hostkey=yes
+    register: mook
+
+  - name: Update setuptools
+    pip: name=setuptools extra_args="-U"
+    when: mook.changed
+
+  - name: Install python requierment
+    pip: requirements=requirements.txt chdir={{ mook_path }}{{ mook_name }}/api virtualenv_command=/usr/local/bin/virtualenv virtualenv={{ mook_path }}{{ mook_name }}/api/env
+    when: mook.changed
+
+  - name: Create static dir
+    file: path={{ mook_path }}{{ mook_name }}/static state=directory owner=www-data group=www-data mode=0751
+    when: mook.changed
+
+  - name: Copy settings_local config files
+    template: src=settings_local.py.j2 dest={{ mook_path }}{{ mook_name }}/api/settings_local.py
+    when: mook.changed
+    
+  - name: Retrieve KoomBook info 
+    set_fact: koombookName="{{ lookup('csvfile', 'id file=/etc/firstStart.csv delimiter=, col=1') }}" uuid="{{ lookup('csvfile', 'id file=/etc/firstStart.csv delimiter=, col=2') }}"
+    when: mook.changed
+    
+  - name: add conf for KoomBook
+    lineinfile: dest={{ mook_path }}{{ mook_name }}/api/settings_local.py regexp='' insertafter=EOF line='    CENTRAL_SERVER_KEY = \"{{koombookName}}\" \n    CENTRAL_SERVER_SECRET = \"{{uuid}}\"' owner=www-data group=www-data mode=755
+    when: mook.changed
+    
+  - name: Setup startup file for uwsgi
+    copy: src=settings_central.py dest={{ mook_path }}{{ mook_name }}/api owner=root group=root mode=755
+    when: mook.changed
+    
+####
+# UWSGI CONFIGURATION
+####
+
+  - name: Install uwsgi
+    pip: name=uwsgi 
+    when: mook.changed
+    
+    #Vérifier si le répertoir n'existe pas déjà
+  - name: Create dir for emperor
+    file: path=/etc/uwsgi/vassals state=directory owner=www-data group=www-data mode=0751
+    when: mook.changed
+    
+  - name: Copy uwsgi config files
+    template: src=uwsgi-api.ini.j2 dest={{ mook_path }}{{ mook_name }}/api/uwsgi-api.ini
+    when: mook.changed
+    
+  - name: Symbolic link for wsgi ini file
+    file: src={{ mook_path }}{{ mook_name }}/api/uwsgi-api.ini dest=/etc/uwsgi/vassals/uwsgi-{{ mook_name }}-api.ini state=link
+    when: mook.changed
+    
+  - name: Create log dir for uwsgi
+    file: path=/var/log/uwsgi state=directory owner=www-data group=www-data mode=0751
+    when: mook.changed
+    
+  #- name: Symbolic link for wsgi
+  #  file: src={{ mook_path }}{{ mook_name }}/api/mook_local.wsgi dest={{ mook_path }}{{ mook_name }}/api/mook_local.py state=link
+
+####
+# NGINX CONFIGURATION
+####
+
+  - name: Copy vhost
+    template: src=vhost.j2 dest=/etc/nginx/sites-available/{{ mook_name }}
+    register: vhost
+    when: mook.changed
+    
+  - name: Copy api vhost
+    template: src=vhost-api.j2 dest=/etc/nginx/sites-available/{{ mook_name }}-api
+    when: mook.changed
+    register: vhost
+    
+  - name: bsf campus enable Virtual host
+    file: src=/etc/nginx/sites-available/{{ mook_name }} dest=/etc/nginx/sites-enabled/{{ mook_name }} state=link
+    when: vhost.changed and mook.changed
+    notify: restart nginx
+
+  - name: bsf campus api enable Virtual host
+    file: src=/etc/nginx/sites-available/{{ mook_name }}-api dest=/etc/nginx/sites-enabled/{{ mook_name }}-api state=link
+    when: vhost.changed and mook.changed
+    notify: restart nginx
+
+####
+# INIT SCRIPT
+####
+
+  # - name: Setup startup file for sync-daemon
+  #   template: src=sync-daemon dest=/etc/init.d/{{ mook_name }}-sync owner=root group=root mode=755
+
+  - name: Setup startup file for uwsgi
+    copy: src=uwsgi dest=/etc/init.d/uwsgi owner=root group=root mode=755
+    when: mook.changed
+    
+  # - name: Copy in rc.local to start the deamon
+  #   template: src=rc.local.j2 dest=/etc/rc.local owner=root group=root mode=755
+
+  - name: add a new string before the match
+    lineinfile: dest=/etc/rc.local
+                regexp='^By'
+                insertbefore='^# By'
+                line="su {{ username }} -c \'{{ mook_path }}{{ mook_name }}/api/env/bin/python2.7 {{ mook_path }}{{ mook_name }}/api/manage.py sync -D\' > /dev/null 2>&1"
+    when: mook.changed
+    
+  # - name: Enable service sync daemon
+  #   service: name={{ mook_name }}-sync enabled=yes
+
+  - name: Enable service uwsgi
+    service: name=uwsgi enabled=yes
+    when: mook.changed
+    
+####
+# FRONT END CONFIGURATION
+####
+
+  - git: repo=ssh://git@altssh.bitbucket.org:443/gryzzlab/mook-bsf-front-end-backbone.git dest={{ mook_path }}{{ mook_name }}/front accept_hostkey=yes
+    register: mookFront
+
+  - name: download vendor package
+    get_url: url={{filer_bsf}}/vendor.tgz dest=/tmp/vendor.tgz
+    when: mookFront.changed
+    
+  - name: unarchive the vendor package
+    unarchive: src=/tmp/vendor.tgz dest={{ mook_path }}{{ mook_name }}/front copy=no
+    when: mookFront.changed
+    
+  - name: Copy config.js config files
+    template: src=config.js.j2 dest={{ mook_path }}{{ mook_name }}/front/config.js
+    when: mookFront.changed
+    
+  - tasks:
+    include: ../../../post_tasks.yml task=mook version=1
+    when: mook.changed or mookFront.changed
+    

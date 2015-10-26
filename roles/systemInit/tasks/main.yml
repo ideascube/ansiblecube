@@ -1,0 +1,100 @@
+---
+    - name: Update packages list
+      apt: update_cache=yes cache_valid_time=3600
+
+    - name: Install requiered package
+      apt: name={{ item }} state=latest
+      with_items:
+       - python-pip
+       - python-dev
+       - python-setuptools
+       - git
+       - sudo
+       - vim
+       - lsb-release
+       - vim
+       - locate
+       - git
+       - unzip
+       - python-pip
+       - bash-completion
+       - aptitude
+       - sslh
+       - ntpdate
+       - fake-hwclock
+
+    - name: Installe ansible
+      pip: name=ansible
+
+    - name: Upgrade packages
+      apt: upgrade=safe
+
+    - user: name={{ username }}
+
+    - name: Copy SSHL config file
+      copy: src=sslh dest=/etc/default/sslh owner=root group=root mode=0644 backup=yes
+      notify: update sslh
+
+    - name: Copy .bashrc for root
+      copy: src=bashrc dest=/root/.bashrc owner=root
+
+    - name: Copy vimrc for root
+      copy: src=vim dest=/etc/vim/vimrc owner=root
+
+    - name: Add hdparm to save energy
+      lineinfile: dest=/etc/hdparm.conf
+                  regexp=''
+                  insertafter=EOF
+                  line='/dev/sda {
+                          spindown_time = 280
+                  }'
+
+    - name: fake-hwclock conf
+      copy: content="FORCE=force" dest=/etc/default/fake-hwclock
+
+    - name: Copy fex.file
+      template: src=lime2.fex.j2 dest=/boot/bin/lime2.fex
+      when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
+
+    - name: Build binary from fex
+      shell: /usr/local/bin/fex2bin lime2.fex > lime2.bin chdir=/boot/bin/
+      when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
+
+    - name: Copy visudo file
+      template: src=visudo.j2 dest=/etc/sudoers.d/shutdown owner=root group=root mode=0440
+
+    - hostname: name={{ hostname }}
+
+      # Restreindre l'application du patch que au Lime2
+    - name: Copy patch U-Boot package
+      get_url: url={{filer_bsf}}/linux-u-boot-lime2_4.3_armhf.deb dest=/tmp/linuxUboot.deb owner=root group=root mode=755
+      when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
+
+    - name: install patch U-Boot package
+      apt:  deb=/tmp/linuxUboot.deb
+      when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
+
+    - file: path=/media/hdd state=directory
+      when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
+
+    - mount: name=/media/hdd/ src=/dev/sda fstype=ext4 state=mounted opts=noatime
+      when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"   
+      ignore_errors: yes
+
+    - name: Create local directory to work from
+      file: path={{workdir}} state=directory owner=root group=root mode=0751
+
+    - name: Create ansible hosts directory to work from
+      file: path=/etc/ansible/ state=directory owner=root group=root mode=0751
+
+    - name: Copy ansible inventory file to client
+      copy: src=hosts dest=/etc/ansible/hosts
+              owner=root group=root mode=0644
+
+    - name: Create entry to clone/pull git repository
+      template: src=dhclient-exit-hooks.j2 dest=/etc/dhcp/dhclient-exit-hooks.d/systemPullUpdate owner=root group=root mode=0755
+
+    - name: List services to restart (1/2)
+      shell: checkrestart | grep ^service | awk '{print $2}'
+      register: services
+      changed_when: False

@@ -1,0 +1,22 @@
+---
+    - name: Install hostapd
+      apt: name=hostapd state=latest
+      when: ansible_architecture == 'x86_64'
+
+    - name: Copy hostapd.conf file
+      template: src=hostapd.conf.j2 dest=/etc/hostapd/hostapd.conf owner=root group=root mode=755 backup=yes
+
+    - name: Copy hosts file
+      template: src=hosts.j2 dest=/etc/hosts owner=root group=root mode=755 backup=yes
+
+    - name: Copy startup script
+      copy: src=hostapd dest=/etc/init.d/hostapd owner=root group=root mode=755
+
+    - name: Enable service hostapd
+      service: name=hostapd enabled=yes
+
+    - name: Start hostapd
+      service: name=hostapd state=started
+
+    - tasks:
+      include: ../../../post_tasks.yml task=hostapd version=1

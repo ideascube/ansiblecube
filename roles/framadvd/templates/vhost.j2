@@ -1,0 +1,8 @@
+server {
+    listen {{ nginx_port }};
+    server_name {{ framadvd_server_name }};
+    root {{ framadvd_path }};
+    location / {
+        fancyindex on;
+    }
+}

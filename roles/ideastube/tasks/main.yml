@@ -1,0 +1,48 @@
+---
+# For ARM
+# - name: Check if package exist
+#   stat: path=/tmp/ideastube_{{ version }}_armhf.deb
+#   register: st
+#   when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l'
+
+- name: Create storage dir for ideastube
+  file: path=/media/hdd/ideastube/storage state=directory owner=www-data group=www-data
+  when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l'
+
+- name: Copy ideastube package
+  get_url: url={{filer_bsf}}/ideastube_{{ version }}_armhf.deb dest=/tmp/ideastube_{{ version }}_armhf.deb owner=root group=root mode=755
+  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
+
+- name: install ideastube package
+  apt: deb=/tmp/ideastube_{{ version }}_armhf.deb
+  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
+
+- name: Add IDEASTUBE_ID
+  lineinfile: dest=/etc/default/ideastube
+              regexp='^'
+              line='IDEASTUBE_ID={{ ideastube_id }}'
+              state=present
+  when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l'
+
+- lineinfile: dest=/etc/nginx/sites-available/ideastube regexp='443' state=absent
+  notify: restart nginx
+
+- file: src=/etc/uwsgi/apps-available/ideastube.ini dest=/etc/uwsgi/vassals/ideastube.ini state=link
+  notify: restart uwsgi
+
+# For AMD64
+# - name: Check if package exist
+#   stat: path=/tmp/ideastube_{{ version }}_amd64.deb
+#   register: st
+#   when: ansible_architecture == 'x86_64'
+
+- name: Copy ideastube package
+  get_url: url={{filer_bsf}}/ideastube_{{ version }}_amd64.deb dest=/tmp/ideastube_{{ version }}_amd64.deb owner=root group=root mode=755
+  when: ansible_architecture == 'x86_64'
+
+- name: install ideastube package
+  apt: deb=/tmp/ideastube_{{ version }}_amd64.deb
+  when: ansible_architecture == 'x86_64'
+
+- tasks:
+  include: ../../../post_tasks.yml task=ideastube version={{ version }}

@@ -1,0 +1,4 @@
+---
+
+- shell: rsync -azP -e 'ssh -p 443' /var/log/nginx/* /var/log/kern.log  {{ central_server }}:/ansible/logs/{{ ansible_hostname }}/
+  ignore_errors: yes

@@ -1,0 +1,35 @@
+---
+# Ansible playbook for BSF Campus
+
+#It will be always localhost
+- hosts: localhost
+  vars:
+    projectName: BsfCampus
+
+  roles:
+    # Has to be always enable 
+    - role: firstStart
+      timezone: "Africa/Dakar"
+      ideastube_id: "{{ projectName }}"
+
+    - logs
+
+    #- iptables
+
+    # # Can be enable/disable on demand but affect all devices
+
+    - role: ideastube
+      version: "0.4.0-1"
+      ideastube_id: "{{ projectName }}"
+
+    # - appinventor
+    # #   when: ansible_hostname == 'KoomBook483'
+
+    # # Update Mook plateform
+    #- mongodb
+    #- { role: mook, mook_name: bsfcampus }
+    #- { role: mook, mook_name: fun }
+
+    # Play a role for a specific device
+    #- { role: iptables, when: ansible_hostname == 'KoomBook603' }
+    #- { role: ideastube, when: ansible_hostname == 'KoomBook484' }

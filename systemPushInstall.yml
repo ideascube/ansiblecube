@@ -1,0 +1,66 @@
+---
+# SystemPushInstall has to be use in PUSH mode. 
+# ex : ansible-playbook -i hosts -l SystemPushInstall -u root systemPushInstall.yml
+# The role can be played against any system define in "hosts" file -> [SystemPushInstall]
+
+
+- hosts: SystemPushInstall
+  vars:
+    # Give a name to the project. It has to match with one of the config file (w/o .py) from the ideastube 
+    # See : https://github.com/ideastube/ideastube/blob/master/ideastube/conf/
+    projectName: BsfCampus
+
+  roles:
+     # It will install all the basic package and configuration for the KoomBook/IdeasBox
+     # - role: systemInit
+     #   ideastube_id: "{{ projectName }}"
+
+     - nginx
+     - dnsmasq
+     - hostapd
+     #- iptables
+     - monitoring
+
+     - role: ideastube
+       version: "0.4.0-1"
+       ideastube_id: "{{ projectName }}"
+
+    # Install all the file to activate the Mook plateform
+    # - mongodb
+    # - { role: mook, mook_name: bsfcampus }
+
+    # # - appinventor
+
+    # # Install and configure a kiwix project 
+    # - role: kiwix
+    #   kiwixProject: wikipedia
+    #   portProject: 8002
+    # - role: kiwix
+    #   kiwixProject: wikisource
+    #   portProject: 8003
+    # - role: kiwix
+    #   kiwixProject: vikidia
+    #   portProject: 8004
+    # - role: kiwix
+    #   kiwixProject: cpassorcier
+    #   portProject: 8005
+    # - role: kiwix
+    #   kiwixProject: ubuntudoc
+    #   portProject: 8006
+    # - role: kiwix
+    #   kiwixProject: gutenberg
+    #   portProject: 8007
+    # - role: kiwix
+    #   kiwixProject: universcience
+    #   portProject: 8009
+    # - role: kiwix
+    #   kiwixProject: ted
+    #   portProject: 8010
+
+  post_tasks:
+    # Everything is up-to-date and configured, ready to clone the SD card, 
+    # don't forget to configure the update YALM file It will be call at the next startup
+    - file: path=/etc/udev/rules.d/70-persistent-net.rules state=absent
+      name: All done ! You can clone your SD card, don't forget to check your update YALM file
+
+    - command: /sbin/shutdown -h now

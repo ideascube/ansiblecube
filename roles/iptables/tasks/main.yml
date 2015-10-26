@@ -1,0 +1,28 @@
+---
+    - name: Install iptables
+      apt: name=iptables state=latest
+
+    - name: Authorize NAT
+      replace: dest=/etc/sysctl.conf regexp='^#net.ipv4.ip_forward=1$' replace='net.ipv4.ip_forward=1' backup=yes
+
+    - name: Copy iptables rules file
+      template: src=iptables.sh.j2 dest=/tmp/iptables.sh owner=root group=root mode=755
+      register: iptables
+
+    - name: Apply iptables rules
+      command: /tmp/iptables.sh
+      when: iptables.changed
+
+    - name: Save iptables rules
+      shell: iptables-save > /etc/iptables.rules
+      when: iptables.changed
+
+    - name: Copy forwarding file
+      copy: src=forwarding dest=/etc/network/if-up.d/forwarding owner=root group=root mode=755 backup=yes
+      when: iptables.changed
+
+    - name: Reload sysctl conf
+      command: sysctl -p
+
+    - tasks:
+      include: ../../../post_tasks.yml task=iptables version=1

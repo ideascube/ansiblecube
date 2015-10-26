@@ -1,0 +1,21 @@
+auto lo
+iface lo inet loopback
+
+allow-hotplug {{lan_interface}}
+iface {{lan_interface}} inet dhcp
+
+allow-hotplug {{hotspot_interface}}
+iface {{hotspot_interface}} inet static
+hostapd /etc/hostapd/hostapd.conf
+address {{ hotspotip }}
+netmask 255.255.255.0
+
+#wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
+iface default inet manual
+
+#up iptables-restore < /etc/iptables.nat
+
+allow-hotplug {{client_interface}}
+iface {{client_interface}} inet dhcp
+    wpa-ssid SSID
+    wpa-psk PASS

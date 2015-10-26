@@ -1,0 +1,33 @@
+---
+    - stat: path=/usr/local/bin/kiwix-serve
+      register: st
+
+    - name: Copying kiwix binary {{ kiwixProject }}
+      get_url: url={{filer_bsf}}/kiwix-serve dest=/usr/local/bin/kiwix-serve mode=755
+      when: st.stat.exists == False
+
+    - name: download library files
+      get_url: url={{filer_bsf}}/kiwix_library.zip dest=/tmp/kiwix_library.zip
+      when: st.stat.exists == False
+
+    - name: unarchive the library package
+      unarchive: src=/tmp/kiwix_library.zip dest=/media/hdd/ copy=no
+      when: st.stat.exists == False
+
+    - name: Setup startup file for {{ kiwixProject }}
+      template: src=kiwix.j2 dest=/etc/init.d/{{ kiwixProject }} owner=root group=root mode=755
+
+    - name: Enable service kiwix for {{ kiwixProject }}
+      service: name={{ kiwixProject }} enabled=yes
+
+    - name: Copy nginx vhost for {{ kiwixProject }}
+      template: src=nginx.vhost.j2 dest=/etc/nginx/sites-available/{{ kiwixProject }}
+      register: vhost
+
+    - name: Nginx enable Virtual host
+      file: src=/etc/nginx/sites-available/{{ kiwixProject }} dest=/etc/nginx/sites-enabled/{{ kiwixProject }} state=link
+      when: vhost.changed
+      notify: restart nginx
+
+    - tasks:
+      include: ../../../post_tasks.yml task={{ kiwixProject }} version=1
