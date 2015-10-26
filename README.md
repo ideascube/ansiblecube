@@ -1,4 +1,7 @@
 # Ansible-KoomBook
+
+# This doc has to be updated...Work in progress
+
 Ansible has been choose to push and pull content, file config and softawre from and to the KoomBook.
 
 Ansible is originaly design to push content (from a master) to several slaves. But you can use it the other way around where the slaves are able to pull content from a master. 

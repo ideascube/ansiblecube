@@ -3,35 +3,36 @@
 - stat: path=/etc/firstStart.csv
   register: st
 
-- set_fact: kbname="{{ username }}{{ 1000 | random }}" UUID="{{ ansible_default_ipv4["macaddress"] | hash('md5') }}"
+- set_fact: ideascubeName="{{ username }}{{ 1000 | random }}" UUID="{{ ansible_default_ipv4["macaddress"] | hash('md5') }}"
   when: st.stat.exists == False
 
-- hostname: name="{{ kbname }}"
+- hostname: name="{{ ideascubeName }}"
   when: st.stat.exists == False
 
-- lineinfile: dest=/etc/hosts regexp='^127.0.0.1' insertafter='127.0.0.1' line='127.0.0.1 localhost {{ kbname }} {{ hostname }}' owner=root group=root mode=0644
+- lineinfile: dest=/etc/hosts regexp='^127.0.0.1' insertafter='127.0.0.1' line='127.0.0.1 localhost {{ ideascubeName }} {{ hostname }}' owner=root group=root mode=0644
   when: st.stat.exists == False
 
 - stat: path=/media/hdd/ubuntudoc_fr_2009-01.zim
   register: p
+  when: boxtype == koombook
 
 - set_fact: hdd_access="0"
-  when: p.stat.isdir is not defined and st.stat.exists == False
+  when: p.stat.isdir is not defined and st.stat.exists == False and boxtype == koombook
 
 - set_fact: hdd_access="1"
-  when: p.stat.isdir is defined and st.stat.exists == False
+  when: p.stat.isdir is defined and st.stat.exists == False and boxtype == koombook
 
 - shell: wget -qO- http://ipecho.net/plain ; echo
   register: public_ip
   when: st.stat.exists == False
 
-- copy: content=id,{{ kbname }},{{ UUID }},{{hdd_access}},{{ ansible_default_ipv4["macaddress"] }},{{ ansible_default_ipv4["address"] }},{{ public_ip.stdout }}\n dest=/etc/firstStart.csv
+- copy: content=id,{{ boxtype }},{{ ideascubeName }},{{ UUID }},{{hdd_access}},{{ ansible_default_ipv4["macaddress"] }},{{ ansible_default_ipv4["address"] }},{{ public_ip.stdout }}\n dest=/etc/firstStart.csv
   when: st.stat.exists == False
 
 - raw: cat /etc/firstStart.csv | ssh -p 443 {{ central_server }} "cat >> ./ansible/UUID/firstStart.csv"
   when: st.stat.exists == False
 
-- raw: ssh -p 443 {{ central_server }} mkdir ./ansible/logs/"{{ kbname }}"
+- raw: ssh -p 443 {{ central_server }} mkdir ./ansible/logs/"{{ ideascubeName }}"
   when: st.stat.exists == False
 
 - lineinfile: dest=/etc/network/interfaces regexp='wpa' state=absent

@@ -12,8 +12,9 @@ lan_interface: eth0
 client_interface: wlan1
 
 #System
-username: koombook
-#username: ideasbox
+boxtype: koombook
+username: ideascube
+password: IqkaPi1gxgUn.
 nginx_port: 80
 nginx_remove_default_vhost: true
 repo_url: https://github.com/fheslouin/ansible-koombook.git

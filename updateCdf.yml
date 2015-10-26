@@ -7,9 +7,9 @@
     # Has to be always enable 
     # - role: firstStart
     #   timezone: Europe/Paris
-    #   ideastube_id: Cdf
+    #   ideascube_id: Cdf
 
     - logs
 
     # Uncomment to lunch an update
-    #- { role: ideastube, version: 0.4.0-1 }
+    #- { role: ideascube, version: 0.4.0-1 }

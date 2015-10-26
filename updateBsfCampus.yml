@@ -10,7 +10,7 @@
     # Has to be always enable 
     - role: firstStart
       timezone: "Africa/Dakar"
-      ideastube_id: "{{ projectName }}"
+      ideascube_id: "{{ projectName }}"
 
     - logs
 
@@ -18,9 +18,9 @@
 
     # # Can be enable/disable on demand but affect all devices
 
-    - role: ideastube
+    - role: ideascube
       version: "0.4.0-1"
-      ideastube_id: "{{ projectName }}"
+      ideascube_id: "{{ projectName }}"
 
     # - appinventor
     # #   when: ansible_hostname == 'KoomBook483'
@@ -32,4 +32,4 @@
 
     # Play a role for a specific device
     #- { role: iptables, when: ansible_hostname == 'KoomBook603' }
-    #- { role: ideastube, when: ansible_hostname == 'KoomBook484' }
+    #- { role: ideascube, when: ansible_hostname == 'KoomBook484' }

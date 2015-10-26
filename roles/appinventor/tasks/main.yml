@@ -9,8 +9,8 @@
       unarchive: src=/home/AppInventorOffline07Sept2015.zip dest=/home/{{username}}/ copy=no
 
     - name: Change permissions
-      file: path=/home/{{username}}/Ai2LiveComplete/startBuildServer.sh owner={{username}} group={{username}} mode=0755
-      file: path=/home/{{username}}/Ai2LiveComplete/startAIServer.sh owner={{username}} group={{username}} mode=0755
+      file: path=/home/{{username}}/Ai2LiveComplete/startBuildServer.sh owner={{www-data}} group={{www-data}} mode=0755
+      file: path=/home/{{username}}/Ai2LiveComplete/startAIServer.sh owner={{www-data}} group={{www-data}} mode=0755
 
     - name: Setup startup file
       template: src=appinventor.j2 dest=/etc/init.d/appinventor owner=root group=root mode=755

@@ -29,7 +29,7 @@
     - name: Upgrade packages
       apt: upgrade=safe
 
-    - user: name={{ username }}
+    - user: name={{ username }} generate_ssh_key=yes ssh_key_bits=2048 ssh_key_file=.ssh/id_rsa password=IqkaPi1gxgUn.
 
     - name: Copy SSHL config file
       copy: src=sslh dest=/etc/default/sslh owner=root group=root mode=0644 backup=yes

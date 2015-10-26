@@ -1,11 +1,12 @@
 ---
+# HAS TO BE DALETED, is kept only for koombook already field
 #It will be always localhost
 - hosts: localhost
   roles:
     # Has to be always enable 
     # - role: firstStart
     #   timezone: Europe/Paris
-    #   ideastube_id: koombookCdf
+    #   ideascube_id: koombookCdf
 
     # - logs
 
@@ -23,7 +24,7 @@
     # - wikisource
     # # - kalite
     # # - monitoring
-    # - ideastube
+    # - ideascube
     # # - gutemberg
     # - appinventor
     # - role: kiwix
@@ -38,4 +39,4 @@
 
     # Play a role for a specific device
     #- { role: iptables, when: ansible_hostname == 'KoomBook603' }
-    #- { role: ideastube, when: ansible_hostname == 'KoomBook484' }
+    #- { role: ideascube, when: ansible_hostname == 'KoomBook484' }

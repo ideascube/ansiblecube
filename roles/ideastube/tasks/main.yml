@@ -1,48 +1,47 @@
 ---
 # For ARM
 # - name: Check if package exist
-#   stat: path=/tmp/ideastube_{{ version }}_armhf.deb
+#   stat: path=/tmp/ideascube_{{ version }}_armhf.deb
 #   register: st
 #   when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l'
 
-- name: Create storage dir for ideastube
-  file: path=/media/hdd/ideastube/storage state=directory owner=www-data group=www-data
+- name: Create storage dir for ideascube
+  file: path=/media/hdd/ideascube/storage state=directory owner=www-data group=www-data
   when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l'
 
-- name: Copy ideastube package
-  get_url: url={{filer_bsf}}/ideastube_{{ version }}_armhf.deb dest=/tmp/ideastube_{{ version }}_armhf.deb owner=root group=root mode=755
+- name: Copy ideascube package
+  get_url: url={{filer_bsf}}/ideascube_{{ version }}_armhf.deb dest=/tmp/ideascube_{{ version }}_armhf.deb owner=root group=root mode=755
   when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
 
-- name: install ideastube package
-  apt: deb=/tmp/ideastube_{{ version }}_armhf.deb
+- name: install ideascube package
+  apt: deb=/tmp/ideascube_{{ version }}_armhf.deb
   when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
-
-- name: Add IDEASTUBE_ID
-  lineinfile: dest=/etc/default/ideastube
-              regexp='^'
-              line='IDEASTUBE_ID={{ ideastube_id }}'
-              state=present
-  when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l'
-
-- lineinfile: dest=/etc/nginx/sites-available/ideastube regexp='443' state=absent
-  notify: restart nginx
-
-- file: src=/etc/uwsgi/apps-available/ideastube.ini dest=/etc/uwsgi/vassals/ideastube.ini state=link
-  notify: restart uwsgi
 
 # For AMD64
 # - name: Check if package exist
-#   stat: path=/tmp/ideastube_{{ version }}_amd64.deb
+#   stat: path=/tmp/ideascube_{{ version }}_amd64.deb
 #   register: st
 #   when: ansible_architecture == 'x86_64'
 
-- name: Copy ideastube package
-  get_url: url={{filer_bsf}}/ideastube_{{ version }}_amd64.deb dest=/tmp/ideastube_{{ version }}_amd64.deb owner=root group=root mode=755
+- name: Copy ideascube package
+  get_url: url={{filer_bsf}}/ideascube_{{ version }}_amd64.deb dest=/tmp/ideascube_{{ version }}_amd64.deb owner=root group=root mode=755
   when: ansible_architecture == 'x86_64'
 
-- name: install ideastube package
-  apt: deb=/tmp/ideastube_{{ version }}_amd64.deb
+- name: install ideascube package
+  apt: deb=/tmp/ideascube_{{ version }}_amd64.deb
   when: ansible_architecture == 'x86_64'
+
+- name: Add IDEASCUBE_ID
+  lineinfile: dest=/etc/default/ideascube
+              regexp='^'
+              line='IDEASCUBE_ID={{ ideascube_id }}'
+              state=present
+
+- lineinfile: dest=/etc/nginx/sites-available/ideascube regexp='443' state=absent
+  notify: restart nginx
+
+- file: src=/etc/uwsgi/apps-available/ideascube.ini dest=/etc/uwsgi/vassals/ideascube.ini state=link
+  notify: restart uwsgi
 
 - tasks:
-  include: ../../../post_tasks.yml task=ideastube version={{ version }}
+  include: ../../../post_tasks.yml task=ideascube version={{ version }}
