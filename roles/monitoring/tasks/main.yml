@@ -10,6 +10,3 @@
 
     - name: Create CSV header
       shell: cd /root/scripts/ && ./eZServerMonitor.sh -h
-
-    - tasks:
-      include: ../../../post_tasks.yml task=monitoring version=1

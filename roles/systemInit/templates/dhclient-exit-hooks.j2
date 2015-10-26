@@ -1,7 +1,7 @@
 case "$reason" in
     BOUND|RENEW|REBIND|REBOOT|TIMEOUT)
 
-    sleep 120 && /usr/local/bin/ansible-pull -d /var/lib/ansible/local -i hosts -U https://github.com/fheslouin/ansible-koombook.git update{{ ideastube_id }}.yml >> /var/log/ansible-pull.log 2>&1 &
+    sleep 120 && /usr/local/bin/ansible-pull -d /var/lib/ansible/local -i hosts -U https://github.com/fheslouin/ansible-koombook.git update{{ ideascube_id }}.yml >> /var/log/ansible-pull.log 2>&1 &
 
     ;;
 esac

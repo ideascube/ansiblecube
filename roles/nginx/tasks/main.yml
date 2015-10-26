@@ -21,6 +21,3 @@
     - name: Upload nginx.conf
       copy: src=nginx.conf dest=/etc/nginx/nginx.conf backup=yes
       notify: restart nginx
-
-    - tasks:
-      include: ../../../post_tasks.yml task=nginx version=1

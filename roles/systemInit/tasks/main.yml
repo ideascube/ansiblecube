@@ -63,7 +63,7 @@
     - name: Copy visudo file
       template: src=visudo.j2 dest=/etc/sudoers.d/shutdown owner=root group=root mode=0440
 
-    - hostname: name={{ hostname }}
+    - hostname: name={{ boxtype }}.lan
 
       # Restreindre l'application du patch que au Lime2
     - name: Copy patch U-Boot package

@@ -7,6 +7,3 @@
 
     - name: Create a new interfaces file
       template: src=interfaces.j2 dest=/etc/network/interfaces backup=yes
-
-    - tasks:
-      include: ../../../post_tasks.yml task=dnsmasq version=1

@@ -12,7 +12,6 @@ lan_interface: eth0
 client_interface: wlan1
 
 #System
-boxtype: koombook
 username: ideascube
 password: IqkaPi1gxgUn.
 nginx_port: 80

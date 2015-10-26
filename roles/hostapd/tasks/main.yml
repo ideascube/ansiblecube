@@ -17,6 +17,3 @@
 
     - name: Start hostapd
       service: name=hostapd state=started
-
-    - tasks:
-      include: ../../../post_tasks.yml task=hostapd version=1
