@@ -62,7 +62,7 @@
     when: mook.changed
     
   - name: Symbolic link for wsgi ini file
-    file: src={{ mook_path }}{{ mook_name }}/api/uwsgi-api.ini dest=/etc/uwsgi/vassals/uwsgi-{{ mook_name }}-api.ini state=link
+    file: src={{ mook_path }}{{ mook_name }}/api/uwsgi-api.ini dest=/etc/uwsgi/apps-enabled/uwsgi-{{ mook_name }}-api.ini state=link
     when: mook.changed
     
   - name: Create log dir for uwsgi

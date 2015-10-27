@@ -1,12 +1,20 @@
 ---
+- name: Install uwsgi
+  pip: name=uwsgi
+
+- name: Create dir for emperor
+  file: path=/etc/uwsgi/vassals state=directory owner=www-data group=www-data mode=0751
+
+- name: Create log dir for uwsgi
+  file: path=/var/log/uwsgi state=directory owner=www-data group=www-data mode=0751
+
+- name: Setup startup file for uwsgi
+  copy: src=uwsgi dest=/etc/init.d/uwsgi owner=root group=root mode=755
+
 # For ARM
-# - name: Check if package exist
-#   stat: path=/tmp/ideascube_{{ version }}_armhf.deb
-#   register: st
-#   when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l'
 
 - name: Create storage dir for ideascube
-  file: path=/media/hdd/ideascube/storage state=directory owner=www-data group=www-data
+  file: path=/media/hdd/ideascube/storage state=directory owner={{ username }} group={{ username }}
   when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l'
 
 - name: Copy ideascube package
@@ -14,22 +22,23 @@
   when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
 
 - name: install ideascube package
+  become_user: ideascube
   apt: deb=/tmp/ideascube_{{ version }}_armhf.deb
   when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
 
 # For AMD64
-# - name: Check if package exist
-#   stat: path=/tmp/ideascube_{{ version }}_amd64.deb
-#   register: st
-#   when: ansible_architecture == 'x86_64'
 
 - name: Copy ideascube package
   get_url: url={{filer_bsf}}/ideascube_{{ version }}_amd64.deb dest=/tmp/ideascube_{{ version }}_amd64.deb owner=root group=root mode=755
   when: ansible_architecture == 'x86_64'
 
 - name: install ideascube package
+  become_user: ideascube
   apt: deb=/tmp/ideascube_{{ version }}_amd64.deb
   when: ansible_architecture == 'x86_64'
+
+- name: Fix rights
+  file: path=/var/ideascube/ state=directory owner=www-data group={{ username }} recurse=yes
 
 - name: Add IDEASCUBE_ID
   lineinfile: dest=/etc/default/ideascube
@@ -40,8 +49,8 @@
 - lineinfile: dest=/etc/nginx/sites-available/ideascube regexp='443' state=absent
   notify: restart nginx
 
-- file: src=/etc/uwsgi/apps-available/ideascube.ini dest=/etc/uwsgi/vassals/ideascube.ini state=link
-  notify: restart uwsgi
+- name: Enable service uwsgi
+  service: name=uwsgi enabled=yes
 
 - tasks:
   include: ../../../post_tasks.yml task=ideascube version={{ version }}

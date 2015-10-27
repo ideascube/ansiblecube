@@ -45,8 +45,11 @@ In this case all the machines below ```[SystemPushInstall]``` will be updated
 At this stage, you have Ansible installed and ready, you cloned the Git repo, you wrote the hosts file to designate the slaves and your machine (master) is able to connect automaticly to the ideascube box throught SSH with your public key.
 
 ## First initialisation 
-The first initialisation called with the playbook ```SystemPushInstall``` has been written to get an update system, with most essential package and basic config. It also patch the U-Boot Olimex A20 to disable some ennoying default beahaviour. Please have a look at https://github.com/ideascube/ansiblecube/blob/master/systemPushInstall.yml for more infos.
-Before lunching the script, have a look at the variables file to set everything as you want : https://github.com/ideascube/ansiblecube/blob/master/group_vars/all
+The first initialisation called with the playbook ```SystemPushInstall``` has been written to get an update system, with most essential package and basic config. It also patch the U-Boot Olimex A20 to disable some ennoying default beahaviour. 
+Please have a look at https://github.com/ideascube/ansiblecube/blob/master/systemPushInstall.yml for more infos.
+
+### Before lunching the script
+Take a look at the variables file to set everything as would like : https://github.com/ideascube/ansiblecube/blob/master/group_vars/all
 
 Now you are ready to execute your first playbook
 ```ansible-playbook -i hosts -l SystemPushInstall -u root systemPushInstall.yml```
@@ -57,3 +60,7 @@ At the end of the process you should have complet system with :
  - Copy a new .bashrc, timezone, vimrc
  - Configure the system to use a new playbook for automatic update from GitHub
  - Install and configure : Nginx, dnsmasq, hostapd (wifi hostspot) and Ideascube
+
+ ## Keep your system up to date ! 
+Now you have a basic ideascube system ready to work ! Great
+The second part of this doc is going to show you how you can keep up to date your system where ever this one is.

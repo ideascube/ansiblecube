@@ -13,7 +13,7 @@ client_interface: wlan1
 
 #System
 username: ideascube
-password: IqkaPi1gxgUn.
+password: $6$H3xgmUGzvIx$KTtdYdXFVbj/ybNvNq6ybT4qCr1MQlKE3hN8lljA6J1meanl0E6kuJ2/NGAfRCvSoPXNQQ5jACxHkRpuKmKfH0
 nginx_port: 80
 nginx_remove_default_vhost: true
 repo_url: https://github.com/fheslouin/ansible-koombook.git

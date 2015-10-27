@@ -7,22 +7,22 @@
     projectName: BsfCampus
 
   roles:
-    # Start. has to be always enable 
-    - role: firstStart
-      timezone: "Africa/Dakar"
-      ideascube_id: "{{ projectName }}"
-      boxtype: koombook
+    # # Start. has to be always enable 
+    # - role: firstStart
+    #   timezone: "Africa/Dakar"
+    #   ideascube_id: "{{ projectName }}"
+    #   boxtype: koombook
 
-    - logs
-    # Stop. has to be always enable 
+    # - logs
+    # # Stop. has to be always enable 
 
-    - iptables
+    # - iptables
 
-    # # Can be enable/disable on demand but affect all devices
+    # # # Can be enable/disable on demand but affect all devices
 
-    - role: ideascube
-      version: "0.4.0-1"
-      ideascube_id: "{{ projectName }}"
+    # - role: ideascube
+    #   version: "0.4.0-1"
+    #   ideascube_id: "{{ projectName }}"
 
     # - appinventor
     # #   when: ansible_hostname == 'KoomBook483'

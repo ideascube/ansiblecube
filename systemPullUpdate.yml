@@ -1,5 +1,5 @@
 ---
-# HAS TO BE DALETED, is kept only for koombook already field
+# HAS TO BE DELETED, is kept only for koombook already on the field
 #It will be always localhost
 - hosts: localhost
   roles:

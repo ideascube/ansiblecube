@@ -4,6 +4,6 @@
 - name: Register in file installed software
   copy: content=id,{{ date }},{{ ansible_hostname }},{{ task }},{{ version }}\n dest=/var/lib/ansible/{{ task }}.csv
 
-- name: Push content over OVH server
+- name: Post install
   shell: echo "{{ date }},{{ ansible_hostname }},{{ task }},{{ version }}" | ssh -p 443 {{ central_server }} "cat >> ./ansible/installed_software/sofware_list.csv"
   ignore_errors: yes
