@@ -20,9 +20,9 @@
   - dnsmasq
   - hostapd
 
-  - role: ideascube
-    version: "0.4.0-1"
-    ideascube_id: "{{ projectName }}"
+  # - role: ideascube
+  #   version: "0.4.0-1"
+  #   ideascube_id: "{{ projectName }}"
 
   # Install all the file to activate the Mook plateform
   # - mongodb

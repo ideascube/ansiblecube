@@ -61,6 +61,7 @@ At the end of the process you should have complet system with :
  - Configure the system to use a new playbook for automatic update from GitHub
  - Install and configure : Nginx, dnsmasq, hostapd (wifi hostspot) and Ideascube
 
- ## Keep your system up to date ! 
-Now you have a basic ideascube system ready to work ! Great
+## Keep your system up to date ! 
+Now you have a basic ideascube system ready to work, great !
+
 The second part of this doc is going to show you how you can keep up to date your system where ever this one is.
