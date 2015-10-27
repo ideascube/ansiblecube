@@ -33,3 +33,5 @@
     # Play a role for a specific device
     #- { role: iptables, when: ansible_hostname == 'KoomBook603' }
     #- { role: ideascube, when: ansible_hostname == 'KoomBook484' }
+
+    - command: /sbin/shutdown -h now
