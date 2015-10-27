@@ -19,7 +19,7 @@
   when: p.stat.isdir is not defined and st.stat.exists == False
 
 - set_fact: hdd_access="1"
-  when: p.stat.isdir is defined and st.stat.exists == False and
+  when: p.stat.isdir is defined and st.stat.exists == False
 
 - shell: wget -qO- http://ipecho.net/plain ; echo
   register: public_ip
