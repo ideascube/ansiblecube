@@ -16,21 +16,19 @@
     - logs
     # Stop. has to be always enable 
 
-    - iptables
-
     # # Can be enable/disable on demand but affect all devices
 
-    # - role: ideascube
-    #   version: "0.4.0-1"
-    #   ideascube_id: "{{ projectName }}"
+    - role: ideascube
+      version: "0.4.0-1"
+      ideascube_id: "{{ projectName }}"
 
     # - appinventor
     # #   when: ansible_hostname == 'KoomBook483'
 
     # # Update Mook plateform
-    #- mongodb
-    #- { role: mook, mook_name: bsfcampus }
-    #- { role: mook, mook_name: fun }
+    # - mongodb
+    # - { role: mook, mook_name: bsfcampus }
+    # - { role: mook, mook_name: fun }
 
     # Play a role for a specific device
     #- { role: iptables, when: ansible_hostname == 'KoomBook603' }
