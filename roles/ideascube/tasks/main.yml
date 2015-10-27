@@ -2,14 +2,14 @@
 - name: Install uwsgi
   pip: name=uwsgi
 
-- name: Create dir for emperor
-  file: path=/etc/uwsgi/vassals state=directory owner=www-data group=www-data mode=0751
-
 - name: Create log dir for uwsgi
   file: path=/var/log/uwsgi state=directory owner=www-data group=www-data mode=0751
 
 - name: Setup startup file for uwsgi
   copy: src=uwsgi dest=/etc/init.d/uwsgi owner=root group=root mode=755
+
+- name: Create apps-enabled dir for uwsgi
+  file: path=/etc/uwsgi/apps-enabled state=directory owner=www-data group=www-data mode=0751
 
 # For ARM
 
@@ -49,6 +49,9 @@
 - lineinfile: dest=/etc/nginx/sites-available/ideascube regexp='443' state=absent
   notify: restart nginx
 
+ - name: Create simLink
+   file: src=/etc/uwsgi/apps-available/ideascube.ini dest=/etc/uwsgi/apps-enabled/ideascube.ini state=link
+
 - name: Enable service uwsgi
   service: name=uwsgi enabled=yes
 
@@ -60,3 +63,5 @@
 
 - tasks:
   include: ../../../post_tasks.yml task=ideascube version={{ version }}
+
+  ajouter lien symbolic 
