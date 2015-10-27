@@ -18,9 +18,9 @@
 
     # # Can be enable/disable on demand but affect all devices
 
-    - role: ideascube
-      version: "0.4.0-1"
-      ideascube_id: "{{ projectName }}"
+    # - role: ideascube
+    #   version: "0.4.0-1"
+    #   ideascube_id: "{{ projectName }}"
 
     # - appinventor
     # #   when: ansible_hostname == 'KoomBook483'
@@ -34,5 +34,5 @@
     #- { role: iptables, when: ansible_hostname == 'KoomBook603' }
     #- { role: ideascube, when: ansible_hostname == 'KoomBook484' }
 
-  post_tasks:
-    - command: /sbin/shutdown -h now
+  # post_tasks:
+  #   - command: /sbin/shutdown -h now
