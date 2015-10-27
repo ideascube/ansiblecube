@@ -53,10 +53,10 @@
   service: name=uwsgi enabled=yes
 
 - name: Download CSV to import
-  get_url: url={{filer_bsf}}/KB_Liste_contenus_videos+fiches.csv dest=/tmp/KB_Liste_contenus_videos+fiches.csv
+  get_url: url={{filer_bsf}}/KB_Liste_contenus_videos+fiches.csv dest=/media/hdd/IdeasServerContent/KB_Liste_contenus_videos+fiches.csv
 
 - name: Import data 
-  shell: ideascube import_medias /tmp/KB_Liste_contenus_videos+fiches.csv
+  shell: ideascube import_medias /media/hdd/IdeasServerContent/KB_Liste_contenus_videos+fiches.csv
 
 - tasks:
   include: ../../../post_tasks.yml task=ideascube version={{ version }}
