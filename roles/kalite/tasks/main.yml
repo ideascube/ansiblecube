@@ -24,10 +24,7 @@
 
     - file: path=/var/ka-lite/.kalite/content state=absent
 
-    - file: src=/media/hdd/kalite/content/ dest=/var/ka-lite/.kalite/content state=link
-
-    # - name: create super user
-    #   django_manage: command="createsuperuser --noinput --username=admin --email=admin@example.com" app_path=/usr/share/kalite/python-packages/django/conf/project_template/
+    - file: src=/media/hdd/khanVideos/content/ dest=/var/ka-lite/.kalite/content state=link
 
     - tasks:
       include: ../../../post_tasks.yml task=kalite version=1
