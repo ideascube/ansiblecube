@@ -15,28 +15,28 @@
 
     - logs
     # Stop. has to be always enable 
-    - hostapd
+    # - hostapd
     # # Can be enable/disable on demand but affect all devices
 
-    - role: ideascube
-      version: "0.4.0-1"
-      ideascube_id: "{{ projectName }}"
+    # - role: ideascube
+    #   version: "0.4.0-1"
+    #   ideascube_id: "{{ projectName }}"
 
     # - appinventor
     # #   when: ansible_hostname == 'KoomBook483'
 
     # # Update Mook plateform
-    - mongodb
-    - { role: mook, mook_name: bsfcampus }
+    # - mongodb
+    # - { role: mook, mook_name: bsfcampus }
     # - { role: mook, mook_name: fun }
 
     # Install and configure a kiwix project 
-    - role: kiwix
-      kiwixProject: wikipedia
-      portProject: 8002
-    - role: kiwix
-      kiwixProject: wikisource
-      portProject: 8003
+    # - role: kiwix
+    #   kiwixProject: wikipedia
+    #   portProject: 8002
+    # - role: kiwix
+    #   kiwixProject: wikisource
+    #   portProject: 8003
     # - role: kiwix
     #   kiwixProject: vikidia
     #   portProject: 8004
@@ -61,4 +61,4 @@
     #- { role: ideascube, when: ansible_hostname == 'KoomBook484' }
 
   # post_tasks:
-    - command: /sbin/shutdown -h now
+    # - command: /sbin/shutdown -h now
