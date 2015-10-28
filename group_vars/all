@@ -1,8 +1,4 @@
 ---
-#Apps path
-framadvd_path: /media/hdd/framadvd/
-mook_path: /home/
-
 #Network
 hostname: koombook.lan
 hotspot_name: koombook
@@ -19,6 +15,10 @@ nginx_remove_default_vhost: true
 repo_url: https://github.com/fheslouin/ansible-koombook.git
 central_server: ansible@37.187.151.52
 filer_bsf: http://filer.bsf-intranet.org
+
+#Apps path
+framadvd_path: /media/hdd/framadvd/
+mook_path: /home/{{ username }}
 
 #Domaine name 
 kalite_server_name: kalite.{{hostname}}
