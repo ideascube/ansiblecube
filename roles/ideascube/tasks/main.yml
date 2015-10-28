@@ -63,5 +63,3 @@
 
 - tasks:
   include: ../../../post_tasks.yml task=ideascube version={{ version }}
-
-  ajouter lien symbolic 
