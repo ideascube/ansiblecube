@@ -49,8 +49,8 @@
 - lineinfile: dest=/etc/nginx/sites-available/ideascube regexp='443' state=absent
   notify: restart nginx
 
- - name: Create simLink
-   file: src=/etc/uwsgi/apps-available/ideascube.ini dest=/etc/uwsgi/apps-enabled/ideascube.ini state=link
+- name: Create simLink
+  file: src=/etc/uwsgi/apps-available/ideascube.ini dest=/etc/uwsgi/apps-enabled/ideascube.ini state=link
 
 - name: Enable service uwsgi
   service: name=uwsgi enabled=yes
