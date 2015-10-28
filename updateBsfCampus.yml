@@ -17,16 +17,16 @@
     # - hostapd
     # # Can be enable/disable on demand but affect all devices
 
-    - role: ideascube
-      version: "0.4.0-1"
-      ideascube_id: "{{ projectName }}"
+    # - role: ideascube
+    #   version: "0.4.0-1"
+    #   ideascube_id: "{{ projectName }}"
 
     # - appinventor
     # #   when: ansible_hostname == 'KoomBook483'
 
     # # Update Mook plateform
-    - mongodb
-    - { role: mook, mook_name: bsfcampus }
+    # - mongodb
+    # - { role: mook, mook_name: bsfcampus }
     # - { role: mook, mook_name: fun }
 
     # Install and configure a kiwix project 
@@ -59,5 +59,5 @@
     #- { role: iptables, when: ansible_hostname == 'KoomBook603' }
     #- { role: ideascube, when: ansible_hostname == 'KoomBook484' }
 
-  post_tasks:
-    - command: /sbin/shutdown -h now
+  # post_tasks:
+  #   - command: /sbin/shutdown -h now
