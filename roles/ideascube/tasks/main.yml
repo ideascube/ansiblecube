@@ -24,7 +24,7 @@
 # For ARM
 
 - name: Create storage dir for ideascube
-  file: path=/media/hdd/ideascube/storage state=directory owner=www-data group={{ username }}
+  file: path=/media/hdd/ideascube/storage/main state=directory owner={{ username }} group={{ username }}
   when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l' and ideascube_version.stdout == ""
 
 - name: Copy ideascube package
@@ -50,8 +50,18 @@
 # Add settings and conf
 
 - name: Fix rights
-  file: path=/var/ideascube/ state=directory owner=www-data group={{ username }} recurse=yes
+  file: path=/var/ideascube/ state=directory owner={{ username }} group={{ username }} recurse=yes
   when: ideascube_version.stdout == ""
+
+- name: Adapt STORAGE_ROOT to Nginx
+  replace: dest=/etc/nginx/sites-enabled/ideascube
+  regexp='/var/ideascube/main/media/' 
+  replace='/media/hdd/ideascube/storage/main/media'
+  backup=yes
+  replace: dest=/etc/nginx/sites-enabled/ideascube
+  regexp='/var/ideascube/static/' 
+  replace='/media/hdd/ideascube/storage/static'
+  backup=yes
 
 - name: Add IDEASCUBE_ID
   lineinfile: dest=/etc/default/ideascube
@@ -62,7 +72,7 @@
 
 - name: Post install
   become_user: ideascube
-  shell: ideascube collectstatic --no-input
+  shell: ideascube collectstatic --noinput
   shell: ideascube migrate
   when: ideascube_version.stdout == ""
 
@@ -84,7 +94,7 @@
 
 - name: Import data 
   become_user: ideascube
-  shell: ideascube import_medias /media/hdd/IdeasServerContent/videos/KB_Liste_contenus_videos+fiches.csv
+  shell: ideascube import_medias /media/hdd/IdeasServerContent/videos/KB_Liste_contenus_videos+fiches.CSV
   when: ideascube_version.stdout == ""
 
 - tasks:

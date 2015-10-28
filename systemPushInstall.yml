@@ -8,7 +8,7 @@
   vars:
     # Give a name to the project. It has to match with one of the config file (w/o .py) from the ideascube 
     # See : https://github.com/ideascube/ideascube/blob/master/ideascube/conf/
-    projectName: BsfCampus
+    projectName: kb-cdf-fra
 
   roles:
   # It will install all the basic package and configuration for the KoomBook/IdeasBox
@@ -19,10 +19,11 @@
   # - dnsmasq
   # - hostapd
   # - iptables
+   - kalite
 
-  - role: ideascube
-    version: "0.4.0-2"
-    ideascube_id: "{{ projectName }}"
+  # - role: ideascube
+  #   version: "0.4.0-1"
+  #   ideascube_id: "{{ projectName }}"
 
   # Install all the file to activate the Mook plateform
   # - mongodb
