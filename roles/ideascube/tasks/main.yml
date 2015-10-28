@@ -3,6 +3,8 @@
   shell: dpkg-query -W  ideascube  | awk '{print $2}' ; echo
   register: ideascube_version
 
+- debug: msg="ideascube version {{ ideascube_version.stdout }}"
+
 - name: Install uwsgi
   pip: name=uwsgi
   when: ideascube_version.stdout == ""
@@ -27,31 +29,25 @@
 
 - name: Copy ideascube package
   get_url: url={{filer_bsf}}/ideascube_{{ version }}_armhf.deb dest=/tmp/ideascube_{{ version }}_armhf.deb owner=root group=root mode=755
-  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and ideascube_version.stdout != "{{ version }}"
+  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and ideascube_version.stdout|int <= "{{ version }}"
 
 - name: install ideascube package
   become_user: ideascube
   apt: deb=/tmp/ideascube_{{ version }}_armhf.deb state=present
-  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and ideascube_version.stdout != "{{ version }}"
+  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and ideascube_version.stdout|int <= "{{ version }}"
 
 # For AMD64
 
 - name: Copy ideascube package
   get_url: url={{filer_bsf}}/ideascube_{{ version }}_amd64.deb dest=/tmp/ideascube_{{ version }}_amd64.deb owner=root group=root mode=755
-  when: ansible_architecture == 'x86_64' and ideascube_version.stdout <= "{{ version }}"
+  when: ansible_architecture == 'x86_64' and ideascube_version.stdout|int <= "{{ version }}"
 
 - name: install ideascube package
   become_user: ideascube
   apt: deb=/tmp/ideascube_{{ version }}_amd64.deb state=present
-  when: ansible_architecture == 'x86_64' and ideascube_version.stdout <= "{{ version }}"
+  when: ansible_architecture == 'x86_64' and ideascube_version.stdout|int <= "{{ version }}"
 
 # Add settings and conf
-
-- name: Post install
-  become_user: ideascube
-  command: ideascube collectstatic --no-input
-  command: ideascube migrate --no-input
-  when: ideascube_version.stdout == ""
 
 - name: Fix rights
   file: path=/var/ideascube/ state=directory owner=www-data group={{ username }} recurse=yes
@@ -62,6 +58,12 @@
               regexp='^'
               line='IDEASCUBE_ID={{ ideascube_id }}'
               state=present
+  when: ideascube_version.stdout == ""
+
+- name: Post install
+  become_user: ideascube
+  shell: ideascube collectstatic --no-input
+  shell: ideascube migrate
   when: ideascube_version.stdout == ""
 
 - lineinfile: dest=/etc/nginx/sites-available/ideascube regexp='443' state=absent

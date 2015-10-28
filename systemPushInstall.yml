@@ -14,7 +14,6 @@
   # It will install all the basic package and configuration for the KoomBook/IdeasBox
   # - role: systemInit
   #   ideascube_id: "{{ projectName }}"
-  #   boxtype: koombook
 
   # - nginx
   # - dnsmasq
@@ -22,7 +21,7 @@
   # - iptables
 
   - role: ideascube
-    version: "0.4.0-1"
+    version: "0.4.0-2"
     ideascube_id: "{{ projectName }}"
 
   # Install all the file to activate the Mook plateform

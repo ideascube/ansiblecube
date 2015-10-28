@@ -25,7 +25,7 @@
   register: public_ip
   when: st.stat.exists == False
 
-- copy: content=id,{{ boxtype }},{{ ideascubeName }},{{ UUID }},{{hdd_access}},{{ ansible_default_ipv4["macaddress"] }},{{ ansible_default_ipv4["address"] }},{{ public_ip.stdout }}\n dest=/etc/firstStart.csv
+- copy: content=id,{{ ideascubeName }},{{ UUID }},{{hdd_access}},{{ ansible_default_ipv4["macaddress"] }},{{ ansible_default_ipv4["address"] }},{{ public_ip.stdout }}\n dest=/etc/firstStart.csv
   when: st.stat.exists == False
 
 - raw: cat /etc/firstStart.csv | ssh -p 443 {{ central_server }} "cat >> ./ansible/UUID/firstStart.csv"
