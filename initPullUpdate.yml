@@ -5,4 +5,4 @@
     # Has to be always enable 
     - role: firstStart
       timezone: Africa/Dakar
-      ideascube_id: "kb_bsfcampus_sen"
+      ideascube_id: "idc_bsfcampus_demo_fra"

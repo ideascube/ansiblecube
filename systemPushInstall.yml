@@ -17,7 +17,7 @@
 
   - role: ideascube
     version: "0.4.0-1"
-    ideascube_id: "kb_bsfcampus_sen"
+    ideascube_id: "idc_bsfcampus_demo_fra"
 
   # Install all the file to activate the Mook plateform
   # - mongodb

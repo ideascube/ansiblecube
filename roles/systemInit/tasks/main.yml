@@ -58,6 +58,7 @@
               line='/dev/sda {
                       spindown_time = 280
               }'
+  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
 
 - name: fake-hwclock conf
   copy: content="FORCE=force" dest=/etc/default/fake-hwclock

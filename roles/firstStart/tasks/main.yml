@@ -33,9 +33,6 @@
 - raw: cat /etc/firstStart.csv | ssh -p 443 {{ central_server }} "cat >> ./ansible/UUID/firstStart.csv"
   when: st.stat.exists == False
 
-- raw: ssh -p 443 {{ central_server }} mkdir ./ansible/logs/"{{ ideascubeName }}"
-  when: st.stat.exists == False
-
 - lineinfile: dest=/etc/network/interfaces regexp='wpa' state=absent
   when: st.stat.exists == False
 
