@@ -3,9 +3,9 @@
 - stat: path=/etc/firstStart.csv
   register: st
 
-- set_fact: date="{{ ansible_date_time["date"]}}"
+- set_fact: date="{{ ansible_date_time["date"]}}" time="{{ ansible_date_time["time"]}}"
 
-- set_fact: ideascubeName="{{ ideascube_id }}{{ 1000 | random }}" UUID="{{ ansible_default_ipv4["macaddress"] | hash('md5') }}"
+- set_fact: ideascubeName="{{ ideascube_id }}_{{ 1000 | random }}" UUID="{{ ansible_default_ipv4["macaddress"] | hash('md5') }}"
   when: st.stat.exists == False
 
 - hostname: name={{ ideascubeName |replace("_", "-") }}
@@ -27,7 +27,7 @@
   register: public_ip
   when: st.stat.exists == False
 
-- copy: content=id,{{ date }},{{ ideascubeName }},{{ UUID }},{{hdd_access}},{{ ansible_default_ipv4["macaddress"] }},{{ ansible_default_ipv4["address"] }},{{ public_ip.stdout }}\n dest=/etc/firstStart.csv
+- copy: content=id,{{ date }},{{ time }},{{ ideascubeName }},{{ UUID }},{{hdd_access}},{{ ansible_default_ipv4["macaddress"] }},{{ ansible_default_ipv4["address"] }},{{ public_ip.stdout }}\n dest=/etc/firstStart.csv
   when: st.stat.exists == False
 
 - raw: cat /etc/firstStart.csv | ssh -p 443 {{ central_server }} "cat >> ./ansible/UUID/firstStart.csv"
@@ -52,7 +52,7 @@
   when: st.stat.exists == False
 
 - name: Set ansible pull for the right project
-  replace: dest=/etc/dhcp/dhclient-exit-hooks.d/initPullUpdate regexp='initPullUpdate.yml' replace='update_{{ ideascube_id }}.yml' backup=yes
+  replace: dest=/etc/dhcp/dhclient-exit-hooks.d/ansiblePullUpdate regexp='initPullUpdate.yml' replace='update_{{ ideascube_id }}.yml' backup=yes
   when: st.stat.exists == False
 
 - command: /sbin/shutdown -h now
