@@ -6,7 +6,7 @@
 - set_fact: ideascubeName="{{ ideascube_id }}{{ 1000 | random }}" UUID="{{ ansible_default_ipv4["macaddress"] | hash('md5') }}"
   when: st.stat.exists == False
 
-- hostname: name="{{ ideascubeName }}"
+- hostname: name={{ ideascubeName }}.lan
   when: st.stat.exists == False
 
 - lineinfile: dest=/etc/hosts regexp='^127.0.0.1' insertafter='127.0.0.1' line='127.0.0.1 localhost {{ ideascubeName }} {{ hostname }}' owner=root group=root mode=0644
