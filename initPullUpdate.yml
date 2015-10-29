@@ -5,4 +5,4 @@
     # Has to be always enable 
     - role: firstStart
       timezone: Europe/Paris
-      ideascube_id: kb_cdf_fra
+      ideascube_id: "kb_cdf_fra"
