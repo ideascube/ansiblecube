@@ -3,10 +3,12 @@
 - stat: path=/etc/firstStart.csv
   register: st
 
+- set_fact: date="{{ ansible_date_time["date"]}}"
+
 - set_fact: ideascubeName="{{ ideascube_id }}{{ 1000 | random }}" UUID="{{ ansible_default_ipv4["macaddress"] | hash('md5') }}"
   when: st.stat.exists == False
 
-- hostname: name={{ ideascubeName }}.lan
+- hostname: name={{ "{{ ideascubeName }}"|replace("_", "-") }}
   when: st.stat.exists == False
 
 - lineinfile: dest=/etc/hosts regexp='^127.0.0.1' insertafter='127.0.0.1' line='127.0.0.1 localhost {{ ideascubeName }} {{ hostname }}' owner=root group=root mode=0644
@@ -25,7 +27,7 @@
   register: public_ip
   when: st.stat.exists == False
 
-- copy: content=id,{{ ideascubeName }},{{ UUID }},{{hdd_access}},{{ ansible_default_ipv4["macaddress"] }},{{ ansible_default_ipv4["address"] }},{{ public_ip.stdout }}\n dest=/etc/firstStart.csv
+- copy: content=id,{{ date }},{{ ideascubeName }},{{ UUID }},{{hdd_access}},{{ ansible_default_ipv4["macaddress"] }},{{ ansible_default_ipv4["address"] }},{{ public_ip.stdout }}\n dest=/etc/firstStart.csv
   when: st.stat.exists == False
 
 - raw: cat /etc/firstStart.csv | ssh -p 443 {{ central_server }} "cat >> ./ansible/UUID/firstStart.csv"
