@@ -17,39 +17,39 @@
 
   - role: ideascube
     version: "0.4.0-1"
-    ideascube_id: "kb_cdf_fra"
+    ideascube_id: "kb_bsfcampus_sen"
 
   # Install all the file to activate the Mook plateform
   # - mongodb
   # - { role: mook, mook_name: bsfcampus }
 
-  - appinventor
+  # - appinventor
 
   # # Install and configure a kiwix project 
   - role: kiwix
     kiwixProject: wikipedia
     portProject: 8002
-  # - role: kiwix
-  #   kiwixProject: wikisource
-  #   portProject: 8003
+  - role: kiwix
+    kiwixProject: wikisource
+    portProject: 8003
   - role: kiwix
     kiwixProject: vikidia
     portProject: 8004
   - role: kiwix
     kiwixProject: cpassorcier
     portProject: 8005
-  # - role: kiwix
-  #   kiwixProject: ubuntudoc
-  #   portProject: 8006
-  # - role: kiwix
-  #   kiwixProject: gutenberg
-  #   portProject: 8007
-  # - role: kiwix
-  #   kiwixProject: universcience
-  #   portProject: 8009
-  # - role: kiwix
-  #   kiwixProject: ted
-  #   portProject: 8010
+  - role: kiwix
+    kiwixProject: ubuntudoc
+    portProject: 8006
+  - role: kiwix
+    kiwixProject: gutenberg
+    portProject: 8007
+  - role: kiwix
+    kiwixProject: universcience
+    portProject: 8009
+  - role: kiwix
+    kiwixProject: ted
+    portProject: 8010
 
   post_tasks:
   # # Everything is up-to-date and configured, ready to clone the SD card, 

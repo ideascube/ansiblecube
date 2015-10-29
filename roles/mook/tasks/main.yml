@@ -15,9 +15,7 @@
 ####
 - name: Clone mook api
   become_user: ideascube
-  git: repo=ssh://git@altssh.bitbucket.org:443/gryzzlab/mook-bsf-api.git 
-  dest={{ mook_path }}{{ mook_name }}/api
-  accept_hostkey=yes
+  git: repo=ssh://git@altssh.bitbucket.org:443/gryzzlab/mook-bsf-api.git dest={{ mook_path }}{{ mook_name }}/api accept_hostkey=yes
   register: mook
 
 - name: Update setuptools
@@ -25,10 +23,7 @@
   when: mook.changed
 
 - name: Install python requierment
-  pip: requirements=requirements.txt 
-  chdir={{ mook_path }}{{ mook_name }}/api
-  virtualenv_command=/usr/local/bin/virtualenv
-  virtualenv={{ mook_path }}{{ mook_name }}/api/env
+  pip: requirements=requirements.txt chdir={{ mook_path }}{{ mook_name }}/api virtualenv_command=/usr/local/bin/virtualenv virtualenv={{ mook_path }}{{ mook_name }}/api/env
   when: mook.changed
 
 - name: Create static dir
@@ -40,15 +35,12 @@
   when: mook.changed
 
 - name: Retrieve KoomBook info 
-  set_fact: koombookName="{{ lookup('csvfile', 'id file=/etc/firstStart.csv delimiter=, col=2') }}" uuid="{{ lookup('csvfile', 'id file=/etc/firstStart.csv delimiter=, col=3') }}"
+  set_fact: koombookName="{{ lookup('csvfile', 'id file=/etc/firstStart.csv delimiter=, col=4') }}" uuid="{{ lookup('csvfile', 'id file=/etc/firstStart.csv delimiter=, col=5') }}"
   when: mook.changed
   
 - name: add conf for KoomBook
   lineinfile: dest={{ mook_path }}{{ mook_name }}/api/settings_local.py 
-  regexp='' insertafter=EOF line='    CENTRAL_SERVER_KEY = \"{{koombookName}}\" \n    CENTRAL_SERVER_SECRET = \"{{uuid}}\"' 
-  owner=www-data 
-  group=www-data 
-  mode=755
+  regexp='' insertafter=EOF line='    CENTRAL_SERVER_KEY = \"{{koombookName}}\" \n    CENTRAL_SERVER_SECRET = \"{{uuid}}\"' owner=www-data group=www-data mode=755
   when: mook.changed
   
 - name: Setup startup file for uwsgi
@@ -64,9 +56,7 @@
   when: mook.changed
   
 - name: Symbolic link for wsgi ini file
-  file: src={{ mook_path }}{{ mook_name }}/api/uwsgi-api.ini 
-  dest=/etc/uwsgi/apps-enabled/uwsgi-{{ mook_name }}-api.ini 
-  state=link
+  file: src={{ mook_path }}{{ mook_name }}/api/uwsgi-api.ini dest=/etc/uwsgi/apps-enabled/uwsgi-{{ mook_name }}-api.ini state=link
   when: mook.changed
 
 ####
@@ -109,9 +99,7 @@
 ####
 - name: Clone mook front
   become_user: ideascube
-  git: repo=ssh://git@altssh.bitbucket.org:443/gryzzlab/mook-bsf-front-end-backbone.git 
-  dest={{ mook_path }}{{ mook_name }}/front 
-  accept_hostkey=yes
+  git: repo=ssh://git@altssh.bitbucket.org:443/gryzzlab/mook-bsf-front-end-backbone.git dest={{ mook_path }}{{ mook_name }}/front accept_hostkey=yes
   register: mookFront
 
 - name: download vendor package
