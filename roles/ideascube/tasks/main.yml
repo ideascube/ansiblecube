@@ -54,14 +54,12 @@
   when: ideascube_version.stdout == ""
 
 - name: Adapt STORAGE_ROOT to Nginx
-  replace: dest=/etc/nginx/sites-enabled/ideascube
-  regexp='/var/ideascube/main/media/' 
-  replace='/media/hdd/ideascube/storage/main/media'
-  backup=yes
-  replace: dest=/etc/nginx/sites-enabled/ideascube
-  regexp='/var/ideascube/static/' 
-  replace='/media/hdd/ideascube/storage/static'
-  backup=yes
+  replace: dest=/etc/nginx/sites-enabled/ideascube regexp='/var/ideascube/main/media/' replace='/media/hdd/ideascube/storage/main/media' backup=yes
+  when: ideascube_version.stdout == ""
+
+- name: Adapt STORAGE_ROOT to Nginx
+  replace: dest=/etc/nginx/sites-enabled/ideascube regexp='/var/ideascube/static/' replace='/media/hdd/ideascube/storage/static' backup=yes
+  when: ideascube_version.stdout == ""
 
 - name: Add IDEASCUBE_ID
   lineinfile: dest=/etc/default/ideascube

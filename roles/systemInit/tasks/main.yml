@@ -32,6 +32,7 @@
 - user: name={{ username }}
         shell=/bin/bash
         groups="sudo,www-data"
+        home="/home/"
         generate_ssh_key=yes
         ssh_key_bits=2048
         ssh_key_file=.ssh/id_rsa
@@ -46,6 +47,9 @@
 
 - name: Copy vimrc for root
   copy: src=vim dest=/etc/vim/vimrc owner=root
+
+- name: Copy .bashrc for new username
+  copy: src=bashrc dest=/home/{{ username }}/.bashrc owner=root
 
 - name: Add hdparm to save energy
   lineinfile: dest=/etc/hdparm.conf
@@ -98,7 +102,7 @@
           owner=root group=root mode=0644
 
 - name: Create entry to clone/pull git repository
-  template: src=dhclient-exit-hooks.j2 dest=/etc/dhcp/dhclient-exit-hooks.d/systemPullUpdate owner=root group=root mode=0755
+  copy: src=dhclient-exit-hooks dest=/etc/dhcp/dhclient-exit-hooks.d/ansiblePullUpdate owner=root group=root mode=0755
 
 - name: List services to restart (1/2)
   shell: checkrestart | grep ^service | awk '{print $2}'

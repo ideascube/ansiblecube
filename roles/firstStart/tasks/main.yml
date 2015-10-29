@@ -3,7 +3,7 @@
 - stat: path=/etc/firstStart.csv
   register: st
 
-- set_fact: ideascubeName="{{ username }}{{ 1000 | random }}" UUID="{{ ansible_default_ipv4["macaddress"] | hash('md5') }}"
+- set_fact: ideascubeName="{{ ideascube_id }}{{ 1000 | random }}" UUID="{{ ansible_default_ipv4["macaddress"] | hash('md5') }}"
   when: st.stat.exists == False
 
 - hostname: name="{{ ideascubeName }}"
@@ -48,7 +48,13 @@
   copy: content={{ timezone }} dest=/etc/timezone owner=root group=root mode=0644 backup=yes
   notify: update timezone
   when: st.stat.exists == False
-  
-#- command: /sbin/shutdown -h now
-- command: /sbin/reboot
+
+- name: Set ansible pull for the right project
+  replace: dest=/etc/dhcp/dhclient-exit-hooks.d/initPullUpdate
+  regexp='initPullUpdate.yml' 
+  replace='update_{{ ideascube_id }}.yml'
+  backup=yes
+  when: st.stat.exists == False
+
+- command: /sbin/shutdown -h now
   when: st.stat.exists == False
