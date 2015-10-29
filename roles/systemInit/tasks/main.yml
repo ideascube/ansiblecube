@@ -32,7 +32,7 @@
 - user: name={{ username }}
         shell=/bin/bash
         groups="sudo,www-data"
-        home="/home/"
+        home="/home/{{ username }}"
         generate_ssh_key=yes
         ssh_key_bits=2048
         ssh_key_file=.ssh/id_rsa
@@ -108,3 +108,4 @@
   shell: checkrestart | grep ^service | awk '{print $2}'
   register: services
   changed_when: False
+  
