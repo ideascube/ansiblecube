@@ -2,7 +2,7 @@
 #It will be always localhost
 - hosts: localhost
 
-vars: 
+  vars: 
 	#Network
 	hostname: ideasbox.lan
 	hotspot_name: ideasbox
