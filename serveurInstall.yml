@@ -1,6 +1,7 @@
 ---
 #It will be always localhost
-- hosts: localhost
+- 
+  hosts: localhost
 
   vars: 
 	#Network
