@@ -1,4 +1,7 @@
 [uwsgi]
+uid=ideascube
+gid=ideascube
+
 chdir  = {{ mook_path }}{{ mook_name }}/api 
 module = wsgi_local:application
 

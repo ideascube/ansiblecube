@@ -1,8 +1,9 @@
 ---
-# Ansible playbook for Cdf
+# Ansible playbook for Coeur de forêt
 
 #It will be always localhost
 - hosts: localhost
+
   roles:
     # Has to be always enable
     - logs

@@ -3,21 +3,20 @@
 # ex : ansible-playbook -i hosts -l SystemPushInstall -u root systemPushInstall.yml
 # The role can be played against any system define in "hosts" file -> [SystemPushInstall]
 
-
 - hosts: SystemPushInstall
 
   roles:
   # It will install all the basic package and configuration for the KoomBook/IdeasBox
-  - systemInit
-  - nginx
-  - dnsmasq
-  - hostapd
-  - iptables
-   # - kalite
+  # - systemInit
+  # - nginx
+  # - dnsmasq
+  # - hostapd
+  # - iptables
+  # - kalite
 
   - role: ideascube
     version: "0.4.0-1"
-    ideascube_id: "idc_bsfcampus_demo_fra"
+    ideascube_id: "kb_cdf_fra"
 
   # Install all the file to activate the Mook plateform
   # - mongodb
@@ -29,27 +28,27 @@
   - role: kiwix
     kiwixProject: wikipedia
     portProject: 8002
-  - role: kiwix
-    kiwixProject: wikisource
-    portProject: 8003
+  # - role: kiwix
+  #   kiwixProject: wikisource
+  #   portProject: 8003
   - role: kiwix
     kiwixProject: vikidia
     portProject: 8004
   - role: kiwix
     kiwixProject: cpassorcier
     portProject: 8005
-  - role: kiwix
-    kiwixProject: ubuntudoc
-    portProject: 8006
-  - role: kiwix
-    kiwixProject: gutenberg
-    portProject: 8007
-  - role: kiwix
-    kiwixProject: universcience
-    portProject: 8009
-  - role: kiwix
-    kiwixProject: ted
-    portProject: 8010
+  # - role: kiwix
+  #   kiwixProject: ubuntudoc
+  #   portProject: 8006
+  # - role: kiwix
+  #   kiwixProject: gutenberg
+  #   portProject: 8007
+  # - role: kiwix
+  #   kiwixProject: universcience
+  #   portProject: 8009
+  # - role: kiwix
+  #   kiwixProject: ted
+  #   portProject: 8010
 
   post_tasks:
   # # Everything is up-to-date and configured, ready to clone the SD card, 

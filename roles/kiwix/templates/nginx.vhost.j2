@@ -1,5 +1,5 @@
 server {
-    listen  {{ nginx_port }};
+    listen  80;
     server_name {{ kiwixProject }}.{{hostname}};
     location / {
         proxy_pass_header Server;

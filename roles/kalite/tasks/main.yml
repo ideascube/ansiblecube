@@ -1,30 +1,33 @@
 ---
-    - name: Check if kalite is installed
-      command: dpkg-query -W ka-lite-raspberry-pi
-      register: kalite_check_deb
-      failed_when: kalite_check_deb.rc > 1
-      changed_when: kalite_check_deb.rc == 1
+- name: Check if kalite is installed
+  command: dpkg-query -W ka-lite-raspberry-pi
+  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
+  register: kalite_check_deb
+  failed_when: kalite_check_deb.rc > 1
+  changed_when: kalite_check_deb.rc == 1
 
-    - name: download Ka lite
-      get_url: url={{filer_bsf}}/kalite014ARM.deb dest=/home/kalite014ARM.deb
-      when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and kalite_check_deb.rc == 1
+- name: download Ka lite
+  get_url: url={{filer_bsf}}/kalite014ARM.deb dest=/home/kalite014ARM.deb
+  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and kalite_check_deb.rc == 1
 
-    - shell: export DEBIAN_FRONTEND=noninteractive
-      when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and kalite_check_deb.rc == 1
+- shell: export DEBIAN_FRONTEND=noninteractive
+  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and kalite_check_deb.rc == 1
 
-    - name: configure kalite
-      debconf: name=ka-lite-raspberry-pi question='ka-lite/user' value='ka-lite' vtype='string'
-      debconf: name=ka-lite-raspberry-pi question='ka-lite/init' value='true' vtype='boolean'
-      debconf: name=ka-lite-raspberry-pi question='ka-lite/download-assessment-items' value='false' vtype='boolean'
-      when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and kalite_check_deb.rc == 1
+- name: configure kalite
+  debconf: name=ka-lite-raspberry-pi question='ka-lite/user' value='ka-lite' vtype='string'
+  debconf: name=ka-lite-raspberry-pi question='ka-lite/init' value='true' vtype='boolean'
+  debconf: name=ka-lite-raspberry-pi question='ka-lite/download-assessment-items' value='false' vtype='boolean'
+  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and kalite_check_deb.rc == 1
 
-    - name: install kalite
-      apt: deb=/home/kalite014ARM.deb force=yes
-      when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and kalite_check_deb.rc == 1
+- name: install kalite
+  apt: deb=/home/kalite014ARM.deb force=yes
+  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and kalite_check_deb.rc == 1
 
-    - file: path=/var/ka-lite/.kalite/content state=absent
+- file: path=/var/ka-lite/.kalite/content state=absent
+  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
 
-    - file: src=/media/hdd/khanVideos/content/ dest=/var/ka-lite/.kalite/content state=link
+- file: src=/media/hdd/khanVideos/content/ dest=/var/ka-lite/.kalite/content state=link
+  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
 
-    - tasks:
-      include: ../../../post_tasks.yml task=kalite version=1
+- tasks:
+  include: ../../../post_tasks.yml task=kalite version=1

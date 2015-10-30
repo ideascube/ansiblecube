@@ -1,23 +1,22 @@
 ---
-    - name: Remove apache 2 package
-      apt: name={{ item }} state=absent purge=yes
-      with_items:
-       - apache2
-       - apache2-mpm-worker
-       - apache2-utils
-       - apache2.2-bin
-       - apache2.2-common
+- name: Remove apache 2 package
+  apt: name={{ item }} state=absent purge=yes
+  with_items:
+   - apache2
+   - apache2-mpm-worker
+   - apache2-utils
+   - apache2.2-bin
+   - apache2.2-common
 
-    - name: Installs nginx web server
-      apt: pkg=nginx state=installed update_cache=true
+- name: Installs nginx web server
+  apt: pkg=nginx state=installed update_cache=true
 
-    - name: Remove default nginx vhost config file (if configured).
-      file:
-        path: /etc/nginx/sites-enabled/default
-        state: absent
-      when: nginx_remove_default_vhost
-      notify: restart nginx
+- name: Remove default nginx vhost config file (if configured).
+  file:
+    path: /etc/nginx/sites-enabled/default
+    state: absent
+  notify: restart nginx
 
-    - name: Upload nginx.conf
-      copy: src=nginx.conf dest=/etc/nginx/nginx.conf backup=yes
-      notify: restart nginx
+- name: Upload nginx.conf
+  copy: src=nginx.conf dest=/etc/nginx/nginx.conf backup=yes
+  notify: restart nginx

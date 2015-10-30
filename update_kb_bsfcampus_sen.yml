@@ -1,9 +1,8 @@
 ---
-# Ansible playbook for BSF Campus Cote d'Ivoire
+# Ansible playbook for BSF Campus Sénégale
 
 #It will be always localhost
 - hosts: localhost
-  vars:
 
   roles:
     # Start. has to be always enable 
@@ -14,14 +13,14 @@
 
     # - role: ideascube
     #   version: "0.4.0-1"
-    #   ideascube_id: "{{ projectName }}"
+    #   ideascube_id: "kb_bsfcampus_sen"
 
     # - appinventor
     # #   when: ansible_hostname == 'KoomBook483'
 
     # # Update Mook plateform
-    - mongodb
-    - { role: mook, mook_name: bsfcampus }
+    # - mongodb
+    # - { role: mook, mook_name: bsfcampus }
     # - { role: mook, mook_name: fun }
 
     # Install and configure a kiwix project 
@@ -57,5 +56,5 @@
     #- { role: iptables, when: ansible_hostname == 'KoomBook603' }
     #- { role: ideascube, when: ansible_hostname == 'KoomBook484' }
 
-  post_tasks:
-    - command: /sbin/shutdown -h now
+  # post_tasks:
+  #   - command: /sbin/shutdown -h now

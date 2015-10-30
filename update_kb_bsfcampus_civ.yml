@@ -3,7 +3,6 @@
 
 #It will be always localhost
 - hosts: localhost
-  vars:
 
   roles:
     # Start. has to be always enable 

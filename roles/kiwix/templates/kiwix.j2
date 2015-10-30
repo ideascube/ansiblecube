@@ -21,7 +21,7 @@ PIDFILE=/var/run/$NAME.pid
 SCRIPTNAME=/etc/init.d/$NAME
 PORT={{ portProject }}
 # Path to the ZIM file 
-DATAPATH=/media/hdd/kiwix_library/{{ kiwixProject }}.xml
+DATAPATH={{ zim_path }}{{ kiwixProject }}.xml
 
 # Exit if the package is not installed
 [ -x "$DAEMON" ] || exit 0

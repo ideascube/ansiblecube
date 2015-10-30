@@ -16,7 +16,6 @@
    - locate
    - git
    - unzip
-   - python-pip
    - bash-completion
    - aptitude
    - sslh
@@ -49,7 +48,7 @@
   copy: src=vim dest=/etc/vim/vimrc owner=root
 
 - name: Copy .bashrc for new username
-  copy: src=bashrc dest=/home/{{ username }}/.bashrc owner=root
+  copy: src=bashrc dest=/home/{{ username }}/.bashrc owner={{ username }}
 
 - name: Add hdparm to save energy
   lineinfile: dest=/etc/hdparm.conf
@@ -76,14 +75,13 @@
 
 - hostname: name={{ hostname }}
 
-  # Restreindre l'application du patch que au Lime2
 - name: Copy patch U-Boot package
   get_url: url={{filer_bsf}}/linux-u-boot-lime2_4.3_armhf.deb dest=/tmp/linuxUboot.deb owner=root group=root mode=755
-  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
+  when: ansible_architecture == "armv7l"
 
 - name: install patch U-Boot package
   apt:  deb=/tmp/linuxUboot.deb
-  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
+  when: ansible_architecture == "armv7l"
 
 - file: path=/media/hdd state=directory
   when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
@@ -93,7 +91,7 @@
   ignore_errors: yes
 
 - name: Create local directory to work from
-  file: path={{workdir}} state=directory owner=root group=root mode=0751
+  file: path=/var/lib/ansible/local state=directory owner=root group=root mode=0751
 
 - name: Create ansible hosts directory to work from
   file: path=/etc/ansible/ state=directory owner=root group=root mode=0751

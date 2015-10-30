@@ -1,0 +1,8 @@
+---
+#Network
+hostname: koombook.lan
+hotspot_name: koombook
+
+#Apps path
+framadvd_path: /media/hdd/framadvd/
+zim_path: /media/hdd/kiwix_library/

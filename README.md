@@ -1,6 +1,6 @@
 # AnsibleCube
 
-# This doc has to be updated...Work in progress
+# This doc needs to be updated...Work in progress
 
 Ansible has been choose to push and pull content, file config and softawre from and to the ideascube box.
 

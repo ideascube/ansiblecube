@@ -1,9 +1,9 @@
 ---
-    - name: Install dnsmasq
-      apt: name=dnsmasq state=latest
+- name: Install dnsmasq
+  apt: name=dnsmasq state=latest
 
-    - name: Copy dnsmasq.conf file
-      template: src=dnsmasq.conf.j2 dest=/etc/dnsmasq.conf backup=yes
+- name: Copy dnsmasq.conf file
+  template: src=dnsmasq.conf.j2 dest=/etc/dnsmasq.conf backup=yes
 
-    - name: Create a new interfaces file
-      template: src=interfaces.j2 dest=/etc/network/interfaces backup=yes
+- name: Create a new interfaces file
+  template: src=interfaces.j2 dest=/etc/network/interfaces backup=yes

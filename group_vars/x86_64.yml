@@ -1,0 +1,8 @@
+---
+#Network
+hostname: ideasbox.lan
+hotspot_name: ideasbox
+
+#Apps path
+framadvd_path: /home/{{ username }}/framadvd
+zim_path: /usr/local/share/kiwix/data/library/

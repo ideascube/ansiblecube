@@ -1,20 +1,31 @@
 ---
-# Ansible playbook for BSF Campus Cote d'Ivoire
-
 #It will be always localhost
 - hosts: localhost
-  vars:
+
+vars: 
+	#Network
+	hostname: ideasbox.lan
+	hotspot_name: ideasbox
+	zim_path: /usr/local/share/kiwix/data/library/
 
   roles:
-    # Start. has to be always enable 
-    - logs
-    # Stop. has to be always enable 
-    # - hostapd
+    # Has to be always enable 
+    - role: firstStart
+      #timezone: Africa/Dakar
+      timezone: Europe/Paris
+      ideascube_id: ""
+
+	- systemInit
+	- nginx
+	- dnsmasq
+	- hostapd
+	- iptables
+	- kalite
     # # Can be enable/disable on demand but affect all devices
 
     - role: ideascube
       version: "0.4.0-1"
-      ideascube_id: "idc_bsfcampus_demo_fra"
+      ideascube_id: ""
 
     # - appinventor
     # #   when: ansible_hostname == 'KoomBook483'
@@ -25,25 +36,25 @@
     # - { role: mook, mook_name: fun }
 
     # Install and configure a kiwix project 
-    # - role: kiwix
-    #   kiwixProject: wikipedia
-    #   portProject: 8002
-    # - role: kiwix
-    #   kiwixProject: wikisource
-    #   portProject: 8003
-    # - role: kiwix
-    #   kiwixProject: vikidia
-    #   portProject: 8004
+    - role: kiwix
+      kiwixProject: wikipedia
+      portProject: 8002
+    - role: kiwix
+      kiwixProject: wikisource
+      portProject: 8003
+    - role: kiwix
+      kiwixProject: vikidia
+      portProject: 8004
     # - role: kiwix
     #   kiwixProject: cpassorcier
     #   portProject: 8005
     # - role: kiwix
     #   kiwixProject: ubuntudoc
     #   portProject: 8006
-    # - role: kiwix
-    #   kiwixProject: gutenberg
-    #   portProject: 8007
-    # - role: kiwix
+    - role: kiwix
+      kiwixProject: gutenberg
+      portProject: 8007
+    - role: kiwix
     #   kiwixProject: universcience
     #   portProject: 8009
     # - role: kiwix

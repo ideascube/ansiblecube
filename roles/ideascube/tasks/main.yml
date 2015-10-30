@@ -25,6 +25,8 @@
 
 - name: Create storage dir for ideascube
   file: path=/media/hdd/ideascube/storage/main state=directory owner={{ username }} group={{ username }}
+  become: yes
+  become_user: ideascube
   when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l' and ideascube_version.stdout == ""
 
 - name: Copy ideascube package
@@ -32,7 +34,6 @@
   when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and ideascube_version.stdout|int <= "{{ version }}"
 
 - name: install ideascube package
-  become_user: ideascube
   apt: deb=/tmp/ideascube_{{ version }}_armhf.deb state=present
   when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and ideascube_version.stdout|int <= "{{ version }}"
 
@@ -43,7 +44,6 @@
   when: ansible_architecture == 'x86_64' and ideascube_version.stdout|int <= "{{ version }}"
 
 - name: install ideascube package
-  become_user: ideascube
   apt: deb=/tmp/ideascube_{{ version }}_amd64.deb state=present
   when: ansible_architecture == 'x86_64' and ideascube_version.stdout|int <= "{{ version }}"
 
@@ -53,25 +53,19 @@
   file: path=/var/ideascube/ state=directory owner={{ username }} group={{ username }} recurse=yes
   when: ideascube_version.stdout == ""
 
-- name: Adapt STORAGE_ROOT to Nginx
+- name: Adapt STORAGE_ROOT for Nginx
   replace: dest=/etc/nginx/sites-available/ideascube regexp='/var/ideascube/main/media/' replace='/media/hdd/ideascube/storage/main/media' backup=yes
-  when: ideascube_version.stdout == ""
+  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and  ideascube_version.stdout == ""
 
-- name: Adapt STORAGE_ROOT to Nginx
-  replace: dest=/etc/nginx/sites-available/ideascube regexp='/var/ideascube/static/' replace='/media/hdd/ideascube/storage/static' backup=yes
-  when: ideascube_version.stdout == ""
+- name: Adapt STORAGE_ROOT for Nginx
+  replace: dest=/etc/nginx/sites-available/ideascube regexp='/var/ideascube/static/' replace='/media/hdd/ideascube/storage/static/' backup=yes
+  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and  ideascube_version.stdout == ""
 
 - name: Add IDEASCUBE_ID
   lineinfile: dest=/etc/default/ideascube
               regexp='^'
               line='IDEASCUBE_ID={{ ideascube_id }}'
               state=present
-  when: ideascube_version.stdout == ""
-
-- name: Post install
-  become_user: ideascube
-  shell: ideascube collectstatic --noinput
-  shell: ideascube migrate
   when: ideascube_version.stdout == ""
 
 - lineinfile: dest=/etc/nginx/sites-available/ideascube regexp='443' state=absent
@@ -86,14 +80,28 @@
   service: name=uwsgi enabled=yes
   when: ideascube_version.stdout == ""
 
-- name: Download CSV to import
-  get_url: url={{filer_bsf}}/KB_Liste_contenus_videos+fiches.csv dest=/media/hdd/IdeasServerContent/videos/KB_Liste_contenus_videos+fiches.csv
-  when: ideascube_version.stdout == ""
-
-- name: Import data 
+- name: Ideascube collectstatic
+  become: yes
   become_user: ideascube
-  shell: ideascube import_medias /media/hdd/IdeasServerContent/videos/KB_Liste_contenus_videos+fiches.csv
-  when: ideascube_version.stdout == ""
+  shell: ideascube collectstatic --noinput
+  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and  ideascube_version.stdout == ""
+
+- name: Ideascube migrate
+  become: yes
+  become_user: ideascube
+  shell: ideascube migrate
+  notify: restart uwsgi
+  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and  ideascube_version.stdout == ""
+
+# - name: Download CSV to import
+#   get_url: url={{filer_bsf}}/KB_Liste_contenus_videos+fiches.csv dest=/media/hdd/IdeasServerContent/videos/KB_Liste_contenus_videos+fiches.csv
+#   when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and  ideascube_version.stdout == ""
+
+# - name: Import data 
+#   become: yes
+#   become_user: ideascube
+#   shell: ideascube import_medias /media/hdd/IdeasServerContent/videos/KB_Liste_contenus_videos+fiches.csv
+#   when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and  ideascube_version.stdout == ""
 
 - tasks:
   include: ../../../post_tasks.yml task=ideascube version={{ version }}

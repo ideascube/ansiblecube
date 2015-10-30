@@ -1,48 +1,49 @@
 ---
-  - file: path=/opt/mongo state=directory mode=0755
-    register: mongodb
+- file: path=/opt/mongo state=directory mode=0755
+  register: mongodb
 
-  - file: path=/media/hdd/mongodb/ state=absent
+# TO DELETE
+- file: path=/media/hdd/mongodb/ state=absent
 
-  - name: download mongo package
-    get_url: url={{filer_bsf}}/mongo.zip dest=/home/mongo.zip
-    when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l' and mongodb.changed
+- name: download mongo package
+  get_url: url={{filer_bsf}}/mongo.zip dest=/home/mongo.zip
+  when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l' and mongodb.changed
 
-  - name: Copy and unzip mongodb armhf version archive
-    unarchive: src=/home/mongo.zip dest=/opt/ copy=no
-    when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l' and mongodb.changed
+- name: Copy and unzip mongodb armhf version archive
+  unarchive: src=/home/mongo.zip dest=/opt/ copy=no
+  when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l' and mongodb.changed
 
-  - file: src=/opt/mongo/bin/mongod dest=/usr/bin/mongod state=link
-    when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l' and mongodb.changed
+- file: src=/opt/mongo/bin/mongod dest=/usr/bin/mongod state=link
+  when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l' and mongodb.changed
 
-  - name: Install mongodb from repository
-    apt: name=mongodb state=latest
-    when: ansible_architecture == 'x86_64' and mongodb.changed
+- name: Install mongodb from repository
+  apt: name=mongodb state=latest
+  when: ansible_architecture == 'x86_64' and mongodb.changed
 
-  - name: Add mongodb user
-    user: name=mongodb group=nogroup shell=/etc/false createhome=no
-    when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l' and mongodb.changed
+- name: Add mongodb user
+  user: name=mongodb group=nogroup shell=/etc/false createhome=no
+  when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l' and mongodb.changed
 
-  - name: Create log directory
-    file: path=/var/log/mongodb/ state=directory mode=0755 owner=mongodb group=nogroup
-    when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l' and mongodb.changed
+- name: Create log directory
+  file: path=/var/log/mongodb/ state=directory mode=0755 owner=mongodb group=nogroup
+  when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l' and mongodb.changed
 
-  - name: Create data directory
-    file: path=/media/hdd/mongodb state=directory mode=0755 owner=mongodb group=nogroup
-    when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l' and mongodb.changed
+- name: Create data directory
+  file: path=/media/hdd/mongodb state=directory mode=0755 owner=mongodb group=nogroup
+  when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l' and mongodb.changed
 
-  - name: Setup startup file
-    copy: src=init.d dest=/etc/init.d/mongodb owner=root group=root mode="u+x"
-    when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l' and mongodb.changed
+- name: Setup startup file
+  copy: src=init.d dest=/etc/init.d/mongodb owner=root group=root mode="u+x"
+  when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l' and mongodb.changed
 
-  - name: Enable service mongodb
-    service: name=mongodb enabled=yes
-    when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l' and mongodb.changed
+- name: Enable service mongodb
+  service: name=mongodb enabled=yes
+  when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l' and mongodb.changed
 
-  - name: Copy mongodb conf
-    copy: src=mongodb.conf dest=/etc/mongodb.conf owner=root group=root
-    when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l' and mongodb.changed
+- name: Copy mongodb conf
+  copy: src=mongodb.conf dest=/etc/mongodb.conf owner=root group=root
+  when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l' and mongodb.changed
 
-  - tasks:
-    include: ../../../post_tasks.yml task=mongodb version=1
-    when: mongodb.changed
+- tasks:
+  include: ../../../post_tasks.yml task=mongodb version=1
+  when: mongodb.changed

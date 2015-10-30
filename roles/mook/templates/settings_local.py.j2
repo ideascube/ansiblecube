@@ -3,7 +3,7 @@ port = 5000
 class Config(object):
     SECRET_KEY = 'YTTRYTFdez576576HGFytfytfzytfzyy76677' # Use e.g. http://randomkeygen.com/
     MONGODB_DB = '{{mook_name}}'
-    CORS_ORIGINS = ['{{mook_front_server_name}}']
+    CORS_ORIGINS = ['http://{{mook_front_server_name}}']
     ## Local servers only:
     CENTRAL_SERVER_HOST = 'http://api.bsfcampus.org'
     UPLOAD_FILES_PATH = "{{ mook_path }}{{ mook_name }}/static/"
