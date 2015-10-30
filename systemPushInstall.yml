@@ -7,11 +7,11 @@
 
   roles:
   # It will install all the basic package and configuration for the KoomBook/IdeasBox
-  - systemInit
-  - nginx
-  - dnsmasq
-  - hostapd
-  - iptables
+  # - systemInit
+  # - nginx
+  # - dnsmasq
+  # - hostapd
+  # - iptables
   - kalite
 
   - role: ideascube
