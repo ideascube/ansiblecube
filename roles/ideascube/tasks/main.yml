@@ -54,7 +54,7 @@
   when: ideascube_version.stdout == ""
 
 - name: Adapt STORAGE_ROOT for Nginx
-  replace: dest=/etc/nginx/sites-available/ideascube regexp='/var/ideascube/main/media/' replace='/media/hdd/ideascube/storage/main/media' backup=yes
+  replace: dest=/etc/nginx/sites-available/ideascube regexp='/var/ideascube/main/media/' replace='/media/hdd/ideascube/storage/main/media/' backup=yes
   when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and  ideascube_version.stdout == ""
 
 - name: Adapt STORAGE_ROOT for Nginx

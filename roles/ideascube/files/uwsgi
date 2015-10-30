@@ -13,7 +13,7 @@
 PATH=/opt/uwsgi:/sbin:/bin:/usr/sbin:/usr/bin
 DAEMON=/usr/local/bin/uwsgi 
 
-OWNER=www-data
+OWNER=ideascube
 
 NAME=uwsgi
 DESC=uwsgi
