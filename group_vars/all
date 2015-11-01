@@ -13,7 +13,7 @@ central_server: ansible@37.187.151.52
 filer_bsf: http://filer.bsf-intranet.org
 
 #Apps path
-mook_path: /home/{{ username }}/
+mook_path: /home/{{ username }}
 
 #Domaine name 
 kalite_server_name: kalite.{{hostname}}

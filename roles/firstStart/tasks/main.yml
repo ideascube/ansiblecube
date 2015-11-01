@@ -17,7 +17,17 @@
   register: public_ip
   when: st.stat.exists == False
 
-- copy: content=id,{{ date }},{{ time }},{{ ideascubeName }},{{ UUID }},{{ ansible_default_ipv4["macaddress"] }},{{ ansible_default_ipv4["address"] }},{{ public_ip.stdout }}\n dest=/etc/firstStart.csv
+- stat: path=/media/hdd/ubuntudoc_fr_2009-01.zim
+  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
+  register: p
+
+- set_fact: hdd_access="0"
+  when: p.stat.isdir is not defined and st.stat.exists == False and (ansible_architecture == "armhf" or ansible_architecture == "armv7l")
+
+- set_fact: hdd_access="1"
+  when: p.stat.isdir is defined and st.stat.exists == False and (ansible_architecture == "armhf" or ansible_architecture == "armv7l")
+
+- copy: content=id,{{ date }},{{ time }},{{ ideascubeName }},{{ UUID }},{{hdd_access}},{{ ansible_default_ipv4["macaddress"] }},{{ ansible_default_ipv4["address"] }},{{ public_ip.stdout }}\n dest=/etc/firstStart.csv
   when: st.stat.exists == False
 
 - raw: cat /etc/firstStart.csv | ssh -p 443 {{ central_server }} "cat >> ./ansible/UUID/firstStart.csv"
@@ -42,6 +52,13 @@
   replace: dest=/etc/dhcp/dhclient-exit-hooks.d/ansiblePullUpdate regexp='initPullUpdate.yml' replace='update_{{ ideascube_id }}.yml' backup=yes
   when: st.stat.exists == False
   ignore_errors: yes
+
+- stat: path={{ mook_path }}/bsfcampus/api/settings_local.py
+  register: mook
+
+- name: add conf for Mook
+  lineinfile: dest={{ mook_path }}/bsfcampus/api/settings_local.py regexp='' insertafter=EOF line='    CENTRAL_SERVER_KEY = \"{{ideascubeName}}\" \n    CENTRAL_SERVER_SECRET = \"{{UUID}}\"' owner={{username}} group={{username}} mode=755
+  when: st.stat.exists == False and mook.stat.exists == True
 
 # - command: /sbin/shutdown -h now
 #   when: st.stat.exists == False

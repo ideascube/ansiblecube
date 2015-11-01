@@ -29,5 +29,17 @@
 - file: src=/media/hdd/khanVideos/content/ dest=/var/ka-lite/.kalite/content state=link
   when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
 
+- name: Fix rights
+  file: path=/media/hdd/khanVideos/content/ state=directory owner=ka-lite group=ka-lite recurse=yes
+
+- file: path=/etc/nginx/sites-enabled/kalite.conf state=absent
+
+- name: Copy nginx vhost
+  template: src=kalite.vhost.j2 dest=/etc/nginx/sites-available/kalite
+
+- name: Nginx enable Virtual host
+  file: src=/etc/nginx/sites-available/kalite dest=/etc/nginx/sites-enabled/kalite state=link
+  notify: restart nginx
+
 - tasks:
   include: ../../../post_tasks.yml task=kalite version=1

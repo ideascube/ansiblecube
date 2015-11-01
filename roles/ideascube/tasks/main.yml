@@ -80,6 +80,9 @@
   service: name=uwsgi enabled=yes
   when: ideascube_version.stdout == ""
 
+- name: Install Pillow
+  pip: name=Pillow
+
 - name: Ideascube collectstatic
   become: yes
   become_user: ideascube
