@@ -7,7 +7,6 @@
   roles:
     # Has to be always enable
     - logs
-    - appinventor
 
     # Uncomment to lunch an update
     # - role: ideascube

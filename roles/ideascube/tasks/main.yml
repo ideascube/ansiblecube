@@ -10,7 +10,7 @@
   when: ideascube_version.stdout == ""
 
 - name: Create log dir for uwsgi
-  file: path=/var/log/uwsgi state=directory owner=www-data group=www-data mode=0751
+  file: path=/var/log/uwsgi state=directory owner={{ username }} group={{ username }} mode=0751
   when: ideascube_version.stdout == ""
 
 - name: Setup startup file for uwsgi
