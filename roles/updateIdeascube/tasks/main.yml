@@ -21,10 +21,10 @@
   become_user: ideascube
   shell: ideascube import_medias /media/hdd/IdeasServerContent/videos/KB_Liste_contenus_videos+fiches.csv
 
-- name: Import backup 
-  become: yes
-  become_user: ideascube
-  shell: ideascube backup restore {{filer_bsf}}/backupIdc.tar.gz
+# - name: Import backup 
+#   become: yes
+#   become_user: ideascube
+#   shell: ideascube backup restore {{filer_bsf}}/backupIdc.tar.gz
 
 - tasks:
   include: ../../../post_tasks.yml task=updateIdeascube version={{ version }}
