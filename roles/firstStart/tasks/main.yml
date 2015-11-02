@@ -10,10 +10,10 @@
 - hostname: name={{ ideascubeName |replace("_", "-") }}
   when: st.stat.exists == False
 
-- lineinfile: dest=/etc/hosts regexp='^127.0.0.1' insertafter='127.0.0.1' line='127.0.0.1 localhost localhost.localdomain {{ ideascubeName |replace("_", "-") }}.lan {{ ideascubeName |replace("_", "-") }} {{ hostname }} {{ mook_front_server_name }}' owner=root group=root mode=0644
+- lineinfile: dest=/etc/hosts regexp='^127.0.0.1' insertafter='127.0.0.1' line='127.0.0.1 localhost localhost.localdomain' owner=root group=root mode=0644
   when: st.stat.exists == False
 
-- lineinfile: dest=/etc/hosts regexp='^{{ hotspotip }}' insertafter='{{ hotspotip }}' line='{{ hotspotip }} {{ ideascubeName }} {{ ideascubeName |replace("_", "-") }}' owner=root group=root mode=0644
+- lineinfile: dest=/etc/hosts regexp='^{{ hotspotip }}' insertafter='{{ hotspotip }}' line='{{ hotspotip }} {{ ideascubeName }} {{ ideascubeName |replace("_", "-") }}.lan {{ hostname }} {{ mook_front_server_name }}' owner=root group=root mode=0644
   when: st.stat.exists == False
 
 - shell: wget -qO- http://ipecho.net/plain ; echo

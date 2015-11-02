@@ -1,31 +1,37 @@
 ---
 - name: Create storage dir for ideascube
   file: path=/media/hdd/ideascube/storage/main state=directory owner={{ username }} group={{ username }}
+  register: ideascube_installed
 
 - name: Ideascube collectstatic
   become: yes
   become_user: ideascube
   shell: ideascube collectstatic --noinput
+  when: ideascube_installed.changed
 
 - name: Ideascube migrate
   become: yes
   become_user: ideascube
   shell: ideascube migrate
   notify: restart uwsgi
+  when: ideascube_installed.changed
 
 - name: Download CSV to import
   get_url: url={{filer_bsf}}/KB_Liste_contenus_videos+fiches.csv dest=/media/hdd/IdeasServerContent/videos/KB_Liste_contenus_videos+fiches.csv
+  when: ideascube_installed.changed
 
 - name: Import data 
   become: yes
   become_user: ideascube
   shell: ideascube import_medias /media/hdd/IdeasServerContent/videos/KB_Liste_contenus_videos+fiches.csv
+  when: ideascube_installed.changed
 
 # - name: Import backup 
 #   become: yes
 #   become_user: ideascube
 #   shell: ideascube backup restore {{filer_bsf}}/backupIdc.tar.gz
+#   when: ideascube_installed.changed
 
 - tasks:
   include: ../../../post_tasks.yml task=updateIdeascube version={{ version }}
-  when: ideascube_version.stdout <= "{{ version }}"
+  when: ideascube_installed.changed
