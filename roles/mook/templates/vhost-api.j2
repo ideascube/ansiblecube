@@ -1,11 +1,11 @@
 server {
     listen   80;
     server_name {{mook_api_server_name}};
-    root {{ mook_path }}{{ mook_name }}/api;
+    root {{ mook_path }}/{{ mook_name }}/api;
     proxy_read_timeout 600s;
 
     location /static/ {
-        alias {{ mook_path }}{{ mook_name }}/static/;
+        alias {{ mook_path }}/{{ mook_name }}/static/;
         expires 30d;
     }
     location / {
@@ -13,4 +13,3 @@ server {
         uwsgi_pass unix:/tmp/{{ mook_name }}-api.sock;
     }
 }
-

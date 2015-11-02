@@ -10,7 +10,10 @@
 - hostname: name={{ ideascubeName |replace("_", "-") }}
   when: st.stat.exists == False
 
-- lineinfile: dest=/etc/hosts regexp='^127.0.0.1' insertafter='127.0.0.1' line='127.0.0.1 localhost {{ ideascubeName }} {{ ideascubeName |replace("_", "-") }}' owner=root group=root mode=0644
+- lineinfile: dest=/etc/hosts regexp='^127.0.0.1' insertafter='127.0.0.1' line='127.0.0.1 localhost localhost.localdomain {{ ideascubeName |replace("_", "-") }}.lan {{ ideascubeName |replace("_", "-") }} {{ hostname }} {{ mook_front_server_name }}' owner=root group=root mode=0644
+  when: st.stat.exists == False
+
+- lineinfile: dest=/etc/hosts regexp='^{{ hotspotip }}' insertafter='{{ hotspotip }}' line='{{ hotspotip }} {{ ideascubeName }} {{ ideascubeName |replace("_", "-") }}' owner=root group=root mode=0644
   when: st.stat.exists == False
 
 - shell: wget -qO- http://ipecho.net/plain ; echo
@@ -33,8 +36,8 @@
 - raw: cat /etc/firstStart.csv | ssh -p 443 {{ central_server }} "cat >> ./ansible/UUID/firstStart.csv"
   when: st.stat.exists == False
 
-- lineinfile: dest=/etc/network/interfaces regexp='wpa' state=absent
-  when: st.stat.exists == False
+# - lineinfile: dest=/etc/network/interfaces regexp='wpa' state=absent
+#   when: st.stat.exists == False
 
 - file: path=/etc/localtime state=absent
   when: st.stat.exists == False
@@ -56,9 +59,15 @@
 - stat: path={{ mook_path }}/bsfcampus/api/settings_local.py
   register: mook
 
+# Hardcoded, TODO switch to dynamic !! 
 - name: add conf for Mook
   lineinfile: dest={{ mook_path }}/bsfcampus/api/settings_local.py regexp='' insertafter=EOF line='    CENTRAL_SERVER_KEY = \"{{ideascubeName}}\" \n    CENTRAL_SERVER_SECRET = \"{{UUID}}\"' owner={{username}} group={{username}} mode=755
   when: st.stat.exists == False and mook.stat.exists == True
 
-# - command: /sbin/shutdown -h now
-#   when: st.stat.exists == False
+- file: path=/media/hdd/mongodb/ state=absent
+
+- name: Create data directory
+  file: path=/media/hdd/mongodb state=directory mode=0755 owner=mongodb group=nogroup
+
+- command: /sbin/reboot
+  when: st.stat.exists == False

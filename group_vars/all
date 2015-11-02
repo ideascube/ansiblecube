@@ -15,8 +15,8 @@ filer_bsf: http://filer.bsf-intranet.org
 #Apps path
 mook_path: /home/{{ username }}
 
-#Domaine name 
-kalite_server_name: kalite.{{hostname}}
+#Domaine name
+kalite_server_name: khanacademy.{{hostname}}
 mook_front_server_name: bsfcampus.{{ hostname }}
 mook_api_server_name: api.{{ mook_name }}.{{ hostname }}
 appinventor_server_name: appinventor.{{hostname}}

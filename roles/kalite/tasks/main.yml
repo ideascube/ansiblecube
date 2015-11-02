@@ -1,38 +1,13 @@
 ---
-- name: Check if kalite is installed
-  command: dpkg-query -W ka-lite-raspberry-pi
-  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
-  register: kalite_check_deb
-  failed_when: kalite_check_deb.rc > 1
-  changed_when: kalite_check_deb.rc == 1
+- name: Install kalite
+  pip: name=ka-lite-static
 
-- name: download Ka lite
-  get_url: url={{filer_bsf}}/kalite014ARM.deb dest=/home/kalite014ARM.deb
-  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and kalite_check_deb.rc == 1
+- file: path=/home/ideascube/.kalite/content state=absent
 
-- shell: export DEBIAN_FRONTEND=noninteractive
-  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and kalite_check_deb.rc == 1
-
-- name: configure kalite
-  debconf: name=ka-lite-raspberry-pi question='ka-lite/user' value='ka-lite' vtype='string'
-  debconf: name=ka-lite-raspberry-pi question='ka-lite/init' value='true' vtype='boolean'
-  debconf: name=ka-lite-raspberry-pi question='ka-lite/download-assessment-items' value='false' vtype='boolean'
-  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and kalite_check_deb.rc == 1
-
-- name: install kalite
-  apt: deb=/home/kalite014ARM.deb force=yes
-  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and kalite_check_deb.rc == 1
-
-- file: path=/var/ka-lite/.kalite/content state=absent
-  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
-
-- file: src=/media/hdd/khanVideos/content/ dest=/var/ka-lite/.kalite/content state=link
-  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
+- file: src=/media/hdd/khanVideos/content/ dest=/home/ideascube/.kalite/content state=link
 
 - name: Fix rights
-  file: path=/media/hdd/khanVideos/content/ state=directory owner=ka-lite group=ka-lite recurse=yes
-
-- file: path=/etc/nginx/sites-enabled/kalite.conf state=absent
+  file: path=/media/hdd/khanVideos/content/ state=directory owner={{ username }} group={{ username }} recurse=yes
 
 - name: Copy nginx vhost
   template: src=kalite.vhost.j2 dest=/etc/nginx/sites-available/kalite
@@ -40,6 +15,16 @@
 - name: Nginx enable Virtual host
   file: src=/etc/nginx/sites-available/kalite dest=/etc/nginx/sites-enabled/kalite state=link
   notify: restart nginx
+
+- name: Setup startup file
+  template: src=kalite.j2 dest=/etc/init.d/kalite owner=root group=root mode="u+x"
+
+- name: Enable service kalite
+  service: name=kalite enabled=yes
+
+# Has to be done by hand...
+# $> sudo su -s /bin/bash ideascube
+# $> kalite manage setup
 
 - tasks:
   include: ../../../post_tasks.yml task=kalite version=1

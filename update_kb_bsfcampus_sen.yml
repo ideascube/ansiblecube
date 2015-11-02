@@ -5,18 +5,15 @@
 - hosts: localhost
 
   roles:
-    # Start. has to be always enable 
-    - logs
-    # Stop. has to be always enable 
-    # - hostapd
     # # Can be enable/disable on demand but affect all devices
 
-    # - role: ideascube
-    #   version: "0.4.0-1"
-    #   ideascube_id: "kb_bsfcampus_sen"
+    - role: ideascube
+      version: "0.4.0-1"
+      ideascube_id: "kb_bsfcampus_sen"
+      register: ideascube
 
     # - appinventor
-    # #   when: ansible_hostname == 'KoomBook483'
+    #   when: ansible_hostname == 'KoomBook483'
 
     # # Update Mook plateform
     # - mongodb
@@ -56,5 +53,10 @@
     #- { role: iptables, when: ansible_hostname == 'KoomBook603' }
     #- { role: ideascube, when: ansible_hostname == 'KoomBook484' }
 
-  # post_tasks:
-  #   - command: /sbin/shutdown -h now
+    # Start. has to be always enable 
+    - logs
+    # Stop. has to be always enable 
+
+  post_tasks:
+    - command: /sbin/shutdown -h now
+      when: ideascube.changed

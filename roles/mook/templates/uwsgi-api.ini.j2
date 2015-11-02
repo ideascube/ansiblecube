@@ -2,14 +2,14 @@
 uid=ideascube
 gid=ideascube
 
-chdir  = {{ mook_path }}{{ mook_name }}/api 
+chdir  = {{ mook_path }}/{{ mook_name }}/api 
 module = wsgi_local:application
 
 master = true
 processes = 5
 
 socket = /tmp/{{ mook_name }}-api.sock
-chmod-socket = 660
+chmod-socket = 666
 vacuum = true
 
 catch-exceptions = true

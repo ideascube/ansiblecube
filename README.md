@@ -49,19 +49,20 @@ The first initialisation called with the playbook ```SystemPushInstall``` has be
 Please have a look at https://github.com/ideascube/ansiblecube/blob/master/systemPushInstall.yml for more infos.
 
 ### Before lunching the script
-Take a look at the variables file to set everything as would like : https://github.com/ideascube/ansiblecube/blob/master/group_vars/all
+Take a look at the variables file to set everything as would like : https://github.com/ideascube/ansiblecube/blob/master/group_vars/all, espacialy ```hotspot_name``` and ```hostname```
 
 Now you are ready to execute your first playbook
 ```ansible-playbook -i hosts -l SystemPushInstall -u root systemPushInstall.yml```
 
 At the end of the process you should have complet system with :
- - A regular linux user
+ - A regular linux user called ideascube 
  - An SSL multiplexer capable of redirecting port 443 to 22 if SSH traffic or 2443 (change nginx.conf) if SSL traffic
  - Copy a new .bashrc, timezone, vimrc
  - Configure the system to use a new playbook for automatic update from GitHub
  - Install and configure : Nginx, dnsmasq, hostapd (wifi hostspot) and Ideascube
+ - And much more, look at the sources...
 
 ## Keep your system up to date ! 
 Now you have a basic ideascube system ready to work, great !
-
 The second part of this doc is going to show you how you can keep up to date your system where ever this one is.
+

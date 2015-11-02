@@ -14,7 +14,7 @@
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
 DESC="Serveur de synchro {{mook_name}}"
 NAME={{mook_name}}-sync-daemon
-DAEMON="{{ mook_path }}{{ mook_name }}/api/env/bin/python2.7 {{ mook_path }}{{ mook_name }}/api/manage.py"
+DAEMON="{{ mook_path }}/{{ mook_name }}/api/env/bin/python2.7 {{ mook_path }}/{{ mook_name }}/api/manage.py"
 PIDFILE=/var/run/$NAME.pid
 SCRIPTNAME=/etc/init.d/$NAME
 
@@ -42,7 +42,7 @@ do_start()
 	#   0 if daemon has been started
 	#   1 if daemon was already running
 	#   2 if daemon could not be started
-	source {{ mook_path }}{{ mook_name }}/api/env/bin/activate 
+	source {{ mook_path }}/{{ mook_name }}/api/env/bin/activate 
 	start-stop-daemon --quiet --start --chuid $OWNER:$OWNER --user $OWNER --pidfile $PIDFILE --exec $DAEMON -- $DAEMON_ARGS
 }
 

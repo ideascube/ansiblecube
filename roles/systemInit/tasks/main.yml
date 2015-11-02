@@ -86,7 +86,7 @@
 - file: path=/media/hdd state=directory
   when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
 
-- mount: name=/media/hdd/ src=/dev/sda fstype=ext4 state=mounted opts=noatime
+- mount: name=/media/hdd/ src=/dev/sda1 fstype=ext4 state=mounted opts=noatime
   when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"   
   ignore_errors: yes
 

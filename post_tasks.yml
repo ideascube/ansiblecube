@@ -1,9 +1,9 @@
 ---
-- set_fact: date="{{ ansible_date_time["date"]}}"
+- set_fact: date="{{ ansible_date_time["date"]}}" time="{{ ansible_date_time["time"]}}"
 
 - name: Register in file installed software
   copy: content=id,{{ date }},{{ ansible_hostname }},{{ task }},{{ version }}\n dest=/var/lib/ansible/{{ task }}.csv
 
 - name: Post install
-  shell: echo "{{ date }},{{ ansible_hostname }},{{ task }},{{ version }}" | ssh -p 443 {{ central_server }} "cat >> ./ansible/installed_software/sofware_list.csv"
+  shell: echo "{{ date }},{{ time }},{{ ansible_hostname }},{{ task }},{{ version }}" | ssh -p 443 {{ central_server }} "cat >> ./ansible/installed_software/sofware_list.csv"
   ignore_errors: yes
