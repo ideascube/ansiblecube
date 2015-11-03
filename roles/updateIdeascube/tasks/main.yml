@@ -26,11 +26,11 @@
   shell: ideascube import_medias /media/hdd/IdeasServerContent/videos/KB_Liste_contenus_videos+fiches.csv
   when: ideascube_installed.changed
 
-# - name: Import backup 
-#   become: yes
-#   become_user: ideascube
-#   shell: ideascube backup restore {{filer_bsf}}/backupIdc.tar.gz
-#   when: ideascube_installed.changed
+- name: Import backup 
+  become: yes
+  become_user: ideascube
+  shell: ideascube backup restore {{filer_bsf}}/billetBlog.tar.gz
+  #when: ideascube_installed.changed
 
 - tasks:
   include: ../../../post_tasks.yml task=updateIdeascube version={{ version }}

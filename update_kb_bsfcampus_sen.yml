@@ -10,7 +10,6 @@
     - role: updateIdeascube
       version: "0.4.0-1"
       ideascube_id: "kb_bsfcampus_sen"
-      register: ideascube
 
     # - appinventor
     #   when: ansible_hostname == 'KoomBook483'
@@ -57,6 +56,5 @@
     - logs
     # Stop. has to be always enable 
 
-  post_tasks:
-    - command: /sbin/shutdown -h now
-      when: ideascube.changed
+  # post_tasks:
+  #   - command: /sbin/shutdown -h now
