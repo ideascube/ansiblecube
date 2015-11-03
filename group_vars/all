@@ -7,7 +7,7 @@ client_interface: wlan1
 
 #System
 username: ideascube
-password: $6$H3xgmUGzvIx$KTtdYdXFVbj/ybNvNq6ybT4qCr1MQlKE3hN8lljA6J1meanl0E6kuJ2/NGAfRCvSoPXNQQ5jACxHkRpuKmKfH0
+password: $6$YcJS1HjRAv/$1bUosoPalzHEvfpx71UhnG6vCeckTGbA5U1i6UpA8X21Jrv7fYRPyNrq/YWuiBp3xQWd5kRRhrKKPHcbTkkfQ/
 repo_url: https://github.com/ideascube/ansiblecube.git
 central_server: ansible@37.187.151.52
 filer_bsf: http://filer.bsf-intranet.org
