@@ -56,5 +56,5 @@
     - logs
     # Stop. has to be always enable 
 
-  post_tasks:
-    - command: /sbin/shutdown -h now
+  # post_tasks:
+  #   - command: /sbin/shutdown -h now
