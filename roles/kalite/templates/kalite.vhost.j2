@@ -13,7 +13,7 @@ server {
     server_name {{kalite_server_name}};
 
     # Default value, overwritten in nginx.d
-    set $kalite_home /var/ka-lite/.kalite;
+    set $kalite_home /home/ideascube/.kalite/;
     include /etc/ka-lite/nginx.d/*.conf;
 
     location /static {
