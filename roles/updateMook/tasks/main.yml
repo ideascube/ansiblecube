@@ -16,9 +16,11 @@
   register: mookFront
 
 - name: Create tmp directory
-  file: path={{ mook_path }}/{{ mook_name }}/static/tmp state=directory mode=0755 owner={{ username }} group={{ username }}
+  file: path=/media/hdd/bsfcampus/static/tmp state=directory mode=0755 owner={{ username }} group={{ username }}
   when: mookBack.changed
 
 - tasks:
   include: ../../../post_tasks.yml task=updateMook version=1
   when: mookBack.changed or mookFront.changed
+
+- command: /sbin/reboot
