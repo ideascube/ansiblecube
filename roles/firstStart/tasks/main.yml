@@ -66,6 +66,8 @@
 
 - file: path=/media/hdd/mongodb/ state=absent
 
+- file: path=/media/hdd/ideascube/ state=absent
+
 - name: Create data directory
   file: path=/media/hdd/mongodb state=directory mode=0755 owner=mongodb group=nogroup
 
