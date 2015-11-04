@@ -15,9 +15,6 @@
   git: repo=ssh://git@altssh.bitbucket.org:443/gryzzlab/mook-bsf-front-end-backbone.git dest={{ mook_path }}/{{ mook_name }}/front accept_hostkey=yes update=yes
   register: mookFront
 
-- name: Create tmp directory
-  file: path=/media/hdd/bsfcampus/static/tmp state=directory mode=0755 owner={{ username }} group={{ username }}
-
 - tasks:
   include: ../../../post_tasks.yml task=updateMook version=1
   when: mookBack.changed or mookFront.changed

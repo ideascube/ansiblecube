@@ -71,5 +71,8 @@
 
 - file: src=/media/hdd/khanVideos/content/ dest=/home/ideascube/.kalite/content state=link
 
+- name: Create tmp directory
+  file: path=/media/hdd/bsfcampus/static/tmp state=directory mode=0755 owner={{ username }} group={{ username }}
+
 - command: /sbin/reboot
   when: st.stat.exists == False
