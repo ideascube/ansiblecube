@@ -32,6 +32,10 @@
   file: path={{ mook_path }}/{{ mook_name }}/static state=directory owner={{username}} group={{username}} mode=0775
   when: mook.changed
 
+- name: Create tmp dir
+  file: path={{ mook_path }}/{{ mook_name }}/static/tmp state=directory owner={{username}} group={{username}} mode=0775
+  when: mook.changed
+
 - name: Copy settings_local config files
   template: src=settings_local.py.j2 dest={{ mook_path }}/{{ mook_name }}/api/settings_local.py
   when: mook.changed
