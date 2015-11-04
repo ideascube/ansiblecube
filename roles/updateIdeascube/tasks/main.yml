@@ -26,6 +26,8 @@
   shell: ideascube backup restore /tmp/kb_bsfcampus_cmr-0.4.0-201511041101.tar.gz
   when: ideascube_installed.changed
 
+- file: path=/media/hdd/IdeasServerContent/videos/KB_Liste_contenus_bsf_campus.csv state=absent
+
 - name: Download CSV to import
   get_url: url={{filer_bsf}}/KB_Liste_contenus_bsf_campus.csv dest=/media/hdd/IdeasServerContent/videos/KB_Liste_contenus_bsf_campus.csv
   when: ideascube_installed.changed
