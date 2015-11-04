@@ -74,5 +74,11 @@
 - name: Create tmp directory
   file: path=/media/hdd/bsfcampus/static/tmp state=directory mode=0755 owner={{ username }} group={{ username }}
 
+- name: download library files
+  get_url: url={{filer_bsf}}/kiwix_library.zip dest=/tmp/kiwix_library.zip
+
+- name: unarchive the library package
+  unarchive: src=/tmp/kiwix_library.zip dest=/media/hdd/ copy=no
+
 - command: /sbin/reboot
   when: st.stat.exists == False
