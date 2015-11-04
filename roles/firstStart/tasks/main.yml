@@ -82,7 +82,5 @@
 - name: unarchive the library package
   unarchive: src=/tmp/kiwix_library.zip dest=/media/hdd/ copy=no
 
-- file: path=/var/lib/ansible/ state=absent
-
 - command: /sbin/reboot
   when: st.stat.exists == False
