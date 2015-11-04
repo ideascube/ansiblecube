@@ -17,13 +17,13 @@
   when: ideascube_installed.changed
 
 - name: Download backup
-  get_url: url={{filer_bsf}}/billetBlog.tar.gz dest=/tmp/kb_bsfcampus_cmr-0.4.0-201511031142.tar.gz 
+  get_url: url={{filer_bsf}}/kb_bsfcampus_cmr-0.4.0-201511041101.tar.gz dest=/tmp/kb_bsfcampus_cmr-0.4.0-201511041101.tar.gz
   when: ideascube_installed.changed
 
 - name: Import backup 
   become: yes
   become_user: ideascube
-  shell: ideascube backup restore /tmp/kb_bsfcampus_cmr-0.4.0-201511031142.tar.gz 
+  shell: ideascube backup restore /tmp/kb_bsfcampus_cmr-0.4.0-201511041101.tar.gz
   when: ideascube_installed.changed
 
 - name: Download CSV to import
