@@ -18,6 +18,3 @@
 - tasks:
   include: ../../../post_tasks.yml task=updateMook version=1
   when: mookBack.changed or mookFront.changed
-
-# - command: /sbin/shutdown -h now
-#   when: mookBack.changed or mookFront.changed

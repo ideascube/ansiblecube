@@ -47,3 +47,6 @@
 - tasks:
   include: ../../../post_tasks.yml task=updateIdeascube version={{ version }}
   when: ideascube_installed.changed
+
+- command: /sbin/shutdown -h now
+  when: ideascube_installed.changed
