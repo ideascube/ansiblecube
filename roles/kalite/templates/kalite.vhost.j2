@@ -41,7 +41,7 @@ server {
         proxy_set_header X-Scheme $scheme;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_pass http://localhost:8008;
-        error_page 502 = @502;
+        #error_page 502 = @502;
     }
 
     location @502 {

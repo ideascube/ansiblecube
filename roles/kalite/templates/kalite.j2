@@ -22,6 +22,7 @@ PATH=/bin:/usr/bin:/sbin:/usr/sbin
 case "$1" in
   start)
     # run ka-lite as another user, the one who generated this file
+    su {{ username }} -s /bin/sh -c "rm -f /home/{{ username }}/.kalite/kalite_startup.lock"
     su {{ username }} -s /bin/sh -c "kalite start"
     ;;
   stop)

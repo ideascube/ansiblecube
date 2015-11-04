@@ -52,7 +52,7 @@
   when: st.stat.exists == False
 
 - name: Set ansible pull for the right project
-  replace: dest=/etc/dhcp/dhclient-exit-hooks.d/ansiblePullUpdate regexp='initPullUpdate.yml' replace='update_{{ ideascube_id }}.yml' backup=yes
+  replace: dest=/etc/dhcp/dhclient-exit-hooks.d/ansiblePullUpdate regexp='initPullUpdate.yml' replace='update_{{ ideascube_id }}.yml'
   when: st.stat.exists == False
   ignore_errors: yes
 

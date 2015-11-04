@@ -4,18 +4,21 @@
 ####
 - name: Clone mook api
   become_user: ideascube
-  git: repo=ssh://git@altssh.bitbucket.org:443/gryzzlab/mook-bsf-api.git dest={{ mook_path }}/{{ mook_name }}/api accept_hostkey=yes
+  git: repo=ssh://git@altssh.bitbucket.org:443/gryzzlab/mook-bsf-api.git dest={{ mook_path }}/{{ mook_name }}/api accept_hostkey=yes update=yes
+  register: mookBack
 
 ####
 # FRONT END CONFIGURATION
 ####
 - name: Clone mook front
   become_user: ideascube
-  git: repo=ssh://git@altssh.bitbucket.org:443/gryzzlab/mook-bsf-front-end-backbone.git dest={{ mook_path }}/{{ mook_name }}/front accept_hostkey=yes
+  git: repo=ssh://git@altssh.bitbucket.org:443/gryzzlab/mook-bsf-front-end-backbone.git dest={{ mook_path }}/{{ mook_name }}/front accept_hostkey=yes update=yes
+  register: mookFront
 
-- name: Create data directory
+- name: Create tmp directory
   file: path={{ mook_path }}/{{ mook_name }}/static/tmp state=directory mode=0755 owner={{ username }} group={{ username }}
+  when: mookBack.changed
 
 - tasks:
-  include: ../../../post_tasks.yml task=mook version=1
-  
+  include: ../../../post_tasks.yml task=updateMook version=1
+  when: mookBack.changed or mookFront.changed
