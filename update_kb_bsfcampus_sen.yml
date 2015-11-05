@@ -4,18 +4,18 @@
 #It will be always localhost
 - hosts: localhost
 
-  pre_tasks:
-    - lineinfile: dest=/etc/network/interfaces regexp='wpa' state=absent
+  # pre_tasks:
+  #   - lineinfile: dest=/etc/network/interfaces regexp='wpa' state=absent
 
   roles:
     # # Can be enable/disable on demand but affect all devices
 
-    - role: updateIdeascube
-      version: "0.4.0-1"
-      ideascube_id: "kb_bsfcampus_sen"
+    # - role: updateIdeascube
+    #   version: "0.4.0-1"
+    #   ideascube_id: "kb_bsfcampus_sen"
 
-    - role: updateMook
-      mook_name: "bsfcampus"
+    # - role: updateMook
+    #   mook_name: "bsfcampus"
 
     # - appinventor
     #   when: ansible_hostname == 'KoomBook483'
@@ -62,8 +62,7 @@
     # - logs
     # Stop. has to be always enable 
 
-  post_tasks:
-    - file: path=/etc/udev/rules.d/70-persistent-net.rules state=absent
+  # post_tasks:
+  #   - file: path=/etc/udev/rules.d/70-persistent-net.rules state=absent
   #   - replace: dest=/etc/dhcp/dhclient-exit-hooks.d/ansiblePullUpdate regexp='sleep 120 &&' replace='sleep 120 && rm -rf /var/lib/ansible/ &&'
-
   #   - command: /sbin/shutdown -h now
