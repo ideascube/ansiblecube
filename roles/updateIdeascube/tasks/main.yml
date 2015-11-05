@@ -32,13 +32,13 @@
   shell: ideascube backup restore /tmp/kb_bsfcampus_cmr-0.4.0-201511041101.tar.gz
   when: st.stat.exists == False
 
-- name: Download new videos
-  get_url: url={{filer_bsf}}/videosIdeascube.zip dest=/media/hdd/videosIdeascube.zip
-  when: st.stat.exists == False
+# - name: Download new videos
+#   get_url: url={{filer_bsf}}/videosIdeascube.zip dest=/media/hdd/videosIdeascube.zip
+#   when: st.stat.exists == False
 
-- name: unarchive videos
-  unarchive: src=/media/hdd/videosIdeascube.zip dest=/media/hdd/IdeasServerContent/videos/ copy=no
-  when: st.stat.exists == False
+# - name: unarchive videos
+#   unarchive: src=/media/hdd/videosIdeascube.zip dest=/media/hdd/IdeasServerContent/videos/ copy=no
+#   when: st.stat.exists == False
 
 - name: Delete existing csv file
   file: path=/media/hdd/IdeasServerContent/videos/KB_Liste_contenus_bsf_campus.csv state=absent
