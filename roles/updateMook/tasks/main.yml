@@ -22,7 +22,7 @@
   when: st.stat.exists == False
 
 - name: Retrieve KoomBook info 
-  set_fact: koombookName="{{ lookup('csvfile', 'id file=/etc/firstStart.csv delimiter=, col=5') }}" uuid="{{ lookup('csvfile', 'id file=/etc/firstStart.csv delimiter=, col=6') }}"
+  set_fact: koombookName="{{ lookup('csvfile', 'id file=/etc/firstStart.csv delimiter=, col=3') }}" uuid="{{ lookup('csvfile', 'id file=/etc/firstStart.csv delimiter=, col=4') }}"
   when: st.stat.exists == False
   ignore_errors: yes
   
@@ -39,6 +39,7 @@
 # FRONT END CONFIGURATION
 ####
 - file: path={{ mook_path }}/{{ mook_name }}/front state=absent
+  when: st.stat.exists == False
 
 - name: Clone mook front
   become_user: ideascube
@@ -64,6 +65,7 @@
   when: st.stat.exists == False
 
 - file: path={{ mook_path }}/{{ mook_name }}/done state=touch
+  when: st.stat.exists == False
 
 - tasks:
   include: ../../../post_tasks.yml task=updateMook version=1
