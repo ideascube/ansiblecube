@@ -32,13 +32,6 @@
   shell: ideascube backup restore /tmp/kb_bsfcampus_cmr-0.4.0-201511041101.tar.gz
   when: st.stat.exists == False
 
-- file: path=/media/hdd/IdeasServerContent/videos/KB_Liste_contenus_bsf_campus.csv state=absent
-  when: st.stat.exists == False
-
-- name: Download CSV to import
-  get_url: url={{filer_bsf}}/KB_Liste_contenus_bsf_campus.csv dest=/media/hdd/IdeasServerContent/videos/KB_Liste_contenus_bsf_campus.csv
-  when: st.stat.exists == False
-
 - name: Download new videos
   get_url: url={{filer_bsf}}/videosIdeascube.zip dest=/tmp/videosIdeascube.zip
   when: st.stat.exists == False
@@ -47,7 +40,15 @@
   unarchive: src=/tmp/videosIdeascube.zip dest=/media/hdd/IdeasServerContent/videos/ copy=no
   when: st.stat.exists == False
 
-- name: Import data 
+- name: Delete existing csv file
+  file: path=/media/hdd/IdeasServerContent/videos/KB_Liste_contenus_bsf_campus.csv state=absent
+  when: st.stat.exists == False
+
+- name: Download CSV to import
+  get_url: url={{filer_bsf}}/KB_Liste_contenus_bsf_campus.csv dest=/media/hdd/IdeasServerContent/videos/KB_Liste_contenus_bsf_campus.csv
+  when: st.stat.exists == False
+
+- name: Import CSV 
   become: yes
   become_user: ideascube
   shell: ideascube import_medias /media/hdd/IdeasServerContent/videos/KB_Liste_contenus_bsf_campus.csv
