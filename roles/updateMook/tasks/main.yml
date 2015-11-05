@@ -35,6 +35,10 @@
   copy: src=settings_central.py dest={{ mook_path }}/{{ mook_name }}/api owner={{username}} group={{username}} mode=755
   when: st.stat.exists == False
 
+- name: Create tmp directory
+  file: path=/media/hdd/{{ mook_name }}/static/tmp state=directory mode=0755 owner={{ username }} group={{ username }}
+  when: st.stat.exists == False
+
 ####
 # FRONT END CONFIGURATION
 ####
