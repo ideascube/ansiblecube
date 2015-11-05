@@ -9,6 +9,6 @@
     - logs
 
     #Uncomment to lunch an update
-    - role: ideascube
-      version: "0.4.0-1"
-      ideascube_id: "kb_cdf_fra"
+    # - role: ideascube
+    #   version: "0.4.0-1"
+    #   ideascube_id: "kb_cdf_fra"
