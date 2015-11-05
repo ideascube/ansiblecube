@@ -1,0 +1,19 @@
+// Make a copy of this file called config.js and customize configuration.
+
+define(function(){ 
+
+	var config = {};
+
+	// Either define the API root URL by uncommenting the following line:
+	config.api_root_url = 'http://{{mook_api_server_name}}';
+
+	// Or fill the settings below to generate the default URL (same hostname, port 5000 if central, 5001 if local)
+
+	config.server_type = 'local';
+	// Uncomment the line below if the server is on a custom port.
+	// config.server_port = 5000;
+	config.api_path = '';
+
+	return config;
+
+});

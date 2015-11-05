@@ -7,12 +7,12 @@
   roles:
     # # Can be enable/disable on demand but affect all devices
 
-    # - role: updateMook
-    #   mook_name: "bsfcampus"
-
     - role: updateIdeascube
       version: "0.4.0-1"
       ideascube_id: "kb_bsfcampus_sen"
+
+    - role: updateMook
+      mook_name: "bsfcampus"
 
     # - appinventor
     #   when: ansible_hostname == 'KoomBook483'
