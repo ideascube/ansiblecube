@@ -1,54 +1,61 @@
 ---
+- stat: path=/media/hdd/ideascube/storage/main/media/mediacenter/document/administrationIdeascube.webm
+  register: st
+
+- file: path=/media/hdd/ideascube/ state=absent
+  when: st.stat.exists == False
+
 - name: Create storage dir for ideascube
   file: path=/media/hdd/ideascube/storage/main state=directory owner={{ username }} group={{ username }}
-  register: ideascube_installed
+  when: st.stat.exists == False
 
 - name: Ideascube collectstatic
   become: yes
   become_user: ideascube
   shell: ideascube collectstatic --noinput
-  when: ideascube_installed.changed
+  when: st.stat.exists == False
 
 - name: Ideascube migrate
   become: yes
   become_user: ideascube
   shell: ideascube migrate
   notify: restart uwsgi
-  when: ideascube_installed.changed
+  when: st.stat.exists == False
 
 - name: Download backup
   get_url: url={{filer_bsf}}/kb_bsfcampus_cmr-0.4.0-201511041101.tar.gz dest=/tmp/kb_bsfcampus_cmr-0.4.0-201511041101.tar.gz
-  when: ideascube_installed.changed
+  when: st.stat.exists == False
 
 - name: Import backup 
   become: yes
   become_user: ideascube
   shell: ideascube backup restore /tmp/kb_bsfcampus_cmr-0.4.0-201511041101.tar.gz
-  when: ideascube_installed.changed
+  when: st.stat.exists == False
 
 - file: path=/media/hdd/IdeasServerContent/videos/KB_Liste_contenus_bsf_campus.csv state=absent
+  when: st.stat.exists == False
 
 - name: Download CSV to import
   get_url: url={{filer_bsf}}/KB_Liste_contenus_bsf_campus.csv dest=/media/hdd/IdeasServerContent/videos/KB_Liste_contenus_bsf_campus.csv
-  when: ideascube_installed.changed
+  when: st.stat.exists == False
 
 - name: Download new videos
   get_url: url={{filer_bsf}}/videosIdeascube.zip dest=/tmp/videosIdeascube.zip
-  when: ideascube_installed.changed
+  when: st.stat.exists == False
 
 - name: unarchive videos
   unarchive: src=/tmp/videosIdeascube.zip dest=/media/hdd/IdeasServerContent/videos/ copy=no
-  when: ideascube_installed.changed
+  when: st.stat.exists == False
 
 - name: Import data 
   become: yes
   become_user: ideascube
   shell: ideascube import_medias /media/hdd/IdeasServerContent/videos/KB_Liste_contenus_bsf_campus.csv
-  when: ideascube_installed.changed
+  when: st.stat.exists == False
 
 - tasks:
   include: ../../../post_tasks.yml task=updateIdeascube version={{ version }}
-  when: ideascube_installed.changed
+  when: st.stat.exists == False
 
-- command: /sbin/shutdown -h now
-  when: ideascube_installed.changed
+# - command: /sbin/shutdown -h now
+#   when: st.stat.exists == False
