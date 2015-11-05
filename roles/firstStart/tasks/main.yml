@@ -75,7 +75,8 @@
 
 - name: Create tmp directory
   file: path=/media/hdd/bsfcampus/static/tmp state=directory mode=0755 owner={{ username }} group={{ username }}
-
+  when: st.stat.exists == False and mook.stat.exists == True
+  
 - name: download library files
   get_url: url={{filer_bsf}}/kiwix_library.zip dest=/tmp/kiwix_library.zip
 
