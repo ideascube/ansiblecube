@@ -33,11 +33,11 @@
   when: st.stat.exists == False
 
 - name: Download new videos
-  get_url: url={{filer_bsf}}/videosIdeascube.zip dest=/tmp/videosIdeascube.zip
+  get_url: url={{filer_bsf}}/videosIdeascube.zip dest=/media/hdd/videosIdeascube.zip
   when: st.stat.exists == False
 
 - name: unarchive videos
-  unarchive: src=/tmp/videosIdeascube.zip dest=/media/hdd/IdeasServerContent/videos/ copy=no
+  unarchive: src=/media/hdd/videosIdeascube.zip dest=/media/hdd/IdeasServerContent/videos/ copy=no
   when: st.stat.exists == False
 
 - name: Delete existing csv file
