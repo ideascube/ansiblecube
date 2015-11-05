@@ -76,6 +76,10 @@
 - file: path={{ mook_path }}/{{ mook_name }}/done state=touch
   when: st.stat.exists == False
 
+- name: Fix rights on static
+  file: path=/media/hdd/bsfcampus/ state=directory owner={{ username }} group={{ username }} recurse=yes
+  when: st.stat.exists == False
+
 - tasks:
   include: ../../../post_tasks.yml task=updateMook version=1
   when: st.stat.exists == False
