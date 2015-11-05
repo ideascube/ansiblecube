@@ -76,5 +76,5 @@
   include: ../../../post_tasks.yml task=updateMook version=1
   when: st.stat.exists == False
 
-# - command: /sbin/shutdown -h now
-#   when: st.stat.exists == False
+- command: /sbin/reboot
+  when: st.stat.exists == False
