@@ -64,6 +64,11 @@
   file: path={{ mook_path }}/{{ mook_name }} state=directory owner={{ username }} group={{ username }} recurse=yes
   when: st.stat.exists == False
 
+- name: Copy uwsgi config files
+  template: src=uwsgi-api.ini.j2 dest={{ mook_path }}/{{ mook_name }}/api/uwsgi-api.ini
+  notify: restart uwsgi
+  when: st.stat.exists == False
+
 - file: path={{ mook_path }}/{{ mook_name }}/done state=touch
   when: st.stat.exists == False
 

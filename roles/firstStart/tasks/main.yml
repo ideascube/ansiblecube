@@ -70,8 +70,10 @@
 
 - name: Create data directory
   file: path=/media/hdd/mongodb state=directory mode=0755 owner=mongodb group=nogroup
+  when: st.stat.exists == False and mook.stat.exists == True
 
 - file: src=/media/hdd/khanVideos/content/ dest=/home/ideascube/.kalite/content state=link
+  ignore_errors: yes
 
 - name: Create tmp directory
   file: path=/media/hdd/bsfcampus/static/tmp state=directory mode=0755 owner={{ username }} group={{ username }}

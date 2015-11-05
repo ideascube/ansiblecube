@@ -51,6 +51,7 @@
   become: yes
   become_user: ideascube
   shell: ideascube import_medias /media/hdd/IdeasServerContent/videos/KB_Liste_contenus_bsf_campus.csv
+  notify: restart uwsgi
   when: st.stat.exists == False
 
 - tasks:
