@@ -5,6 +5,5 @@
   roles:
     # Has to be always enable 
     - role: firstStart
-      timezone: Africa/Bujumbura
-      #timezone: Europe/Paris
-      ideascube_id: "kb_ifb_bdi"
+      timezone: Africa/Abidjan
+      ideascube_id: "kb_bsfcampus_civ"
