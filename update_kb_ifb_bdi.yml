@@ -8,9 +8,9 @@
     # Has to be always enable
     - logs
     # - kalite
-    - role: kiwix
-      kiwixProject: gutenberg
-      portProject: 8007
+    # - role: kiwix
+    #   kiwixProject: gutenberg
+    #   portProject: 8007
 
     # #Uncomment to lunch an update
     # - role: updateIdeascube
