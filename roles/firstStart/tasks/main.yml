@@ -20,6 +20,14 @@
   register: public_ip
   when: st.stat.exists == False
 
+- mount: name=/media/hdd/ src=/dev/sda1 fstype=ext4 state=mounted opts=noatime
+  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"   
+  ignore_errors: yes
+
+- mount: name=/media/hdd/ src=/dev/sda fstype=ext4 state=mounted opts=noatime
+  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"   
+  ignore_errors: yes
+
 - stat: path=/media/hdd/ubuntudoc_fr_2009-01.zim
   when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
   register: p

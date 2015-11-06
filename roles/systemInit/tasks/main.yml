@@ -86,10 +86,6 @@
 - file: path=/media/hdd state=directory
   when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
 
-- mount: name=/media/hdd/ src=/dev/sda1 fstype=ext4 state=mounted opts=noatime
-  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"   
-  ignore_errors: yes
-
 - name: Create local directory to work from
   file: path=/var/lib/ansible/local state=directory owner=root group=root mode=0751
 
