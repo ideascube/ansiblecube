@@ -1,25 +1,32 @@
 ---
+# This firstStart role aim to initialyse a new master. We have to set custom settings for each devices, 
+# this is what we are doing here
+
+# Check if the firstStart.csv is present, if YES we skip the whole role 
 - stat: path=/etc/firstStart.csv
   register: st
 
+# Set date et time 
 - set_fact: date="{{ ansible_date_time["date"]}}" time="{{ ansible_date_time["time"]}}"
 
+# Set an ideascubeName et generate an UUID
 - set_fact: ideascubeName="{{ ideascube_id }}_{{ 1000 | random }}" UUID="{{ ansible_default_ipv4["macaddress"] | hash('md5') }}"
   when: st.stat.exists == False
 
+# An hostname can not have _ so we are switching to -, python can not have - so using _ sometime too
 - hostname: name={{ ideascubeName |replace("_", "-") }}
   when: st.stat.exists == False
 
-- lineinfile: dest=/etc/hosts regexp='^127.0.0.1' insertafter='127.0.0.1' line='127.0.0.1 localhost localhost.localdomain' owner=root group=root mode=0644
+# Adding name to the hosts file
+- lineinfile: dest=/etc/hosts regexp='^{{ hotspotip }}' insertafter='{{ hotspotip }}' line='{{ hotspotip }} {{ ideascubeName |replace("_", "-") }}.lan {{ hostname }} {{ mook_front_server_name }}' owner=root group=root mode=0644
   when: st.stat.exists == False
 
-- lineinfile: dest=/etc/hosts regexp='^{{ hotspotip }}' insertafter='{{ hotspotip }}' line='{{ hotspotip }} {{ ideascubeName }} {{ ideascubeName |replace("_", "-") }}.lan {{ hostname }} {{ mook_front_server_name }}' owner=root group=root mode=0644
-  when: st.stat.exists == False
-
+# A way to get the public IP of the device
 - shell: wget -qO- http://ipecho.net/plain ; echo
   register: public_ip
   when: st.stat.exists == False
 
+# Mount etheir /dev/sda1 or /dev/sda, it can change on some devices, it is seems the esiest way to do it
 - mount: name=/media/hdd/ src=/dev/sda1 fstype=ext4 state=mounted opts=noatime
   when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"   
   ignore_errors: yes
@@ -28,28 +35,37 @@
   when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"   
   ignore_errors: yes
 
+# This file should exist on each hard drive. If our variable p is not set, the hdd is not mounted propely 
 - stat: path=/media/hdd/ubuntudoc_fr_2009-01.zim
   when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
   register: p
 
+# Set hdd_access to check if hard drive is propely mounted
 - set_fact: hdd_access="0"
   when: p.stat.isdir is not defined and st.stat.exists == False and (ansible_architecture == "armhf" or ansible_architecture == "armv7l")
 
+# Set hdd_access to check if hard drive is propely mounted
 - set_fact: hdd_access="1"
   when: p.stat.isdir is defined and st.stat.exists == False and (ansible_architecture == "armhf" or ansible_architecture == "armv7l")
 
+# Write all the variables in /etc/firstStart.csv 
 - copy: content=id,{{ date }},{{ time }},{{ ideascubeName }},{{ UUID }},{{hdd_access}},{{ ansible_default_ipv4["macaddress"] }},{{ ansible_default_ipv4["address"] }},{{ public_ip.stdout }}\n dest=/etc/firstStart.csv
   when: st.stat.exists == False
 
+# Send this file over the central_server 
 - raw: cat /etc/firstStart.csv | ssh -p 443 {{ central_server }} "cat >> ./ansible/UUID/firstStart.csv"
   when: st.stat.exists == False
 
+# Remove all the wifi configuration
 # - lineinfile: dest=/etc/network/interfaces regexp='wpa' state=absent
 #   when: st.stat.exists == False
 
+
+# Remove the existing localtime file
 - file: path=/etc/localtime state=absent
   when: st.stat.exists == False
 
+# Set a new localtime file corresponding to the timezone
 - name: set /etc/localtime
   file: src=/usr/share/zoneinfo/{{ timezone }} dest=/etc/localtime state=link
   when: st.stat.exists == False
@@ -64,27 +80,31 @@
   when: st.stat.exists == False
   ignore_errors: yes
 
-- stat: path={{ mook_path }}/bsfcampus/api/settings_local.py
+# Check if a mook project is configured 
+- stat: path={{ mook_path }}/{{ mook_name }}/api/settings_local.py
   register: mook
 
 # Hardcoded, TODO switch to dynamic !! 
 - name: add conf for Mook
-  lineinfile: dest={{ mook_path }}/bsfcampus/api/settings_local.py regexp='' insertafter=EOF line='    CENTRAL_SERVER_KEY = \"{{ideascubeName}}\" \n    CENTRAL_SERVER_SECRET = \"{{UUID}}\"' owner={{username}} group={{username}} mode=755
+  lineinfile: dest={{ mook_path }}/{{ mook_name }}/api/settings_local.py regexp='' insertafter=EOF line='    CENTRAL_SERVER_KEY = \"{{ideascubeName}}\" \n    CENTRAL_SERVER_SECRET = \"{{UUID}}\"' owner={{username}} group={{username}} mode=755
   when: st.stat.exists == False and mook.stat.exists == True
 
+# Remove existing folder
 - file: path=/media/hdd/mongodb/ state=absent
 
+# Remove existing folder
 - file: path=/media/hdd/ideascube/ state=absent
 
 - name: Create data directory
   file: path=/media/hdd/mongodb state=directory mode=0755 owner=mongodb group=nogroup
   when: st.stat.exists == False and mook.stat.exists == True
 
+# Create a symbolic link 
 - file: src=/media/hdd/khanVideos/content/ dest=/home/ideascube/.kalite/content state=link
   ignore_errors: yes
 
-- name: Create tmp directory
-  file: path=/media/hdd/bsfcampus/static/tmp state=directory mode=0755 owner={{ username }} group={{ username }}
+- name: Create static and tmp directory
+  file: path=/media/hdd/{{ mook_name }}/static/tmp state=directory mode=0755 owner={{ username }} group={{ username }}
   when: st.stat.exists == False and mook.stat.exists == True
   
 - name: download library files

@@ -1,5 +1,5 @@
 ---
-# Ansible playbook for Coeur de forêt
+# Ansible playbook for IFB 
 
 #It will be always localhost
 - hosts: localhost

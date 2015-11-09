@@ -55,14 +55,15 @@
     #   portProject: 8011
 
     # Play a role for a specific device
-    - { role: mongodb, when: ansible_hostname == 'kb-bsfcampus-civ-34' }
+    # - { role: mongodb, when: ansible_hostname == 'kb-bsfcampus-civ-34' }
     #- { role: ideascube, when: ansible_hostname == 'KoomBook484' }
 
     # Start. has to be always enable 
     # - logs
     # Stop. has to be always enable 
 
-  # post_tasks:
-  #   - file: path=/etc/udev/rules.d/70-persistent-net.rules state=absent
+  post_tasks:
+    - file: path=/etc/udev/rules.d/70-persistent-net.rules state=absent
   #   - replace: dest=/etc/dhcp/dhclient-exit-hooks.d/ansiblePullUpdate regexp='sleep 120 &&' replace='sleep 120 && rm -rf /var/lib/ansible/ &&'
-  #   - command: /sbin/shutdown -h now
+    - command: /sbin/shutdown -h now
+      when: st.stat.exists == False

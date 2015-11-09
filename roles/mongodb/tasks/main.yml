@@ -2,9 +2,6 @@
 - file: path=/opt/mongo state=directory mode=0755
   register: mongodb
 
-# TO DELETE
-- file: path=/media/hdd/mongodb/ state=absent
-
 - name: download mongo package
   get_url: url={{filer_bsf}}/mongo.zip dest=/home/mongo.zip
   when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l' and mongodb.changed

@@ -79,9 +79,15 @@
 - name: Fix rights on static
   file: path=/media/hdd/bsfcampus/ state=directory owner={{ username }} group={{ username }} recurse=yes
 
+- name: Start to sync database
+  command: su {{ username }} -c \'{{ mook_path }}/{{ mook_name }}/api/env/bin/python2.7 {{ mook_path }}/{{ mook_name }}/api/manage.py sync reset
+
+- name: Sleep for 10min and shutdown
+  sleep: 600
+
 - tasks:
   include: ../../../post_tasks.yml task=updateMook version=1
   when: st.stat.exists == False
 
-- command: /sbin/reboot
-  when: st.stat.exists == False
+# - command: /sbin/reboot
+#   when: st.stat.exists == False
