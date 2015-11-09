@@ -114,5 +114,8 @@
 - name: unarchive the library package
   unarchive: src=/tmp/kiwix_library.zip dest=/media/hdd/ copy=no
 
+# Disable synchro at firstStart
+- replace: dest=/etc/rc.local regexp='su ideascube -c' replace='#su ideascube -c'
+
 - command: /sbin/reboot
   when: st.stat.exists == False
