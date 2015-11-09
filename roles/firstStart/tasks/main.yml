@@ -31,10 +31,10 @@
 
 # Mount etheir /dev/sda1 or /dev/sda
 - mount: name=/media/hdd/ src=/dev/sda1 fstype=ext4 state=mounted opts=noatime
-  when: st.stat.exists == True and (ansible_architecture == "armhf" or ansible_architecture == "armv7l")
+  when: hdd.stat.isblk is defined and (ansible_architecture == "armhf" or ansible_architecture == "armv7l")
 
 - mount: name=/media/hdd/ src=/dev/sda fstype=ext4 state=mounted opts=noatime
-  when: st.stat.exists == False and (ansible_architecture == "armhf" or ansible_architecture == "armv7l")
+  when: hdd.stat.isblk is not defined and (ansible_architecture == "armhf" or ansible_architecture == "armv7l")
 
 # This file should exist on each hard drive. If our variable p is not set, the hdd is not mounted propely 
 - stat: path=/media/hdd/ubuntudoc_fr_2009-01.zim
