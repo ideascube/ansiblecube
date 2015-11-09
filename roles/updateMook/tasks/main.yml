@@ -84,13 +84,13 @@
 - replace: dest=/etc/rc.local regexp='#su ideascube -c' replace='su ideascube -c'
   when: st.stat.exists == False
 
-# - name: Start to sync database
-#   command: su {{ username }} -c '{{ mook_path }}/{{ mook_name }}/api/env/bin/python2.7 {{ mook_path }}/{{ mook_name }}/api/manage.py sync reset' &
-#   when: st.stat.exists == False
+- name: Start to sync database
+  command: su {{ username }} -c '{{ mook_path }}/{{ mook_name }}/api/env/bin/python2.7 {{ mook_path }}/{{ mook_name }}/api/manage.py sync reset' &
+  when: st.stat.exists == False
 
-# - name: Sleep for 15min
-#   pause: minutes=15
-#   when: st.stat.exists == False
+- name: Sleep for 15min
+  pause: minutes=15
+  when: st.stat.exists == False
 
 - tasks:
   include: ../../../post_tasks.yml task=updateMook version=1
