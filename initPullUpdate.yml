@@ -7,3 +7,4 @@
     - role: firstStart
       timezone: Africa/Abidjan
       ideascube_id: "kb_bsfcampus_civ"
+      mook_name: bsfcampus
