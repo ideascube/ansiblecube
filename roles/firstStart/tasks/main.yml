@@ -61,7 +61,6 @@
 # - lineinfile: dest=/etc/network/interfaces regexp='wpa' state=absent
 #   when: st.stat.exists == False
 
-
 # Remove the existing localtime file
 - file: path=/etc/localtime state=absent
   when: st.stat.exists == False
@@ -116,6 +115,8 @@
 
 # Disable synchro at firstStart
 - replace: dest=/etc/rc.local regexp='su ideascube -c' replace='#su ideascube -c'
+
+- file: path=/media/hdd owner={{ username }} group={{ username }} mode=0777
 
 - command: /sbin/reboot
   when: st.stat.exists == False
