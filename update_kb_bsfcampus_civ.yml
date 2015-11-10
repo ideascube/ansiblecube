@@ -2,12 +2,12 @@
 # Ansible playbook for BSF Campus Côte d'Ivoire
 
 #It will be always localhost
-# - hosts: localhost
+- hosts: localhost
 
 #   pre_tasks:
 #     - replace: dest=/etc/default/ideascube regexp='IDEASCUBE_ID=kb_bsfcampus_sen' replace='IDEASCUBE_ID=kb_bsfcampus_civ'
 #       ignore_errors: yes
-#   roles:
+  roles:
     # # Can be enable/disable on demand but affect all devices
 
     # - role: updateIdeascube
