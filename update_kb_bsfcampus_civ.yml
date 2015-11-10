@@ -1,21 +1,21 @@
 ---
-# Ansible playbook for BSF Campus Sénégale
+# Ansible playbook for BSF Campus Côte d'Ivoire
 
 #It will be always localhost
 - hosts: localhost
 
-  # pre_tasks:
-  #   - lineinfile: dest=/etc/network/interfaces regexp='wpa' state=absent
+  pre_tasks:
+    - replace: dest=/etc/default/ideascube/ regexp='IDEASCUBE_ID=kb_bsfcampus_sen' replace='IDEASCUBE_ID=kb_bsfcampus_civ'
 
   roles:
     # # Can be enable/disable on demand but affect all devices
 
-    - role: updateIdeascube
-      version: "0.4.0-1"
-      ideascube_id: "kb_bsfcampus_civ"
+    # - role: updateIdeascube
+    #   version: "0.4.0-1"
+    #   ideascube_id: "kb_bsfcampus_civ"
 
-    - role: updateMook
-      mook_name: "bsfcampus"
+    # - role: updateMook
+    #   mook_name: "bsfcampus"
 
     # - appinventor
     #   when: ansible_hostname == 'KoomBook483'
@@ -63,7 +63,7 @@
     # Stop. has to be always enable 
 
   post_tasks:
-    - file: path=/etc/udev/rules.d/70-persistent-net.rules state=absent
-  #   - replace: dest=/etc/dhcp/dhclient-exit-hooks.d/ansiblePullUpdate regexp='sleep 120 &&' replace='sleep 120 && rm -rf /var/lib/ansible/ &&'
-    - command: /sbin/reboot
-      when: st.stat.exists == False
+  #   - file: path=/etc/udev/rules.d/70-persistent-net.rules state=absent
+  # #   - replace: dest=/etc/dhcp/dhclient-exit-hooks.d/ansiblePullUpdate regexp='sleep 120 &&' replace='sleep 120 && rm -rf /var/lib/ansible/ &&'
+    - command: /sbin/shutdown -h now
+  #     when: st.stat.exists == False
