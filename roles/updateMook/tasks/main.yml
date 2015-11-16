@@ -80,10 +80,6 @@
   file: path=/media/hdd/bsfcampus/ state=directory owner={{ username }} group={{ username }} recurse=yes
   when: st.stat.exists == False
 
-# Enable synchro at next boot
-- replace: dest=/etc/rc.local regexp='#su ideascube -c' replace='su ideascube -c'
-  when: st.stat.exists == False
-
 # - name: Start to sync database
 #   command: su {{ username }} -c '{{ mook_path }}/{{ mook_name }}/api/env/bin/python2.7 {{ mook_path }}/{{ mook_name }}/api/manage.py sync reset' &
 #   when: st.stat.exists == False
