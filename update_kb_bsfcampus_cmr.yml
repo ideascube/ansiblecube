@@ -62,7 +62,8 @@
     # - logs
     # Stop. has to be always enable 
 
-  # post_tasks:
-  #   - file: path=/etc/udev/rules.d/70-persistent-net.rules state=absent
-  # #   - replace: dest=/etc/dhcp/dhclient-exit-hooks.d/ansiblePullUpdate regexp='sleep 120 &&' replace='sleep 120 && rm -rf /var/lib/ansible/ &&'
-  #   - command: /sbin/reboot
+  post_tasks:
+    # - file: path=/etc/udev/rules.d/70-persistent-net.rules state=absent
+  #   - replace: dest=/etc/dhcp/dhclient-exit-hooks.d/ansiblePullUpdate regexp='sleep 120 &&' replace='sleep 120 && rm -rf /var/lib/ansible/ &&'
+    - command: /sbin/reboot
+      when: st.stat.exists == False
