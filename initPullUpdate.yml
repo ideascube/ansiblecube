@@ -5,6 +5,6 @@
   roles:
     # Has to be always enable 
     - role: firstStart
-      timezone: Africa/Abidjan
-      ideascube_id: "kb_bsfcampus_civ"
+      timezone: Africa/Douala
+      ideascube_id: "kb_bsfcampus_cmr"
       mook_name: bsfcampus

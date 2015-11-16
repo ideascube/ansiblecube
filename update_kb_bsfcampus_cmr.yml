@@ -4,19 +4,21 @@
 #It will be always localhost
 - hosts: localhost
 
+  # pre_tasks:
+  #   - lineinfile: dest=/etc/network/interfaces regexp='wpa' state=absent
+
   roles:
-    # Start. has to be always enable 
-    - logs
-    # Stop. has to be always enable 
-    # - hostapd
     # # Can be enable/disable on demand but affect all devices
 
-    - role: ideascube
+    - role: updateIdeascube
       version: "0.4.0-1"
-      ideascube_id: "{{ projectName }}"
+      ideascube_id: "kb_bsfcampus_cmr"
+
+    - role: updateMook
+      mook_name: "bsfcampus"
 
     # - appinventor
-    # #   when: ansible_hostname == 'KoomBook483'
+    #   when: ansible_hostname == 'KoomBook483'
 
     # # Update Mook plateform
     # - mongodb
@@ -56,5 +58,11 @@
     #- { role: iptables, when: ansible_hostname == 'KoomBook603' }
     #- { role: ideascube, when: ansible_hostname == 'KoomBook484' }
 
+    # Start. has to be always enable 
+    # - logs
+    # Stop. has to be always enable 
+
   post_tasks:
-    - command: /sbin/shutdown -h now
+    - file: path=/etc/udev/rules.d/70-persistent-net.rules state=absent
+  #   - replace: dest=/etc/dhcp/dhclient-exit-hooks.d/ansiblePullUpdate regexp='sleep 120 &&' replace='sleep 120 && rm -rf /var/lib/ansible/ &&'
+    - command: /sbin/reboot
