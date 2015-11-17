@@ -5,6 +5,9 @@
 
 - debug: msg="ideascube version {{ ideascube_version.stdout }}"
 
+- name: Install python-networkmanager
+  apt: name=python-networkmanager state=latest
+  
 - name: Install uwsgi
   pip: name=uwsgi
   when: ideascube_version.stdout == ""
