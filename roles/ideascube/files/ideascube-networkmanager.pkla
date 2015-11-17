@@ -1,0 +1,6 @@
+[Allow ideascube to enable Wi-Fi]
+Identity=unix-user:ideascube
+Action=org.freedesktop.NetworkManager.enable-disable-wifi
+ResultActive=yes
+ResultInactive=yes
+ResultAny=yes
