@@ -80,6 +80,9 @@
   service: name=uwsgi enabled=yes
   when: ideascube_version.stdout == ""
 
+- name: Set up Policy Kit authorizations
+  copy: src=ideascube-networkmanager.pkla dest=/var/lib/polkit-1/localauthority/20-org.d/ideascube-networkmanager.pkla owner=root group=root mode=644
+
 # Should be already packaged !!!
 - name: Install libjpeg-dev
   apt: name=libjpeg-dev state=latest
