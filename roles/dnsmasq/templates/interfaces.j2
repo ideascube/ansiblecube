@@ -14,8 +14,3 @@ netmask 255.255.255.0
 iface default inet manual
 
 #up iptables-restore < /etc/iptables.nat
-
-allow-hotplug {{client_interface}}
-iface {{client_interface}} inet dhcp
-    wpa-ssid SSID
-    wpa-psk PASS
