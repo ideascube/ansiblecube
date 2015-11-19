@@ -16,14 +16,16 @@
   file: path=/var/log/uwsgi state=directory owner={{ username }} group={{ username }} mode=0751
   when: ideascube_version.stdout == ""
 
-- name: Setup startup file for uwsgi
-  copy: src=uwsgi dest=/etc/init.d/uwsgi owner=root group=root mode=755
+- name: Setup the uwsgi service
+  copy: src=uwsgi.service dest=/etc/systemd/system/uwsgi.service owner=root group=root mode=755
   when: ideascube_version.stdout == ""
 
 - name: Create apps-enabled dir for uwsgi
   file: path=/etc/uwsgi/apps-enabled state=directory owner=www-data group=www-data mode=0751
   when: ideascube_version.stdout == ""
 
+- name: Add the PAM service
+  copy: src=ideascube.pam dest=/etc/pam.d/ideascube owner=root group=root mode=644
 # For ARM
 
 - name: Create storage dir for ideascube
