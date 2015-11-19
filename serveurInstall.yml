@@ -2,12 +2,17 @@
 #It will be always localhost
 - hosts: localhost
 
+- sudo: True
+
+- vars:
+    hdd: yes
+
   roles:
     # Has to be always enable 
     - role: firstStart
       #timezone: Africa/Dakar
       timezone: Europe/Paris
-      ideascube_id: ""
+      ideascube_id: "idc_demo_fra"
     - systemInit
     - nginx
     - dnsmasq
@@ -18,7 +23,7 @@
 
     - role: ideascube
       version: "0.4.0-1"
-      ideascube_id: ""
+      ideascube_id: "idc_demo_fra"
 
     # - appinventor
     # #   when: ansible_hostname == 'KoomBook483'
@@ -62,4 +67,5 @@
     #- { role: ideascube, when: ansible_hostname == 'KoomBook484' }
 
   post_tasks:
-    - command: /sbin/shutdown -h now
+    # - command: /sbin/shutdown -h now
+    - command: reboot
