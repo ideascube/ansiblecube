@@ -2,10 +2,10 @@
 #It will be always localhost
 - hosts: localhost
 
-- sudo: True
-
 - vars:
-    hdd: yes
+    use_hdd: True
+
+- sudo: True
 
   roles:
     # Has to be always enable 

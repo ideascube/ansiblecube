@@ -6,10 +6,12 @@
 - stat: path=/etc/firstStart.csv
   register: st
 
+- debug: var={{ use_hdd }}
+
 # Set date et time 
 - set_fact: date="{{ ansible_date_time["date"]}}" time="{{ ansible_date_time["time"]}}"
 
-# Set an ideascubeName et generate an UUID
+# Set an ideascubeName and generate an UUID
 - set_fact: ideascubeName="{{ ideascube_id }}_{{ 1000 | random }}" UUID="{{ ansible_default_ipv4["macaddress"] | hash('md5') }}"
   when: st.stat.exists == False
 
@@ -28,10 +30,11 @@
 
 - stat: path=/dev/sda1
   register: hdd
+  when: use_hdd
 
 # Mount etheir /dev/sda1 or /dev/sda
 - mount: name=/media/hdd/ src=/dev/sda1 fstype=ext4 state=mounted opts=noatime
-  when: hdd.stat.isblk is defined and (ansible_architecture == "armhf" or ansible_architecture == "armv7l")
+  when: hdd.stat.isblk is defined and use_hdd == True
 
 - mount: name=/media/hdd/ src=/dev/sda fstype=ext4 state=mounted opts=noatime
   when: hdd.stat.isblk is not defined and (ansible_architecture == "armhf" or ansible_architecture == "armv7l")
