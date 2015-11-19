@@ -22,7 +22,7 @@
    - ntpdate
    - fake-hwclock
 
-- name: Installe ansible
+- name: Install ansible
   pip: name=ansible
 
 - name: Upgrade packages
