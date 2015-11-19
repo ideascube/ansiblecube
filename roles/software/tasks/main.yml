@@ -3,17 +3,17 @@
   apt: pkg=nginx-extras state=installed update_cache=true
 
 - name: Copy nginx vhost
-  template: src=vhost.j2 dest=/etc/nginx/sites-available/framadvd
+  template: src=vhost.j2 dest=/etc/nginx/sites-available/software
   register: vhost
 
 - name: Copy fancyindex.conf
   copy: src=fancyindex.conf dest=/etc/nginx/conf.d/fancyindex.conf owner=root group=root mode=755
 
 - name: Nginx enable Virtual host
-  file: src=/etc/nginx/sites-available/framadvd dest=/etc/nginx/sites-enabled/framadvd state=link
+  file: src=/etc/nginx/sites-available/software dest=/etc/nginx/sites-enabled/software state=link
   when: vhost.changed
   notify: restart nginx
 
 - tasks:
-  include: ../../../post_tasks.yml task=framadvd version=1
+  include: ../../../post_tasks.yml task=software version=1
   

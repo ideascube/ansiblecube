@@ -1,0 +1,14 @@
+---
+# Ansible playbook for Coeur de forêt
+
+#It will be always localhost
+- hosts: localhost
+
+  roles:
+    # Has to be always enable
+    - logs
+
+    #Uncomment to lunch an update
+    - role: updateIdeascube
+      version: "0.4.1-1"
+      ideascube_id: "kb_servir_ben"

@@ -20,7 +20,7 @@ kalite_server_name: khanacademy.{{hostname}}
 mook_front_server_name: bsfcampus.{{ hostname }}
 mook_api_server_name: api.{{ mook_name }}.{{ hostname }}
 appinventor_server_name: appinventor.{{hostname}}
-framadvd_server_name: software.{{hostname}}
+software_server_name: software.{{hostname}}
 
 #Hardware battery
 battery_capacity: 7800
@@ -34,5 +34,5 @@ hostname: koombook.lan
 hotspot_name: koombook
 
 #Apps path
-framadvd_path: /media/hdd/framadvd/
+software_path: /media/hdd/framadvd/
 zim_path: /media/hdd/kiwix_library/
