@@ -24,6 +24,8 @@
   file: path=/etc/uwsgi/apps-enabled state=directory owner=www-data group=www-data mode=0751
   when: ideascube_version.stdout == ""
 
+- name: Add the PAM service
+  copy: src=ideascube.pam dest=/etc/pam.d/ideascube owner=root group=root mode=644
 # For ARM
 
 - name: Create storage dir for ideascube
