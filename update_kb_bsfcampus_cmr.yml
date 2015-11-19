@@ -10,12 +10,12 @@
   roles:
     # # Can be enable/disable on demand but affect all devices
 
-    - role: updateIdeascube
-      version: "0.4.0-1"
-      ideascube_id: "kb_bsfcampus_cmr"
+    # - role: updateIdeascube
+    #   version: "0.4.0-1"
+    #   ideascube_id: "kb_bsfcampus_cmr"
 
-    - role: updateMook
-      mook_name: "bsfcampus"
+    # - role: updateMook
+    #   mook_name: "bsfcampus"
 
     # - appinventor
     #   when: ansible_hostname == 'KoomBook483'
@@ -59,11 +59,11 @@
     #- { role: ideascube, when: ansible_hostname == 'KoomBook484' }
 
     # Start. has to be always enable 
-    # - logs
+    - logs
     # Stop. has to be always enable 
 
-  post_tasks:
+  # post_tasks:
     # - file: path=/etc/udev/rules.d/70-persistent-net.rules state=absent
   #   - replace: dest=/etc/dhcp/dhclient-exit-hooks.d/ansiblePullUpdate regexp='sleep 120 &&' replace='sleep 120 && rm -rf /var/lib/ansible/ &&'
-    - command: /sbin/reboot
-      when: st.stat.exists == False
+    # - command: /sbin/reboot
+    #   when: st.stat.exists == False

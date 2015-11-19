@@ -59,7 +59,7 @@
     #- { role: ideascube, when: ansible_hostname == 'KoomBook484' }
 
     # Start. has to be always enable 
-    # - logs
+    - logs
     # Stop. has to be always enable 
 
   # post_tasks:
