@@ -2,7 +2,7 @@
 - name: Update packages list
   apt: update_cache=yes cache_valid_time=3600
 
-- name: Install requiered package
+- name: Install all requiered package
   apt: name={{ item }} state=latest
   with_items:
    - python-pip
@@ -21,6 +21,7 @@
    - sslh
    - ntpdate
    - fake-hwclock
+   - network-manager
 
 - name: Install ansible
   pip: name=ansible
@@ -28,7 +29,8 @@
 - name: Upgrade packages
   apt: upgrade=safe
 
-- user: name={{ username }}
+- name: Create an ideascube user on the system
+  user: name={{ username }}
         shell=/bin/bash
         groups="sudo,www-data"
         home="/home/{{ username }}"
@@ -57,10 +59,11 @@
               line='/dev/sda {
                       spindown_time = 280
               }'
-  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
+  when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and use_hdd
 
-- name: fake-hwclock conf
+- name: fake-hwclock conf for ARM system 
   copy: content="FORCE=force" dest=/etc/default/fake-hwclock
+  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
 
 - name: Copy fex.file
   template: src=lime2.fex.j2 dest=/boot/bin/lime2.fex
@@ -70,7 +73,7 @@
   shell: /usr/local/bin/fex2bin lime2.fex > lime2.bin chdir=/boot/bin/
   when: ansible_architecture == "armv7l"
 
-- name: Copy visudo file
+- name: Copy visudo file for ideascube user
   template: src=visudo.j2 dest=/etc/sudoers.d/shutdown owner=root group=root mode=0440 validate="/usr/sbin/visudo -cf %s" 
 
 - hostname: name={{ hostname }}
@@ -84,7 +87,20 @@
   when: ansible_architecture == "armv7l"
 
 - file: path=/media/hdd state=directory
-  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
+  when: use_hdd
+
+- name: Define a var to test if /dev/sda1 exist
+  stat: path=/dev/sda1
+  when: use_hdd
+  register: hdd
+
+- name: Mount /dev/sda1
+  mount: name=/media/hdd/ src=/dev/sda1 fstype=ext4 state=mounted opts=noatime
+  when: hdd.stat.isblk is defined and use_hdd
+
+- name: Mount /dev/sda
+  mount: name=/media/hdd/ src=/dev/sda fstype=ext4 state=mounted opts=noatime
+  when: hdd.stat.isblk is defined and hdd.stat.isblk == False and use_hdd
 
 - name: Create local directory to work from
   file: path=/var/lib/ansible/local state=directory owner=root group=root mode=0751

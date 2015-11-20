@@ -2,11 +2,13 @@
 - stat: path=/usr/local/bin/kiwix-serve
   register: st
 
-- name: Copying kiwix binary {{ kiwixProject }}
+- include_vars: group_vars/{{ ansible_architecture }}.yml
+
+- name: Copying kiwix binary {{ kiwixProject }} for ARM
   get_url: url={{filer_bsf}}/kiwix-serve-ARM dest=/usr/local/bin/kiwix-serve mode=755
   when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and st.stat.exists == False
 
-- name: Copying kiwix binary {{ kiwixProject }}
+- name: Copying kiwix binary {{ kiwixProject }} for amd64
   get_url: url={{filer_bsf}}/kiwix-serve-AMD64 dest=/usr/local/bin/kiwix-serve mode=755
   when: ansible_architecture == 'x86_64' and st.stat.exists == False
 
@@ -14,9 +16,13 @@
   get_url: url={{filer_bsf}}/kiwix_library.zip dest=/tmp/kiwix_library.zip
   when: st.stat.exists == False
 
-- name: unarchive the library package
-  unarchive: src=/tmp/kiwix_library.zip dest=/media/hdd/ copy=no
-  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and st.stat.exists == False
+- name: Create a library directory if not exist
+  file: path={{zim_path}} state=directory
+  when: st.stat.exists == False and use_hdd == False
+
+- name: unarchive the library package on system
+  unarchive: src=/tmp/kiwix_library.zip dest={{zim_path}} copy=no
+  when: st.stat.exists == False
 
 - name: Setup startup file for {{ kiwixProject }}
   template: src=kiwix.j2 dest=/etc/init.d/{{ kiwixProject }} owner=root group=root mode=755

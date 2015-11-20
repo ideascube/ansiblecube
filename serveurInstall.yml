@@ -2,24 +2,18 @@
 #It will be always localhost
 - hosts: localhost
 
-- vars:
-    use_hdd: True
-
 - sudo: True
 
   roles:
     # Has to be always enable 
-    - role: firstStart
-      #timezone: Africa/Dakar
-      timezone: Europe/Paris
-      ideascube_id: "idc_demo_fra"
     - systemInit
     - nginx
     - dnsmasq
     - hostapd
     - iptables
+    - uwsgi
     - kalite
-    # # Can be enable/disable on demand but affect all devices
+    # Can be enable/disable on demand but affect all devices
 
     - role: ideascube
       version: "0.4.0-1"
@@ -65,6 +59,12 @@
     # Play a role for a specific device
     #- { role: iptables, when: ansible_hostname == 'KoomBook603' }
     #- { role: ideascube, when: ansible_hostname == 'KoomBook484' }
+
+    - role: firstStart
+      #timezone: Africa/Dakar
+      timezone: Europe/Paris
+      ideascube_id: "idc_demo_fra"
+      mook_name: ""
 
   post_tasks:
     # - command: /sbin/shutdown -h now

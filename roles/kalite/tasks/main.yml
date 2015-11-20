@@ -7,13 +7,15 @@
   become_user: ideascube
   command: kalite start
 
-- file: path=/home/ideascube/.kalite/content state=absent
+- file: path=/home/{{username}}/.kalite/content state=absent
   ignore_errors: yes
 
-- file: src=/media/hdd/khanVideos/content/ dest=/home/ideascube/.kalite/content state=link force=yes
+- file: src=/media/hdd/khanVideos/content/ dest=/home/{{username}}/.kalite/content state=link force=yes
+  when: use_hdd
 
 - name: Fix rights
   file: path=/media/hdd/khanVideos/content/ state=directory owner={{ username }} group={{ username }} recurse=yes
+  when: use_hdd
 
 - name: Copy nginx vhost
   template: src=kalite.vhost.j2 dest=/etc/nginx/sites-available/kalite

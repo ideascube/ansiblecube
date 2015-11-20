@@ -4,6 +4,7 @@ hotspotip: 192.168.2.1
 hotspot_interface: wlan0
 lan_interface: eth0
 client_interface: wlan1
+wpa_pass: KBcampus
 
 #System
 username: ideascube
@@ -11,6 +12,9 @@ password: $6$YcJS1HjRAv/$1bUosoPalzHEvfpx71UhnG6vCeckTGbA5U1i6UpA8X21Jrv7fYRPyNr
 repo_url: https://github.com/ideascube/ansiblecube.git
 central_server: ansible@37.187.151.52
 filer_bsf: http://filer.bsf-intranet.org
+use_hdd: True
+send_to_central_server: True
+import_ideascube_data: True
 
 #Apps path
 mook_path: /home/{{ username }}
@@ -32,7 +36,3 @@ enable_power_button_power_off: 1
 #Network
 hostname: koombook.lan
 hotspot_name: koombook
-
-#Apps path
-software_path: /media/hdd/framadvd/
-zim_path: /media/hdd/kiwix_library/
