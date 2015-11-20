@@ -5,4 +5,4 @@ hotspot_name: ideasbox
 
 #Apps path
 software_path: /home/{{ username }}/framadvd
-zim_path: /usr/local/share/kiwix/data/library/
+zim_path: /usr/local/share/kiwix/data

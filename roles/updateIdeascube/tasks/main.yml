@@ -59,6 +59,3 @@
 - tasks:
   include: ../../../post_tasks.yml task=updateIdeascube version={{ version }}
   when: st.stat.exists == False
-
-# - command: /sbin/shutdown -h now
-#   when: st.stat.exists == False

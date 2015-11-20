@@ -1,4 +1,6 @@
 ---
+- include_vars: group_vars/{{ ansible_architecture }}.yml
+
 - name: Installs nginx extra
   apt: pkg=nginx-extras state=installed update_cache=true
 

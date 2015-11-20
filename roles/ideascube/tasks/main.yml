@@ -7,25 +7,7 @@
 
 - name: Install python-networkmanager
   apt: name=python-networkmanager state=latest
-  
-- name: Install uwsgi
-  pip: name=uwsgi
-  when: ideascube_version.stdout == ""
 
-- name: Create log dir for uwsgi
-  file: path=/var/log/uwsgi state=directory owner={{ username }} group={{ username }} mode=0751
-  when: ideascube_version.stdout == ""
-
-- name: Setup the uwsgi service
-  copy: src=uwsgi.service dest=/etc/systemd/system/uwsgi.service owner=root group=root mode=755
-  when: ideascube_version.stdout == ""
-
-- name: Create apps-enabled dir for uwsgi
-  file: path=/etc/uwsgi/apps-enabled state=directory owner=www-data group=www-data mode=0751
-  when: ideascube_version.stdout == ""
-
-- name: Add the PAM service
-  copy: src=ideascube.pam dest=/etc/pam.d/ideascube owner=root group=root mode=644
 # For ARM
 
 - name: Create storage dir for ideascube
@@ -81,20 +63,22 @@
   file: src=/etc/uwsgi/apps-available/ideascube.ini dest=/etc/uwsgi/apps-enabled/ideascube.ini state=link
   when: ideascube_version.stdout == ""
 
-- name: Enable service uwsgi
-  service: name=uwsgi enabled=yes
+- name: Set up Policy Kit authorizations for wifi managment
+  copy: src=ideascube-networkmanager.pkla dest=/var/lib/polkit-1/localauthority/20-org.d/ideascube-networkmanager.pkla owner=root group=root mode=644
+  when: ideascube_version.stdout == ""
+  ignore_errors: yes
+
+- name: Add the PAM service
+  copy: src=ideascube.pam dest=/etc/pam.d/ideascube owner=root group=root mode=644
   when: ideascube_version.stdout == ""
 
-- name: Set up Policy Kit authorizations
-  copy: src=ideascube-networkmanager.pkla dest=/var/lib/polkit-1/localauthority/20-org.d/ideascube-networkmanager.pkla owner=root group=root mode=644
+# # Should be already packaged !!!
+# - name: Install libjpeg-dev
+#   apt: name=libjpeg-dev state=latest
 
-# Should be already packaged !!!
-- name: Install libjpeg-dev
-  apt: name=libjpeg-dev state=latest
-
-# Should be already packaged !!!
-- name: Install Pillow
-  pip: name=Pillow
+# # Should be already packaged !!!
+# - name: Install Pillow
+#   pip: name=Pillow
 
 - name: Ideascube collectstatic
   become: yes
@@ -111,15 +95,13 @@
 
 - name: Download CSV to import
   get_url: url={{filer_bsf}}/KB_Liste_contenus_videos+fiches.csv dest=/media/hdd/IdeasServerContent/videos/KB_Liste_contenus_videos+fiches.csv
-  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and  ideascube_version.stdout == ""
+  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and  ideascube_version.stdout == "" and import_ideascube_data == True
 
 - name: Import data 
   become: yes
   become_user: ideascube
   shell: ideascube import_medias /media/hdd/IdeasServerContent/videos/KB_Liste_contenus_videos+fiches.csv
-  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and  ideascube_version.stdout == ""
-
-# Import command 
+  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and  ideascube_version.stdout == "" and import_ideascube_data == True
 
 - tasks:
   include: ../../../post_tasks.yml task=ideascube version={{ version }}
