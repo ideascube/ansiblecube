@@ -21,7 +21,6 @@
    - sslh
    - ntpdate
    - fake-hwclock
-   - network-manager
 
 - name: Install ansible
   pip: name=ansible

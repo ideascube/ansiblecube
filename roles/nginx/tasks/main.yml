@@ -8,7 +8,7 @@
    - apache2.2-bin
    - apache2.2-common
 
-- name: Installs nginx web server
+- name: Install nginx web server
   apt: pkg=nginx state=installed update_cache=true
 
 - name: Remove default nginx vhost config file (if configured).

@@ -5,8 +5,11 @@
 
 - debug: msg="ideascube version {{ ideascube_version.stdout }}"
 
-- name: Install python-networkmanager
-  apt: name=python-networkmanager state=latest
+- name: Install all requiered package
+  apt: name={{ item }} state=latest
+  with_items:
+   - python-networkmanager
+   - network-manager
 
 # For ARM
 

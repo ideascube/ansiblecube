@@ -17,7 +17,7 @@
 
     - role: ideascube
       version: "0.4.0-1"
-      ideascube_id: "idc_demo_fra"
+      ideascube_id: "mapoon"
 
     # - appinventor
     # #   when: ansible_hostname == 'KoomBook483'
@@ -61,9 +61,8 @@
     #- { role: ideascube, when: ansible_hostname == 'KoomBook484' }
 
     - role: firstStart
-      #timezone: Africa/Dakar
       timezone: Europe/Paris
-      ideascube_id: "idc_demo_fra"
+      ideascube_id: "mapoon"
       mook_name: ""
 
   post_tasks:

@@ -55,5 +55,5 @@
   - name: All done ! You can clone your SD card. Update your initPullUpdate.yml to the right project
     file: path=/etc/udev/rules.d/70-persistent-net.rules state=absent
   
-  - name: Shutdown now !
-    command: /sbin/shutdown -h now
+  - name: Reboot now !
+    command: /sbin/reboot
