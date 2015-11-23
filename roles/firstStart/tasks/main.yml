@@ -124,7 +124,7 @@
 
 - name: unarchive the library package on system
   unarchive: src=/tmp/kiwix_library.zip dest=/usr/local/share/kiwix/data/library/ copy=no
-  when: st.stat.exists == False and use_hdd = False
+  when: st.stat.exists == False and use_hdd == False
 
 - name: Fix rights on /media/hdd, otherwhise mongodb user can not cross the folder
   file: path=/media/hdd owner={{ username }} group={{ username }} mode=0777
