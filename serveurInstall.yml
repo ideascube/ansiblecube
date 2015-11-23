@@ -44,7 +44,7 @@
     - role: kiwix
       kiwixProject: gutenberg
       portProject: 8007
-    - role: kiwix
+    # - role: kiwix
     #   kiwixProject: universcience
     #   portProject: 8009
     # - role: kiwix
