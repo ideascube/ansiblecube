@@ -116,6 +116,8 @@
   get_url: url={{filer_bsf}}/kiwix_library.zip dest=/tmp/kiwix_library.zip
   when: st.stat.exists == False
 
+- debug: var=use_hdd
+
 - name: unarchive the library package on external hard drive
   unarchive: src=/tmp/kiwix_library.zip dest=/media/hdd/ copy=no
   when: st.stat.exists == False and use_hdd
