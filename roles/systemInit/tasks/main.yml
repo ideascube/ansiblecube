@@ -73,9 +73,7 @@
   when: ansible_architecture == "armv7l"
 
 - name: Copy visudo file for ideascube user
-  template: src=visudo.j2 dest=/etc/sudoers.d/shutdown owner=root group=root mode=0440 validate="/usr/sbin/visudo -cf %s" 
-
-- hostname: name={{ hostname }}
+  template: src=visudo.j2 dest=/etc/sudoers.d/shutdown owner=root group=root mode=0440 validate="/usr/sbin/visudo -cf %s"
 
 - name: Copy patch U-Boot package
   get_url: url={{filer_bsf}}/linux-u-boot-lime2_4.3_armhf.deb dest=/tmp/linuxUboot.deb owner=root group=root mode=755
