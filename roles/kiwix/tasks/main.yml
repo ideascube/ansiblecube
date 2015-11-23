@@ -18,7 +18,7 @@
 
 - name: Create a library directory if not exist
   file: path={{zim_path}} state=directory
-  when: st.stat.exists == False and use_hdd == False
+  when: st.stat.exists == False
 
 - name: unarchive the library package on system
   unarchive: src=/tmp/kiwix_library.zip dest={{zim_path}} copy=no
