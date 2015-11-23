@@ -1,8 +1,9 @@
 #!/bin/bash
 
 sudo apt-get update 
-sudo apt-get install python-pip git 
+sudo apt-get install -y python-pip git python-dev
 sudo pip install ansible markupsafe 
+echo "localhost ansible_connection=local" > /etc/ansible/hosts
 cd /tmp/
 git clone https://github.com/ideascube/ansiblecube.git 
 cd ansiblecube/ 
