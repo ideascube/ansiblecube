@@ -2,8 +2,6 @@
 #It will be always localhost
 - hosts: localhost
 
-- sudo: True
-
   roles:
     # Has to be always enable 
     - systemInit

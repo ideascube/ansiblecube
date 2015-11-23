@@ -12,9 +12,9 @@ password: $6$YcJS1HjRAv/$1bUosoPalzHEvfpx71UhnG6vCeckTGbA5U1i6UpA8X21Jrv7fYRPyNr
 repo_url: https://github.com/ideascube/ansiblecube.git
 central_server: ansible@37.187.151.52
 filer_bsf: http://filer.bsf-intranet.org
-use_hdd: True
-send_to_central_server: True
-import_ideascube_data: True
+use_hdd: False
+send_to_central_server: False
+import_ideascube_data: False
 
 #Apps path
 mook_path: /home/{{ username }}
