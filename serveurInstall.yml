@@ -8,13 +8,13 @@
     - nginx
     - dnsmasq
     - hostapd
-    - iptables
+    - ipptables
     - uwsgi
     - kalite
     # Can be enable/disable on demand but affect all devices
 
     - role: ideascube
-      version: "0.4.0-1"
+      version: "0.4.1-1"
       ideascube_id: "mapoon"
 
     # - appinventor
