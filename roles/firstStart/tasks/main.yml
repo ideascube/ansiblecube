@@ -93,11 +93,11 @@
 
 - name: Remove Mongodb database folder
   file: path=/media/hdd/mongodb/ state=absent
-  when: st.stat.exists == False and hdd_access == 1
+  when: st.stat.exists == False and use_hdd
 
 - name: Remove existing ideascube folder
   file: path=/media/hdd/ideascube/ state=absent
-  when: st.stat.exists == False and hdd_access == 1
+  when: st.stat.exists == False and use_hdd
 
 - name: Create an empty mongodb database directory
   file: path=/media/hdd/mongodb state=directory mode=0755 owner=mongodb group=nogroup
@@ -105,7 +105,7 @@
 
 - name: Create a symbolic link for KhanAcademy content
   file: src=/media/hdd/khanVideos/content/ dest=/home/ideascube/.kalite/content state=link
-  when: st.stat.exists == False and hdd_access == 1
+  when: st.stat.exists == False and use_hdd
   ignore_errors: yes
 
 - name: Create static and tmp directory
@@ -118,15 +118,15 @@
 
 - name: unarchive the library package on external hard drive
   unarchive: src=/tmp/kiwix_library.zip dest=/media/hdd/ copy=no
-  when: st.stat.exists == False and hdd_access == 1 and use_hdd
+  when: st.stat.exists == False and use_hdd
 
 - name: unarchive the library package on system
   unarchive: src=/tmp/kiwix_library.zip dest=/usr/local/share/kiwix/data/library/ copy=no
-  when: st.stat.exists == False and hdd_access == 0 and use_hdd == False
+  when: st.stat.exists == False and use_hdd = False
 
 - name: Fix rights on /media/hdd, otherwhise mongodb user can not cross the folder
   file: path=/media/hdd owner={{ username }} group={{ username }} mode=0777
-  when: st.stat.exists == False and hdd_access == 1 and use_hdd == True
+  when: st.stat.exists == False and use_hdd
 
 - command: /sbin/reboot
   when: st.stat.exists == False
