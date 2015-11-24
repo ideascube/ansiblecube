@@ -3,6 +3,8 @@
   apt: name=hostapd state=latest
   when: ansible_architecture == 'x86_64'
 
+- include_vars: group_vars/{{ ansible_architecture }}.yml
+
 - name: Copy hostapd.conf file
   template: src=hostapd.conf.j2 dest=/etc/hostapd/hostapd.conf owner=root group=root mode=755 backup=yes
 
