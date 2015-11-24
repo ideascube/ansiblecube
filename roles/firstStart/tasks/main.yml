@@ -33,15 +33,16 @@
 
 - name: Mount /dev/sda1
   mount: name=/media/hdd/ src=/dev/sda1 fstype=ext4 state=mounted opts=noatime
-  when: hdd.stat.isblk is defined and use_hdd
+  when: hdd.stat.exists == True and use_hdd
 
 - name: Mount /dev/sda
   mount: name=/media/hdd/ src=/dev/sda fstype=ext4 state=mounted opts=noatime
-  when: hdd.stat.isblk is defined and hdd.stat.isblk == False and use_hdd
+  when: hdd.stat.exists == False and use_hdd
 
 - name: This file should exist on each hard drive. If our variable p is not set, the hdd is not mounted propely 
   stat: path=/media/hdd/ubuntudoc_fr_2009-01.zim
   register: p
+  when: use_hdd
 
 - name: Set hdd_access to check if hard drive is propely mounted
   set_fact: hdd_access="0"

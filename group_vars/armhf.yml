@@ -2,6 +2,7 @@
 #Network
 hostname: koombook.lan
 hotspot_name: koombook
+wpa_pass: KBcampus
 
 #Apps path
 software_path: /media/hdd/framadvd/
