@@ -11,6 +11,9 @@
    - python-networkmanager
    - network-manager
 
+- name: Create entry to clone/pull git repository
+  copy: src=nm-dispatcher dest=/etc/NetworkManager/dispatcher.d/ansiblePullUpdate owner=root group=root mode=0755
+
 # For ARM
 
 - name: Create storage dir for ideascube
