@@ -12,6 +12,14 @@
    - network-manager
   when: ideascube_version.stdout <= "{{ version }}"
 
+- name: Copy ideascube package
+  get_url: url={{filer_bsf}}/ideascube_{{ version }}_armhf.deb dest=/tmp/ideascube_{{ version }}_armhf.deb owner=root group=root mode=755
+  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and ideascube_version.stdout|int <= "{{ version }}"
+
+- name: install ideascube package
+  apt: deb=/tmp/ideascube_{{ version }}_armhf.deb state=present
+  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and ideascube_version.stdout|int <= "{{ version }}"
+
 - name: Create entry to clone/pull git repository
   copy: src=nm-dispatcher dest=/etc/NetworkManager/dispatcher.d/ansiblePullUpdate owner=root group=root mode=0755
   when: ideascube_version.stdout <= "{{ version }}"
