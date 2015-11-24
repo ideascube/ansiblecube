@@ -17,7 +17,7 @@
   template: src=hosts.j2 dest=/etc/hosts owner=root group=root mode=755 backup=yes
 
 - name: Copy startup script
-  copy: src=hostapd dest=/etc/init.d/hostapd owner=root group=root mode=755
+  copy: src=hostapd dest=/etc/systemd/system/hostapd.service owner=root group=root mode=664
 
 - name: Enable service hostapd
   service: name=hostapd enabled=yes

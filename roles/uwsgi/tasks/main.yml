@@ -6,7 +6,7 @@
   file: path=/var/log/uwsgi state=directory owner={{ username }} group={{ username }} mode=0751
 
 - name: Setup startup file for uwsgi
-  copy: src=uwsgi.service dest=/etc/systemd/system/uwsgi.service owner=root group=root mode=755
+  copy: src=uwsgi.service dest=/etc/systemd/system/uwsgi.service owner=root group=root mode=644
 
 - name: Create apps-enabled dir for uwsgi
   file: path=/etc/uwsgi/apps-enabled state=directory owner=www-data group=www-data mode=0751
