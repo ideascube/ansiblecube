@@ -18,4 +18,6 @@
     - role: updateIdeascube
       version: "0.4.1-1"
       ideascube_id: "kb_mooc_cog"
-      
+
+    - role: updateMook
+      mook_name: "mook"
