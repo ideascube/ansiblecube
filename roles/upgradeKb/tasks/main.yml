@@ -1,0 +1,54 @@
+---
+- name: Test if package is already installed 
+  shell: dpkg-query -W  ideascube  | awk '{print $2}' ; echo
+  register: ideascube_version
+
+- debug: msg="ideascube version {{ ideascube_version.stdout }}"
+
+- name: Install all requiered package
+  apt: name={{ item }} state=latest
+  with_items:
+   - python-networkmanager
+   - network-manager
+  when: ideascube_version.stdout <= "{{ version }}"
+
+- name: Create entry to clone/pull git repository
+  copy: src=nm-dispatcher dest=/etc/NetworkManager/dispatcher.d/ansiblePullUpdate owner=root group=root mode=0755
+  when: ideascube_version.stdout <= "{{ version }}"
+
+- name: Config file for network-manager
+  copy: src=NetworkManager.conf dest=/etc/NetworkManager/NetworkManager.conf owner=root group=root mode=0755
+  when: ideascube_version.stdout <= "{{ version }}"
+
+- name: Set up Policy Kit authorizations for wifi managment
+  copy: src=ideascube-networkmanager.pkla dest=/var/lib/polkit-1/localauthority/20-org.d/ideascube-networkmanager.pkla owner=root group=root mode=644
+  when: ideascube_version.stdout <= "{{ version }}"
+  ignore_errors: yes
+
+- name: Add the PAM service
+  copy: src=ideascube.pam dest=/etc/pam.d/ideascube owner=root group=root mode=644
+  when: ideascube_version.stdout <= "{{ version }}"
+
+- name: Copy startup script
+  copy: src=hostapd dest=/etc/systemd/system/hostapd.service owner=root group=root mode=664
+  when: ideascube_version.stdout <= "{{ version }}"
+
+- name: remove old sysvinit startup file 
+  file: path=/etc/init.d/hostapd state=absent
+  when: ideascube_version.stdout <= "{{ version }}"
+
+- name: Enable service hostapd
+  service: name=hostapd enabled=yes
+  when: ideascube_version.stdout <= "{{ version }}"
+
+- name: Start hostapd
+  service: name=hostapd state=started
+  when: ideascube_version.stdout <= "{{ version }}"
+
+- name: Create a new interfaces file
+  template: src=interfaces.j2 dest=/etc/network/interfaces backup=yes
+  when: ideascube_version.stdout <= "{{ version }}"
+
+- tasks:
+  include: ../../../post_tasks.yml task=ideascube version={{ version }}
+  when: ideascube_version.stdout <= "{{ version }}"

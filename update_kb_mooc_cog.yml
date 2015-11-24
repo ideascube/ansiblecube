@@ -1,0 +1,19 @@
+---
+# Ansible playbook for IFB 
+
+#It will be always localhost
+- hosts: localhost
+
+  roles:
+    # Has to be always enable
+    # - logs
+    - upgradeKb
+    # - kalite
+    # - role: kiwix
+    #   kiwixProject: gutenberg
+    #   portProject: 8007
+
+    # #Uncomment to lunch an update
+    - role: updateIdeascube
+      version: "0.4.1-1"
+      ideascube_id: "kb_mooc_cog"
