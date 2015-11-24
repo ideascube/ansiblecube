@@ -112,9 +112,6 @@
 - name: Create entry to clone/pull git repository
   copy: src=dhclient-exit-hooks dest=/etc/dhcp/dhclient-exit-hooks.d/ansiblePullUpdate owner=root group=root mode=0755
 
-- name: Create entry to clone/pull git repository
-  copy: src=nm-dispatcher dest=/etc/NetworkManager/dispatcher.d/ansiblePullUpdate owner=root group=root mode=0755
-
 - name: List services to restart (1/2)
   shell: checkrestart | grep ^service | awk '{print $2}'
   register: services
