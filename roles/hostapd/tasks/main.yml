@@ -1,4 +1,8 @@
 ---
+- name: Unblock wlan
+  command: sudo rfkill unblock wlan
+  when: ansible_architecture == 'x86_64'
+
 - name: Install hostapd
   apt: name=hostapd state=latest
   when: ansible_architecture == 'x86_64'
