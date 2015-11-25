@@ -1,4 +1,10 @@
 ---
+- set_facts:
+    use_hdd= {{ use_hdd }}
+    send_to_central_server= {{ send_to_central_server }} 
+    import_ideascube_data= {{ import_ideascube_data }} 
+    download_data= {{ download_data }}
+    
 - stat: path=/usr/local/bin/kiwix-serve
   register: st
 

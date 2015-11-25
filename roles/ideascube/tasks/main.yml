@@ -1,4 +1,10 @@
 ---
+- set_facts:
+    use_hdd= {{ use_hdd }}
+    send_to_central_server= {{ send_to_central_server }} 
+    import_ideascube_data= {{ import_ideascube_data }} 
+    download_data= {{ download_data }}
+
 - name: Test if package is already installed 
   shell: dpkg-query -W  ideascube  | awk '{print $2}' ; echo
   register: ideascube_version
