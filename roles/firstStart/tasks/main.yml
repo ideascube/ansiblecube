@@ -1,12 +1,7 @@
 ---
 # This firstStart role aim to initialyse a new master. We have to set custom settings for each devices, 
 # this is what we are doing here
-- set_facts:
-    use_hdd= {{ use_hdd }}
-    send_to_central_server= {{ send_to_central_server }} 
-    import_ideascube_data= {{ import_ideascube_data }} 
-    download_data= {{ download_data }}
-    
+
 - name: Check if the firstStart.csv is present, if YES we skip the whole role 
   stat: path=/etc/firstStart.csv
   register: st
