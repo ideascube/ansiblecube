@@ -9,6 +9,6 @@
     - logs
 
     #Uncomment to lunch an update
-    # - role: updateIdeascube
-    #   version: "0.4.1-1"
-    #   ideascube_id: "kb_servir_ben"
+    - role: updateIdeascube
+      version: "0.4.1-1"
+      ideascube_id: "kb_servir_ben"

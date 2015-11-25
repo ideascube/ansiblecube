@@ -5,6 +5,6 @@
   roles:
     # Has to be always enable 
     - role: firstStart
-      timezone: Africa/Brazzaville
-      ideascube_id: "kb_mooc_cog"
-      mook_name: "mook"
+      timezone: Africa/Porto-Novo
+      ideascube_id: "kb_servir_ben"
+      mook_name: ""
