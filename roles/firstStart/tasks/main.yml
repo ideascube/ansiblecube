@@ -26,6 +26,8 @@
   register: public_ip
   when: st.stat.exists == False
 
+- debug: var=use_hdd
+
 - name: Define a var to test if /dev/sda1 exist
   stat: path=/dev/sda1
   when: use_hdd
@@ -33,11 +35,11 @@
 
 - name: Mount /dev/sda1
   mount: name=/media/hdd/ src=/dev/sda1 fstype=ext4 state=mounted opts=noatime
-  when: hdd.stat.exists == True and use_hdd
+  when: hdd.stat.isblk is defined and use_hdd
 
 - name: Mount /dev/sda
   mount: name=/media/hdd/ src=/dev/sda fstype=ext4 state=mounted opts=noatime
-  when: hdd.stat.exists == False and use_hdd
+  when: hdd.stat.isblk is defined and hdd.stat.isblk == False and use_hdd
 
 - name: This file should exist on each hard drive. If our variable p is not set, the hdd is not mounted propely 
   stat: path=/media/hdd/ubuntudoc_fr_2009-01.zim
@@ -59,10 +61,6 @@
 - name: Send this file over the central_server 
   raw: cat /etc/firstStart.csv | ssh -p 443 {{ central_server }} "cat >> ./ansible/UUID/firstStart.csv"
   when: st.stat.exists == False and send_to_central_server == True
-
-# Remove all the wifi configuration
-# - lineinfile: dest=/etc/network/interfaces regexp='wpa' state=absent
-#   when: st.stat.exists == False
 
 - name: Remove the existing localtime file
   file: path=/etc/localtime state=absent
@@ -116,8 +114,6 @@
 - name: download library files for Kiwix
   get_url: url={{filer_bsf}}/kiwix_library.zip dest=/tmp/kiwix_library.zip
   when: st.stat.exists == False
-
-- debug: var=use_hdd
 
 - name: unarchive the library package on external hard drive
   unarchive: src=/tmp/kiwix_library.zip dest=/media/hdd/ copy=no
