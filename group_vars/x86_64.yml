@@ -2,7 +2,7 @@
 #Network
 hostname: ideasbox.lan
 hotspot_name: ideasbox
-wpa_pass: KBcampus
+wpa_pass: idb258456
 
 #Apps path
 software_path: /home/{{ username }}/framadvd
