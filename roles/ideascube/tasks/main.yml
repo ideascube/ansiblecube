@@ -14,8 +14,8 @@
 - name: Create entry to clone/pull git repository
   copy: src=nm-dispatcher dest=/etc/NetworkManager/dispatcher.d/ansiblePullUpdate owner=root group=root mode=0755
 
-- name: Config file for network-manager
-  copy: src=NetworkManager.conf dest=/etc/NetworkManager/NetworkManager.conf owner=root group=root mode=0755
+# - name: Config file for network-manager
+#   copy: src=NetworkManager.conf dest=/etc/NetworkManager/NetworkManager.conf owner=root group=root mode=0755
 
 # For ARM
 
