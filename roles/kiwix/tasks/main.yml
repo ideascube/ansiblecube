@@ -39,5 +39,10 @@
   when: vhost.changed
   notify: restart nginx
 
+- name: Download {{ kiwixProject }} zim file 
+  get_url: url=http://download.kiwix.org/zim/{{ kiwixProject }}/{{ item }} dest={{zim_path}} timeout=20
+  with_items: "{{ version }}"
+  when: download_data == True
+
 - tasks:
   include: ../../../post_tasks.yml task={{ kiwixProject }} version=1

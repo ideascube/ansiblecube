@@ -30,6 +30,9 @@
   - role: kiwix
     kiwixProject: wikipedia
     portProject: 8002
+    alpha: [ 'wikisource', 'wikisource', 'c', 'd' ]
+    numbers:  [ 1, 2, 3, 4 ]
+
   - role: kiwix
     kiwixProject: wikisource
     portProject: 8003

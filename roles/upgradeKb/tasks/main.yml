@@ -57,6 +57,14 @@
   template: src=interfaces.j2 dest=/etc/network/interfaces backup=yes
   when: ideascube_version.stdout <= "{{ version }}"
 
+- name: Setup startup file for uwsgi
+  copy: src=uwsgi.service dest=/etc/systemd/system/uwsgi.service owner=root group=root mode=644
+  when: ideascube_version.stdout <= "{{ version }}"
+
+- name: Enable service uwsgi
+  service: name=uwsgi enabled=yes
+  when: ideascube_version.stdout <= "{{ version }}"
+
 - tasks:
   include: ../../../post_tasks.yml task=ideascube version={{ version }}
   when: ideascube_version.stdout <= "{{ version }}"

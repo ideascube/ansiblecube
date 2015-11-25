@@ -9,15 +9,14 @@
     # - logs
     - role: upgradeKb
       version: "0.4.1-1"
-    # - kalite
-    # - role: kiwix
-    #   kiwixProject: gutenberg
-    #   portProject: 8007
 
     # #Uncomment to lunch an update
     - role: updateIdeascube
       version: "0.4.1-1"
       ideascube_id: "kb_mooc_cog"
+
+    - role: mook
+      mook_name: "mook"
 
     - role: updateMook
       mook_name: "mook"
