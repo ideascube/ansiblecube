@@ -86,6 +86,8 @@
 - file: path=/media/hdd state=directory
   when: use_hdd
 
+- debug: var="use_hdd"
+
 - name: Define a var to test if /dev/sda1 exist
   stat: path=/dev/sda1
   when: use_hdd
