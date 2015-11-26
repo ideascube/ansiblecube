@@ -4,18 +4,18 @@
 
   roles:
     # Has to be always enable 
-    - systemInit
-    - nginx
-    - dnsmasq
-    - hostapd
-    - iptables
-    - uwsgi
+    # - systemInit
+    # - nginx
+    # - dnsmasq
+    # - hostapd
+    # - iptables
+    # - uwsgi
     # - kalite
     # Can be enable/disable on demand but affect all devices
 
-    - role: ideascube
-      version: "0.5.0-1"
-      ideascube_id: "{{projectName}}"
+    # - role: ideascube
+    #   version: "0.5.0-1"
+    #   ideascube_id: "{{projectName}}"
 
     # - appinventor
     # #   when: ansible_hostname == 'KoomBook483'
@@ -30,6 +30,7 @@
       kiwixProject: wikipedia
       portProject: 8002
       version: "wikipedia_fr_all_2015-11.zim"
+      download_data: "{{ download_data }}"
     # - role: kiwix
     #   kiwixProject: wikisource
     #   portProject: 8003
@@ -43,10 +44,10 @@
     # - role: kiwix
     #   kiwixProject: ubuntudoc
     #   portProject: 8006
-    - role: kiwix
-      kiwixProject: gutenberg
-      portProject: 8007
-      version: "gutenberg_fr_all_10_2014.zim"
+    # - role: kiwix
+    #   kiwixProject: gutenberg
+    #   portProject: 8007
+    #   version: "gutenberg_fr_all_10_2014.zim"
     # - role: kiwix
     #   kiwixProject: universcience
     #   portProject: 8009
@@ -61,11 +62,11 @@
     #- { role: iptables, when: ansible_hostname == 'KoomBook603' }
     #- { role: ideascube, when: ansible_hostname == 'KoomBook484' }
 
-    - role: firstStart
-      timezone: Europe/Paris
-      ideascube_id: "{{projectName}}"
-      mook_name: ""
+    # - role: firstStart
+    #   timezone: Europe/Paris
+    #   ideascube_id: "{{projectName}}"
+    #   mook_name: ""
 
-  post_tasks:
+  # post_tasks:
     # - command: /sbin/shutdown -h now
-    - command: reboot
+    # - command: reboot
