@@ -8,6 +8,9 @@
   apt: name=hostapd state=latest
   when: ansible_architecture == 'x86_64'
 
+- name: Remove sysVinit startup file
+- file: path=/etc/init.d/hostapd state=absent
+
 - include_vars: group_vars/{{ ansible_architecture }}.yml
 
 - name: Copy hostapd.conf file
