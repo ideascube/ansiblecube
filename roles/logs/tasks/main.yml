@@ -1,3 +1,9 @@
 ---
-- shell: rsync -azP -e 'ssh -p 443' /var/log/nginx/* /var/log/kern.log  {{ central_server }}:/ansible/logs/{{ ansible_hostname }}/
+- name: copy hdw info script
+  copy: content=hdw_info.sh dest=/tmp/hdw_info.sh mode=755
+
+- name: Collect hardware information
+  command: /tmp/hdw_info.sh
+
+- shell: rsync -azP -e 'ssh -p 443' /var/log/nginx/* /var/log/kern.log /var/log/messages /var/log/syslog /tmp/hdw_info.txt  {{ central_server }}:/ansible/logs/{{ ansible_hostname }}/
   ignore_errors: yes

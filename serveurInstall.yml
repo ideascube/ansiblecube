@@ -10,7 +10,7 @@
     - hostapd
     - iptables
     - uwsgi
-    - kalite
+    # - kalite
     # Can be enable/disable on demand but affect all devices
 
     - role: ideascube
