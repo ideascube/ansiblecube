@@ -1,6 +1,6 @@
 ---
 - name: Unblock wlan
-  command: sudo rfkill unblock wlan
+  command: rfkill unblock wlan
   when: ansible_architecture == 'x86_64'
   ignore_errors: yes
 
@@ -9,7 +9,7 @@
   when: ansible_architecture == 'x86_64'
 
 - name: Remove sysVinit startup file
-- file: path=/etc/init.d/hostapd state=absent
+  file: path=/etc/init.d/hostapd state=absent
 
 - include_vars: group_vars/{{ ansible_architecture }}.yml
 

@@ -14,9 +14,6 @@
 - name: Create entry to clone/pull git repository
   copy: src=nm-dispatcher dest=/etc/NetworkManager/dispatcher.d/ansiblePullUpdate owner=root group=root mode=0755
 
-# - name: Config file for network-manager
-#   copy: src=NetworkManager.conf dest=/etc/NetworkManager/NetworkManager.conf owner=root group=root mode=0755
-
 # For ARM
 
 - name: Create storage dir for ideascube
@@ -51,11 +48,11 @@
 
 - name: Adapt STORAGE_ROOT for Nginx
   replace: dest=/etc/nginx/sites-available/ideascube regexp='/var/ideascube/main/media/' replace='/media/hdd/ideascube/storage/main/media/' backup=yes
-  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and  ideascube_version.stdout == ""
+  when: use_hdd and ideascube_version.stdout == ""
 
 - name: Adapt STORAGE_ROOT for Nginx
   replace: dest=/etc/nginx/sites-available/ideascube regexp='/var/ideascube/static/' replace='/media/hdd/ideascube/storage/static/' backup=yes
-  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and  ideascube_version.stdout == ""
+  when: use_hdd and ideascube_version.stdout == ""
 
 - name: Add IDEASCUBE_ID
   lineinfile: dest=/etc/default/ideascube
@@ -88,36 +85,28 @@
   copy: src=ideascube.pam dest=/etc/pam.d/ideascube owner=root group=root mode=644
   when: ideascube_version.stdout == ""
 
-# # Should be already packaged !!!
-# - name: Install libjpeg-dev
-#   apt: name=libjpeg-dev state=latest
-
-# # Should be already packaged !!!
-# - name: Install Pillow
-#   pip: name=Pillow
-
-- name: Ideascube collectstatic
+- name: Ideascube collectstatic to the hard drive
   become: yes
   become_user: ideascube
   shell: ideascube collectstatic --noinput
-  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and  ideascube_version.stdout == ""
+  when: use_hdd and ideascube_version.stdout == ""
 
-- name: Ideascube migrate
+- name: Ideascube migrate data to the hard drive
   become: yes
   become_user: ideascube
   shell: ideascube migrate
   notify: restart uwsgi
-  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and  ideascube_version.stdout == ""
+  when: use_hdd and ideascube_version.stdout == ""
 
 - name: Download CSV to import
   get_url: url={{filer_bsf}}/KB_Liste_contenus_videos+fiches.csv dest=/media/hdd/IdeasServerContent/videos/KB_Liste_contenus_videos+fiches.csv
-  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and  ideascube_version.stdout == "" and import_ideascube_data == True
+  when: ideascube_version.stdout == "" and import_ideascube_data
 
 - name: Import data 
   become: yes
   become_user: ideascube
   shell: ideascube import_medias /media/hdd/IdeasServerContent/videos/KB_Liste_contenus_videos+fiches.csv
-  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and  ideascube_version.stdout == "" and import_ideascube_data == True
+  when: ideascube_version.stdout == "" and import_ideascube_data
 
 - tasks:
   include: ../../../post_tasks.yml task=ideascube version={{ version }}

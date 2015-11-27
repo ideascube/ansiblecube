@@ -1,6 +1,7 @@
 ---
 #It will be always localhost
-- hosts: localhost
+# - hosts: localhost
+- hosts: SystemPushInstall
 
   roles:
     # Has to be always enable 
@@ -15,22 +16,20 @@
 
     # - role: ideascube
     #   version: "0.5.0-1"
-    #   ideascube_id: "{{projectName}}"
 
-    # - appinventor
+    - appinventor
     # #   when: ansible_hostname == 'KoomBook483'
 
     # # Update Mook plateform
     # - mongodb
-    # - { role: mook, mook_name: bsfcampus }
+    # - { role: mook, mook_name: mooc }
     # - { role: mook, mook_name: fun }
 
     # Install and configure a kiwix project 
     - role: kiwix
       kiwixProject: wikipedia
       portProject: 8002
-      version: "wikipedia_fr_all_2015-11.zim"
-      download_data: "{{ download_data }}"
+      version: ['wikipedia_tum_all_nopic_2015-10.zim','wikipedia_tum_all_nopic_2015-09.zim']
     # - role: kiwix
     #   kiwixProject: wikisource
     #   portProject: 8003
@@ -62,10 +61,8 @@
     #- { role: iptables, when: ansible_hostname == 'KoomBook603' }
     #- { role: ideascube, when: ansible_hostname == 'KoomBook484' }
 
-    # - role: firstStart
-    #   timezone: Europe/Paris
-    #   ideascube_id: "{{projectName}}"
-    #   mook_name: ""
+    - role: firstStart
+      mook_name: ""
 
   # post_tasks:
     # - command: /sbin/shutdown -h now
