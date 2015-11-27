@@ -1,5 +1,5 @@
 ---
-# Ansible playbook for IdeasBox Ethiopie MELKADIDA
+# Ansible playbook for IdeasBox Ethiopie BOKOLMANYO
 
 #It will be always localhost
 - hosts: localhost

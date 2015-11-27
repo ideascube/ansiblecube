@@ -1,23 +1,24 @@
 ---
 #It will be always localhost
-# - hosts: localhost
-- hosts: SystemPushInstall
+- hosts: localhost
+# - hosts: SystemPushInstall
 
   roles:
     # Has to be always enable 
-    # - systemInit
-    # - nginx
-    # - dnsmasq
-    # - hostapd
-    # - iptables
-    # - uwsgi
-    # - kalite
+    - systemInit
+    - nginx
+    - dnsmasq
+    - hostapd
+    - iptables
+    - uwsgi
+    - kalite
     # Can be enable/disable on demand but affect all devices
+    - software
 
-    # - role: ideascube
-    #   version: "0.5.0-1"
+    - role: ideascube
+      version: "0.5.0-1"
 
-    - appinventor
+    # - appinventor
     # #   when: ansible_hostname == 'KoomBook483'
 
     # # Update Mook plateform
@@ -34,19 +35,19 @@
     #   kiwixProject: wikisource
     #   portProject: 8003
     #   version: "wikipedia_fr_all_2015-11.zim"
-    # - role: kiwix
-    #   kiwixProject: vikidia
-    #   portProject: 8004
+    - role: kiwix
+      kiwixProject: vikidia
+      portProject: 8004
     # - role: kiwix
     #   kiwixProject: cpassorcier
     #   portProject: 8005
     # - role: kiwix
     #   kiwixProject: ubuntudoc
     #   portProject: 8006
-    # - role: kiwix
-    #   kiwixProject: gutenberg
-    #   portProject: 8007
-    #   version: "gutenberg_fr_all_10_2014.zim"
+    - role: kiwix
+      kiwixProject: gutenberg
+      portProject: 8007
+      version: "gutenberg_fr_all_10_2014.zim"
     # - role: kiwix
     #   kiwixProject: universcience
     #   portProject: 8009
@@ -64,6 +65,6 @@
     - role: firstStart
       mook_name: ""
 
-  # post_tasks:
-    # - command: /sbin/shutdown -h now
-    # - command: reboot
+  post_tasks:
+    - command: /sbin/shutdown -h now
+    - command: reboot
