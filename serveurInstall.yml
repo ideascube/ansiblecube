@@ -5,9 +5,9 @@
 
   roles:
     # Has to be always enable 
-    - systemInit
-    - nginx
-    - dnsmasq
+    # - systemInit
+    # - nginx
+    # - dnsmasq
     - hostapd
     - iptables
     - uwsgi
