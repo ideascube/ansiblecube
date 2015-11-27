@@ -8,8 +8,8 @@
     # - systemInit
     # - nginx
     # - dnsmasq
-    - hostapd
-    - iptables
+    # - hostapd
+    # - iptables
     - uwsgi
     - kalite
     # Can be enable/disable on demand but affect all devices
