@@ -9,10 +9,10 @@
 
     # - software
 
-	- role: kiwix
-	  kiwixProject: vikidia
-	  portProject: 8004
-	  version: ""
+    - role: kiwix
+      kiwixProject: vikidia
+      portProject: 8004
+      version: ""
 
     # Start. has to be always enable 
     - logs
