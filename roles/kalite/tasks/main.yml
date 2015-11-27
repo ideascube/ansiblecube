@@ -8,6 +8,7 @@
   command: kalite start
 
 - file: path=/home/{{username}}/.kalite/content state=absent
+  when: use_hdd
   ignore_errors: yes
 
 - file: src=/media/hdd/khanVideos/content/ dest=/home/{{username}}/.kalite/content state=link force=yes
