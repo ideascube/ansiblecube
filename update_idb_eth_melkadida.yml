@@ -7,7 +7,7 @@
   roles:
     # # Can be enable/disable on demand but affect all devices
 
-    - framadvd
+    - software
 
     # Start. has to be always enable 
     - logs
