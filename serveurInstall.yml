@@ -5,18 +5,18 @@
 
   roles:
     # Has to be always enable 
-    - systemInit
-    - nginx
-    - dnsmasq
-    - hostapd
-    - iptables
-    - uwsgi
-    - kalite
-    # Can be enable/disable on demand but affect all devices
-    - software
+    # - systemInit
+    # - nginx
+    # - dnsmasq
+    # - hostapd
+    # - iptables
+    # - uwsgi
+    # - kalite
+    # # Can be enable/disable on demand but affect all devices
+    # - software
 
-    - role: ideascube
-      version: "0.5.0-1"
+    # - role: ideascube
+    #   version: "0.5.0-1"
 
     # - appinventor
     # #   when: ansible_hostname == 'KoomBook483'
