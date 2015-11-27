@@ -1,0 +1,14 @@
+---
+# Ansible playbook for IdeasBox Ethiopie MELKADIDA
+
+#It will be always localhost
+- hosts: localhost
+
+  roles:
+    # # Can be enable/disable on demand but affect all devices
+
+    - framadvd
+
+    # Start. has to be always enable 
+    - logs
+    # Stop. has to be always enable 
