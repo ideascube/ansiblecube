@@ -38,6 +38,7 @@
     - role: kiwix
       kiwixProject: vikidia
       portProject: 8004
+      version: ""
     # - role: kiwix
     #   kiwixProject: cpassorcier
     #   portProject: 8005
