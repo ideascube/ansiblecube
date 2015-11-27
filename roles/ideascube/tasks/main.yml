@@ -100,13 +100,13 @@
 
 - name: Download CSV to import
   get_url: url={{filer_bsf}}/KB_Liste_contenus_videos+fiches.csv dest=/media/hdd/IdeasServerContent/videos/KB_Liste_contenus_videos+fiches.csv
-  when: ideascube_version.stdout == "" and import_ideascube_data
+  when: ideascube_version.stdout == "" and import_ideascube_data and use_hdd
 
 - name: Import data 
   become: yes
   become_user: ideascube
   shell: ideascube import_medias /media/hdd/IdeasServerContent/videos/KB_Liste_contenus_videos+fiches.csv
-  when: ideascube_version.stdout == "" and import_ideascube_data
+  when: ideascube_version.stdout == "" and import_ideascube_data and use_hdd
 
 - tasks:
   include: ../../../post_tasks.yml task=ideascube version={{ version }}

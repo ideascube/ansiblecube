@@ -10,13 +10,13 @@
     # - dnsmasq
     # - hostapd
     # - iptables
-    - uwsgi
-    - kalite
+    # - uwsgi
+    # - kalite
     # Can be enable/disable on demand but affect all devices
-    - software
+    # - software
 
-    - role: ideascube
-      version: "0.5.0-1"
+    # - role: ideascube
+    #   version: "0.5.0-1"
 
     # - appinventor
     # #   when: ansible_hostname == 'KoomBook483'
