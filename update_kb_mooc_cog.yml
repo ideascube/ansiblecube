@@ -11,9 +11,9 @@
     #   version: "0.4.1-1"
 
     # # #Uncomment to lunch an update
-    - role: updateIdeascube
-      version: "0.5.0-1"
-      ideascube_id: "kb_mooc_cog"
+    # - role: updateIdeascube
+    #   version: "0.5.0-1"
+    #   ideascube_id: "kb_mooc_cog"
 
     # - role: mook
     #   mook_name: "mook"
