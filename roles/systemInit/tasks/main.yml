@@ -10,7 +10,6 @@
    - python-setuptools
    - git
    - sudo
-   - vimu
    - lsb-release
    - vim
    - locate
