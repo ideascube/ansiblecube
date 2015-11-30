@@ -19,4 +19,4 @@ else
 fi
 
 sudo cp /var/lib/ansible/local/hosts /etc/ansible/hosts
-/usr/local/bin/ansible-pull -d /var/lib/ansible/local -i hosts -U https://github.com/ideascube/ansiblecube.git -C ideasbox globalInstall.yml --extra-vars "send_to_central_server="$SHOULD_WE_SEND" import_ideascube_data=False download_data=$4 ideascube_id=$2 timezone=$3"
+/usr/local/bin/ansible-pull -d /var/lib/ansible/local -i hosts -U https://github.com/ideascube/ansiblecube.git globalInstall.yml --extra-vars "send_to_central_server="$SHOULD_WE_SEND" import_ideascube_data=False download_data=$4 ideascube_id=$2 timezone=$3"
