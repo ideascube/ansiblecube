@@ -5,18 +5,19 @@
 
   roles:
     # Has to be always enable 
-    # - systemInit
-    # - nginx
-    # - dnsmasq
-    # - hostapd
-    # - iptables
-    # - uwsgi
-    # - kalite
+    - systemInit
+    - nginx
+    - dnsmasq
+    - hostapd
+    - iptables
+    - uwsgi
+    - kalite
+    
     # # Can be enable/disable on demand but affect all devices
     # - software
 
-    # - role: ideascube
-    #   version: "0.5.0-1"
+    - role: ideascube
+      version: "0.5.0-1"
 
     # - appinventor
     # #   when: ansible_hostname == 'KoomBook483'
@@ -35,10 +36,10 @@
     #   kiwixProject: wikisource
     #   portProject: 8003
     #   version: "wikipedia_fr_all_2015-11.zim"
-    - role: kiwix
-      kiwixProject: vikidia
-      portProject: 8004
-      version: ""
+    # - role: kiwix
+    #   kiwixProject: vikidia
+    #   portProject: 8004
+    #   version: ""
     # - role: kiwix
     #   kiwixProject: cpassorcier
     #   portProject: 8005
