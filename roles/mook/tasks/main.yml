@@ -45,7 +45,7 @@
   when: mook.changed
 
 - name: Retrieve KoomBook info 
-  set_fact: koombookName="{{ lookup('csvfile', 'id file=/etc/firstStart.csv delimiter=, col=5') }}" uuid="{{ lookup('csvfile', 'id file=/etc/firstStart.csv delimiter=, col=6') }}"
+  set_fact: koombookName="{{ lookup('csvfile', 'id file=/etc/firstStart.csv delimiter=, col=4') }}" uuid="{{ lookup('csvfile', 'id file=/etc/firstStart.csv delimiter=, col=5') }}"
   when: mook.changed
   ignore_errors: yes
   
