@@ -1,5 +1,5 @@
 #!/bin/bash
 
 if [ "$2" = "up" ]; then  
-           sleep 120 && /usr/local/bin/ansible-pull -d /var/lib/ansible/local -i hosts -U https://github.com/ideascube/ansiblecube.git -C ideasbox update_{{ ideascube_id }}.yml --extra-vars "use_hdd={{use_hdd}} send_to_central_server={{send_to_central_server}} import_ideascube_data={{import_ideascube_data}} download_data={{download_data}}" >> /var/log/ansible-pull.log 2>&1 &
+           sleep 120 && /usr/local/bin/ansible-pull -d /var/lib/ansible/local -i hosts -U https://github.com/ideascube/ansiblecube.git -C ideasbox update_{{ ideascube_id }}.yml --extra-vars "use_hdd={{use_hdd}} send_to_central_server={{send_to_central_server}} import_ideascube_data={{import_ideascube_data}} download_data={{download_data}} ideascube_id={{ideascube_id}}" >> /var/log/ansible-pull.log 2>&1 &
 fi  
