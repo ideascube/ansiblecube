@@ -8,7 +8,7 @@
 # - hosts: SystemPushInstall
 
   roles:
-    - systemInit
+    # - systemInit
     - nginx
     - uwsgi
     - dnsmasq
