@@ -1,9 +1,6 @@
 auto lo
 iface lo inet loopback
 
-allow-hotplug {{lan_interface}}
-iface {{lan_interface}} inet dhcp
-
 allow-hotplug {{hotspot_interface}}
 iface {{hotspot_interface}} inet static
 address {{ hotspotip }}

@@ -1,0 +1,19 @@
+---
+#Switch over "localhost" or "SystemPushInstall"
+
+# localhost is used when ansible-pull is used to play the playbook
+# SystemPushInstall is used in PUSH mode and you have to set the device's IP in "hosts" file 
+
+- hosts: localhost
+# - hosts: SystemPushInstall
+
+  roles:
+    - systemInit
+    - nginx
+    - uwsgi
+    - dnsmasq
+    - hostapd
+    - iptables
+
+  post_tasks:
+    - command: reboot

@@ -18,11 +18,12 @@ download_data: False
 
 #Apps path
 mook_path: /home/{{ username }}
+mook_name: ""
 
 #Domaine name
 kalite_server_name: khanacademy.{{hostname}}
 mook_api_server_name: api.{{ mook_name }}.{{ hostname }}
-mook_front_server_name: "{{ mook_name }}.{{ hostname }}"
+mook_front_server_name: {{ mook_name }}.{{ hostname }}
 central_server_host: http://mook-api.bibliosansfrontieres.fr
 appinventor_server_name: appinventor.{{hostname}}
 software_server_name: software.{{hostname}}

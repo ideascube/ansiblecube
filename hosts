@@ -2,4 +2,3 @@ localhost ansible_connection=local
 
 [SystemPushInstall]
 192.168.1.133
-#192.168.1.159

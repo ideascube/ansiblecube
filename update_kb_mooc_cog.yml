@@ -1,5 +1,5 @@
 ---
-# Ansible playbook for IFB 
+# Ansible playbook for BSF CAMPUS RDC
 
 #It will be always localhost
 - hosts: localhost
@@ -7,16 +7,17 @@
   roles:
     # Has to be always enable
     - logs
-    # - role: upgradeKb
-    #   version: "0.4.1-1"
 
-    # # #Uncomment to lunch an update
-    - role: updateIdeascube
+    - kalite
+
+    - role: ideascube
       version: "0.5.0-1"
-      ideascube_id: "kb_mooc_cog"
 
-    # - role: mook
-    #   mook_name: "mook"
+    - role: kiwix
+      kiwixProject: wikipedia
+      portProject: 8002
+      version: ""
 
-    # - role: updateMook
-    #   mook_name: "mook"
+    - mongodb
+    - role: mook
+      mook_name: bsfcampus
