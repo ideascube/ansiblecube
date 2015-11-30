@@ -10,7 +10,7 @@
 #    - python-setuptools
 #    - git
 #    - sudo
-#    - vim
+#    - vimu
 #    - lsb-release
 #    - vim
 #    - locate
@@ -112,12 +112,12 @@
 
 - name: Mount /dev/sda1
   mount: name=/media/hdd/ src=/dev/sda1 fstype=ext4 state=mounted opts=noatime
-  when: ansible_devices["sda"]["partitions"]["sda1"] and use_hdd
+  when: ansible_devices["sda"]["partitions"] == "sda1" and use_hdd
   ignore_errors: yes
 
 - name: Mount /dev/sda
   mount: name=/media/hdd/ src=/dev/sda fstype=ext4 state=mounted opts=noatime
-  when: ansible_devices["sda"] and use_hdd
+  when: ansible_devices["sda"]["partitions"] == "" and use_hdd
   ignore_errors: yes
 
 - name: Create local directory to work from
