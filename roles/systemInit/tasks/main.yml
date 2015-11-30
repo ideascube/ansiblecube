@@ -1,102 +1,102 @@
 ---
-- name: Update packages list
-  apt: update_cache=yes cache_valid_time=3600
+# - name: Update packages list
+#   apt: update_cache=yes cache_valid_time=3600
 
-- name: Install all requiered package
-  apt: name={{ item }} state=latest
-  with_items:
-   - python-pip
-   - python-dev
-   - python-setuptools
-   - git
-   - sudo
-   - vim
-   - lsb-release
-   - vim
-   - locate
-   - git
-   - unzip
-   - bash-completion
-   - aptitude
-   - sslh
-   - ntpdate
-   - fake-hwclock
-   - python-networkmanager
-   - network-manager
+# - name: Install all requiered package
+#   apt: name={{ item }} state=latest
+#   with_items:
+#    - python-pip
+#    - python-dev
+#    - python-setuptools
+#    - git
+#    - sudo
+#    - vim
+#    - lsb-release
+#    - vim
+#    - locate
+#    - git
+#    - unzip
+#    - bash-completion
+#    - aptitude
+#    - sslh
+#    - ntpdate
+#    - fake-hwclock
+#    - python-networkmanager
+#    - network-manager
 
-- name: List services to restart (1/2)
-  shell: checkrestart | grep ^service | awk '{print $2}'
-  register: services
-  changed_when: False
+# - name: List services to restart (1/2)
+#   shell: checkrestart | grep ^service | awk '{print $2}'
+#   register: services
+#   changed_when: False
 
-- name: Install ansible
-  pip: name=ansible
+# - name: Install ansible
+#   pip: name=ansible
 
-- name: Upgrade packages
-  apt: upgrade=safe
+# - name: Upgrade packages
+#   apt: upgrade=safe
 
-- name: Set date et time 
-  set_fact: date="{{ ansible_date_time["date"]}}" time="{{ ansible_date_time["time"]}}"
+# - name: Set date et time 
+#   set_fact: date="{{ ansible_date_time["date"]}}" time="{{ ansible_date_time["time"]}}"
 
-- name: Set an ideascubeName and generate an UUID
-  set_fact: ideascubeName="{{ ideascube_id }}_{{ 1000 | random }}" 
-    UUID="{{ ansible_default_ipv4["macaddress"] | hash('md5') }}"
+# - name: Set an ideascubeName and generate an UUID
+#   set_fact: ideascubeName="{{ ideascube_id }}_{{ 1000 | random }}" 
+#     UUID="{{ ansible_default_ipv4["macaddress"] | hash('md5') }}"
 
-- name: Adding name to the hosts file
-  lineinfile: dest=/etc/hosts regexp='^{{ hotspotip }}' insertafter='{{ hotspotip }}' 
-    line='{{ hotspotip }} {{ ideascubeName |replace("_", "-") }}.lan {{ hostname }} {{ mook_front_server_name }}' 
-    owner=root group=root mode=0644
+# - name: Adding name to the hosts file
+#   lineinfile: dest=/etc/hosts regexp='^{{ hotspotip }}' insertafter='{{ hotspotip }}' 
+#     line='{{ hotspotip }} {{ ideascubeName |replace("_", "-") }}.lan {{ hostname }} {{ mook_front_server_name }}' 
+#     owner=root group=root mode=0644
 
-- name: An hostname can not have _ so we are switching to -, python can not have - so using _ sometime too
-  hostname: name={{ ideascubeName |replace("_", "-") }}
+# - name: An hostname can not have _ so we are switching to -, python can not have - so using _ sometime too
+#   hostname: name={{ ideascubeName |replace("_", "-") }}
 
-- name: Create an ideascube user on the system
-  user: name={{ username }}
-        shell=/bin/bash
-        groups="sudo,www-data"
-        home="/home/{{ username }}"
-        generate_ssh_key=yes
-        ssh_key_bits=2048
-        ssh_key_file=.ssh/id_rsa
-        password={{ password }}
+# - name: Create an ideascube user on the system
+#   user: name={{ username }}
+#         shell=/bin/bash
+#         groups="sudo,www-data"
+#         home="/home/{{ username }}"
+#         generate_ssh_key=yes
+#         ssh_key_bits=2048
+#         ssh_key_file=.ssh/id_rsa
+#         password={{ password }}
 
-- name: Copy SSHL config file
-  copy: src=sslh dest=/etc/default/sslh owner=root group=root mode=0644 backup=yes
-  notify: update sslh
+# - name: Copy SSHL config file
+#   copy: src=sslh dest=/etc/default/sslh owner=root group=root mode=0644 backup=yes
+#   notify: update sslh
 
-- name: Copy .bashrc for root
-  copy: src=bashrc dest=/root/.bashrc owner=root
+# - name: Copy .bashrc for root
+#   copy: src=bashrc dest=/root/.bashrc owner=root
 
-- name: Copy vimrc for root
-  copy: src=vim dest=/etc/vim/vimrc owner=root
+# - name: Copy vimrc for root
+#   copy: src=vim dest=/etc/vim/vimrc owner=root
 
-- name: Copy .bashrc for new username
-  copy: src=bashrc dest=/home/{{ username }}/.bashrc owner={{ username }}
+# - name: Copy .bashrc for new username
+#   copy: src=bashrc dest=/home/{{ username }}/.bashrc owner={{ username }}
 
-- name: Add hdparm to save energy
-  lineinfile: dest=/etc/hdparm.conf
-              regexp=''
-              insertafter=EOF
-              line='/dev/sda {
-                      spindown_time = 280
-              }'
-  when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and use_hdd
+# - name: Add hdparm to save energy
+#   lineinfile: dest=/etc/hdparm.conf
+#               regexp=''
+#               insertafter=EOF
+#               line='/dev/sda {
+#                       spindown_time = 280
+#               }'
+#   when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and use_hdd
 
-- name: fake-hwclock conf for ARM system 
-  copy: content="FORCE=force" dest=/etc/default/fake-hwclock
-  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
+# - name: fake-hwclock conf for ARM system 
+#   copy: content="FORCE=force" dest=/etc/default/fake-hwclock
+#   when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
 
-- name: Copy fex.file
-  template: src=lime2.fex.j2 dest=/boot/bin/lime2.fex
-  when: ansible_architecture == "armv7l"
+# - name: Copy fex.file
+#   template: src=lime2.fex.j2 dest=/boot/bin/lime2.fex
+#   when: ansible_architecture == "armv7l"
 
-- name: Build binary from fex
-  shell: /usr/local/bin/fex2bin lime2.fex > lime2.bin chdir=/boot/bin/
-  when: ansible_architecture == "armv7l"
+# - name: Build binary from fex
+#   shell: /usr/local/bin/fex2bin lime2.fex > lime2.bin chdir=/boot/bin/
+#   when: ansible_architecture == "armv7l"
 
-- name: Copy visudo file for ideascube user
-  template: src=visudo.j2 dest=/etc/sudoers.d/shutdown 
-    owner=root group=root mode=0440 validate="/usr/sbin/visudo -cf %s"
+# - name: Copy visudo file for ideascube user
+#   template: src=visudo.j2 dest=/etc/sudoers.d/shutdown 
+#     owner=root group=root mode=0440 validate="/usr/sbin/visudo -cf %s"
 
 - name: Copy patch U-Boot package
   get_url: url={{filer_bsf}}/linux-u-boot-lime2_4.3_armhf.deb 
