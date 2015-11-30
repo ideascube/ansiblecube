@@ -24,6 +24,11 @@
    - python-networkmanager
    - network-manager
 
+- name: List services to restart (1/2)
+  shell: checkrestart | grep ^service | awk '{print $2}'
+  register: services
+  changed_when: False
+
 - name: Install ansible
   pip: name=ansible
 
@@ -177,9 +182,3 @@
 - name: Fix rights on /media/hdd, otherwhise mongodb user can not cross the folder
   file: path=/media/hdd owner={{ username }} group={{ username }} mode=0777
   when: use_hdd
-
-- name: List services to restart (1/2)
-  shell: checkrestart | grep ^service | awk '{print $2}'
-  register: services
-  changed_when: False
-  
