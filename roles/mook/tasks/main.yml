@@ -26,18 +26,14 @@
 
 - name: Create static and tmp directory
   file: path=/media/hdd/{{ mook_name }}/static/tmp state=directory mode=0755 owner={{ username }} group={{ username }}
-  when: use_hdd
+  when: mook.changed and use_hdd
+
+- name: Create static dir
+  file: path={{ mook_path }}/{{ mook_name }}/static/tmp state=directory owner={{username}} group={{username}} mode=0775
+  when: mook.changed and use_hdd == False
 
 - name: Install python requierment
   pip: requirements=requirements.txt chdir={{ mook_path }}/{{ mook_name }}/api virtualenv_command=/usr/local/bin/virtualenv virtualenv={{ mook_path }}/{{ mook_name }}/api/env
-  when: mook.changed
-
-- name: Create static dir
-  file: path={{ mook_path }}/{{ mook_name }}/static state=directory owner={{username}} group={{username}} mode=0775
-  when: mook.changed
-
-- name: Create tmp dir
-  file: path={{ mook_path }}/{{ mook_name }}/static/tmp state=directory owner={{username}} group={{username}} mode=0775
   when: mook.changed
 
 - name: Copy settings_local config files
@@ -45,7 +41,7 @@
   when: mook.changed
 
 - name: Retrieve KoomBook info 
-  set_fact: koombookName="{{ lookup('csvfile', 'id file=/etc/firstStart.csv delimiter=, col=4') }}" uuid="{{ lookup('csvfile', 'id file=/etc/firstStart.csv delimiter=, col=5') }}"
+  set_fact: koombookName="{{ lookup('csvfile', 'id file=/etc/firstStart.csv delimiter=, col=3') }}" uuid="{{ lookup('csvfile', 'id file=/etc/firstStart.csv delimiter=, col=4') }}"
   when: mook.changed
   ignore_errors: yes
   

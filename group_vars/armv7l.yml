@@ -7,3 +7,4 @@ wpa_pass: KBcampus
 #Apps path
 software_path: /media/hdd/framadvd/
 zim_path: /media/hdd
+mook_upload_file_path: /media/hdd/{{ mook_name }}/static/

@@ -7,3 +7,4 @@ wpa_pass: idb258456
 #Apps path
 software_path: /home/{{ username }}/framadvd
 zim_path: /usr/local/share/kiwix/data
+mook_upload_file_path: {{ mook_path }}/{{ mook_name }}/static/
