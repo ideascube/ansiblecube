@@ -3,6 +3,7 @@
 
 #It will be always localhost
 - hosts: localhost
+  any_errors_fatal: true
 
   roles:
     # Has to be always enable
