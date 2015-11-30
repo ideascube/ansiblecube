@@ -1,4 +1,6 @@
 ---
+- include_vars: group_vars/{{ ansible_architecture }}.yml
+
 - name: Install specific packages
   apt: name={{ item }} state=latest
   with_items:
@@ -17,23 +19,23 @@
 ####
 - name: Clone mook api
   become_user: ideascube
-  git: repo=ssh://git@altssh.bitbucket.org:443/gryzzlab/mook-bsf-api.git dest={{ mook_path }}/{{ mook_name }}/api accept_hostkey=yes depth=1
+  git: repo=ssh://git@altssh.bitbucket.org:443/bsfcampus/mook-bsf-api.git dest={{ mook_path }}/{{ mook_name }}/api accept_hostkey=yes depth=1
   register: mook
 
 - name: Update setuptools
   pip: name=setuptools extra_args="-U"
   when: mook.changed
 
-- name: Install python requierment
-  pip: requirements=requirements.txt chdir={{ mook_path }}/{{ mook_name }}/api virtualenv_command=/usr/local/bin/virtualenv virtualenv={{ mook_path }}/{{ mook_name }}/api/env
-  when: mook.changed
+- name: Create static and tmp directory
+  file: path=/media/hdd/{{ mook_name }}/static/tmp state=directory mode=0755 owner={{ username }} group={{ username }}
+  when: mook.changed and use_hdd
 
 - name: Create static dir
-  file: path={{ mook_path }}/{{ mook_name }}/static state=directory owner={{username}} group={{username}} mode=0775
-  when: mook.changed
-
-- name: Create tmp dir
   file: path={{ mook_path }}/{{ mook_name }}/static/tmp state=directory owner={{username}} group={{username}} mode=0775
+  when: mook.changed and use_hdd == False
+
+- name: Install python requierment
+  pip: requirements=requirements.txt chdir={{ mook_path }}/{{ mook_name }}/api virtualenv_command=/usr/local/bin/virtualenv virtualenv={{ mook_path }}/{{ mook_name }}/api/env
   when: mook.changed
 
 - name: Copy settings_local config files
@@ -41,7 +43,7 @@
   when: mook.changed
 
 - name: Retrieve KoomBook info 
-  set_fact: koombookName="{{ lookup('csvfile', 'id file=/etc/firstStart.csv delimiter=, col=5') }}" uuid="{{ lookup('csvfile', 'id file=/etc/firstStart.csv delimiter=, col=6') }}"
+  set_fact: koombookName="{{ lookup('csvfile', 'id file=/etc/firstStart.csv delimiter=, col=3') }}" uuid="{{ lookup('csvfile', 'id file=/etc/firstStart.csv delimiter=, col=4') }}"
   when: mook.changed
   ignore_errors: yes
   
@@ -70,7 +72,7 @@
 ####
 - name: Clone mook front
   become_user: ideascube
-  git: repo=ssh://git@altssh.bitbucket.org:443/gryzzlab/mook-bsf-front-end-backbone.git dest={{ mook_path }}/{{ mook_name }}/front accept_hostkey=yes depth=1
+  git: repo=ssh://git@altssh.bitbucket.org:443/bsfcampus/mook-bsf-front-end-backbone.git dest={{ mook_path }}/{{ mook_name }}/front accept_hostkey=yes depth=1
   register: mookFront
 
 - name: download vendor package

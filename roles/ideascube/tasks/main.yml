@@ -1,18 +1,25 @@
 ---
+- include_vars: group_vars/{{ ansible_architecture }}.yml
+
 - name: Test if package is already installed 
   shell: dpkg-query -W  ideascube  | awk '{print $2}' ; echo
   register: ideascube_version
 
 - debug: msg="ideascube version {{ ideascube_version.stdout }}"
 
-- name: Install all requiered package
-  apt: name={{ item }} state=latest
-  with_items:
-   - python-networkmanager
-   - network-manager
+- name: Set up the custom Policy Kit actions
+  copy: src=org.bsf.ideascube.policy dest=/usr/share/polkit-1/actions/org.bsf.ideascube.policy 
+    owner=root group=root mode=644
 
-- name: Create entry to clone/pull git repository
-  copy: src=nm-dispatcher dest=/etc/NetworkManager/dispatcher.d/ansiblePullUpdate owner=root group=root mode=0755
+- name: Set up the Policy Kit authorizations
+  copy: src={{ item }} dest=/var/lib/polkit-1/localauthority/20-org.d/{{ item }} owner=root group=root mode=644
+  with_items:
+  - ideascube-networkmanager.pkla
+  - ideascube-systemd.pkla
+  ignore_errors: yes
+
+- name: Add the PAM service
+  copy: src=ideascube.pam dest=/etc/pam.d/ideascube owner=root group=root mode=644
 
 # For ARM
 
@@ -69,27 +76,11 @@
   file: src=/etc/uwsgi/apps-available/ideascube.ini dest=/etc/uwsgi/apps-enabled/ideascube.ini state=link
   when: ideascube_version.stdout == ""
 
-- name: Set up the custom Policy Kit actions
-  copy: src=org.bsf.ideascube.policy dest=/usr/share/polkit-1/actions/org.bsf.ideascube.policy owner=root group=root mode=644
-  when: ideascube_version.stdout == ""
-
-- name: Set up the Policy Kit authorizations
-  copy: src={{ item }} dest=/var/lib/polkit-1/localauthority/20-org.d/{{ item }} owner=root group=root mode=644
-  with_items:
-  - ideascube-networkmanager.pkla
-  - ideascube-systemd.pkla
-  when: ideascube_version.stdout == ""
-  ignore_errors: yes
-
-- name: Add the PAM service
-  copy: src=ideascube.pam dest=/etc/pam.d/ideascube owner=root group=root mode=644
-  when: ideascube_version.stdout == ""
-
 - name: Ideascube collectstatic to the hard drive
   become: yes
   become_user: ideascube
   shell: ideascube collectstatic --noinput
-  when: use_hdd and ideascube_version.stdout == ""
+  when: use_hdd == True and ideascube_version.stdout == ""
 
 - name: Ideascube migrate data to the hard drive
   become: yes
@@ -98,15 +89,15 @@
   notify: restart uwsgi
   when: use_hdd and ideascube_version.stdout == ""
 
-# - name: Download CSV to import
-#   get_url: url={{filer_bsf}}/KB_Liste_contenus_videos+fiches.csv dest=/media/hdd/IdeasServerContent/videos/KB_Liste_contenus_videos+fiches.csv
-#   when: ideascube_version.stdout == "" and import_ideascube_data and use_hdd
+- name: Download CSV to import
+  get_url: url={{filer_bsf}}/KB_Liste_contenus_videos+fiches.csv dest=/media/hdd/IdeasServerContent/videos/KB_Liste_contenus_videos+fiches.csv
+  when: ideascube_version.stdout == "" and import_ideascube_data and use_hdd
 
-# - name: Import data 
-#   become: yes
-#   become_user: ideascube
-#   shell: ideascube import_medias /media/hdd/IdeasServerContent/videos/KB_Liste_contenus_videos+fiches.csv
-#   when: ideascube_version.stdout == "" and import_ideascube_data and use_hdd
+- name: Import data 
+  become: yes
+  become_user: ideascube
+  shell: ideascube import_medias /media/hdd/IdeasServerContent/videos/KB_Liste_contenus_videos+fiches.csv
+  when: ideascube_version.stdout == "" and import_ideascube_data and use_hdd
 
 - tasks:
   include: ../../../post_tasks.yml task=ideascube version={{ version }}

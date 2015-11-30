@@ -1,4 +1,6 @@
 ---
+- include_vars: group_vars/{{ ansible_architecture }}.yml
+
 - name: Update packages list
   apt: update_cache=yes cache_valid_time=3600
 
@@ -10,7 +12,6 @@
    - python-setuptools
    - git
    - sudo
-   - vim
    - lsb-release
    - vim
    - locate
@@ -22,11 +23,31 @@
    - ntpdate
    - fake-hwclock
 
+- name: List services to restart (1/2)
+  shell: checkrestart | grep ^service | awk '{print $2}'
+  register: services
+  changed_when: False
+
 - name: Install ansible
   pip: name=ansible
 
 - name: Upgrade packages
   apt: upgrade=safe
+
+- name: Set date et time 
+  set_fact: date="{{ ansible_date_time["date"]}}" time="{{ ansible_date_time["time"]}}"
+
+- name: Set an ideascubeName and generate an UUID
+  set_fact: ideascubeName="{{ ideascube_id }}_{{ 1000 | random }}" 
+    UUID="{{ ansible_default_ipv4["macaddress"] | hash('md5') }}"
+
+- name: Adding name to the hosts file
+  lineinfile: dest=/etc/hosts regexp='^{{ hotspotip }}' insertafter='{{ hotspotip }}' 
+    line='{{ hotspotip }} {{ ideascubeName |replace("_", "-") }}.lan {{ hostname }} {{ mook_front_server_name }}' 
+    owner=root group=root mode=0644
+
+- name: An hostname can not have _ so we are switching to -, python can not have - so using _ sometime too
+  hostname: name={{ ideascubeName |replace("_", "-") }}
 
 - name: Create an ideascube user on the system
   user: name={{ username }}
@@ -90,12 +111,12 @@
 
 - name: Mount /dev/sda1
   mount: name=/media/hdd/ src=/dev/sda1 fstype=ext4 state=mounted opts=noatime
-  when: ansible_devices["sda"]["partitions"]["sda1"] and use_hdd
+  when: ansible_devices["sda"]["partitions"]["sda1"] is defined and use_hdd
   ignore_errors: yes
 
 - name: Mount /dev/sda
   mount: name=/media/hdd/ src=/dev/sda fstype=ext4 state=mounted opts=noatime
-  when: ansible_devices["sda"] and use_hdd
+  when: ansible_devices["sda"]["partitions"] is defined and use_hdd
   ignore_errors: yes
 
 - name: Create local directory to work from
@@ -108,12 +129,35 @@
   copy: src=hosts dest=/etc/ansible/hosts
           owner=root group=root mode=0644
 
-- name: Create entry to clone/pull git repository
-  copy: src=dhclient-exit-hooks dest=/etc/dhcp/dhclient-exit-hooks.d/ansiblePullUpdate 
-    owner=root group=root mode=0755
+- name: A way to get the public IP of the device
+  shell: wget -qO- http://ipecho.net/plain ; echo
+  register: public_ip
 
-- name: List services to restart (1/2)
-  shell: checkrestart | grep ^service | awk '{print $2}'
-  register: services
-  changed_when: False
-  
+- name: Write all the variables in /etc/firstStart.csv 
+  copy: content=id,{{ date }},{{ time }},{{ ideascubeName }},{{ UUID }},{{ ansible_default_ipv4["macaddress"] }},{{ ansible_default_ipv4["address"] }},{{ public_ip.stdout }}\n dest=/etc/firstStart.csv
+
+- name: Send this file over the central_server 
+  raw: cat /etc/firstStart.csv | ssh -p 443 {{ central_server }} "cat >> ./ansible/UUID/firstStart.csv"
+  when: send_to_central_server
+
+- name: Remove the existing localtime file
+  file: path=/etc/localtime state=absent
+
+- name: Set a new localtime file corresponding to the timezone
+  file: src=/usr/share/zoneinfo/{{ timezone }} dest=/etc/localtime state=link force=yes
+
+- name: Set timezone variables
+  copy: content={{ timezone }} dest=/etc/timezone owner=root group=root mode=0644 backup=yes
+  notify: update timezone
+
+- name: Remove Mongodb database folder
+  file: path=/media/hdd/mongodb/ state=absent
+  when: use_hdd
+
+- name: Remove existing ideascube folder
+  file: path=/media/hdd/ideascube/ state=absent
+  when: use_hdd
+
+- name: Fix rights on /media/hdd, otherwhise mongodb user can not cross the folder
+  file: path=/media/hdd owner={{ username }} group={{ username }} mode=0777
+  when: use_hdd
