@@ -1,4 +1,6 @@
 ---
+- include_vars: group_vars/{{ ansible_architecture }}.yml
+
 - name: Install specific packages
   apt: name={{ item }} state=latest
   with_items:

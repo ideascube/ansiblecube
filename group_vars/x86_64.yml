@@ -4,6 +4,8 @@ hostname: ideasbox.lan
 hotspot_name: ideasbox
 wpa_pass: idb258456
 
+use_hdd: True
+
 #Apps path
 software_path: /home/{{ username }}/framadvd
 zim_path: /usr/local/share/kiwix/data

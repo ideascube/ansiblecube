@@ -1,4 +1,6 @@
 ---
+- include_vars: group_vars/{{ ansible_architecture }}.yml
+
 - name: Update packages list
   apt: update_cache=yes cache_valid_time=3600
 
