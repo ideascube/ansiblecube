@@ -5,6 +5,30 @@
 
 - debug: msg="ideascube version {{ ideascube_version.stdout }}"
 
+- name: Install network-manager
+  apt: name={{ item }} state=latest
+  with_items:
+   - python-networkmanager
+   - network-manager
+
+- name: Create entry to clone/pull git repository
+  template: src=nm-dispatcher.j2 dest=/etc/NetworkManager/dispatcher.d/ansiblePullUpdate 
+    owner=root group=root mode=0755
+
+- name: Set up the custom Policy Kit actions
+  copy: src=org.bsf.ideascube.policy dest=/usr/share/polkit-1/actions/org.bsf.ideascube.policy 
+    owner=root group=root mode=644
+
+- name: Set up the Policy Kit authorizations
+  copy: src={{ item }} dest=/var/lib/polkit-1/localauthority/20-org.d/{{ item }} owner=root group=root mode=644
+  with_items:
+  - ideascube-networkmanager.pkla
+  - ideascube-systemd.pkla
+  ignore_errors: yes
+
+- name: Add the PAM service
+  copy: src=ideascube.pam dest=/etc/pam.d/ideascube owner=root group=root mode=644
+
 # For ARM
 
 - name: Create storage dir for ideascube
