@@ -80,14 +80,14 @@
   become: yes
   become_user: ideascube
   shell: ideascube collectstatic --noinput
-  when: use_hdd and ideascube_version.stdout == ""
+  when: use_hdd == True and ideascube_version.stdout == ""
 
 - name: Ideascube migrate data to the hard drive
   become: yes
   become_user: ideascube
   shell: ideascube migrate
   notify: restart uwsgi
-  when: use_hdd and ideascube_version.stdout == ""
+  when: use_hdd == True and ideascube_version.stdout == ""
 
 - tasks:
   include: ../../../post_tasks.yml task=ideascube version={{ version }}
