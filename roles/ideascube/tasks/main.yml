@@ -10,6 +10,7 @@
 - name: Set up the custom Policy Kit actions
   copy: src=org.bsf.ideascube.policy dest=/usr/share/polkit-1/actions/org.bsf.ideascube.policy 
     owner=root group=root mode=644
+  when: ideascube_version.stdout == ""
 
 - name: Set up the Policy Kit authorizations
   copy: src={{ item }} dest=/var/lib/polkit-1/localauthority/20-org.d/{{ item }} owner=root group=root mode=644
@@ -17,9 +18,11 @@
   - ideascube-networkmanager.pkla
   - ideascube-systemd.pkla
   ignore_errors: yes
+  when: ideascube_version.stdout == ""
 
 - name: Add the PAM service
   copy: src=ideascube.pam dest=/etc/pam.d/ideascube owner=root group=root mode=644
+  when: ideascube_version.stdout == ""
 
 # For ARM
 

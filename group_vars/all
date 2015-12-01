@@ -26,14 +26,3 @@ mook_front_server_name: "{{ mook_name }}.{{ hostname }}"
 central_server_host: http://mook-api.bibliosansfrontieres.fr
 appinventor_server_name: appinventor.{{hostname}}
 software_server_name: software.{{hostname}}
-
-#Hardware battery
-battery_capacity: 7800
-charging_current: 750
-power_on_button_delay: 500
-power_off_button_delay: 8000
-enable_power_button_power_off: 1
-
-#Network
-hostname: koombook.lan
-hotspot_name: koombook

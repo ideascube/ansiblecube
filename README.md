@@ -1,8 +1,8 @@
 # AnsibleCube
 
-# This doc needs to be updated...Work in progress
+## Work in progress
 
-Ansible has been choose to push and pull content, file config and softawre from and to the ideascube box.
+Ansible has been choosen to push and pull content, file config and softawre from and to the ideascube box which can be an AMD64 server or an ARM server.
 
 Ansible is originaly design to push content (from a master) to several slaves. But you can use it the other way around where the slaves are able to pull content from a master. 
 
@@ -20,49 +20,43 @@ So far ansiblecube has been tested only on Olimex Lime2 A20, Debian Jessie, Kern
 The repo is just stable enough to work on Olimex but all the recipe should be improved to be more flexible.
 
 ## Create a master 
-If you own an Olimex, the best is to give a try to Ansible ! 
+If you own an Olimex Lime 2, the best is to give a try to Ansible ! 
  - Download image from this file http://mirror.igorpecovnik.com/Armbian_4.3_Lime2_Debian_jessie_3.4.108.zip or visit to choose the one you like http://www.armbian.com/download/
  - Unzip image and burn it on an SD Card (class 10!)
  - ```dd bs=1M if=filename.raw of=/dev/sdx```
  - Insert SD card on the board, first start is longer (update, SSH keys init)
  - Default password is 1234
 
-## Install Ansible and use recipe
- - Best way to install Ansible is from pip (you'll get the most up to date version)
-```pip install ansible```
+## On your computer, clone AnsibleCube
+ - Fork the repository on your comptuter to be able to change the recipe 
+ - Open the bash script ```oneClickDeploy.sh``` and change the github repo to the correct one
+ - Copy from an existing file ```update_``` and rename this way ```update_NAME_OF_IDEASCUBE_PROJECT.yml``` with the same name of your Ideascube box
+ - Add the role you would like to install, you can find exemple in FULL_PLAYBOOK.md
+ - Save push modification on your repository ```git add . &&  git commit -a && git push origin master```
 
-- Clone the Git repo somewhere on your computer 
-```git clone https://github.com/ideascube/ansiblecube.git```
-- then 
-```cd ansiblecube```
-
-- Now you have to modify the ```hosts``` file in order to match to your respective slaves (one machine per line).
-In this case all the machines below ```[SystemPushInstall]``` will be updated
-
-- Now you need to copy your public SSH key over the ideascube box
-```ssh-copy-id root@BOX_IP```
-
-At this stage, you have Ansible installed and ready, you cloned the Git repo, you wrote the hosts file to designate the slaves and your machine (master) is able to connect automaticly to the ideascube box throught SSH with your public key.
-
-## First initialisation 
-The first initialisation called with the playbook ```SystemPushInstall``` has been written to get an update system, with most essential package and basic config. It also patch the U-Boot Olimex A20 to disable some ennoying default beahaviour. 
-Please have a look at https://github.com/ideascube/ansiblecube/blob/master/systemPushInstall.yml for more infos.
-
-### Before lunching the script
-Take a look at the variables file to set everything as would like : https://github.com/ideascube/ansiblecube/blob/master/group_vars/all, espacialy ```hotspot_name``` and ```hostname```
-
-Now you are ready to execute your first playbook
-```ansible-playbook -i hosts -l SystemPushInstall -u root systemPushInstall.yml```
-
-At the end of the process you should have complet system with :
- - A regular linux user called ideascube 
- - An SSL multiplexer capable of redirecting port 443 to 22 if SSH traffic or 2443 (change nginx.conf) if SSL traffic
- - Copy a new .bashrc, timezone, vimrc
- - Configure the system to use a new playbook for automatic update from GitHub
- - Install and configure : Nginx, dnsmasq, hostapd (wifi hostspot) and Ideascube
- - And much more, look at the sources...
+## Lunching the script !
+Now you are ready to lunch the script, to do so, SSH throught your Ideascube box. 
+ - ```ssh root@192.168.1.xxx```
+ - Download the bash script ```wget https://github.com/ideascube/ansiblecube/raw/master/oneClickDeploy.sh```
+ - Modify right ```chmod +x oneClickDeploy.sh```
+ - Lunch the script ```./oneClickDeploy.sh sync kb_mooc_cog Africa/Kinsasha False```
+This script takes 4 arguments : 
+ - ```sync``` or ```nosync``` which tell to send or not Ideascube name, UUID, installed software over the central server 
+ - ```kb_mooc_cog``` is the name of the Ideascube project, this name MUST be the same as the ideascube name stored in ```conf/```
+ - ```Africa/Kinsasha``` is the time zone (available in /usr/share/zoneinfo/) to set to the server 
+ - ```False``` or ```True``` to tell AnsibleCube to download or not data from Internet (Works so far with all the kiwix project, see exemple in playbook)
 
 ## Keep your system up to date ! 
-Now you have a basic ideascube system ready to work, great !
+Now you have an ideascube system ready to work, great !
 The second part of this doc is going to show you how you can keep up to date your system where ever this one is.
 
+You created just above a file called ```update_NAME_OF_IDEASCUBE_PROJECT.yml```, this one will be called by an Ideascube box each time the system will get an IP address.
+
+Ansible will be executed in Pull mode and It will be called by Network-Manager each time an network interface goes up, the script is stored under ```/etc/NetworkManager/dispatcher.d/ansiblePullUpdate```, it works for eth0 and wlan1
+```/usr/local/bin/ansible-pull -d /var/lib/ansible/local -i hosts -U https://github.com/ideascube/ansiblecube.git -C ideasbox update_NAME_OF_IDEASCUBE_PROJECT.yml```
+
+In this exemple you understand quickly that everything will have to be configured in the ```update_NAME_OF_IDEASCUBE_PROJECT.yml```
+
+To do so, you'll have to add and remove roles, for exemple, the role ```logs``` has been written to send logs from the Ideascube box to the central server each time the device gets Internet. 
+
+If you want to lunch a particular update, you'll have to create or adapt an Ansible role. Look at the one already build in the folder ```upgradeKb```

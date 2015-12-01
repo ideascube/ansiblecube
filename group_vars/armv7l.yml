@@ -10,3 +10,10 @@ use_hdd: True
 software_path: /media/hdd/framadvd/
 zim_path: /media/hdd
 mook_upload_file_path: /media/hdd/{{ mook_name }}/static/
+
+#Hardware battery
+battery_capacity: 7800
+charging_current: 750
+power_on_button_delay: 500
+power_off_button_delay: 8000
+enable_power_button_power_off: 1

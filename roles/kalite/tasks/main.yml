@@ -1,37 +1,44 @@
 ---
 - include_vars: group_vars/{{ ansible_architecture }}.yml
 
+- stat: path=/home/{{username}}/.kalite/
+  register: kalite
+
 - name: Install kalite
   pip: name=ka-lite
+  when: kalite.stat.exists == False
 
 - name: Initialize ka-lite
   become: yes
   become_user: ideascube
   command: kalite start
+  when: kalite.stat.exists == False
 
-- file: path=/home/{{username}}/.kalite/content state=absent
-  when: use_hdd
-  ignore_errors: yes
-
-- file: src=/media/hdd/khanVideos/content/ dest=/home/{{username}}/.kalite/content state=link force=yes
-  when: use_hdd
+- file: src=/media/hdd/khanVideos/content/ 
+    dest=/home/{{username}}/.kalite/content state=link force=yes
+  when: use_hdd and kalite.stat.exists == False
 
 - name: Fix rights
-  file: path=/media/hdd/khanVideos/content/ state=directory owner={{ username }} group={{ username }} recurse=yes
-  when: use_hdd
+  file: path=/media/hdd/khanVideos/content/ state=directory 
+    owner={{ username }} group={{ username }} recurse=yes
+  when: use_hdd and kalite.stat.exists == False
 
 - name: Copy nginx vhost
   template: src=kalite.vhost.j2 dest=/etc/nginx/sites-available/kalite
+  when: kalite.stat.exists == False
 
 - name: Nginx enable Virtual host
   file: src=/etc/nginx/sites-available/kalite dest=/etc/nginx/sites-enabled/kalite state=link
   notify: restart nginx
+  when: kalite.stat.exists == False
 
 - name: Setup startup file
   template: src=kalite.j2 dest=/etc/init.d/kalite owner=root group=root mode="u+x"
+  when: kalite.stat.exists == False
 
 - name: Enable service kalite
   service: name=kalite enabled=yes
+  when: kalite.stat.exists == False
 
 # Has to be done by hand...
 # $> sudo su -s /bin/bash ideascube
@@ -39,3 +46,4 @@
 
 - tasks:
   include: ../../../post_tasks.yml task=kalite version=0.15
+  when: kalite.stat.exists == False

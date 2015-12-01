@@ -3,9 +3,8 @@ Description=Lunch hostapd
 After=syslog.target network.target
 
 [Service]
-Type=idle
 PIDFile=/var/run/hostapd.pid
-ExecStart=/usr/sbin/hostapd -B -P /var/run/hostapd.pid /etc/hostapd/hostapd.conf
+ExecStart=/usr/sbin/hostapd -P /var/run/hostapd.pid /etc/hostapd/hostapd.conf
 KillSignal=SIGINT
 Restart=on-failure
 RestartSec=5

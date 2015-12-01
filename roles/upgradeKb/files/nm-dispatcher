@@ -1,5 +1,0 @@
-#!/bin/bash
-
-if [ "$2" = "up" ]; then  
-       sleep 120 && rm -rf /var/lib/ansible/ && /usr/local/bin/ansible-pull -d /var/lib/ansible/local -i hosts -U https://github.com/ideascube/ansiblecube.git update_kb_servir_ben.yml >> /var/log/ansible-pull.log 2>&1 &
-fi  

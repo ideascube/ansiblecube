@@ -1,6 +1,14 @@
 ---
 - include_vars: group_vars/{{ ansible_architecture }}.yml
 
+####
+# BACK END CONFIGURATION
+####
+- name: Clone mook api
+  become_user: ideascube
+  git: repo=ssh://git@altssh.bitbucket.org:443/bsfcampus/mook-bsf-api.git dest={{ mook_path }}/{{ mook_name }}/api accept_hostkey=yes depth=1
+  register: mook
+
 - name: Install specific packages
   apt: name={{ item }} state=latest
   with_items:
@@ -10,17 +18,11 @@
     - unzip
     - libffi6
     - libffi-dev
+  when: mook.changed
 
 - name: Installe virtualenv
   pip: name=virtualenv
-
-####
-# BACK END CONFIGURATION
-####
-- name: Clone mook api
-  become_user: ideascube
-  git: repo=ssh://git@altssh.bitbucket.org:443/bsfcampus/mook-bsf-api.git dest={{ mook_path }}/{{ mook_name }}/api accept_hostkey=yes depth=1
-  register: mook
+  when: mook.changed
 
 - name: Update setuptools
   pip: name=setuptools extra_args="-U"
@@ -91,6 +93,7 @@
 
 - name: Fix rights
   file: path={{ mook_path }}/{{ mook_name }} state=directory owner={{ username }} group={{ username }} recurse=yes
+  when: mookFront.changed
 
 ####
 # NGINX CONFIGURATION

@@ -7,7 +7,7 @@
   roles:
     # Has to be always enable
     - logs
-    # - kalite
+    - kalite
 
     - role: ideascube
       version: "0.5.0-1"

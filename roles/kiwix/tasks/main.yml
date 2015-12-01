@@ -24,25 +24,32 @@
   unarchive: src=/tmp/kiwix_library.zip dest={{zim_path}} copy=no
   when: st.stat.exists == False
 
+# Test if the conf file already exist on the device otherwhise skip...
+- stat: path=/etc/nginx/sites-available/{{ kiwixProject }}
+  register: confFile
+
 - name: Setup startup file for {{ kiwixProject }}
   template: src=kiwix.j2 dest=/etc/init.d/{{ kiwixProject }} owner=root group=root mode=755
+  when: confFile.stat.exists == False
 
 - name: Enable service kiwix for {{ kiwixProject }}
   service: name={{ kiwixProject }} enabled=yes
+  when: confFile.stat.exists == False
 
 - name: Copy nginx vhost for {{ kiwixProject }}
   template: src=nginx.vhost.j2 dest=/etc/nginx/sites-available/{{ kiwixProject }}
-  register: vhost
+  when: confFile.stat.exists == False
 
 - name: Nginx enable Virtual host
   file: src=/etc/nginx/sites-available/{{ kiwixProject }} dest=/etc/nginx/sites-enabled/{{ kiwixProject }} state=link
-  when: vhost.changed
+  when: confFile.stat.exists == False
   notify: restart nginx
 
 - name: Download {{ kiwixProject }} zim file 
   get_url: url=http://download.kiwix.org/zim/{{ kiwixProject }}/{{ item }} dest={{zim_path}} timeout=20
   with_items: "{{version}}"
-  when: download_data
+  when: download_data and confFile.stat.exists == False
 
 - tasks:
   include: ../../../post_tasks.yml task={{ kiwixProject }} version=1
+  when: confFile.stat.exists == False
