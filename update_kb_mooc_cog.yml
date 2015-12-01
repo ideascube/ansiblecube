@@ -22,6 +22,6 @@
     - role: mook
       mook_name: koombookedu
 
-  post_tasks:
-    - command: reboot
-      when: ideascube_version.stdout == ""
+  # post_tasks:
+  #   - command: reboot
+  #     when: ideascube_version.stdout == ""
