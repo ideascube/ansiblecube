@@ -14,6 +14,9 @@
   command: kalite start
   when: kalite.stat.exists == False
 
+- name: Remove existing content
+  file: path=/home/{{username}}/.kalite/content state=absent
+
 - file: src=/media/hdd/khanVideos/content/ 
     dest=/home/{{username}}/.kalite/content state=link force=yes
   when: use_hdd and kalite.stat.exists == False

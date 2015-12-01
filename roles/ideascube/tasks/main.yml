@@ -90,7 +90,7 @@
   become_user: ideascube
   shell: ideascube migrate
   notify: restart uwsgi
-  when: use_hdd and ideascube_version.stdout == ""
+  when: use_hdd == True and ideascube_version.stdout == ""
 
 - name: Download CSV to import
   get_url: url={{filer_bsf}}/KB_Liste_contenus_videos+fiches.csv dest=/media/hdd/IdeasServerContent/videos/KB_Liste_contenus_videos+fiches.csv
