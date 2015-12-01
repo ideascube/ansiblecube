@@ -1,6 +1,24 @@
 ---
 - include_vars: group_vars/{{ ansible_architecture }}.yml
 
+- name: Set date and time 
+  set_fact: date="{{ ansible_date_time["date"]}}" time="{{ ansible_date_time["time"]}}"
+
+- name: Set an ideascubeName and generate an UUID
+  set_fact: ideascubeName="{{ ideascube_id }}_{{ 1000 | random }}" 
+    UUID="{{ ansible_default_ipv4["macaddress"] | hash('md5') }}"
+
+- name: A way to get the public IP of the device
+  shell: wget -qO- http://ipecho.net/plain ; echo
+  register: public_ip
+
+- name: Write all the variables in /etc/firstStart.csv 
+  copy: content=id,{{ date }},{{ time }},{{ ideascubeName }},{{ UUID }},{{ ansible_default_ipv4["macaddress"] }},{{ ansible_default_ipv4["address"] }},{{ public_ip.stdout }}\n dest=/etc/firstStart.csv
+
+- name: Send this file over the central_server 
+  raw: cat /etc/firstStart.csv | ssh -p 443 {{ central_server }} "cat >> ./ansible/UUID/firstStart.csv"
+  when: send_to_central_server
+
 - name: Update packages list
   apt: update_cache=yes cache_valid_time=3600
 
@@ -34,13 +52,6 @@
 - name: Upgrade packages
   apt: upgrade=safe
 
-- name: Set date et time 
-  set_fact: date="{{ ansible_date_time["date"]}}" time="{{ ansible_date_time["time"]}}"
-
-- name: Set an ideascubeName and generate an UUID
-  set_fact: ideascubeName="{{ ideascube_id }}_{{ 1000 | random }}" 
-    UUID="{{ ansible_default_ipv4["macaddress"] | hash('md5') }}"
-
 - name: Adding name to the hosts file
   lineinfile: dest=/etc/hosts regexp='^{{ hotspotip }}' insertafter='{{ hotspotip }}' 
     line='{{ hotspotip }} {{ ideascubeName |replace("_", "-") }}.lan {{ hostname }} {{ mook_front_server_name }}' 
@@ -62,6 +73,9 @@
 - name: Copy SSHL config file
   copy: src=sslh dest=/etc/default/sslh owner=root group=root mode=0644 backup=yes
   notify: update sslh
+
+- name: Copy a blank rc.local
+  copy: src=rc.local dest=/etc/rc.local owner=root group=root mode=0644 backup=yes
 
 - name: Copy .bashrc for root
   copy: src=bashrc dest=/root/.bashrc owner=root
@@ -128,17 +142,6 @@
 - name: Copy ansible inventory file to client
   copy: src=hosts dest=/etc/ansible/hosts
           owner=root group=root mode=0644
-
-- name: A way to get the public IP of the device
-  shell: wget -qO- http://ipecho.net/plain ; echo
-  register: public_ip
-
-- name: Write all the variables in /etc/firstStart.csv 
-  copy: content=id,{{ date }},{{ time }},{{ ideascubeName }},{{ UUID }},{{ ansible_default_ipv4["macaddress"] }},{{ ansible_default_ipv4["address"] }},{{ public_ip.stdout }}\n dest=/etc/firstStart.csv
-
-- name: Send this file over the central_server 
-  raw: cat /etc/firstStart.csv | ssh -p 443 {{ central_server }} "cat >> ./ansible/UUID/firstStart.csv"
-  when: send_to_central_server
 
 - name: Remove the existing localtime file
   file: path=/etc/localtime state=absent
