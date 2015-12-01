@@ -123,14 +123,17 @@
 - file: path=/media/hdd state=directory
   when: use_hdd
 
+- stat: path=/dev/sda1
+  register: dev_hdd
+
 - name: Mount /dev/sda1
   mount: name=/media/hdd/ src=/dev/sda1 fstype=ext4 state=mounted opts=noatime
-  when: ansible_devices["sda"]["partitions"]["sda1"] is defined and use_hdd
+  when: dev_hdd.stat.exists == True and use_hdd
   ignore_errors: yes
 
 - name: Mount /dev/sda
   mount: name=/media/hdd/ src=/dev/sda fstype=ext4 state=mounted opts=noatime
-  when: ansible_devices["sda"]["partitions"] is defined and use_hdd
+  when: dev_hdd.stat.exists == False and use_hdd
   ignore_errors: yes
 
 - name: Create local directory to work from
