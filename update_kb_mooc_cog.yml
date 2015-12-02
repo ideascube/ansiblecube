@@ -5,10 +5,6 @@
 - hosts: localhost
 
   pre_tasks:
-    - vars:
-      mook_path: /home/ideascube
-      mook_name: koombookedu
-
     - name: Clone mook api
       become_user: ideascube
       git: repo=ssh://git@altssh.bitbucket.org:443/bsfcampus/mook-bsf-api.git dest={{ mook_path }}/{{ mook_name }}/api accept_hostkey=yes depth=1
