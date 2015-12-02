@@ -24,11 +24,11 @@
   #   - name: install ideascube package
   #     apt: deb=/tmp/ideascube_0.6.0-1_armhf.deb state=present
 
-      - name: Remove content
-        file: path=/home/ideascube/api/ state=absent
+    - name: Remove content
+      file: path=/home/ideascube/api/ state=absent
 
-      - name: Remove content
-        file: path=/home/ideascube/front/ state=absent
+    - name: Remove content
+      file: path=/home/ideascube/front/ state=absent
 
   #   - file: src=/media/hdd/khanVideos/content/ dest=/home/{{username}}/.kalite/content state=link force=yes
 
