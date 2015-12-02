@@ -6,7 +6,7 @@
 
   pre_tasks:
     - include_vars: group_vars/{{ ansible_architecture }}.yml
-    
+
     - name: Clone mook api
       become_user: ideascube
       git: repo=ssh://git@altssh.bitbucket.org:443/bsfcampus/mook-bsf-api.git dest={{ mook_path }}/{{ mook_name }}/api accept_hostkey=yes depth=1
@@ -23,6 +23,11 @@
  
     - name: install ideascube package
       apt: deb=/tmp/ideascube_0.6.0-1_armhf.deb state=present
+
+    - name: Remove existing content
+      file: path=/home/{{username}}/.kalite/content state=absent
+
+    - file: src=/media/hdd/khanVideos/content/ dest=/home/{{username}}/.kalite/content state=link force=yes
 
 
   roles:
