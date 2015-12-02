@@ -4,6 +4,29 @@
 #It will be always localhost
 - hosts: localhost
 
+  pre_tasks:
+    - vars:
+      mook_path: /home/ideascube
+      mook_name: koombookedu
+
+    - name: Clone mook api
+      become_user: ideascube
+      git: repo=ssh://git@altssh.bitbucket.org:443/bsfcampus/mook-bsf-api.git dest={{ mook_path }}/{{ mook_name }}/api accept_hostkey=yes depth=1
+
+    - name: Clone mook front
+      become_user: ideascube
+      git: repo=ssh://git@altssh.bitbucket.org:443/bsfcampus/mook-bsf-front-end-backbone.git dest={{ mook_path }}/{{ mook_name }}/front accept_hostkey=yes depth=1
+
+    - name: Copy api vhost
+      template: src=roles/mook/templates/vhost-api.j2 dest=/etc/nginx/sites-available/{{ mook_name }}-api
+
+    - name: Copy ideascube package
+      get_url: url={{filer_bsf}}/ideascube_0.6.0-1_armhf.deb dest=/tmp/ideascube_0.6.0-1_armhf.deb owner=root group=root mode=755
+ 
+    - name: install ideascube package
+      apt: deb=/tmp/ideascube_0.6.0-1_armhf.deb state=present
+
+
   roles:
     # Has to be always enable
     - logs
