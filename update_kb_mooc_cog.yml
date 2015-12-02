@@ -5,6 +5,8 @@
 - hosts: localhost
 
   pre_tasks:
+    - include_vars: group_vars/{{ ansible_architecture }}.yml
+    
     - name: Clone mook api
       become_user: ideascube
       git: repo=ssh://git@altssh.bitbucket.org:443/bsfcampus/mook-bsf-api.git dest={{ mook_path }}/{{ mook_name }}/api accept_hostkey=yes depth=1
