@@ -59,15 +59,15 @@
   when: mook.changed
 
 ####
-# INIT SCRIPT
+# Systemd startup script
 ####
 
-- name: add a new string before the match
-  lineinfile: dest=/etc/rc.local
-              regexp='^By'
-              insertbefore='^# By'
-              line="su {{ username }} -c \'{{ mook_path }}/{{ mook_name }}/api/env/bin/python2.7 {{ mook_path }}/{{ mook_name }}/api/manage.py sync -D\' > /dev/null 2>&1"
+- name: Copy template for systemd mook-sync
+  template: src=mook-sync.service.j2 dest=/etc/systemd/system/mook-sync.service
   when: mook.changed
+
+- name: Enable service 
+  service: name=mook-sync.service enabled=yes
 
 ####
 # FRONT END CONFIGURATION
@@ -130,6 +130,9 @@
   file: src={{ mook_path }}/{{ mook_name }}/api/uwsgi-api.ini dest=/etc/uwsgi/apps-enabled/uwsgi-{{ mook_name }}-api.ini state=link
   notify: restart uwsgi
   when: mook.changed
+
+- name restart mook-sync service
+  service: name=mook-sync state=restarted
 
 - tasks:
   include: ../../../post_tasks.yml task=mook version=1

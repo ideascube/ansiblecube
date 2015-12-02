@@ -1,0 +1,14 @@
+[Unit]
+Description=Synchronisation deamon for Mook
+After=network.target
+
+[Service]
+ExecStart={{mook_path}}/{{mook_name}}/api/env/bin/python2.7 {{mook_path}}/{{mook_name}}/api/manage.py sync
+PIDFile=/var/run/mook-sync.pid
+KillSignal=SIGINT
+Restart=on-failure
+RestartSec=5
+User={{username}}
+
+[Install]
+WantedBy=default.target

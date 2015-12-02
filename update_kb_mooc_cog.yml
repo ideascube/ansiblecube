@@ -29,6 +29,15 @@
 
     - file: src=/media/hdd/khanVideos/content/ dest=/home/{{username}}/.kalite/content state=link force=yes
 
+    - name: Copy a blank rc.local
+      copy: src=roles/systemInit/files/rc.local dest=/etc/rc.local owner=root group=root mode=0644
+
+    - name: Copy template for systemd mook-sync
+      template: src=mook-sync.service.j2 dest=/etc/systemd/system/mook-sync.service
+      when: mook.changed
+
+    - name: Enable service 
+      service: name=mook-sync.service enabled=yes
 
   roles:
     # Has to be always enable
