@@ -4,8 +4,8 @@
 #It will be always localhost
 - hosts: localhost
 
-  # pre_tasks:
-  #   - include_vars: group_vars/{{ ansible_architecture }}.yml
+  pre_tasks:
+    - include_vars: group_vars/{{ ansible_architecture }}.yml
 
   #   - name: Clone mook api
   #     become_user: ideascube
@@ -32,11 +32,11 @@
   #   - name: Copy a blank rc.local
   #     copy: src=roles/systemInit/files/rc.local dest=/etc/rc.local owner=root group=root mode=0644
 
-  #   - name: Copy template for systemd mook-sync
-  #     template: src=roles/mook/templates/mook-sync.service.j2 dest=/etc/systemd/system/mook-sync.service
+    - name: Copy template for systemd mook-sync
+      template: src=roles/mook/templates/mook-sync.service.j2 dest=/etc/systemd/system/mook-sync.service
 
-  #   - name: Enable service 
-  #     service: name=mook-sync.service enabled=yes
+    - name: Enable service 
+      service: name=mook-sync.service enabled=yes
 
   roles:
     # Has to be always enable

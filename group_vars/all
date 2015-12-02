@@ -17,7 +17,7 @@ download_data: False
 
 #Apps path
 mook_path: /home/{{ username }}
-mook_name: ""
+mook_name: "koombookedu"
 
 #Domaine name
 kalite_server_name: khanacademy.{{hostname}}
