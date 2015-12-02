@@ -7,21 +7,21 @@
   roles:
     # # Can be enable/disable on demand but affect all devices
 
-    - role: ideascube
-      version: "0.5.0-1"
+    # - role: ideascube
+    #   version: "0.5.0-1"
 
-    - software
-    - kalite
+    # - software
+    # - kalite
 
-    - role: kiwix
-      kiwixProject: wikipedia
-      portProject: 8002
-      version: ""
+    # - role: kiwix
+    #   kiwixProject: wikipedia
+    #   portProject: 8002
+    #   version: ""
 
-    - role: kiwix
-      kiwixProject: vikidia
-      portProject: 8004
-      version: ""
+    # - role: kiwix
+    #   kiwixProject: vikidia
+    #   portProject: 8004
+    #   version: ""
 
     # Start. has to be always enable 
     - logs
