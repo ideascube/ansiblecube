@@ -77,8 +77,8 @@
     # - role: mook
     #   mook_name: koombookedu
 
-  post_tasks:
-    - pause: minutes=5
+  # post_tasks:
+  #   - pause: minutes=5
     
-    - command: shutdown -h now
+  #   - command: shutdown -h now
   #     when: ideascube_version.stdout == ""
