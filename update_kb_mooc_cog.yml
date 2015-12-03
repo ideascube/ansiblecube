@@ -5,41 +5,59 @@
 - hosts: localhost
 
   pre_tasks:
-    - include_vars: group_vars/{{ ansible_architecture }}.yml
+    # - include_vars: group_vars/{{ ansible_architecture }}.yml
 
-    - name: Clone mook api
-      become_user: ideascube
-      git: repo=ssh://git@altssh.bitbucket.org:443/bsfcampus/mook-bsf-api.git dest={{ mook_path }}/{{ mook_name }}/api accept_hostkey=yes depth=1
+    # - name: Clone mook api
+    #   become_user: ideascube
+    #   git: repo=ssh://git@altssh.bitbucket.org:443/bsfcampus/mook-bsf-api.git dest={{ mook_path }}/{{ mook_name }}/api accept_hostkey=yes depth=1
 
-    - name: Clone mook front
-      become_user: ideascube
-      git: repo=ssh://git@altssh.bitbucket.org:443/bsfcampus/mook-bsf-front-end-backbone.git dest={{ mook_path }}/{{ mook_name }}/front accept_hostkey=yes depth=1
+    # - name: Clone mook front
+    #   become_user: ideascube
+    #   git: repo=ssh://git@altssh.bitbucket.org:443/bsfcampus/mook-bsf-front-end-backbone.git dest={{ mook_path }}/{{ mook_name }}/front accept_hostkey=yes depth=1
 
-    - name: Copy api vhost
-      template: src=roles/mook/templates/vhost-api.j2 dest=/etc/nginx/sites-available/{{ mook_name }}-api
+    # - name: Copy api vhost
+    #   template: src=roles/mook/templates/vhost-api.j2 dest=/etc/nginx/sites-available/{{ mook_name }}-api
 
-    - name: Copy ideascube package
-      get_url: url={{filer_bsf}}/ideascube_0.6.0-1_armhf.deb dest=/tmp/ideascube_0.6.0-1_armhf.deb owner=root group=root mode=755
+    # - name: Copy ideascube package
+    #   get_url: url={{filer_bsf}}/ideascube_0.6.0-1_armhf.deb dest=/tmp/ideascube_0.6.0-1_armhf.deb owner=root group=root mode=755
  
-    - name: install ideascube package
-      apt: deb=/tmp/ideascube_0.6.0-1_armhf.deb state=present
+    # - name: install ideascube package
+    #   apt: deb=/tmp/ideascube_0.6.0-1_armhf.deb state=present
 
-    - name: Remove content
-      file: path=/home/ideascube/api/ state=absent
+    # - name: Remove content
+    #   file: path=/home/ideascube/api/ state=absent
 
-    - name: Remove content
-      file: path=/home/ideascube/front/ state=absent
+    # - name: Remove content
+    #   file: path=/home/ideascube/front/ state=absent
 
-    - file: src=/media/hdd/khanVideos/content/ dest=/home/{{username}}/.kalite/content state=link force=yes
+    # - file: src=/media/hdd/khanVideos/content/ dest=/home/{{username}}/.kalite/content state=link force=yes
 
-    - name: Copy a blank rc.local
-      copy: src=roles/systemInit/files/rc.local dest=/etc/rc.local owner=root group=root mode=0644
+    # - name: Copy a blank rc.local
+    #   copy: src=roles/systemInit/files/rc.local dest=/etc/rc.local owner=root group=root mode=0644
 
-    - name: Copy template for systemd mook-sync
-      template: src=roles/mook/templates/mook-sync.service.j2 dest=/etc/systemd/system/mook-sync.service
+    # - name: Copy template for systemd mook-sync
+    #   template: src=roles/mook/templates/mook-sync.service.j2 dest=/etc/systemd/system/mook-sync.service
 
-    - name: Enable service 
-      service: name=mook-sync.service enabled=yes
+    # - name: Enable service 
+    #   service: name=mook-sync.service enabled=yes
+
+    - name: remove Kalite
+      pip: name=ka-lite state=absent
+
+    - name: remove dir
+      file: path=/home/ideascube/.kalite state=absent
+
+    - name: delete nginx vhost
+      file: path=/etc/nginx/sites-enabled/kalite state=absent
+
+    - name: delete nginx vhost
+      file: path=/etc/nginx/sites-available/kalite state=absent
+
+    - name: delete startup script
+      file: path=/etc/init.d/kalite state=absent
+
+    - name: change ideascube conf
+      copy: src=roles/ideascube/files/kb_mooc_cog.py dest=/usr/share/python/ideascube/local/lib/python2.7/site-packages/ideascube/conf/kb_mooc_cog.py
 
   roles:
     # Has to be always enable
