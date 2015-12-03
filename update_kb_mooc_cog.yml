@@ -4,7 +4,7 @@
 #It will be always localhost
 - hosts: localhost
 
-  pre_tasks:
+  # pre_tasks:
     # - include_vars: group_vars/{{ ansible_architecture }}.yml
 
     # - name: Clone mook api
@@ -41,23 +41,23 @@
     # - name: Enable service 
     #   service: name=mook-sync.service enabled=yes
 
-    - name: remove Kalite
-      pip: name=ka-lite state=absent
+    # - name: remove Kalite
+    #   pip: name=ka-lite state=absent
 
-    - name: remove dir
-      file: path=/home/ideascube/.kalite state=absent
+    # - name: remove dir
+    #   file: path=/home/ideascube/.kalite state=absent
 
-    - name: delete nginx vhost
-      file: path=/etc/nginx/sites-enabled/kalite state=absent
+    # - name: delete nginx vhost
+    #   file: path=/etc/nginx/sites-enabled/kalite state=absent
 
-    - name: delete nginx vhost
-      file: path=/etc/nginx/sites-available/kalite state=absent
+    # - name: delete nginx vhost
+    #   file: path=/etc/nginx/sites-available/kalite state=absent
 
-    - name: delete startup script
-      file: path=/etc/init.d/kalite state=absent
+    # - name: delete startup script
+    #   file: path=/etc/init.d/kalite state=absent
 
-    - name: change ideascube conf
-      copy: src=roles/ideascube/files/kb_mooc_cog.py dest=/usr/share/python/ideascube/local/lib/python2.7/site-packages/ideascube/conf/kb_mooc_cog.py
+    # - name: change ideascube conf
+    #   copy: src=roles/ideascube/files/kb_mooc_cog.py dest=/usr/share/python/ideascube/local/lib/python2.7/site-packages/ideascube/conf/kb_mooc_cog.py
 
   roles:
     # Has to be always enable
@@ -77,6 +77,6 @@
     # - role: mook
     #   mook_name: koombookedu
 
-  post_tasks:
-    - command: shutdown -h now
+  # post_tasks:
+  #   - command: shutdown -h now
   #     when: ideascube_version.stdout == ""
