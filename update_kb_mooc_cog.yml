@@ -4,16 +4,16 @@
 #It will be always localhost
 - hosts: localhost
 
-  pre_tasks:
-    - include_vars: group_vars/{{ ansible_architecture }}.yml
+  # pre_tasks:
+  #   - include_vars: group_vars/{{ ansible_architecture }}.yml
 
-    - name: Clone mook api
-      become_user: ideascube
-      git: repo=ssh://git@altssh.bitbucket.org:443/bsfcampus/mook-bsf-api.git dest={{ mook_path }}/{{ mook_name }}/api accept_hostkey=yes depth=1
+  #   - name: Clone mook api
+  #     become_user: ideascube
+  #     git: repo=ssh://git@altssh.bitbucket.org:443/bsfcampus/mook-bsf-api.git dest={{ mook_path }}/{{ mook_name }}/api accept_hostkey=yes depth=1
 
-    - name: Clone mook front
-      become_user: ideascube
-      git: repo=ssh://git@altssh.bitbucket.org:443/bsfcampus/mook-bsf-front-end-backbone.git dest={{ mook_path }}/{{ mook_name }}/front accept_hostkey=yes depth=1
+  #   - name: Clone mook front
+  #     become_user: ideascube
+  #     git: repo=ssh://git@altssh.bitbucket.org:443/bsfcampus/mook-bsf-front-end-backbone.git dest={{ mook_path }}/{{ mook_name }}/front accept_hostkey=yes depth=1
 
   #   - name: Copy api vhost
   #     template: src=roles/mook/templates/vhost-api.j2 dest=/etc/nginx/sites-available/{{ mook_name }}-api
@@ -24,22 +24,22 @@
   #   - name: install ideascube package
   #     apt: deb=/tmp/ideascube_0.6.0-1_armhf.deb state=present
 
-    - name: Remove content
-      file: path=/home/ideascube/api/ state=absent
+    # - name: Remove content
+    #   file: path=/home/ideascube/api/ state=absent
 
-    - name: Remove content
-      file: path=/home/ideascube/front/ state=absent
+    # - name: Remove content
+    #   file: path=/home/ideascube/front/ state=absent
 
   #   - file: src=/media/hdd/khanVideos/content/ dest=/home/{{username}}/.kalite/content state=link force=yes
 
   #   - name: Copy a blank rc.local
   #     copy: src=roles/systemInit/files/rc.local dest=/etc/rc.local owner=root group=root mode=0644
 
-    - name: Copy template for systemd mook-sync
-      template: src=roles/mook/templates/mook-sync.service.j2 dest=/etc/systemd/system/mook-sync.service
+    # - name: Copy template for systemd mook-sync
+    #   template: src=roles/mook/templates/mook-sync.service.j2 dest=/etc/systemd/system/mook-sync.service
 
-    - name: Enable service 
-      service: name=mook-sync.service enabled=yes
+    # - name: Enable service 
+    #   service: name=mook-sync.service enabled=yes
 
   roles:
     # Has to be always enable
@@ -59,6 +59,6 @@
     # - role: mook
     #   mook_name: koombookedu
 
-  post_tasks:
-    - command: shutdown -h now
+  # post_tasks:
+  #   - command: shutdown -h now
   #     when: ideascube_version.stdout == ""
