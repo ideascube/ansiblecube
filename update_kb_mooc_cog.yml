@@ -4,7 +4,7 @@
 #It will be always localhost
 - hosts: localhost
 
-  # pre_tasks:
+  pre_tasks:
     - include_vars: group_vars/{{ ansible_architecture }}.yml
 
     - name: Clone mook api
