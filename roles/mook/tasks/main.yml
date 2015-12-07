@@ -30,11 +30,11 @@
 
 - name: Create static and tmp directory
   file: path=/media/hdd/{{ mook_name }}/static/tmp state=directory mode=0755 owner={{ username }} group={{ username }}
-  when: mook.changed and use_hdd
+  when: mook.changed and use_hdd|bool
 
 - name: Create static dir
   file: path={{ mook_path }}/{{ mook_name }}/static/tmp state=directory owner={{username}} group={{username}} mode=0775
-  when: mook.changed and use_hdd == False
+  when: mook.changed and use_hdd|bool == False
 
 - name: Install python requierment
   pip: requirements=requirements.txt chdir={{ mook_path }}/{{ mook_name }}/api virtualenv_command=/usr/local/bin/virtualenv virtualenv={{ mook_path }}/{{ mook_name }}/api/env

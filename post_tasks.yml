@@ -6,5 +6,5 @@
 
 - name: Push file to central_server
   shell: echo "{{ date }},{{ time }},{{ ansible_hostname }},{{ task }},{{ version }}" | ssh -p 443 {{ central_server }} "cat >> ./ansible/installed_software/sofware_list.csv"
-  when: send_to_central_server == True
+  when: send_to_central_server|bool == True
   ignore_errors: yes

@@ -5,7 +5,7 @@
   shell: dpkg-query -W  ideascube  | awk '{print $2}' ; echo
   register: ideascube_version
 
-- debug: msg="ideascube version {{ ideascube_version.stdout }}"
+- debug: msg="installed ideascube version {{ ideascube_version.stdout }}"
 
 - name: Set up the custom Policy Kit actions
   copy: src=org.bsf.ideascube.policy dest=/usr/share/polkit-1/actions/org.bsf.ideascube.policy 
@@ -34,21 +34,21 @@
 
 - name: Copy ideascube package
   get_url: url={{filer_bsf}}/ideascube_{{ version }}_armhf.deb dest=/tmp/ideascube_{{ version }}_armhf.deb owner=root group=root mode=755
-  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and ideascube_version.stdout|int <= "{{ version }}"
+  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and ideascube_version.stdout < "{{ version }}"
 
 - name: install ideascube package
   apt: deb=/tmp/ideascube_{{ version }}_armhf.deb state=present
-  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and ideascube_version.stdout|int <= "{{ version }}"
+  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and ideascube_version.stdout < "{{ version }}"
 
 # For AMD64
 
 - name: Copy ideascube package
   get_url: url={{filer_bsf}}/ideascube_{{ version }}_amd64.deb dest=/tmp/ideascube_{{ version }}_amd64.deb owner=root group=root mode=755
-  when: ansible_architecture == 'x86_64' and ideascube_version.stdout|int <= "{{ version }}"
+  when: ansible_architecture == 'x86_64' and ideascube_version.stdout < "{{ version }}"
 
 - name: install ideascube package
   apt: deb=/tmp/ideascube_{{ version }}_amd64.deb state=present
-  when: ansible_architecture == 'x86_64' and ideascube_version.stdout|int <= "{{ version }}"
+  when: ansible_architecture == 'x86_64' and ideascube_version.stdout < "{{ version }}"
 
 # Add settings and conf
 
@@ -58,11 +58,11 @@
 
 - name: Adapt STORAGE_ROOT for Nginx
   replace: dest=/etc/nginx/sites-available/ideascube regexp='/var/ideascube/main/media/' replace='/media/hdd/ideascube/storage/main/media/' backup=yes
-  when: use_hdd and ideascube_version.stdout == ""
+  when: use_hdd|bool == True  and ideascube_version.stdout == ""
 
 - name: Adapt STORAGE_ROOT for Nginx
   replace: dest=/etc/nginx/sites-available/ideascube regexp='/var/ideascube/static/' replace='/media/hdd/ideascube/storage/static/' backup=yes
-  when: use_hdd and ideascube_version.stdout == ""
+  when: use_hdd|bool == True and ideascube_version.stdout == ""
 
 - name: Add IDEASCUBE_ID
   lineinfile: dest=/etc/default/ideascube
@@ -83,25 +83,25 @@
   become: yes
   become_user: ideascube
   shell: ideascube collectstatic --noinput
-  when: use_hdd == True and ideascube_version.stdout == ""
+  when: use_hdd|bool == True and ideascube_version.stdout == ""
 
 - name: Ideascube migrate data to the hard drive
   become: yes
   become_user: ideascube
   shell: ideascube migrate
   notify: restart uwsgi
-  when: use_hdd == True and ideascube_version.stdout == ""
+  when: use_hdd|bool and ideascube_version.stdout == ""
 
-# - name: Download CSV to import
-#   get_url: url={{filer_bsf}}/KB_Liste_contenus_videos+fiches.csv dest=/media/hdd/IdeasServerContent/videos/KB_Liste_contenus_videos+fiches.csv
-#   when: ideascube_version.stdout == "" and import_ideascube_data and use_hdd
+- name: Download CSV to import
+  get_url: url={{filer_bsf}}/KB_Liste_contenus_videos+fiches.csv dest=/media/hdd/IdeasServerContent/videos/KB_Liste_contenus_videos+fiches.csv
+  when: ideascube_version.stdout == "" and import_ideascube_data|bool and use_hdd|bool
 
-# - name: Import data 
-#   become: yes
-#   become_user: ideascube
-#   shell: ideascube import_medias /media/hdd/IdeasServerContent/videos/KB_Liste_contenus_videos+fiches.csv
-#   when: ideascube_version.stdout == "" and import_ideascube_data and use_hdd
+- name: Import data 
+  become: yes
+  become_user: ideascube
+  shell: ideascube import_medias /media/hdd/IdeasServerContent/videos/KB_Liste_contenus_videos+fiches.csv
+  when: ideascube_version.stdout == "" and import_ideascube_data|bool and use_hdd|bool
 
 - tasks:
   include: ../../../post_tasks.yml task=ideascube version={{ version }}
-  when: ideascube_version.stdout <= "{{ version }}"
+  when: ideascube_version.stdout < "{{ version }}"

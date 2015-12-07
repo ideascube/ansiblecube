@@ -17,7 +17,7 @@
 
 - name: Send this file over the central_server 
   raw: cat /etc/firstStart.csv | ssh -p 443 {{ central_server }} "cat >> ./ansible/UUID/firstStart.csv"
-  when: send_to_central_server
+  when: send_to_central_server|bool
 
 - name: Update packages list
   apt: update_cache=yes cache_valid_time=3600
@@ -93,7 +93,7 @@
               line='/dev/sda {
                       spindown_time = 280
               }'
-  when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and use_hdd
+  when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and use_hdd|bool
 
 - name: fake-hwclock conf for ARM system 
   copy: content="FORCE=force" dest=/etc/default/fake-hwclock
@@ -121,19 +121,19 @@
   when: ansible_architecture == "armv7l"
 
 - file: path=/media/hdd state=directory
-  when: use_hdd
+  when: use_hdd|bool
 
 - stat: path=/dev/sda1
   register: dev_hdd
 
 - name: Mount /dev/sda1
   mount: name=/media/hdd/ src=/dev/sda1 fstype=ext4 state=mounted opts=noatime
-  when: dev_hdd.stat.exists == True and use_hdd
+  when: dev_hdd.stat.exists == True and use_hdd|bool
   ignore_errors: yes
 
 - name: Mount /dev/sda
   mount: name=/media/hdd/ src=/dev/sda fstype=ext4 state=mounted opts=noatime
-  when: dev_hdd.stat.exists == False and use_hdd
+  when: dev_hdd.stat.exists == False and use_hdd|bool
   ignore_errors: yes
 
 - name: Create local directory to work from
@@ -158,12 +158,12 @@
 
 - name: Remove Mongodb database folder
   file: path=/media/hdd/mongodb/ state=absent
-  when: use_hdd
+  when: use_hdd|bool
 
 - name: Remove existing ideascube folder
   file: path=/media/hdd/ideascube/ state=absent
-  when: use_hdd
+  when: use_hdd|bool
 
 - name: Fix rights on /media/hdd, otherwhise mongodb user can not cross the folder
   file: path=/media/hdd owner={{ username }} group={{ username }} mode=0777
-  when: use_hdd
+  when: use_hdd|bool

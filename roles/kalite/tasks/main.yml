@@ -19,12 +19,12 @@
 
 - file: src=/media/hdd/khanVideos/content/ 
     dest=/home/{{username}}/.kalite/content state=link force=yes
-  when: use_hdd and kalite.stat.exists == False
+  when: use_hdd|bool and kalite.stat.exists == False
 
 - name: Fix rights
   file: path=/media/hdd/khanVideos/content/ state=directory 
     owner={{ username }} group={{ username }} recurse=yes
-  when: use_hdd and kalite.stat.exists == False
+  when: use_hdd|bool and kalite.stat.exists == False
 
 - name: Copy nginx vhost
   template: src=kalite.vhost.j2 dest=/etc/nginx/sites-available/kalite
