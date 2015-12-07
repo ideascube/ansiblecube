@@ -13,6 +13,3 @@
 
 - name: Reload sysctl conf
   command: sysctl -p
-
-- tasks:
-  include: ../../../post_tasks.yml task=iptables version=0.1

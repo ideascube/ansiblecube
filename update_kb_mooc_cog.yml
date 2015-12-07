@@ -81,3 +81,4 @@
   #   - pause: minutes=5
     
     - command: reboot
+      when: ideascube_version.stdout == ""
