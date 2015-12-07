@@ -10,6 +10,20 @@
     - logs
     # Stop. has to be always enable 
 
-  # post_tasks:
-  #   - file: path=/etc/udev/rules.d/70-persistent-net.rules state=absent
-  #   - command: /sbin/shutdown -h now
+    - role: ideascube
+      version: "0.6.0-1"
+
+    - role: kiwix
+      kiwixProject: wikipedia
+      portProject: 8002
+      version: "wikipedia_ab_all_2015-09.zim"
+
+    # - mongodb
+    # - role: mook
+    #   mook_name: koombookedu
+
+  post_tasks:
+  #   - pause: minutes=5
+    
+    - command: shutdown -h now
+      when: ideascube_version.stdout == ""
