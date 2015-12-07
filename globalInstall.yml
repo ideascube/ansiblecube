@@ -13,10 +13,6 @@
     - uwsgi
     - dnsmasq
     - hostapd
-
-    - role : ideascube
-      version: "0.5.0-1"
-      
     - iptables
     - network-manager
 
