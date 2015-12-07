@@ -50,6 +50,18 @@
   apt: deb=/tmp/ideascube_{{ version }}_amd64.deb state=present
   when: ansible_architecture == 'x86_64' and ideascube_version.stdout < "{{ version }}"
 
+# Should be already packaged !!!
+  apt: name={{ item }} state=latest
+  with_items:
+   - libjpeg-dev
+   - zlib1g-dev
+  when: ansible_architecture == 'x86_64' and ideascube_version.stdout < "{{ version }}"
+
+# Should be already packaged !!!
+- name: Install Pillow
+  pip: name=Pillow
+  when: ansible_architecture == 'x86_64' and ideascube_version.stdout < "{{ version }}"
+
 # Add settings and conf
 
 - name: Fix rights
