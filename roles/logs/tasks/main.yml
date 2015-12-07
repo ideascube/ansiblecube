@@ -6,4 +6,5 @@
   command: bash /tmp/hdw_info.sh
 
 - shell: rsync -azP -e 'ssh -p 443' /var/log/nginx/* /var/log/kern.log /var/log/messages /var/log/syslog /tmp/hdw_info.txt  {{ central_server }}:/ansible/logs/{{ ansible_hostname }}/
+  when: send_to_central_server|bool == True
   ignore_errors: yes
