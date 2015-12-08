@@ -65,20 +65,18 @@
     
     # - kalite
 
-    - role: ideascube
-      version: "0.6.0-1"
+    # - role: ideascube
+    #   version: "0.6.0-1"
 
-    - role: kiwix
-      kiwixProject: wikipedia
-      portProject: 8002
-      version: ""
+    # - role: kiwix
+    #   kiwixProject: wikipedia
+    #   portProject: 8002
+    #   version: ""
 
     # - mongodb
     # - role: mook
     #   mook_name: koombookedu
 
-  post_tasks:
-  #   - pause: minutes=5
-    
-    - command: reboot
-      when: ideascube_version.stdout == ""
+  # post_tasks:    
+  #   - command: reboot
+  #     when: ideascube_version.stdout == ""

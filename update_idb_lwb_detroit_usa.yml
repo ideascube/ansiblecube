@@ -13,17 +13,18 @@
     - role: ideascube
       version: "0.6.0-1"
 
+    - kalite
+
     - role: kiwix
       kiwixProject: wikipedia
       portProject: 8002
-      version: "wikipedia_ab_all_2015-09.zim"
+      version: "wikipedia_en_all_2015-05.zim wikipedia_es_all_2015-11.zim"
 
-    # - mongodb
-    # - role: mook
-    #   mook_name: koombookedu
+    - role: kiwix
+      kiwixProject: gutenberg
+      portProject: 8007
+      version: "gutenberg_en_all_10_2014.zim gutenberg_es_all_10_2014.zim"
 
   post_tasks:
-  #   - pause: minutes=5
-    
     - command: shutdown -h now
       when: ideascube_version.stdout == ""
