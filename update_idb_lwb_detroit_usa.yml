@@ -18,13 +18,13 @@
     - role: kiwix
       kiwixProject: wikipedia
       portProject: 8002
-      version: "wikipedia_en_all_2015-05.zim wikipedia_es_all_2015-11.zim"
+      version: ['wikipedia_en_all_2015-05.zim', 'wikipedia_es_all_2015-11.zim']
 
     - role: kiwix
       kiwixProject: gutenberg
       portProject: 8007
-      version: "gutenberg_en_all_10_2014.zim gutenberg_es_all_10_2014.zim"
+      version: ['gutenberg_en_all_10_2014.zim', 'gutenberg_es_all_10_2014.zim']
 
-  post_tasks:
-    - command: shutdown -h now
-      when: ideascube_version.stdout == ""
+  # post_tasks:
+  #   - command: shutdown -h now
+  #     when: ideascube_version.stdout == ""
