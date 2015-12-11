@@ -48,6 +48,7 @@
 - name: Download {{ kiwixProject }} zim file 
   get_url: url=http://download.kiwix.org/zim/{{ kiwixProject }}/{{ item }} dest={{zim_path}} timeout=20
   with_items: "{{version}}"
+  ignore_errors: yes
   when: download_data|bool == True and confFile.stat.exists == False
 
 - tasks:
