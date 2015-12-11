@@ -63,6 +63,7 @@
   file: path=/usr/local/lib/python2.7/dist-packages/PIL state=absent
   file: path=/usr/lib/python2.7/dist-packages/PILcompat/ state=absent 
   file: path=/usr/lib/python2.7/dist-packages/Pillow-2.6.1.egg-info state=absent
+  ignore_errors: yes
   when: ansible_architecture == 'x86_64' and ideascube_version.stdout < "{{ version }}"  
 
 # Should be already packaged !!!
@@ -73,11 +74,13 @@
 - name: Move Pillow and PILL to ideascube venv
   command: mv /usr/local/lib/python2.7/dist-packages/PIL/ /usr/share/python/ideascube/lib/python2.7/site-packages/
   command: mv /usr/local/lib/python2.7/dist-packages/Pillow-3.0.0.egg-info/ /usr/share/python/ideascube/lib/python2.7/site-packages/
+  ignore_errors: yes
   when: ansible_architecture == 'x86_64' and ideascube_version.stdout < "{{ version }}"
 
 - name: Workaround -> Remove Pillow and PIL
   file: path=/usr/lib/python2.7/dist-packages/PILcompat/ state=absent
   file: path=/usr/lib/python2.7/dist-packages/PIL/ state=absent
+  ignore_errors: yes
   when: ansible_architecture == 'x86_64' and ideascube_version.stdout < "{{ version }}"  
 
 - name: Ideascube migrate data after Pillow re-install
