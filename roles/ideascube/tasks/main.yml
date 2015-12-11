@@ -60,11 +60,26 @@
 
 - name: Workaround -> Remove Pillow and PIL
   file: path=/usr/lib/python2.7/dist-packages/PIL/ state=absent
-  file: path=/usr/local/lib/python2.7/dist-packages/PIL state=absent
-  file: path=/usr/lib/python2.7/dist-packages/PILcompat/ state=absent 
-  file: path=/usr/lib/python2.7/dist-packages/Pillow-2.6.1.egg-info state=absent
-  file: path=/usr/share/python/ideascube/lib/python2.7/site-packages/Pillow-3.0.0.egg-info state=absent
-  file: path=/usr/share/python/ideascube/lib/python2.7/site-packages/PIL/ state=absent
+  ignore_errors: yes
+  when: ansible_architecture == 'x86_64' and ideascube_version.stdout < "{{ version }}"  
+
+- file: path=/usr/local/lib/python2.7/dist-packages/PIL state=absent
+  ignore_errors: yes
+  when: ansible_architecture == 'x86_64' and ideascube_version.stdout < "{{ version }}"  
+
+- file: path=/usr/lib/python2.7/dist-packages/PILcompat/ state=absent 
+  ignore_errors: yes
+  when: ansible_architecture == 'x86_64' and ideascube_version.stdout < "{{ version }}"  
+
+- file: path=/usr/lib/python2.7/dist-packages/Pillow-2.6.1.egg-info state=absent
+  ignore_errors: yes
+  when: ansible_architecture == 'x86_64' and ideascube_version.stdout < "{{ version }}"  
+
+- file: path=/usr/share/python/ideascube/lib/python2.7/site-packages/Pillow-3.0.0.egg-info state=absent
+  ignore_errors: yes
+  when: ansible_architecture == 'x86_64' and ideascube_version.stdout < "{{ version }}"  
+
+- file: path=/usr/share/python/ideascube/lib/python2.7/site-packages/PIL/ state=absent
   ignore_errors: yes
   when: ansible_architecture == 'x86_64' and ideascube_version.stdout < "{{ version }}"  
 
@@ -81,9 +96,18 @@
 
 - name: Workaround -> Remove Pillow and PIL
   file: path=/usr/lib/python2.7/dist-packages/PILcompat/ state=absent
-  file: path=/usr/lib/python2.7/dist-packages/PIL/ state=absent
-  file: path=/usr/local/lib/python2.7/dist-packages/PIL/ state=absent
-  file: path=/usr/local/lib/python2.7/dist-packages/Pillow-3.0.0.egg-info state=absent
+  ignore_errors: yes
+  when: ansible_architecture == 'x86_64' and ideascube_version.stdout < "{{ version }}"  
+
+- file: path=/usr/lib/python2.7/dist-packages/PIL/ state=absent
+  ignore_errors: yes
+  when: ansible_architecture == 'x86_64' and ideascube_version.stdout < "{{ version }}"  
+
+- file: path=/usr/local/lib/python2.7/dist-packages/PIL/ state=absent
+  ignore_errors: yes
+  when: ansible_architecture == 'x86_64' and ideascube_version.stdout < "{{ version }}"  
+
+- file: path=/usr/local/lib/python2.7/dist-packages/Pillow-3.0.0.egg-info state=absent
   ignore_errors: yes
   when: ansible_architecture == 'x86_64' and ideascube_version.stdout < "{{ version }}"  
 
