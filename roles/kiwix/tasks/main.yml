@@ -13,7 +13,7 @@
   when: ansible_architecture == 'x86_64' and st.stat.exists == False
 
 - name: download library files
-  get_url: url={{filer_bsf}}/kiwix_library.zip dest=/tmp/kiwix_library.zip
+  get_url: url={{filer_bsf}}/kiwix_library_bdi.tgz dest=/tmp/kiwix_library_bdi.tgz
   when: st.stat.exists == False
 
 - name: Create a library directory if not exist
@@ -21,7 +21,7 @@
   when: st.stat.exists == False
 
 - name: unarchive the library package on system
-  unarchive: src=/tmp/kiwix_library.zip dest={{zim_path}} copy=no
+  unarchive: src=/tmp/kiwix_library_bdi.tgz dest={{zim_path}} copy=no
   when: st.stat.exists == False
 
 # Test if the conf file already exist on the device otherwhise skip...
@@ -45,8 +45,12 @@
   when: confFile.stat.exists == False
   notify: restart nginx
 
+- name: Create a {{ kiwixProject }} directory to store ZIM file
+  file: path={{zim_path}}/{{ kiwixProject }} state=directory
+  when: confFile.stat.exists == False
+
 - name: Download {{ kiwixProject }} zim file 
-  get_url: url=http://download.kiwix.org/zim/{{ kiwixProject }}/{{ item }} dest={{zim_path}} timeout=20
+  get_url: url=http://download.kiwix.org/zim/{{ kiwixProject }}/{{ item }} dest={{zim_path}}/{{ kiwixProject }} timeout=20
   with_items: "{{version}}"
   ignore_errors: yes
   when: download_data|bool == True and confFile.stat.exists == False
