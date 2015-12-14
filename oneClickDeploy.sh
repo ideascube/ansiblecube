@@ -2,14 +2,6 @@
 SHOULD_WE_SEND="False"
 SSH_KEY="/root/.ssh/id_rsa" 
 
-sudo apt-get update
-sudo apt-get install -y python-pip git python-dev
-sudo pip install ansible markupsafe
-sudo mkdir /etc/ansible
-sudo mkdir -p /var/lib/ansible/local
-cd /var/lib/ansible/
-git clone https://github.com/ideascube/ansiblecube.git local
-
 if [ "$1" = sync ] && [ ! -f "$SSH_KEY" ]; then
 
 	SHOULD_WE_SEND="True"
@@ -24,6 +16,14 @@ else
 
 	SHOULD_WE_SEND="False"
 fi
+
+sudo apt-get update
+sudo apt-get install -y python-pip git python-dev
+sudo pip install ansible markupsafe
+sudo mkdir /etc/ansible
+sudo mkdir -p /var/lib/ansible/local
+cd /var/lib/ansible/
+git clone https://github.com/ideascube/ansiblecube.git local
 
 sudo cp /var/lib/ansible/local/hosts /etc/ansible/hosts
 /usr/local/bin/ansible-pull -d /var/lib/ansible/local -i hosts -U https://github.com/ideascube/ansiblecube.git globalInstall.yml --extra-vars "send_to_central_server="$SHOULD_WE_SEND" import_ideascube_data=False download_data=$4 ideascube_id=$2 timezone=$3"
