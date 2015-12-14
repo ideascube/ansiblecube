@@ -51,12 +51,12 @@
   when: ansible_architecture == 'x86_64' and ideascube_version.stdout < "{{ version }}"
 
 # Should be already packaged !!!
-- name: install missing dev package
-  apt: name={{ item }} state=latest
-  with_items:
-   - libjpeg-dev
-   - zlib1g-dev
-  when: ansible_architecture == 'x86_64' and ideascube_version.stdout < "{{ version }}"
+# - name: install missing dev package
+#   apt: name={{ item }} state=latest
+#   with_items:
+#    - libjpeg-dev
+#    - zlib1g-dev
+#   when: ansible_architecture == 'x86_64' and ideascube_version.stdout < "{{ version }}"
 
 # Add settings and conf
 
