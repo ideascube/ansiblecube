@@ -72,3 +72,4 @@
 - tasks:
   include: ../../../post_tasks.yml task=ideascube version={{ version }}
   when: ideascube_version.stdout <= "{{ version }}"
+  

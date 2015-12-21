@@ -9,20 +9,20 @@
 
     # - software
 
-    - role: ideascube
-      version: "0.6.0-1"
+    # - role: ideascube
+    #   version: "0.6.0-1"
 
-    - kalite
+    # - kalite
 
-    - role: kiwix
-      kiwixProject: wikipedia
-      portProject: 8002
-      version: ""
+    # - role: kiwix
+    #   kiwixProject: wikipedia
+    #   portProject: 8002
+    #   version: ""
 
-    - role: kiwix
-      kiwixProject: gutenberg
-      portProject: 8007
-      version: ""
+    # - role: kiwix
+    #   kiwixProject: gutenberg
+    #   portProject: 8007
+    #   version: ""
 
     # - role: kiwix
     #   kiwixProject: vikidia
@@ -34,6 +34,6 @@
     # Stop. has to be always enable 
 
 
-  post_tasks:
-    - command: shutdown -h now
-      when: ideascube_version.stdout == ""
+  # post_tasks:
+  #   - command: shutdown -h now
+  #     when: ideascube_version.stdout == ""
