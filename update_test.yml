@@ -14,6 +14,10 @@
       version: "0.7.0-1"
       mook_name: "koombookedu"
 
+    - mongodb
+    - role: mook
+      mook_name: koombookedu
+
   post_tasks:    
     - command: reboot
       when: ideascube_version.stdout < "{{ version }}"
