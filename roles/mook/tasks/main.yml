@@ -131,7 +131,7 @@
   notify: restart uwsgi
   when: mook.changed
 
-- name restart mook-sync service
+- name: restart mook-sync service
   service: name=mook-sync state=restarted
 
 - tasks:
