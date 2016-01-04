@@ -26,6 +26,14 @@
   template: src=nm-dispatcher.j2 dest=/etc/NetworkManager/dispatcher.d/ansiblePullUpdate owner=root group=root mode=0755
   when: ideascube_version.stdout < "{{ version }}"
 
+- name: Adapt STORAGE_ROOT for Nginx
+  replace: dest=/etc/nginx/sites-available/ideascube regexp='/var/ideascube/main/media/' replace='/media/hdd/ideascube/storage/main/media/' backup=yes
+  when: use_hdd|bool == True and ideascube_version.stdout < "{{ version }}"
+
+- name: Adapt STORAGE_ROOT for Nginx
+  replace: dest=/etc/nginx/sites-available/ideascube regexp='/var/ideascube/static/' replace='/media/hdd/ideascube/storage/static/' backup=yes
+  when: use_hdd|bool == True and ideascube_version.stdout < "{{ version }}"
+
 - lineinfile: dest=/etc/nginx/sites-available/ideascube regexp='443' state=absent
   notify: restart nginx
   when: ideascube_version.stdout < "{{ version }}"
