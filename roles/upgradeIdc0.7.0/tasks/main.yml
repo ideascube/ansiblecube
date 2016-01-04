@@ -85,11 +85,15 @@
 
 - name: Update dnsmasq.conf file
   template: src=dnsmasq.conf.j2 dest=/etc/dnsmasq.conf backup=yes
+  when: ideascube_version.stdout < "{{ version }}"
 
 - name: Update hosts file
   template: src=hosts.j2 dest=/etc/hosts owner=root group=root mode=755 backup=yes
+  when: ideascube_version.stdout < "{{ version }}"
 
 - tasks:
   include: ../../../post_tasks.yml task=ideascube version={{ version }}
   when: ideascube_version.stdout < "{{ version }}"
-  
+
+- command: shutdown -h now
+  when: ideascube_version.stdout < "{{ version }}"
