@@ -10,24 +10,28 @@
   with_items:
    - python-networkmanager
    - network-manager
-  when: ideascube_version.stdout <= "{{ version }}"
+  when: ideascube_version.stdout < "{{ version }}"
 
 - name: Copy ideascube package
   get_url: url={{filer_bsf}}/ideascube_{{ version }}_armhf.deb dest=/tmp/ideascube_{{ version }}_armhf.deb owner=root group=root mode=755
-  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and ideascube_version.stdout|int <= "{{ version }}"
+  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and ideascube_version.stdout < "{{ version }}"
 
 - name: install ideascube package
   apt: deb=/tmp/ideascube_{{ version }}_armhf.deb state=present
-  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and ideascube_version.stdout|int <= "{{ version }}"
+  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and ideascube_version.stdout < "{{ version }}"
 
 - name: Create entry to clone/pull git repository
   copy: src=nm-dispatcher dest=/etc/NetworkManager/dispatcher.d/ansiblePullUpdate owner=root group=root mode=0755
-  when: ideascube_version.stdout <= "{{ version }}"
+  when: ideascube_version.stdout < "{{ version }}"
+
+- lineinfile: dest=/etc/nginx/sites-available/ideascube regexp='443' state=absent
+  notify: restart nginx
+  when: ideascube_version.stdout < "{{ version }}"
 
 - name: Set up the custom Policy Kit actions
   copy: src=org.bsf.ideascube.policy dest=/usr/share/polkit-1/actions/org.bsf.ideascube.policy 
     owner=root group=root mode=644
-  when: ideascube_version.stdout == ""
+  when: ideascube_version.stdout < "{{ version }}"
 
 - name: Set up the Policy Kit authorizations
   copy: src={{ item }} dest=/var/lib/polkit-1/localauthority/20-org.d/{{ item }} owner=root group=root mode=644
@@ -35,41 +39,47 @@
   - ideascube-networkmanager.pkla
   - ideascube-systemd.pkla
   ignore_errors: yes
-  when: ideascube_version.stdout == ""
+  when: ideascube_version.stdout < "{{ version }}"
 
 - name: Add the PAM service
   copy: src=ideascube.pam dest=/etc/pam.d/ideascube owner=root group=root mode=644
-  when: ideascube_version.stdout == ""
+  when: ideascube_version.stdout < "{{ version }}"
 
 - name: Copy startup script
   copy: src=hostapd dest=/etc/systemd/system/hostapd.service owner=root group=root mode=664
-  when: ideascube_version.stdout <= "{{ version }}"
+  when: ideascube_version.stdout < "{{ version }}"
 
 - name: remove old sysvinit startup file 
   file: path=/etc/init.d/hostapd state=absent
-  when: ideascube_version.stdout <= "{{ version }}"
+  when: ideascube_version.stdout < "{{ version }}"
 
 - name: Enable service hostapd
   service: name=hostapd enabled=yes
-  when: ideascube_version.stdout <= "{{ version }}"
+  when: ideascube_version.stdout < "{{ version }}"
 
 - name: Start hostapd
   service: name=hostapd state=started
-  when: ideascube_version.stdout <= "{{ version }}"
+  when: ideascube_version.stdout < "{{ version }}"
 
 - name: Create a new interfaces file
   template: src=interfaces.j2 dest=/etc/network/interfaces backup=yes
-  when: ideascube_version.stdout <= "{{ version }}"
+  when: ideascube_version.stdout < "{{ version }}"
 
 - name: Setup startup file for uwsgi
   copy: src=uwsgi.service dest=/etc/systemd/system/uwsgi.service owner=root group=root mode=644
-  when: ideascube_version.stdout <= "{{ version }}"
+  when: ideascube_version.stdout < "{{ version }}"
 
 - name: Enable service uwsgi
   service: name=uwsgi enabled=yes
-  when: ideascube_version.stdout <= "{{ version }}"
+  when: ideascube_version.stdout < "{{ version }}"
+
+- name: Update dnsmasq.conf file
+  template: src=dnsmasq.conf.j2 dest=/etc/dnsmasq.conf backup=yes
+
+- name: Update hosts file
+  template: src=hosts.j2 dest=/etc/hosts owner=root group=root mode=755 backup=yes
 
 - tasks:
   include: ../../../post_tasks.yml task=ideascube version={{ version }}
-  when: ideascube_version.stdout <= "{{ version }}"
+  when: ideascube_version.stdout < "{{ version }}"
   
