@@ -1,4 +1,6 @@
 ---
+- include_vars: group_vars/{{ ansible_architecture }}.yml
+
 - name: Test if package is already installed 
   shell: dpkg-query -W  ideascube  | awk '{print $2}' ; echo
   register: ideascube_version
