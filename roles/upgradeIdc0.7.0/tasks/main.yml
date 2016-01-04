@@ -21,7 +21,7 @@
   when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and ideascube_version.stdout < "{{ version }}"
 
 - name: Create entry to clone/pull git repository
-  copy: src=nm-dispatcher dest=/etc/NetworkManager/dispatcher.d/ansiblePullUpdate owner=root group=root mode=0755
+  template: src=nm-dispatcher.j2 dest=/etc/NetworkManager/dispatcher.d/ansiblePullUpdate owner=root group=root mode=0755
   when: ideascube_version.stdout < "{{ version }}"
 
 - lineinfile: dest=/etc/nginx/sites-available/ideascube regexp='443' state=absent
