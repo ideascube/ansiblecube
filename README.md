@@ -69,7 +69,7 @@ This script takes 4 arguments :
 
  - ```send_to_central_server```: ```True``` ou ```False``` This setting send metrics to the central server. You'll need the password server to connect throught SSH. If you don't have it, set it to ```False```
  - ```ideascube_id``` : ex ```kb_mooc_cog``` is the name of the Ideascube project, this name MUST be the same as the ideascube name stored in ```ideascube/conf/``` ideascube github repository
- - ```timezone``` : ex ```Africa/Kinsasha``` is the time zone (available in /usr/share/zoneinfo/) to set to the server 
+ - ```timezone``` : ex ```Africa/Kinsasha``` is the time zone (available in /usr/share/zoneinfo/) to set to the server or check at https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
  - ```download_data``` : ```False``` or ```True``` to tell AnsibleCube to download or not data from Internet (Works so far with all the kiwix project, see exemple in playbook)
 
 ## Keep your system up to date ! 
