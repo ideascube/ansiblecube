@@ -1,0 +1,36 @@
+---
+# Ansible playbook for Ideasbox Aurore Clichy
+
+#It will be always localhost
+- hosts: localhost
+
+  roles:
+
+    # Start. has to be always enable 
+    - logs
+    # Stop. has to be always enable 
+
+    - role: ideascube
+      version: "0.7.0-1"
+
+    - kalite
+
+    - role: kiwix
+      kiwixProject: wikipedia
+      portProject: 8002
+      version: ['wikipedia_fr_all_2015-11.zim']
+
+    - role: kiwix
+      kiwixProject: gutenberg
+      portProject: 8007
+      version: ['gutenberg_fr_all_10_2014.zim']
+
+    - role: kiwix
+      kiwixProject: vikidia
+      portProject: 8004
+      version: ['vikidia_fr_all_2015-11.zim']
+
+  post_tasks:
+    - command: shutdown -h now
+      when: ideascube_version.stdout == ""
+  
