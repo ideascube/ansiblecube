@@ -9,15 +9,20 @@
     # Has to be always enable
     - logs
 
+    - role: kiwix
+      kiwixProject: wikipedia
+      portProject: 8002
+      version: ['wikipedia_ab_all_2015-09.zim','wikipedia_ace_all_2015-10.zim ']
+
     #Uncomment to lunch an update
-    - role: upgradeIdc0.7.0
-      version: "0.7.0-1"
-      mook_name: "koombookedu"
+  #   - role: upgradeIdc0.7.0
+  #     version: "0.7.0-1"
+  #     mook_name: "koombookedu"
 
-    - mongodb
-    - role: mook
-      mook_name: koombookedu
+  #   - mongodb
+  #   - role: mook
+  #     mook_name: koombookedu
 
-  post_tasks:    
-    - command: reboot
-      when: ideascube_version.stdout < "{{ version }}"
+  # post_tasks:    
+  #   - command: reboot
+  #     when: ideascube_version.stdout < "{{ version }}"
