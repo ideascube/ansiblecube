@@ -1,5 +1,5 @@
 ---
-- stat: path=/usr/local/bin/kiwix-serve
+- stat: path=/usr/œ/bin/kiwix-serve
   register: st
 
 - include_vars: group_vars/{{ ansible_architecture }}.yml
@@ -45,15 +45,20 @@
   file: path={{zim_path}}/{{ kiwixProject }} state=directory
   when: confFile.stat.exists == False
 
-- name: Download {{ kiwixProject }} zim file 
-  get_url: url=http://download.kiwix.org/zim/{{ kiwixProject }}/{{ item }} dest={{zim_path}}/{{ kiwixProject }} timeout=20
-  with_items: "{{version}}"
+- name: Create a {{ kiwixProject }} directory to store library file
+  file: path={{zim_path}}/kiwix_library state=directory
+  when: confFile.stat.exists == False
+
+- name: Download {{ kiwixProject }} data file 
+  get_url: url=http://download.kiwix.org/zim/{{ kiwixProject }}_{{item}}_all.zim dest={{zim_path}}/{{ kiwixProject }} timeout=20
+  with_items: "{{lang}}"
+  register: zim_name
   ignore_errors: yes
   when: download_data|bool == True and confFile.stat.exists == False
 
 - name: Build library file from a ZIM file
   command: kiwix-manage {{zim_path}}/kiwix_library/{{ kiwixProject }}.xml add {{zim_path}}/{{ kiwixProject }}/{{ item }}
-  with_items: "{{version}}"
+  with_items: "{{zim_name.results}}"
   ignore_errors: yes
   when: download_data|bool == True and confFile.stat.exists == False
 
