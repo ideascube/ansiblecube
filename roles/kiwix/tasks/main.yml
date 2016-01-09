@@ -47,6 +47,11 @@
 
 - name: Download {{ kiwixProject }} zim file 
   get_url: url=http://download.kiwix.org/zim/{{ kiwixProject }}/{{ item }} dest={{zim_path}}/{{ kiwixProject }} timeout=20
+  with_items: "{{version}}"
+  ignore_errors: yes
+  when: download_data|bool == True and confFile.stat.exists == False
+
+- name: Build library file from a ZIM file
   command: kiwix-manage {{zim_path}}/{{ kiwixProject }}/library.xml add {{zim_path}}/{{ kiwixProject }}/{{ item }}
   with_items: "{{version}}"
   ignore_errors: yes
