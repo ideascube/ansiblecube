@@ -52,7 +52,7 @@
   when: download_data|bool == True and confFile.stat.exists == False
 
 - name: Build library file from a ZIM file
-  command: kiwix-manage {{zim_path}}/{{ kiwixProject }}/library.xml add {{zim_path}}/{{ kiwixProject }}/{{ item }}
+  command: kiwix-manage {{zim_path}}/kiwix_library/{{ kiwixProject }}.xml add {{zim_path}}/{{ kiwixProject }}/{{ item }}
   with_items: "{{version}}"
   ignore_errors: yes
   when: download_data|bool == True and confFile.stat.exists == False
