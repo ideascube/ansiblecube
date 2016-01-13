@@ -15,7 +15,7 @@
     - role: kiwix
       kiwixProject: wikipedia
       portProject: 8002
-      lang: ['ab','ace']
+      version: ""
 
     #Uncomment to lunch an update
   #   - role: upgradeIdc0.7.0
