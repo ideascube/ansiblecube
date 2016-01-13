@@ -104,7 +104,7 @@
   when: ansible_architecture == "armv7l"
 
 - name: Build binary from fex
-  shell: /usr/local/bin/fex2bin lime2.fex > lime2.bin chdir=/boot/bin/
+  shell: /usr/sbin/fex2bin lime2.fex > lime2.bin chdir=/boot/bin/
   when: ansible_architecture == "armv7l"
 
 - name: Copy visudo file for ideascube user
