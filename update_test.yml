@@ -8,6 +8,9 @@
   roles:
     # Has to be always enable
     - logs
+    
+    - role: ideascube
+      version: "0.7.0-1"
 
     - role: kiwix
       kiwixProject: wikipedia
