@@ -15,6 +15,7 @@ send_to_central_server: True
 import_ideascube_data: True
 download_data: False
 timezone: "Europe/Paris"
+lang: ""
 
 #Apps path
 mook_path: /home/{{ username }}
