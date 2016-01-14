@@ -120,7 +120,8 @@
   apt:  deb=/tmp/linuxUboot.deb
   when: ansible_architecture == "armv7l"
 
-- file: path=/media/hdd state=directory
+- name: Ensure the HDD mountpoint exists
+  file: path=/media/hdd state=directory
   when: use_hdd|bool
 
 - stat: path=/dev/sda1
