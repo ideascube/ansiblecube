@@ -108,6 +108,5 @@
   notify: restart kiwix
 
 - tasks:
-  include: ../../../post_tasks.yml task={{ kiwixProject }}_{{ lang }} version=1
-  with_items: "{{lang}}"
+  include: ../../../post_tasks.yml task={{ kiwixProject }} version=1
   when: confFile.stat.exists == False
