@@ -14,14 +14,13 @@
 # Do NOT "set -e"
 
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
-DESC="{{ kiwixProject }} server"
-NAME={{ kiwixProject }}
+DESC="Kiwix server"
 DAEMON=/usr/local/bin/kiwix-serve
 PIDFILE=/var/run/$NAME.pid
 SCRIPTNAME=/etc/init.d/$NAME
 PORT={{ portProject }}
 # Path to the ZIM file 
-DATAPATH={{ zim_path }}/kiwix_library/{{ kiwixProject }}.xml
+DATAPATH={{ zim_path }}/kiwixFiles/{{ kiwixProject }}.xml
 
 # Exit if the package is not installed
 [ -x "$DAEMON" ] || exit 0

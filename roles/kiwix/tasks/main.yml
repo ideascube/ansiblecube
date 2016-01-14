@@ -4,39 +4,43 @@
 
 - include_vars: group_vars/{{ ansible_architecture }}.yml
 
-- name: Copying kiwix binary {{ kiwixProject }} for ARM
-  get_url: url={{filer_bsf}}/kiwix-serve-ARM dest=/usr/local/bin/kiwix-serve mode=755
+- name: Copying kiwix-server binary for ARM
+  get_url: url={{filer_bsf}}/kiwix-serve-ARM dest=/usr/local/bin/kiwix-serve mode=755 timeout=20
   when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and st.stat.exists == False
 
-- name: Copying kiwix binary {{ kiwixProject }} for amd64
-  get_url: url={{filer_bsf}}/kiwix-serve-AMD64 dest=/usr/local/bin/kiwix-serve mode=755
+- name: Copying kiwix-manage binary for ARM
+  get_url: url={{filer_bsf}}/kiwix-manage-ARM dest=/usr/local/bin/kiwix-manage mode=755 timeout=20
+  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and st.stat.exists == False
+
+- name: Copying kiwix-server binary for amd64
+  get_url: url={{filer_bsf}}/kiwix-serve-AMD64 dest=/usr/local/bin/kiwix-serve mode=755 timeout=20
   when: ansible_architecture == 'x86_64' and st.stat.exists == False
 
-- name: download library files
-  get_url: url={{filer_bsf}}/kiwix_library_bdi.tgz dest=/tmp/kiwix_library_bdi.tgz
-  when: st.stat.exists == False
+- name: Copying kiwix-manage binary for amd64
+  get_url: url={{filer_bsf}}/kiwix-manage-AMD64 dest=/usr/local/bin/kiwix-manage mode=755 timeout=20
+  when: ansible_architecture == 'x86_64' and st.stat.exists == False
 
 - name: Create a library directory if not exist
-  file: path={{zim_path}} state=directory
+  file: path={{zim_path}}/kiwixFiles/tmp state=directory
   when: st.stat.exists == False
 
-- name: unarchive the library package on system
-  unarchive: src=/tmp/kiwix_library_bdi.tgz dest={{zim_path}} copy=no
+- name: Create a content directory if not exist
+  file: path={{zim_path}}/kiwixFiles/content state=directory
+  when: st.stat.exists == False
+
+- name: Create a index directory if not exist
+  file: path={{zim_path}}/kiwixFiles/index state=directory
   when: st.stat.exists == False
 
 # Test if the conf file already exist on the device otherwhise skip...
-- stat: path=/etc/nginx/sites-available/{{ kiwixProject }}
+- stat: path=/etc/nginx/sites-enabled/{{ kiwixProject }}
   register: confFile
 
-- name: Setup startup file for {{ kiwixProject }}
+- name: Setup startup file
   template: src=kiwix.j2 dest=/etc/init.d/{{ kiwixProject }} owner=root group=root mode=755
   when: confFile.stat.exists == False
 
-- name: Enable service kiwix for {{ kiwixProject }}
-  service: name={{ kiwixProject }} enabled=yes
-  when: confFile.stat.exists == False
-
-- name: Copy nginx vhost for {{ kiwixProject }}
+- name: Copy nginx vhost
   template: src=nginx.vhost.j2 dest=/etc/nginx/sites-available/{{ kiwixProject }}
   when: confFile.stat.exists == False
 
@@ -45,16 +49,73 @@
   when: confFile.stat.exists == False
   notify: restart nginx
 
-- name: Create a {{ kiwixProject }} directory to store ZIM file
-  file: path={{zim_path}}/{{ kiwixProject }} state=directory
-  when: confFile.stat.exists == False
+- name: Download {{ kiwixProject }} data file 
+  get_url: url=http://download.kiwix.org/portable/{{ kiwixProject }}_{{item}}_all.zip dest={{zim_path}}/kiwixFiles/{{ kiwixProject }}_{{item}}.zip timeout=20
+  with_items: "{{lang}}"
+  when: download_data|bool == True and confFile.stat.exists == False
 
-- name: Download {{ kiwixProject }} zim file 
-  get_url: url=http://download.kiwix.org/zim/{{ kiwixProject }}/{{ item }} dest={{zim_path}}/{{ kiwixProject }} timeout=20
-  with_items: "{{version}}"
+- name: Create temp dir for {{ kiwixProject }}
+  file: path={{zim_path}}/kiwixFiles/tmp/{{ kiwixProject }}_{{item}} state=directory
+  with_items: "{{lang}}"
+  when: download_data|bool == True and confFile.stat.exists == False
+
+- name: Unarchive {{ kiwixProject }} {{ item }}
+  unarchive: src={{zim_path}}/kiwixFiles/{{ kiwixProject }}_{{item}}.zip dest={{zim_path}}/kiwixFiles/tmp/{{ kiwixProject }}_{{item}} copy=no
+  with_items: "{{lang}}"
+  when: download_data|bool == True and confFile.stat.exists == False
+
+- name: Find ZIM file name 
+  shell: find {{zim_path}}/kiwixFiles/tmp/{{ kiwixProject }}_{{item}}/data/content -name "*.zim" -type f | awk -F "/" '{print $9}'
+  register: result_zim
+  with_items: "{{lang}}"
+  when: download_data|bool == True and confFile.stat.exists == False
+
+- debug: var=result_zim.results[0].stdout
+
+- debug: var=result_zim.results[1].stdout
+
+- name: Find ZIM file name
+  shell: find {{zim_path}}/kiwixFiles/tmp/{{ kiwixProject }}_{{item}}/data/index -name "*.zim.idx" -type d | awk -F "/" '{print $9}'
+  register: result_index
+  with_items: "{{lang}}"
+  when: download_data|bool == True and confFile.stat.exists == False
+
+- debug: var=result_index.results[0].stdout
+
+- debug: var=result_index.results[1].stdout
+
+- name: Move data content to the right path
+  shell: mv {{zim_path}}/kiwixFiles/tmp/{{ kiwixProject }}_{{item}}/data/content/*.zim {{zim_path}}/kiwixFiles/content
+  with_items: "{{lang}}"
+  when: download_data|bool == True and confFile.stat.exists == False
+
+- name: Move data index to the right path
+  shell: mv -f {{zim_path}}/kiwixFiles/tmp/{{ kiwixProject }}_{{item}}/data/index/*.idx {{zim_path}}/kiwixFiles/index
+  with_items: "{{lang}}"
   ignore_errors: yes
   when: download_data|bool == True and confFile.stat.exists == False
 
+- name: Build library file from a ZIM file with Index
+  command: kiwix-manage {{zim_path}}/kiwixFiles/{{ kiwixProject }}.xml add {{zim_path}}/kiwixFiles/content/"{{ item.0.stdout }}" -i={{zim_path}}/kiwixFiles/index/"{{ item.1.stdout }}"
+  with_together: 
+    - "{{result_zim.results}}"
+    - "{{result_index.results}}"
+  when: download_data|bool == True and confFile.stat.exists == False
+
+- name: Remove non needed dir 
+  file: path={{zim_path}}/kiwixFiles/tmp state=absent
+  when: download_data|bool == True and confFile.stat.exists == False
+
+- name: Remove archives
+  file: path={{zim_path}}/kiwixFiles/*.zip state=absent
+  when: download_data|bool == True and confFile.stat.exists == False
+
+- name: Enable service kiwix
+  service: name={{ kiwixProject }} enabled=yes
+  when: confFile.stat.exists == False
+  notify: restart kiwix
+
 - tasks:
-  include: ../../../post_tasks.yml task={{ kiwixProject }} version=1
+  include: ../../../post_tasks.yml task={{ kiwixProject }}_{{ lang }} version=1
+  with_items: "{{lang}}"
   when: confFile.stat.exists == False
