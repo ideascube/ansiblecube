@@ -9,6 +9,6 @@
     - logs
 
     #Uncomment to lunch an update
-    - role: upgradeIdc0.7.0
-      version: "0.7.0-1"
-      mook_name: ""
+    # - role: upgradeIdc0.7.0
+    #   version: "0.7.0-1"
+    #   mook_name: ""
