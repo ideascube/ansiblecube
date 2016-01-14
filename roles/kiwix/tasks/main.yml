@@ -21,15 +21,15 @@
   when: ansible_architecture == 'x86_64' and st.stat.exists == False
 
 - name: Create a library directory if not exist
-  file: path={{zim_path}}/kiwixFiles/tmp state=directory
+  file: path={{zim_path}}/tmp state=directory
   when: st.stat.exists == False
 
 - name: Create a content directory if not exist
-  file: path={{zim_path}}/kiwixFiles/content state=directory
+  file: path={{zim_path}}/{{ kiwixProject }}/content state=directory
   when: st.stat.exists == False
 
 - name: Create a index directory if not exist
-  file: path={{zim_path}}/kiwixFiles/index state=directory
+  file: path={{zim_path}}/{{ kiwixProject }}/index state=directory
   when: st.stat.exists == False
 
 # Test if the conf file already exist on the device otherwhise skip...
@@ -50,64 +50,56 @@
   notify: restart nginx
 
 - name: Download {{ kiwixProject }} data file 
-  get_url: url=http://download.kiwix.org/portable/{{ kiwixProject }}_{{item}}_all.zip dest={{zim_path}}/kiwixFiles/{{ kiwixProject }}_{{item}}.zip timeout=20
+  get_url: url=http://download.kiwix.org/portable/{{ kiwixProject }}_{{item}}_all.zip dest={{zim_path}}/{{ kiwixProject }}_{{item}}.zip timeout=20
   with_items: "{{lang}}"
   when: download_data|bool == True and confFile.stat.exists == False
 
 - name: Create temp dir for {{ kiwixProject }}
-  file: path={{zim_path}}/kiwixFiles/tmp/{{ kiwixProject }}_{{item}} state=directory
+  file: path={{zim_path}}/tmp/{{ kiwixProject }}_{{item}} state=directory
   with_items: "{{lang}}"
   when: download_data|bool == True and confFile.stat.exists == False
 
 - name: Unarchive {{ kiwixProject }} {{ item }}
-  unarchive: src={{zim_path}}/kiwixFiles/{{ kiwixProject }}_{{item}}.zip dest={{zim_path}}/kiwixFiles/tmp/{{ kiwixProject }}_{{item}} copy=no
+  unarchive: src={{zim_path}}/{{ kiwixProject }}_{{item}}.zip dest={{zim_path}}/tmp/{{ kiwixProject }}_{{item}} copy=no
   with_items: "{{lang}}"
   when: download_data|bool == True and confFile.stat.exists == False
 
 - name: Find ZIM file name 
-  shell: find {{zim_path}}/kiwixFiles/tmp/{{ kiwixProject }}_{{item}}/data/content -name "*.zim" -type f | awk -F "/" '{print $9}'
+  shell: find {{zim_path}}/tmp/{{ kiwixProject }}_{{item}}/data/content -name "*.zim" -type f | awk -F "/" '{print $9}'
   register: result_zim
   with_items: "{{lang}}"
   when: download_data|bool == True and confFile.stat.exists == False
 
-- debug: var=result_zim.results[0].stdout
-
-- debug: var=result_zim.results[1].stdout
-
 - name: Find ZIM file name
-  shell: find {{zim_path}}/kiwixFiles/tmp/{{ kiwixProject }}_{{item}}/data/index -name "*.zim.idx" -type d | awk -F "/" '{print $9}'
+  shell: find {{zim_path}}/tmp/{{ kiwixProject }}_{{item}}/data/index -name "*.zim.idx" -type d | awk -F "/" '{print $9}'
   register: result_index
   with_items: "{{lang}}"
   when: download_data|bool == True and confFile.stat.exists == False
 
-- debug: var=result_index.results[0].stdout
-
-- debug: var=result_index.results[1].stdout
-
 - name: Move data content to the right path
-  shell: mv {{zim_path}}/kiwixFiles/tmp/{{ kiwixProject }}_{{item}}/data/content/*.zim {{zim_path}}/kiwixFiles/content
+  shell: mv {{zim_path}}/tmp/{{ kiwixProject }}_{{item}}/data/content/*.zim {{zim_path}}/kiwixFiles/content
   with_items: "{{lang}}"
   when: download_data|bool == True and confFile.stat.exists == False
 
 - name: Move data index to the right path
-  shell: mv -f {{zim_path}}/kiwixFiles/tmp/{{ kiwixProject }}_{{item}}/data/index/*.idx {{zim_path}}/kiwixFiles/index
+  shell: mv -f {{zim_path}}/tmp/{{ kiwixProject }}_{{item}}/data/index/*.idx {{zim_path}}/kiwixFiles/index
   with_items: "{{lang}}"
   ignore_errors: yes
   when: download_data|bool == True and confFile.stat.exists == False
 
 - name: Build library file from a ZIM file with Index
-  command: kiwix-manage {{zim_path}}/kiwixFiles/{{ kiwixProject }}.xml add {{zim_path}}/kiwixFiles/content/"{{ item.0.stdout }}" -i={{zim_path}}/kiwixFiles/index/"{{ item.1.stdout }}"
+  command: kiwix-manage {{zim_path}}/kiwix_library/{{ kiwixProject }}.xml add {{zim_path}}/{{ kiwixProject }}/content/"{{ item.0.stdout }}" -i={{zim_path}}/{{ kiwixProject }}/index/"{{ item.1.stdout }}"
   with_together: 
     - "{{result_zim.results}}"
     - "{{result_index.results}}"
   when: download_data|bool == True and confFile.stat.exists == False
 
 - name: Remove non needed dir 
-  file: path={{zim_path}}/kiwixFiles/tmp state=absent
+  file: path={{zim_path}}/tmp state=absent
   when: download_data|bool == True and confFile.stat.exists == False
 
 - name: Remove archives
-  file: path={{zim_path}}/kiwixFiles/*.zip state=absent
+  file: path={{zim_path}}/*.zip state=absent
   when: download_data|bool == True and confFile.stat.exists == False
 
 - name: Enable service kiwix
