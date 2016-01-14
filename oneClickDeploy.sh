@@ -47,7 +47,7 @@ fi
 apt-get update
 apt-get install -y python-pip git python-dev
 pip install ansible markupsafe
-mkdir /etc/ansible
+[ ! -d /etc/ansible ] && mkdir /etc/ansible
 mkdir -p /var/lib/ansible/local
 cd /var/lib/ansible/
 git clone https://github.com/ideascube/ansiblecube.git local
