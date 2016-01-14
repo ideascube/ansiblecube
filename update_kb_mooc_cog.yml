@@ -78,5 +78,6 @@
     #   mook_name: koombookedu
 
   # post_tasks:    
-  #   - command: reboot
+  #   - name: Job done, let's shutdown now.
+  #     command: reboot
   #     when: ideascube_version.stdout == ""

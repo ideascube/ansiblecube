@@ -17,4 +17,5 @@
     - network-manager
 
   post_tasks:
-    - command: reboot
+    - name: Global install completed, let's reboot!
+      command: reboot

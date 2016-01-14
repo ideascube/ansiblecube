@@ -31,6 +31,7 @@
   #     version: ['vikidia_fr_all_2015-11.zim']
 
   # post_tasks:
-  #   - command: shutdown -h now
+  #   - name: Job done, let's shutdown now.
+  #     command: shutdown -h now
   #     when: ideascube_version.stdout == ""
   

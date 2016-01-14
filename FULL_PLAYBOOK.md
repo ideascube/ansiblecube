@@ -94,6 +94,7 @@
 
   # You can play post_tasks task, like shutdown the server only when ideascube_version.stdout is empty
   post_tasks:
-    - command: shutdown -h now
+    - name: Job done, let's shutdown now.
+      command: shutdown -h now
       when: ideascube_version.stdout == ""
 ```

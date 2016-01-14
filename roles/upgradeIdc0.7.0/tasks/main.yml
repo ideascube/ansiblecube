@@ -95,5 +95,6 @@
   include: ../../../post_tasks.yml task=ideascube version={{ version }}
   when: ideascube_version.stdout < "{{ version }}"
 
-- command: shutdown -h now
+- name: Upgrade IDC done, let's shutdown now.
+  command: shutdown -h now
   when: ideascube_version.stdout < "{{ version }}"
