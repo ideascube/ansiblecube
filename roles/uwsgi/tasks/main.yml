@@ -6,7 +6,7 @@
   apt: name={{ item }} state=present
   with_items:
   - uwsgi
-  - uwsgi-plugin-python
+  - uwsgi-plugin-python3
 
 - name: Create log dir for uwsgi
   file: path=/var/log/uwsgi state=directory owner={{ username }} group={{ username }} mode=0751
