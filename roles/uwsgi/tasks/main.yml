@@ -1,6 +1,9 @@
 ---
+- name: Remove uwsgi installed using pip (bug #17)
+  pip: name=uwsgi state=absent
+
 - name: Install uwsgi
-  pip: name=uwsgi
+  apt: name=uwsgi state=present
 
 - name: Create log dir for uwsgi
   file: path=/var/log/uwsgi state=directory owner={{ username }} group={{ username }} mode=0751
