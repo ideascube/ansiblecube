@@ -26,5 +26,6 @@
   #     version: ['gutenberg_en_all_10_2014.zim', 'gutenberg_es_all_10_2014.zim']
 
   # post_tasks:
-  #   - command: shutdown -h now
+  #   - name: Job done, let's shutdown now.
+  #     command: shutdown -h now
   #     when: ideascube_version.stdout == ""

@@ -1,5 +1,6 @@
 ---
-- file: path=/opt/mongo state=directory mode=0755
+- name: Check for existing installation
+  file: path=/opt/mongo state=directory mode=0755
   register: mongodb
 
 - name: download mongo package
@@ -10,7 +11,8 @@
   unarchive: src=/home/mongo.zip dest=/opt/ copy=no
   when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l' and mongodb.changed
 
-- file: src=/opt/mongo/bin/mongod dest=/usr/bin/mongod state=link
+- name: Create a mongod symlink in PATH
+  file: src=/opt/mongo/bin/mongod dest=/usr/bin/mongod state=link
   when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l' and mongodb.changed
 
 - name: Install mongodb from repository

@@ -80,8 +80,8 @@
 - name: Copy .bashrc for root
   copy: src=bashrc dest=/root/.bashrc owner=root
 
-- name: Copy vimrc for root
-  copy: src=vim dest=/etc/vim/vimrc owner=root
+- name: Copy the global vimrc file
+  copy: src=vimrc.local dest=/etc/vim/vimrc.local owner=root mode=0644
 
 - name: Copy .bashrc for new username
   copy: src=bashrc dest=/home/{{ username }}/.bashrc owner={{ username }}
@@ -120,7 +120,8 @@
   apt:  deb=/tmp/linuxUboot.deb
   when: ansible_architecture == "armv7l"
 
-- file: path=/media/hdd state=directory
+- name: Ensure the HDD mountpoint exists
+  file: path=/media/hdd state=directory
   when: use_hdd|bool
 
 - stat: path=/dev/sda1
