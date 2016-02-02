@@ -1,10 +1,4 @@
 ---
-- name: Install network-manager
-  apt: name={{ item }} state=latest
-  with_items:
-   - python-networkmanager
-   - network-manager
-
 - name: Create entry to clone/pull git repository
   template: src=nm-dispatcher.j2 dest=/etc/NetworkManager/dispatcher.d/ansiblePullUpdate 
     owner=root group=root mode=0755
