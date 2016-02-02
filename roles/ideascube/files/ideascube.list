@@ -1,0 +1,2 @@
+deb http://repos.ideascube.org/debian/ jessie/
+deb-src http://repos.ideascube.org/debian/ jessie/

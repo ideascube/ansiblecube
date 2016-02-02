@@ -7,31 +7,12 @@
 
 - debug: msg="installed ideascube version {{ ideascube_version.stdout }}"
 
-# For ARM
+- name: Configure the ideascube package repository
+  copy: src=ideascube.list dest=/etc/apt/sources.list.d/ideascube.list owner=root group=root mode=644
+  when: ideascube_version.stdout == ""
 
-- name: Create storage dir for ideascube
-  file: path=/media/hdd/ideascube/storage/main state=directory owner={{ username }} group={{ username }}
-  become: yes
-  become_user: ideascube
-  when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l' and ideascube_version.stdout == ""
-
-- name: Copy ideascube package
-  get_url: url={{filer_bsf}}/ideascube_{{ version }}_armhf.deb dest=/tmp/ideascube_{{ version }}_armhf.deb owner=root group=root mode=755
-  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and ideascube_version.stdout < "{{ version }}"
-
-- name: install ideascube package
-  apt: deb=/tmp/ideascube_{{ version }}_armhf.deb state=present
-  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and ideascube_version.stdout < "{{ version }}"
-
-# For AMD64
-
-- name: Copy ideascube package
-  get_url: url={{filer_bsf}}/ideascube_{{ version }}_amd64.deb dest=/tmp/ideascube_{{ version }}_amd64.deb owner=root group=root mode=755
-  when: ansible_architecture == 'x86_64' and ideascube_version.stdout < "{{ version }}"
-
-- name: install ideascube package
-  apt: deb=/tmp/ideascube_{{ version }}_amd64.deb state=present
-  when: ansible_architecture == 'x86_64' and ideascube_version.stdout < "{{ version }}"
+- name: Install the ideascube package
+  apt: name=ideascube state=latest update_cache=yes
 
 # Add settings and conf
 
