@@ -15,7 +15,6 @@
     - hostapd
     - iptables
     - network-manager
-    - uwsgi
     - ideascube
 
   post_tasks:
