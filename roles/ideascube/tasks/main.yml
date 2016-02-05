@@ -11,8 +11,29 @@
   template: src=ideascube.list.j2 dest=/etc/apt/sources.list.d/ideascube.list owner=root group=root mode=644
   when: ideascube_version.stdout == ""
 
+
+
+      #
+      # UGLY HACK
+      # The ideascube package is not signed (yet)
+      # so we install dependencies first, then allow unauthenticated packages,
+      # install ideascube, revert the security hole.
+
+- name: Install ideascube dependencies
+  apt: name=python3-minimal state=present
+
+- name: Allow unauthenticated packages
+  lineinfile: dest=/etc/apt/apt.conf.d/9999IDEASCUBEISABADBADBOY line='APT::Get::AllowUnauthenticated "true";' create=yes
+
 - name: Install the ideascube package
   apt: name=ideascube state=latest update_cache=yes
+
+- name: Remove the unauthenticated hack
+  file: path=/etc/apt/apt.conf.d/9999IDEASCUBEISABADBADBOY state=absent
+
+
+
+
 
 # Add settings and conf
 
@@ -65,6 +86,17 @@
   become_user: ideascube
   shell: ideascube import_medias /media/hdd/IdeasServerContent/videos/KB_Liste_contenus_videos+fiches.csv
   when: ideascube_version.stdout == "" and import_ideascube_data|bool and use_hdd|bool
+
+
+- name: Populate {{version}} if empty
+  shell: dpkg-query -W  ideascube  | awk '{print $2}' ; echo
+  register: ideascube_newversion
+  when: version is not defined
+
+- set_fact: version="{{ ideascube_newversion.stdout }}"
+  when: version is not defined
+
+- debug: msg="ideascube {{ version }} is now the current version."
 
 - tasks:
   include: ../../../post_tasks.yml task=ideascube version={{ version }}
