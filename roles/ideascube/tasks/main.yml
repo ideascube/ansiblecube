@@ -7,56 +7,12 @@
 
 - debug: msg="installed ideascube version {{ ideascube_version.stdout }}"
 
-- name: Set up the custom Policy Kit actions
-  copy: src=org.bsf.ideascube.policy dest=/usr/share/polkit-1/actions/org.bsf.ideascube.policy 
-    owner=root group=root mode=644
+- name: Configure the ideascube package repository
+  template: src=ideascube.list.j2 dest=/etc/apt/sources.list.d/ideascube.list owner=root group=root mode=644
   when: ideascube_version.stdout == ""
 
-- name: Set up the Policy Kit authorizations
-  copy: src={{ item }} dest=/var/lib/polkit-1/localauthority/20-org.d/{{ item }} owner=root group=root mode=644
-  with_items:
-  - ideascube-networkmanager.pkla
-  - ideascube-systemd.pkla
-  ignore_errors: yes
-  when: ideascube_version.stdout == ""
-
-- name: Add the PAM service
-  copy: src=ideascube.pam dest=/etc/pam.d/ideascube owner=root group=root mode=644
-  when: ideascube_version.stdout == ""
-
-# For ARM
-
-- name: Create storage dir for ideascube
-  file: path=/media/hdd/ideascube/storage/main state=directory owner={{ username }} group={{ username }}
-  become: yes
-  become_user: ideascube
-  when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l' and ideascube_version.stdout == ""
-
-- name: Copy ideascube package
-  get_url: url={{filer_bsf}}/ideascube_{{ version }}_armhf.deb dest=/tmp/ideascube_{{ version }}_armhf.deb owner=root group=root mode=755
-  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and ideascube_version.stdout < "{{ version }}"
-
-- name: install ideascube package
-  apt: deb=/tmp/ideascube_{{ version }}_armhf.deb state=present
-  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l" and ideascube_version.stdout < "{{ version }}"
-
-# For AMD64
-
-- name: Copy ideascube package
-  get_url: url={{filer_bsf}}/ideascube_{{ version }}_amd64.deb dest=/tmp/ideascube_{{ version }}_amd64.deb owner=root group=root mode=755
-  when: ansible_architecture == 'x86_64' and ideascube_version.stdout < "{{ version }}"
-
-- name: install ideascube package
-  apt: deb=/tmp/ideascube_{{ version }}_amd64.deb state=present
-  when: ansible_architecture == 'x86_64' and ideascube_version.stdout < "{{ version }}"
-
-# Should be already packaged !!!
-# - name: install missing dev package
-#   apt: name={{ item }} state=latest
-#   with_items:
-#    - libjpeg-dev
-#    - zlib1g-dev
-#   when: ansible_architecture == 'x86_64' and ideascube_version.stdout < "{{ version }}"
+- name: Install the ideascube package
+  apt: name=ideascube state=latest update_cache=yes
 
 # Add settings and conf
 
