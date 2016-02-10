@@ -15,6 +15,7 @@
     - hostapd
     - iptables
     - network-manager
+    - ideascube
 
   post_tasks:
     - name: Global install completed, let's reboot!
