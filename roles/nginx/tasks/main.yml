@@ -1,5 +1,5 @@
 ---
-- name: Remove apache 2 package
+- name: Ensure apache2 is removed
   apt: name={{ item }} state=absent purge=yes
   with_items:
    - apache2
