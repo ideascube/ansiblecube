@@ -1,0 +1,69 @@
+---
+# Ansible playbook for Alliance Française de Bangui
+
+#It will be always localhost
+- hosts: localhost
+
+#   pre_tasks:
+#     - replace: dest=/etc/default/ideascube regexp='IDEASCUBE_ID=kb_bsfcampus_sen' replace='IDEASCUBE_ID=kb_bsfcampus_civ'
+#       ignore_errors: yes
+  roles:
+    # # Can be enable/disable on demand but affect all devices
+
+    # - role: updateMook
+    #   mook_name: "bsfcampus"
+
+    # - appinventor
+    #   when: ansible_hostname == 'KoomBook483'
+
+    # # Update Mook plateform
+    # - mongodb
+    # - { role: mook, mook_name: bsfcampus }
+    # - { role: mook, mook_name: fun }
+
+    - role: kalite
+
+    # Install and configure a kiwix project 
+    - role: kiwix
+      kiwixProject: wikipedia
+      portProject: 8002
+      version: ['wikipedia_fr_all_2015-05.zim']
+    # - role: kiwix
+    #   kiwixProject: wikisource
+    #   portProject: 8003
+    # - role: kiwix
+    #   kiwixProject: vikidia
+    #   portProject: 8004
+    # - role: kiwix
+    #   kiwixProject: cpassorcier
+    #   portProject: 8005
+    # - role: kiwix
+    #   kiwixProject: ubuntudoc
+    #   portProject: 8006
+    - role: kiwix
+      kiwixProject: gutenberg
+      portProject: 8007
+    # - role: kiwix
+    #   kiwixProject: universcience
+    #   portProject: 8009
+    # - role: kiwix
+    #   kiwixProject: ted
+    #   portProject: 8010
+    # - role: kiwix
+    #   kiwixProject: software
+    #   portProject: 8011
+
+    # Play a role for a specific device
+    # - { role: mongodb, when: ansible_hostname == 'kb-bsfcampus-civ-34' }
+    #- { role: ideascube, when: ansible_hostname == 'KoomBook484' }
+
+    # Start. has to be always enable 
+    - logs
+    # Stop. has to be always enable 
+
+  # post_tasks:
+  #   - file: path=/etc/udev/rules.d/70-persistent-net.rules state=absent
+  # # #   - replace: dest=/etc/dhcp/dhclient-exit-hooks.d/ansiblePullUpdate regexp='sleep 120 &&' replace='sleep 120 && rm -rf /var/lib/ansible/ &&'
+      # - name: Job done, let's shutdown now.
+      #   command: shutdown -h now
+      #   when: st.stat.exists == False
