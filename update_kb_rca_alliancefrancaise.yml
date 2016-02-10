@@ -43,6 +43,7 @@
     - role: kiwix
       kiwixProject: gutenberg
       portProject: 8007
+      version: ['gutenberg_fr_all_10_2014.zim']
     # - role: kiwix
     #   kiwixProject: universcience
     #   portProject: 8009
