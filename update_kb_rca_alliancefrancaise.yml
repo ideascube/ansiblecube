@@ -21,7 +21,7 @@
     # - { role: mook, mook_name: bsfcampus }
     # - { role: mook, mook_name: fun }
 
-    - role: kalite
+    #- role: kalite
 
     # Install and configure a kiwix project 
     #- role: kiwix
