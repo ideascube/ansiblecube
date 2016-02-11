@@ -24,10 +24,11 @@
     - role: kalite
 
     # Install and configure a kiwix project 
-    - role: kiwix
-      kiwixProject: wikipedia
-      portProject: 8002
-      version: ['wikipedia_fr_all_2015-05.zim']
+    #- role: kiwix
+    #  kiwixProject: wikipedia
+    #  portProject: 8002
+    #  version: ['wikipedia_fr_all_2015-05.zim']
+    #  lang: ['fr']
     # - role: kiwix
     #   kiwixProject: wikisource
     #   portProject: 8003
@@ -40,10 +41,11 @@
     # - role: kiwix
     #   kiwixProject: ubuntudoc
     #   portProject: 8006
-    - role: kiwix
-      kiwixProject: gutenberg
-      portProject: 8007
-      version: ['gutenberg_fr_all_10_2014.zim']
+    #- role: kiwix
+    #  kiwixProject: gutenberg
+    #  portProject: 8007
+    #  version: ['gutenberg_fr_all_09_2014.zim']
+    #  lang: ['fr']
     # - role: kiwix
     #   kiwixProject: universcience
     #   portProject: 8009
