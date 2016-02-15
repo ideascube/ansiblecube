@@ -30,6 +30,15 @@
    - apache2-utils
    - apache2.2-bin
    - apache2.2-common
+   - btrfs-tools
+   - figlet
+   - toilet
+   - bluez
+   - fping
+   - stress
+   - iperf
+   - iotop
+   - lirc
 
 - name: Install all requiered package
   apt: name={{ item }} state=latest
