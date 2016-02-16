@@ -44,13 +44,20 @@ else
 	exit 0;
 fi
 
+echo "[+] Install ansible..."
 apt-get update
 apt-get install -y python-pip git python-dev
 pip install ansible==1.9.4 markupsafe
-[ ! -d /etc/ansible ] && mkdir /etc/ansible
+
+echo "[+] Clone ansiblecube repo..."
 mkdir -p /var/lib/ansible/local
 cd /var/lib/ansible/
 git clone https://github.com/ideascube/ansiblecube.git local
 
+[ ! -d /etc/ansible ] && mkdir /etc/ansible
 cp /var/lib/ansible/local/hosts /etc/ansible/hosts
+
+echo "[+] Run globalInstall playbook..."
 /usr/local/bin/ansible-pull -d /var/lib/ansible/local -i hosts -U https://github.com/ideascube/ansiblecube.git globalInstall.yml --extra-vars "send_to_central_server="$SHOULD_WE_SEND" import_ideascube_data=False ideascube_id=$value2 timezone=$value3 download_data=$value4"
+
+echo "[+] Done."
