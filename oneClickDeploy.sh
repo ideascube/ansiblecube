@@ -50,7 +50,7 @@ apt-get install -y python-pip git python-dev
 pip install ansible==1.9.4 markupsafe
 
 echo "[+] Clone ansiblecube repo..."
-mkdir -p /var/lib/ansible/local
+mkdir --mode 0755 -p /var/lib/ansible/local
 cd /var/lib/ansible/
 git clone https://github.com/ideascube/ansiblecube.git local
 
