@@ -9,6 +9,6 @@
     - logs
     - kalite
     - role: kiwix
-      kiwixProject: gutemberg
+      kiwixProject: gutenberg
       portProject: 8002
       lang: ""
