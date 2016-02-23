@@ -1,0 +1,10 @@
+---
+
+- name: restart tinc
+  service: >
+    name=tinc
+    state=restarted
+
+- name: reload tinc
+  shell: killall --signal HUP tincd
+  ignore_errors: yes

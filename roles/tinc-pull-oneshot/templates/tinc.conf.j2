@@ -1,0 +1,9 @@
+Name = {{ ansible_hostname }}
+AddressFamily = {% if ansible_default_ipv6.address is defined and ansible_default_ipv4.address is defined %}any{%else if ansible_default_ipv6.address is defined %}ipv6{% else %}ipv4{% endif %}
+Interface = {% if vpn_interface is defined %}{{ vpn_interface }}{% else %}tun0{% endif %}
+
+{% for host in groups['all'] %}
+{% if ansible_hostname != hostvars[host]['ansible_hostname'] %}
+ConnectTo = {{ hostvars[host]['ansible_hostname'] }}
+{% endif %}
+{% endfor %}
