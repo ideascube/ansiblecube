@@ -1,6 +1,6 @@
 ---
 
-vpn_name: vpnone
+vpn_name: idbvpn
 vpn_interface: "{{ vpn_name }}"
 
 # unset to disable logging
