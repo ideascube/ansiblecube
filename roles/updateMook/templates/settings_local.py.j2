@@ -5,8 +5,7 @@ class Config(object):
     MONGODB_DB = '{{mook_name}}'
     CORS_ORIGINS = ['http://{{mook_front_server_name}}']
     ## Local servers only:
-    CENTRAL_SERVER_HOST = 'http://api.bsfcampus.org'
-    UPLOAD_FILES_PATH = "/media/hdd/{{ mook_name }}/static/"
+    CENTRAL_SERVER_HOST = '{{central_server_host}}'
+    UPLOAD_FILES_PATH = "{{ mook_upload_file_path }}"
     UPLOAD_FILES_URL = "http://{{mook_api_server_name}}/static/"
 
-    

@@ -20,7 +20,7 @@
     - libffi-dev
   when: mook.changed
 
-- name: Installe virtualenv
+- name: Install virtualenv
   pip: name=virtualenv
   when: mook.changed
 

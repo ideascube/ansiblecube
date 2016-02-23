@@ -1,5 +1,7 @@
 ---
-- stat: path={{ mook_path }}/{{ mook_name }}/done
+- include_vars: group_vars/{{ ansible_architecture }}.yml
+
+- stat: path={{ mook_path }}/{{ mook_name }}/update230216
   register: st
 
 ####
@@ -10,7 +12,7 @@
 
 - name: Clone mook api
   become_user: ideascube
-  git: repo=ssh://git@altssh.bitbucket.org:443/gryzzlab/mook-bsf-api.git dest={{ mook_path }}/{{ mook_name }}/api accept_hostkey=yes update=yes depth=1
+  git: repo=ssh://git@altssh.bitbucket.org:443/bsfcampus/mook-bsf-api.git dest={{ mook_path }}/{{ mook_name }}/api accept_hostkey=yes update=yes depth=1
   when: st.stat.exists == False
 
 - name: Install python requierment
@@ -47,20 +49,19 @@
 
 - name: Clone mook front
   become_user: ideascube
-  git: repo=ssh://git@altssh.bitbucket.org:443/gryzzlab/mook-bsf-front-end-backbone.git dest={{ mook_path }}/{{ mook_name }}/front accept_hostkey=yes update=yes depth=1
+  git: repo=ssh://git@altssh.bitbucket.org:443/bsfcampus/mook-bsf-front-end-backbone.git dest={{ mook_path }}/{{ mook_name }}/front accept_hostkey=yes update=yes depth=1
   when: st.stat.exists == False
 
-- name: download vendor package
-  get_url: url={{filer_bsf}}/vendor.tgz dest=/tmp/vendor.tgz
-  when: st.stat.exists == False
+# - name: download vendor package
+#   get_url: url={{filer_bsf}}/vendor.tgz dest=/tmp/vendor.tgz
+#   when: st.stat.exists == False
 
-- name: unarchive the vendor package
-  become_user: ideascube
-  unarchive: src=/tmp/vendor.tgz dest={{ mook_path }}/{{ mook_name }}/front copy=no
-  when: st.stat.exists == False
+# - name: unarchive the vendor package
+#   become_user: ideascube
+#   unarchive: src=/tmp/vendor.tgz dest={{ mook_path }}/{{ mook_name }}/front copy=no
+#   when: st.stat.exists == False
 
 - name: Copy config.js config files
-  become_user: ideascube
   template: src=config.js.j2 dest={{ mook_path }}/{{ mook_name }}/front/config.js
   when: st.stat.exists == False
 
@@ -73,27 +74,38 @@
   notify: restart uwsgi
   when: st.stat.exists == False
 
-- file: path={{ mook_path }}/{{ mook_name }}/done state=touch
+- name: Symbolic link for wsgi ini file
+  file: src={{ mook_path }}/{{ mook_name }}/api/uwsgi-api.ini dest=/etc/uwsgi/apps-enabled/uwsgi-{{ mook_name }}-api.ini state=link
+  notify: restart uwsgi
   when: st.stat.exists == False
 
 - name: Fix rights on static
-  file: path=/media/hdd/bsfcampus/ state=directory owner={{ username }} group={{ username }} recurse=yes
+  file: path=/media/hdd/{{ mook_name }}/ state=directory owner={{ username }} group={{ username }} recurse=yes
+  notify: restart nginx
   when: st.stat.exists == False
 
-- replace: dest=/etc/rc.local regexp='#su ideascube -c' replace='su ideascube -c'
+# - replace: dest=/etc/rc.local regexp='#su ideascube -c' replace='su ideascube -c'
+#   when: st.stat.exists == False
+
+####
+# Systemd startup script
+####
+
+- name: Copy template for systemd mook-sync
+  template: src=mook-sync.service.j2 dest=/etc/systemd/system/mook-sync.service
+  when: mook.changed
+
+- name: Enable service 
+  service: name=mook-sync.service enabled=yes
+  notify: restart mook-sync
+
+####
+# update
+#### 
+
+- file: path={{ mook_path }}/{{ mook_name }}/update230216 state=touch
   when: st.stat.exists == False
-
-# - name: Start to sync database
-#   command: su {{ username }} -c '{{ mook_path }}/{{ mook_name }}/api/env/bin/python2.7 {{ mook_path }}/{{ mook_name }}/api/manage.py sync reset' &
-#   when: st.stat.exists == False
-
-# - name: Sleep for 15min
-#   pause: minutes=15
-#   when: st.stat.exists == False
 
 - tasks:
   include: ../../../post_tasks.yml task=updateMook version=1
   when: st.stat.exists == False
-
-# - command: /sbin/reboot
-#   when: st.stat.exists == False
