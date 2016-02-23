@@ -21,17 +21,19 @@
 
 - name: Install ideascube dependencies
   apt: name=python3-minimal state=present
+  when: ideascube_version.stdout == ""
 
 - name: Allow unauthenticated packages
   lineinfile: dest=/etc/apt/apt.conf.d/9999IDEASCUBEISABADBADBOY line='APT::Get::AllowUnauthenticated "true";' create=yes
+  when: ideascube_version.stdout < "{{ version }}"
 
 - name: Install the ideascube package
   apt: name=ideascube state=latest update_cache=yes
+  when: ideascube_version.stdout < "{{ version }}"
 
 - name: Remove the unauthenticated hack
   file: path=/etc/apt/apt.conf.d/9999IDEASCUBEISABADBADBOY state=absent
-
-
+  when: ideascube_version.stdout < "{{ version }}"
 
 
 
