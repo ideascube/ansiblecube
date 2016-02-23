@@ -1,0 +1,14 @@
+---
+# Ansible playbook for TV5 Monde BDI
+
+#It will be always localhost
+- hosts: localhost
+
+  roles:
+    # Has to be always enable
+    - logs
+    - kalite
+    - role: kiwix
+      kiwixProject: gutemberg
+      portProject: 8002
+      lang: ""
