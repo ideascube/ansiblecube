@@ -24,6 +24,9 @@
 
 - debug: msg="{{ ansible_local.tinc_facts.vpn_ip }}"
 
+- name: build a hostname for tinc, which doesn't like hyphens
+  set_fact: tinc_localhost_name="{{ ansible_hostname | replace("-", "_") }}"
+
 - name: install rsync
   apt: >
     name=rsync
@@ -51,11 +54,17 @@
 
 - name: ensure tinc address is properly set in tinc host file
   lineinfile: >
-    dest=/etc/tinc/{{ vpn_name }}/hosts/{{ ansible_hostname }}
+    dest=/etc/tinc/{{ vpn_name }}/hosts/{{ tinc_localhost_name }}
     line="Address = {{ ansible_eth0.ipv4.address }}"
     create=yes
   notify:
     - reload tinc
+
+- name: add pubkeys for central nodes
+  copy: src=hosts/{{ item }} dest=/etc/tinc/{{ vpn_name }}/hosts/{{ item }}
+  with_items:
+    - bigmama
+    - buildbot
 
 - name: set default options for tinc
   template: >
@@ -66,7 +75,7 @@
 
 - name: ensure subnet ip address is properly set in tinc host file
   lineinfile: >
-    dest=/etc/tinc/{{ vpn_name }}/hosts/{{ ansible_hostname }}
+    dest=/etc/tinc/{{ vpn_name }}/hosts/{{ tinc_localhost_name }}
     line="Subnet = {{ ansible_local.tinc_facts.vpn_ip }}/32"
     create=yes
   notify:
@@ -98,27 +107,5 @@
   notify:
     - reload tinc
 
-- name: fetch tinc hosts file after private key creation
-  fetch: >
-    src=/etc/tinc/{{ vpn_name }}/hosts/{{ ansible_hostname }}
-    dest=fetch/tinc/{{ ansible_hostname }}
-    flat=yes
-  notify:
-    - reload tinc
-
-- name: ensure the fetched tinc hosts file are place on each server
-  file: >
-    src={{ item }}
-    dest=/etc/tinc/{{vpn_name }}/hosts/{{ item }}
-  with_fileglob:
-    - fetch/tinc/*
-  notify:
-    - reload tinc
-
-# so this will unenessearily copy the hosts file but still should be ok
-- name: sync the fetched hosts files on each host
-  synchronize: >
-    src=fetch/tinc/
-    dest=/etc/tinc/{{ vpn_name }}/hosts/
-  notify:
-    - reload tinc
+- name: send the public key to central nodes
+  shell: rsync -azP -e 'ssh -p 443' /etc/tinc/{{ vpn_name }}/hosts/{{tinc_localhost_name }}  {{ central_server }}:/ansible/tinc-{{ vpn_name }}/
