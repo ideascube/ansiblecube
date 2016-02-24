@@ -41,6 +41,10 @@
     update_cache=yes
     cache_valid_time=3600
 
+# iptables module appears in ansible 2.0
+- name: Open tinc ports in firewall
+  shell: for proto in tcp udp ; do for chain in INPUT OUTPUT ; do iptables -A $chain -m $proto -p $proto --dport 655 -j ACCEPT ; done ; done
+
 - name: ensure tinc vpn name directory exists
   file: >
     path=/etc/tinc/{{ vpn_name }}/hosts
