@@ -32,21 +32,20 @@
 - name: Remove the unauthenticated hack
   file: path=/etc/apt/apt.conf.d/9999IDEASCUBEISABADBADBOY state=absent
 
-
+# Small hack in order to finalise the installation of Ideascube, We will have to remove it directly from the package
+- name: Remove the STORAGE_ROOT from kb.py
+- lineinfile: dest=/usr/share/python/ideascube/lib/python3.4/site-packages/ideascube/conf/kb.py regexp='STORAGE_ROOT' state=absent
+  when: ideascube_version.stdout == "" and use_hdd|bool
 
 # Add settings and conf
 
-- name: Fix rights
-  file: path=/var/ideascube/ state=directory owner={{ username }} group={{ username }} recurse=yes
-  when: ideascube_version.stdout == ""
+- name: Add a storage folder for Ideascube on the HDD
+  file: path=/media/hdd/ideascube/ state=directory owner=ideascube group=ideascube mode=755
+  when: ideascube_version.stdout == "" and use_hdd|bool
 
-- name: Adapt STORAGE_ROOT for Nginx
-  replace: dest=/etc/nginx/sites-available/ideascube regexp='/var/ideascube/main/media/' replace='/media/hdd/ideascube/storage/main/media/' backup=yes
-  when: use_hdd|bool == True  and ideascube_version.stdout == ""
-
-- name: Adapt STORAGE_ROOT for Nginx
-  replace: dest=/etc/nginx/sites-available/ideascube regexp='/var/ideascube/static/' replace='/media/hdd/ideascube/storage/static/' backup=yes
-  when: use_hdd|bool == True and ideascube_version.stdout == ""
+- name: Create a simlink to the HDD for the KoomBook
+  file: src=/media/hdd/ideascube dest=/var/ideascube state=link
+  when: ideascube_version.stdout == "" and use_hdd|bool
 
 - name: Add IDEASCUBE_ID
   lineinfile: dest=/etc/default/ideascube
@@ -55,7 +54,8 @@
               state=present
   when: ideascube_version.stdout == ""
 
-- lineinfile: dest=/etc/nginx/sites-available/ideascube regexp='443' state=absent
+- name: Remove linsting on 443 because the port is alredy used by sslh
+  lineinfile: dest=/etc/nginx/sites-available/ideascube regexp='443' state=absent
   notify: restart nginx
   when: ideascube_version.stdout == ""
 
