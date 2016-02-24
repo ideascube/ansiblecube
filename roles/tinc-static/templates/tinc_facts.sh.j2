@@ -1,0 +1,9 @@
+#!/bin/bash
+
+IP_INDEX=`hostname --all-ip-addresses | tr '.' ' ' | cut -d ' ' -f 4`
+
+cat <<EOF
+{
+    "vpn_ip" : "10.80.100.$IP_INDEX"
+}
+EOF
