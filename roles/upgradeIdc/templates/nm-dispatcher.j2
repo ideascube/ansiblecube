@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if [ "$2" = "up" ]; then  
+           sleep 120 && /usr/local/bin/ansible-pull -d /var/lib/ansible/local -i hosts -U https://github.com/ideascube/ansiblecube.git update_{{ ansible_hostname }}.yml --extra-vars "use_hdd=True send_to_central_server=True import_ideascube_data=True download_data=False ideascube_id={{ ansible_hostname }}" >> /var/log/ansible-pull.log 2>&1 &
+fi  
