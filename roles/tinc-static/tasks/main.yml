@@ -43,7 +43,7 @@
 
 # iptables module appears in ansible 2.0
 - name: Open tinc ports in firewall
-  shell: for proto in tcp udp ; do for chain in INPUT OUTPUT ; do iptables -A $chain -m $proto -p $proto --dport 655 -j ACCEPT ; done ; done
+  shell: for port in 655 656 ; do for proto in tcp udp ; do for chain in INPUT OUTPUT ; do iptables -A $chain -m $proto -p $proto --dport $port -j ACCEPT ; done ; done ; done
 
 - name: ensure tinc vpn name directory exists
   file: >

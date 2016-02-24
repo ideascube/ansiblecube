@@ -68,6 +68,10 @@ iptables -t filter -A INPUT -p tcp --dport 655 -j ACCEPT
 iptables -t filter -A OUTPUT -p tcp --dport 655 -j ACCEPT
 iptables -t filter -A INPUT -p udp --dport 655 -j ACCEPT
 iptables -t filter -A OUTPUT -p udp --dport 655 -j ACCEPT
+iptables -t filter -A INPUT -p tcp --dport 656 -j ACCEPT
+iptables -t filter -A OUTPUT -p tcp --dport 656 -j ACCEPT
+iptables -t filter -A INPUT -p udp --dport 656 -j ACCEPT
+iptables -t filter -A OUTPUT -p udp --dport 656 -j ACCEPT
 
 # apt-get
 iptables -t filter -A OUTPUT -p tcp --dport 80 -m state --state NEW,ESTABISHED -j ACCEPT
