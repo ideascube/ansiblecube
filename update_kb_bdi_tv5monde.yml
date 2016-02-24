@@ -11,4 +11,4 @@
     - role: kiwix
       kiwixProject: gutenberg
       portProject: 8002
-      lang: ""
+      lang: ['fr']
