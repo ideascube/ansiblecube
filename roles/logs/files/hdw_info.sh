@@ -1,11 +1,45 @@
 #!/bin/bash
-lscpu > /tmp/hdw_info.txt
-lshw -short >> /tmp/hdw_info.txt
-hwinfo --short >> /tmp/hdw_info.txt
-lspci >> /tmp/hdw_info.txt
-lsusb >> /tmp/hdw_info.txt
-lsblk >> /tmp/hdw_info.txt
-df >> /tmp/hdw_info.txt
-ip a l >> /tmp/hdw_info.txt
-ps aufx >> /tmp/hdw_info.txt
-systemctl status >> /tmp/hdw_info.txt
+FILE="/tmp/hdw_info.txt"
+echo "##################################" > $FILE
+echo "#          lscpu                 #" >> $FILE
+echo "##################################" >> $FILE
+lscpu >> $FILE
+echo "##################################" >> $FILE
+echo "#          lshw                  #" >> $FILE
+echo "##################################" >> $FILE
+lshw -short >> $FILE
+echo "##################################" >> $FILE
+echo "#          hwinfo                #" >> $FILE
+echo "##################################" >> $FILE
+hwinfo --short >> $FILE
+echo "##################################" >> $FILE
+echo "#          lscpi                 #" >> $FILE
+echo "##################################" >> $FILE
+lspci >> $FILE
+echo "##################################" >> $FILE
+echo "#          lsusb                 #" >> $FILE
+echo "##################################" >> $FILE
+lsusb >> $FILE
+echo "##################################" >> $FILE
+echo "#          lsblk                 #" >> $FILE
+echo "##################################" >> $FILE
+lsblk >> $FILE
+echo "##################################" >> $FILE
+echo "#          Disk space            #" >> $FILE
+echo "##################################" >> $FILE
+df >> $FILE
+echo "##################################" >> $FILE
+echo "#           IP address           #" >> $FILE
+echo "##################################" >> $FILE
+ip a l >> $FILE
+echo "##################################" >> $FILE
+echo "#          Process               #" >> $FILE
+echo "##################################" >> $FILE
+ps aufx >> $FILE
+echo "##################################" >> $FILE
+echo "#          systemctl             #" >> $FILE
+echo "##################################" >> $FILE
+systemctl status >> $FILE
+echo "##################################" >> $FILE
+echo "#          Public IP address     #" >> $FILE
+echo "##################################" >> $FILE
