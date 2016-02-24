@@ -68,8 +68,16 @@
   template: src=hosts.j2 dest=/etc/hosts owner=root group=root mode=755 backup=yes
   when: st.stat.exists == False
 
+- name: Populate {{version}} if empty
+  shell: dpkg-query -W  ideascube  | awk '{print $2}' ; echo
+  register: ideascube_newversion
+
+- set_fact: version="{{ ideascube_newversion.stdout }}"
+
+- debug: msg="ideascube {{ version }} is now the current version."
+
 - tasks:
-  include: ../../../post_tasks.yml task=ideascube version=0.8.4
+  include: ../../../post_tasks.yml task=ideascube version={{ version }}
   when: st.stat.exists == False
 
 # - name: Upgrade IDC done, let's shutdown now.
