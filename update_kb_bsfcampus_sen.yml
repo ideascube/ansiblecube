@@ -55,7 +55,7 @@
     #   portProject: 8011
 
     # Play a role for a specific device
-    #- { role: iptables, when: ansible_hostname == 'KoomBook603' }
+    - { role: tinc-static, when: ansible_hostname == 'kb-bsfcampus-sen-818' }
     #- { role: ideascube, when: ansible_hostname == 'KoomBook484' }
 
     # Start. has to be always enable 
