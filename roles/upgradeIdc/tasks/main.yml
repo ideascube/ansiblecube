@@ -1,0 +1,94 @@
+---
+- include_vars: group_vars/{{ ansible_architecture }}.yml
+
+- stat: path=/var/lib/ansible/upgradeIdc0.8.4
+  register: st
+
+- name: Remove uwsgi installed using pip (bug #17)
+  pip: name=uwsgi state=absent
+  when: st.stat.exists == False
+
+- name: Install uwsgi
+  apt: name={{ item }} state=present
+  with_items:
+  - uwsgi
+  - uwsgi-plugin-python3
+  when: st.stat.exists == False
+
+- name: Configure the ideascube package repository
+  template: src=ideascube.list.j2 dest=/etc/apt/sources.list.d/ideascube.list owner=root group=root mode=644
+  when: st.stat.exists == False
+
+      #
+      # UGLY HACK
+      # The ideascube package is not signed (yet)
+      # so we install dependencies first, then allow unauthenticated packages,
+      # install ideascube, revert the security hole.
+
+- name: Install ideascube dependencies
+  apt: name=python3-minimal state=present
+  when: st.stat.exists == False
+
+- name: Allow unauthenticated packages
+  lineinfile: dest=/etc/apt/apt.conf.d/9999IDEASCUBEISABADBADBOY line='APT::Get::AllowUnauthenticated "true";' create=yes
+  when: st.stat.exists == False
+
+- name: Install the ideascube package
+  apt: name=ideascube state=latest update_cache=yes
+  when: st.stat.exists == False
+
+- name: Remove the unauthenticated hack
+  file: path=/etc/apt/apt.conf.d/9999IDEASCUBEISABADBADBOY state=absent
+  when: st.stat.exists == False
+
+- name: Copy startup script
+  copy: src=hostapd dest=/etc/systemd/system/hostapd.service owner=root group=root mode=664
+  when: st.stat.exists == False
+
+- name: remove old sysvinit startup file 
+  file: path=/etc/init.d/hostapd state=absent
+  when: st.stat.exists == False
+
+- name: Enable service hostapd
+  service: name=hostapd enabled=yes
+  when: st.stat.exists == False
+
+- name: Restart hostapd
+  service: name=hostapd state=restarted
+  when: st.stat.exists == False
+
+- name: Create a new interfaces file
+  template: src=interfaces.j2 dest=/etc/network/interfaces backup=yes
+  when: st.stat.exists == False
+
+- name: Setup startup file for uwsgi
+  copy: src=uwsgi.service dest=/etc/systemd/system/uwsgi.service owner=root group=root mode=644
+  when: st.stat.exists == False
+
+- name: Enable service uwsgi
+  service: name=uwsgi enabled=yes
+  when: st.stat.exists == False
+
+- name: Update dnsmasq.conf file
+  template: src=dnsmasq.conf.j2 dest=/etc/dnsmasq.conf backup=yes
+  when: st.stat.exists == False
+
+- name: Update hosts file
+  template: src=hosts.j2 dest=/etc/hosts owner=root group=root mode=755 backup=yes
+  when: st.stat.exists == False
+
+- name: Populate {{version}} if empty
+  shell: dpkg-query -W  ideascube  | awk '{print $2}' ; echo
+  register: ideascube_newversion
+
+- set_fact: version="{{ ideascube_newversion.stdout }}"
+
+- debug: msg="ideascube {{ version }} is now the current version."
+
+- tasks:
+  include: ../../../post_tasks.yml task=ideascube version={{ version }}
+  when: st.stat.exists == False
+
+# - name: Upgrade IDC done, let's shutdown now.
+#   command: shutdown -h now
+#   when: st.stat.exists == False

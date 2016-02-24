@@ -84,8 +84,9 @@
   notify: restart nginx
   when: st.stat.exists == False
 
-# - replace: dest=/etc/rc.local regexp='#su ideascube -c' replace='su ideascube -c'
-#   when: st.stat.exists == False
+- name: Delete old way of synching 
+  lineinfile: dest=/etc/rc.local state=absent regexp='su ideascube -c'
+  when: st.stat.exists == False
 
 ####
 # Systemd startup script
