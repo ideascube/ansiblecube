@@ -8,6 +8,7 @@
     # Has to be always enable
     - logs
     - kalite
+    - ideascube
     - role: kiwix
       kiwixProject: gutenberg
       portProject: 8002
