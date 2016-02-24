@@ -4,11 +4,20 @@
 - stat: path=/var/lib/ansible/upgradeIdc0.8.4
   register: st
 
+- name: Remove uwsgi installed using pip (bug #17)
+  pip: name=uwsgi state=absent
+  when: st.stat.exists == False
+
+- name: Install uwsgi
+  apt: name={{ item }} state=present
+  with_items:
+  - uwsgi
+  - uwsgi-plugin-python3
+  when: st.stat.exists == False
+
 - name: Configure the ideascube package repository
   template: src=ideascube.list.j2 dest=/etc/apt/sources.list.d/ideascube.list owner=root group=root mode=644
   when: st.stat.exists == False
-
-
 
       #
       # UGLY HACK
@@ -52,13 +61,13 @@
   template: src=interfaces.j2 dest=/etc/network/interfaces backup=yes
   when: st.stat.exists == False
 
-# - name: Setup startup file for uwsgi
-#   copy: src=uwsgi.service dest=/etc/systemd/system/uwsgi.service owner=root group=root mode=644
-#   when: st.stat.exists == False
+- name: Setup startup file for uwsgi
+  copy: src=uwsgi.service dest=/etc/systemd/system/uwsgi.service owner=root group=root mode=644
+  when: st.stat.exists == False
 
-# - name: Enable service uwsgi
-#   service: name=uwsgi enabled=yes
-#   when: st.stat.exists == False
+- name: Enable service uwsgi
+  service: name=uwsgi enabled=yes
+  when: st.stat.exists == False
 
 - name: Update dnsmasq.conf file
   template: src=dnsmasq.conf.j2 dest=/etc/dnsmasq.conf backup=yes
