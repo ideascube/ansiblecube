@@ -6,5 +6,5 @@
     state=restarted
 
 - name: reload tinc
-  shell: kill --signal HUP tincd
+  shell: kill -HUP tincd
   ignore_errors: yes
