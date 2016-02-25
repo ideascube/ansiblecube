@@ -1,7 +1,7 @@
 ---
 - include_vars: group_vars/{{ ansible_architecture }}.yml
 
-- stat: path=/var/lib/ansible/upgradeIdc0.8.4
+- stat: path=/var/lib/ansible/upgradeIdc0.8.5
   register: st
 
 - name: Remove uwsgi installed using pip (bug #17)
@@ -79,6 +79,19 @@
 
 - name: Update hosts file
   template: src=hosts.j2 dest=/etc/hosts owner=root group=root mode=755 backup=yes
+  when: st.stat.exists == False
+
+- name: Install Network-Manager
+  apt: name=network-manager state=latest
+  when: st.stat.exists == False
+
+- name: Create entry to clone/pull git repository
+  template: src=nm-dispatcher.j2 dest=/etc/NetworkManager/dispatcher.d/ansiblePullUpdate
+    owner=root group=root mode=0755
+  when: st.stat.exists == False
+
+- name: remove old way of lunching ansible-pull
+  file: path=/etc/dhcp/dhclient-exit-hooks.d/ansiblePullUpdate state=absent
   when: st.stat.exists == False
 
 - name: Populate {{version}} if empty
