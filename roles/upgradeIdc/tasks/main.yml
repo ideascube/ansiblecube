@@ -8,6 +8,10 @@
   pip: name=uwsgi state=absent
   when: st.stat.exists == False
 
+- name: remove unused ideascube var dir
+  file: path=/var/ideascube/ state=absent
+  when: st.stat.exists == False
+
 - name: Create a simlink to the HDD for the KoomBook
   file: src=/media/hdd/ideascube dest=/var/ideascube state=link
   when: st.stat.exists == False and use_hdd|bool
