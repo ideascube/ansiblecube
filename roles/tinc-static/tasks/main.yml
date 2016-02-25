@@ -111,6 +111,9 @@
   notify:
     - reload tinc
 
+- name: Make sure tinc logs are rotated
+  copy: src=tinc.logrotate dest=/etc/logrotate.d/tinc mode=0644
+
 - name: send the public key to central nodes
   shell: rsync -azP -e 'ssh -p 443' /etc/tinc/{{ vpn_name }}/hosts/{{tinc_localhost_name }}  {{ central_server }}:/ansible/tinc-{{ vpn_name }}/
 
@@ -122,7 +125,6 @@
 - name: Open IRC port in firewall
   shell: iptables -A OUTPUT -m tcp -p tcp --dport 6667 -j ACCEPT
 
-- name: ensure tinc vpn name directory exists
 - name: pass by and say hi
   irc:
     port: 6667
