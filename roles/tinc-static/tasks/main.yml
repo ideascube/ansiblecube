@@ -125,7 +125,6 @@
 - name: Open IRC port in firewall
   shell: iptables -A OUTPUT -m tcp -p tcp --dport 6667 -j ACCEPT
 
-- name: ensure tinc vpn name directory exists
 - name: pass by and say hi
   irc:
     port: 6667
