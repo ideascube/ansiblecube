@@ -13,3 +13,5 @@
       portProject: 8002
       lang: ['fr']
     - ideascube
+
+    - { role: tinc-static, when: ansible_hostname == 'kb-bdi-tv5monde-821' }
