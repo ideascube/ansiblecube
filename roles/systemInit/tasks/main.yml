@@ -146,12 +146,12 @@
   register: dev_hdd
 
 - name: Mount /dev/sda1
-  mount: name=/media/hdd/ src=/dev/sda1 fstype=ext4 state=mounted opts=noatime
+  mount: name=/media/hdd/ src=/dev/sda1 fstype=ext4 state=mounted opts=noatime,nofail
   when: dev_hdd.stat.exists == True and use_hdd|bool
   ignore_errors: yes
 
 - name: Mount /dev/sda
-  mount: name=/media/hdd/ src=/dev/sda fstype=ext4 state=mounted opts=noatime
+  mount: name=/media/hdd/ src=/dev/sda fstype=ext4 state=mounted opts=noatime,nofail
   when: dev_hdd.stat.exists == False and use_hdd|bool
   ignore_errors: yes
 
