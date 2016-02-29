@@ -8,7 +8,7 @@
     
     # - { role: upgradeIdc, when: ansible_hostname == 'kb-bsfcampus-sen-76' }
 
-    # - tinc-static
+    - tinc-static
 
     # Start. has to be always enable 
     - logs
