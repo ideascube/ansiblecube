@@ -1,7 +1,7 @@
 ---
 - include_vars: group_vars/{{ ansible_architecture }}.yml
 
-- stat: path=/var/lib/ansible/upgradeIdc0.8.5
+- stat: path=/var/lib/ansible/upgradeIdc0.8.6
   register: st
 
 - name: Remove uwsgi installed using pip (bug #17)
