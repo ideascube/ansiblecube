@@ -5,7 +5,8 @@
 - hosts: localhost
 
   roles:
-    
+    # # Can be enable/disable on demand but affect all devices
+
     # - { role: upgradeIdc, when: ansible_hostname == 'kb-bsfcampus-sen-76' }
 
     - tinc-static

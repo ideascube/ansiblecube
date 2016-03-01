@@ -4,66 +4,14 @@
 #It will be always localhost
 - hosts: localhost
 
-  # pre_tasks:
-  #   - lineinfile: dest=/etc/network/interfaces regexp='wpa' state=absent
-
   roles:
     # # Can be enable/disable on demand but affect all devices
 
-    # - role: updateIdeascube
-    #   version: "0.4.0-1"
-    #   ideascube_id: "kb_bsfcampus_cmr"
+    # - { role: upgradeIdc, when: ansible_hostname == 'kb-bsfcampus-sen-76' }
 
-    # - role: updateMook
-    #   mook_name: "bsfcampus"
-
-    # - appinventor
-    #   when: ansible_hostname == 'KoomBook483'
-
-    # # Update Mook plateform
-    # - mongodb
-    # - { role: mook, mook_name: bsfcampus }
-    # - { role: mook, mook_name: fun }
-
-    # Install and configure a kiwix project 
-    # - role: kiwix
-    #   kiwixProject: wikipedia
-    #   portProject: 8002
-    # - role: kiwix
-    #   kiwixProject: wikisource
-    #   portProject: 8003
-    # - role: kiwix
-    #   kiwixProject: vikidia
-    #   portProject: 8004
-    # - role: kiwix
-    #   kiwixProject: cpassorcier
-    #   portProject: 8005
-    # - role: kiwix
-    #   kiwixProject: ubuntudoc
-    #   portProject: 8006
-    # - role: kiwix
-    #   kiwixProject: gutenberg
-    #   portProject: 8007
-    # - role: kiwix
-    #   kiwixProject: universcience
-    #   portProject: 8009
-    # - role: kiwix
-    #   kiwixProject: ted
-    #   portProject: 8010
-    # - role: kiwix
-    #   kiwixProject: software
-    #   portProject: 8011
-
-    # Play a role for a specific device
-    #- { role: iptables, when: ansible_hostname == 'KoomBook603' }
-    #- { role: ideascube, when: ansible_hostname == 'KoomBook484' }
+    - tinc-static
 
     # Start. has to be always enable 
     - logs
-    # Stop. has to be always enable 
-
-  # post_tasks:
-    # - file: path=/etc/udev/rules.d/70-persistent-net.rules state=absent
-  #   - replace: dest=/etc/dhcp/dhclient-exit-hooks.d/ansiblePullUpdate regexp='sleep 120 &&' replace='sleep 120 && rm -rf /var/lib/ansible/ &&'
-    # - command: /sbin/reboot
-    #   when: st.stat.exists == False
+    # Stop. has to be always enable
+    
