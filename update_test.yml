@@ -3,19 +3,20 @@
 # /etc/NetworkManager/dispatcher.d/ansiblePullUpdate has to be modify to match this playbook : update_test.yml
 
 #It will be always localhost
-- hosts: localhost
+- hosts: SystemPushInstall
 
   roles:
     # Has to be always enable
-    - logs
+    # - logs
     
-    - role: ideascube
-      version: "0.7.0-1"
+    - moodle
+    # - role: ideascube
+    #   version: "0.7.0-1"
 
-    - role: kiwix
-      kiwixProject: wikipedia
-      portProject: 8002
-      lang: ['en','fr']
+    # - role: kiwix
+    #   kiwixProject: wikipedia
+    #   portProject: 8002
+    #   lang: ['en','fr']
 
     #Uncomment to lunch an update
   #   - role: upgradeIdc0.7.0
