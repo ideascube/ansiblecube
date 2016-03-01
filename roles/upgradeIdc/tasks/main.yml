@@ -50,6 +50,12 @@
   file: path=/etc/apt/apt.conf.d/9999IDEASCUBEISABADBADBOY state=absent
   when: st.stat.exists == False
 
+- name: Remove linsting on 443 because the port is alredy used by sslh
+  lineinfile: dest=/etc/nginx/sites-available/ideascube regexp='443' state=absent
+  notify: restart nginx
+  when: st.stat.exists == False
+  ignore_errors: yes
+
 - name: Ideascube collectstatic to the hard drive
   become: yes
   become_user: ideascube
