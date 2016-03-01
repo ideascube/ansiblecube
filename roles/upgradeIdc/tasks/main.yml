@@ -50,11 +50,6 @@
   file: path=/etc/apt/apt.conf.d/9999IDEASCUBEISABADBADBOY state=absent
   when: st.stat.exists == False
 
-# Small hack in order to finalise the installation of Ideascube, We will have to remove it directly from the package
-- name: Remove the STORAGE_ROOT from kb.py
-  lineinfile: dest=/usr/share/python/ideascube/lib/python3.4/site-packages/ideascube/conf/kb.py regexp='STORAGE_ROOT' state=absent
-  when: st.stat.exists == False and use_hdd|bool
-
 - name: Ideascube collectstatic to the hard drive
   become: yes
   become_user: ideascube
