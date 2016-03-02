@@ -130,13 +130,10 @@
 - name: Populate {{version}} if empty
   shell: dpkg-query -W  ideascube  | awk '{print $2}' ; echo
   register: ideascube_newversion
-  when: st.stat.exists == False
 
 - set_fact: version="{{ ideascube_newversion.stdout }}"
-  when: st.stat.exists == False
 
 - debug: msg="ideascube {{ version }} is now the current version."
-  when: st.stat.exists == False
 
 - tasks:
   include: ../../../post_tasks.yml task=ideascube version={{ version }}
