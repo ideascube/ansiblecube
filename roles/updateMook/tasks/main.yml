@@ -1,7 +1,7 @@
 ---
 - include_vars: group_vars/{{ ansible_architecture }}.yml
 
-- stat: path=/var/lib/ansible/updateMook-020316.csv
+- stat: path=/var/lib/ansible/updateMook-{{version}}.csv
   register: st
 
 ####
@@ -101,5 +101,5 @@
 ####
 
 - tasks:
-  include: ../../../post_tasks.yml task=updateMook version=020316
+  include: ../../../post_tasks.yml task=updateMook version={{version}}
   when: st.stat.exists == False
