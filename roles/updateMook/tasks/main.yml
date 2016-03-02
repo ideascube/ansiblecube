@@ -4,6 +4,13 @@
 - stat: path=/var/lib/ansible/updateMook-{{version}}.csv
   register: st
 
+- name: Install uwsgi
+  apt: name={{ item }} state=present
+  with_items:
+  - uwsgi
+  - uwsgi-plugin-python
+  when: st.stat.exists == False
+
 ####
 # BACK END CONFIGURATION
 ####
@@ -52,14 +59,14 @@
   git: repo=ssh://git@altssh.bitbucket.org:443/gryzzlab/mook-bsf-front-end-backbone.git dest={{ mook_path }}/{{ mook_name }}/front accept_hostkey=yes update=yes depth=1
   when: st.stat.exists == False
 
-# - name: download vendor package
-#   get_url: url={{filer_bsf}}/vendor.tgz dest=/tmp/vendor.tgz
-#   when: st.stat.exists == False
+- name: download vendor package
+  get_url: url={{filer_bsf}}/vendor.tgz dest=/tmp/vendor.tgz
+  when: st.stat.exists == False
 
-# - name: unarchive the vendor package
-#   become_user: ideascube
-#   unarchive: src=/tmp/vendor.tgz dest={{ mook_path }}/{{ mook_name }}/front copy=no
-#   when: st.stat.exists == False
+- name: unarchive the vendor package
+  become_user: ideascube
+  unarchive: src=/tmp/vendor.tgz dest={{ mook_path }}/{{ mook_name }}/front copy=no
+  when: st.stat.exists == False
 
 - name: Copy config.js config files
   template: src=config.js.j2 dest={{ mook_path }}/{{ mook_name }}/front/config.js
