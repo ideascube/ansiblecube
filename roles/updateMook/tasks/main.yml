@@ -94,11 +94,12 @@
 
 - name: Copy template for systemd mook-sync
   template: src=mook-sync.service.j2 dest=/etc/systemd/system/mook-sync.service
-  when: mook.changed
+  when: st.stat.exists == False
 
 - name: Enable service 
   service: name=mook-sync.service enabled=yes
   notify: restart mook-sync
+  when: st.stat.exists == False
 
 ####
 # update
