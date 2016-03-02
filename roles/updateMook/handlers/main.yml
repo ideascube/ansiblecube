@@ -4,6 +4,3 @@
 
 - name: restart uwsgi
   service: name=uwsgi state=restarted
-
-- name: restart mook-sync service
-  service: name=mook-sync state=restarted
