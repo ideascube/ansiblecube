@@ -10,7 +10,7 @@
 
 - name: remove unused ideascube var dir
   file: path=/var/ideascube/ state=absent
-  when: st.stat.exists == False
+  when: st.stat.exists == False and use_hdd|bool
   ignore_errors: yes
 
 - name: Create a simlink to the HDD for the KoomBook
