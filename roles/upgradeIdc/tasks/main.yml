@@ -43,7 +43,7 @@
   when: st.stat.exists == False
 
 - name: Install the ideascube package
-  apt: name=ideascube={{ version }} state=present update_cache=yes
+  apt: name=ideascube={{ version }} state=present update_cache=yes force=yes
   when: st.stat.exists == False
 
 - name: Remove the unauthenticated hack
