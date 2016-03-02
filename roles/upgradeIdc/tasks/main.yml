@@ -109,6 +109,13 @@
   apt: name=network-manager state=latest
   when: st.stat.exists == False
 
+- name: Lookup for the ideascube_id
+  shell: cat /etc/default/ideascube | grep IDEASCUBE_ID | awk -F "=" '{print $2}'; echo
+  register: ideascubeID
+
+- name: ideascube_id must contain _ instead of - in the name 
+  set_fact: ideascube_id={{ ideascubeID.stdout |replace("-", "_") }}
+
 - name: Create entry to clone/pull git repository
   template: src=nm-dispatcher.j2 dest=/etc/NetworkManager/dispatcher.d/ansiblePullUpdate
     owner=root group=root mode=0755
