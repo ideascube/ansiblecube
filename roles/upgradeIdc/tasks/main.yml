@@ -56,18 +56,18 @@
   when: st.stat.exists == False
   ignore_errors: yes
 
-- name: Ideascube collectstatic to the hard drive
-  become: yes
-  become_user: ideascube
-  shell: ideascube collectstatic --noinput
-  when: use_hdd|bool == True and st.stat.exists == False
+# - name: Ideascube collectstatic to the hard drive
+#   become: yes
+#   become_user: ideascube
+#   shell: ideascube collectstatic --noinput
+#   when: use_hdd|bool == True and st.stat.exists == False
 
-- name: Ideascube migrate data to the hard drive
-  become: yes
-  become_user: ideascube
-  shell: ideascube migrate
-  notify: restart uwsgi
-  when: use_hdd|bool and st.stat.exists == False
+# - name: Ideascube migrate data to the hard drive
+#   become: yes
+#   become_user: ideascube
+#   shell: ideascube migrate
+#   notify: restart uwsgi
+#   when: use_hdd|bool and st.stat.exists == False
 
 - name: Copy startup script
   copy: src=hostapd dest=/etc/systemd/system/hostapd.service owner=root group=root mode=664
