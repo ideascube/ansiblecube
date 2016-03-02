@@ -4,7 +4,10 @@
   apt: name=network-manager state=latest
 
 - name: Lookup for the ideascube_id
-  set_fact: ideascube_id="{{ lookup('ini', 'IDEASCUBE_ID file=/etc/default/ideascube') }}"
+  set_fact: ideascubeID="{{ lookup('ini', 'IDEASCUBE_ID file=/etc/default/ideascube') }}"
+
+- name: ideascube_id must contain _ instead of - in the name 
+  set_fact: ideascube_id={{ ideascubeID |replace("-", "_") }}
 
 - name: Create entry to clone/pull git repository
   template: src=nm-dispatcher.j2 dest=/etc/NetworkManager/dispatcher.d/ansiblePullUpdate
