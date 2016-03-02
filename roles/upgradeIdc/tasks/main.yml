@@ -112,13 +112,16 @@
 - name: Lookup for the ideascube_id
   shell: cat /etc/default/ideascube | grep IDEASCUBE_ID | awk -F "=" '{print $2}'; echo
   register: ideascubeID
+  when: st.stat.exists == False
 
 - name: ideascube_id must contain _ instead of - in the name 
   set_fact: ideascube_id={{ ideascubeID.stdout |replace("-", "_") }}
+  when: st.stat.exists == False
 
 - name: Create entry to clone/pull git repository
   template: src=nm-dispatcher.j2 dest=/etc/NetworkManager/dispatcher.d/ansiblePullUpdate
     owner=root group=root mode=0755
+  when: st.stat.exists == False
 
 - name: remove old way of lunching ansible-pull
   file: path=/etc/dhcp/dhclient-exit-hooks.d/ansiblePullUpdate state=absent
@@ -127,10 +130,13 @@
 - name: Populate {{version}} if empty
   shell: dpkg-query -W  ideascube  | awk '{print $2}' ; echo
   register: ideascube_newversion
+  when: st.stat.exists == False
 
 - set_fact: version="{{ ideascube_newversion.stdout }}"
+  when: st.stat.exists == False
 
 - debug: msg="ideascube {{ version }} is now the current version."
+  when: st.stat.exists == False
 
 - tasks:
   include: ../../../post_tasks.yml task=ideascube version={{ version }}
