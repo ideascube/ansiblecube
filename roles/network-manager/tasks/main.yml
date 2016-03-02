@@ -3,6 +3,9 @@
 - name: Install Network-Manager
   apt: name=network-manager state=latest
 
+- name: Lookup for the ideascube_id
+  set_fact: ideascube_id="{{ lookup('ini', 'IDEASCUBE_ID file=/etc/default/ideascube') }}"
+
 - name: Create entry to clone/pull git repository
   template: src=nm-dispatcher.j2 dest=/etc/NetworkManager/dispatcher.d/ansiblePullUpdate
     owner=root group=root mode=0755
