@@ -8,13 +8,13 @@
   pip: name=uwsgi state=absent
   when: st.stat.exists == False
 
-- name: remove unused ideascube var dir
-  file: path=/var/ideascube/ state=absent
+- name: Backup old ideascube var dir
+  command: mv /var/ideascube/ /var/old_ideascube
   when: st.stat.exists == False and use_hdd|bool
   ignore_errors: yes
 
 - name: Create a simlink to the HDD for the KoomBook
-  file: src=/media/hdd/ideascube dest=/var/ideascube state=link
+  file: src=/media/hdd/ideascube dest=/var/ideascube state=link owner={{ username }} group={{ username }}
   when: st.stat.exists == False and use_hdd|bool
 
 - name: Install uwsgi
