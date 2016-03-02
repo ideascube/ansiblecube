@@ -12,7 +12,7 @@
 
 - name: Clone mook api
   become_user: ideascube
-  git: repo=ssh://git@altssh.bitbucket.org:443/bsfcampus/mook-bsf-api.git dest={{ mook_path }}/{{ mook_name }}/api accept_hostkey=yes update=yes depth=1
+  git: repo=ssh://git@altssh.bitbucket.org:443/gryzzlab/mook-bsf-api.git dest={{ mook_path }}/{{ mook_name }}/api accept_hostkey=yes update=yes depth=1
   when: st.stat.exists == False
 
 - name: Install python requierment
@@ -49,7 +49,7 @@
 
 - name: Clone mook front
   become_user: ideascube
-  git: repo=ssh://git@altssh.bitbucket.org:443/bsfcampus/mook-bsf-front-end-backbone.git dest={{ mook_path }}/{{ mook_name }}/front accept_hostkey=yes update=yes depth=1
+  git: repo=ssh://git@altssh.bitbucket.org:443/gryzzlab/mook-bsf-front-end-backbone.git dest={{ mook_path }}/{{ mook_name }}/front accept_hostkey=yes update=yes depth=1
   when: st.stat.exists == False
 
 # - name: download vendor package
