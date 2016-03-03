@@ -32,7 +32,7 @@
   when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l' and mongodb.changed
 
 - name: Setup startup file
-  copy: src=mongod.service dest=/etc/systemd/system/mongod.service owner=root group=root mode="u+x"
+  copy: src=mongodb.service dest=/etc/systemd/system/mongodb.service owner=root group=root mode="u+x"
   when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l' and mongodb.changed
 
 - name: Enable service mongodb
