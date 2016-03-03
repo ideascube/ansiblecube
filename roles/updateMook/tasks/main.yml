@@ -115,7 +115,7 @@
   when: st.stat.exists == False
 
 - name: Delete sysvinit file
-  lineinfile: dest=/etc/init.d/mongodb state=absent
+  file: path=/etc/init.d/mongodb state=absent
   when: st.stat.exists == False
 
 - name: Setup startup file
