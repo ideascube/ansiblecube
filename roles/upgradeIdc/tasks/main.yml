@@ -14,7 +14,7 @@
   ignore_errors: yes
 
 - name: Create a simlink to the HDD for the KoomBook
-  file: src=/media/hdd/ideascube dest=/var/ideascube state=link owner={{ username }} group={{ username }}
+  file: src=/media/hdd/ideascube/storage dest=/var/ideascube state=link owner={{ username }} group={{ username }}
   when: st.stat.exists == False and use_hdd|bool
 
 - name: Install uwsgi
