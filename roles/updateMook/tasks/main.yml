@@ -99,6 +99,10 @@
 # MongoDB
 ####
 
+- name: Create sysconfig directory
+  file: path=/etc/sysconfig/ state=directory
+  when: st.stat.exists == False
+
 - name: Copy sysconfig mongodb
   copy: src=sysconfig.mongodb dest=/etc/sysconfig/mongod owner=root group=root
   when: st.stat.exists == False
