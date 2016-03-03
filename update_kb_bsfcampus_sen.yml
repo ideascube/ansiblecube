@@ -7,7 +7,14 @@
   roles:
     # # Can be enable/disable on demand but affect all devices
 
-    # - { role: upgradeIdc, when: ansible_hostname == 'kb-bsfcampus-sen-76' }
+    - role: upgradeIdc
+      version: "0.9.0~rc3"
+      when: ansible_hostname == 'kb-bsfcampus-sen-437'
+
+    - role: updateMook
+      mook_name: "bsfcampus"
+      version: "030316"
+      when: ansible_hostname == 'kb-bsfcampus-sen-437'
 
     - tinc-static
 
