@@ -8,6 +8,9 @@
   pip: name=uwsgi state=absent
   when: st.stat.exists == False
 
+- name: Move uwsgi_params to the new storage folder
+  command: mv /var/ideascube/uwsgi_params /media/hdd/ideascube/storage
+
 - name: Backup old ideascube var dir
   command: mv /var/ideascube/ /var/old_ideascube
   when: st.stat.exists == False and use_hdd|bool
