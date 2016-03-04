@@ -60,6 +60,7 @@
 - name: ensure tinc address is properly set in tinc host file
   lineinfile: >
     dest=/etc/tinc/{{ vpn_name }}/hosts/{{ tinc_localhost_name }}
+    regexp='^Address'
     line="Address = {{ ansible_eth0.ipv4.address }}"
     create=yes
   notify:
@@ -82,6 +83,7 @@
 - name: ensure subnet ip address is properly set in tinc host file
   lineinfile: >
     dest=/etc/tinc/{{ vpn_name }}/hosts/{{ tinc_localhost_name }}
+    regexp='^Subnet'
     line="Subnet = {{ ansible_local.tinc_facts.vpn_ip }}/32"
     create=yes
   notify:
