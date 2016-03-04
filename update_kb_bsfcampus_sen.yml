@@ -7,17 +7,17 @@
   roles:
     # # Can be enable/disable on demand but affect all devices
 
-    - kalite:
+    - role: kalite
       when: ansible_hostname == 'kb-bsfcampus-sen-624'
 
-    - mongodb:
+    - role: mongodb
       when: ansible_hostname == 'kb-bsfcampus-sen-624'
 
-    - mook:
+    - role: mook
       mook_name: "bsfcampus"
       when: ansible_hostname == 'kb-bsfcampus-sen-624'
 
-    - software:
+    - role: software
       when: ansible_hostname == 'kb-bsfcampus-sen-624'
 
     - role: upgradeIdc
