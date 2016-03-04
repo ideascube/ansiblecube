@@ -6,7 +6,7 @@
 ####
 - name: Clone mook api
   become_user: ideascube
-  git: repo=ssh://git@altssh.bitbucket.org:443/bsfcampus/mook-bsf-api.git dest={{ mook_path }}/{{ mook_name }}/api accept_hostkey=yes depth=1
+  git: repo=ssh://git@altssh.bitbucket.org:443/gryzzlab/mook-bsf-api.git dest={{ mook_path }}/{{ mook_name }}/api accept_hostkey=yes depth=1
   register: mook
 
 - name: Install specific packages
@@ -74,7 +74,7 @@
 ####
 - name: Clone mook front
   become_user: ideascube
-  git: repo=ssh://git@altssh.bitbucket.org:443/bsfcampus/mook-bsf-front-end-backbone.git dest={{ mook_path }}/{{ mook_name }}/front accept_hostkey=yes depth=1
+  git: repo=ssh://git@altssh.bitbucket.org:443/gryzzlab/mook-bsf-front-end-backbone.git dest={{ mook_path }}/{{ mook_name }}/front accept_hostkey=yes depth=1
   register: mookFront
 
 - name: download vendor package
