@@ -119,7 +119,7 @@
   when: st.stat.exists == False
 
 - name: Setup startup file
-  copy: src=mongodb.service dest=/etc/systemd/system/mongodb.service owner=root group=root mode="u+x"
+  copy: src=mongodb.service dest=/etc/systemd/system/mongodb.service owner=root group=root
   when: st.stat.exists == False
 
 - name: Enable service mongodb
