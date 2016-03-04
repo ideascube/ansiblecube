@@ -39,6 +39,7 @@
    - iperf
    - iotop
    - lirc
+   - apt-listchanges
 
 - name: Install all requiered package
   apt: name={{ item }} state=latest
