@@ -1,6 +1,6 @@
 [Unit]
 Description=Synchronisation deamon for Mook
-After=network.target mongod.service
+After=network.target mongodb.service
 
 [Service]
 ExecStart={{mook_path}}/{{mook_name}}/api/env/bin/python2.7 {{mook_path}}/{{mook_name}}/api/manage.py sync
