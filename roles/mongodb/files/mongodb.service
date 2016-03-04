@@ -7,7 +7,7 @@ Type=forking
 User=mongodb
 Group=mongodb
 PIDFile=/var/run/mongod.pid
-EnvironmentFile=/etc/sysconfig/mongod
+EnvironmentFile=/etc/sysconfig/mongodb
 ExecStart=/usr/bin/mongod $OPTIONS run
  
 [Install]

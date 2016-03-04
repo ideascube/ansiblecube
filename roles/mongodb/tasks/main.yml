@@ -48,7 +48,7 @@
   when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l' and mongodb.changed
 
 - name: Copy sysconfig mongodb
-  copy: src=sysconfig.mongodb dest=/etc/sysconfig/mongod owner=root group=root
+  copy: src=sysconfig.mongodb dest=/etc/sysconfig/mongodb owner=root group=root
   when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l' and mongodb.changed
 
 - tasks:
