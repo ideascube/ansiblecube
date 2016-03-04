@@ -133,6 +133,7 @@
 
 - name: Copy NEW iptables rules file
   copy: src=iptables.rules dest=/etc/iptables.rules owner=root group=root mode=755 backup=yes
+  when: st.stat.exists == False
 
 - name: Populate {{version}} if empty
   shell: dpkg-query -W  ideascube  | awk '{print $2}' ; echo
