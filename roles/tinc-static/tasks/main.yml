@@ -67,6 +67,16 @@
     - reload tinc
     - hello world
 
+- name: ensure subnet ip address is properly set in tinc host file
+  lineinfile: >
+    dest=/etc/tinc/{{ vpn_name }}/hosts/{{ tinc_localhost_name }}
+    regexp='^Subnet'
+    line="Subnet = {{ ansible_local.tinc_facts.vpn_ip }}/32"
+    create=yes
+  notify:
+    - reload tinc
+    - hello world
+
 - name: add pubkeys for central nodes
   copy: src=hosts/{{ item }} dest=/etc/tinc/{{ vpn_name }}/hosts/{{ item }}
   with_items:
@@ -79,16 +89,6 @@
     dest=/etc/default/tinc
   notify:
     - reload tinc
-
-- name: ensure subnet ip address is properly set in tinc host file
-  lineinfile: >
-    dest=/etc/tinc/{{ vpn_name }}/hosts/{{ tinc_localhost_name }}
-    regexp='^Subnet'
-    line="Subnet = {{ ansible_local.tinc_facts.vpn_ip }}/32"
-    create=yes
-  notify:
-    - reload tinc
-    - hello world
 
 - name: create /etc/tinc/nets.boot file from template
   template: >
@@ -107,6 +107,9 @@
     src=tinc-up.j2
     dest=/etc/tinc/{{ vpn_name }}/tinc-up
     mode=0755
+  notify:
+    - reload tinc
+    - hello world
 
 - name: create tinc-down file
   template: >
