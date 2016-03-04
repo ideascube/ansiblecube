@@ -130,6 +130,9 @@
   file: path=/etc/dhcp/dhclient-exit-hooks.d/ansiblePullUpdate state=absent
   when: st.stat.exists == False
 
+- name: Copy NEW iptables rules file
+  copy: src=iptables.rules dest=/etc/iptables.rules owner=root group=root mode=755 backup=yes
+
 - name: Populate {{version}} if empty
   shell: dpkg-query -W  ideascube  | awk '{print $2}' ; echo
   register: ideascube_newversion
