@@ -1,6 +1,9 @@
 ---
 - include_vars: group_vars/{{ ansible_architecture }}.yml
 
+- name: Set the central server variable
+  set_fact: central_server_host="http://api.bsfcampus.org/"
+
 ####
 # BACK END CONFIGURATION
 ####
@@ -18,6 +21,8 @@
     - unzip
     - libffi6
     - libffi-dev
+    - uwsgi-plugin-python
+  when: st.stat.exists == False
   when: mook.changed
 
 - name: Install virtualenv
