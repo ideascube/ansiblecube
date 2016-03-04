@@ -55,14 +55,27 @@
   template: >
     src=tinc.conf.j2
     dest=/etc/tinc/{{ vpn_name }}/tinc.conf
+  notify: hello world
 
 - name: ensure tinc address is properly set in tinc host file
   lineinfile: >
     dest=/etc/tinc/{{ vpn_name }}/hosts/{{ tinc_localhost_name }}
+    regexp='^Address'
     line="Address = {{ ansible_eth0.ipv4.address }}"
     create=yes
   notify:
     - reload tinc
+    - hello world
+
+- name: ensure subnet ip address is properly set in tinc host file
+  lineinfile: >
+    dest=/etc/tinc/{{ vpn_name }}/hosts/{{ tinc_localhost_name }}
+    regexp='^Subnet'
+    line="Subnet = {{ ansible_local.tinc_facts.vpn_ip }}/32"
+    create=yes
+  notify:
+    - reload tinc
+    - hello world
 
 - name: add pubkeys for central nodes
   copy: src=hosts/{{ item }} dest=/etc/tinc/{{ vpn_name }}/hosts/{{ item }}
@@ -74,14 +87,6 @@
   template: >
     src=default.j2
     dest=/etc/default/tinc
-  notify:
-    - reload tinc
-
-- name: ensure subnet ip address is properly set in tinc host file
-  lineinfile: >
-    dest=/etc/tinc/{{ vpn_name }}/hosts/{{ tinc_localhost_name }}
-    line="Subnet = {{ ansible_local.tinc_facts.vpn_ip }}/32"
-    create=yes
   notify:
     - reload tinc
 
@@ -102,6 +107,9 @@
     src=tinc-up.j2
     dest=/etc/tinc/{{ vpn_name }}/tinc-up
     mode=0755
+  notify:
+    - reload tinc
+    - hello world
 
 - name: create tinc-down file
   template: >
@@ -116,27 +124,6 @@
 
 - name: send the public key to central nodes
   shell: rsync -azP -e 'ssh -p 443' /etc/tinc/{{ vpn_name }}/hosts/{{tinc_localhost_name }}  {{ central_server }}:/ansible/tinc-{{ vpn_name }}/
-
-
-#
-# We want the node to say hi so we can add its pubkey right away.
-#
-
-- name: Open IRC port in firewall
-  shell: iptables -A OUTPUT -m tcp -p tcp --dport 6667 -j ACCEPT
-
-- name: pass by and say hi
-  irc:
-    port: 6667
-    server: "irc.freenode.net"
-    channel: "#ideascube"
-    msg: "Hi, my name is {{ tinc_localhost_name }} and I'd like you to join my professional network on {{ vpn_name }}."
-    color: none
-    nick: "{{ tinc_localhost_name }}"
-  ignore_errors: yes
-
-- name: Close IRC port in firewall
-  shell: iptables -D OUTPUT -m tcp -p tcp --dport 6667 -j ACCEPT
 
 - tasks:
   include: ../../../post_tasks.yml task=tinc-static version=1
