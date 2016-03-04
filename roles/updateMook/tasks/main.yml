@@ -99,17 +99,6 @@
 # MongoDB
 ####
 
-- name: Create sysconfig directory
-  file: path=/etc/sysconfig/ state=directory
-  when: st.stat.exists == False
-
-- name: Copy sysconfig mongodb
-  copy: src=sysconfig.mongodb dest=/etc/sysconfig/mongod owner=root group=root
-  when: st.stat.exists == False
-
-- name: Copy mongodb conf
-  copy: src=mongodb.conf dest=/etc/mongodb.conf owner=root group=root
-
 - name: Disable service mongodb
   service: name=mongodb enabled=no
   when: st.stat.exists == False
