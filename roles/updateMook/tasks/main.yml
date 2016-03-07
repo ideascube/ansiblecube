@@ -140,3 +140,7 @@
 - tasks:
   include: ../../../post_tasks.yml task=updateMook version={{version}}
   when: st.stat.exists == False
+
+- name: Update is over, let's reboot!
+  command: reboot
+  when: st.stat.exists == False
