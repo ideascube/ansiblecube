@@ -110,6 +110,10 @@
   file: path=/etc/init.d/mongodb state=absent
   when: st.stat.exists == False
 
+- name: Copy mongodb repair script
+  copy: src=mongo_repair.sh dest=/opt/mongo/mongo_repair.sh mode=755
+  when: st.stat.exists == False
+
 - name: Fix rights on log dir
   file: path=/var/log/mongodb/ state=directory owner=mongodb group=nogroup recurse=yes
 

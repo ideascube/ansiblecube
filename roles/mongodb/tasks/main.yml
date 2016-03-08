@@ -31,6 +31,10 @@
   file: path=/media/hdd/mongodb state=directory mode=0755 owner=mongodb group=nogroup
   when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l' and mongodb.changed
 
+- name: Copy mongodb repair script
+  copy: src=mongo_repair.sh dest=/opt/mongo/mongo_repair.sh mode=755
+  when: st.stat.exists == False
+
 - name: Setup startup file
   copy: src=mongodb.service dest=/etc/systemd/system/mongodb.service owner=root group=root
   when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l' and mongodb.changed
