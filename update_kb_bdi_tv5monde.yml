@@ -6,9 +6,7 @@
 
   roles:
     # Has to be always enable
+
     - logs
+
     - kalite
-    - role: kiwix
-      kiwixProject: gutenberg
-      portProject: 8002
-      lang: ['fr']
