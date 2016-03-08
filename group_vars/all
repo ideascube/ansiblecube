@@ -16,6 +16,7 @@ import_ideascube_data: True
 download_data: False
 timezone: "Europe/Paris"
 lang: ""
+zim_path: /var/ideascube/kiwix
 
 #Apps path
 mook_path: /home/{{ username }}
