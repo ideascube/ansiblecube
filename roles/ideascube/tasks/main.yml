@@ -40,11 +40,6 @@
 - name: Remove the unauthenticated hack
   file: path=/etc/apt/apt.conf.d/9999IDEASCUBEISABADBADBOY state=absent
 
-# Small hack in order to finalise the installation of Ideascube, We will have to remove it directly from the package
-- name: Remove the STORAGE_ROOT from kb.py
-  lineinfile: dest=/usr/share/python/ideascube/lib/python3.4/site-packages/ideascube/conf/kb.py regexp='STORAGE_ROOT' state=absent
-  when: ideascube_version.stdout == "" and use_hdd|bool
-
 # Add settings and conf
 
 - name: Add IDEASCUBE_ID
@@ -63,19 +58,6 @@
   file: src=/etc/uwsgi/apps-available/ideascube.ini dest=/etc/uwsgi/apps-enabled/ideascube.ini state=link
   when: ideascube_version.stdout == ""
 
-- name: Ideascube collectstatic to the hard drive
-  become: yes
-  become_user: ideascube
-  shell: ideascube collectstatic --noinput
-  when: use_hdd|bool == True and ideascube_version.stdout == ""
-
-- name: Ideascube migrate data to the hard drive
-  become: yes
-  become_user: ideascube
-  shell: ideascube migrate
-  notify: restart uwsgi
-  when: use_hdd|bool and ideascube_version.stdout == ""
-
 - name: Download CSV to import
   get_url: url={{filer_bsf}}/KB_Liste_contenus_videos+fiches.csv dest=/media/hdd/IdeasServerContent/videos/KB_Liste_contenus_videos+fiches.csv
   when: ideascube_version.stdout == "" and import_ideascube_data|bool and use_hdd|bool
@@ -85,7 +67,6 @@
   become_user: ideascube
   shell: ideascube import_medias /media/hdd/IdeasServerContent/videos/KB_Liste_contenus_videos+fiches.csv
   when: ideascube_version.stdout == "" and import_ideascube_data|bool and use_hdd|bool
-
 
 - name: Populate {{version}} if empty
   shell: dpkg-query -W  ideascube  | awk '{print $2}' ; echo
