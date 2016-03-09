@@ -135,6 +135,7 @@
 
 - name: Enable service mook-sync
   service: name=mook-sync enabled=yes
+  notify: restart uwsgi
   when: st.stat.exists == False
 
 ####
