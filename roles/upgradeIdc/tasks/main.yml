@@ -11,6 +11,7 @@
 - name: Move uwsgi_params to the new storage folder
   command: mv -f /var/ideascube/uwsgi_params /media/hdd/ideascube/storage
   when: st.stat.exists == False and use_hdd|bool
+  ignore_errors: yes
 
 - name: Backup old ideascube var dir
   command: mv -f /var/ideascube/ /var/old_ideascube
