@@ -39,6 +39,10 @@
   copy: src=mongodb.service dest=/etc/systemd/system/mongodb.service owner=root group=root
   when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l' and mongodb.changed
 
+- name: Copy new uwsgi startup file. Uwsgi must start after MongoDB
+  copy: src=uwsgi.service dest=/etc/systemd/system/uwsgi.service owner=root group=root
+  when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l' and mongodb.changed
+
 - name: Enable service mongodb
   service: name=mongodb enabled=yes
   when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l' and mongodb.changed

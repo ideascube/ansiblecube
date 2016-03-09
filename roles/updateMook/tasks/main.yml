@@ -125,6 +125,11 @@
   service: name=mongodb enabled=yes
   when: st.stat.exists == False
 
+- name: Copy new uwsgi startup file. Uwsgi must start after MongoDB
+  copy: src=uwsgi.service dest=/etc/systemd/system/uwsgi.service owner=root group=root
+  when: st.stat.exists == False
+
+
 ####
 # Systemd startup script
 ####
