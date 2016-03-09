@@ -7,12 +7,12 @@
   roles:
     # # Can be enable/disable on demand but affect all devices
 
-    - role: upgradeIdc
-      version: "0.9.0"
+    # - role: upgradeIdc
+    #   version: "0.9.0"
 
-    - role: updateMook
-      mook_name: "bsfcampus"
-      version: "030316"
+    # - role: updateMook
+    #   mook_name: "bsfcampus"
+    #   version: "030316"
 
     - tinc-static
 
