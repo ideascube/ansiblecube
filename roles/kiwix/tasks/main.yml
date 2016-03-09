@@ -2,21 +2,10 @@
 - include_vars: group_vars/{{ ansible_architecture }}.yml
 
 - name: Copying kiwix binaries
-  get_url: url={{filer_bsf}}/{{ item.remotebinary }} dest=/usr/local/bin/{{ item.localbinary }} mode=755 timeout=20
-  with_items:
-  - remotebinary: kiwix-serve-{{ ansible_architecture }}
-    localbinary:  kiwix-serve
-  - remotebinary: kiwix-manage-{{ ansible_architecture }}
-    localbinary:  kiwix-manage
-
-- name: Add a storage folder for Kiwix on the HDD
-  file: path=/media/hdd/kiwix/ state=directory owner=ideascube group=ideascube mode=755
+  get_url: url={{filer_bsf}}/kiwix-serve-{{ ansible_architecture }} dest=/usr/local/bin/kiwix-serve mode=755 timeout=20
 
 - name: Create a kiwix directory in ideascube folder
   file: path={{zim_path}}/ state=directory
-
-- name: Create a simlink to the HDD
-  file: src={{zim_path}}/ dest=/var/ideascube/kiwix state=link
 
 - name: Setup startup file
   template: src=kiwix.service.j2 dest=/etc/systemd/system/kiwix.service
