@@ -1,7 +1,7 @@
 ---
 - include_vars: group_vars/{{ ansible_architecture }}.yml
 
-- stat: path=/home/{{username}}/.kalite/
+- stat: path=/var/lib/ansible/kalite-{{version}}.csv
   register: kalite
 
 - name: Install kalite
@@ -55,5 +55,5 @@
   when: kalite.stat.exists == False
 
 - tasks:
-  include: ../../../post_tasks.yml task=kalite version=0.15
+  include: ../../../post_tasks.yml task=kalite version={{version}}
   when: kalite.stat.exists == False

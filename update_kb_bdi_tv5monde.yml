@@ -8,5 +8,5 @@
     # Has to be always enable
 
     - logs
-
-    - kalite
+    - role: kalite
+      version: "0.15"
