@@ -4,7 +4,7 @@ echo "##################################" > $FILE
 echo "#          BSF Campus            #" >> $FILE
 echo "##################################" >> $FILE
 du -s /media/hdd/bsfcampus >> $FILE
-echo "##################################" > $FILE
+echo "##################################" >> $FILE
 echo "#          lscpu                 #" >> $FILE
 echo "##################################" >> $FILE
 lscpu >> $FILE
