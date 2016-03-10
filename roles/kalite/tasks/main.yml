@@ -16,6 +16,7 @@
 
 - name: Remove existing content
   file: path=/home/{{username}}/.kalite/content state=absent
+  when: use_hdd|bool and kalite.stat.exists == False
 
 - file: src=/media/hdd/khanVideos/content/ 
     dest=/home/{{username}}/.kalite/content state=link force=yes
