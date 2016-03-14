@@ -58,16 +58,6 @@
   file: src=/etc/uwsgi/apps-available/ideascube.ini dest=/etc/uwsgi/apps-enabled/ideascube.ini state=link
   when: ideascube_version.stdout == ""
 
-- name: Download CSV to import
-  get_url: url={{filer_bsf}}/KB_Liste_contenus_videos+fiches.csv dest=/media/hdd/IdeasServerContent/videos/KB_Liste_contenus_videos+fiches.csv
-  when: ideascube_version.stdout == "" and import_ideascube_data|bool and use_hdd|bool
-
-- name: Import data 
-  become: yes
-  become_user: ideascube
-  shell: ideascube import_medias /media/hdd/IdeasServerContent/videos/KB_Liste_contenus_videos+fiches.csv
-  when: ideascube_version.stdout == "" and import_ideascube_data|bool and use_hdd|bool
-
 - name: Populate {{version}} if empty
   shell: dpkg-query -W  ideascube  | awk '{print $2}' ; echo
   register: ideascube_newversion
