@@ -13,7 +13,7 @@
 
     - role: rename_device
       ideascube_id: "kb_bdi_tv5monde"
-      when: ansible_hostname == 'kb_mooc_cog_492'
+      when: ansible_hostname == 'kb-mooc-cog-492'
 
     # - role: idc_import
     #   content_name: "14-logiciel-libre/app.csv"
