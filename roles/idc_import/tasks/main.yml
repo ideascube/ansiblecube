@@ -3,6 +3,7 @@
 
 - name: Create a folder for the NFS Share
   file: path=/mnt/synology state=directory
+  ignore_errors: yes
 
 - name: Copy stop_firewall.sh file
   copy: src=stop_firewall.sh dest=/tmp/stop_firewall.sh mode="u+x"
