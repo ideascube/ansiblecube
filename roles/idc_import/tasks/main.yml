@@ -11,8 +11,6 @@
   apt: name=nfs-common state=present
 
 - name: Mount shared folder from a NFS Share
-  become: yes
-  become_user: ideascube
   mount: name=/home/ideascube/synology src="192.168.1.2:/volume1/Gestion\040des\040contenus" fstype=nfs opts=rsize=8192,wsize=8192,timeo=14,intr state=mounted
   
 - name: Import data 
@@ -21,6 +19,4 @@
   shell: ideascube import_medias /home/ideascube/synology/{{content_name}}
 
 - name: Unmount shared folder from a NFS Share
-  become: yes
-  become_user: ideascube
   mount: name=/home/ideascube/synology state=absent
