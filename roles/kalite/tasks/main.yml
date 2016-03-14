@@ -5,7 +5,7 @@
   register: kalite
 
 - name: Install kalite
-  pip: name=ka-lite
+  pip: name=ka-lite version={{version}}
   when: kalite.stat.exists == False
 
 - name: Initialize ka-lite
