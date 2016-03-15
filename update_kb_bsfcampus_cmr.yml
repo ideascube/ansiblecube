@@ -15,7 +15,7 @@
       version: "090316"
 
     - role: kalite
-      version: "0.15"
+      version: "0.15.0"
       lang: "sw"
       when: ansible_hostname == 'kb-bsfcampus-cmr-960'
 
