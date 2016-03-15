@@ -9,7 +9,7 @@
 
     - logs
     - role: kalite
-      version: "0.15"
+      version: "0.15.0"
       lang: "fr"
 
     # - role: rename_device
