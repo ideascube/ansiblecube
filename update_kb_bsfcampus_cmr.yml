@@ -14,6 +14,11 @@
       mook_name: "bsfcampus"
       version: "090316"
 
+    - role: kalite
+      version: "0.15"
+      lang: "sw"
+      when: ansible_hostname == 'kb-bsfcampus-cmr-960'
+
     - tinc-static
 
     # Start. has to be always enable 
