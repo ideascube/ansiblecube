@@ -44,14 +44,16 @@
   service: name=kalite enabled=yes
   when: kalite.stat.exists == False
 
-# Has to be done by hand...
-# $> sudo su -s /bin/bash ideascube
-# $> kalite manage setup
-
 - name: Download Kalite assessment
   become: yes
   become_user: ideascube
   command: kalite manage unpack_assessment_zip https://learningequality.org/downloads/ka-lite/0.15/content/khan_assessment.zip -f
+  when: kalite.stat.exists == False
+
+- name: Download Kalite language pack
+  become: yes
+  become_user: ideascube
+  command: kalite manage languagepackdownload --language {{lang}} --commandline
   when: kalite.stat.exists == False
 
 - tasks:
