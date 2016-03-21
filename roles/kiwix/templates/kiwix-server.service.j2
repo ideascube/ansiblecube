@@ -7,7 +7,6 @@ Group=ideascube
 ExecStart=/usr/local/bin/kiwix-serve --library --port=8002 {{ zim_path }}/library.xml
 Restart=always
 KillSignal=SIGQUIT
-Type=forking
 
 [Install]
 WantedBy=multi-user.target

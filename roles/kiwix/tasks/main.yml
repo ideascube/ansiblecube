@@ -8,7 +8,7 @@
   file: path={{zim_path}}/ state=directory
 
 - name: Setup startup file
-  template: src=kiwix.service.j2 dest=/etc/systemd/system/kiwix.service
+  template: src=kiwix-server.service.j2 dest=/etc/systemd/system/kiwix-server.service
   
 - name: Copy nginx vhost
   template: src=nginx.vhost.j2 dest=/etc/nginx/sites-available/kiwix
