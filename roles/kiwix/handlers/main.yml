@@ -3,4 +3,4 @@
   service: name=nginx state=restarted
 
 - name: restart kiwix
-  service: name=kiwix state=restarted
+  service: name=kiwix-server state=restarted
