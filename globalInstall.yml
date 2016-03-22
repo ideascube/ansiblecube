@@ -17,7 +17,9 @@
     - network-manager
     - ideascube
     - kiwix
-    - tinc-static
+
+  roles: tinc-static
+  when: send_to_central_server 
 
   post_tasks:
     - name: Global install completed, let's reboot!
