@@ -7,5 +7,4 @@ wpa_pass: idb258456
 use_hdd: False
 
 #Apps path
-software_path: /home/{{ username }}/framadvd
 mook_upload_file_path: "{{ mook_path }}/{{ mook_name }}/static/"

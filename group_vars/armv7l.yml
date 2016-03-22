@@ -10,7 +10,6 @@ import_ideascube_data: False
 download_data: False
 
 #Apps path
-software_path: /media/hdd/framadvd/
 mook_upload_file_path: /media/hdd/{{ mook_name }}/static/
 
 #Hardware battery
