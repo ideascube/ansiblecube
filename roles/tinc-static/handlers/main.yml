@@ -31,8 +31,8 @@
 
 - name: Close IRC port in firewall
   shell: iptables -D OUTPUT -m tcp -p tcp --dport 6667 -j ACCEPT
-  notify: notify install 
+  # notify: notify install 
 
-- tasks:
-  name: notify install
-  include: ../../../post_tasks.yml task=tinc-static version=1
+# - tasks:
+#   name: notify install
+#   include: ../../../post_tasks.yml task=tinc-static version=1
