@@ -14,18 +14,21 @@
   command: kalite start
   when: kalite.stat.exists == False
 
+- stat: path=/dev/sda1
+  register: dev_sda
+
 - name: Remove existing content
   file: path=/home/{{username}}/.kalite/content state=absent
-  when: use_hdd|bool and kalite.stat.exists == False
+  when: kalite.stat.exists == False and (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and dev_sda.stat.exists == True
 
 - file: src=/media/hdd/khanVideos/content/ 
     dest=/home/{{username}}/.kalite/content state=link force=yes
-  when: use_hdd|bool and kalite.stat.exists == False
+  when: kalite.stat.exists == False and (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and dev_sda.stat.exists == True
 
 - name: Fix rights
   file: path=/media/hdd/khanVideos/content/ state=directory 
     owner={{ username }} group={{ username }} recurse=yes
-  when: use_hdd|bool and kalite.stat.exists == False
+  when: kalite.stat.exists == False and (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and dev_sda.stat.exists == True
 
 - name: Copy nginx vhost
   template: src=kalite.vhost.j2 dest=/etc/nginx/sites-available/kalite
