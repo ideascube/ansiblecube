@@ -113,7 +113,7 @@
               line='/dev/sda {
                       spindown_time = 280
               }'
-  when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and use_hdd|bool
+  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
 
 - name: fake-hwclock conf for ARM system 
   copy: content="FORCE=force" dest=/etc/default/fake-hwclock
@@ -145,19 +145,19 @@
 
 - name: Ensure the HDD mountpoint exists
   file: path=/media/hdd state=directory
-  when: use_hdd|bool
+  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
 
 - stat: path=/dev/sda1
-  register: dev_hdd
+  register: dev_sda
 
 - name: Mount /dev/sda1
   mount: name=/media/hdd/ src=/dev/sda1 fstype=ext4 state=mounted opts=noatime,nofail
-  when: dev_hdd.stat.exists == True and use_hdd|bool
+  when: dev_sda.stat.exists == True and (ansible_architecture == "armhf" or ansible_architecture == "armv7l")
   ignore_errors: yes
 
 - name: Mount /dev/sda
   mount: name=/media/hdd/ src=/dev/sda fstype=ext4 state=mounted opts=noatime,nofail
-  when: dev_hdd.stat.exists == False and use_hdd|bool
+  when: dev_sda.stat.exists == False and (ansible_architecture == "armhf" or ansible_architecture == "armv7l")
   ignore_errors: yes
 
 - name: Create local directory to work from
@@ -179,15 +179,3 @@
 - name: Set timezone variables
   copy: content={{ timezone }} dest=/etc/timezone owner=root group=root mode=0644 backup=yes
   notify: update timezone
-
-- name: Remove Mongodb database folder
-  file: path=/media/hdd/mongodb/ state=absent
-  when: use_hdd|bool
-
-- name: Remove existing ideascube folder
-  file: path=/media/hdd/ideascube/ state=absent
-  when: use_hdd|bool
-
-- name: Fix rights on /media/hdd, otherwhise mongodb user can not cross the folder
-  file: path=/media/hdd owner={{ username }} group={{ username }} mode=0777
-  when: use_hdd|bool
