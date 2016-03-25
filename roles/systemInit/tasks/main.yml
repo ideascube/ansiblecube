@@ -90,6 +90,15 @@
         ssh_key_file=.ssh/id_rsa
         password={{ password }}
 
+- name: Add locale fr_FR
+  locale_gen: name=fr_FR.UTF-8 state=present
+
+- name: Add locale en_US
+  locale_gen: name=en_US.UTF-8 state=present
+
+- name: Add locale en_GB
+  locale_gen: name=en_GB.UTF-8 state=present
+
 - name: Copy SSHL config file
   copy: src=sslh dest=/etc/default/sslh owner=root group=root mode=0644 backup=yes
   notify: update sslh
