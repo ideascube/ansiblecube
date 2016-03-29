@@ -5,7 +5,7 @@ server {
     proxy_read_timeout 600s;
 
     location /static/ {
-        alias /media/hdd/{{ mook_name }}/static/;
+        alias {{ mook_path }}/{{ mook_name }}/static/;
         expires 30d;
     }
     location / {
