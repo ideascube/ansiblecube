@@ -9,9 +9,6 @@ send_to_central_server: True
 import_ideascube_data: False
 download_data: False
 
-#Apps path
-mook_upload_file_path: /media/hdd/{{ mook_name }}/static/
-
 #Hardware battery for Olimex Lime2
 battery_capacity: 7800
 charging_current: 750
