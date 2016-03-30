@@ -7,7 +7,7 @@ if [ "$IF" == "eth0" ] || [ "$IF" == "wlan1" ]
 then
     case "$STATUS" in
         up)
-        	sleep 120 && /usr/local/bin/ansible-pull -d /var/lib/ansible/local -i hosts -U https://github.com/ideascube/ansiblecube.git update_{{ ideascube_id }}.yml --extra-vars "use_hdd={{use_hdd}} send_to_central_server={{send_to_central_server}} import_ideascube_data={{import_ideascube_data}} download_data={{download_data}} ideascube_id={{ideascube_id}}" >> /var/log/ansible-pull.log 2>&1 &
+			sleep 120 && /usr/local/bin/ansible-pull -d /var/lib/ansible/local -i hosts -U https://github.com/ideascube/ansiblecube.git update_{{ ideascube_id }}.yml --extra-vars "use_hdd={{use_hdd}} sync_log={{sync_log}} ideascube_id={{ideascube_id}}" >> /var/log/ansible-pull.log 2>&1 &
         ;;
         *)
         ;;

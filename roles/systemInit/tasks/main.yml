@@ -17,7 +17,7 @@
 
 - name: Send this file over the central_server 
   raw: cat /etc/firstStart.csv | ssh -p 443 {{ central_server }} "cat >> ./ansible/UUID/firstStart.csv"
-  when: send_to_central_server|bool
+  when: sync_log|bool
 
 - name: Update packages list
   apt: update_cache=yes cache_valid_time=3600
