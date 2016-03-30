@@ -6,6 +6,7 @@
 
 # localhost is used when ansible-pull is used to play the playbook
 # SystemPushInstall is used in PUSH mode and you have to set the device's IP in "hosts" file 
+# ex: ansible-playbook -i hosts -l SystemPushInstall -u root update_test.yml
 
 # Please note that all system roles were played in globalInstall.yml
 
@@ -21,14 +22,13 @@
     - logs
 
     # Install Kalite. Videos will have to be downloaded separately 
-    - kalite
+    - role: kalite
+      version: "0.15.0"
+      lang: "fr"
 
-    # Activate a software repository available from the http server 
-    - software
-
-    # Install ideascube in version 0.7.0, modify the release number if you need to deploy an upgrade 
+    # Install ideascube in version 0.9.1, modify the release number if you need to deploy an upgrade 
     - role: ideascube
-      version: "0.7.0-1"
+      version: "0.9.1"
 
     # You can play a role for a specific device 
     # Install App Inventor but only if the hostname match the KoomBook kb_mooc_vog_345
@@ -38,59 +38,25 @@
     # Install MongoDB and BSF Campus or KoomBook EDU plate-forme on the KoomBook
     - mongodb
 
-    - role: mook, 
+    - role: mook
       mook_name: bsfcampus
 
-    - role: mook, 
+    - role: mook
       mook_name: koombookedu
 
-    # Install and configure a kiwix project, look at portProject which define the listenning port. 
-    # you can specify in version a various number of zim to download during install, refere here (http://download.kiwix.org/zim) to have the correct name
+    # Download and install ZIM file from this catalog http://catalog.ideascube.org/kiwix.yml
+    # "langid" will be the name of each ZIM file to download, each name must be separated with a space
+    - role: zim_install
+      zim_name: "wikipedia.fr wikipedia.en"
+    
+    # Rename a device, kb-mooc-cog-492 is the old name, kb_bdi_tv5monde is the new name. Watch the - and _
+    - role: rename_device
+      ideascube_id: "kb_bdi_tv5monde"
+      when: ansible_hostname == 'kb-mooc-cog-492'
 
-    - role: kiwix
-      kiwixProject: wikipedia
-      portProject: 8002
-      version: ['wikipedia_fr_all_2015-11.zim','wikipedia_rn_all_2015-11.zim','wikipedia_sw_all_2015-10.zim']
-
-    - role: kiwix
-      kiwixProject: wikisource
-      portProject: 8003
-      version: "wikipedia_fr_all_2015-11.zim"
-
-    - role: kiwix
-      kiwixProject: vikidia
-      portProject: 8004
-      version: ""
-
-    - role: kiwix
-      kiwixProject: cpassorcier
-      portProject: 8005
-      version: ""
-
-    - role: kiwix
-      kiwixProject: ubuntudoc
-      portProject: 8006
-      version: ""
-
-    - role: kiwix
-      kiwixProject: gutenberg
-      portProject: 8007
-      version: "gutenberg_fr_all_10_2014.zim"
-
-    - role: kiwix
-      kiwixProject: universcience
-      portProject: 8009
-      version: ""
-
-    - role: kiwix
-      kiwixProject: ted
-      portProject: 8010
-      version: ""
-
-    - role: kiwix
-      kiwixProject: software
-      portProject: 8011
-      version: ""
+    # Mount a network drive and lunch the ideascube import content. 
+    - role: idc_import
+      content_name: "14-logiciel-libre/app.csv"
 
   # You can play post_tasks task, like shutdown the server only when ideascube_version.stdout is empty
   post_tasks:
