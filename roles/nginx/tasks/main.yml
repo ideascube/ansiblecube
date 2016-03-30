@@ -20,3 +20,10 @@
 - name: Upload nginx.conf
   copy: src=nginx.conf dest=/etc/nginx/nginx.conf backup=yes
   notify: restart nginx
+
+- name: Copy redirect 301 rules to redirect old kiwix links
+  copy: src=redirect dest=/etc/nginx/sites-available/redirect
+
+- name: Enable Virtual host
+  file: src=/etc/nginx/sites-available/redirect dest=/etc/nginx/sites-enabled/redirect state=link
+  notify: restart nginx
