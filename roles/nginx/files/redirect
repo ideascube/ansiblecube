@@ -1,0 +1,4 @@
+server {
+        server_name wikipedia.koombook.lan gutenberg.koombook.lan wikiversity.koombook.lan vikidia.koombook.lan;
+        rewrite ^ $scheme://koombook.lan;
+}
