@@ -1,15 +1,28 @@
 ---
 - include_vars: group_vars/{{ ansible_architecture }}.yml
 
-- name: Set the central server variable
+- name: Set mook project name to have the right URL
+  set_fact: url_project_name="gryzzlab"
+  when: mook_name == 'bsfcampus'
+
+- name: Set mook project name to have the right URL
+  set_fact: url_project_name="bsfcampus"
+  when: mook_name == 'koombookedu'
+
+- name: Set the central server variable for BSF Campus
   set_fact: central_server_host="http://api.bsfcampus.org/"
+  when: mook_name == 'bsfcampus'
+
+- name: Set the central server variable for KoomBook EDU
+  set_fact: central_server_host="http://mook-api.bibliosansfrontieres.fr/"
+  when: mook_name == 'koombookedu'
 
 ####
 # BACK END CONFIGURATION
 ####
 - name: Clone mook api
   become_user: ideascube
-  git: repo=ssh://git@altssh.bitbucket.org:443/gryzzlab/mook-bsf-api.git dest={{ mook_path }}/{{ mook_name }}/api accept_hostkey=yes depth=1
+  git: repo=ssh://git@altssh.bitbucket.org:443/{{url_project_name}}/mook-bsf-api.git dest={{ mook_path }}/{{ mook_name }}/api accept_hostkey=yes depth=1
   register: mook
 
 - name: Install specific packages
@@ -33,12 +46,12 @@
   pip: name=setuptools extra_args="-U"
   when: mook.changed
 
-- stat: path=/dev/sda1
-  register: dev_sda
-
 - name: Create static dir
   file: path={{ mook_path }}/{{ mook_name }}/static/tmp state=directory owner={{username}} group={{username}} mode=0775
   when: mook.changed
+
+- stat: path=/dev/sda1
+  register: dev_sda
 
 - name: Create a static dir if we are using an external hard drive
   file: path=/media/hdd/{{ mook_name }}/static/tmp state=directory mode=0755 owner={{ username }} group={{ username }}
@@ -78,13 +91,14 @@
 
 - name: Enable service 
   service: name=mook-sync.service enabled=yes
+  when: mook.changed
 
 ####
 # FRONT END CONFIGURATION
 ####
 - name: Clone mook front
   become_user: ideascube
-  git: repo=ssh://git@altssh.bitbucket.org:443/gryzzlab/mook-bsf-front-end-backbone.git dest={{ mook_path }}/{{ mook_name }}/front accept_hostkey=yes depth=1
+  git: repo=ssh://git@altssh.bitbucket.org:443/{{url_project_name}}/mook-bsf-front-end-backbone.git dest={{ mook_path }}/{{ mook_name }}/front accept_hostkey=yes depth=1
   register: mookFront
 
 - name: download vendor package
@@ -143,6 +157,7 @@
 
 - name: restart mook-sync service
   service: name=mook-sync state=restarted
+  when: mook.changed
 
 - tasks:
   include: ../../../post_tasks.yml task=mook version=1
