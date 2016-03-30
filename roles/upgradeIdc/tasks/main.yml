@@ -61,19 +61,6 @@
   when: st.stat.exists == False
   ignore_errors: yes
 
-# - name: Ideascube collectstatic to the hard drive
-#   become: yes
-#   become_user: ideascube
-#   shell: ideascube collectstatic --noinput
-#   when: use_hdd|bool == True and st.stat.exists == False
-
-# - name: Ideascube migrate data to the hard drive
-#   become: yes
-#   become_user: ideascube
-#   shell: ideascube migrate
-#   notify: restart uwsgi
-#   when: use_hdd|bool and st.stat.exists == False
-
 - name: Copy startup script
   copy: src=hostapd dest=/etc/systemd/system/hostapd.service owner=root group=root mode=664
   when: st.stat.exists == False
@@ -151,7 +138,3 @@
 - tasks:
   include: ../../../post_tasks.yml task=ideascube version={{ idc_version }}
   when: st.stat.exists == False
-
-# - name: Upgrade IDC done, let's shutdown now.
-#   command: shutdown -h now
-#   when: st.stat.exists == False
