@@ -33,7 +33,7 @@ else
 
 	Usage : ./oneClickDeploy.sh sync_log=True ideascube_id=kb_mooc_cog timezone=Europe/Paris
 
-	sync_log=True|False : Wether send or not log system to a central server. A server with SSH access is required in this case
+	sync_log=True|False : Whether send or not log system to a central server. A server with SSH access is required in this case
 	ideascube_id=File_Name : Must be the same name as the one used for the ideascube configuration file
 	timezone=Europe/Paris : The timezone
 	"
