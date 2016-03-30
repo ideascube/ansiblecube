@@ -11,11 +11,7 @@ password: $6$YcJS1HjRAv/$1bUosoPalzHEvfpx71UhnG6vCeckTGbA5U1i6UpA8X21Jrv7fYRPyNr
 repo_url: https://github.com/ideascube/ansiblecube.git
 central_server: ansible@37.187.151.52
 filer_bsf: http://filer.bsf-intranet.org
-send_to_central_server: True
-import_ideascube_data: True
-download_data: False
 timezone: "Europe/Paris"
-lang: ""
 zim_path: /var/ideascube/kiwix
 
 #Apps path

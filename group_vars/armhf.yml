@@ -5,6 +5,4 @@ hotspot_name: koombook
 wpa_pass: KBcampus
 
 use_hdd: True
-send_to_central_server: True
-import_ideascube_data: False
-download_data: False
+sync_log: True
