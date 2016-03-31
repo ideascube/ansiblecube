@@ -7,3 +7,4 @@
   roles:
     # Has to be always enable
     - logs
+    - tinc-static
