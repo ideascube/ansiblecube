@@ -1,12 +1,12 @@
 ---
-# This Playbook has to be called by this way 
+# This Playbook has to be called by this way
 #
 # - role: rename_device
 #   ideascube_id: "kb_bdi_tv5monde"
-#   when: ansible_hostname == 'kb_mooc_vog_345'
-# 
+#   when: ansible_hostname == 'kb-mooc-vog-345'
+#
 # With kb_bdi_tv5monde The new project name you would like to give
-# With kb_mooc_vog_345 The existing project name
+# With kb_mooc_vog_345 The existing hostname
 
 
 - include_vars: group_vars/{{ ansible_architecture }}.yml
