@@ -6,11 +6,11 @@
 
 - name: Install hostapd
   apt: name=hostapd state=latest
-  when: ansible_architecture == 'x86_64' or ansible_architecture == 'armv7l'
+  when: ansible_architecture == 'x86_64'
 
 - name: Remove sysVinit startup file
   file: path=/etc/init.d/hostapd state=absent
-  when: ansible_architecture == 'armhf'
+  when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l'
 
 - include_vars: group_vars/{{ ansible_architecture }}.yml
 
