@@ -13,6 +13,6 @@
       lang: "fr"
 
     - role: zim_install
-      zim_name: "wikipedia.fr wikipedia.en wikipedia.rn gutenberg.fr cest-pas-sorcier.fr wikisource.fr wikibooks.fr wikivoyage.fr wiktionary.fr wikiversity.fr ubuntudoc.fr universcience.fr tedxgeneva2014.fr tedxlausanne2012.fr tedxlausanne2013.fr tedxlausanne2014.fr"
+      zim_name: "wikipedia.fr wikipedia.en wikipedia.rn gutenberg.fr cest-pas-sorcier.fr wikisource.fr wikibooks.fr wikivoyage.fr wiktionary.fr wikiversity.fr ubuntudoc.fr universcience-tv.fr tedxgeneva2014.fr tedxlausanne2012.fr tedxlausanne2013.fr tedxlausanne2014.fr"
       
     - tinc-static
