@@ -14,8 +14,6 @@
 
   #   - role: ideascube
   #     version: "0.7.0-1"
-    - role: upgradeIdc
-      version : "0.9.0"
 
   #   - kalite
 
