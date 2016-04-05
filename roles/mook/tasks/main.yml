@@ -46,10 +46,6 @@
   pip: name=setuptools extra_args="-U"
   when: mook.changed
 
-- name: Create static dir
-  file: path={{ mook_path }}/{{ mook_name }}/static/tmp state=directory owner={{username}} group={{username}} mode=0775
-  when: mook.changed
-
 - stat: path=/dev/sda1
   register: dev_sda
 
@@ -60,6 +56,10 @@
 - name: Create simlink if we are using an external hard drive
   file: src=/media/hdd/{{ mook_name }}/static dest={{ mook_path }}/{{ mook_name }}/static/ state=link
   when: mook.changed and (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and dev_sda.stat.exists == True
+
+- name: Create static dir
+  file: path={{ mook_path }}/{{ mook_name }}/static/tmp state=directory owner={{username}} group={{username}} mode=0775
+  when: mook.changed and dev_sda.stat.exists == False
 
 - name: Install python requierment
   pip: requirements=requirements.txt chdir={{ mook_path }}/{{ mook_name }}/api virtualenv_command=/usr/local/bin/virtualenv virtualenv={{ mook_path }}/{{ mook_name }}/api/env
