@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+
+  roles:
+    # Enable or disable to suit your needs
+
+    # This role automatically send logs to central server each time the device gets an Internet connection 
+    - logs
+    
+    - mongodb
+
+    - role: mook
+      mook_name: bsfcampus
+
+    - role: mook
+      mook_name: koombookedu
