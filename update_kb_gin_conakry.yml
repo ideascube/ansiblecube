@@ -14,3 +14,6 @@
 
     - role: mook
       mook_name: koombookedu
+
+    - role: zim_install
+      zim_name: "wikipedia.fr cest-pas-sorcier.fr tedxgeneva2014.fr universcience-tv.fr tedxlausanne2012.fr tedxlausanne2013.fr tedxlausanne2014.fr"
