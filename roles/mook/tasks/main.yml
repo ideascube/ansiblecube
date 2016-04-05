@@ -54,7 +54,7 @@
   when: mook.changed and (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and dev_sda.stat.exists == True
 
 - name: Create simlink if we are using an external hard drive
-  file: src=/media/hdd/{{ mook_name }}/static dest={{ mook_path }}/{{ mook_name }}/static/ state=link
+  file: src=/media/hdd/{{ mook_name }}/static dest={{ mook_path }}/{{ mook_name }} state=link
   when: mook.changed and (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and dev_sda.stat.exists == True
 
 - name: Create static dir
