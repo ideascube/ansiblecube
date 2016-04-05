@@ -15,5 +15,9 @@
     - role: mook
       mook_name: koombookedu
 
+    - role: kalite
+      version: "0.16.0"
+      lang: "fr"
+
     - role: zim_install
-      zim_name: "wikipedia.fr cest-pas-sorcier.fr tedxgeneva2014.fr universcience-tv.fr tedxlausanne2012.fr tedxlausanne2013.fr tedxlausanne2014.fr"
+      zim_name: "wikipedia.fr cest-pas-sorcier.fr gutenberg.fr tedxgeneva2014.fr universcience-tv.fr tedxlausanne2012.fr tedxlausanne2013.fr tedxlausanne2014.fr"
