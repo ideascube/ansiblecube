@@ -160,6 +160,6 @@
   when: mook.changed
 
 - tasks:
-  include: ../../../post_tasks.yml task=mook version=1
+  include: ../../../post_tasks.yml task=mook-{{ mook_name }} version=1
   when: mook.changed or mookFront.changed
   
