@@ -8,7 +8,7 @@
     # # Can be enable/disable on demand but affect all devices
 
     - role: upgradeIdc
-      version: "0.9.0"
+      version: "0.9.3"
 
     - role: updateMook
       mook_name: "bsfcampus"
