@@ -16,7 +16,7 @@
       mook_name: koombookedu
 
     - role: kalite
-      version: "0.16.0"
+      version: "0.15.0"
       lang: "fr"
 
     - role: zim_install
