@@ -86,11 +86,11 @@
 ####
 
 - name: Copy template for systemd mook-sync
-  template: src=mook-sync.service.j2 dest=/etc/systemd/system/mook-sync.service
+  template: src=mook-sync.service.j2 dest=/etc/systemd/system/mook-sync-{{ mook_name }}.service
   when: mook.changed
 
 - name: Enable service 
-  service: name=mook-sync.service enabled=yes
+  service: name=mook-sync-{{ mook_name }}.service enabled=yes
   when: mook.changed
 
 ####
@@ -156,7 +156,7 @@
   when: mook.changed
 
 - name: restart mook-sync service
-  service: name=mook-sync state=restarted
+  service: name=mook-sync-{{ mook_name }} state=restarted
   when: mook.changed
 
 - tasks:
