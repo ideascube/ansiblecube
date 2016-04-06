@@ -16,7 +16,7 @@
 - name: Import data 
   become: yes
   become_user: ideascube
-  shell: ideascube import_medias /media/synology/"{{content_name}}"
+  shell: ideascube import_medias "/media/synology/"{{content_name}}""
 
 - name: Unmount shared folder from a NFS Share
   command: umount /media/synology
