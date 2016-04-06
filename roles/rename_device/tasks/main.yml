@@ -56,5 +56,8 @@
   template: src=nm-dispatcher.j2 dest=/etc/NetworkManager/dispatcher.d/ansiblePullUpdate
     owner=root group=root mode=0755
 
+- name: Remove UDEV rules for wifi 
+  file: path=/etc/udev/rules.d/70-persistent-net.rules state=absent
+
 - name: Job done, let's reboot now.
   command: reboot
