@@ -1,13 +1,14 @@
 # AnsibleCube
 
-## Work in progress
-
+## How ansible works
 Ansible has been choosen to push and pull content, file config and softawre from and to the ideascube box which can be an AMD64 server or an ARM server.
 
 Ansible is originaly design to push content (from a master) to several slaves. But you can use it the other way around where the slaves are able to pull content from a master. 
 
+## How we use it 
 In our case the master is the GitHub repository. This repo contain a playbook with different roles. Each time the ideascube box get an Internet connection, it synchronise the distant Git repo with his local Git repo and tough get an update of what must be done on the system. At this stage your are able to do allmost anything !
 
+### The network configuration
 Our network architecture is based on 
  - A GitHub repo which hold all the recipe 
  - A Filer which hold all the heavy files (so synchronising the GitRepo is fast)
@@ -15,6 +16,7 @@ Our network architecture is based on
 
  All connections have been switched over port 443 to ensure connection even behind a firewall.
 
+#### It works for...
 So far ansiblecube has been tested only on a ARM Olimex Lime2 A20, Debian Jessie, Kernel 3.4 and AMD64 server.
 It should work on any Jessie distrib, probalby on Ubuntu and Raspberry Pi.
 
@@ -85,4 +87,3 @@ In this exemple, you'll get quickly that everything will have to be configured i
 To do so, you'll have to add and remove roles, for exemple, the role ```logs``` has been written to send logs from the Ideascube box to the central server each time the device gets on Internet. 
 
 If you want to lunch a particular update, you'll have to create or adapt an Ansible role. Look at the one already build in the folder ```upgradeKb``` or ```ideascube```
-
