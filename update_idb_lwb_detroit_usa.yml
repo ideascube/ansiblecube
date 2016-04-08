@@ -1,14 +1,1 @@
----
-# Ansible playbook for LWB Détroit 
-
-#It will be always localhost
-- hosts: localhost
-
-  roles:
-    # Has to be always enable
-    - logs
-
-    - role: upgradeIdc
-      version: "0.9.3"
-
-    - tinc-static
+update.yml

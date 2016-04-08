@@ -1,14 +1,1 @@
----
-# Ansible playbook for KoomBook EDU RDC
-
-#It will be always localhost
-- hosts: localhost
-
-  roles:
-    # Has to be always enable
-    - logs
-
-    - role: upgradeIdc
-      version: "0.9.0"
-
-    - tinc-static
+update.yml
