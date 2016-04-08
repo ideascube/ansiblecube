@@ -1,0 +1,39 @@
+- name: Add hdparm to save energy
+  lineinfile: dest=/etc/hdparm.conf
+              regexp=''
+              insertafter=EOF
+              line='/dev/sda {
+                      spindown_time = 280
+              }'
+
+- name: fake-hwclock conf for ARM system 
+  copy: content="FORCE=force" dest=/etc/default/fake-hwclock
+
+- name: Ensure the HDD mountpoint exists
+  file: path=/media/hdd state=directory
+
+- stat: path=/dev/sda1
+  register: dev_sda
+
+- name: Mount /dev/sda1
+  mount: name=/media/hdd/ src=/dev/sda1 fstype=ext4 state=mounted opts=noatime,nofail
+  when: dev_sda.stat.exists == True
+
+- name: Mount /dev/sda
+  mount: name=/media/hdd/ src=/dev/sda fstype=ext4 state=mounted opts=noatime,nofail
+  when: dev_sda.stat.exists == False
+  ignore_errors: yes
+
+- name: Copy fex.file
+  template: src=lime2.fex.j2 dest=/boot/bin/lime2.fex
+
+- name: Build binary from fex
+  shell: /usr/local/bin/sunxi-fexc lime2.fex > lime2.bin chdir=/boot/bin/
+
+- name: Copy patch U-Boot package
+  get_url: url={{filer_bsf}}/linux-u-boot-lime2_4.3_armhf.deb 
+    dest=/tmp/linuxUboot.deb owner=root group=root mode=755
+
+- name: install patch U-Boot package
+  apt:  deb=/tmp/linuxUboot.deb
+  
