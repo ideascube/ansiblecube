@@ -1,0 +1,38 @@
+---
+- hosts: localhost
+
+  roles:
+    - logs
+    
+    - set_custom_fact
+
+    - tinc_static
+
+    - role: kalite 
+      version: "{{ ansible_local.device_list[hostname].kalite_version }}"
+      lang: "{{ ansible_local.device_list[hostname].kalite_lang }}"
+      when: ansible_local.device_list[hostname].kalite is defined
+
+    - role: mongodb
+      when: ansible_local.device_list[hostname].mongodb is defined
+
+    - role: mook
+      mook_name: bsfcampus
+      when: ansible_local.device_list[hostname].bsfcampus is defined
+
+    - role: mook
+      mook_name: koombookedu
+      when: ansible_local.device_list[hostname].koombookedu is defined
+
+    - role: zim_install
+      zim_name: "{{ ansible_local.device_list[hostname].zim_install_name }}"
+      when: ansible_local.device_list[hostname].zim_install is defined
+
+    - role: upgradeIdc
+      version: "{{ ansible_local.device_list[hostname].upgradeIdc_version }}"
+      when: ansible_local.device_list[hostname].upgradeIdc is defined
+
+    - role: updateMook
+      mook_name: "{{ ansible_local.device_list[hostname].updateMook_name }}"
+      version: "{{ ansible_local.device_list[hostname].updateMook_version }}"
+      when: ansible_local.device_list[hostname].updateMook is defined
