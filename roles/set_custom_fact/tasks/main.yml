@@ -1,0 +1,17 @@
+---
+- name: ensure custom facts directory exists
+  file: >
+    path=/etc/ansible/facts.d
+    recurse=yes
+    state=directory
+
+- name: install custom fact module for device list
+  template: >
+    src=device_list.j2
+    dest=/etc/ansible/facts.d/device_list.fact
+    mode=0666
+
+- set_fact: hostname={{ ansible_hostname | regex_replace('_\d+', '') }}
+
+- name: reload ansible_local
+  setup: filter=ansible_local
