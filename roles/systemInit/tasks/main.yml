@@ -116,39 +116,9 @@
 - name: Copy .bashrc for new username
   copy: src=bashrc dest=/home/{{ username }}/.bashrc owner={{ username }}
 
-- name: Add hdparm to save energy
-  lineinfile: dest=/etc/hdparm.conf
-              regexp=''
-              insertafter=EOF
-              line='/dev/sda {
-                      spindown_time = 280
-              }'
-  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
-
-- name: fake-hwclock conf for ARM system 
-  copy: content="FORCE=force" dest=/etc/default/fake-hwclock
-  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
-
 - name: Copy visudo file for ideascube user
   template: src=visudo.j2 dest=/etc/sudoers.d/shutdown 
     owner=root group=root mode=0440 validate="/usr/sbin/visudo -cf %s"
-
-- name: Ensure the HDD mountpoint exists
-  file: path=/media/hdd state=directory
-  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
-
-- stat: path=/dev/sda1
-  register: dev_sda
-
-- name: Mount /dev/sda1
-  mount: name=/media/hdd/ src=/dev/sda1 fstype=ext4 state=mounted opts=noatime,nofail
-  when: dev_sda.stat.exists == True and (ansible_architecture == "armhf" or ansible_architecture == "armv7l")
-  ignore_errors: yes
-
-- name: Mount /dev/sda
-  mount: name=/media/hdd/ src=/dev/sda fstype=ext4 state=mounted opts=noatime,nofail
-  when: dev_sda.stat.exists == False and (ansible_architecture == "armhf" or ansible_architecture == "armv7l")
-  ignore_errors: yes
 
 - name: Create local directory to work from
   file: path=/var/lib/ansible/local state=directory owner=root group=root mode=0751
@@ -170,5 +140,5 @@
   copy: content={{ timezone }} dest=/etc/timezone owner=root group=root mode=0644 backup=yes
   notify: update timezone
 
-- include: lime2.yml
+- include: arm_proc.yml
   when: ansible_architecture == "armv7l"
