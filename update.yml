@@ -6,7 +6,8 @@
     
     - set_custom_fact
 
-    - tinc-static
+    - role: tinc-static
+      when: sync_log|bool == True
 
     - role: kalite 
       version: "{{ ansible_local.device_list[hostname].kalite_version }}"
