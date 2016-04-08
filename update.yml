@@ -6,7 +6,7 @@
     
     - set_custom_fact
 
-    - tinc_static
+    - tinc-static
 
     - role: kalite 
       version: "{{ ansible_local.device_list[hostname].kalite_version }}"
