@@ -1,0 +1,49 @@
+---
+- include_vars: group_vars/{{ ansible_architecture }}.yml
+
+- name: Install kalite
+  pip: name=ka-lite version={{version}}
+
+- name: Initialize ka-lite
+  become: yes
+  become_user: ideascube
+  command: kalite start
+
+- stat: path=/dev/sda1
+  register: dev_sda
+
+- name: Remove existing content
+  file: path=/home/{{username}}/.kalite/content state=absent
+  when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and ansible_mounts.device = "/dev/sda1"
+
+- file: src=/media/hdd/khanVideos/content/ 
+    dest=/home/{{username}}/.kalite/content state=link force=yes
+  when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and ansible_mounts.device = "/dev/sda1"
+
+- name: Fix rights
+  file: path=/media/hdd/khanVideos/content/ state=directory 
+    owner={{ username }} group={{ username }} recurse=yes
+  when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and ansible_mounts.device = "/dev/sda1"
+
+- name: Copy nginx vhost
+  template: src=kalite.vhost.j2 dest=/etc/nginx/sites-available/kalite
+
+- name: Nginx enable Virtual host
+  file: src=/etc/nginx/sites-available/kalite dest=/etc/nginx/sites-enabled/kalite state=link
+  notify: restart nginx
+
+- name: Setup startup file
+  template: src=kalite.j2 dest=/etc/init.d/kalite owner=root group=root mode="u+x"
+
+- name: Enable service kalite
+  service: name=kalite enabled=yes
+
+- name: Download Kalite assessment
+  become: yes
+  become_user: ideascube
+  command: kalite manage unpack_assessment_zip https://learningequality.org/downloads/ka-lite/0.15/content/khan_assessment.zip -f
+
+- name: Download Kalite language pack
+  become: yes
+  become_user: ideascube
+  command: kalite manage languagepackdownload --language={{lang}} --commandline
