@@ -9,9 +9,6 @@
   become_user: ideascube
   command: kalite start
 
-- stat: path=/dev/sda1
-  register: dev_sda
-
 - name: Remove existing content
   file: path=/home/{{username}}/.kalite/content state=absent
   when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and ansible_mounts.device = "/dev/sda1"

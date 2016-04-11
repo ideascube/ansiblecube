@@ -1,0 +1,22 @@
+- name: Clone mook front
+  become_user: ideascube
+  git: repo=ssh://git@altssh.bitbucket.org:443/{{url_project_name}}/mook-bsf-front-end-backbone.git dest={{ mook_path }}/{{ mook_name }}/front accept_hostkey=yes depth=1
+  register: mookFront
+
+- name: download vendor package
+  get_url: url={{filer_bsf}}/vendor.tgz dest=/tmp/vendor.tgz
+  when: mookFront.changed
+
+- name: unarchive the vendor package
+  become_user: ideascube
+  unarchive: src=/tmp/vendor.tgz dest={{ mook_path }}/{{ mook_name }}/front copy=no
+  when: mookFront.changed
+
+- name: Copy config.js config files
+  become_user: ideascube
+  template: src=config.js.j2 dest={{ mook_path }}/{{ mook_name }}/front/config.js
+  when: mookFront.changed
+
+- name: Fix rights
+  file: path={{ mook_path }}/{{ mook_name }} state=directory owner={{ username }} group={{ username }} recurse=yes
+  when: mookFront.changed

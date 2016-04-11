@@ -1,0 +1,27 @@
+---
+- include_vars: group_vars/{{ ansible_architecture }}.yml
+
+- name: Copying kiwix binaries
+  get_url: url={{filer_bsf}}/kiwix-serve-{{ ansible_architecture }} dest=/usr/local/bin/kiwix-serve mode=755 timeout=20
+
+- name: Create a kiwix directory in ideascube folder
+  file: path={{zim_path}}/ state=directory
+
+- name: Setup startup file
+  template: src=kiwix-server.service.j2 dest=/etc/systemd/system/kiwix-server.service
+  
+- name: Copy nginx vhost
+  template: src=nginx.vhost.j2 dest=/etc/nginx/sites-available/kiwix
+
+- name: Install Kiwix catalog
+  become: yes
+  become_user: ideascube
+  command: ideascube catalog remotes add "Kiwix" "Kiwix ZIM content" http://catalog.ideascube.org/kiwix.yml
+
+- name: Nginx enable Virtual host
+  file: src=/etc/nginx/sites-available/kiwix dest=/etc/nginx/sites-enabled/kiwix state=link
+  notify: restart nginx
+
+- name: Enable service kiwix
+  service: name=kiwix-server enabled=yes
+  notify: restart kiwix

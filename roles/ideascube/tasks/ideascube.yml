@@ -1,0 +1,40 @@
+---
+- include_vars: group_vars/{{ ansible_architecture }}.yml
+
+- name: Add a storage folder for Ideascube on the HDD
+  file: path=/media/hdd/ideascube/ state=directory owner=ideascube group=ideascube mode=755
+  when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and ansible_mounts.device = "/dev/sda1"
+
+- name: Create a simlink to the HDD for the KoomBook
+  file: src=/media/hdd/ideascube dest=/var/ideascube state=link
+  when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and ansible_mounts.device = "/dev/sda1"
+
+- name: Configure the ideascube package repository
+  template: src=ideascube.list.j2 dest=/etc/apt/sources.list.d/ideascube.list owner=root group=root mode=644
+
+- name: Install ideascube dependencies
+  apt: name=python3-minimal state=present
+
+- name: Allow unauthenticated packages
+  lineinfile: dest=/etc/apt/apt.conf.d/9999IDEASCUBEISABADBADBOY line='APT::Get::AllowUnauthenticated "true";' create=yes
+
+- name: Install the ideascube package
+  apt: name=ideascube state=latest update_cache=yes
+
+- name: Remove the unauthenticated hack
+  file: path=/etc/apt/apt.conf.d/9999IDEASCUBEISABADBADBOY state=absent
+
+# Add settings and conf
+
+- name: Add IDEASCUBE_ID
+  lineinfile: dest=/etc/default/ideascube
+              regexp='^'
+              line='IDEASCUBE_ID={{ ideascube_id }}'
+              state=present
+
+- name: Remove linsting on 443 because the port is alredy used by sslh
+  lineinfile: dest=/etc/nginx/sites-available/ideascube regexp='443' state=absent
+  notify: restart nginx
+
+- name: Create simLink
+  file: src=/etc/uwsgi/apps-available/ideascube.ini dest=/etc/uwsgi/apps-enabled/ideascube.ini state=link

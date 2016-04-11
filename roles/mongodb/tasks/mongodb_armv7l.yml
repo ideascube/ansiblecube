@@ -1,0 +1,29 @@
+- name: download mongo package
+  get_url: url={{filer_bsf}}/mongo.zip dest=/home/mongo.zip
+
+- name: Copy and unzip mongodb armhf version archive
+  unarchive: src=/home/mongo.zip dest=/opt/ copy=no
+
+- name: Create a mongod symlink in PATH
+  file: src=/opt/mongo/bin/mongod dest=/usr/bin/mongod state=link
+
+- name: Add mongodb user
+  user: name=mongodb group=nogroup shell=/etc/false createhome=no
+
+- name: Create log directory
+  file: path=/var/log/mongodb/ state=directory mode=0755 owner=mongodb group=nogroup
+
+- name: Create data directory
+  file: path=/media/hdd/mongodb state=directory mode=0755 owner=mongodb group=nogroup
+
+- name: Copy mongodb repair script
+  copy: src=mongo_repair.sh dest=/opt/mongo/mongo_repair.sh mode=755
+
+- name: Setup startup file
+  copy: src=mongodb.service dest=/etc/systemd/system/mongodb.service owner=root group=root
+
+- name: Copy new uwsgi startup file. Uwsgi must start after MongoDB
+  copy: src=uwsgi.service dest=/etc/systemd/system/uwsgi.service owner=root group=root
+
+- name: Enable service mongodb
+  service: name=mongodb enabled=yes
