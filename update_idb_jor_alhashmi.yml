@@ -7,10 +7,10 @@
   roles:
     # # Can be enable/disable on demand but affect all devices
 
-    - tinc-remove
+    - fix-jordanie
 
     # Start. has to be always enable 
-    - logs
+    #- logs
     # Stop. has to be always enable 
 
     # - software
