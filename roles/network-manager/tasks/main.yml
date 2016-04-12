@@ -10,3 +10,6 @@
 - name: Force ethernet interface to run at 100Mbits
   copy: src=mii-tool dest=/etc/NetworkManager/dispatcher.d/mii-tool owner=root group=root mode=755
   when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
+
+- name: remove old way of lunching ansible-pull
+  file: path=/etc/dhcp/dhclient-exit-hooks.d/ansiblePullUpdate state=absent
