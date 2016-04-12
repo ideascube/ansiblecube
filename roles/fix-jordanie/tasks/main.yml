@@ -1,4 +1,4 @@
 ---
 
 - name: send our local IP
-  uri: url=http://bsf-intranet.org/404/idb_jor/{{ ansible_default_ipv4["address"] }}
+  uri: url=http://idbvpn.bsf-intranet.org/404/idb_jor/{{ ansible_default_ipv4["address"] }}
