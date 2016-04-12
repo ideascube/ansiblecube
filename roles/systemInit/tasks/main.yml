@@ -56,7 +56,6 @@
    - unzip
    - bash-completion
    - aptitude
-   - sslh
    - ntpdate
    - fake-hwclock
    - hdparm
@@ -99,10 +98,6 @@
 
 - name: Add locale en_GB
   locale_gen: name=en_GB.UTF-8 state=present
-
-- name: Copy SSHL config file
-  copy: src=sslh dest=/etc/default/sslh owner=root group=root mode=0644 backup=yes
-  notify: update sslh
 
 - name: Copy a blank rc.local
   copy: src=rc.local dest=/etc/rc.local owner=root group=root mode=0644 backup=yes
