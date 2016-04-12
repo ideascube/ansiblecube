@@ -1,5 +1,8 @@
 ---
 
+- name: ensure tinc is stopped
+  service: name=tinc state=stopped
+
 - name: uninstall tinc
   apt: >
     name=tinc
