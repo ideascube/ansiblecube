@@ -15,7 +15,7 @@
 
     # - software
 
-    - tinc-static
+      #- tinc-static
 
     # - role: ideascube
     #   version: "0.6.0-1"
