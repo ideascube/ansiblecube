@@ -4,4 +4,4 @@
     section=software
     option={{ task }}
     value=0
-  when: ansible_local.installed_software.software.kalite is undefined
+  when: ansible_local.installed_software.software.{{task}} is undefined
