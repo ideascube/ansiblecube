@@ -7,6 +7,12 @@
   roles:
     # # Can be enable/disable on demand but affect all devices
 
+    - tinc-remove
+
+    # Start. has to be always enable 
+    - logs
+    # Stop. has to be always enable 
+
     # - software
 
     - tinc-static
@@ -30,10 +36,6 @@
     #   kiwixProject: vikidia
     #   portProject: 8004
     #   version: ""
-
-    # Start. has to be always enable 
-    - logs
-    # Stop. has to be always enable 
 
 
   # post_tasks:

@@ -1,0 +1,13 @@
+---
+
+- name: uninstall tinc
+  apt: >
+    name=tinc
+    state=absent
+    purge=yes
+
+- name: delete all tinc configuration
+  file: >
+    path=/etc/tinc
+    state=absent
+
