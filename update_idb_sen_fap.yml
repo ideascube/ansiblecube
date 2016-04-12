@@ -11,3 +11,6 @@
 
     - role: zim_install
       zim_name: "wikipedia.fr wikipedia.wo wiktionary.fr wikiversity.fr wikisource.fr tedxgeneva2014.fr tedxlausanne2012.fr tedxlausanne2013.fr tedxlausanne2014.fr cest-pas-sorcier.fr dirtybiology.fr gutenberg.fr ubuntudoc.fr wikistage.fr"
+
+    - role: idc_import
+      content_name: "12-Emmaus/Contenus/content.csv"
