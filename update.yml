@@ -29,9 +29,9 @@
       zim_name: "{{ ansible_local.device_list[device_name].zim_install_name }}"
       when: ansible_local.device_list[device_name].zim_install is defined
 
-    - role: upgradeIdc
-      version: "{{ ansible_local.device_list[device_name].upgradeIdc_version }}"
-      when: ansible_local.device_list[device_name].upgradeIdc is defined
+    - role: ideascube
+      version: "{{ ansible_local.device_list[device_name].ideascube }}"
+      when: ansible_local.device_list[device_name].ideascube is defined
 
     - role: updateMook
       mook_name: "{{ ansible_local.device_list[device_name].updateMook_name }}"
