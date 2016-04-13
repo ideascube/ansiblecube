@@ -38,7 +38,7 @@
   lineinfile: dest=/etc/apt/apt.conf.d/9999IDEASCUBEISABADBADBOY line='APT::Get::AllowUnauthenticated "true";' create=yes
 
 - name: Install the ideascube package
-  apt: name=ideascube=0.9.3 state=present update_cache=yes
+  apt: name=ideascube state=latest update_cache=yes
 
 - name: Remove the unauthenticated hack
   file: path=/etc/apt/apt.conf.d/9999IDEASCUBEISABADBADBOY state=absent
