@@ -14,7 +14,7 @@
       lang: "fr"
 
     - role: zim_install
-      zim_name: "wikipedia.fr wikiepdia.fa wiktionary.fr wikiversity.fr wikisource.fr tedxgeneva2014.fr tedxlausanne2012.fr tedxlausanne2013.fr tedxlausanne2014.fr cest-pas-sorcier.fr gutenberg.fr"
+      zim_name: "wikipedia.fr wikipedia.fa wiktionary.fr wikiversity.fr wikisource.fr tedxgeneva2014.fr tedxlausanne2012.fr tedxlausanne2013.fr tedxlausanne2014.fr cest-pas-sorcier.fr gutenberg.fr"
 
     - role: idc_import
       content_name: "12-Emmaus/Contenus/content.csv"
