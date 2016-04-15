@@ -15,6 +15,5 @@
     # - role: idc_import
     #   content_name: "15-logiciel-libre/app.csv"
 
-    - role: kalite
-      version: "0.15.0"
-      lang: "fr"
+    - role: upgradeIdc
+      version: "0.9.8"
