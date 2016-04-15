@@ -22,5 +22,5 @@
     # - role: zim_install
     #   zim_name: "wikipedia.fr cest-pas-sorcier.fr gutenberg.fr tedxgeneva2014.fr universcience-tv.fr tedxlausanne2012.fr tedxlausanne2013.fr tedxlausanne2014.fr"
 
-    - role: idc_import
-      content_name: "11-BurundiTV5/Contenus/contenu.csv"
+    # - role: idc_import
+    #   content_name: "11-BurundiTV5/Contenus/contenu.csv"
