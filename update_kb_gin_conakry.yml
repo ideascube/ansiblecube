@@ -7,17 +7,20 @@
     # This role automatically send logs to central server each time the device gets an Internet connection 
     - logs
     
-    - mongodb
+    # - mongodb
 
-    - role: mook
-      mook_name: bsfcampus
+    # - role: mook
+    #   mook_name: bsfcampus
 
-    - role: mook
-      mook_name: koombookedu
+    # - role: mook
+    #   mook_name: koombookedu
 
-    - role: kalite
-      version: "0.15.0"
-      lang: "fr"
+    # - role: kalite
+    #   version: "0.15.0"
+    #   lang: "fr"
 
-    - role: zim_install
-      zim_name: "wikipedia.fr cest-pas-sorcier.fr gutenberg.fr tedxgeneva2014.fr universcience-tv.fr tedxlausanne2012.fr tedxlausanne2013.fr tedxlausanne2014.fr"
+    # - role: zim_install
+    #   zim_name: "wikipedia.fr cest-pas-sorcier.fr gutenberg.fr tedxgeneva2014.fr universcience-tv.fr tedxlausanne2012.fr tedxlausanne2013.fr tedxlausanne2014.fr"
+
+    - role: idc_import
+      content_name: "11-BurundiTV5/Contenus/contenu.csv"
