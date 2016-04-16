@@ -49,7 +49,7 @@
 - name: Add IDEASCUBE_ID
   lineinfile: dest=/etc/default/ideascube
               regexp='^'
-              line='IDEASCUBE_ID={{ ideascubeName }}'
+              line='IDEASCUBE_ID={{ ideascube_id }}'
               state=present
 
 - name: Create entry to clone/pull git repository
