@@ -11,7 +11,7 @@
 
     - role: rename_device
       ideascube_id: "idb_fra_jeanquarre"
-      when: ansible_hostname == 'idb-fra-jeancarre-924'
+      when: ansible_hostname == 'idb-fra-jeancarre-397'
 
     # - role: kalite
     #   version: "0.15.0"
