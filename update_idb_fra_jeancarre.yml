@@ -9,9 +9,9 @@
 
     # - tinc-static
 
-    # - role: rename_device
-    #   ideascube_id: "idb_fra_jeancarre"
-    #   when: ansible_hostname == 'idb-fra-emmaus-924'
+    - role: rename_device
+      ideascube_id: "idb_fra_jeanquarre"
+      when: ansible_hostname == 'idb-fra-jeancarre-924'
 
     # - role: kalite
     #   version: "0.15.0"
