@@ -10,9 +10,6 @@
     - logs
     # Stop. has to be always enable 
 
-    - role: upgradeIdc
-      version: "0.9.9"
-
   #   - kalite
 
   #   - role: kiwix
