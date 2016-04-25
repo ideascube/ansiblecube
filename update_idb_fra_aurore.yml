@@ -10,6 +10,8 @@
     - logs
     # Stop. has to be always enable 
 
+    - tinc-static
+
   #   - kalite
 
   #   - role: kiwix
