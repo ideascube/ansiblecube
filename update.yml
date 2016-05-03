@@ -30,7 +30,7 @@
       when: ansible_local.device_list[device_name].zim_install is defined
 
     - role: ideascube
-      version: "{{ ansible_local.device_list[device_name].ideascube }}"
+      version: "{{ ansible_local.device_list[device_name].ideascube_version }}"
       when: ansible_local.device_list[device_name].ideascube is defined
 
     - role: updateMook
