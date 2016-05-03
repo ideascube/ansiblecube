@@ -10,9 +10,6 @@
     - logs
     # Stop. has to be always enable 
 
-    # - role: ideascube
-    #   version: "0.7.0-1"
-
   #   - kalite
 
   #   - role: kiwix
