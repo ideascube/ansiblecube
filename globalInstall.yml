@@ -11,10 +11,6 @@
     - systemInit
     - nginx
     - uwsgi
-    - dnsmasq
-    - hostapd
-    - iptables
-    - network-manager
     - ideascube
     - kiwix
 
