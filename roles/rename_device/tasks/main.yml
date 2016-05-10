@@ -2,7 +2,7 @@
 # This Playbook has to be called by this way
 #
 # - role: rename_device
-#   ideascube_id: "kb_bdi_tv5monde"
+#   ideascube_project_name: "kb_bdi_tv5monde"
 #   when: ansible_hostname == 'kb-mooc-vog-345'
 #
 # With kb_bdi_tv5monde The new project name you would like to give
@@ -14,8 +14,8 @@
 - name: Set date and time 
   set_fact: date="{{ ansible_date_time["date"]}}" time="{{ ansible_date_time["time"]}}"
 
-- name: Set an ideascubeName and generate an UUID
-  set_fact: ideascubeName="{{ ideascube_id }}_{{ 1000 | random }}" 
+- name: Set an ideascube_device_name and generate an UUID
+  set_fact: ideascube_device_name="{{ ideascube_project_name }}_{{ 1000 | random }}" 
     UUID="{{ ansible_default_ipv4["macaddress"] | hash('md5') }}"
 
 - name: A way to get the public IP of the device
@@ -23,7 +23,7 @@
   register: public_ip
 
 - name: Write all the variables in /etc/firstStart.csv 
-  copy: content=id,{{ date }},{{ time }},{{ ideascubeName }},{{ UUID }},{{ ansible_default_ipv4["macaddress"] }},{{ ansible_default_ipv4["address"] }},{{ public_ip.stdout }}\n dest=/etc/firstStart.csv
+  copy: content=id,{{ date }},{{ time }},{{ ideascube_device_name }},{{ UUID }},{{ ansible_default_ipv4["macaddress"] }},{{ ansible_default_ipv4["address"] }},{{ public_ip.stdout }}\n dest=/etc/firstStart.csv
 
 - name: Send this file over the central_server 
   raw: cat /etc/firstStart.csv | ssh -p 443 {{ central_server }} "cat >> ./ansible/UUID/firstStart.csv"
@@ -31,11 +31,11 @@
 
 - name: Adding name to the hosts file
   lineinfile: dest=/etc/hosts regexp='^{{ hotspotip }}' insertafter='{{ hotspotip }}' 
-    line='{{ hotspotip }} {{ ideascubeName |replace("_", "-") }}.lan {{ hostname }} {{ mook_front_server_name }}' 
+    line='{{ hotspotip }} {{ ideascube_device_name |replace("_", "-") }}.lan {{ hostname }} {{ mook_front_server_name }}' 
     owner=root group=root mode=0644
 
 - name: An hostname can not have _ so we are switching to -, python can not have - so using _ sometime too
-  hostname: name={{ ideascubeName |replace("_", "-") }}
+  hostname: name={{ ideascube_device_name |replace("_", "-") }}
 
 - name: Copy dnsmasq.conf file
   template: src=dnsmasq.conf.j2 dest=/etc/dnsmasq.conf backup=yes
@@ -46,10 +46,10 @@
 - name: Copy hosts file
   template: src=hosts.j2 dest=/etc/hosts owner=root group=root mode=755 backup=yes
 
-- name: Add IDEASCUBE_ID
+- name: Add ideascube_project_name
   lineinfile: dest=/etc/default/ideascube
               regexp='^'
-              line='IDEASCUBE_ID={{ ideascubeName }}'
+              line='ideascube_project_name={{ ideascube_device_name }}'
               state=present
 
 - name: Create entry to clone/pull git repository
