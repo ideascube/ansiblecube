@@ -4,8 +4,8 @@
 - name: Set date and time 
   set_fact: date="{{ ansible_date_time["date"]}}" time="{{ ansible_date_time["time"]}}"
 
-- name: Set an ideascubeName and generate an UUID
-  set_fact: ideascubeName="{{ ideascube_id }}_{{ 1000 | random }}" 
+- name: Set an ideascube_device_name and generate an UUID
+  set_fact: ideascube_device_name="{{ ideascube_project_name }}_{{ 1000 | random }}" 
     UUID="{{ ansible_default_ipv4["macaddress"] | hash('md5') }}"
 
 - name: A way to get the public IP of the device
@@ -13,7 +13,7 @@
   register: public_ip
 
 - name: Write all the variables in /etc/firstStart.csv 
-  copy: content=id,{{ date }},{{ time }},{{ ideascubeName }},{{ UUID }},{{ ansible_default_ipv4["macaddress"] }},{{ ansible_default_ipv4["address"] }},{{ public_ip.stdout }}\n dest=/etc/firstStart.csv
+  copy: content=id,{{ date }},{{ time }},{{ ideascube_device_name }},{{ UUID }},{{ ansible_default_ipv4["macaddress"] }},{{ ansible_default_ipv4["address"] }},{{ public_ip.stdout }}\n dest=/etc/firstStart.csv
 
 - name: Send this file over the central_server 
   raw: cat /etc/firstStart.csv | ssh -p 443 {{ central_server }} "cat >> ./ansible/UUID/firstStart.csv"
@@ -74,11 +74,11 @@
 
 - name: Adding name to the hosts file
   lineinfile: dest=/etc/hosts regexp='^{{ hotspotip }}' insertafter='{{ hotspotip }}' 
-    line='{{ hotspotip }} {{ ideascubeName |replace("_", "-") }}.lan {{ hostname }} {{ mook_front_server_name }}' 
+    line='{{ hotspotip }} {{ ideascube_device_name |replace("_", "-") }}.lan {{ hostname }} {{ mook_front_server_name }}' 
     owner=root group=root mode=0644
 
 - name: An hostname can not have _ so we are switching to -, python can not have - so using _ sometime too
-  command: hostnamectl set-hostname {{ ideascubeName |replace("_", "-") }}
+  command: hostnamectl set-hostname {{ ideascube_device_name |replace("_", "-") }}
 
 - name: Create an ideascube user on the system
   user: name={{ username }}
