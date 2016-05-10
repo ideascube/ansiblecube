@@ -1,13 +1,4 @@
 ---
-- name: Ensure apache2 is removed
-  apt: name={{ item }} state=absent purge=yes
-  with_items:
-   - apache2
-   - apache2-mpm-worker
-   - apache2-utils
-   - apache2.2-bin
-   - apache2.2-common
-
 - name: Install nginx web server
   apt: pkg=nginx state=installed update_cache=true force=yes
 
