@@ -8,6 +8,7 @@
 # - hosts: SystemPushInstall
 
   roles:
+    - set_custom_fact
     - systemInit
     - nginx
     - uwsgi
