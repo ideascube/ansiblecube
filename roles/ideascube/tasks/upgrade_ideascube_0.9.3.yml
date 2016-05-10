@@ -50,15 +50,16 @@
 - name: Enable service uwsgi
   service: name=uwsgi enabled=yes
 
-- name: Lookup for the ideascube_id
-  shell: cat /etc/default/ideascube | grep IDEASCUBE_ID | awk -F "=" '{print $2}'; echo
-  register: ideascubeID
+- name: Lookup for the Ideascube device name
+  set_fact: ideascube_device_name={{ ansible_hostname | regex_replace('_\d+', '') | replace("-", "_") }}
 
-- name: ideascube_id must contain _ instead of - in the name 
-  set_fact: ideascube_id={{ ideascubeID.stdout |replace("-", "_") }}
+- name: Lookup for the Ideascube device name and number. ideascube_project_name must contain _ instead of - in the name 
+  set_fact: ideascube_project_name={{ ansible_hostname | replace("-", "_") }}
 
-- dependencies:
-    - dnsmasq
-    - hostapd
-    - iptables
-    - network-manager
+- name: remove old sysvinit startup file 
+  file: path=/etc/init.d/hostapd state=absent
+  when: st.stat.exists == False
+
+- name: remove old way of lunching ansible-pull
+  file: path=/etc/dhcp/dhclient-exit-hooks.d/ansiblePullUpdate state=absent
+  when: st.stat.exists == False
