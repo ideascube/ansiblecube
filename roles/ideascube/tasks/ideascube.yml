@@ -29,7 +29,7 @@
 - name: Add IDEASCUBE_ID
   lineinfile: dest=/etc/default/ideascube
               regexp='^'
-              line='IDEASCUBE_ID={{ ideascube_id }}'
+              line='IDEASCUBE_ID={{ ideascube_project_name }}'
               state=present
 
 - name: Remove linsting on 443 because the port is alredy used by sslh
