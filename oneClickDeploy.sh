@@ -5,7 +5,7 @@ SSH_KEY="/root/.ssh/id_rsa"
 sync_log=`echo $1 | cut -d= -f1`
 value1=`echo $1 | cut -d= -f2`
 
-ideascube_id=`echo $2 | cut -d= -f1`
+ideascube_project_name=`echo $2 | cut -d= -f1`
 value2=`echo $2 | cut -d= -f2`
 
 timezone=`echo $3 | cut -d= -f1`
@@ -31,10 +31,10 @@ else
 	echo -e "
 	YOU HAVE TO BE ROOT TO LUNCH THIS SCRIPT !
 
-	Usage : ./oneClickDeploy.sh sync_log=True ideascube_id=kb_mooc_cog timezone=Europe/Paris
+	Usage : ./oneClickDeploy.sh sync_log=True ideascube_project_name=kb_mooc_cog timezone=Europe/Paris
 
 	sync_log=True|False : Whether send or not log system to a central server. A server with SSH access is required in this case
-	ideascube_id=File_Name : Must be the same name as the one used for the ideascube configuration file
+	ideascube_project_name=File_Name : Must be the same name as the one used for the ideascube configuration file
 	timezone=Europe/Paris : The timezone
 	"
 	exit 0;
@@ -54,6 +54,6 @@ git clone https://github.com/ideascube/ansiblecube.git local
 cp /var/lib/ansible/local/hosts /etc/ansible/hosts
 
 echo "[+] Run globalInstall playbook..."
-/usr/local/bin/ansible-pull -d /var/lib/ansible/local -i hosts -U https://github.com/ideascube/ansiblecube.git globalInstall.yml --extra-vars "sync_log="$SHOULD_WE_SEND" ideascube_id=$value2 timezone=$value3"
+/usr/local/bin/ansible-pull -d /var/lib/ansible/local -i hosts -U https://github.com/ideascube/ansiblecube.git globalInstall.yml --extra-vars "sync_log="$SHOULD_WE_SEND" ideascube_project_name=$value2 timezone=$value3"
 
 echo "[+] Done."
