@@ -1,5 +1,5 @@
 ---
-- include: roles/pre_install.yml task=ideascube
+- include: ../../../pre_install.yml task=ideascube
 
 - include: ideascube.yml
   when: ansible_local.installed_software.software.ideascube = 0
