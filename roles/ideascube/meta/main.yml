@@ -1,0 +1,6 @@
+---
+- dependencies:
+    - dnsmasq
+    - hostapd
+    - iptables
+    - network-manager
