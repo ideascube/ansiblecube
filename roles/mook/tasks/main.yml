@@ -3,6 +3,8 @@
 
 - include_vars: group_vars/{{ ansible_architecture }}.yml
 
+# Set variables
+
 - name: Set mook project name to have the right URL
   set_fact: url_project_name="gryzzlab"
   when: mook_name == 'bsfcampus'
@@ -19,14 +21,24 @@
   set_fact: central_server_host="http://mook-api.bibliosansfrontieres.fr/"
   when: mook_name == 'koombookedu'
 
+# Call those roles if this is the first install
+
 - include: back_end.yml
-  when: ansible_local.installed_software.software.mook < "{{ version }}"
+  when: ansible_local.installed_software.software.mook = 0
 
 - include: front_end.yml
-  when: ansible_local.installed_software.software.mook < "{{ version }}"
+  when: ansible_local.installed_software.software.mook = 0
 
 - include: system.yml
+  when: ansible_local.installed_software.software.mook = 0
+
+# Call those roles if the Mook has to be upgraded 
+
+- include: upgrade_mook_{{ version }}.yml
   when: ansible_local.installed_software.software.mook < "{{ version }}"
+    and ansible_local.installed_software.software.mook != 0
+  ignore_error: yes
 
 - include: post_install.yml task=mook version="{{ version }}"
   when: ansible_local.installed_software.software.mook < "{{ version }}"
+  or ansible_local.installed_software.software.mook = 0  
