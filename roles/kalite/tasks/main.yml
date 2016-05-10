@@ -1,8 +1,8 @@
 ---
-- include: pre_install.yml task=kalite
+- include: ../../../pre_install.yml task=kalite
 
 - include: kalite.yml
   when: ansible_local.installed_software.software.kalite < "{{ version }}"
 
-- include: post_install.yml task=kalite version="{{ version }}"
+- include: ../../../post_install.yml task=kalite version="{{ version }}"
   when: ansible_local.installed_software.software.kalite < "{{ version }}"

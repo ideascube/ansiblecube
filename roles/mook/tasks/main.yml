@@ -1,5 +1,5 @@
 ---
-- include: pre_install.yml task=mook
+- include: ../../../pre_install.yml task=mook
 
 - include_vars: group_vars/{{ ansible_architecture }}.yml
 
@@ -39,6 +39,6 @@
     and ansible_local.installed_software.software.mook != 0
   ignore_error: yes
 
-- include: post_install.yml task=mook version="{{ version }}"
+- include: ../../../post_install.yml task=mook version="{{ version }}"
   when: ansible_local.installed_software.software.mook < "{{ version }}"
   or ansible_local.installed_software.software.mook = 0  

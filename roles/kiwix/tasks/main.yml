@@ -1,8 +1,8 @@
 ---
-- include: pre_install.yml task=kiwix
+- include: ../../../pre_install.yml task=kiwix
 
 - include: kiwix.yml
   when: ansible_local.installed_software.software.kiwix < "{{ version }}"
 
-- include: post_install.yml task=kiwix version="{{ version }}"
+- include: ../../../post_install.yml task=kiwix version="{{ version }}"
   when: ansible_local.installed_software.software.kiwix < "{{ version }}"

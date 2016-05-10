@@ -9,6 +9,6 @@
     and ansible_local.installed_software.software.ideascube != 0
   ignore_error: yes
 
-- include: post_install.yml task=ideascube version="{{ version }}"
+- include: ../../../post_install.yml task=ideascube version="{{ version }}"
   when: ansible_local.installed_software.software.ideascube < "{{ version }}"
     or ansible_local.installed_software.software.ideascube = 0  
