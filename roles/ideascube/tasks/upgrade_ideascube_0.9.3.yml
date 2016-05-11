@@ -6,17 +6,17 @@
 
 - name: Move uwsgi_params to the new storage folder
   command: mv -f /var/ideascube/uwsgi_params /media/hdd/ideascube/storage
-  when: ansible_mounts.device = "/dev/sda1" and ansible_mounts.device = "/dev/mmcblk0/
+  when: ansible_mounts["device"] == "/dev/sda1" and ansible_mounts["device"] == "/dev/mmcblk0/
   ignore_errors: yes
 
 - name: Backup old ideascube var dir
   command: mv -f /var/ideascube/ /var/old_ideascube
-  when: ansible_mounts.device = "/dev/sda1" and ansible_mounts.device = "/dev/mmcblk0/
+  when: ansible_mounts["device"] == "/dev/sda1" and ansible_mounts["device"] == "/dev/mmcblk0/
   ignore_errors: yes
 
 - name: Create a simlink to the HDD for the KoomBook
   file: src=/media/hdd/ideascube/storage dest=/var/ideascube state=link owner={{ username }} group={{ username }}
-  when: ansible_mounts.device = "/dev/sda1" and ansible_mounts.device = "/dev/mmcblk0/
+  when: ansible_mounts["device"] == "/dev/sda1" and ansible_mounts["device"] == "/dev/mmcblk0/
 
 - name: Install uwsgi
   apt: name={{ item }} state=present
