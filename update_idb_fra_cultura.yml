@@ -13,7 +13,7 @@
     - role: upgradeIdc
       version: "0.9.9"
 
-    - role: tinc
+    - role: tinc-static
 
     - kalite
 
