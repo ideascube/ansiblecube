@@ -24,21 +24,21 @@
 # Call those roles if this is the first install
 
 - include: back_end.yml
-  when: ansible_local.installed_software.software.mook = 0
+  when: ansible_local.installed_software.software.mook == 0
 
 - include: front_end.yml
-  when: ansible_local.installed_software.software.mook = 0
+  when: ansible_local.installed_software.software.mook == 0
 
 - include: system.yml
-  when: ansible_local.installed_software.software.mook = 0
+  when: ansible_local.installed_software.software.mook == 0
 
 # Call those roles if the Mook has to be upgraded 
 
-- include: upgrade_mook_{{ version }}.yml
+- include: upgrade_mook_100516.yml
   when: ansible_local.installed_software.software.mook < "{{ version }}"
     and ansible_local.installed_software.software.mook != 0
   ignore_error: yes
 
 - include: ../../../post_install.yml task=mook version="{{ version }}"
   when: ansible_local.installed_software.software.mook < "{{ version }}"
-  or ansible_local.installed_software.software.mook = 0  
+  or ansible_local.installed_software.software.mook == 0  
