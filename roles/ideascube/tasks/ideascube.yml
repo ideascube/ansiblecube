@@ -3,11 +3,11 @@
 
 - name: Add a storage folder for Ideascube on the HDD
   file: path=/media/hdd/ideascube/ state=directory owner=ideascube group=ideascube mode=755
-  when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and ansible_mounts.device = "/dev/sda1"
+  when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and ansible_mounts["device"] == "/dev/sda1"
 
 - name: Create a simlink to the HDD for the KoomBook
   file: src=/media/hdd/ideascube dest=/var/ideascube state=link
-  when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and ansible_mounts.device = "/dev/sda1"
+  when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and ansible_mounts["device"] == "/dev/sda1"
 
 - name: Configure the ideascube package repository
   template: src=ideascube.list.j2 dest=/etc/apt/sources.list.d/ideascube.list owner=root group=root mode=644
