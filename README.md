@@ -49,7 +49,8 @@ From the github web interface you can also create a new configuration file and s
 If you own an Olimex Lime 2 or Raspberry Pi 2/3, the best is to give a try to Ansible ! 
  - Download an [Armbian image](http://www.armbian.com/olimex-lime-2/) (Choose "Legacy" / "Jessie") for Olimex or a [Raspbian image](https://www.raspberrypi.org/downloads/raspbian/) for Raspberry Pi
  - Unzip image and burn it on an SD Card (class 10!)
- - ```sudo dd bs=1M if=filename.raw of=/dev/sdx && sync```
+  - **Linux** : ```sudo dd bs=1M if=filename.raw of=/dev/sdx && sync```
+  - **Windows** : Use [Rufus](https://rufus.akeo.ie/) and fellow the instrcutions 
  - Insert SD card on the board, first start is longer (update, SSH keys init, etc.)
 
 ### Case 2 : AMD64
