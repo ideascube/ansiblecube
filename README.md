@@ -37,7 +37,7 @@ Please have a look at others configurations files to see how it has been done. W
 If you own an Olimex Lime 2 or Raspberry Pi 2/3, the best is to give a try to Ansible ! 
  - Download an [Armbian image](http://www.armbian.com/olimex-lime-2/) (Choose "Legacy" / "Jessie") for Olimex or a [Raspbian image](https://www.raspberrypi.org/downloads/raspbian/) for Raspberry Pi
  - Unzip image and burn it on an SD Card (class 10!)
- - ```dd bs=1M if=filename.img of=/dev/sdx```
+ - ```sudo dd bs=1M if=filename.raw of=/dev/sdx && sync```
  - Insert SD card on the board, first start is longer (update, SSH keys init, etc.)
  - Login with SSH : Default password is 1234 for Armbian and pi / raspberry for Raspberry 
 
