@@ -68,7 +68,7 @@ Now you are ready to start deployment on the targeted device
  
 #### On the device directly
  - Plug a keyboard on your device
- - Loogin : `root`, default password is 1234 for Armbian and pi / raspberry for Raspberry 
+ - Login : `root`, default password is 1234 for Armbian and pi / raspberry for Raspberry 
  - If needed, type this command to change the mapping of your keyboard `loadkeys fr`
  - Download the bash script ```wget https://github.com/ideascube/ansiblecube/raw/master/oneClickDeploy.sh --no-check-certificate```
  - Modify rights ```chmod +x oneClickDeploy.sh```
