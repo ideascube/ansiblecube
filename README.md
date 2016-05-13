@@ -84,6 +84,7 @@ This script takes 4 arguments :
  - ```ideascube_id``` : ex ```kb_mooc_cog``` is the name of the Ideascube project, this name MUST be the same as the ideascube name stored in ```ideascube/conf/``` ideascube github repository
  - ```timezone``` : ex ```Africa/Kinsasha``` is the time zone (available in /usr/share/zoneinfo/) to set to the server or check at https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
  
+**WARNING** : If you are running this command behind a firewall, be sure the NTP protocol is open for outgoing connection, if not, set mannualy the date on your system : `date -s 20160513`
 
 ## Keep your system up to date ! 
 Now you have an ideascube system ready to work, great !
