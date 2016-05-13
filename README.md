@@ -66,7 +66,7 @@ Now you are ready to start deployment on the targeted device
  - Download the bash script ```wget https://github.com/ideascube/ansiblecube/raw/master/oneClickDeploy.sh --no-check-certificate```
  - Modify rights ```chmod +x oneClickDeploy.sh```
  
- #### On the device directly
+#### On the device directly
   - Plug a keyboard on your device
   - Type this command to change the mapping of your keyboard `loadkeys fr`
   - Download the bash script ```wget https://github.com/ideascube/ansiblecube/raw/master/oneClickDeploy.sh --no-check-certificate```
