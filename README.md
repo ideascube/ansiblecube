@@ -32,21 +32,7 @@ If you need to adapt some settings for your own project, you'll have to create a
 
 Please have a look at others configurations files to see how it has been done. When you know what to do, simply send us a pull request with your new file. 
 
-## Set up your hardware 
-### Case 1 : ARM
-If you own an Olimex Lime 2 or Raspberry Pi 2/3, the best is to give a try to Ansible ! 
- - Download an [Armbian image](http://www.armbian.com/olimex-lime-2/) (Choose "Legacy" / "Jessie") for Olimex or a [Raspbian image](https://www.raspberrypi.org/downloads/raspbian/) for Raspberry Pi
- - Unzip image and burn it on an SD Card (class 10!)
- - ```sudo dd bs=1M if=filename.raw of=/dev/sdx && sync```
- - Insert SD card on the board, first start is longer (update, SSH keys init, etc.)
- - Login with SSH : Default password is 1234 for Armbian and pi / raspberry for Raspberry 
-
-### Case 2 : AMD64
- - [Download the last Debian jessie](http://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-8.2.0-amd64-lxde-desktop.iso), with or without graphical interface : 
- - Set up your serveur as you will do for any server you own
- - When asked, create a root user and an ideascube user (ideascube user password will be automatically overrided during ansible deployment)
-
-## On your computer, clone AnsibleCube
+## On your computer, clone AnsibleCube
 ### Methode 1 : Fork and clone 
  - Fork the repository and clone it on your comptuter to be able to update roles 
  - Open the bash script ```oneClickDeploy.sh``` and change the github repo to your one
@@ -58,16 +44,31 @@ If you own an Olimex Lime 2 or Raspberry Pi 2/3, the best is to give a try to An
 ### Methode 2 : Send me a pull request
 From the github web interface you can also create a new configuration file and send me a pull request 
 
+## Set up your hardware 
+### Case 1 : ARM
+If you own an Olimex Lime 2 or Raspberry Pi 2/3, the best is to give a try to Ansible ! 
+ - Download an [Armbian image](http://www.armbian.com/olimex-lime-2/) (Choose "Legacy" / "Jessie") for Olimex or a [Raspbian image](https://www.raspberrypi.org/downloads/raspbian/) for Raspberry Pi
+ - Unzip image and burn it on an SD Card (class 10!)
+ - ```sudo dd bs=1M if=filename.raw of=/dev/sdx && sync```
+ - Insert SD card on the board, first start is longer (update, SSH keys init, etc.)
+
+### Case 2 : AMD64
+ - [Download the last Debian jessie](http://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-8.2.0-amd64-lxde-desktop.iso), with or without graphical interface : 
+ - Set up your serveur as you will do for any server you own
+ - When asked, create a root user and an ideascube user (ideascube user password will be automatically overrided during ansible deployment)
+
 ## Prepare the deployment !
 ### Download the oneClickDeploy script
 Now you are ready to start deployment on the targeted device
 #### With SSH
  - ```ssh ideascube@192.168.1.xxx```
+ - Login with SSH : Login : `root`, default password is 1234 for Armbian and pi / raspberry for Raspberry 
  - Download the bash script ```wget https://github.com/ideascube/ansiblecube/raw/master/oneClickDeploy.sh --no-check-certificate```
  - Modify rights ```chmod +x oneClickDeploy.sh```
  
 #### On the device directly
  - Plug a keyboard on your device
+ - Login with SSH : Login : `root`, default password is 1234 for Armbian and pi / raspberry for Raspberry 
  - If needed, type this command to change the mapping of your keyboard `loadkeys fr`
  - Download the bash script ```wget https://github.com/ideascube/ansiblecube/raw/master/oneClickDeploy.sh --no-check-certificate```
  - Modify rights ```chmod +x oneClickDeploy.sh```
