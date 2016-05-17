@@ -8,7 +8,7 @@
     - logs
 
     - role: zim_install
-      zim_name: "wikipedia.en gutenberg.en wiktionary.en"
+      zim_name: "wikipedia.en gutenberg.en wiktionary.en tedbusiness.en teddesign.en tedentertainment.en tedglobalissues.en tedscience.en tedtechnology.en"
 
     - role: kalite
       version: "0.15.0"
