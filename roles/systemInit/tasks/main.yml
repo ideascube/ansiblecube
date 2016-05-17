@@ -62,6 +62,7 @@
    - hdparm
    - ncurses-term
    - screen
+   - sunxi-tools
 
 - name: List services to restart (1/2)
   shell: checkrestart | grep ^service | awk '{print $2}'

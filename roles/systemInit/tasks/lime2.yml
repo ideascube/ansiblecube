@@ -2,7 +2,7 @@
   template: src=lime2.fex.j2 dest=/boot/bin/lime2.fex
 
 - name: Build binary from fex
-  shell: /usr/local/bin/sunxi-fexc lime2.fex > lime2.bin chdir=/boot/bin/
+  shell: sunxi-fexc lime2.fex > lime2.bin chdir=/boot/bin/
 
 - name: Copy patch U-Boot package
   get_url: url={{filer_bsf}}/linux-u-boot-lime2_4.3_armhf.deb 
