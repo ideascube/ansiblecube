@@ -2,7 +2,7 @@
 _The aims of this project is to automatically install and configure a device using the [Ideascube project](http://github.com/ideascube/ideascube/)._
 
 ## How ansible works
-Ansible has been choosen to push and pull content, file config and softawre from and to the ideascube box which can be an AMD64 server or an ARM server.
+Ansible has been choosen to push and pull content, file config and software from and to the ideascube box which can be an AMD64 server or an ARM server.
 
 Ansible is originaly design to push content (from a master) to several slaves. But you can use it the other way around where the slaves are able to pull content from a master. 
 
@@ -32,48 +32,59 @@ If you need to adapt some settings for your own project, you'll have to create a
 
 Please have a look at others configurations files to see how it has been done. When you know what to do, simply send us a pull request with your new file. 
 
-## Set up your hardware 
-### ARM
-If you own an Olimex Lime 2 or Raspberry Pi 2/3, the best is to give a try to Ansible ! 
- - Download an [Armbian image](http://www.armbian.com/olimex-lime-2/) (Choose "Legacy" / "Jessie") for Olimex or a [Raspbian image](https://www.raspberrypi.org/downloads/raspbian/) for Raspberry Pi
- - Unzip image and burn it on an SD Card (class 10!)
- - ```dd bs=1M if=filename.img of=/dev/sdx```
- - Insert SD card on the board, first start is longer (update, SSH keys init, etc.)
- - Login woth SSH : Default password is 1234 for Armbian and pi / raspberry for Raspberry 
-
-### AMD64
- - [Download the last Debian jessie](http://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-8.2.0-amd64-lxde-desktop.iso), with or without graphical intercace : 
- - Set up your serveur as you will do for any server you own
- - When asked, create a root user and an ideascube user (ideascube user password will be automatically overrided during ansible deployment)
-
-## On your computer, clone AnsibleCube
+## On your computer, clone AnsibleCube
 ### Methode 1 : Fork and clone 
  - Fork the repository and clone it on your comptuter to be able to update roles 
  - Open the bash script ```oneClickDeploy.sh``` and change the github repo to your one
  - Copy from an existing file ```update_``` and rename this way ```update_NAME_OF_IDEASCUBE_PROJECT.yml``` with the same name of your Ideascube conf file found in ideascube git hub repo located in ```ideascube/conf/```
  - Add the role you would like to install, you can find full exemple in [FULL_PLAYBOOK.md](https://github.com/ideascube/ansiblecube/blob/master/FULL_PLAYBOOK.md)
  - Save, commit and push modification to your repository ```git add . &&  git commit -a && git push origin master```
- At this stage you have a new configuration file. This file is going to lunch several roles that are going to be processed on your device
+ At this stage you have a new configuration file. This file is going to launch several roles that are going to be processed on your device
 
 ### Methode 2 : Send me a pull request
 From the github web interface you can also create a new configuration file and send me a pull request 
 
+## Set up your hardware 
+### Case 1 : ARM
+If you own an Olimex Lime 2 or Raspberry Pi 2/3, the best is to give a try to Ansible ! 
+ - Download an [Armbian image](http://www.armbian.com/olimex-lime-2/) (Choose "Legacy" / "Jessie") for Olimex or a [Raspbian image](https://www.raspberrypi.org/downloads/raspbian/) for Raspberry Pi
+ - Unzip image and burn it on an SD Card (class 10!)
+  - **Linux** : ```sudo dd bs=1M if=filename.raw of=/dev/sdx && sync```
+  - **Windows** : Use [Rufus](https://rufus.akeo.ie/) and fellow the instrcutions 
+ - Insert SD card on the board, first start is longer (update, SSH keys init, etc.)
+
+### Case 2 : AMD64
+ - [Download the last Debian jessie](http://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-8.2.0-amd64-lxde-desktop.iso), with or without graphical interface : 
+ - Set up your serveur as you will do for any server you own
+ - When asked, create a root user and an ideascube user (ideascube user password will be automatically overrided during ansible deployment)
+
 ## Prepare the deployment !
 ### Download the oneClickDeploy script
-Now you are ready to start deployment on the targeted device, to do so, SSH throught your Ideascube box. 
+Now you are ready to start deployment on the targeted device
+#### With SSH
  - ```ssh ideascube@192.168.1.xxx```
- - Download the bash script ```wget https://github.com/ideascube/ansiblecube/raw/master/oneClickDeploy.sh```
+ - Login with SSH : Login : `root`, default password is 1234 for Armbian and pi / raspberry for Raspberry 
+ - Download the bash script : ```wget https://github.com/ideascube/ansiblecube/raw/master/oneClickDeploy.sh --no-check-certificate```
  - Modify rights ```chmod +x oneClickDeploy.sh```
  
- ### Set the right settings
+#### On the device directly
+ - Plug a keyboard on your device
+ - Login : `root`, default password is 1234 for Armbian and pi / raspberry for Raspberry 
+ - If needed, type this command to change the mapping of your keyboard `loadkeys fr`
+ - Download the bash script : ```wget https://github.com/ideascube/ansiblecube/raw/master/oneClickDeploy.sh --no-check-certificate```
+ - Modify rights ```chmod +x oneClickDeploy.sh```
+
+### Launch the deployment 
+	./oneClickDeploy.sh sync_log=True ideascube_id=kb_mooc_cog timezone=Europe/Paris
+ 
+#### Set the right settings
 This script takes 4 arguments : 
 
- - ```sync_log```: ```True``` ou ```False``` This setting send metrics to the central server. You'll need the password server to connect throught SSH. If you don't have it, set it to ```False```
+ - ```sync_log```: ```True``` ou ```False``` This setting send metrics to the central server. You'll need the password server to connect through SSH. If you don't have it, set it to ```False```
  - ```ideascube_id``` : ex ```kb_mooc_cog``` is the name of the Ideascube project, this name MUST be the same as the ideascube name stored in ```ideascube/conf/``` ideascube github repository
  - ```timezone``` : ex ```Africa/Kinsasha``` is the time zone (available in /usr/share/zoneinfo/) to set to the server or check at https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
  
-### Lunch the deployment 
-	./oneClickDeploy.sh sync_log=True ideascube_id=kb_mooc_cog timezone=Europe/Paris
+**WARNING** : If you are running this command behind a firewall, be sure the NTP protocol is open for outgoing connection, if not, set mannualy the date on your system : `date -s 20160513`
 
 ## Keep your system up to date ! 
 Now you have an ideascube system ready to work, great !
@@ -86,6 +97,6 @@ exemple of ```ansiblePullUpdate``` : ```/usr/local/bin/ansible-pull -d /var/lib/
 
 In this exemple, you'll get quickly that everything will have to be configured in the ```update_NAME_OF_IDEASCUBE_PROJECT.yml```
 
-To do so, you'll have to add and remove roles, for exemple, the role ```logs``` has been written to send logs from the Ideascube box to the central server each time the device gets on Internet. 
+To do so, you'll have to add and remove roles, for example, the role ```logs``` has been written to send logs from the Ideascube box to the central server each time the device gets on Internet. 
 
-If you want to lunch a particular update, you'll have to create or adapt an Ansible role. Look at the one already build in the folder ```upgradeKb``` or ```ideascube```
+If you want to launch a particular update, you'll have to create or adapt an Ansible role. Look at the one already build in the folder ```upgradeKb``` or ```ideascube```
