@@ -51,6 +51,10 @@
   file: path=/media/hdd/{{ mook_name }}/static/tmp state=directory mode=0755 owner={{ username }} group={{ username }}
   when: st.stat.exists == False
 
+- name: Create Symbolic link
+  file: src=/media/hdd/{{ mook_name }}/static dest={{ mook_path }}/{{ mook_name }}/static state=link
+  when: st.stat.exists == False
+
 ####
 # FRONT END CONFIGURATION
 ####

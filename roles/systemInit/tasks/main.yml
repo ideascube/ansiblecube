@@ -1,6 +1,10 @@
 ---
 - include_vars: group_vars/{{ ansible_architecture }}.yml
 
+- name: Force ARM device to switch to 100Mbits (Olimex Lime2 Issue)
+  command: mii-tool -F 100baseTx-FD eth0
+  when: ansible_architecture == "armv7l"
+
 - name: Set date and time 
   set_fact: date="{{ ansible_date_time["date"]}}" time="{{ ansible_date_time["time"]}}"
 
@@ -56,7 +60,6 @@
    - unzip
    - bash-completion
    - aptitude
-   - sslh
    - ntpdate
    - fake-hwclock
    - hdparm
@@ -101,10 +104,6 @@
 
 - name: Add locale en_GB
   locale_gen: name=en_GB.UTF-8 state=present
-
-- name: Copy SSHL config file
-  copy: src=sslh dest=/etc/default/sslh owner=root group=root mode=0644 backup=yes
-  notify: update sslh
 
 - name: Copy a blank rc.local
   copy: src=rc.local dest=/etc/rc.local owner=root group=root mode=0644 backup=yes
