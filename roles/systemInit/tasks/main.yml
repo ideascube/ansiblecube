@@ -1,6 +1,10 @@
 ---
 - include_vars: group_vars/{{ ansible_architecture }}.yml
 
+- name: Force ARM device to switch to 100Mbits (Olimex Lime2 Issue)
+  command: mii-tool -F 100baseTx-FD eth0
+  when: ansible_architecture == "armv7l"
+
 - name: Set date and time 
   set_fact: date="{{ ansible_date_time["date"]}}" time="{{ ansible_date_time["time"]}}"
 
