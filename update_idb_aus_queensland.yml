@@ -1,0 +1,16 @@
+---
+# Ansible playbook for Queensland, Australia
+
+- hosts: localhost
+
+  roles:
+
+    - systemInit
+    - ideascube
+    - logs
+
+
+#  post_tasks:
+#    - name: Job done, let's shutdown now.
+#      command: shutdown -h now
+#      when: ideascube_version.stdout == ""
