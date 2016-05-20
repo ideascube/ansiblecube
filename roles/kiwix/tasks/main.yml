@@ -5,7 +5,7 @@
   get_url: url={{filer_bsf}}/kiwix-serve-{{ ansible_architecture }} dest=/usr/local/bin/kiwix-serve mode=755 timeout=20
 
 - name: Create a kiwix directory in ideascube folder
-  file: path={{zim_path}}/ state=directory
+  file: path={{zim_path}}/ owner={{username}} group={{username}} state=directory
 
 - name: Setup startup file
   template: src=kiwix-server.service.j2 dest=/etc/systemd/system/kiwix-server.service
