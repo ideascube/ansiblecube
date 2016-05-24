@@ -7,9 +7,11 @@
     # This role automatically send logs to central server each time the device gets an Internet connection 
     - logs
 
-    - role: zim_install
-      zim_name: "wikipedia.en gutenberg.en wiktionary.en"
+    - tinc-static
 
-    - role: kalite
-      version: "0.15.0"
-      lang: "en"
+    # - role: zim_install
+    #   zim_name: "wikipedia.en gutenberg.en wiktionary.en"
+
+    # - role: kalite
+    #   version: "0.15.0"
+    #   lang: "en"
