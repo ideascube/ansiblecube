@@ -5,4 +5,4 @@ hotspot_name: ideasbox
 wpa_pass: idb258456
 
 use_hdd: False
-sync_log: True
+manage_by_bsf: True

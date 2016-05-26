@@ -5,7 +5,7 @@ hotspot_name: koombook
 wpa_pass: KBcampus
 
 use_hdd: True
-sync_log: True
+manage_by_bsf: True
 
 #Hardware battery for Olimex Lime2
 battery_capacity: 7800
