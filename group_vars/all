@@ -13,8 +13,9 @@ central_server: ansible@37.187.151.52
 filer_bsf: http://filer.bsf-intranet.org
 timezone: "Europe/Paris"
 zim_path: /var/ideascube/kiwix
-sync_log: "{{ send_to_central_server }}"
+manage_by_bsf: "{{ send_to_central_server }}"
 synology: "192.168.1.2"
+version: 0
 
 #Apps path
 mook_path: /home/{{ username }}
