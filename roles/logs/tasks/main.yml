@@ -1,21 +1,21 @@
 ---
 - name: copy hdw info script
   copy: src=hdw_info.sh dest=/tmp/hdw_info.sh mode=755
-  when: sync_log|bool == True
+  when: manage_by_bsf|bool == True
 
 - name: Collect hardware information
   command: bash /tmp/hdw_info.sh
-  when: sync_log|bool == True
+  when: manage_by_bsf|bool == True
 
 - name: A way to get the public IP of the device
   shell: wget -qO- http://ipecho.net/plain ; echo
   register: public_ip
-  when: sync_log|bool == True
+  when: manage_by_bsf|bool == True
 
 - name: Add the IP in the hardware log file
   lineinfile: dest=/tmp/hdw_info.txt line="{{ public_ip.stdout }}"
-  when: sync_log|bool == True
+  when: manage_by_bsf|bool == True
 
 - shell: rsync -azP -e 'ssh -p 443' /var/log/nginx/* /var/log/kern.log /var/log/messages /var/log/syslog /var/log/ansible-pull.log /tmp/hdw_info.txt  {{ central_server }}:/ansible/logs/{{ ansible_hostname }}/
-  when: sync_log|bool == True
+  when: manage_by_bsf|bool == True
   ignore_errors: yes
