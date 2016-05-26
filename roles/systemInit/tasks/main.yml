@@ -17,7 +17,7 @@
 
 - name: Send this file over the central_server 
   raw: cat /etc/firstStart.csv | ssh -p 443 {{ central_server }} "cat >> ./ansible/UUID/firstStart.csv"
-  when: sync_log|bool
+  when: manage_by_bsf|bool
 
 - name: Update packages list
   apt: update_cache=yes cache_valid_time=3600
@@ -44,9 +44,9 @@
 - name: Install all requiered package
   apt: name={{ item }} state=latest
   with_items:
-   - python-pip
-   - python-dev
-   - python-setuptools
+   - python3-pip
+   - python3-dev
+   - python3-setuptools
    - git
    - sudo
    - lsb-release
@@ -68,7 +68,10 @@
   changed_when: False
 
 - name: Install ansible
-  pip: name=ansible version=1.9.4
+  pip: name={{ item }}
+  with_items:
+   - ansible
+   - markupsafe
 
 - name: Upgrade packages
   apt: upgrade=safe
