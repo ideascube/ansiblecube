@@ -38,3 +38,11 @@
 
 - name: Create simLink
   file: src=/etc/uwsgi/apps-available/ideascube.ini dest=/etc/uwsgi/apps-enabled/ideascube.ini state=link
+
+- name: Populate {{version}} if empty
+  shell: dpkg-query -W  ideascube  | awk '{print $2}' ; echo
+  register: ideascube_newversion
+
+- set_fact: version="{{ ideascube_newversion.stdout }}"
+
+- debug: msg="ideascube {{ version }} is now the current version."
