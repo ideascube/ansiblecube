@@ -7,11 +7,11 @@
     - set_custom_fact
 
     - role: tinc-static
-      when: sync_log|bool == True
+      when: manage_by_bsf|bool == True
 
     - role: kalite 
-      version: "{{ ansible_local.device_list.[device_name].kalite_version }}"
-      lang: "{{ ansible_local.device_list.[device_name].kalite_lang }}"
+      version: "{{ ansible_local.device_list[device_name].kalite_version }}"
+      lang: "{{ ansible_local.device_list[device_name].kalite_lang }}"
       when: ansible_local.device_list[device_name].kalite is defined
 
     - role: mongodb
@@ -19,22 +19,22 @@
 
     - role: mook
       mook_name: bsfcampus
-      version: "{{ ansible_local.device_list.[device_name].bsfcampus_version }}"
+      version: "{{ ansible_local.device_list[device_name].bsfcampus_version }}"
       when: ansible_local.device_list[device_name].bsfcampus is defined
 
     - role: mook
       mook_name: koombookedu
-      version: "{{ ansible_local.device_list.[device_name].koombookedu_version }}"
+      version: "{{ ansible_local.device_list[device_name].koombookedu_version }}"
       when: ansible_local.device_list[device_name].koombookedu is defined
 
     - role: zim_install
-      zim_name: "{{ ansible_local.device_list.[device_name].zim_install_name }}"
+      zim_name: "{{ ansible_local.device_list[device_name].zim_install_name }}"
       when: ansible_local.device_list[device_name].zim_install is defined
 
     - role: ideascube
-      version: "{{ ansible_local.device_list.[device_name].ideascube_version }}"
+      version: "{{ ansible_local.device_list[device_name].ideascube_version }}"
       when: ansible_local.device_list[device_name].ideascube is defined
 
     - role: idc_import
-      content_name: "{{ ansible_local.device_list.[device_name].idc_import_content_name }}"
+      content_name: "{{ ansible_local.device_list[device_name].idc_import_content_name }}"
       when: ansible_local.device_list[device_name].idc_import is defined
