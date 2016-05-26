@@ -2,7 +2,7 @@
 - include: ../../../pre_install.yml task=kiwix
 
 - include: kiwix.yml
-  when: ansible_local.installed_software.software.kiwix < "{{ version }}"
+  when: ansible_local.installed_software.software.kiwix|int == 0
 
 - include: ../../../post_install.yml task=kiwix version="{{ version }}"
-  when: ansible_local.installed_software.software.kiwix < "{{ version }}"
+  when: ansible_local.installed_software.software.kiwix|int == 0
