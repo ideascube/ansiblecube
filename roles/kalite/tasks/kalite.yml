@@ -11,16 +11,16 @@
 
 - name: Remove existing content
   file: path=/home/{{username}}/.kalite/content state=absent
-  when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and ansible_mounts.device = "/dev/sda1"
+  when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and ansible_mounts.device == "/dev/sda1"
 
 - file: src=/media/hdd/khanVideos/content/ 
     dest=/home/{{username}}/.kalite/content state=link force=yes
-  when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and ansible_mounts.device = "/dev/sda1"
+  when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and ansible_mounts.device == "/dev/sda1"
 
 - name: Fix rights
   file: path=/media/hdd/khanVideos/content/ state=directory 
     owner={{ username }} group={{ username }} recurse=yes
-  when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and ansible_mounts.device = "/dev/sda1"
+  when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and ansible_mounts.device == "/dev/sda1"
 
 - name: Copy nginx vhost
   template: src=kalite.vhost.j2 dest=/etc/nginx/sites-available/kalite
