@@ -11,7 +11,7 @@
     dest=/etc/ansible/facts.d/device_list.fact
     mode=0666
 
-- set_fact: device_name={{ ansible_hostname | regex_replace('_\d+', '') }}
+- set_fact: device_name={{ ansible_hostname | regex_replace('-\d+', '') }}
 
 - name: reload ansible_local
   setup: filter=ansible_local
