@@ -27,7 +27,7 @@
 
 - name: Send this file over the central_server 
   raw: cat /etc/firstStart.csv | ssh -p 443 {{ central_server }} "cat >> ./ansible/UUID/firstStart.csv"
-  when: sync_log|bool
+  when: manage_by_bsf|bool
 
 - name: Adding name to the hosts file
   lineinfile: dest=/etc/hosts regexp='^{{ hotspotip }}' insertafter='{{ hotspotip }}' 
