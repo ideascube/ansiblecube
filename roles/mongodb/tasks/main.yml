@@ -2,7 +2,7 @@
 - include: ../../../pre_install.yml task=mongodb
 
 - include: mongodb_{{ ansible_architecture }}.yml
-  when: ansible_local.installed_software.software.mongodb < "{{ version }}"
+  #when: ansible_local.installed_software.software.mongodb < "{{ version }}"
 
-- include: ../../../post_install.yml task=mongodb version="{{ version }}"
-  when: ansible_local.installed_software.software.mongodb < "{{ version }}"
+- include: ../../../post_install.yml task=mongodb version=""
+  #when: ansible_local.installed_software.software.mongodb < "{{ version }}"
