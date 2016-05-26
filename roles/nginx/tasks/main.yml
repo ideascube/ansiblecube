@@ -1,6 +1,6 @@
 ---
 - name: Install nginx web server
-  apt: pkg=nginx state=installed update_cache=true force=yes
+  apt: pkg=nginx state=installed force=yes
 
 - name: Remove default nginx vhost config file (if configured).
   file:
