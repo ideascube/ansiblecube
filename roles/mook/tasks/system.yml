@@ -4,11 +4,9 @@
 
 - name: Copy template for systemd mook-sync
   template: src=mook-sync.service.j2 dest=/etc/systemd/system/mook-sync-{{ mook_name }}.service
-  when: mook.changed
 
 - name: Enable service 
   service: name=mook-sync-{{ mook_name }}.service enabled=yes
-  when: mook.changed
 
 ####
 # NGINX CONFIGURATION
@@ -17,20 +15,18 @@
 - name: Copy vhost
   template: src=vhost.j2 dest=/etc/nginx/sites-available/{{ mook_name }}
   register: vhost
-  when: mook.changed
 
 - name: Copy api vhost
   template: src=vhost-api.j2 dest=/etc/nginx/sites-available/{{ mook_name }}-api
-  when: mook.changed
   register: vhost
 
 - name: bsf campus enable Virtual host
   file: src=/etc/nginx/sites-available/{{ mook_name }} dest=/etc/nginx/sites-enabled/{{ mook_name }} state=link
-  when: vhost.changed and mook.changed
+  when: vhost.changed
 
 - name: bsf campus api enable Virtual host
   file: src=/etc/nginx/sites-available/{{ mook_name }}-api dest=/etc/nginx/sites-enabled/{{ mook_name }}-api state=link
-  when: vhost.changed and mook.changed
+  when: vhost.changed
   notify: restart nginx
 
 ####
@@ -39,13 +35,10 @@
 
 - name: Copy uwsgi config files
   template: src=uwsgi-api.ini.j2 dest={{ mook_path }}/{{ mook_name }}/api/uwsgi-api.ini
-  when: mook.changed
 
 - name: Symbolic link for wsgi ini file
   file: src={{ mook_path }}/{{ mook_name }}/api/uwsgi-api.ini dest=/etc/uwsgi/apps-enabled/uwsgi-{{ mook_name }}-api.ini state=link
   notify: restart uwsgi
-  when: mook.changed
 
 - name: restart mook-sync service
   service: name=mook-sync-{{ mook_name }} state=restarted
-  when: mook.changed
