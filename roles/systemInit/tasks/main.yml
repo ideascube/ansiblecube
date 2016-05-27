@@ -61,6 +61,7 @@
    - hdparm
    - ncurses-term
    - sunxi-tools
+   - libffi-dev
 
 - name: List services to restart (1/2)
   shell: checkrestart | grep ^service | awk '{print $2}'
@@ -68,7 +69,7 @@
   changed_when: False
 
 - name: Install ansible
-  pip: name={{ item }}
+  pip: name={{ item }} executable=pip3
   with_items:
    - ansible
    - markupsafe
