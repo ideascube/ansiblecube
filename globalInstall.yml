@@ -12,12 +12,12 @@
     - systemInit
     - nginx
     - uwsgi
-    - ideascube
-    - kiwix
+    - { role: ideascube, version: "0" }
+    - { role: kiwix, version: "1" }
 
     - role: tinc-static
       when: manage_by_bsf|bool == True
 
-  post_tasks:
-    - name: Global install completed, let's reboot!
-      command: shutdown -r now "Ansible updates over!"
+  # post_tasks:
+  #   - name: Global install completed, let's reboot!
+  #     command: shutdown -r now "Ansible updates over!"
