@@ -13,10 +13,21 @@
 - name: Copy nginx vhost
   template: src=nginx.vhost.j2 dest=/etc/nginx/sites-available/kiwix
 
+- name: Check if Kiwix catalog exist
+  stat: path=/var/cache/ideascube/catalog/remotes/Kiwix.yml
+  when: ansible_architecture == "x86_64"
+  register: st
+
+- name: Check if Kiwix catalog exist
+  stat: path=/var/ideascube/catalog/remotes/Kiwix.yml
+  when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l")
+  register: st
+
 - name: Install Kiwix catalog
   become: yes
   become_user: ideascube
   command: ideascube catalog remotes add "Kiwix" "Kiwix ZIM content" http://catalog.ideascube.org/kiwix.yml
+  when: st.stat.isreg is defined and st.stat.isreg
 
 - name: Nginx enable Virtual host
   file: src=/etc/nginx/sites-available/kiwix dest=/etc/nginx/sites-enabled/kiwix state=link
