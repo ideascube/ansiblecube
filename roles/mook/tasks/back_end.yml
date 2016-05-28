@@ -5,7 +5,7 @@
 - name: Install specific packages
   apt: name={{ item }} state=latest
   with_items:
-    - python-pip
+    - python-pip3
     - python-dev
     - python-pkg-resources
     - unzip
@@ -14,10 +14,10 @@
     - uwsgi-plugin-python
 
 - name: Install virtualenv
-  pip: name=virtualenv
+  pip: name=virtualenv executable=pip3
 
 - name: Update setuptools
-  pip: name=setuptools extra_args="-U"
+  pip: name=setuptools extra_args="-U" executable=pip3
 
 - name: Create a static dir if we are using an external hard drive
   file: path=/media/hdd/{{ mook_name }}/static/tmp state=directory mode=0755 owner={{ username }} group={{ username }}
@@ -32,7 +32,7 @@
   when: ansible_architecture == "x86_64"
 
 - name: Install python requierment
-  pip: requirements=requirements.txt chdir={{ mook_path }}/{{ mook_name }}/api virtualenv_command=/usr/local/bin/virtualenv virtualenv={{ mook_path }}/{{ mook_name }}/api/env
+  pip: requirements=requirements.txt chdir={{ mook_path }}/{{ mook_name }}/api virtualenv_command=/usr/local/bin/virtualenv virtualenv={{ mook_path }}/{{ mook_name }}/api/env executable=pip3
   
 - name: Copy settings_local config files
   template: src=settings_local.py.j2 dest={{ mook_path }}/{{ mook_name }}/api/settings_local.py
