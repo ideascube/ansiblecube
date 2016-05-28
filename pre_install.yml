@@ -5,3 +5,6 @@
     option={{ task }}
     value=0
   when: ansible_local.installed_software.software.{{task}} is undefined
+
+- name: reload ansible_local
+  setup: filter=ansible_local
