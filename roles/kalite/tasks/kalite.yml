@@ -2,7 +2,7 @@
 - include_vars: group_vars/{{ ansible_architecture }}.yml
 
 - name: Install kalite
-  pip: name=ka-lite version={{version}}
+  pip: name=ka-lite version={{version}} executable=pip3
 
 - name: Initialize ka-lite
   become: yes
