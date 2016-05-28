@@ -3,6 +3,3 @@
 hostname: koombook.lan
 hotspot_name: koombook
 wpa_pass: KBcampus
-
-use_hdd: True
-manage_by_bsf: True

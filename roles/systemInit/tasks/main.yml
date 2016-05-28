@@ -8,6 +8,12 @@
   set_fact: ideascube_device_name="{{ ideascube_project_name }}_{{ 1000 | random }}" 
     UUID="{{ ansible_default_ipv4["macaddress"] | hash('md5') }}"
 
+- name: Register if the device is managed by BSF or notman
+  ini_file: dest=/etc/ansible/facts.d/installed_software.fact
+    section=management
+    option=managed_by_bsf
+    value={{ managed_by_bsf }}
+
 - name: A way to get the public IP of the device
   shell: wget -qO- http://ipecho.net/plain ; echo
   register: public_ip
@@ -17,7 +23,7 @@
 
 - name: Send this file over the central_server 
   raw: cat /etc/firstStart.csv | ssh -p 443 {{ central_server }} "cat >> ./ansible/UUID/firstStart.csv"
-  when: manage_by_bsf|bool
+  when: managed_by_bsf|bool
 
 - name: Update packages list
   apt: update_cache=yes cache_valid_time=3600

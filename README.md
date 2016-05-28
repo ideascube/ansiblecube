@@ -68,12 +68,12 @@ Now you are ready to start deployment on the targeted device, to do so, SSH thro
  ### Set the right settings
 This script takes 4 arguments : 
 
- - ```manage_by_bsf```: ```True``` ou ```False``` This setting send metrics to the central server. You'll need the password server to connect throught SSH. If you don't have it, set it to ```False```
+ - ```managed_by_bsf```: ```True``` ou ```False``` This setting send metrics to the central server. You'll need the password server to connect throught SSH. If you don't have it, set it to ```False```
  - ```ideascube_project_name``` : ex ```kb_mooc_cog``` is the name of the Ideascube project, this name MUST be the same as the ideascube name stored in ```ideascube/conf/``` ideascube github repository
  - ```timezone``` : ex ```Africa/Kinsasha``` is the time zone (available in /usr/share/zoneinfo/) to set to the server or check at https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
  
 ### Lunch the deployment 
-	./oneClickDeploy.sh manage_by_bsf=True ideascube_project_name=kb_mooc_cog timezone=Europe/Paris
+	./oneClickDeploy.sh managed_by_bsf=True ideascube_project_name=kb_mooc_cog timezone=Europe/Paris
 
 ## Keep your system up to date ! 
 Now you have an ideascube system ready to work, great !

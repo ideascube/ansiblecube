@@ -11,5 +11,5 @@
 
 - name: Push file to central_server
   shell: echo "{{ date }},{{ time }},{{ ansible_hostname }},{{ task }},{{ version }}" | ssh -p 443 {{ central_server }} "cat >> ./ansible/installed_software/sofware_list.csv"
-  when: manage_by_bsf|bool == True
+  when: ansible_local.installed_software.managment.managed_by_bsf|bool == True
   ignore_errors: yes

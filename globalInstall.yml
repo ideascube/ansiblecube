@@ -12,11 +12,11 @@
     - systemInit
     - nginx
     - uwsgi
-    - { role: ideascube, version: "0" }
+    - { role: ideascube, version: "0.9.11" }
     - { role: kiwix, version: "1" }
 
     - role: tinc-static
-      when: manage_by_bsf|bool == True
+      when: managed_by_bsf|bool == True
 
   # post_tasks:
   #   - name: Global install completed, let's reboot!
