@@ -55,12 +55,6 @@
   file: path=/etc/apt/apt.conf.d/9999IDEASCUBEISABADBADBOY state=absent
   when: st.stat.exists == False
 
-- name: Remove linsting on 443 because the port is alredy used by sslh
-  lineinfile: dest=/etc/nginx/sites-available/ideascube regexp='443' state=absent
-  notify: restart nginx
-  when: st.stat.exists == False
-  ignore_errors: yes
-
 - name: Copy startup script
   copy: src=hostapd dest=/etc/systemd/system/hostapd.service owner=root group=root mode=664
   when: st.stat.exists == False
