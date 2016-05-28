@@ -2,7 +2,7 @@
 - include_vars: group_vars/{{ ansible_architecture }}.yml
 
 - name: Remove uwsgi installed using pip (bug #17)
-  pip: name=uwsgi state=absent
+  pip: name=uwsgi state=absent executable=pip3
 
 - name: Move uwsgi_params to the new storage folder
   command: mv -f /var/ideascube/uwsgi_params /media/hdd/ideascube/storage
