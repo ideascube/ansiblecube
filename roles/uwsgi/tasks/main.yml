@@ -1,6 +1,6 @@
 ---
 - name: Remove uwsgi installed using pip (bug #17)
-  pip: name=uwsgi state=absent
+  pip: name=uwsgi state=absent executable=pip3
 
 - name: Install uwsgi
   apt: name={{ item }} state=present
