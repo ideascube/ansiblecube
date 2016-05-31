@@ -12,7 +12,7 @@
     - systemInit
     - nginx
     - uwsgi
-    - { role: ideascube, version: "0" }
+    - ideascube
     - kiwix
 
     - role: tinc-static
