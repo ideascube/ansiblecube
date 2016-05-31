@@ -75,10 +75,10 @@
   changed_when: False
 
 - name: Install ansible
-  pip: name={{ item }} executable=pip3
-  with_items:
-   - ansible version=2.0
-   - markupsafe
+  pip: name=ansible version=2.0 executable=pip3
+
+- name: Install markupsafe
+  pip: name=markupsafe
 
 - name: Upgrade packages
   apt: upgrade=safe
