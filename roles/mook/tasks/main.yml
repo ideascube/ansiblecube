@@ -34,10 +34,10 @@
 
 # Call those roles if the Mook has to be upgraded 
 
-- include: upgrade_mook_{{ version }}.yml
-  when: ansible_local.installed_software.software[mook_name] < "{{ version }}"
+- include: upgrade_mook_{{ mook_version }}.yml
+  when: ansible_local.installed_software.software[mook_name] < "{{ mook_version }}"
     and ansible_local.installed_software.software[mook_name]|int != 0
 
-- include: ../../../post_install.yml task=mook_name task_version="{{ version }}"
-  when: ansible_local.installed_software.software[mook_name] < "{{ version }}"
+- include: ../../../post_install.yml task=mook_name task_version="{{ mook_version }}"
+  when: ansible_local.installed_software.software[mook_name] < "{{ mook_version }}"
     or ansible_local.installed_software.software[mook_name] == 0

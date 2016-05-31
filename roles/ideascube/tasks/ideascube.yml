@@ -43,6 +43,6 @@
   shell: dpkg-query -W  ideascube  | awk '{print $2}' ; echo
   register: ideascube_newversion
 
-- set_fact: idc_version="{{ ideascube_newversion.stdout }}"
+- set_fact: ideascube_version="{{ ideascube_newversion.stdout }}"
 
-- debug: msg="ideascube {{ idc_version }} is now the current version."
+- debug: msg="ideascube {{ ideascube_version }} is now the current version."
