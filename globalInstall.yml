@@ -4,8 +4,8 @@
 # localhost is used when ansible-pull is used to play the playbook
 # SystemPushInstall is used in PUSH mode and you have to set the device's IP in "hosts" file 
 
-#- hosts: localhost
-- hosts: SystemPushInstall
+- hosts: localhost
+#- hosts: SystemPushInstall
 
   roles:
     - set_custom_fact
