@@ -12,8 +12,8 @@
     - systemInit
     - nginx
     - uwsgi
-    - { role: ideascube, version: "0.9.11" }
-    - { role: kiwix, version: "1" }
+    - { role: ideascube, version: "0" }
+    - kiwix
 
     - role: tinc-static
       when: managed_by_bsf|bool == True
