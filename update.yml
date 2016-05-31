@@ -5,37 +5,45 @@
     - set_custom_fact
 
     - role: logs
-      when: ansible_local.installed_software.managment.managed_by_bsf|bool == True
+      when: ansible_local.installed_software.management.managed_by_bsf|bool == True
 
     - role: tinc-static
-      when: ansible_local.installed_software.managment.managed_by_bsf|bool == True
+      when: ansible_local.installed_software.management.managed_by_bsf|bool == True
 
     - role: kalite 
-      version: "{{ ansible_local.device_list[device_name].kalite_version }}"
+      kalite_version: "{{ ansible_local.device_list[device_name].kalite_version }}"
       lang: "{{ ansible_local.device_list[device_name].kalite_lang }}"
-      when: ansible_local.device_list[device_name].kalite is defined
+      when: ansible_local.device_list[device_name].kalite is defined 
+        and ansible_local.device_list[device_name].kalite|bool == True
 
     - role: mongodb
+      mongodb_version: "{{ ansible_local.device_list[device_name].mongodb_version }}"
       when: ansible_local.device_list[device_name].mongodb is defined
+        and ansible_local.device_list[device_name].mongodb|bool == True
 
     - role: mook
       mook_name: bsfcampus
-      version: "{{ ansible_local.device_list[device_name].bsfcampus_version }}"
+      mook_version: "{{ ansible_local.device_list[device_name].bsfcampus_version }}"
       when: ansible_local.device_list[device_name].bsfcampus is defined
+        and ansible_local.device_list[device_name].bsfcampus|bool == True
 
     - role: mook
       mook_name: koombookedu
-      version: "{{ ansible_local.device_list[device_name].koombookedu_version }}"
+      mook_version: "{{ ansible_local.device_list[device_name].koombookedu_version }}"
       when: ansible_local.device_list[device_name].koombookedu is defined
+        and ansible_local.device_list[device_name].koombookedu|bool == True
 
     - role: zim_install
       zim_name: "{{ ansible_local.device_list[device_name].zim_install_name }}"
       when: ansible_local.device_list[device_name].zim_install is defined
+        and ansible_local.device_list[device_name].zim_install|bool == True
 
     - role: ideascube
-      version: "{{ ansible_local.device_list[device_name].ideascube_version }}"
+      ideascube_version: "{{ ansible_local.device_list[device_name].ideascube_version }}"
       when: ansible_local.device_list[device_name].ideascube is defined
+        and ansible_local.device_list[device_name].ideascube|bool == True
 
     - role: idc_import
       content_name: "{{ ansible_local.device_list[device_name].idc_import_content_name }}"
       when: ansible_local.device_list[device_name].idc_import is defined
+        and ansible_local.device_list[device_name].idc_import|bool == True
