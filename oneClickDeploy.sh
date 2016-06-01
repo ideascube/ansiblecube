@@ -41,6 +41,7 @@ else
 fi
 
 echo "[+] Install ansible..."
+sed -i -e '/^deb cdrom/d' /etc/apt/sources.list
 apt-get update
 apt-get install -y python-pip git python-dev
 pip install ansible==1.9.4 markupsafe
