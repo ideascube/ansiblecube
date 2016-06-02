@@ -66,6 +66,7 @@
    - ncurses-term
    - screen
    - sunxi-tools
+   - tree
 
 - name: List services to restart (1/2)
   shell: checkrestart | grep ^service | awk '{print $2}'
