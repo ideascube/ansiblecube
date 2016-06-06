@@ -1,5 +1,6 @@
 ---
 - hosts: localhost
+#- hosts: SystemPushInstall
 
   roles:   
     - set_custom_fact
