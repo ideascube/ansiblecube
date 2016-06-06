@@ -20,12 +20,11 @@
               insertafter=EOF
               line='CONTENT_ROOT = "/media/hdd/khanVideos/content/"'
   when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and ansible_mounts.device == "/dev/sda1"
-
-- name: Add a server name for the nginx conf
-  replace: dest=/etc/nginx/sites-enabled/kalite.conf regexp='listen 8008;' insertafter="listen 8008;" line='    server_name {{kalite_server_name}};'
  
 - name: kalite nginx conf must listen to port 80
-  replace: dest=/etc/nginx/sites-enabled/kalite.conf regexp='listen 8008;' line='listen 80;'
+  replace: dest=/etc/nginx/sites-enabled/kalite.conf 
+           regexp='listen 8008;' 
+           replace='listen 80;\n    server_name {{kalite_server_name}};'
   notify: restart nginx
 
 - name: Download Kalite language pack
