@@ -4,10 +4,11 @@
 - include: ideascube.yml
   when: ansible_local.installed_software.software.ideascube == "0"
 
-- include: upgrade_ideascube_{{ ideascube_version }}.yml
-  when: ansible_local.installed_software.software.ideascube|int < {{ ideascube_version }}
+- include: upgrade.yml
+  when: ansible_local.installed_software.software.ideascube|int < "{{ ideascube_version }}"
     and ansible_local.installed_software.software.ideascube != "0"
+  tags: "ansible_local.installed_software.software.ideascube"
 
 - include: ../../../post_install.yml task=ideascube task_version="{{ ideascube_version }}"
-  when: ansible_local.installed_software.software.ideascube|int < {{ ideascube_version }}
+  when: ansible_local.installed_software.software.ideascube|int < "{{ ideascube_version }}"
     or ansible_local.installed_software.software.ideascube == "0"
