@@ -15,8 +15,7 @@ timezone: "Europe/Paris"
 zim_path: /var/ideascube/kiwix
 synology: "192.168.1.2"
 kiwix_version: "0.9"
-mongodb_version: "1"
-ideascube_version: "0"
+mongodb_version: "2.4.10"
 
 #Apps path
 mook_path: /home/{{ username }}
