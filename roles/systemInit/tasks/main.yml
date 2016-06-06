@@ -68,6 +68,7 @@
    - ncurses-term
    - sunxi-tools
    - libffi-dev
+   - libssl-dev
 
 - name: List services to restart (1/2)
   shell: checkrestart | grep ^service | awk '{print $2}'
@@ -77,8 +78,8 @@
 - name: Install ansible
   pip: name=ansible version=2.0 executable=pip3
 
-- name: Install markupsafe
-  pip: name=markupsafe
+- name: Install markupsafe 
+  pip: name=markupsafe executable=pip3
 
 - name: Upgrade packages
   apt: upgrade=safe
