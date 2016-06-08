@@ -6,8 +6,8 @@
     state=directory
 
 - name: install custom fact module for device list
-  template: >
-    src=device_list.j2
+  copy: >
+    src=device_list.fact
     dest=/etc/ansible/facts.d/device_list.fact
     mode=0666
 
