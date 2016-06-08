@@ -2,7 +2,7 @@
 - include: ../../../pre_install.yml task=kalite
 
 - include: kalite.yml
-  when: ansible_local.installed_software.software.kalite < "{{ kalite_version }}"
+  when: ansible_local.installed_software.software.kalite | version_compare('{{ kalite_version }}', '<')
 
 - include: ../../../post_install.yml task=kalite task_version="{{ kalite_version }}"
-  when: ansible_local.installed_software.software.kalite < "{{ kalite_version }}"
+  when: ansible_local.installed_software.software.kalite | version_compare('{{ kalite_version }}', '<')
