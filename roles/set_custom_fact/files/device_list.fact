@@ -1,0 +1,29 @@
+{
+	"idb-eth-bokolmanyo":{
+		"kalite":{
+			"activated": "False",
+			"version": "0.16.5",
+			"language": "fr"
+		},
+		"zim_install":{
+			"activated": "False",
+			"name": ""
+		},
+		"ideascube":{
+			"activated": "True",
+			"version": "0.9.11"
+		},
+		"mongodb":{
+			"activated": "False",
+			"version": "2.4.10"
+		},
+		"bsfcampus":{
+			"activated": "False",
+			"version": "100516"
+		},
+		"koombookedu":{
+			"activated": "False",
+			"version": "100516"
+		}
+	}
+}
