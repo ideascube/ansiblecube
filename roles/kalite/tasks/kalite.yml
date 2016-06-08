@@ -3,8 +3,7 @@
 
 - name: Install requiered packages for kalite installation 
   apt: name={{ item }} state=latest
-  with_items:
-   - python-m2crypto 
+  with_items: 
    - python-pkg-resources 
    - python-psutil
   
@@ -31,3 +30,4 @@
   become: yes
   become_user: ka-lite
   command: kalite manage retrievecontentpack download {{lang}}
+  notify: 
