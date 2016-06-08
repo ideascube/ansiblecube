@@ -84,6 +84,10 @@
 - name: Upgrade packages
   apt: upgrade=safe
 
+# https://github.com/ansible/ansible/issues/16015
+- name: Fix a bug on Exception setuptools 3.6
+  command: pip3 install -U distribute
+
 - name: Adding name to the hosts file
   lineinfile: dest=/etc/hosts regexp='^{{ hotspotip }}' insertafter='{{ hotspotip }}' 
     line='{{ hotspotip }} {{ ideascube_device_name |replace("_", "-") }}.lan {{ hostname }} {{ mook_front_server_name }}' 
