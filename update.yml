@@ -5,6 +5,9 @@
   roles:   
     - set_custom_fact
 
+    - role: app_inventory
+      when: ansible_local.installed_software.management.inventory is not defined
+
     - role: logs
       when: ansible_local.installed_software.management.managed_by_bsf|bool == True
 
