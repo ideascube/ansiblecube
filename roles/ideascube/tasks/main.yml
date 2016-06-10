@@ -18,6 +18,14 @@
   file: src=/media/hdd/ideascube dest=/var/ideascube state=link
   when: ideascube_version.stdout == "" and (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and dev_sda.stat.exists == True
 
+- name: Create ideascube cache folder
+  file: path=/media/hdd/ideascube_cache state=directory owner=ideascube group=ideascube mode=755
+  when: ideascube_version.stdout == "" and (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and dev_sda.stat.exists == True
+
+- name: Create a simlink for ideascube catalog
+  file: src=/media/hdd/ideascube_cache dest=/var/cache/ideascube
+  when: ideascube_version.stdout == "" and (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and dev_sda.stat.exists == True
+
 - name: Configure the ideascube package repository
   template: src=ideascube.list.j2 dest=/etc/apt/sources.list.d/ideascube.list owner=root group=root mode=644
   when: ideascube_version.stdout == ""
