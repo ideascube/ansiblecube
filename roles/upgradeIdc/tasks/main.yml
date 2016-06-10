@@ -1,7 +1,7 @@
 ---
 - include_vars: group_vars/{{ ansible_architecture }}.yml
 
-- stat: path=/var/lib/ansible/ideascube-{{ version }}.csv
+- stat: path=/var/lib/ansible/ideascube-0.9.9.csv
   register: st
 
 - name: Remove uwsgi installed using pip (bug #17)
@@ -126,6 +126,24 @@
 - name: Copy NEW iptables rules file
   copy: src=iptables.rules dest=/etc/iptables.rules owner=root group=root mode=755 backup=yes
   when: st.stat.exists == False
+
+
+# Fix for the last Ideascube version
+
+- stat: path=/var/lib/ansible/ideascube-{{ version }}.csv
+  register: st_ideascube
+
+- name: Create ideascube cache folder
+  file: path=/var/cache/ideascube/ state=directory owner=ideascube group=ideascube mode=755
+  when: st_ideascube.stat.exists == False and use_hdd|bool
+
+- name: Create a simlink for ideascube catalog
+  file: src=/media/hdd/ideascube_cache dest=/var/cache/ideascube
+  when: st_ideascube.stat.exists == False and use_hdd|bool
+
+- name: Install the ideascube package
+  apt: name=ideascube={{ version }} state=present update_cache=yes force=yes
+  when: st_ideascube.stat.exists == False
 
 - name: Populate {{version}} if empty
   shell: dpkg-query -W  ideascube  | awk '{print $2}' ; echo
