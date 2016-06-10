@@ -14,8 +14,7 @@
       mook_name: "bsfcampus"
       version: "090316"
 
-    - role: kiwix
-      when: ansible_hostname == 'kb_bsfcampus_civ_516'
+    - kiwix
 
     - tinc-static
 
