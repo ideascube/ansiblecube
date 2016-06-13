@@ -16,5 +16,5 @@
     # - role: zim_install
     #   zim_name: "wikipedia.fr wikipedia.ar wikipedia.fa wikipedia.ku dirtybiology.fr cest-pas-sorcier.fr tedbusiness.en teddesign.en tedentertainment.en tedglobalissues.en tedscience.en tedtechnology.en wiktionary.fr wiktionary.fa wiktionary.ar wiktionary.ku wikiversity.fr wikiversity.ar wikiversity.fa universcience-tv.fr les-fondamentaux.fr bil-tunisia.ar icd10.fr mullah-piaz-digest.fa"
 
-    # - role: idc_import
-    #   content_name: "2-Contenus/grande_synthe.csv"    
+    - role: idc_import
+      content_name: "2-Contenus/grande_synthe.csv"
