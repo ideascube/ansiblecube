@@ -1,6 +1,6 @@
 #!/bin/bash
 SHOULD_WE_SEND="False"
-SSH_KEY="/root/.ssh/id_rsa" 
+SSH_KEY="/root/.ssh/id_rsa"
 
 managed_by_bsf=`echo $1 | cut -d= -f1`
 value1=`echo $1 | cut -d= -f2`
@@ -21,7 +21,7 @@ if [ "$managed_by_bsf" = managed_by_bsf ] && [ "$value1" = True ] && [ ! -f "$SS
 
 	SHOULD_WE_SEND="True"
 	echo -e "\n\n\n" | ssh-keygen -t rsa -f /root/.ssh/id_rsa -b 4096 -C "it@bibliosansfrontieres.org" -N ""
-	ssh-copy-id -o StrictHostKeyChecking=no ansible@37.187.151.52 
+	ssh-copy-id -o StrictHostKeyChecking=no ansible@37.187.151.52
 
 elif [ "$managed_by_bsf" = managed_by_bsf ] && [ "$value1" = True ] && [ -f "$SSH_KEY" ]; then
 
@@ -53,6 +53,6 @@ git clone https://github.com/ideascube/ansiblecube-custom-master.git local
 cp /var/lib/ansible/local/hosts /etc/ansible/hosts
 
 echo "[+] Run globalInstall playbook..."
-/usr/local/bin/ansible-pull -C oneUpdateFile -d /var/lib/ansible/local -i hosts -U https://github.com/ideascube/ansiblecube.git install.yml --extra-vars "managed_by_bsf="$SHOULD_WE_SEND" ideascube_project_name=$value2 timezone=$value3 wifi_passwd=$value4"
+/usr/local/bin/ansible-pull -C oneUpdateFile -d /var/lib/ansible/local -i hosts -U https://github.com/ideascube/ansiblecube.git main.yml --extra-vars "managed_by_bsf="$SHOULD_WE_SEND" ideascube_project_name=$value2 timezone=$value3 wifi_passwd=$value4" --tags "custom"
 
 echo "[+] Done."
