@@ -14,6 +14,6 @@ git clone https://github.com/ideascube/ansiblecube-create-master.git local
 cp /var/lib/ansible/local/hosts /etc/ansible/hosts
 
 echo "[+] Run globalInstall playbook..."
-/usr/local/bin/ansible-pull -C oneUpdateFile -d /var/lib/ansible/local -i hosts -U https://github.com/ideascube/ansiblecube.git master.yml --tags "master"
+/usr/local/bin/ansible-pull -C oneUpdateFile -d /var/lib/ansible/local -i hosts -U https://github.com/ideascube/ansiblecube.git main.yml --tags "master"
 
 echo "[+] Done."
