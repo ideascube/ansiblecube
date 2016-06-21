@@ -41,7 +41,7 @@
   become: yes
   become_user: ideascube
   command: ideascube catalog remotes add "Kiwix" "Kiwix ZIM content" http://catalog.ideascube.org/kiwix.yml
-  when: st.stat.isreg is defined and st.stat.isreg
+  when: st.stat.isreg is defined and st.stat.isreg == False
   tags: 
     - master
     
