@@ -29,5 +29,5 @@
 - name: Download Kalite language pack
   become: yes
   become_user: ka-lite
-  command: kalite manage retrievecontentpack download {{lang}}
-  notify: 
+  command: kalite manage retrievecontentpack download {{ ansible_local.device_list[device_name].kalite.language }}
+  notify: restart ka-lite

@@ -3,28 +3,43 @@
   command: rfkill unblock wlan
   when: ansible_architecture == 'x86_64'
   ignore_errors: yes
+  tags: 
+    - master
 
 - name: Install hostapd
   apt: name=hostapd state=latest
   when: ansible_architecture == 'x86_64'
+  tags: 
+    - master
 
 - name: Remove sysVinit startup file
   file: path=/etc/init.d/hostapd state=absent
   when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l'
+  tags: 
+    - master
 
 - include_vars: group_vars/{{ ansible_architecture }}.yml
+  tags: ['master', 'custom']
 
 - name: Copy hostapd.conf file
   template: src=hostapd.conf.j2 dest=/etc/hostapd/hostapd.conf owner=root group=root mode=755 backup=yes
+  tags: ['master', 'custom']
 
 - name: Copy hosts file
   template: src=hosts.j2 dest=/etc/hosts owner=root group=root mode=755 backup=yes
+  tags: ['master', 'custom']
 
 - name: Copy startup script
   copy: src=hostapd dest=/etc/systemd/system/hostapd.service owner=root group=root mode=664
+  tags: 
+    - master
 
 - name: Enable service hostapd
   service: name=hostapd enabled=yes
-
+  tags: 
+    - master
+    
 - name: Start hostapd
   service: name=hostapd state=started
+  tags: 
+    - master

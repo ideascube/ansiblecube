@@ -1,32 +1,46 @@
 ---
 - include_vars: group_vars/{{ ansible_architecture }}.yml
+  tags: ['master', 'custom']
 
-- name: Set date and time 
+- name: Set date and time
   set_fact: date="{{ ansible_date_time["date"]}}" time="{{ ansible_date_time["time"]}}"
+  tags:
+    - custom
 
 - name: Set an ideascube_device_name and generate an UUID
-  set_fact: ideascube_device_name="{{ ideascube_project_name }}_{{ 1000 | random }}" 
+  set_fact: ideascube_device_name="{{ ideascube_project_name }}_{{ 1000 | random }}"
     UUID="{{ ansible_default_ipv4["macaddress"] | hash('md5') }}"
+  tags: ['master', 'custom']
 
 - name: Register if the device is managed by BSF or notman
   ini_file: dest=/etc/ansible/facts.d/installed_software.fact
     section=management
     option=managed_by_bsf
     value={{ managed_by_bsf }}
+  tags:
+    - custom
 
 - name: A way to get the public IP of the device
   shell: wget -qO- http://ipecho.net/plain ; echo
   register: public_ip
+  tags:
+    - custom
 
-- name: Write all the variables in /etc/firstStart.csv 
+- name: Write all the variables in /etc/firstStart.csv
   copy: content=id,{{ date }},{{ time }},{{ ideascube_device_name }},{{ UUID }},{{ ansible_default_ipv4["macaddress"] }},{{ ansible_default_ipv4["address"] }},{{ public_ip.stdout }}\n dest=/etc/firstStart.csv
+  tags:
+    - custom
 
-- name: Send this file over the central_server 
+- name: Send this file over the central_server
   raw: cat /etc/firstStart.csv | ssh -p 443 {{ central_server }} "cat >> ./ansible/UUID/firstStart.csv"
   when: managed_by_bsf|bool
+  tags:
+    - custom
 
 - name: Update packages list
   apt: update_cache=yes cache_valid_time=3600
+  tags:
+    - master
 
 - name: Remove unwanted packages before upgrading
   apt: name={{ item }} state=absent purge=yes
@@ -46,6 +60,8 @@
    - iotop
    - lirc
    - apt-listchanges
+  tags:
+    - master
 
 - name: Install all requiered package
   apt: name={{ item }} state=latest
@@ -66,35 +82,48 @@
    - fake-hwclock
    - hdparm
    - ncurses-term
-   - sunxi-tools
    - libffi-dev
    - libssl-dev
+  tags:
+    - master
 
 - name: List services to restart (1/2)
   shell: checkrestart | grep ^service | awk '{print $2}'
   register: services
   changed_when: False
+  tags:
+    - master
 
 - name: Install ansible
   pip: name=ansible version=2.0 executable=pip3
+  tags:
+    - master
 
-- name: Install markupsafe 
+- name: Install markupsafe
   pip: name=markupsafe executable=pip3
+  tags:
+    - master
 
 - name: Upgrade packages
   apt: upgrade=safe
+  tags:
+    - master
 
 # https://github.com/ansible/ansible/issues/16015
 - name: Fix a bug on Exception setuptools 3.6
   command: pip3 install -U distribute
+  tags:
+    - master
 
 - name: Adding name to the hosts file
-  lineinfile: dest=/etc/hosts regexp='^{{ hotspotip }}' insertafter='{{ hotspotip }}' 
-    line='{{ hotspotip }} {{ ideascube_device_name |replace("_", "-") }}.lan {{ hostname }} {{ mook_front_server_name }}' 
+  lineinfile: dest=/etc/hosts regexp='^{{ hotspotip }}' insertafter='{{ hotspotip }}'
+    line='{{ hotspotip }} {{ ideascube_device_name |replace("_", "-") }}.lan {{ hostname }} {{ mook_front_server_name }}'
     owner=root group=root mode=0644
+  tags: ['master', 'custom']
 
 - name: An hostname can not have _ so we are switching to -, python can not have - so using _ sometime too
   command: hostnamectl set-hostname {{ ideascube_device_name |replace("_", "-") }}
+  tags: ['master', 'custom']
 
 - name: Create an ideascube user on the system
   user: name={{ username }}
@@ -105,51 +134,81 @@
         ssh_key_bits=2048
         ssh_key_file=.ssh/id_rsa
         password={{ password }}
+  tags:
+    - master
 
 - name: Add locale fr_FR
   locale_gen: name=fr_FR.UTF-8 state=present
+  tags:
+    - master
 
 - name: Add locale en_US
   locale_gen: name=en_US.UTF-8 state=present
+  tags:
+    - master
 
 - name: Add locale en_GB
   locale_gen: name=en_GB.UTF-8 state=present
+  tags:
+    - master
 
 - name: Copy a blank rc.local
   copy: src=rc.local dest=/etc/rc.local owner=root group=root mode=0644 backup=yes
+  tags:
+    - master
 
 - name: Copy .bashrc for root
   copy: src=bashrc dest=/root/.bashrc owner=root
+  tags:
+    - master
 
 - name: Copy the global vimrc file
   copy: src=vimrc.local dest=/etc/vim/vimrc.local owner=root mode=0644
+  tags:
+    - master
 
 - name: Copy .bashrc for new username
   copy: src=bashrc dest=/home/{{ username }}/.bashrc owner={{ username }}
+  tags:
+    - master
 
 - name: Copy visudo file for ideascube user
-  template: src=visudo.j2 dest=/etc/sudoers.d/shutdown 
+  template: src=visudo.j2 dest=/etc/sudoers.d/shutdown
     owner=root group=root mode=0440 validate="/usr/sbin/visudo -cf %s"
+  tags:
+    - master
 
 - name: Create local directory to work from
   file: path=/var/lib/ansible/local state=directory owner=root group=root mode=0751
+  tags:
+    - master
 
 - name: Create ansible hosts directory to work from
   file: path=/etc/ansible/ state=directory owner=root group=root mode=0751
+  tags:
+    - master
 
 - name: Copy ansible inventory file to client
   copy: src=hosts dest=/etc/ansible/hosts
           owner=root group=root mode=0644
+  tags:
+    - master
 
 - name: Remove the existing localtime file
   file: path=/etc/localtime state=absent
+  tags:
+    - custom
 
 - name: Set a new localtime file corresponding to the timezone
   file: src=/usr/share/zoneinfo/{{ timezone }} dest=/etc/localtime state=link force=yes
+  tags:
+    - custom
 
 - name: Set timezone variables
   copy: content={{ timezone }} dest=/etc/timezone owner=root group=root mode=0644 backup=yes
   notify: update timezone
+  tags:
+    - custom
 
 - include: arm_proc.yml
   when: ansible_architecture == "armv7l"

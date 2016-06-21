@@ -1,21 +1,33 @@
 ---
 - name: Remove uwsgi installed using pip (bug #17)
   pip: name=uwsgi state=absent executable=pip3
+  tags: 
+    - master
 
 - name: Install uwsgi
   apt: name={{ item }} state=present
   with_items:
   - uwsgi
   - uwsgi-plugin-python3
+  tags: 
+    - master
 
 - name: Create log dir for uwsgi
   file: path=/var/log/uwsgi state=directory owner={{ username }} group={{ username }} mode=0751
+  tags: 
+    - master
 
 - name: Setup startup file for uwsgi
   copy: src=uwsgi.service dest=/etc/systemd/system/uwsgi.service owner=root group=root mode=644
+  tags: 
+    - master
 
 - name: Create apps-enabled dir for uwsgi
   file: path=/etc/uwsgi/apps-enabled state=directory owner=www-data group=www-data mode=0751
-
+  tags: 
+    - master
+    
 - name: Enable service uwsgi
   service: name=uwsgi enabled=yes
+  tags: 
+    - master

@@ -1,31 +1,48 @@
 ---
 - include_vars: group_vars/{{ ansible_architecture }}.yml
+  tags: ['master', 'custom']
 
 - stat: path=/dev/sda1
   register: dev_sda
+  tags: 
+    - custom
 
 - name: Add a storage folder for Ideascube on the HDD
   file: path=/media/hdd/ideascube/ state=directory owner=ideascube group=ideascube mode=755
   when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and dev_sda.stat.exists == True
+  tags: 
+    - custom
 
 - name: Create a simlink to the HDD for the KoomBook
   file: src=/media/hdd/ideascube dest=/var/ideascube state=link
   when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and dev_sda.stat.exists == True
+  tags: 
+    - custom
 
 - name: Configure the ideascube package repository
   template: src=ideascube.list.j2 dest=/etc/apt/sources.list.d/ideascube.list owner=root group=root mode=644
+  tags: 
+    - master
 
 - name: Install ideascube dependencies
   apt: name=python3-minimal state=present
+  tags: 
+    - master
 
 - name: Allow unauthenticated packages
   lineinfile: dest=/etc/apt/apt.conf.d/9999IDEASCUBEISABADBADBOY line='APT::Get::AllowUnauthenticated "true";' create=yes
+  tags: 
+    - master
 
 - name: Install the ideascube package
   apt: name=ideascube state=latest update_cache=yes
+  tags: 
+    - master
 
 - name: Remove the unauthenticated hack
   file: path=/etc/apt/apt.conf.d/9999IDEASCUBEISABADBADBOY state=absent
+  tags: 
+    - master
 
 # Add settings and conf
 
@@ -34,18 +51,31 @@
               regexp='^'
               line='IDEASCUBE_ID={{ ideascube_project_name }}'
               state=present
+  notify: restart uwsgi
+  tags: 
+    - custom
 
 - name: Remove linsting on 443 because the port is alredy used by sslh
   lineinfile: dest=/etc/nginx/sites-available/ideascube regexp='443' state=absent
   notify: restart nginx
+  tags: 
+    - master
 
 - name: Create simLink
   file: src=/etc/uwsgi/apps-available/ideascube.ini dest=/etc/uwsgi/apps-enabled/ideascube.ini state=link
-
+  tags: 
+    - master
+    
 - name: Get ideascube version
   shell: dpkg-query -W  ideascube  | awk '{print $2}' ; echo
   register: ideascube_newversion
+  tags: 
+    - custom
 
 - set_fact: ideascube_version="{{ ideascube_newversion.stdout }}"
+  tags: 
+    - custom
 
 - debug: msg="ideascube {{ ideascube_version }} is now the current version."
+  tags: 
+    - custom
