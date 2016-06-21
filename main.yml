@@ -1,53 +1,57 @@
 ---
-# - hosts: localhost
-- hosts: SystemPushInstall
+- hosts: localhost
+#- hosts: SystemPushInstall
 
-  roles:   
-    - set_custom_fact
+  roles:
+    - { role: set_custom_fact, tags: [ 'master', 'custom', 'update' ] }
+    - system
+    - nginx
+    - uwsgi
+    - ideascube
+    - kiwix
 
     - role: app_inventory
       when: ansible_local.installed_software.management.inventory is not defined
 
     - role: logs
       when: ansible_local.installed_software.management.managed_by_bsf|bool == True
+      tags:
+        - update
 
     - role: tinc-static
       when: ansible_local.installed_software.management.managed_by_bsf|bool == True
+      tags: ['custom', 'update']
 
-    - role: kalite 
-      kalite_version: "{{ ansible_local.device_list[device_name].kalite.version }}"
-      lang: "{{ ansible_local.device_list[device_name].kalite.language }}"
-      when: ansible_local.device_list[device_name].kalite is defined 
+    - role: kalite
+      when: ansible_local.device_list[device_name].kalite is defined
         and ansible_local.device_list[device_name].kalite.activated|bool == True
+      tags: ['custom', 'update']
 
     - role: mongodb
-      mongodb_version: "{{ ansible_local.device_list[device_name].mongodb.version }}"
       when: ansible_local.device_list[device_name].mongodb is defined
         and ansible_local.device_list[device_name].mongodb.activated|bool == True
+      tags: ['custom', 'update']
 
     - role: mook
       mook_name: bsfcampus
       mook_version: "{{ ansible_local.device_list[device_name].bsfcampus.version }}"
       when: ansible_local.device_list[device_name].bsfcampus is defined
         and ansible_local.device_list[device_name].bsfcampus.activated|bool == True
+      tags: ['custom', 'update']
 
     - role: mook
       mook_name: koombookedu
       mook_version: "{{ ansible_local.device_list[device_name].koombookedu.version }}"
       when: ansible_local.device_list[device_name].koombookedu is defined
         and ansible_local.device_list[device_name].koombookedu.activated|bool == True
+      tags: ['custom', 'update']
 
     - role: zim_install
-      zim_name: "{{ ansible_local.device_list[device_name].zim_install.name }}"
       when: ansible_local.device_list[device_name].zim_install is defined
         and ansible_local.device_list[device_name].zim_install.activated|bool == True
-
-    - role: ideascube
-      ideascube_version: "{{ ansible_local.device_list[device_name].ideascube.version }}"
-      when: ansible_local.device_list[device_name].ideascube is defined
-        and ansible_local.device_list[device_name].ideascube.activated|bool == True
+      tags: ['custom', 'update']
 
     - role: idc_import
-      content_name: "{{ ansible_local.device_list[device_name].idc_import_content_name }}"
       when: ansible_local.device_list[device_name].idc_import is defined
         and ansible_local.device_list[device_name].idc_import.activated|bool == True
+      tags: ['custom', 'update']
