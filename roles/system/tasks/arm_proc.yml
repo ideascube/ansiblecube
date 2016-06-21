@@ -47,7 +47,7 @@
     - custom
 
 - name: Copy patch U-Boot package
-  get_url: url={{filer_bsf}}/linux-u-boot-lime2_4.3_armhf.deb 
+  get_url: url={{filer_bsf}}/linux-u-boot-next-lime2_5.14_armhf.deb
     dest=/tmp/linuxUboot.deb owner=root group=root mode=755
   tags: 
     - custom
