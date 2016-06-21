@@ -14,10 +14,6 @@
   file: path=/media/hdd/ideascube/ state=directory owner=ideascube group=ideascube mode=755
   when: ideascube_version.stdout == "" and (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and dev_sda.stat.exists == True
 
-- name: Add a storage cache folder for Ideascube
-  file: path=/var/cache/ideascube state=directory owner=ideascube group=ideascube mode=755
-  when: ideascube_version.stdout == "" and (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and dev_sda.stat.exists == True
-
 - name: Create a simlink to the HDD for the KoomBook
   file: src=/media/hdd/ideascube dest=/var/ideascube state=link
   when: ideascube_version.stdout == "" and (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and dev_sda.stat.exists == True
