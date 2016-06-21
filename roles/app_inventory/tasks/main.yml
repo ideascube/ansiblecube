@@ -1,0 +1,56 @@
+---
+- name: Get ideascube version
+  shell: dpkg-query -W  ideascube  | awk '{print $2}' ; echo
+  register: ideascube_version
+
+- name: Save Ideascube version number
+  ini_file: dest=/etc/ansible/facts.d/installed_software.fact
+            section=software
+            option=ideascube
+            value={{ ideascube_version.stdout }}
+
+- name: Get kalite version
+  shell: 
+  register: kalite_version
+
+- name: Save kalite version number
+  ini_file: dest=/etc/ansible/facts.d/installed_software.fact
+            section=software
+            option=kalite
+            value={{ kalite_version.stdout }}
+
+- name: Get Mook name
+  shell: 
+  register: mook_version
+
+- name: Save Mook version number
+  ini_file: dest=/etc/ansible/facts.d/installed_software.fact
+            section=software
+            option=mook
+            value={{ mook_version.stdout }}
+
+- name: Get MongoDB version
+  shell: mongodb --version
+  register: mongodb_version
+
+- name: Save MongoDB version number
+  ini_file: dest=/etc/ansible/facts.d/installed_software.fact
+            section=software
+            option=mongodb
+            value={{ mongodb_version.stdout }}
+
+- name: Get Kiwix version
+  shell: kiwix-serve --version
+  register: kiwix_version
+
+- name: Save Kiwix version number
+  ini_file: dest=/etc/ansible/facts.d/installed_software.fact
+            section=software
+            option=kiwix-serve
+            value={{ kiwix-serve.stdout }}
+
+- name: Set inventory has done !
+  ini_file: dest=/etc/ansible/facts.d/installed_software.fact
+    section=management
+    option=inventory
+    value=True

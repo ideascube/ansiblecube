@@ -1,0 +1,15 @@
+#!/bin/bash
+
+IF=$1
+STATUS=$2
+
+if [ "$IF" == "eth0" ] || [ "$IF" == "wlan1" ]
+then
+    case "$STATUS" in
+        up)
+			/usr/local/bin/ansible-pull -s 120 -d /var/lib/ansible/local -C oneUpdateFile -i hosts -U https://github.com/ideascube/ansiblecube.git install.yml --tags "update" >> /var/log/ansible-pull.log 2>&1 &
+        ;;
+        *)
+        ;;
+    esac
+fi
