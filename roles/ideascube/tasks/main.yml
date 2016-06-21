@@ -27,7 +27,7 @@
   when: ideascube_version.stdout == "" and (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and dev_sda.stat.exists == True
 
 - name: Create a simlink for ideascube catalog
-  file: src=/media/hdd/ideascube_cache dest=/var/cache/ideascube
+  file: src=/media/hdd/ideascube_cache dest=/var/cache/ideascube state=link
   when: ideascube_version.stdout == "" and (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and dev_sda.stat.exists == True
 
 - name: Configure the ideascube package repository
