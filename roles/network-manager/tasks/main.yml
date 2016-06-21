@@ -1,14 +1,16 @@
 ---
 - name: Install Network-Manager
   apt: name=network-manager state=latest
+  tags: 
+    - master
 
 - name: Create entry to clone/pull git repository
-  template: src=nm-dispatcher.j2 dest=/etc/NetworkManager/dispatcher.d/ansiblePullUpdate
+  copy: src=nm-dispatcher dest=/etc/NetworkManager/dispatcher.d/ansiblePullUpdate
     owner=root group=root mode=0755
-
-- name: Force ethernet interface to run at 100Mbits
-  copy: src=mii-tool dest=/etc/NetworkManager/dispatcher.d/mii-tool owner=root group=root mode=755
-  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
+  tags: 
+    - master
 
 - name: remove old way of lunching ansible-pull
   file: path=/etc/dhcp/dhclient-exit-hooks.d/ansiblePullUpdate state=absent
+  tags: 
+    - update
