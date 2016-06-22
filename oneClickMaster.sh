@@ -6,6 +6,7 @@ echo "[+] Install ansible..."
 apt-get update
 apt-get install -y python-pip git python-dev libffi-dev libssl-dev
 pip install ansible markupsafe
+pip install -U distribute
 
 echo "[+] Clone ansiblecube repo..."
 mkdir --mode 0755 -p /var/lib/ansible/local
