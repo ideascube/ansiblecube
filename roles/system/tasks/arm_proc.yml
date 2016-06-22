@@ -36,13 +36,28 @@
   tags: 
     - custom
 
-- name: Copy fex.file
-  template: src=lime2.fex.j2 dest=/boot/bin/lime2.fex
+- name: Convert DTB file to DTS
+  command: dtc -I dtb -O dts /boot/dtb/sun7i-a20-olinuxino-lime2.dtb -o /boot/dtb/sun7i-a20-olinuxino-lime2.dts
   tags: 
     - custom
 
-- name: Build binary from fex
-  shell: sunxi-fexc lime2.fex > lime2.bin chdir=/boot/bin/
+- name: Change the PIN for the LED
+    replace: dest=/boot/dtb/sun7i-a20-olinuxino-lime2.dts
+    regexp='gpios = <0x1e 0x7 0x2 0x0>;' 
+    replace='gpios = <0x1e 0x7 0x14 0x0>;'
+  tags:
+    - custom
+
+- name: Activate heartbeat mode
+    lineinfile: dest=/boot/dtb/sun7i-a20-olinuxino-lime2.dts
+                regexp='default-state = "on";'
+                insertafter='default-state = "on";'
+                line='linux,default-trigger = "heartbeat";'
+    tags: 
+      - custom
+
+- name: Convert DTS file to DTB
+  command: dtc -I dts -O dtb /boot/dtb/sun7i-a20-olinuxino-lime2.dts -o /boot/dtb/sun7i-a20-olinuxino-lime2.dtb
   tags: 
     - custom
 
