@@ -37,6 +37,13 @@
   tags:
     - custom
 
+- name: Add non free repository
+  replace: dest=/etc/apt/sources.list
+    regexp='jessie main' 
+    replace='jessie main non-free'
+  tags:
+    - master
+
 - name: Update packages list
   apt: update_cache=yes cache_valid_time=3600
   tags:
@@ -66,9 +73,9 @@
 - name: Install all requiered package
   apt: name={{ item }} state=latest
   with_items:
-   - python3-pip
-   - python3-dev
-   - python3-setuptools
+   - python-pip
+   - python-dev
+   - python-setuptools
    - git
    - sudo
    - lsb-release
@@ -96,12 +103,12 @@
     - master
 
 - name: Install ansible
-  pip: name=ansible executable=pip3
+  pip: name=ansible
   tags:
     - master
 
 - name: Install markupsafe
-  pip: name=markupsafe executable=pip3
+  pip: name=markupsafe
   tags:
     - master
 
@@ -112,7 +119,7 @@
 
 # https://github.com/ansible/ansible/issues/16015
 - name: Fix a bug on Exception setuptools 3.6
-  command: pip3 install -U distribute
+  command: pip install -U distribute
   tags:
     - master
 

@@ -1,9 +1,11 @@
 #!/bin/bash
 
+export GIT_SSL_NO_VERIFY=1
+
 echo "[+] Install ansible..."
 apt-get update
-apt-get install -y python3-pip git python3-dev libffi-dev
-pip3 install ansible markupsafe
+apt-get install -y python-pip git python-dev libffi-dev libssl-dev
+pip install ansible markupsafe
 
 echo "[+] Clone ansiblecube repo..."
 mkdir --mode 0755 -p /var/lib/ansible/local
