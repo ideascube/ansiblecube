@@ -13,7 +13,7 @@ central_server: ansible@37.187.151.52
 filer_bsf: http://filer.bsf-intranet.org
 timezone: "Europe/Paris"
 zim_path: /var/ideascube/kiwix
-synology: "192.168.1.2"
+synology: "synology.montreuil.wan.bsf-intranet.org"
 kiwix_version: "0.9"
 mongodb_version: "2.4.10"
 
