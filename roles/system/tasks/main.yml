@@ -84,6 +84,7 @@
    - ncurses-term
    - libffi-dev
    - libssl-dev
+   - firmware-ralink
   tags:
     - master
 
