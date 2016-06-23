@@ -4,7 +4,7 @@
 
 - include: ideascube.yml
 
-- include: upgrade.yml
+- include: upgrade-0.9.9.yml
   when: ansible_local.installed_software.software.ideascube | version_compare('{{ ansible_local.device_list[generic_project_name].ideascube.version }}', '<')
     and ansible_local.installed_software.software.ideascube != "0"
   tags:
