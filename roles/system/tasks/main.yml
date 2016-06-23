@@ -111,10 +111,17 @@
   tags:
     - master
 
-- name: Adding name to the hosts file
-  lineinfile: dest=/etc/hosts regexp='^{{ hotspotip }}' insertafter='{{ hotspotip }}'
-    line='{{ hotspotip }} {{ idc_uniq_device_name |replace("_", "-") }}.lan {{ hostname }} {{ mook_front_server_name }}'
-    owner=root group=root mode=0644
+- name: Add domain name for loopback interface
+  replace: dest=/etc/hosts
+    regexp='localhost' 
+    replace='localhost {{ idc_uniq_device_name |replace("_", "-") }}.lan {{ hostname }}'
+  tags: ['master', 'custom']
+
+- name: Add domain name for hotspot interface interface
+  lineinfile: dest=/etc/hosts
+    regexp='^'
+    line='{{hotspotip}} {{ idc_uniq_device_name |replace("_", "-") }}.lan {{ hostname }} {{ mook_front_server_name }}'
+    state=present
   tags: ['master', 'custom']
 
 - name: An hostname can not have _ so we are switching to -, python can not have - so using _ sometime too
