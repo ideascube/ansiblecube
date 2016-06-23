@@ -38,7 +38,7 @@
   lineinfile: dest=/etc/apt/apt.conf.d/9999IDEASCUBEISABADBADBOY line='APT::Get::AllowUnauthenticated "true";' create=yes
 
 - name: Install the ideascube package
-  apt: name=ideascube={{ ideascube_version }} state=present update_cache=yes force=yes
+  apt: name=ideascube={{ ansible_local.device_list[generic_project_name].ideascube.version }} state=present update_cache=yes force=yes
 
 - name: Remove the unauthenticated hack
   file: path=/etc/apt/apt.conf.d/9999IDEASCUBEISABADBADBOY state=absent
