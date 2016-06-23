@@ -38,11 +38,6 @@
   tags:
     - master
 
-- name: Update packages list
-  apt: update_cache=yes
-  tags:
-    - master
-
 - name: Remove unwanted packages before upgrading
   apt: name={{ item }} state=absent purge=yes
   with_items:
@@ -65,7 +60,7 @@
     - master
 
 - name: Install all requiered package
-  apt: name={{ item }} state=latest
+  apt: name={{ item }} state=latest update_cache=yes
   with_items:
    - python-pip
    - python-dev
