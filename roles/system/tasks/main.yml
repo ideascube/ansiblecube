@@ -2,17 +2,11 @@
 - include_vars: group_vars/{{ ansible_architecture }}.yml
   tags: ['master', 'custom']
 
-- name: Set date and time
-  set_fact: date="{{ ansible_date_time["date"]}}" time="{{ ansible_date_time["time"]}}"
-  tags:
-    - custom
-
-- name: Set an ideascube_device_name and generate an UUID
+- name: Generate a random number for the ideascube_device_name
   set_fact: ideascube_device_name="{{ ideascube_project_name }}_{{ 1000 | random }}"
-    UUID="{{ ansible_default_ipv4["macaddress"] | hash('md5') }}"
   tags: ['master', 'custom']
 
-- name: Register if the device is managed by BSF or notman
+- name: Register if the device is managed by BSF or not
   ini_file: dest=/etc/ansible/facts.d/installed_software.fact
     section=management
     option=managed_by_bsf
@@ -27,7 +21,7 @@
     - custom
 
 - name: Write all the variables in /etc/firstStart.csv
-  copy: content=id,{{ date }},{{ time }},{{ ideascube_device_name }},{{ UUID }},{{ ansible_default_ipv4["macaddress"] }},{{ ansible_default_ipv4["address"] }},{{ public_ip.stdout }}\n dest=/etc/firstStart.csv
+  copy: content=id,{{ ansible_date_time["date"] }},{{ ansible_date_time["time"] }},{{ ideascube_device_name }},{{ ansible_machine_id }},{{ ansible_default_ipv4["macaddress"] }},{{ ansible_default_ipv4["address"] }},{{ public_ip.stdout }}\n dest=/etc/firstStart.csv
   tags:
     - custom
 
@@ -215,6 +209,11 @@
 - name: Set timezone variables
   copy: content={{ timezone }} dest=/etc/timezone owner=root group=root mode=0644 backup=yes
   notify: update timezone
+  tags:
+    - custom
+
+- name: Set device name 
+  set_fact: device_name={{ ansible_hostname | regex_replace('-\d+', '') }}
   tags:
     - custom
 
