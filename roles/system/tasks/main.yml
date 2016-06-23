@@ -112,9 +112,10 @@
     - master
 
 - name: Add domain name for loopback interface
-  replace: dest=/etc/hosts
-    regexp='localhost' 
-    replace='localhost {{ idc_uniq_device_name |replace("_", "-") }}.lan {{ hostname }}'
+  lineinfile: dest=/etc/hosts
+    regexp='localhost'
+    insertafter='localhost'
+    line='127.0.0.1 localhost {{ idc_uniq_device_name |replace("_", "-") }}.lan {{ hostname }}'
   tags: ['master', 'custom']
 
 - name: Add domain name for hotspot interface interface
