@@ -4,4 +4,4 @@
 - name: Download and install ZIM content from Kiwix catalog
   become: yes
   become_user: ideascube
-  command: ideascube catalog install {{ ansible_local.device_list[ideascube_device_name].zim_install.name }}
+  command: ideascube catalog install {{ ansible_local.device_list[generic_project_name].zim_install.name }}
