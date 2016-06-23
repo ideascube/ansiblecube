@@ -92,12 +92,10 @@
     - master
 
 - name: Install ansible
-  pip: name=ansible
-  tags:
-    - master
-
-- name: Install markupsafe
-  pip: name=markupsafe
+  pip: name={{ item }}
+  with_items:
+    - ansible
+    - markupsafe
   tags:
     - master
 
