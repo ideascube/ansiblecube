@@ -218,10 +218,5 @@
   tags:
     - custom
 
-- name: Set device name 
-  set_fact: device_name={{ ansible_hostname | regex_replace('-\d+', '') }}
-  tags:
-    - custom
-
 - include: arm_proc.yml
   when: ansible_architecture == "armv7l"
