@@ -34,7 +34,7 @@ else
 	echo -e "
 	YOU HAVE TO BE ROOT TO LUNCH THIS SCRIPT !
 
-	Usage : ./oneClickUpdate.sh managed_by_bsf=True ideascube_project_name=kb_mooc_cog timezone=Europe/Paris wifi_passwd=789R7E987E89
+	Usage : ./oneClickDeploy.sh managed_by_bsf=True ideascube_project_name=kb_mooc_cog timezone=Europe/Paris wifi_passwd=789R7E987E89
 
 	managed_by_bsf=True|False : Whether send or not log system to a central server. A server with SSH access is required in this case
 	ideascube_project_name=File_Name : Must be the same name as the one used for the ideascube configuration file
