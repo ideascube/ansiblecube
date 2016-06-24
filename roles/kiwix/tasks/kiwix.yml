@@ -23,25 +23,10 @@
   tags: 
     - master
 
-- name: Check if Kiwix catalog exist
-  stat: path=/var/cache/ideascube/catalog/remotes/Kiwix.yml
-  when: ansible_architecture == "x86_64"
-  register: st
-  tags: 
-    - master
-
-- name: Check if Kiwix catalog exist
-  stat: path=/var/ideascube/catalog/remotes/Kiwix.yml
-  when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l")
-  register: st
-  tags: 
-    - master
-
 - name: Install Kiwix catalog
   become: yes
   become_user: ideascube
   command: ideascube catalog remotes add "Kiwix" "Kiwix ZIM content" http://catalog.ideascube.org/kiwix.yml
-  when: st.stat.exists == False
   tags: 
     - master
     
