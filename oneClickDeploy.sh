@@ -63,7 +63,7 @@ if [ "$value1" = "custom" ]; then
 elif [ "$value1" = "master" ]; then
 
 	echo "[+] Create a master..."
-	/usr/local/bin/ansible-pull -C oneUpdateFile -d /var/lib/ansible/local -i hosts -U https://github.com/ideascube/ansiblecube.git main.yml --extra-vars "managed_by_bsf="$SHOULD_WE_SEND" ideascube_project_name=$value3 timezone=$value4 wifi_passwd=$value5" --tags "custom"
+	/usr/local/bin/ansible-pull -C oneUpdateFile -d /var/lib/ansible/local -i hosts -U https://github.com/ideascube/ansiblecube.git main.yml --tags "master"
 
 else
 	echo -e "
