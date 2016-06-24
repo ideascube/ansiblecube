@@ -14,7 +14,7 @@ filer_bsf: http://filer.bsf-intranet.org
 timezone: "Europe/Paris"
 zim_path: /var/ideascube/kiwix
 sync_log: "{{ send_to_central_server }}"
-synology: "10.10.8.10"
+synology: "synology.montreuil.wan.bsf-intranet.org"
 
 #Apps path
 mook_path: /home/{{ username }}
