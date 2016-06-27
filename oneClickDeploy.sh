@@ -1,6 +1,7 @@
 #!/bin/bash
 SHOULD_WE_SEND="False"
 SSH_KEY="/root/.ssh/id_rsa"
+export GIT_SSL_NO_VERIFY=1
 
 script_action=`echo $1 | cut -d= -f1`
 value1=`echo $1 | cut -d= -f2`
@@ -19,10 +20,19 @@ value5=`echo $5 | cut -d= -f2`
 
 echo "$managed_by_bsf"
 
+echo "[+] Install ansible..."
+sed -i -e '/^deb cdrom/d' /etc/apt/sources.list
+apt-get update
+apt-get install -y python-pip git python-dev libffi-dev libssl-dev
+
+pip install -U distribute
+pip install ansible markupsafe
+pip install cryptography --upgrade
+
 echo "[+] Clone ansiblecube repo..."
 mkdir --mode 0755 -p /var/lib/ansible/local
 cd /var/lib/ansible/
-git clone https://github.com/ideascube/ansiblecube.git local
+git clone https://github.com/ideascube/ansiblecube.git local --no-check-certificat
 
 [ ! -d /etc/ansible ] && mkdir /etc/ansible
 cp /var/lib/ansible/local/hosts /etc/ansible/hosts
