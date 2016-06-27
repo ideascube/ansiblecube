@@ -1,7 +1,6 @@
 #!/bin/bash
 SHOULD_WE_SEND="False"
 SSH_KEY="/root/.ssh/id_rsa"
-export GIT_SSL_NO_VERIFY=1
 
 script_action=`echo $1 | cut -d= -f1`
 value1=`echo $1 | cut -d= -f2`
@@ -23,7 +22,7 @@ echo "$managed_by_bsf"
 echo "[+] Install ansible..."
 sed -i -e '/^deb cdrom/d' /etc/apt/sources.list
 apt-get update
-apt-get install -y python-pip git python-dev libffi-dev libssl-dev
+apt-get install -y python-pip git python-dev libffi-dev libssl-dev gnutls-bin
 
 pip install -U distribute
 pip install ansible markupsafe
