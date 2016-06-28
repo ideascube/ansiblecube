@@ -1,6 +1,27 @@
 ---
 - hosts: localhost
-#- hosts: SystemPushInstall
+# - hosts: SystemPushInstall
+  gather_facts: False
+  pre_tasks:
+   - setup:
+       filter: 'ansible_hostname'
+     tags: 
+       - master
+
+   - setup:
+       filter: 'ansible_architecture'
+     tags: 
+       - master
+
+   - setup:
+       filter: 'ansible_date_time'
+     tags: 
+       - master
+
+   - setup:
+       filter: 'ansible_distribution_release'
+     tags: 
+       - master
 
   roles:
     - { role: set_custom_fact, tags: [ 'master', 'custom', 'update' ] }
