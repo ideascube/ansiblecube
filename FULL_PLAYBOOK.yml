@@ -25,7 +25,7 @@
     # Install Kalite. Videos will have to be downloaded separately
     - role: kalite
       version: "0.15.0"
-      lang: "fr"
+      lang: ["fr","en"]
 
     # Install ideascube in version 0.9.1, modify the release number if you need to deploy an upgrade
     - role: ideascube

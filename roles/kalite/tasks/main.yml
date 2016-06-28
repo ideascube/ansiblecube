@@ -56,7 +56,8 @@
 - name: Download Kalite language pack
   become: yes
   become_user: ideascube
-  command: kalite manage languagepackdownload --language={{lang}} --commandline
+  command: kalite manage languagepackdownload --language={{item}} --commandline
+  with_flattened: "{{lang}}"
   when: kalite.stat.exists == False
 
 - tasks:

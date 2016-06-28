@@ -14,7 +14,7 @@
 #
 #    - role: kalite
 #      version: "0.15.0"
-#      lang: "es"
+#      lang: ["es"]
 #
 #    - role: idc_import
 #      content_name: "13-Nicarali/CSV-Nicarali.csv"

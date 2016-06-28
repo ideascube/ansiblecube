@@ -14,4 +14,4 @@
 
     # - role: kalite
     #   version: "0.15.0"
-    #   lang: "en"
+    #   lang: ["en"]
