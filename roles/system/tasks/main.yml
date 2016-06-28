@@ -118,7 +118,7 @@
     line='127.0.0.1 localhost {{ idc_uniq_device_name |replace("_", "-") }}.lan {{ hostname }}'
   tags: ['master', 'custom']
 
-- name: Add domain name for hotspot interface interface
+- name: Add domain name for hotspot interface
   lineinfile: dest=/etc/hosts
     regexp='^'
     line='{{hotspotip}} {{ idc_uniq_device_name |replace("_", "-") }}.lan {{ hostname }} {{ mook_front_server_name }}'
@@ -126,7 +126,7 @@
   tags: ['master', 'custom']
 
 - name: An hostname can not have _ so we are switching to -, python can not have - so using _ sometime too
-  command: hostnamectl set-hostname {{ idc_uniq_device_name |replace("_", "-") }}
+  hostname: name={{ idc_uniq_device_name |replace("_", "-") }}
   tags: ['master', 'custom']
 
 - name: Create an ideascube user on the system
