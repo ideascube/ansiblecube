@@ -4,3 +4,6 @@
 
 - name: restart uwsgi
   service: name=uwsgi state=restarted
+
+- name: restart mook-sync
+  service: name=mook-sync-{{ mook_name }} state=restarted
