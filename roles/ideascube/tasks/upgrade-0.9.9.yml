@@ -1,12 +1,6 @@
 ---
 - include_vars: group_vars/{{ ansible_architecture }}.yml
 
-- stat: path=/dev/sda1
-  register: dev_sda
-
-- stat: path=/dev/mmcblk0
-  register: dev_mmcblk0
-
 - name: Remove uwsgi installed using pip (bug #17)
   pip: name=uwsgi state=absent
 
