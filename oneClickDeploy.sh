@@ -5,38 +5,21 @@ SSH_KEY="/root/.ssh/id_rsa"
 script_action=`echo $1 | cut -d= -f1`
 value1=`echo $1 | cut -d= -f2`
 
-managed_by_bsf=`echo $2 | cut -d= -f1`
-value2=`echo $2 | cut -d= -f2`
-
-ideascube_project_name=`echo $3 | cut -d= -f1`
-value3=`echo $3 | cut -d= -f2`
-
-timezone=`echo $4 | cut -d= -f1`
-value4=`echo $4 | cut -d= -f2`
-
-wifi_passwd=`echo $5 | cut -d= -f1`
-value5=`echo $5 | cut -d= -f2`
-
 echo "$managed_by_bsf"
 
-echo "[+] Install ansible..."
-sed -i -e '/^deb cdrom/d' /etc/apt/sources.list
-apt-get update
-apt-get install -y python-pip git python-dev libffi-dev libssl-dev gnutls-bin
-
-pip install -U distribute
-pip install ansible markupsafe
-pip install cryptography --upgrade
-
-echo "[+] Clone ansiblecube repo..."
-mkdir --mode 0755 -p /var/lib/ansible/local
-cd /var/lib/ansible/
-git clone https://github.com/ideascube/ansiblecube.git local
-
-[ ! -d /etc/ansible ] && mkdir /etc/ansible
-cp /var/lib/ansible/local/hosts /etc/ansible/hosts
-
 if [ "$value1" = "custom" ]; then
+
+	managed_by_bsf=`echo $2 | cut -d= -f1`
+	value2=`echo $2 | cut -d= -f2`
+
+	ideascube_project_name=`echo $3 | cut -d= -f1`
+	value3=`echo $3 | cut -d= -f2`
+
+	timezone=`echo $4 | cut -d= -f1`
+	value4=`echo $4 | cut -d= -f2`
+
+	wifi_passwd=`echo $5 | cut -d= -f1`
+	value5=`echo $5 | cut -d= -f2`
 
 	if [ "$managed_by_bsf" = managed_by_bsf ] && [ "$value2" = True ] && [ ! -f "$SSH_KEY" ]; then
 
@@ -70,6 +53,23 @@ if [ "$value1" = "custom" ]; then
 	/usr/local/bin/ansible-pull -C oneUpdateFile -d /var/lib/ansible/local -i hosts -U https://github.com/ideascube/ansiblecube.git main.yml --extra-vars "managed_by_bsf="$SHOULD_WE_SEND" ideascube_project_name=$value3 timezone=$value4 wifi_passwd=$value5" --tags "custom"
 
 elif [ "$value1" = "master" ]; then
+
+	echo "[+] Install ansible..."
+	sed -i -e '/^deb cdrom/d' /etc/apt/sources.list
+	apt-get update
+	apt-get install -y python-pip git python-dev libffi-dev libssl-dev gnutls-bin
+
+	pip install -U distribute
+	pip install ansible markupsafe
+	pip install cryptography --upgrade
+
+	echo "[+] Clone ansiblecube repo..."
+	mkdir --mode 0755 -p /var/lib/ansible/local
+	cd /var/lib/ansible/
+	git clone https://github.com/ideascube/ansiblecube.git local
+
+	[ ! -d /etc/ansible ] && mkdir /etc/ansible
+	cp /var/lib/ansible/local/hosts /etc/ansible/hosts
 
 	echo "[+] Create a master..."
 	/usr/local/bin/ansible-pull -C oneUpdateFile -d /var/lib/ansible/local -i hosts -U https://github.com/ideascube/ansiblecube.git main.yml --tags "master"
