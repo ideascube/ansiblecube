@@ -225,9 +225,9 @@
   stat: path=/boot/bin/lime2.fex
   register: fex_file
   tags:
-  - custom
+    - custom
 
 - include: lime2.yml
-  when: fex_file.stat.exists == True
+  when: fex_file.stat.exists is defined and fex_file.stat.exists
   tags:
-  - custom
+    - custom
