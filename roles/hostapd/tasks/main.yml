@@ -38,4 +38,4 @@
 - name: Start hostapd
   service: name=hostapd state=started
   tags: 
-    - master
+    - custom
