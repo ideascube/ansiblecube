@@ -1,6 +1,14 @@
 - name: Clone mook api
   become_user: ideascube
   git: repo=ssh://git@altssh.bitbucket.org:443/{{url_project_name}}/mook-bsf-api.git dest={{ mook_path }}/{{ mook_name }}/api accept_hostkey=yes depth=1
+  tags:
+    - custom
+
+- name: Update mook api
+  become_user: ideascube
+  git: repo=ssh://git@altssh.bitbucket.org:443/gryzzlab/mook-bsf-api.git dest={{ mook_path }}/{{ mook_name }}/api accept_hostkey=yes update=yes depth=1
+  tags:
+    - update
 
 - name: Install specific packages
   apt: name={{ item }} state=latest
@@ -12,37 +20,57 @@
     - libffi6
     - libffi-dev
     - uwsgi-plugin-python
+  tags:
+    - custom
 
 - name: Install virtualenv
   pip: name=virtualenv
+  tags:
+    - custom
 
 - name: Update setuptools
   pip: name=setuptools extra_args="-U"
+  tags:
+    - custom
 
 - name: Create a static dir if we are using an external hard drive
   file: path=/media/hdd/{{ mook_name }}/static/tmp state=directory mode=0755 owner={{ username }} group={{ username }}
   when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and ansible_mounts.device == "/dev/sda1"
-
+  tags:
+    - custom
+    
 - name: Create simlink if we are using an external hard drive
   file: src=/media/hdd/{{ mook_name }}/static dest={{ mook_path }}/{{ mook_name }}/static state=link
   when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and ansible_mounts.device == "/dev/sda1"
-
+  tags:
+    - custom
+    
 - name: Create static dir
   file: path={{ mook_path }}/{{ mook_name }}/static/tmp state=directory owner={{username}} group={{username}} mode=0775
   when: ansible_architecture == "x86_64"
-
+  tags:
+    - custom
+    
 - name: Install python requierment
   pip: requirements=requirements.txt chdir={{ mook_path }}/{{ mook_name }}/api virtualenv_command=/usr/local/bin/virtualenv virtualenv={{ mook_path }}/{{ mook_name }}/api/env
-  
+  tags:
+    - custom
+    
 - name: Copy settings_local config files
   template: src=settings_local.py.j2 dest={{ mook_path }}/{{ mook_name }}/api/settings_local.py
-  
+  tags: [custom,update]
+    
 - name: Retrieve KoomBook info 
   set_fact: koombookName="{{ lookup('csvfile', 'id file=/etc/firstStart.csv delimiter=, col=3') }}" uuid="{{ lookup('csvfile', 'id file=/etc/firstStart.csv delimiter=, col=4') }}"
-  
+  tags: [custom,update]
+    
 - name: add conf for KoomBook
   lineinfile: dest={{ mook_path }}/{{ mook_name }}/api/settings_local.py regexp='' insertafter=EOF line='    CENTRAL_SERVER_KEY = \"{{koombookName}}\" \n    CENTRAL_SERVER_SECRET = \"{{uuid}}\"' owner={{username}} group={{username}} mode=755
-  
+  tags: [custom,update]
+    
 - name: Setup startup file for uwsgi
   copy: src=settings_central.py dest={{ mook_path }}/{{ mook_name }}/api owner={{username}} group={{username}} mode=755
-  
+  notify: restart mook-sync
+  tags:
+    - custom
+    
