@@ -1,28 +1,25 @@
 - name: Clone mook front
+  become: True
   become_user: ideascube
   git: repo=ssh://git@altssh.bitbucket.org:443/{{url_project_name}}/mook-bsf-front-end-backbone.git dest={{ mook_path }}/{{ mook_name }}/front accept_hostkey=yes depth=1
   tags:
     - custom
 
 - name: Update mook front
+  become: True
   become_user: ideascube
   git: repo=ssh://git@altssh.bitbucket.org:443/gryzzlab/mook-bsf-front-end-backbone.git dest={{ mook_path }}/{{ mook_name }}/front accept_hostkey=yes update=yes depth=1
   tags:
     - update
-
-- name: download vendor package
-  get_url: url={{filer_bsf}}/vendor.tgz dest=/tmp/vendor.tgz
-  tags:
-    - custom
     
-- name: unarchive the vendor package
+- name: Get and unarchive the vendor package
+  become: True
   become_user: ideascube
-  unarchive: src=/tmp/vendor.tgz dest={{ mook_path }}/{{ mook_name }}/front copy=no
+  unarchive: src={{filer_bsf}}/vendor.zip dest={{ mook_path }}/{{ mook_name }}/front copy=no
   tags:
     - custom
     
 - name: Copy config.js config files
-  become_user: ideascube
   template: src=config.js.j2 dest={{ mook_path }}/{{ mook_name }}/front/config.js
   tags:
     - custom
