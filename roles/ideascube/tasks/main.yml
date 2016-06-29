@@ -2,6 +2,12 @@
 - include: ../../../pre_install.yml task=ideascube
   tags: [master,custom,update]
 
+- stat: path=/dev/sda1
+  register: dev_sda
+
+- stat: path=/dev/mmcblk0
+  register: dev_mmcblk0
+
 - include: ideascube.yml
 
 - include: upgrade-0.9.9.yml
