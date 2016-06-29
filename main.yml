@@ -46,26 +46,18 @@
     - role: kalite
       when: ansible_local.device_list[generic_project_name].kalite is defined
         and ansible_local.device_list[generic_project_name].kalite.activated|bool == True
-      tags: ['custom', 'update']
-
-    - role: mongodb
-      when: ansible_local.device_list[generic_project_name].mongodb is defined
-        and ansible_local.device_list[generic_project_name].mongodb.activated|bool == True
-      tags: ['custom', 'update']
 
     - role: mook
       mook_name: bsfcampus
       mook_version: "{{ ansible_local.device_list[generic_project_name].bsfcampus.version }}"
       when: ansible_local.device_list[generic_project_name].bsfcampus is defined
         and ansible_local.device_list[generic_project_name].bsfcampus.activated|bool == True
-      tags: ['custom', 'update']
 
     - role: mook
       mook_name: koombookedu
       mook_version: "{{ ansible_local.device_list[generic_project_name].koombookedu.version }}"
       when: ansible_local.device_list[generic_project_name].koombookedu is defined
         and ansible_local.device_list[generic_project_name].koombookedu.activated|bool == True
-      tags: ['custom', 'update']
 
     - role: zim_install
       when: ansible_local.device_list[generic_project_name].zim_install is defined
