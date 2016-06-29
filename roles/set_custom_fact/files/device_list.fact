@@ -1,28 +1,24 @@
 {
 	"idb-eth-bokolmanyo":{
 		"kalite":{
-			"activated": "False",
+			"activated": "True",
 			"version": "0.16.5",
 			"language": "fr"
 		},
 		"zim_install":{
-			"activated": "False",
-			"name": ""
+			"activated": "True",
+			"name": "wikipedia.wo"
 		},
 		"ideascube":{
 			"activated": "True",
 			"version": "0.9.11"
 		},
-		"mongodb":{
-			"activated": "False",
-			"version": "2.4.10"
-		},
 		"bsfcampus":{
-			"activated": "False",
+			"activated": "True",
 			"version": "100516"
 		},
 		"koombookedu":{
-			"activated": "False",
+			"activated": "True",
 			"version": "100516"
 		}
 	},
@@ -34,15 +30,11 @@
 		},
 		"zim_install":{
 			"activated": "True",
-			"name": "wikipedia.en wikipedia.fr wikisource.en"
+			"name": "wikipedia.wo"
 		},
 		"ideascube":{
 			"activated": "True",
 			"version": "0.9.11"
-		},
-		"mongodb":{
-			"activated": "False",
-			"version": "2.4.10"
 		},
 		"bsfcampus":{
 			"activated": "False",
