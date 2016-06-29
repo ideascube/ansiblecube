@@ -5,23 +5,27 @@
   pre_tasks:
    - setup:
        filter: 'ansible_hostname'
-     tags: 
-       - master
+     tags: ['master', 'custom', 'update']
 
    - setup:
        filter: 'ansible_architecture'
-     tags: 
-       - master
+     tags: ['master', 'custom', 'update']
 
    - setup:
        filter: 'ansible_date_time'
-     tags: 
-       - master
+     tags: ['master', 'custom', 'update']
 
    - setup:
        filter: 'ansible_distribution_release'
-     tags: 
-       - master
+     tags: ['master', 'custom', 'update']
+
+   - setup:
+       filter: 'ansible_default_ipv4'
+     tags: ['custom', 'update']
+     
+   - setup:
+       filter: 'ansible_machine_id'
+     tags: ['custom', 'update']
 
   roles:
     - { role: set_custom_fact, tags: [ 'master', 'custom', 'update' ] }
