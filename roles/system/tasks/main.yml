@@ -82,6 +82,7 @@
    - libffi-dev
    - libssl-dev
    - firmware-ralink
+   - tree
   tags:
     - master
 
