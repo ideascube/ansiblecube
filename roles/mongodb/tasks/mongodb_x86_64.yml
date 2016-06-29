@@ -1,6 +1,8 @@
 ---
 - name: Install mongodb from repository
   apt: name=mongodb state=latest
+  tags:
+    - custom
 
 #- name: Copy mongodb repair script
 #  copy: src=mongo_repair.sh dest=/opt/mongo/mongo_repair.sh mode=755
@@ -10,6 +12,20 @@
 
 - name: Copy new uwsgi startup file. Uwsgi must start after MongoDB
   copy: src=uwsgi.service dest=/etc/systemd/system/uwsgi.service owner=root group=root
+  tags:
+    - custom
 
 - name: Enable service mongodb
   service: name=mongodb enabled=yes
+  tags:
+    - custom
+
+- name: Get mongodb version
+  shell: dpkg-query -W  mongodb  | awk '{print $2}' | sed 's/1://' ; echo
+  register: mongodb_ver
+  tags: 
+    - custom
+
+- set_fact: mongodb_version="{{ mongodb_ver.stdout }}"
+  tags: 
+    - custom

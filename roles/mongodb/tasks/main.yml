@@ -1,6 +1,8 @@
 ---
 - include: ../../../pre_install.yml task=mongodb
+  tags: [custom,update]
 
 - include: mongodb_{{ ansible_architecture }}.yml
 
-- include: ../../../post_install.yml task=mongodb task_version="{{ ansible_local.device_list[generic_project_name].mongodb.version }}"
+- include: ../../../post_install.yml task=mongodb task_version="{{ mongodb_version }}"
+  tags: [custom,update]

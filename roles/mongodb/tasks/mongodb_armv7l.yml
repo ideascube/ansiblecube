@@ -33,7 +33,6 @@
 
 - name: Setup startup file
   copy: src=mongodb.service dest=/etc/systemd/system/mongodb.service owner=root group=root
-  tags:
   tags: [custom,update]
 
 - name: Delete sysvinit file
