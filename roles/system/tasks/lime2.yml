@@ -1,73 +1,42 @@
-- name: Add hdparm to save energy
-  lineinfile: dest=/etc/hdparm.conf
-              regexp=''
-              insertafter=EOF
-              line='/dev/sda {
-                      spindown_time = 280
-              }'
-  tags: 
-    - master
-
+---
 - name: fake-hwclock conf for ARM system 
   copy: content="FORCE=force" dest=/etc/default/fake-hwclock
-  tags: 
-    - mastercustom
 
 - name: Ensure the HDD mountpoint exists
   file: path=/media/hdd state=directory
-  tags: 
-    - custom
 
 - stat: path=/dev/sda1
   register: dev_sda
-  tags: 
-    - custom
 
 - name: Mount /dev/sda1
   mount: name=/media/hdd/ src=/dev/sda1 fstype=ext4 state=mounted opts=noatime,nofail
   when: dev_sda.stat.exists == True
-  tags: 
-    - custom
 
 - name: Mount /dev/sda
   mount: name=/media/hdd/ src=/dev/sda fstype=ext4 state=mounted opts=noatime,nofail
   when: dev_sda.stat.exists == False
   ignore_errors: yes
-  tags: 
-    - custom
 
 - name: Convert DTB file to DTS
   command: dtc -I dtb -O dts /boot/dtb/sun7i-a20-olinuxino-lime2.dtb -o /boot/dtb/sun7i-a20-olinuxino-lime2.dts
-  tags: 
-    - custom
 
 - name: Change the PIN for the LED
-    replace: dest=/boot/dtb/sun7i-a20-olinuxino-lime2.dts
+  replace: dest=/boot/dtb/sun7i-a20-olinuxino-lime2.dts
     regexp='gpios = <0x1e 0x7 0x2 0x0>;' 
     replace='gpios = <0x1e 0x7 0x14 0x0>;'
-  tags:
-    - custom
 
 - name: Activate heartbeat mode
-    lineinfile: dest=/boot/dtb/sun7i-a20-olinuxino-lime2.dts
-                regexp='default-state = "on";'
-                insertafter='default-state = "on";'
-                line='linux,default-trigger = "heartbeat";'
-    tags: 
-      - custom
+  lineinfile: dest=/boot/dtb/sun7i-a20-olinuxino-lime2.dts
+    regexp='default-state = "on";'
+    insertafter='default-state = "on";'
+    line='linux,default-trigger = "heartbeat";'
 
 - name: Convert DTS file to DTB
   command: dtc -I dts -O dtb /boot/dtb/sun7i-a20-olinuxino-lime2.dts -o /boot/dtb/sun7i-a20-olinuxino-lime2.dtb
-  tags: 
-    - custom
 
 - name: Copy patch U-Boot package
   get_url: url={{filer_bsf}}/linux-u-boot-next-lime2_5.14_armhf.deb
     dest=/tmp/linuxUboot.deb owner=root group=root mode=755
-  tags: 
-    - custom
 
 - name: install patch U-Boot package
   apt:  deb=/tmp/linuxUboot.deb
-  tags: 
-    - custom
