@@ -1,31 +1,6 @@
 ---
 - hosts: localhost
 # - hosts: SystemPushInstall
-  gather_facts: False
-  pre_tasks:
-   - setup:
-       filter: 'ansible_hostname'
-     tags: ['master', 'custom', 'update']
-
-   - setup:
-       filter: 'ansible_architecture'
-     tags: ['master', 'custom', 'update']
-
-   - setup:
-       filter: 'ansible_date_time'
-     tags: ['master', 'custom', 'update']
-
-   - setup:
-       filter: 'ansible_distribution_release'
-     tags: ['master', 'custom', 'update']
-
-   - setup:
-       filter: 'ansible_default_ipv4'
-     tags: ['custom', 'update']
-     
-   - setup:
-       filter: 'ansible_machine_id'
-     tags: ['custom', 'update']
 
   roles:
     - { role: set_custom_fact, tags: [ 'master', 'custom', 'update' ] }
