@@ -83,6 +83,7 @@
    - libssl-dev
    - firmware-ralink
    - tree
+   - screen
   tags:
     - master
 
