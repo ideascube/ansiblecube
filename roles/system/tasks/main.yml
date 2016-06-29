@@ -222,7 +222,7 @@
     - custom
 
 - name: Test if a fex file exist, if yes, the device is an Olimex
-  stat: path=/boot/bin/lime2.fex
+  stat: path=/boot/bin/lime2.bin
   register: fex_file
   tags:
     - custom
