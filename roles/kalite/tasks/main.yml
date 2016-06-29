@@ -1,8 +1,8 @@
 ---
 - include: ../../../pre_install.yml task=kalite
+  tags: ['custom', 'update']
 
 - include: kalite.yml
-  when: ansible_local.installed_software.software.kalite | version_compare('{{ ansible_local.device_list[generic_project_name].kalite.version }}', '<')
 
 - include: ../../../post_install.yml task=kalite task_version="{{ kalite_version }}"
-  when: ansible_local.installed_software.software.kalite | version_compare('{{ ansible_local.device_list[generic_project_name].kalite.version }}', '<')
+  tags: ['custom', 'update']

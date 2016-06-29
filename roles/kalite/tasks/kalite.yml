@@ -1,33 +1,47 @@
 ---
 - include_vars: group_vars/{{ ansible_architecture }}.yml
+  tags: ['custom', 'update']
 
 - name: Install requiered packages for kalite installation 
   apt: name={{ item }} state=latest
   with_items: 
    - python-pkg-resources 
    - python-psutil
+  tags:
+    - custom
   
 - name: Download Kalite 
   get_url: url=https://learningequality.org/r/deb-pi-installer-0-16 validate_certs=no dest=/tmp/kalite.deb
-
+  tags:
+    - custom
+  
 - name: Install Kalite package
   apt: deb=/tmp/kalite.deb
-
+  tags:
+    - custom
+  
 - name: Define a new content path if we are on a KoomBook
   lineinfile: dest=/var/ka-lite/.kalite/settings.py
               regexp=''
               insertafter=EOF
               line='CONTENT_ROOT = "/media/hdd/khanVideos/content/"'
   when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and ansible_mounts.device == "/dev/sda1"
- 
+  tags:
+    - custom
+  
 - name: kalite nginx conf must listen to port 80
   replace: dest=/etc/nginx/sites-enabled/kalite.conf 
            regexp='listen 8008;' 
            replace='listen 80;\n    server_name {{kalite_server_name}};'
   notify: restart nginx
-
+  tags:
+    - custom
+  
 - name: Download Kalite language pack
   become: yes
   become_user: ka-lite
   command: kalite manage retrievecontentpack download {{ ansible_local.device_list[generic_project_name].kalite.language }}
   notify: restart ka-lite
+  tags:
+    - custom
+  
