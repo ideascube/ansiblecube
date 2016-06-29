@@ -8,7 +8,7 @@
     - master
 
 - name: Create a kiwix directory in ideascube folder
-  file: path={{zim_path}}/ state=directory
+  file: path={{zim_path}}/ owner={{username}} group={{username}} state=directory
   tags: 
     - master
 
