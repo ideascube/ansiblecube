@@ -10,7 +10,7 @@
 
     # - role: kalite
     #   version: "0.15.0"
-    #   lang: "fr"
+    #   lang: ["fr"]
 
     # # Mount a network drive and lunch the ideascube import content. 
     # - role: idc_import

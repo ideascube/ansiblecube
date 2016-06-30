@@ -1,0 +1,18 @@
+---
+- hosts: localhost
+
+  roles:
+    # Enable or disable to suit your needs
+
+    # This role automatically send logs to central server each time the device gets an Internet connection 
+    - logs
+
+    - role: kalite
+      version: "0.15.0"
+      lang: ["fr"]
+
+    - role: zim_install
+      zim_name: "wikipedia.fr gutenberg.fr dirtybiology.fr cest-pas-sorcier.fr wiktionary.fr wikiversity.fr universcience-tv.fr les-fondamentaux.fr"
+
+    #- role: idc_import
+    #  content_name: ""

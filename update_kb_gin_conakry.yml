@@ -17,7 +17,7 @@
 
     # - role: kalite
     #   version: "0.15.0"
-    #   lang: "fr"
+    #   lang: ["fr"]
 
     # - role: zim_install
     #   zim_name: "wikipedia.fr cest-pas-sorcier.fr gutenberg.fr tedxgeneva2014.fr universcience-tv.fr tedxlausanne2012.fr tedxlausanne2013.fr tedxlausanne2014.fr"

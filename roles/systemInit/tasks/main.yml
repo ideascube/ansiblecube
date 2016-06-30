@@ -178,3 +178,11 @@
 
 - include: lime2.yml
   when: fex_file.stat.exists == True
+
+- name: Check for Realtek Wireless Network Adapter
+  shell: "lspci | grep -F 'Network controller: Realtek Semiconductor'"
+  ignore_errors: yes
+  register: lspci_realtek
+
+- include: realtek.yml
+  when: lspci_realtek.stdout != ""
