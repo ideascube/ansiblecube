@@ -8,13 +8,13 @@
     # # Can be enable/disable on demand but affect all devices
 
     - role: upgradeIdc
-      version: "0.9.9"
+      version: "0.9.11"
 
     - role: updateMook
       mook_name: "bsfcampus"
       version: "090316"
 
-    - tinc-static
+    - kiwix
 
     # Start. has to be always enable 
     - logs
