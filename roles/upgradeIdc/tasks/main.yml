@@ -133,9 +133,13 @@
 - stat: path=/var/lib/ansible/ideascube-{{ version }}.csv
   register: st_ideascube
 
-# - name: Create ideascube cache folder
-#   file: path=/var/cache/ideascube/ state=directory owner=ideascube group=ideascube mode=755
-#   when: st_ideascube.stat.exists == False and use_hdd|bool
+- name: Create ideascube cache folder on hard drive
+  file: path=/media/hdd/ideascube_cache state=directory owner=ideascube group=ideascube mode=755
+  when: st_ideascube.stat.exists == False and use_hdd|bool
+
+- name: Ensure the folder is removed
+  file: path=/var/cache/ideascube state=absent
+  when: st_ideascube.stat.exists == False and use_hdd|bool
 
 - name: Create a simlink for ideascube catalog
   file: src=/media/hdd/ideascube_cache dest=/var/cache/ideascube
