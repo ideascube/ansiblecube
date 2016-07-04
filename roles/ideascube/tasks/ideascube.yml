@@ -7,6 +7,12 @@
   tags: 
     - custom
 
+- name: Ensure ideascube folder does not exist on hard drive before opération 
+  file: path=/media/hdd/ideascube state=absent
+  when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and dev_sda.stat.exists == True
+  tags: 
+    - custom
+
 - name: Move ideascube folder to the hard drive
   command: mv -f /var/ideascube /media/hdd/
   when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and dev_sda.stat.exists == True
