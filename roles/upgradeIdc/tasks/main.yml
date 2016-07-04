@@ -142,7 +142,7 @@
   when: st_ideascube.stat.exists == False and use_hdd|bool
 
 - name: Create a simlink for ideascube catalog
-  file: src=/media/hdd/ideascube_cache dest=/var/cache/ideascube
+  file: src=/media/hdd/ideascube_cache dest=/var/cache/ideascube state=link
   when: st_ideascube.stat.exists == False and use_hdd|bool
 
 - name: Install the ideascube package
