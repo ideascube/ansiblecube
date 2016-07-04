@@ -20,16 +20,10 @@
 - name: Convert DTB file to DTS
   command: dtc -I dtb -O dts /boot/dtb/sun7i-a20-olinuxino-lime2.dtb -o /boot/dtb/sun7i-a20-olinuxino-lime2.dts
 
-- name: Change the PIN for the LED
+- name: Change the PIN for the LED and Activate heartbeat mode
   replace: dest=/boot/dtb/sun7i-a20-olinuxino-lime2.dts
     regexp='gpios = <0x1e 0x7 0x2 0x0>;' 
-    replace='gpios = <0x1e 0x7 0x14 0x0>;'
-
-- name: Activate heartbeat mode
-  lineinfile: dest=/boot/dtb/sun7i-a20-olinuxino-lime2.dts
-    regexp='default-state = "on";'
-    insertafter='default-state = "on";'
-    line='linux,default-trigger = "heartbeat";'
+    replace='gpios = <0x1e 0x7 0x14 0x0>;\n                        linux,default-trigger = "heartbeat";'
 
 - name: Convert DTS file to DTB
   command: dtc -I dts -O dtb /boot/dtb/sun7i-a20-olinuxino-lime2.dts -o /boot/dtb/sun7i-a20-olinuxino-lime2.dtb
