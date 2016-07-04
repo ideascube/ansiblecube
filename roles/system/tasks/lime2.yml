@@ -27,10 +27,3 @@
 
 - name: Convert DTS file to DTB
   command: dtc -I dts -O dtb /boot/dtb/sun7i-a20-olinuxino-lime2.dts -o /boot/dtb/sun7i-a20-olinuxino-lime2.dtb
-
-- name: Copy patch U-Boot package
-  get_url: url={{filer_bsf}}/linux-u-boot-next-lime2_5.14_armhf.deb
-    dest=/tmp/linuxUboot.deb owner=root group=root mode=755
-
-- name: install patch U-Boot package
-  apt:  deb=/tmp/linuxUboot.deb
