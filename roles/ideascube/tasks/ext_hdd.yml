@@ -40,15 +40,15 @@
 
 - name: Create ideascube cache folder on hard drive
   file: path=/media/hdd/ideascube_cache state=directory owner={{ username }} group={{ username }} mode=755
-  when: p_cache.stat.isdir is defined and p_cache.stat.isdir
+  when: p_cache.stat.isdir is not defined
   tags: ['custom', 'update']
 
 - name: Ensure the folder is removed
   file: path=/var/cache/ideascube state=absent
-  when: p_cache.stat.isdir is defined and p_cache.stat.isdir
+  when: p_cache.stat.isdir is not defined
   tags: ['custom', 'update']
 
 - name: Create a simlink for ideascube catalog
   file: src=/media/hdd/ideascube_cache dest=/var/cache/ideascube state=link
-  when: p_cache.stat.isdir is defined and p_cache.stat.isdir
+  when: p_cache.stat.isdir is not defined
   tags: ['custom', 'update']
