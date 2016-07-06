@@ -2,46 +2,82 @@
 - include_vars: group_vars/{{ ansible_architecture }}.yml
   tags: ['custom', 'update']
 
-- name: Install requiered packages for kalite installation 
-  apt: name={{ item }} state=latest
-  with_items: 
-   - python-pkg-resources 
-   - python-psutil
+- name: Ensure kalite is stopped if service exist
+  become: yes
+  become_user: ideascube
+  command: kalite stop
+  tags: ['custom', 'update']
+  ignore_errors: yes
+
+- name: Wait for the service Kalite to be completly started
+  wait_for: port=8008 state=stopped timeout=120
+  tags: ['custom', 'update']
+
+- name: Install kalite
+  pip: name=ka-lite version={{ ansible_local.device_list[generic_project_name].kalite.version }}
+  tags: ['custom', 'update']
+
+- name: Initialize ka-lite
+  become: yes
+  become_user: ideascube
+  command: kalite start
   tags:
     - custom
-  
-- name: Download Kalite 
-  get_url: url=https://learningequality.org/r/deb-pi-installer-0-16 validate_certs=no dest=/tmp/kalite.deb
+
+- name: Wait for the service Kalite to be completly started
+  wait_for: port=8008 state=started
   tags:
     - custom
-  
-- name: Install Kalite package
-  apt: deb=/tmp/kalite.deb
+
+- name: Stop kalite
+  become: yes
+  become_user: ideascube
+  command: kalite stop
   tags:
     - custom
-  
-- name: Define a new content path if we are on a KoomBook
-  lineinfile: dest=/var/ka-lite/.kalite/settings.py
-              regexp=''
-              insertafter=EOF
-              line='CONTENT_ROOT = "/media/hdd/khanVideos/content/"'
-  when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and ansible_mounts.device == "/dev/sda1"
+
+- name: Wait for the service Kalite to be completly started
+  wait_for: port=8008 state=stopped timeout=120
   tags:
     - custom
-  
-- name: kalite nginx conf must listen to port 80
-  replace: dest=/etc/nginx/sites-enabled/kalite.conf 
-           regexp='listen 8008;' 
-           replace='listen 80;\n    server_name {{kalite_server_name}};'
+
+- name: Include task nedeed when using an external hard drive
+  include: ext_hdd.yml
+  when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l")
+    and ansible_devices.sda.partitions.sda1 is defined
+  tags:
+    - custom
+
+- name: Copy nginx vhost
+  template: src=kalite.vhost.j2 dest=/etc/nginx/sites-available/kalite
+  tags:
+    - custom
+
+- name: Nginx enable Virtual host
+  file: src=/etc/nginx/sites-available/kalite dest=/etc/nginx/sites-enabled/kalite state=link
   notify: restart nginx
+  tags:
+    - custom
+
+- name: Setup startup file
+  template: src=kalite.j2 dest=/etc/init.d/kalite owner=root group=root mode="u+x"
+  tags:
+    - custom
+
+- name: Enable service kalite
+  service: name=kalite enabled=yes
   tags:
     - custom
   
 - name: Download Kalite language pack
   become: yes
-  become_user: ka-lite
+  become_user: ideascube
   command: kalite manage retrievecontentpack download {{ ansible_local.device_list[generic_project_name].kalite.language }}
-  notify: restart ka-lite
   tags:
     - custom
   
+- name: Start Kalite
+  become: yes
+  become_user: ideascube
+  command: kalite start 
+  tags: ['custom', 'update']
