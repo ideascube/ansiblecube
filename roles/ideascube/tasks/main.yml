@@ -1,22 +1,8 @@
 ---
 - include: ../../../pre_install.yml task=ideascube
-  tags: [master,custom,update]
-
-- stat: path=/dev/sda1
-  register: dev_sda
-
-- stat: path=/dev/mmcblk0
-  register: dev_mmcblk0
+  tags: ['master','custom', 'update']
 
 - include: ideascube.yml
 
-- include: upgrade-0.9.9.yml
-  when: ansible_local.installed_software.software.ideascube | version_compare('0.9.9', '<')
-    and ansible_local.installed_software.software.ideascube != "0"
-  tags:
-    - update
-
-- include: ../../../post_install.yml task=ideascube task_version="{{ ansible_local.device_list[generic_project_name].ideascube.version }}"
-  when: ansible_local.installed_software.software.ideascube | version_compare('{{ ansible_local.device_list[generic_project_name].ideascube.version }}', '<')
-    or ansible_local.installed_software.software.ideascube == "0"
-  tags: [custom,update]
+- include: ../../../post_install.yml task=ideascube task_version="{{ ideascube_version }}"
+  tags: ['master','custom', 'update']
