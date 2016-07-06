@@ -147,7 +147,7 @@
 - name: Add domain name for hotspot interface
   lineinfile: dest=/etc/hosts
     regexp='^'
-    line='{{hotspotip}} {{ idc_uniq_device_name |replace("_", "-") }}.lan {{ hostname }} {{ mook_front_server_name }}'
+    line='{{hotspotip}} {{ idc_uniq_device_name |replace("_", "-") }}.lan {{ hostname }}
     state=present
   tags: ['master', 'custom']
 
