@@ -21,6 +21,9 @@
 			"activated": "True",
 			"version": "100516"
 		}
+		"appinventor":{
+			"activated": "True"
+		}
 	},
 	"kb-bdi-tv5monde":{
 		"kalite":{
