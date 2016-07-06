@@ -1,6 +1,11 @@
 ---
 - include_vars: group_vars/{{ ansible_architecture }}.yml
 
+- name: Update ideascube catalog cache before downloading
+  become: yes
+  become_user: ideascube
+  command: ideascube catalog cache update
+
 - name: Download and install ZIM content from Kiwix catalog
   become: yes
   become_user: ideascube
