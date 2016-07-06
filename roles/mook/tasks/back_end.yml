@@ -8,7 +8,7 @@
 - name: Update mook api
   become: True
   become_user: ideascube
-  git: repo=ssh://git@altssh.bitbucket.org:443/gryzzlab/mook-bsf-api.git dest={{ mook_path }}/{{ mook_name }}/api accept_hostkey=yes update=yes depth=1
+  git: repo=ssh://git@altssh.bitbucket.org:443/{{url_project_name}}/mook-bsf-api.git dest={{ mook_path }}/{{ mook_name }}/api accept_hostkey=yes update=yes depth=1
   tags:
     - update
 
@@ -54,7 +54,10 @@
     - custom
     
 - name: Install python requierment
-  pip: requirements=requirements.txt chdir={{ mook_path }}/{{ mook_name }}/api virtualenv_command=/usr/local/bin/virtualenv virtualenv={{ mook_path }}/{{ mook_name }}/api/env
+  pip: requirements=requirements.txt 
+    chdir={{ mook_path }}/{{ mook_name }}/api 
+    virtualenv_command=/usr/local/bin/virtualenv 
+    virtualenv={{ mook_path }}/{{ mook_name }}/api/env
   tags:
     - custom
     
@@ -62,16 +65,17 @@
   template: src=settings_local.py.j2 dest={{ mook_path }}/{{ mook_name }}/api/settings_local.py
   tags: [custom,update]
     
-- name: Retrieve KoomBook info 
-  set_fact: koombookName="{{ lookup('csvfile', 'id file=/etc/firstStart.csv delimiter=, col=3') }}" uuid="{{ lookup('csvfile', 'id file=/etc/firstStart.csv delimiter=, col=4') }}"
-  tags: [custom,update]
-    
 - name: add conf for KoomBook
-  lineinfile: dest={{ mook_path }}/{{ mook_name }}/api/settings_local.py regexp='' insertafter=EOF line='    CENTRAL_SERVER_KEY = \"{{koombookName}}\" \n    CENTRAL_SERVER_SECRET = \"{{uuid}}\"' owner={{username}} group={{username}} mode=755
+  lineinfile: dest={{ mook_path }}/{{ mook_name }}/api/settings_local.py 
+    regexp='' 
+    insertafter=EOF 
+    line='    CENTRAL_SERVER_KEY = \"{{ ansible_hostname }}\" \n    CENTRAL_SERVER_SECRET = \"{{ ansible_machine_id }}\"' 
+    owner={{username}} group={{username}} mode=755
   tags: [custom,update]
     
 - name: Setup startup file for uwsgi
-  copy: src=settings_central.py dest={{ mook_path }}/{{ mook_name }}/api owner={{username}} group={{username}} mode=755
+  copy: src=settings_central.py dest={{ mook_path }}/{{ mook_name }}/api 
+    owner={{username}} group={{username}} mode=755
   notify: restart mook-sync
   tags:
     - custom
