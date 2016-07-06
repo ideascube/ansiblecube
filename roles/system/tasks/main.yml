@@ -156,7 +156,7 @@
         ssh_key_file=.ssh/id_rsa
         password={{ password }}
   tags:
-    - custom
+    - master
 
 - name: Set up authorized_keys for the ideascube user
   authorized_key: user={{username}} key="{{ item }}"
