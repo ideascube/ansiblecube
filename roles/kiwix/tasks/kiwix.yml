@@ -27,7 +27,7 @@
   become_user: ideascube
   command: ideascube catalog remotes add "Kiwix" "Kiwix ZIM content" http://catalog.ideascube.org/kiwix.yml
   tags: 
-    - master
+    - custom
     
 - name: Nginx enable Virtual host
   file: src=/etc/nginx/sites-available/kiwix dest=/etc/nginx/sites-enabled/kiwix state=link
