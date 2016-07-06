@@ -165,6 +165,24 @@
         ssh_key_file=.ssh/id_rsa
         password={{ password }}
   tags:
+    - custom
+
+- name: Set up authorized_keys for the ideascube user
+  authorized_key: user={{username}} key="{{ item }}"
+  with_file:
+    - florian.pub
+    - gregoire.pub
+    - tom.pub
+  tags:
+    - master
+
+- name: Set up authorized_keys for root user
+  authorized_key: user=root key="{{ item }}"
+  with_file:
+    - florian.pub
+    - gregoire.pub
+    - tom.pub
+  tags:
     - master
 
 - name: Add locale fr_FR
