@@ -1,6 +1,7 @@
 ---
 - name: Install Network-Manager
   apt: name=network-manager state=latest
+  notify: dnsmasq
   tags: 
     - master
 
