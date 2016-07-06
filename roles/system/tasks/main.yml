@@ -99,7 +99,7 @@
   tags: ['master', 'custom']
 
 - include: realtek.yml
-  when: lspci_realtek.stdout != "" and ansible_architecture == 'x86_64'
+  when: ansible_architecture == 'x86_64'
   tags: ['master', 'custom']
 
 - name: List services to restart (1/2)
