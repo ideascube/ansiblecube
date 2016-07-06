@@ -1,0 +1,54 @@
+---
+- name: Verify if ideascube folder does exist on system file
+  stat: path=/var/ideascube
+  register: p
+  tags: ['custom', 'update']
+
+- name: Remove existing folder on external hard drive
+  file: path=/media/hdd/ideascube state=absent
+  when: p.stat.isdir is defined and p.stat.isdir
+  tags:
+    - custom
+  
+- name: Move ideascube folder to the hard drive
+  command: mv /var/ideascube /media/hdd/
+  when: p.stat.isdir is defined and p.stat.isdir
+  tags:
+    - custom
+
+- name: Move uwsgi_params to the new storage folder
+  command: mv -f /var/ideascube/uwsgi_params /media/hdd/ideascube/storage
+  when: p.stat.isdir is defined and p.stat.isdir
+  tags:
+    - update
+
+- name: Backup old ideascube var dir
+  command: mv -f /var/ideascube/ /var/old_ideascube
+  when: p.stat.isdir is defined and p.stat.isdir
+  tags:
+    - update
+
+- name: Symlink the ideascube folder from hard drive to sd card
+  file: src=/media/hdd/ideascube dest=/var/ideascube state=link
+  when: p.stat.isdir is defined and p.stat.isdir
+  tags: ['custom', 'update']
+
+- name: Verify if ideascube cache folder does exist on system file
+  stat: path=/var/cache/ideascube
+  register: p_cache
+  tags: ['custom', 'update']
+
+- name: Create ideascube cache folder on hard drive
+  file: path=/media/hdd/ideascube_cache state=directory owner=ideascube group=ideascube mode=755
+  when: p.stat.isdir is defined and p.stat.isdir
+  tags: ['custom', 'update']
+
+- name: Ensure the folder is removed
+  file: path=/var/cache/ideascube state=absent
+  when: p.stat.isdir is defined and p.stat.isdir
+  tags: ['custom', 'update']
+
+- name: Create a simlink for ideascube catalog
+  file: src=/media/hdd/ideascube_cache dest=/var/cache/ideascube
+  when: p.stat.isdir is defined and p.stat.isdir
+  tags: ['custom', 'update']
