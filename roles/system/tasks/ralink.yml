@@ -1,0 +1,9 @@
+---
+
+- name: Add non free repository
+  replace: dest=/etc/apt/sources.list
+    regexp='jessie main' 
+    replace='jessie main non-free'
+  
+- name: Install the Ralink firmware for wifi interfaces
+  apt: name=firmware-ralink state=present update_cache=yes
