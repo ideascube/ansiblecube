@@ -95,20 +95,11 @@
   shell: "lspci | grep -F 'Network controller: Realtek Semiconductor'"
   ignore_errors: yes
   register: lspci_realtek
+  when: ansible_architecture == 'x86_64'
   tags: ['master', 'custom']
 
 - include: realtek.yml
-  when: lspci_realtek.stdout != ""
-  tags: ['master', 'custom']
-
-- name: Check for Ralink Wireless Network Adapter
-  shell: "lspci | grep -F 'Ralink'"
-  ignore_errors: yes
-  register: lspci_ralink
-  tags: ['master', 'custom']
-
-- include: ralink.yml
-  when: lspci_ralink.stdout != ""
+  when: lspci_realtek.stdout != "" and ansible_architecture == 'x86_64'
   tags: ['master', 'custom']
 
 - name: List services to restart (1/2)

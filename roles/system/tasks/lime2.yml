@@ -2,6 +2,14 @@
 - name: fake-hwclock conf for ARM system 
   copy: content="FORCE=force" dest=/etc/default/fake-hwclock
 
+- name: Check for Ralink Wireless Network Adapter
+  shell: "lsusb | grep -F 'Ralink Technology'"
+  ignore_errors: yes
+  register: lsusb_ralink
+
+- include: ralink.yml
+  when: lspci_ralink.stdout != ""
+
 - name: Ensure the HDD mountpoint exists
   file: path=/media/hdd state=directory
   when: ansible_devices.sda.partitions.sda1 is defined
