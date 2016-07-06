@@ -39,7 +39,7 @@
   tags: ['custom', 'update']
 
 - name: Create ideascube cache folder on hard drive
-  file: path=/media/hdd/ideascube_cache state=directory owner=ideascube group=ideascube mode=755
+  file: path=/media/hdd/ideascube_cache state=directory owner={{ username }} group={{ username }} mode=755
   when: p.stat.isdir is defined and p.stat.isdir
   tags: ['custom', 'update']
 
