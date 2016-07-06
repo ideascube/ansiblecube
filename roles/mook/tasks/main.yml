@@ -1,31 +1,31 @@
 ---
 - include: ../../../pre_install.yml task={{ mook_name }}
-  tags: [custom,update]
+  tags: ['custom','update']
 
 - include_vars: group_vars/{{ ansible_architecture }}.yml
-  tags: [custom,update]
+  tags: ['custom','update']
 
 # Set variables
 
 - name: Set mook project name to have the right URL
   set_fact: url_project_name="gryzzlab"
   when: mook_name == 'bsfcampus'
-  tags: [custom,update]
+  tags: ['custom','update']
 
 - name: Set mook project name to have the right URL
   set_fact: url_project_name="bsfcampus"
   when: mook_name == 'koombookedu'
-  tags: [custom,update]
+  tags: ['custom','update']
 
 - name: Set the central server variable for BSF Campus
   set_fact: central_server_host="http://api.bsfcampus.org/"
   when: mook_name == 'bsfcampus'
-  tags: [custom,update]
+  tags: ['custom','update']
 
 - name: Set the central server variable for KoomBook EDU
   set_fact: central_server_host="http://mook-api.bibliosansfrontieres.fr/"
   when: mook_name == 'koombookedu'
-  tags: [custom,update]
+  tags: ['custom','update']
 
 # Call those roles if this is the first install
 
@@ -36,4 +36,4 @@
 - include: system.yml
 
 - include: ../../../post_install.yml task=mook_name task_version="{{ mook_version }}"
-  tags: [custom,update]
+  tags: ['custom','update']
