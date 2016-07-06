@@ -1,0 +1,16 @@
+---
+- name: Create Kalite content directory
+  file: path=/media/hdd/khanVideos/content/ state=directory 
+    owner={{ username }} group={{ username }} recurse=yes
+
+- name: Verify if the path is a directory
+  stat: path=/home/{{username}}/.kalite/content
+  register: p
+
+- name: Remove existing content
+  file: path=/home/{{username}}/.kalite/content state=absent
+  when: p.stat.isdir is defined and p.stat.isdir
+
+- name: Create a simlink between kalite local content folder and hard drive
+  file: src=/media/hdd/khanVideos/content/ 
+    dest=/home/{{username}}/.kalite/content state=link force=yes
