@@ -8,7 +8,7 @@
   register: lsusb_ralink
 
 - include: ralink.yml
-  when: lspci_ralink.stdout != ""
+  when: lsusb_ralink.stdout != ""
 
 - name: Ensure the HDD mountpoint exists
   file: path=/media/hdd state=directory
