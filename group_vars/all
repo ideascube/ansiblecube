@@ -12,14 +12,13 @@ repo_url: https://github.com/ideascube/ansiblecube.git
 central_server: ansible@37.187.151.52
 filer_bsf: http://filer.bsf-intranet.org
 timezone: "Europe/Paris"
-zim_path: /var/ideascube/kiwix
 synology: "synology.montreuil.wan.bsf-intranet.org"
 kiwix_version: "0.9"
 mongodb_version: "2.4.10"
 
 #Apps path
 mook_path: /home/{{ username }}
-mook_name: "bsfcampus"
+zim_path: /var/ideascube/kiwix
 
 #Domaine name
 kalite_server_name: khanacademy.{{hostname}}
