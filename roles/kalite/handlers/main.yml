@@ -2,8 +2,3 @@
 - name: restart nginx
   service: name=nginx state=restarted
   tags: ['custom', 'update']
-  
-- name: restart ka-lite
-  service: name=ka-lite state=restarted
-  tags: ['custom', 'update']
-  
