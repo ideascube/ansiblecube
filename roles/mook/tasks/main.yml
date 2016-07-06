@@ -35,5 +35,5 @@
 
 - include: system.yml
 
-- include: ../../../post_install.yml task=mook_name task_version="{{ mook_version }}"
+- include: ../../../post_install.yml task={{mook_name}} task_version="{{ mook_version }}"
   tags: ['custom','update']
