@@ -10,14 +10,6 @@
     - ideascube
     - kiwix
 
-    - role: app_inventory
-      when: ansible_local.installed_software.management.inventory is not defined
-
-    - role: logs
-      when: ansible_local.installed_software.management.managed_by_bsf|bool == True
-      tags:
-        - update
-
     - role: tinc-static
       when: ansible_local.installed_software.management.managed_by_bsf|bool == True
       tags: ['custom', 'update']
@@ -47,3 +39,8 @@
       when: ansible_local.device_list[generic_project_name].idc_import is defined
         and ansible_local.device_list[generic_project_name].idc_import.activated|bool == True
       tags: ['custom', 'update']
+
+    - role: logs
+      when: ansible_local.installed_software.management.managed_by_bsf|bool == True
+      tags:
+        - update
