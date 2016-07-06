@@ -4,18 +4,11 @@
 
 - name: Ensure the HDD mountpoint exists
   file: path=/media/hdd state=directory
-
-- stat: path=/dev/sda1
-  register: dev_sda
+  when: ansible_devices.sda.partitions.sda1 is defined
 
 - name: Mount /dev/sda1
   mount: name=/media/hdd/ src=/dev/sda1 fstype=ext4 state=mounted opts=noatime,nofail
-  when: dev_sda.stat.exists == True
-
-- name: Mount /dev/sda
-  mount: name=/media/hdd/ src=/dev/sda fstype=ext4 state=mounted opts=noatime,nofail
-  when: dev_sda.stat.exists == False
-  ignore_errors: yes
+  when: ansible_devices.sda.partitions.sda1 is defined
 
 - name: Convert DTB file to DTS
   command: dtc -I dtb -O dts /boot/dtb/sun7i-a20-olinuxino-lime2.dtb -o /boot/dtb/sun7i-a20-olinuxino-lime2.dts
