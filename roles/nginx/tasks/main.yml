@@ -1,6 +1,6 @@
 ---
 - name: Install nginx web server
-  apt: pkg=nginx state=installed force=yes
+  apt: name=nginx state=latest force=yes
   tags: 
     - master
 
