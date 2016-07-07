@@ -14,5 +14,5 @@
     #- role: zim_install
     #  zim_name: "wikipedia.en wikipedia.ar wikipedia.fa wikipedia.de gutenberg.de"
 
-    - role: idc_import
-      content_name: "dusseldorf.csv"
+    # - role: idc_import
+    #  content_name: "dusseldorf.csv"
