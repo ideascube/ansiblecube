@@ -19,13 +19,12 @@
     - custom
 
 - name: Create log directory
-  file: path=/var/log/mongodb/ state=directory mode=0755 owner=mongodb group=nogroup
+  file: path=/var/log/mongodb/ state=directory mode=0755 owner=mongodb group=nogroup recurse=yes
   tags: [custom,update]
 
 - name: Create data directory
-  file: path=/media/hdd/mongodb state=directory mode=0755 owner=mongodb group=nogroup
-  tags:
-    - custom
+  file: path=/media/hdd/mongodb state=directory mode=0755 owner=mongodb group=nogroup recurse=yes
+  tags: [custom,update]
 
 - name: Copy mongodb repair script
   copy: src=mongo_repair.sh dest=/opt/mongo/mongo_repair.sh mode=755
