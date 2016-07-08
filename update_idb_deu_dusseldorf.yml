@@ -16,7 +16,3 @@
 
     # - role: idc_import
     #  content_name: "dusseldorf.csv"
-
-    - role: rename_device
-      ideascube_id: "idb_deu_dusseldorf"
-      when: ansible_hostname == 'idb-de-dusseldorf-498'
