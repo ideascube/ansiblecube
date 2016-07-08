@@ -14,5 +14,5 @@
     # - role: zim_install
     #   zim_name: "wikipedia.fr gutenberg.fr dirtybiology.fr cest-pas-sorcier.fr wiktionary.fr wikiversity.fr universcience-tv.fr les-fondamentaux.fr"
 
-    - role: idc_import
-      content_name: "sarcelles.csv"
+    # - role: idc_import
+    #  content_name: "sarcelles.csv"
