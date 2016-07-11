@@ -1,0 +1,24 @@
+---
+# Ansible playbook for IdeasBox Kurdistan Bardarash
+
+#It will be always localhost
+- hosts: localhost
+
+  roles:
+
+    # Start. has to be always enable
+    - logs
+    # Stop. has to be always enable
+
+    # - software
+
+    # - tinc-static
+
+    # - role: ideascube
+
+    # - role: kalite
+    #  version: "0.15.0"
+    #  lang: "['en','ar','de']"
+
+    #- role: zim_install
+    #  zim_name: "wikipedia.en wikipedia.ar gutenberg.en"
