@@ -42,8 +42,8 @@
 
 - name: Add non free repository
   replace: dest=/etc/apt/sources.list
-    regexp='jessie main' 
-    replace='jessie main non-free'
+    regexp='(jessie)\s' 
+    replace='\1 non-free '
   tags:
     - master
 
