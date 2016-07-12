@@ -39,6 +39,7 @@ Please have a look at others configurations files to see how it has been done. W
    - **activated** Whether we want install or not the application. If True, the application will be installed and configured on the target device. If leaved True, the target device will be updated continuously at each time the later will be connected on Internet
    - **version** For some application it is better to lock the version number instead of installing always the last version. A new version has always to be tested before deployment.
    - **language** You can specify the language you wish to use (must be on 2 letters)
+   ```
  	"kb-gin-conakry":{
 		"kalite":{
 			"activated": "True",
