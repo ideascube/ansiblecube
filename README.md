@@ -33,13 +33,12 @@ Please have a look at others configurations files to see how it has been done. W
  - Fork the repository and clone it on your computer to be able to update roles 
  - Open the bash script ```oneClickDeploy.sh``` and change the github repo for the one you own
  - Edit the file ```roles/set_custom_fact/files/device_list.fact```
- - Add a new JSON section to describe what must be installed on your device. **This is JSON syntax, comma and quote a really important !** ```
+ - Add a new JSON section to describe what must be installed on your device. **This is JSON syntax, comma and quote a really important !** 
    - **kb-gin-conakry** is the name of your device
    - **kalite** is the name of the role played but also the name of the application we want to install
    - **activated** Whether we want install or not the application. If True, the application will be installed and configured on the target device. If leaved True, the target device will be updated continuously at each time the later will be connected on Internet
    - **version** For some application it is better to lock the version number instead of installing always the last version. A new version has always to be tested before deployment.
-   - **language** You can specify the language you wish to use (must be on 2 letters)
- 	"kb-gin-conakry":{
+   - **language** You can specify the language you wish to use (must be on 2 letters) ``` "kb-gin-conakry":{
 		"kalite":{
 			"activated": "True",
 			"version": "0.16.5",
@@ -65,8 +64,7 @@ Please have a look at others configurations files to see how it has been done. W
 			"activated": "True",
 			"content_name": "2- Contenus/Logiciel-libre/app.csv"
 		}
-	},
-	```
+	}, ```
  - Save, commit and push modification to your repository ```git add . &&  git commit -a && git push origin master```
  At this stage you have a new configuration file. This file is going to lunch several roles that are going to be processed on your device
 
