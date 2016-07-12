@@ -28,23 +28,6 @@ If you need to adapt some settings for your own project, you'll have to create a
 
 Please have a look at others configurations files to see how it has been done. When you know what to do, simply send us a pull request with your new file. 
 
-## Set up your hardware 
-### ARM
-If you own an Olimex Lime 2 or Raspberry Pi 2/3, the best is to give a try to Ansible ! 
- - Download an [Armbian image](http://www.armbian.com/olimex-lime-2/) (Choose "Legacy" / "Jessie") for Olimex or a [Raspbian image](https://www.raspberrypi.org/downloads/raspbian/) for Raspberry Pi. You can also use the [last Image](http://) built by Library whitout borders
- - Unzip image and burn it on an SD Card (class 10!)
- - ```sudo dd bs=1M if=filename.raw of=/dev/sdx```
- - Insert SD card on the board, first start is longer (update, SSH keys init, etc.)
- - Connect an Ethernet cable. Keybord and screen if you can not login with SSH
- - Login throught SSH : Default password is `password` for Armbian and pi / raspberry for Raspberry
-
-> AnsibleCube is able to mount an external hard drive to store large amount of data. The hard drive has to be connected from firstboot and accesible here `/dev/sda1`. This block will be mounted at custom run and used to store the data
-
-### AMD64
- - [Download the last Debian jessie](http://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-8.2.0-amd64-lxde-desktop.iso), with or without graphical intercace : 
- - Set up your serveur as you will do for any server you own
- - When asked, create a root user and an ideascube user (ideascube user password will be automatically overrided during ansible deployment)
-
 ## On your computer, clone AnsibleCube
 ### Methode 1 : Fork and clone 
  - Fork the repository and clone it on your computer to be able to update roles 
@@ -90,20 +73,50 @@ If you own an Olimex Lime 2 or Raspberry Pi 2/3, the best is to give a try to An
 ### Methode 2 : Send me a pull request
 From the github web interface you can also edit ```roles/set_custom_fact/files/device_list.fact``` add your device  and send me a pull request.
 
+## Set up your hardware 
+### Case 1 : ARM Proc
+If you own an Olimex Lime 2 or Raspberry Pi 2/3, the best is to give a try to Ansible ! 
+ - Download an [Armbian image](http://www.armbian.com/olimex-lime-2/) (Choose "Legacy" / "Jessie") for Olimex or a [Raspbian image](https://www.raspberrypi.org/downloads/raspbian/) for Raspberry Pi. You can also use the [last Image](http://) built by Library whitout borders
+ - Unzip image and burn it on an SD Card (class 10!)
+   - **Linux** : ```sudo dd bs=1M if=filename.raw of=/dev/sdx && sync```
+   - **Windows** : Use [Rufus](https://rufus.akeo.ie/) and fellow the instrcutions 
+ - Insert SD card on the board, first start is longer (update, SSH keys init, etc.)
+ - Connect an Ethernet cable. Keybord and screen if you can not login with SSH
+ - Login throught SSH : Default password is `password` for Armbian and pi / raspberry for Raspberry
+
+> AnsibleCube is able to mount an external hard drive to store large amount of data. The hard drive has to be connected from firstboot and accesible here `/dev/sda1`. This block will be mounted at custom run and used to store the data
+
+### Case 2 : AMD64
+ - [Download the last Debian jessie](http://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-8.2.0-amd64-lxde-desktop.iso), with or without graphical intercace : 
+ - Set up your serveur as you will do for any server you own
+ - When asked, create a root user and an ideascube user (ideascube user password will be automatically overrided during ansible deployment)
+
+
 ## Prepare the deployment !
 ### Download oneClickDeploy script
-Now you are ready to start deployment on the targeted device, to do so, SSH throught your Ideascube box. 
+Now you are ready to start deployment on the targeted device
+#### With SSH
  - ```ssh ideascube@192.168.1.xxx```
- - Download the bash script ```wget https://github.com/ideascube/ansiblecube/raw/master/oneClickDeploy.sh --no-check-certificat```
+ - Login with SSH : Login : `root`, default password is 1234 for Armbian and pi / raspberry for Raspberry 
+ - Download the bash script : ```wget https://github.com/ideascube/ansiblecube/raw/master/oneClickDeploy.sh --no-check-certificate```
  - Modify rights ```chmod +x oneClickDeploy.sh```
  
- ### Set the right settings
+#### On the device directly
+ - Plug a keyboard on your device
+ - Login : `root`, default password is 1234 for Armbian and pi / raspberry for Raspberry 
+ - If needed, type this command to change the mapping of your keyboard `loadkeys fr`
+ - Download the bash script : ```wget https://github.com/ideascube/ansiblecube/raw/master/oneClickDeploy.sh --no-check-certificate```
+ - Modify rights ```chmod +x oneClickDeploy.sh```
+
+#### Set the right settings
 This script takes 4 arguments : 
  - ```script_action``` : ```master``` ou ```custom``` Master run must be done for a brand new machine (ex: Debian fresh install), however the KoomBook Image has been already mastered.
- - ```managed_by_bsf``` : ```True``` ou ```False``` This setting send metrics to the central server. You'll need the password server to connect throught SSH. If you don't have it, set it to ```False```
- - ```ideascube_project_name``` : ex ```kb_mooc_cog``` is the name of the Ideascube project, this name MUST be the same as the ideascube name stored in ```ideascube/conf/``` ideascube github repository
+ - ```sync_log```: ```True``` ou ```False``` This setting send metrics to the central server. You'll need the password server to connect through SSH. If you don't have it, set it to ```False```
+ - ```ideascube_id``` : ex ```kb_mooc_cog``` is the name of the Ideascube project, this name MUST be the same as the ideascube name stored in ```ideascube/conf/``` ideascube github repository
  - ```timezone``` : ex ```Africa/Kinsasha``` is the time zone (available in /usr/share/zoneinfo/) to set to the server or check at https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
  
+**WARNING** : If you are running this command behind a firewall, be sure the NTP protocol is open for outgoing connection, if not, set mannualy the date on your system : `date -s 20160513`
+
 ### Lunch the deployment 
 /!\ KoomBook image don't need master run
   1. Create a master : ```./oneClickDeploy.sh script_action=master```
