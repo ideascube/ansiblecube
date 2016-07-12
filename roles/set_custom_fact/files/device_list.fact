@@ -74,5 +74,24 @@
 			"activated": "True",
 			"content_name": "2- Contenus/Logiciel-libre/app.csv"
 		}
-	}
+	},
+	"kb-esp-avanti":{
+		"kalite":{
+			"activated": "True",
+			"version": "0.16.5",
+			"language": "es"
+		},
+		"zim_install":{
+			"activated": "True",
+			"name": "wikipedia.es gutenberg.es"
+		},
+		"ideascube":{
+			"activated": "True",
+			"version": "0.10.2"
+		},
+		"idc_import":{
+			"activated": "True",
+			"content_name": "13-Nicarali/CSV-Nicarali.csv"
+		}
+	},
 }
