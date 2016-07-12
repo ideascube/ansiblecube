@@ -126,7 +126,7 @@
   when: st.stat.exists == False
 
 - name: Create a mongodb service override unit directory
-  file: path=dest=/etc/systemd/system/mongodb.service.d state=directory owner=root group=root
+  file: dest=/etc/systemd/system/mongodb.service.d state=directory owner=root group=root
   when: st.stat.exists == False
 
 - name: Drop in a unit file so uwsgi starts after mongodb
