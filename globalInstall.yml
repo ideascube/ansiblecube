@@ -10,7 +10,6 @@
   roles:
     - systemInit
     - nginx
-    - uwsgi
     - dnsmasq
     - hostapd
     - iptables

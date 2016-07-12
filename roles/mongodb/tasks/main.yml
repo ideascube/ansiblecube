@@ -39,8 +39,12 @@
   copy: src=mongodb.service dest=/etc/systemd/system/mongodb.service owner=root group=root
   when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l' and mongodb.changed
 
-- name: Copy new uwsgi startup file. Uwsgi must start after MongoDB
-  copy: src=uwsgi.service dest=/etc/systemd/system/uwsgi.service owner=root group=root
+- name: Create a mongodb service override unit directory
+  file: path=dest=/etc/systemd/system/mongodb.service.d state=directory owner=root group=root
+  when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l' and mongodb.changed
+
+- name: Drop in a unit file so uwsgi starts after mongodb
+  copy: src=before-uwsgi.conf dest=/etc/systemd/system/mongodb.service.d/before-uwsgi.conf owner=root group=root
   when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l' and mongodb.changed
 
 - name: Enable service mongodb

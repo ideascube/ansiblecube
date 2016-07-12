@@ -1,0 +1,11 @@
+---
+
+- name: Remove uwsgi installed using pip (bug #17)
+  pip: name=uwsgi state=absent
+  tags:
+  - cleanup
+
+- name: Remove the old service file
+  file: path=/etc/systemd/system/uwsgi.service state=absent
+  tags:
+  - cleanup

@@ -125,13 +125,16 @@
   copy: src=mongodb.service dest=/etc/systemd/system/mongodb.service owner=root group=root
   when: st.stat.exists == False
 
-- name: Enable service mongodb
-  service: name=mongodb enabled=yes
+- name: Create a mongodb service override unit directory
+  file: dest=/etc/systemd/system/mongodb.service.d state=directory owner=root group=root
   when: st.stat.exists == False
 
-- name: Copy new uwsgi startup file. Uwsgi must start after MongoDB
-  copy: src=uwsgi.service dest=/etc/systemd/system/uwsgi.service owner=root group=root
+- name: Drop in a unit file so uwsgi starts after mongodb
+  copy: src=before-uwsgi.conf dest=/etc/systemd/system/mongodb.service.d/before-uwsgi.conf owner=root group=root
   when: st.stat.exists == False
+
+- name: Enable service mongodb
+  service: name=mongodb enabled=yes
 
 
 ####
