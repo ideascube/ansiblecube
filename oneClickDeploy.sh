@@ -73,7 +73,7 @@ fi
 
 ansible_vars="--extra-vars \"managed_by_bsf="$SHOULD_WE_SEND" ideascube_project_name=$value3 timezone=$value4\""
 
-if [ "$action1" == "master" -a "$action2" == "custom" ] || [ "$action2" == "master" -a "$action1" == "custom" ] ; then
+if [[ "$action1" == "master" && "$action2" == "custom"  || "$action2" == "master" && "$action1" == "custom" ]] ; then
 	TAGS="master,custom"
 	VARS=$ansible_vars
 	install_ansible
