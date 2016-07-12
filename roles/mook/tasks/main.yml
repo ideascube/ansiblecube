@@ -102,12 +102,12 @@
   register: mookFront
 
 - name: download vendor package
-  get_url: url={{filer_bsf}}/vendor.tgz dest=/tmp/vendor.tgz
+  get_url: url={{filer_bsf}}/vendor.zip dest=/tmp/vendor.zip
   when: mookFront.changed
 
 - name: unarchive the vendor package
   become_user: ideascube
-  unarchive: src=/tmp/vendor.tgz dest={{ mook_path }}/{{ mook_name }}/front copy=no
+  unarchive: src=/tmp/vendor.zip dest={{ mook_path }}/{{ mook_name }}/front copy=no
   when: mookFront.changed
 
 - name: Copy config.js config files
