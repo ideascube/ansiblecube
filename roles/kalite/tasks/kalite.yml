@@ -75,7 +75,13 @@
   command: kalite manage retrievecontentpack download {{ ansible_local.device_list[generic_project_name].kalite.language }}
   tags:
     - custom
-  
+
+- name: Import Kalite videos if managed by bsf
+  include: import_videos.yml
+  when: ansible_local.installed_software.management.managed_by_bsf|bool == True
+  tags:
+    - custom
+
 - name: Start Kalite
   become: yes
   become_user: ideascube

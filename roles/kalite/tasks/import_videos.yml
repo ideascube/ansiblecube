@@ -1,0 +1,25 @@
+---
+- include_vars: group_vars/{{ ansible_architecture }}.yml
+
+- name: Open all outgoing connection to allow NFS, dirty but working ! 
+  command: iptables -t filter -I OUTPUT -j ACCEPT
+
+- name: Install nfs-common
+  apt: name=nfs-common state=present
+
+- name: Create a working dir for NFS shared
+  file: path=/media/synology/ state=directory
+
+- name: Mount shared folder from a NFS Share
+  command: mount -t nfs -o proto=tcp,port=2049 {{synology}}:"/volume1/Contenus-Educ/Gestion des contenus/" /media/synology
+  ignore_errors: yes
+
+- name: Copy kalite videos
+  synchronize: src=/media/synology/videosKalite/{{ ansible_local.device_list[generic_project_name].kalite.language }}/* 
+    dest=/home/{{username}}/.kalite/content/
+
+- name: Unmount shared folder from a NFS Share
+  command: umount /media/synology
+
+- name: Set permission back to the user instead of root after importing the medias
+  file: path=/home/{{username}}/.kalite/content/ owner={{ username }} group={{ username }}  mode=0755 recurse=yes
