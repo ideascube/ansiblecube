@@ -77,7 +77,7 @@ From the github web interface you can also edit ```roles/set_custom_fact/files/d
 ## Set up your hardware 
 ### Case 1 : ARM Proc
 If you own an Olimex Lime 2 or Raspberry Pi 2/3, the best is to give a try to Ansible ! 
- - Download an [Armbian image](http://www.armbian.com/olimex-lime-2/) (Choose "Legacy" / "Jessie") for Olimex or a [Raspbian image](https://www.raspberrypi.org/downloads/raspbian/) for Raspberry Pi. You can also use the [last Image](http://) built by Library without borders
+ - Download an [Armbian image](http://www.armbian.com/olimex-lime-2/) (Choose "Legacy" / "Jessie") for Olimex or a [Raspbian image](https://www.raspberrypi.org/downloads/raspbian/) for Raspberry Pi. You can also use the [last Image](http://filer.bsf-intranet.org/Armbian_5.17_Lime2_Debian_jessie_4.6.3.patch.raw) built by Library without borders
  - Unzip image and burn it on an SD Card (class 10!)
    - **Linux** : ```sudo dd bs=1M if=filename.raw of=/dev/sdx && sync```
    - **Windows** : Use [Rufus](https://rufus.akeo.ie/) and fellow the instructions 
@@ -110,9 +110,9 @@ Now you are ready to start deployment on the targeted device
 
 #### Set the right settings
 This script takes 4 arguments : 
- - ```script_action``` : ```master``` ou ```custom``` Master run must be done for a brand new machine (ex: Debian fresh install), however the KoomBook Image has been already mastered.
- - ```sync_log```: ```True``` ou ```False``` This setting send metrics to the central server. You'll need the password server to connect through SSH. If you don't have it, set it to ```False```
- - ```ideascube_id``` : ex ```kb_mooc_cog``` is the name of the Ideascube project, this name MUST be the same as the ideascube name stored in ```ideascube/conf/``` ideascube github repository
+ - ```script_action``` : ```master``` et/ou ```custom``` Master run must be done for a brand new machine (ex: Debian fresh install), however the KoomBook Image has been already mastered.
+ - ```managed_by_bsf```: ```True``` ou ```False``` This setting send metrics to the central server. You'll need the password server to connect through SSH. If you don't have it, set it to ```False```
+ - ```ideascube_project_name``` : ex ```kb_mooc_cog``` is the name of the Ideascube project, this name MUST be the same as the ideascube name stored in ```ideascube/conf/``` ideascube github repository
  - ```timezone``` : ex ```Africa/Kinsasha``` is the time zone (available in /usr/share/zoneinfo/) to set to the server or check at https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
  
 **WARNING** : If you are running this command behind a firewall, be sure the NTP protocol is open for outgoing connection, if not, set manually the date on your system : `date -s 20160513`
@@ -121,6 +121,7 @@ This script takes 4 arguments :
 /!\ KoomBook image don't need master run
   1. Create a master : ```./oneClickDeploy.sh script_action=master```
   2. Customize the master : ```./oneClickDeploy.sh script_action=custom managed_by_bsf=True ideascube_project_name=kb_mooc_cog timezone=Europe/Paris```
+  3. Both at the same time : ```./oneClickDeploy.sh script_action=master,custom managed_by_bsf=True ideascube_project_name=kb_mooc_cog timezone=Europe/Paris```
 
 ## Keep your system up to date ! 
 Now you have an ideascube system ready to work, great !
