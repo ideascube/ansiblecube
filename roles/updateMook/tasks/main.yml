@@ -67,12 +67,12 @@
   when: st.stat.exists == False
 
 - name: download vendor package
-  get_url: url={{filer_bsf}}/vendor.tgz dest=/tmp/vendor.tgz
+  get_url: url={{filer_bsf}}/vendor.zip dest=/tmp/vendor.zip
   when: st.stat.exists == False
 
 - name: unarchive the vendor package
   become_user: ideascube
-  unarchive: src=/tmp/vendor.tgz dest={{ mook_path }}/{{ mook_name }}/front copy=no
+  unarchive: src=/tmp/vendor.zip dest={{ mook_path }}/{{ mook_name }}/front copy=no
   when: st.stat.exists == False
 
 - name: Copy config.js config files
@@ -123,6 +123,14 @@
 
 - name: Setup startup file
   copy: src=mongodb.service dest=/etc/systemd/system/mongodb.service owner=root group=root
+  when: st.stat.exists == False
+
+- name: Create a mongodb service override unit directory
+  file: dest=/etc/systemd/system/mongodb.service.d state=directory owner=root group=root
+  when: st.stat.exists == False
+
+- name: Drop in a unit file so uwsgi starts after mongodb
+  copy: src=before-uwsgi.conf dest=/etc/systemd/system/mongodb.service.d/before-uwsgi.conf owner=root group=root
   when: st.stat.exists == False
 
 - name: Enable service mongodb
