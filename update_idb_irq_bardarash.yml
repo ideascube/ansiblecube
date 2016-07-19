@@ -10,8 +10,6 @@
     - logs
     # Stop. has to be always enable
 
-    # - software
-
     # - tinc-static
 
     # - role: ideascube
@@ -21,4 +19,4 @@
     #  lang: "['en','ar','de']"
 
     #- role: zim_install
-    #  zim_name: "wikipedia.en wikipedia.ar gutenberg.en"
+    #  zim_name: "wikipedia.en wiktionary.en wikiversity.en wikibooks.en wikisource.en gutenberg.en tedbusiness.en teddesign.en tedentertainment.en tedglobalissues.en tedscience.en tedtechnology.en wikipedia.ar vikidia.en vikidia.en bil-tunisia.ar wiktionary.ar wikiversity.ar"
