@@ -1,0 +1,18 @@
+---
+# Ansible playbook for IdeasBox Lebanon El Marj
+
+#It will be always localhost
+- hosts: localhost
+
+  roles:
+
+    # Start. has to be always enable
+    - logs
+    # Stop. has to be always enable
+
+    - role: kalite
+      version: "0.15.0"
+      lang: "['en','ar']"
+
+    - role: zim_install
+      zim_name: "wikipedia.ar wiktionary.ar wikiversity.ar wikibooks.ar wikisource.ar wikiquote.ar bil-tunisia.ar"
