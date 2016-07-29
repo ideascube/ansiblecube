@@ -10,8 +10,8 @@
     - logs
     # Stop. has to be always enable
     
-    - role: idc_import
-    content_name: "2-Contenus\0CONTENUSLIBAN\sarcelles.csv"
+    #- role: idc_import
+    # content_name: "2-Contenus\0CONTENUSLIBAN\sarcelles.csv"
 
     - role: kalite
       version: "0.15.0"
