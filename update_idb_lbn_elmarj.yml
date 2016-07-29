@@ -13,9 +13,9 @@
     #- role: idc_import
     # content_name: "2-Contenus\0CONTENUSLIBAN\sarcelles.csv"
 
-    - role: kalite
-      version: "0.15.0"
-      lang: "['en','ar']"
+    # - role: kalite
+    #  version: "0.15.0"
+    #  lang: "['en','ar']"
 
-    - role: zim_install
-      zim_name: "wikipedia.ar wiktionary.ar wikiversity.ar wikibooks.ar wikisource.ar wikiquote.ar bil-tunisia.ar"
+    # - role: zim_install
+    #  zim_name: "wikipedia.ar wiktionary.ar wikiversity.ar wikibooks.ar wikisource.ar wikiquote.ar bil-tunisia.ar"
