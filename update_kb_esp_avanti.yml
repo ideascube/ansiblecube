@@ -10,9 +10,9 @@
     # - role: zim_install
     #   zim_name: "wikipedia.es gutenberg.es"
 
-    - role: kalite
-      version: "0.16.5"
-      lang: ["es"]
+    # - role: kalite
+    #   version: "0.16.5"
+    #   lang: ["es"]
 
     # - role: idc_import
     #   content_name: "13-NICARALI/CSV-Nicarali.csv"
