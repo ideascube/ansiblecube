@@ -71,7 +71,7 @@ elif [ "$managed_by_bsf" == "managed_by_bsf" ] && [ "$value2" = False ]; then
 	SHOULD_WE_SEND="False"
 fi
 
-ansible_vars="--extra-vars \"managed_by_bsf="$SHOULD_WE_SEND" ideascube_project_name=$value3 timezone=$value4\""
+ansible_vars="--extra-vars \"managed_by_bsf=$SHOULD_WE_SEND ideascube_project_name=$value3 timezone=$value4\""
 
 if [[ "$action1" == "master" && "$action2" == "custom"  || "$action2" == "master" && "$action1" == "custom" ]] ; then
 	TAGS="master,custom"
