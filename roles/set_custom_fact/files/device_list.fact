@@ -87,11 +87,11 @@
 		},
 		"ideascube": {
 			"activated": "True",
-			"version": "0.10.2"
+			"version": "0.11.3"
 		},
 		"idc_import": {
 			"activated": "True",
-			"content_name": "13-Nicarali/CSV-Nicarali.csv"
+			"content_name": "13-NICARALI/CSV-Nicarali.csv"
 		}
 	}
 }
