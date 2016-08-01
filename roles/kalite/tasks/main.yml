@@ -47,16 +47,10 @@
   service: name=kalite enabled=yes
   when: kalite.stat.exists == False
 
-- name: Download Kalite assessment
-  become: yes
-  become_user: ideascube
-  command: kalite manage unpack_assessment_zip https://learningequality.org/downloads/ka-lite/0.15/content/khan_assessment.zip -f
-  when: kalite.stat.exists == False
-
 - name: Download Kalite language pack
   become: yes
   become_user: ideascube
-  command: kalite manage languagepackdownload --language={{item}} --commandline
+  command: kalite manage retrievecontentpack download {{item}}
   with_flattened: "{{lang}}"
   when: kalite.stat.exists == False
 
