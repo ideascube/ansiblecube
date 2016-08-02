@@ -8,6 +8,7 @@
 
 - name: Check if hostapd is already installed
   shell: "dpkg -l | grep hostapd"
+  ignore_errors: yes
   register: dpkg_hostapd
   tags: 
     - master
