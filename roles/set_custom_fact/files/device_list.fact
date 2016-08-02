@@ -40,11 +40,11 @@
 			"version": "0.9.11"
 		},
 		"bsfcampus": {
-			"activated": "False",
+			"activated": "True",
 			"version": "100516"
 		},
 		"koombookedu": {
-			"activated": "False",
+			"activated": "True",
 			"version": "100516"
 		}
 	},
@@ -60,7 +60,7 @@
 		},
 		"ideascube": {
 			"activated": "True",
-			"version": "0.9.11"
+			"version": "0.11.3"
 		},
 		"bsfcampus": {
 			"activated": "True",
@@ -72,7 +72,7 @@
 		},
 		"idc_import": {
 			"activated": "True",
-			"content_name": "2- Contenus/Logiciel-libre/app.csv"
+			"content_name": "2-Contenus/Logiciel-libre/app.csv"
 		}
 	},
 	"kb-esp-avanti": {
