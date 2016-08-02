@@ -14,7 +14,6 @@
       mook_name: "bsfcampus"
       version: "120716"
 
-    - tinc-static
 
     # Start. has to be always enable 
     - logs

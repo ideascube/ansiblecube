@@ -11,4 +11,3 @@
     - role: upgradeIdc
       version: "0.9.3"
 
-    - tinc-static
