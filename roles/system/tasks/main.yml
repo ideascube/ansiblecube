@@ -96,6 +96,8 @@
    - libssl-dev
    - tree
    - screen
+   - iftop
+   - tmux
   tags:
     - master
 
