@@ -15,14 +15,21 @@
 
 - name: Setup startup file
   template: src=kiwix-server.service.j2 dest=/etc/systemd/system/kiwix-server.service
-  
-- name: Copy nginx vhost
-  template: src=nginx.vhost.j2 dest=/etc/nginx/sites-available/kiwix
 
-- name: Install Kiwix catalog
+- name: Install Kiwix catalogs
   become: yes
   become_user: ideascube
-  command: ideascube catalog remotes add "Kiwix" "Kiwix ZIM content" http://catalog.ideascube.org/kiwix.yml
+  command: ideascube catalog remotes add "{{ item.name }}" "{{ item.description }}" "{{ item.url }}"
+  with_items:
+  - name: "Kiwix"
+    description: "Kiwix ZIM content"
+    url: http://catalog.ideascube.org/kiwix.yml
+  - name: "OSMybon"
+    description: "Experimental OSM Maps catalog"
+    url: http://catalog.yohanboniface.me/catalog.yml
+
+- name: Copy nginx vhost
+  template: src=nginx.vhost.j2 dest=/etc/nginx/sites-available/kiwix
 
 - name: Nginx enable Virtual host
   file: src=/etc/nginx/sites-available/kiwix dest=/etc/nginx/sites-enabled/kiwix state=link
