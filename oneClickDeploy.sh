@@ -23,7 +23,7 @@ function install_ansible()
 	echo "[+] Install ansible..."
 	sed -i -e '/^deb cdrom/d' /etc/apt/sources.list
 	apt-get update
-	apt-get install -y python-pip git python-dev libffi-dev libssl-dev gnutls-bin
+	apt-get install -y python-pip git python-dev python-crypto libffi-dev libssl-dev gnutls-bin
 
 	pip install -U distribute
 	pip install ansible markupsafe
