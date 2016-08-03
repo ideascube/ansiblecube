@@ -2,8 +2,9 @@
 
 IF=$1
 STATUS=$2
+PROC=`pgrep ansible-pull`
 
-if [ "$IF" == "eth0" ] || [ "$IF" == "wlan1" ]
+if [[ "$IF" == "eth0" || "$IF" == "wlan1" ]] && [ -z "$PROC"  ]
 then
     case "$STATUS" in
         up)
