@@ -11,6 +11,11 @@
   tags: 
     - custom
 
+- name: Add a cron entry to execute ansible-pull
+  cron: name="Execute ansible-pull automatically" minute="0" hour="0" day="*/2" 
+    job="/etc/NetworkManager/dispatcher.d/ansiblePullUpdate eth0 up"
+  tags: ['custom', 'update']
+
 - name: remove old way of lunching ansible-pull
   file: path=/etc/dhcp/dhclient-exit-hooks.d/ansiblePullUpdate state=absent
   tags: 
