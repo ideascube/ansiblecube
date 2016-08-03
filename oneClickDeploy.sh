@@ -89,7 +89,7 @@ elif [ "$action1" = "master" -a -z "$action2" ]; then
 	VARS=""
 	install_ansible
 	START=1
-elif [ "$action1" = "custom" -a -z "$action2" ]; then
+elif [ "$action1" = "custom" -a -z "$action2" -a -n "$value2" -a -n "$value3" -a -n "$value4" ]; then
 	TAGS="custom"
 	EXTRA_VARS="--extra-vars"
 	VARS=$ansible_vars
