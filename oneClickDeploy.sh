@@ -5,6 +5,10 @@ action1=""
 action2=""
 SSH_KEY="/root/.ssh/id_rsa"
 
+ansible_bin="/usr/local/bin/ansible-pull"
+ansible_folder="/var/lib/ansible/local"
+git_repository="https://github.com/ideascube/ansiblecube.git"
+
 script_action=`echo $1 | cut -d= -f1`
 action1=`echo $1 | cut -d= -f2 | awk -F "," '{ print $1 }'`
 action2=`echo $1 | cut -d= -f2 | awk -F "," '{ print $2 }'`
@@ -23,7 +27,7 @@ function install_ansible()
 	echo "[+] Install ansible..."
 	sed -i -e '/^deb cdrom/d' /etc/apt/sources.list
 	apt-get update
-	apt-get install -y python-pip git python-dev python-crypto libffi-dev libssl-dev gnutls-bin
+	apt-get install -y python-pip git python-dev libffi-dev libssl-dev gnutls-bin
 
 	pip install -U distribute
 	pip install ansible markupsafe
@@ -71,20 +75,23 @@ elif [ "$managed_by_bsf" == "managed_by_bsf" ] && [ "$value2" = False ]; then
 	SHOULD_WE_SEND="False"
 fi
 
-ansible_vars="--extra-vars managed_by_bsf=$SHOULD_WE_SEND ideascube_project_name=$value3 timezone=$value4"
+ansible_vars="managed_by_bsf=$SHOULD_WE_SEND ideascube_project_name=$value3 timezone=$value4"
 
 if [[ "$action1" == "master" && "$action2" == "custom"  || "$action2" == "master" && "$action1" == "custom" ]] ; then
 	TAGS="master,custom"
+	EXTRA_VARS="--extra-vars"
 	VARS=$ansible_vars
 	install_ansible
 	START=1
 elif [ "$action1" = "master" -a -z "$action2" ]; then
 	TAGS="master"
+	EXTRA_VARS=""
 	VARS=""
 	install_ansible
 	START=1
 elif [ "$action1" = "custom" -a -z "$action2" ]; then
 	TAGS="custom"
+	EXTRA_VARS="--extra-vars"
 	VARS=$ansible_vars
 	START=1
 else
@@ -98,7 +105,7 @@ fi
 
 if [[ "$START" = "1" ]]; then
 	echo "[+] Start ansible-pull..."
-	/usr/local/bin/ansible-pull -C oneUpdateFile -d /var/lib/ansible/local -i hosts -U https://github.com/ideascube/ansiblecube.git main.yml $VARS --tags "$TAGS"
+	$ansible_bin -C oneUpdateFile -d $ansible_folder -i hosts -U $git_repository main.yml $EXTRA_VARS "$VARS" --tags "$TAGS"
 	echo "[+] Done."
 fi
 
