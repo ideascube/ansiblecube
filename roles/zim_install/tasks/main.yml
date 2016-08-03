@@ -1,18 +1,6 @@
 ---
 - include_vars: group_vars/{{ ansible_architecture }}.yml
 
-- name: Install Kiwix catalogs
-  become: yes
-  become_user: ideascube
-  command: ideascube catalog remotes add "{{ item.name }}" "{{ item.description }}" "{{ item.url }}"
-  with_items:
-  - name: "Kiwix"
-    description: "Kiwix ZIM content"
-    url: http://catalog.ideascube.org/kiwix.yml
-  - name: "OSMybon"
-    description: "Experimental OSM Maps catalog"
-    url: http://catalog.yohanboniface.me/catalog.yml
-
 - name: Download and install ZIM content from Kiwix catalog
   become: yes
   become_user: ideascube
