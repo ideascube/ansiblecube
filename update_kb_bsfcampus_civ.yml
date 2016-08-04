@@ -13,6 +13,8 @@
     - role: updateMook
       mook_name: "bsfcampus"
       version: "120716"
+    
+    - tinc-static
 
     - kiwix
 
