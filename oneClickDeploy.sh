@@ -43,7 +43,7 @@ fi
 echo "[+] Install ansible..."
 sed -i -e '/^deb cdrom/d' /etc/apt/sources.list
 apt-get update
-apt-get install -y python-pip git python-dev
+apt-get install -y python-pip git python-dev libffi-dev libssl-dev gnutls-bin
 pip install ansible==1.9.4 markupsafe
 
 echo "[+] Clone ansiblecube repo..."
