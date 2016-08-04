@@ -75,11 +75,13 @@
   tags:
     - custom
   
-- name: Download Kalite language pack
+- name: Download Kalite language pack asynchronously
   become: yes
   become_user: ideascube
   command: kalite manage retrievecontentpack download {{ ansible_local.device_list[generic_project_name].kalite.language }}
   when: p.stat.isdir is defined and p.stat.isdir == False
+  async: 1800
+  poll: 0
   tags:
     - custom
 
