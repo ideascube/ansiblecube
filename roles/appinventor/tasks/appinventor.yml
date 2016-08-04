@@ -7,6 +7,8 @@
 
   - name: Change permissions
     file: path=/home/{{username}}/Ai2LiveComplete/startBuildServer.sh owner=www-data group=www-data mode=0755
+
+  - name: Change permissions
     file: path=/home/{{username}}/Ai2LiveComplete/startAIServer.sh owner=www-data group=www-data mode=0755
 
   - name: Setup startup file
