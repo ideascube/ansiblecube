@@ -49,7 +49,7 @@
 		},
 		"idc_import": {
 			"activated": "True",
-			"content_name": "2-Contenus/Logiciel-libre/app.csv"
+			"content_name": ["2-Contenus/Logiciel-libre/app.csv"]
 		}
 	},
 	"kb-esp-avanti": {
@@ -68,7 +68,7 @@
 		},
 		"idc_import": {
 			"activated": "True",
-			"content_name": "13-NICARALI/CSV-Nicarali.csv"
+			"content_name": ["13-NICARALI/CSV-Nicarali.csv"]
 		}
 	},
 	"kb-bsfcampus-sen": {
@@ -91,11 +91,7 @@
 		},
 		"idc_import": {
 			"activated": "True",
-			"content_name": "2-Contenus/Logiciel-libre/app.csv"
-		},
-		"idc_import": {
-			"activated": "True",
-			"content_name": "2-Contenus/21-BSFCAMPUS/KB_Liste_contenus_videos.csv"
+			"content_name": ["2-Contenus/Logiciel-libre/app.csv","2-Contenus/21-BSFCAMPUS/KB_Liste_contenus_videos.csv"]
 		}
 	}
 }
