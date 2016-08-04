@@ -79,7 +79,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "wikipedia.fr wikipedia.ln wikipedia.en wikipedia.wo cest-pas-sorcier.fr gutenberg.fr tedxgeneva2014.fr vikidia.fr wikisource.fr wikisource.en tedxlausanne2012.fr tedxlausanne2013.fr tedxlausanne2014.fr ubuntudoc.fr"
+			"name": "wikipedia.fr wikipedia.en wikipedia.wo cest-pas-sorcier.fr gutenberg.fr tedxgeneva2014.fr vikidia.fr wikisource.fr wikisource.en tedxlausanne2012.fr tedxlausanne2013.fr tedxlausanne2014.fr ubuntudoc.fr"
 		},
 		"ideascube": {
 			"activated": "True",
