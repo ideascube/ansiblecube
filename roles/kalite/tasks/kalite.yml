@@ -96,3 +96,14 @@
   become_user: ideascube
   command: kalite start 
   tags: ['custom', 'update']
+
+- name: Get ka-lite version
+  shell: kalite --version ; echo
+  register: kalite_newversion
+  tags: ['custom', 'update']
+
+- set_fact: kalite_version="{{ kalite_newversion.stdout }}"
+  tags: ['custom', 'update']
+
+- debug: msg="kalite {{ kalite_version }} is now the current version."
+  tags: ['custom', 'update']
