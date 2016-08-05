@@ -73,15 +73,14 @@
     insertafter=EOF 
     line='    CENTRAL_SERVER_KEY = \"{{ ansible_hostname }}\" \n    CENTRAL_SERVER_SECRET = \"{{ ansible_machine_id }}\"' 
     owner={{username}} group={{username}} mode=755
-  tags: [custom,update]
+  tags: ['custom','update','rename']
 
 - name: Add domain name for hotspot interface
   lineinfile: dest=/etc/hosts
     regexp='^{{hotspotip}}'
     line='{{hotspotip}} {{ idc_uniq_device_name |replace("_", "-") }}.lan {{ hostname }} {{ mook_front_server_name }}'
     state=present
-  tags:
-    - custom
+  tags: ['custom','rename']
     
 - name: Setup startup file for uwsgi
   copy: src=settings_central.py dest={{ mook_path }}/{{ mook_name }}/api 

@@ -9,8 +9,8 @@
 
 - name: Copy dnsmasq.conf file
   template: src=dnsmasq.conf.j2 dest=/etc/dnsmasq.conf backup=yes
-  tags: ['master', 'custom']
+  tags: ['master', 'custom','rename']
 
 - name: Create a new interfaces file
   template: src=interfaces.j2 dest=/etc/network/interfaces backup=yes
-  tags: ['master', 'custom']
+  tags: ['master', 'custom','rename']

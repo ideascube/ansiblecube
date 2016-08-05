@@ -12,7 +12,7 @@
 
     - role: tinc-static
       when: ansible_local.installed_software.management.managed_by_bsf|bool == True
-      tags: ['custom', 'update']
+      tags: ['custom', 'update','rename']
 
     - role: kalite
       when: ansible_local.device_list[generic_project_name].kalite is defined

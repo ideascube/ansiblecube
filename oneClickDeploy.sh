@@ -48,15 +48,22 @@ function help()
 	YOU HAVE TO BE ROOT TO LUNCH THIS SCRIPT !
 
 	Usage : 
-	Create a master : ./oneClickDeploy.sh script_action=master
-	Custom the master: ./oneClickDeploy.sh script_action=custom managed_by_bsf=True ideascube_project_name=kb_mooc_cog timezone=Europe/Paris
+	Create a master :
+	./oneClickDeploy.sh script_action=master
 
-	You can do both at the same time : ./oneClickDeploy.sh script_action=master,custom managed_by_bsf=True ideascube_project_name=kb_mooc_cog timezone=Europe/Paris
+	Custom the master: 
+	./oneClickDeploy.sh script_action=custom managed_by_bsf=True ideascube_project_name=kb_mooc_cog timezone=Europe/Paris
 
-	script_action=master|custom : Create a master from scratch or customize the master with specific settings, both option can be used at the same time
-	managed_by_bsf=True|False : Whether send or not log system to a central server. A server with SSH access is required in this case
-	ideascube_project_name=File_Name : Must be the same name as the one used for the ideascube configuration file
-	timezone=Europe/Paris : The timezone
+	You can do both at the same time : 
+	./oneClickDeploy.sh script_action=master,custom managed_by_bsf=True ideascube_project_name=kb_mooc_cog timezone=Europe/Paris
+
+	Rename a device : 
+	./oneClickDeploy.sh script_action=rename ideascube_project_name=kb_new_name timezone=Africa/Dakar
+
+	- script_action=master|custom|rename : Create a master from scratch or customize the master with specific settings, both option can be used at the same time
+	- managed_by_bsf=True|False : Whether send or not log system to a central server. A server with SSH access is required in this case
+	- ideascube_project_name=File_Name : Must be the same name as the one used for the ideascube configuration file
+	- timezone=Europe/Paris : The timezone
 	"
 }
 
@@ -91,6 +98,11 @@ elif [ "$action1" = "master" -a -z "$action2" ]; then
 	START=1
 elif [ "$action1" = "custom" -a -z "$action2" -a -n "$value2" -a -n "$value3" -a -n "$value4" ]; then
 	TAGS="custom"
+	EXTRA_VARS="--extra-vars"
+	VARS=$ansible_vars
+	START=1
+elif [ "$action1" = "rename" -a -z "$action2" -a -n "$value3" -a -n "$value4" ]; then
+	TAGS="rename"
 	EXTRA_VARS="--extra-vars"
 	VARS=$ansible_vars
 	START=1

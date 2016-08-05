@@ -29,14 +29,21 @@
 
 # Add settings and conf
 
+- name: Remove old name 
+  lineinfile: dest=/etc/default/ideascube
+              regexp='IDEASCUBE_ID='
+              line='IDEASCUBE_ID='
+              state=absent
+  tags:
+    - rename
+
 - name: Add IDEASCUBE_ID
   lineinfile: dest=/etc/default/ideascube
               regexp='^'
               line='IDEASCUBE_ID={{ ideascube_project_name }}'
               state=present
   notify: restart uwsgi
-  tags: 
-    - custom
+  tags: ['custom','rename']
 
 - name: Remove linsting on 443 because the port is alredy used by sslh
   lineinfile: dest=/etc/nginx/sites-available/ideascube regexp='443' state=absent
