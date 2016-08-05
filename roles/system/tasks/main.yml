@@ -10,7 +10,7 @@
 - name: Generate a random number for the idc_uniq_device_name
   set_fact: idc_uniq_device_name="{{ ideascube_project_name }}_{{ 1000 | random }}"
     generic_project_name={{ ideascube_project_name |replace("_", "-") }}
-  when: firststart.stat.exists == False or firststart undefined
+  when: firststart.stat.exists == False or firststart is undefined
   tags: ['master', 'custom','rename']
 
 - name: Register if the device is managed by BSF or not
@@ -24,17 +24,17 @@
 - name: A way to get the public IP of the device
   shell: wget -qO- http://ipecho.net/plain ; echo
   register: public_ip
-  when: firststart.stat.exists == False or firststart undefined
+  when: firststart.stat.exists == False or firststart is undefined
   tags: ['custom','rename']
 
 - name: Write all the variables in /etc/firstStart.csv
   copy: content=id,{{ ansible_date_time["date"] }},{{ ansible_date_time["time"] }},{{ idc_uniq_device_name }},{{ ansible_machine_id }},{{ ansible_default_ipv4["macaddress"] }},{{ ansible_default_ipv4["address"] }},{{ public_ip.stdout }}\n dest=/etc/firstStart.csv
-  when: firststart.stat.exists == False or firststart undefined
+  when: firststart.stat.exists == False or firststart is undefined
   tags: ['custom','rename']
 
 - name: Send this file over the central_server
   raw: cat /etc/firstStart.csv | ssh -p 443 {{ central_server }} "cat >> ./ansible/UUID/firstStart.csv"
-  when: managed_by_bsf|bool and firststart.stat.exists == False or firststart undefined
+  when: managed_by_bsf|bool and firststart.stat.exists == False or firststart is undefined
   tags: ['custom','rename']
 
 - name: Add non free repository
@@ -140,7 +140,7 @@
     regexp='localhost'
     insertafter='localhost'
     line='127.0.0.1 localhost {{ idc_uniq_device_name |replace("_", "-") }}.lan {{ hostname }}'
-  when: firststart.stat.exists == False or firststart undefined
+  when: firststart.stat.exists == False or firststart is undefined
   tags: ['master', 'custom','rename']
 
 - name: Add domain name for hotspot interface
@@ -148,17 +148,17 @@
     regexp='^'
     line='{{hotspotip}} {{ idc_uniq_device_name |replace("_", "-") }}.lan {{ hostname }}'
     state=present
-  when: firststart.stat.exists == False or firststart undefined
+  when: firststart.stat.exists == False or firststart is undefined
   tags: ['master', 'custom','rename']
 
 - name: An hostname can not have _ so we are switching to -, python can not have - so using _ sometime too
   hostname: name={{ idc_uniq_device_name |replace("_", "-") }}
-  when: firststart.stat.exists == False or firststart undefined
+  when: firststart.stat.exists == False or firststart is undefined
   tags: ['master', 'custom','rename']
 
 - name: If /etc/firststart.csv exist then hostname is already defined
   set_fact: idc_uniq_device_name="{{ ansible_hostname }}"
-  when: firststart.stat.exists is defined and firststart.stat.exists or firststart undefined
+  when: firststart.stat.exists is defined and firststart.stat.exists or firststart is undefined
   tags: ['custom','rename']
 
 - name: Create an ideascube user on the system
