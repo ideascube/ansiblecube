@@ -104,7 +104,7 @@ elif [ "$action1" = "custom" -a -z "$action2" -a -n "$value2" -a -n "$value3" -a
 elif [ "$action1" = "rename" -a -z "$action2" -a -n "$value2" -a -n "$value3" ]; then
 	TAGS="rename"
 	EXTRA_VARS="--extra-vars"
-	VARS=$ansible_vars
+	VARS="ideascube_project_name=$value2 timezone=$value3"
 	START=1
 else
 	help
