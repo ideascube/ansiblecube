@@ -66,6 +66,11 @@
 - name: Copy settings_local config files
   template: src=settings_local.py.j2 dest={{ mook_path }}/{{ mook_name }}/api/settings_local.py
   tags: [custom,update]
+
+- name: Delete zero octet files
+  shell: find {{ mook_path }}/{{ mook_name }}/static/ -size  0 -print0 |xargs -0 rm
+  tags: 
+    - update
     
 - name: add conf for KoomBook
   lineinfile: dest={{ mook_path }}/{{ mook_name }}/api/settings_local.py 
