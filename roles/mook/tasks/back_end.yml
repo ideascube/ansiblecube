@@ -1,4 +1,4 @@
- - name: Clone mook api
+- name: Clone mook api
   become: True
   become_user: ideascube
   git: repo=ssh://git@altssh.bitbucket.org:443/bsfcampus/mook-bsf-api.git dest={{ mook_path }}/{{ mook_name }}/api accept_hostkey=yes depth=1
