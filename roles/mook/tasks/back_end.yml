@@ -1,4 +1,4 @@
-- name: Clone mook api
+ - name: Clone mook api
   become: True
   become_user: ideascube
   git: repo=ssh://git@altssh.bitbucket.org:443/bsfcampus/mook-bsf-api.git dest={{ mook_path }}/{{ mook_name }}/api accept_hostkey=yes depth=1
@@ -68,7 +68,7 @@
   tags: [custom,update]
 
 - name: Delete zero octet files
-  shell: find {{ mook_path }}/{{ mook_name }}/static/ -size  0 -print0 |xargs -0 rm
+  shell: find ./ -empty -type f -delete chdir="{{ mook_path }}/{{ mook_name }}/static/"
   tags: 
     - update
     
