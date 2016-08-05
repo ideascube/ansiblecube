@@ -1,7 +1,4 @@
 ---
-- include: ../../../pre_install.yml task=mongodb
-  tags: ['master','custom', 'update']
-
 - include: mongodb_{{ ansible_architecture }}.yml
 
 - include: ../../../post_install.yml task=mongodb task_version="{{ mongodb_version }}"

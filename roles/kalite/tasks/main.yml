@@ -1,7 +1,4 @@
 ---
-- include: ../../../pre_install.yml task=kalite
-  tags: ['master','custom', 'update']
-
 - include: kalite.yml
 
 - include: ../../../post_install.yml task=kalite task_version="{{ ansible_local.device_list[generic_project_name].kalite.version }}"

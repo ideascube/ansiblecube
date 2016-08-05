@@ -1,7 +1,4 @@
 ---
-- include: ../../../pre_install.yml task={{ mook_name }}
-  tags: ['custom','update']
-
 - include_vars: group_vars/{{ ansible_architecture }}.yml
   tags: ['custom','update']
 
