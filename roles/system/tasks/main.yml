@@ -248,8 +248,17 @@
   tags:
     - master
 
-- name: set timezone
-  timezone: name={{ timezone }}
+- name: Remove the existing localtime file
+  file: path=/etc/localtime state=absent
+  tags: ['custom','rename']
+
+- name: Set a new localtime file corresponding to the timezone
+  file: src=/usr/share/zoneinfo/{{ timezone }} dest=/etc/localtime state=link force=yes
+  tags: ['custom','rename']
+
+- name: Set timezone variables
+  copy: content={{ timezone }} dest=/etc/timezone owner=root group=root mode=0644 backup=yes
+  notify: update timezone
   tags: ['custom','rename']
 
 - name: Test if a fex file exist, if yes, the device is an Olimex
