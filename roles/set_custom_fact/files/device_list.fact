@@ -1,4 +1,423 @@
 {
+	"kb-bsfcampus-sen": {
+		"bsfcampus": {
+			"activated": "True",
+			"version": "100816"
+		},
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.5",
+			"language": "fr"
+		},
+		"idc_import": {
+			"activated": "True",
+			"content_name": ["2-Contenus/Logiciel-libre/app.csv"]
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": "ubuntudoc.fr tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr  cest-pas-sorcier.fr gutenberg.fr vikidia.fr wikisource.en wikisource.fr wikipedia.fr wikipedia.wo wikipedia.en wikipedia.ln "
+		}
+	},
+	"kb-servir-ben": {
+		"bsfcampus": {
+			"activated": "True",
+			"version": "100816"
+		},
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.5",
+			"language": "fr"
+		},
+		"idc_import": {
+			"activated": "True",
+			"content_name": ["2-Contenus/Logiciel-libre/app.csv"]
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": "ubuntudoc.fr tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr  cest-pas-sorcier.fr gutenberg.fr vikidia.fr wikisource.en wikisource.fr wikipedia.fr wikipedia.wo wikipedia.en wikipedia.ln "
+		}
+	},
+	"idb-fra-cultura": {
+		"zim_install": {
+			"activated": "True",
+			"name": "ubuntudoc.fr id wikisource.fr cpassorcier.fr "
+		}
+	},
+	"idb-lbn-elmarj": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.5",
+			"language": "fr"
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": "bil-tunisia.ar wikiquote.ar wikisource.ar wikibooks.ar wikiversity.ar wiktionary.ar wikipedia.ar "
+		}
+	},
+	"idb-aus-queensland": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.5",
+			"language": "fr"
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": "vikidia.en gutenberg.en wikipedia.en "
+		}
+	},
+	"--init--": {
+	},
+	"kb-esp-avanti": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.5",
+			"language": "fr"
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": "wikipedia.es gutenberg.es "
+		}
+	},
+	"idb-grc-moria": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.5",
+			"language": "fr"
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": "gutenberg.fr vikidia.fr wikipedia.fr "
+		}
+	},
+	"kb-usa-p2pu": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.5",
+			"language": "fr"
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": "tedtechnology.en tedscience.en tedglobalissues.en tedentertainment.en teddesign.en tedbusiness.en  wiktionary.en wikipedia.en gutenberg.en "
+		}
+	},
+	"idb-bdi-bwagiriza": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.5",
+			"language": "fr"
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": "gutenberg.fr vikidia.fr wikipedia.fr "
+		}
+	},
+	"kb-mooc-cog": {
+		"koombookedu": {
+			"activated": "True",
+			"version": "100816"
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": "wikipedia.fr "
+		}
+	},
+	"idb-bdi-musasa": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.5",
+			"language": "fr"
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": "gutenberg.fr vikidia.fr wikipedia.fr "
+		}
+	},
+	"idb-eth-melkadida": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.5",
+			"language": "fr"
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": "gutenberg.fr vikidia.fr wikipedia.fr "
+		}
+	},
+	"idb-sen-fap": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.5",
+			"language": "fr"
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": "wikistage.fr ubuntudoc.fr ted.fr tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr  wiktionary.fr wikisource.fr cest-pas-sorcier.fr gutenberg.fr wikipedia.wo wikipedia.fr "
+		}
+	},
+	"idb-bdi-makamba": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.5",
+			"language": "fr"
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": "gutenberg.fr vikidia.fr wikipedia.fr "
+		}
+	},
+	"idb-fra-aurore": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.5",
+			"language": "fr"
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": "vikidia.fr gutenberg.fr wikipedia.fr "
+		}
+	},
+	"kb-nic-nicarali": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.5",
+			"language": "fr"
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": "wikipedia.es gutenberg.es "
+		}
+	},
+	"kb-bsfcampus-civ": {
+		"bsfcampus": {
+			"activated": "True",
+			"version": "100816"
+		},
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.5",
+			"language": "fr"
+		},
+		"idc_import": {
+			"activated": "True",
+			"content_name": ["2-Contenus/Logiciel-libre/app.csv"]
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": "ubuntudoc.fr tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr  cest-pas-sorcier.fr gutenberg.fr vikidia.fr wikisource.en wikisource.fr wikipedia.fr wikipedia.wo wikipedia.en wikipedia.ln "
+		}
+	},
+	"idb-grc-eleonas": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.5",
+			"language": "fr"
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": "w2eu gutenberg.mul wikipedia.fa wikipedia.ur wikipedia.en wikipedia.ar wikipedia.ps "
+		}
+	},
+	"kb-jor-croixrouge": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.5",
+			"language": "fr"
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": "bil-tunisia.ar wikiversity.ar wikiversity.en wikibooks.en wikibooks.ar wikiquote.en wikiquote.ar tedtechnology.en tedscience.en tedglobalissues.en tedentertainment.en teddesign.en tedbusiness.en  gutenberg.en vikidia.en wikisource.en wikisource.ar wiktionary.ar wiktionary.en wikipedia.en wikipedia.ar"
+		}
+	},
+	"idb-fra-grandesynthe": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.5",
+			"language": "fr"
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": "w2eu mullah-piaz-digest.fa bil-tunisia.ar les-fondamentaux.fr universcience.fr wikiversity.ar wikiversity.fr wiktionary.ku wiktionary.ar wiktionary.fa wiktionary.fr tedtechnology.en tedscience.en tedglobalissues.en tedentertainment.en teddesign.en tedbusiness.en  cest-pas-sorcier.fr dirtybiology.fr wikipedia.fr wikipedia.fa wikipedia.ar wikipedia.ku "
+		}
+	},
+	"kb-eth-kytabu": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.5",
+			"language": "fr"
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": "gutenberg.fr "
+		}
+	},
+	"idb-bdi": {
+		"zim_install": {
+			"activated": "True",
+			"name": "id cpassorcier.fr "
+		}
+	},
+	"kb-cdf-fra": {
+		"zim_install": {
+			"activated": "True",
+			"name": "cpassorcier.fr vikidia.fr wikipedia.fr "
+		}
+	},
+	"kb-gin-conakry": {
+		"bsfcampus": {
+			"activated": "True",
+			"version": "100816"
+		},
+		"koombookedu": {
+			"activated": "True",
+			"version": "100816"
+		},
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.5",
+			"language": "fr"
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": "universcience.fr tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr  cest-pas-sorcier.fr gutenberg.fr wikipedia.fr "
+		}
+	},
+	"kb": {
+		"bsfcampus": {
+			"activated": "True",
+			"version": "100816"
+		},
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.5",
+			"language": "fr"
+		},
+		"idc_import": {
+			"activated": "True",
+			"content_name": ["2-Contenus/Logiciel-libre/app.csv"]
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": "ubuntudoc.fr tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr  cest-pas-sorcier.fr gutenberg.fr vikidia.fr wikisource.en wikisource.fr wikipedia.fr wikipedia.wo wikipedia.en wikipedia.ln "
+		}
+	},
+	"idb-fra-jeanquarre": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.5",
+			"language": "fr"
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": "tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr  wiktionary.fr wikibooks.fr wikisource.fr cest-pas-sorcier.fr gutenberg.fr wikipedia.fa wikipedia.ar wikipedia.fr "
+		}
+	},
+	"dev": {
+	},
+	"idb-fra-sarcelles": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.5",
+			"language": "fr"
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": "les-fondamentaux.fr universcience.fr wikiversity.fr wiktionary.fr cest-pas-sorcier.fr dirtybiology.fr gutenberg.fr wikipedia.fr "
+		}
+	},
+	"base": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.5",
+			"language": "fr"
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": ""
+		}
+	},
+	"idb-lwb-detroit-usa": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.5",
+			"language": "fr"
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": "gutenberg.fr wikipedia.fr "
+		}
+	},
+	"idb-fra-emmaus": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.5",
+			"language": "fr"
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": "tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr  wiktionary.fr wikibooks.fr wikisource.fr cest-pas-sorcier.fr gutenberg.fr wikipedia.fa wikipedia.ar wikipedia.fr "
+		}
+	},
+	"azraq": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.5",
+			"language": "fr"
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": ""
+		}
+	},
+	"kb-ifb-bdi": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.5",
+			"language": "fr"
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": "gutenberg.fr vikidia.fr wikipedia.fr "
+		}
+	},
+	"kb-rca-alliancefrancaise": {
+		"zim_install": {
+			"activated": "True",
+			"name": ""
+		}
+	},
+	"kb-bdi-tv5monde": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.5",
+			"language": "fr"
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": "universcience.fr ubuntudoc.fr tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr  wikiversity.fr wiktionary.fr wikivoyage.fr wikibooks.fr wikisource.fr cest-pas-sorcier.fr gutenberg.fr wikipedia.en wikipedia.rn wikipedia.fr "
+		}
+	},
+	"idb-irq-bardarash": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.5",
+			"language": "fr"
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": "bil-tunisia.ar gutenberg.en tedtechnology.en tedscience.en tedglobalissues.en tedentertainment.en teddesign.en tedbusiness.en  wikiversity.ar wiktionary.ar wiktionary.en wikipedia.ar wikipedia.en "
+		}
+	},
+	"idb-bdi-kavumu": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.5",
+			"language": "fr"
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": "gutenberg.fr vikidia.fr wikipedia.fr "
+		}
+	},
 	"idb-eth-bokolmanyo": {
 		"kalite": {
 			"activated": "True",
@@ -7,21 +426,10 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "wikipedia.wo"
-		},
-		"bsfcampus": {
-			"activated": "True",
-			"version": "100516"
-		},
-		"koombookedu": {
-			"activated": "True",
-			"version": "100516"
-		},
-		"appinventor": {
-			"activated": "False"
+			"name": "gutenberg.fr vikidia.fr wikipedia.fr "
 		}
 	},
-	"kb-gin-conakry": {
+	"idb": {
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.5",
@@ -29,37 +437,62 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "wikipedia.fr cest-pas-sorcier.fr gutenberg.fr tedxgeneva2014.fr universcience-tv.fr tedxlausanne2012.fr tedxlausanne2013.fr tedxlausanne2014.fr"
+			"name": "gutenberg.fr vikidia.fr wikipedia.fr "
+		}
+	},
+	"kb-usa-wmapache": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.5",
+			"language": "fr"
 		},
+		"zim_install": {
+			"activated": "True",
+			"name": "wiktionary.en wikipedia.en gutenberg.en "
+		}
+	},
+	"idb-jor-alhashmi": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.5",
+			"language": "fr"
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": "gutenberg.fr vikidia.fr wikipedia.fr "
+		}
+	},
+	"idb-fra-calais": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.5",
+			"language": "fr"
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": "vikidia.fr gutenberg.fr wikipedia.fr "
+		}
+	},
+	"kb-bsfcampus-cmr": {
 		"bsfcampus": {
 			"activated": "True",
-			"version": "100516"
+			"version": "100816"
 		},
-		"koombookedu": {
+		"kalite": {
 			"activated": "True",
-			"version": "100516"
+			"version": "0.16.5",
+			"language": "fr"
 		},
 		"idc_import": {
 			"activated": "True",
 			"content_name": ["2-Contenus/Logiciel-libre/app.csv"]
-		}
-	},
-	"kb-esp-avanti": {
-		"kalite": {
-			"activated": "True",
-			"version": "0.16.5",
-			"language": "es"
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "wikipedia.es gutenberg.es"
-		},
-		"idc_import": {
-			"activated": "True",
-			"content_name": ["13-NICARALI/CSV-Nicarali.csv"]
+			"name": "ubuntudoc.fr tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr  cest-pas-sorcier.fr gutenberg.fr vikidia.fr wikisource.en wikisource.fr wikipedia.fr wikipedia.wo wikipedia.en wikipedia.ln "
 		}
 	},
-	"kb-bsfcampus-sen": {
+	"idb-deu-dusseldorf": {
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.5",
@@ -67,15 +500,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "wikipedia.fr wikipedia.en wikipedia.wo cest-pas-sorcier.fr gutenberg.fr tedxgeneva2014.fr vikidia.fr wikisource.fr wikisource.en tedxlausanne2012.fr tedxlausanne2013.fr tedxlausanne2014.fr ubuntudoc.fr"
-		},
-		"bsfcampus": {
-			"activated": "True",
-			"version": "030816"
-		},
-		"idc_import": {
-			"activated": "True",
-			"content_name": ["2-Contenus/Logiciel-libre/app.csv","2-Contenus/21-BSFCAMPUS/KB_Liste_contenus_videos.csv"]
+			"name": "w2eu wikipedia.en wikipedia.fa wikipedia.ar wikipedia.de gutenberg.de "
 		}
 	}
 }
