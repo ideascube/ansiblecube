@@ -40,7 +40,7 @@
 	"idb-fra-cultura": {
 		"zim_install": {
 			"activated": "True",
-			"name": "ubuntudoc.fr id wikisource.fr cpassorcier.fr "
+			"name": "ubuntudoc.fr wikisource.fr cpassorcier.fr "
 		}
 	},
 	"idb-lbn-elmarj": {
@@ -51,7 +51,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "bil-tunisia.ar wikiquote.ar wikisource.ar wikibooks.ar wikiversity.ar wiktionary.ar wikipedia.ar "
+			"name": "bil-tunisia.ar wikiquote.ar wikisource.ar wikibooks.ar wikiversity.ar wiktionary.ar wikipedia.ar"
 		}
 	},
 	"idb-aus-queensland": {
@@ -226,11 +226,11 @@
 		"zim_install": {
 			"activated": "True",
 			"name": "bil-tunisia.ar wikiversity.ar wikiversity.en wikibooks.en wikibooks.ar wikiquote.en wikiquote.ar tedtechnology.en tedscience.en tedglobalissues.en tedentertainment.en teddesign.en tedbusiness.en  gutenberg.en vikidia.en wikisource.en wikisource.ar wiktionary.ar wiktionary.en wikipedia.en wikipedia.ar"
-		}
+		},
 		"idc_import": {
 			"activated": "True",
 			"content_name": ["2-Contenus/CSVKBJORDANIE.csv"]
-		},
+		}
 	},
 	"idb-fra-grandesynthe": {
 		"kalite": {
