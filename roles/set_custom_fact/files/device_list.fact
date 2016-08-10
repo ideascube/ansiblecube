@@ -11,7 +11,7 @@
 		},
 		"idc_import": {
 			"activated": "True",
-			"content_name": ["2-Contenus/Logiciel-libre/app.csv"]
+			"content_name": ["2-Contenus/Logiciel-libre/app.csv","21-BSFCAMPUS/KB_Liste_contenus_videos.csv"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -199,7 +199,7 @@
 		},
 		"idc_import": {
 			"activated": "True",
-			"content_name": ["2-Contenus/Logiciel-libre/app.csv"]
+			"content_name": ["2-Contenus/Logiciel-libre/app.csv","21-BSFCAMPUS/KB_Liste_contenus_videos.csv"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -489,7 +489,7 @@
 		},
 		"idc_import": {
 			"activated": "True",
-			"content_name": ["2-Contenus/Logiciel-libre/app.csv"]
+			"content_name": ["2-Contenus/Logiciel-libre/app.csv","21-BSFCAMPUS/KB_Liste_contenus_videos.csv"]
 		},
 		"zim_install": {
 			"activated": "True",
