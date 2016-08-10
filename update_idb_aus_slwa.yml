@@ -14,17 +14,6 @@
 
     #- role: zim_install
     #  zim_name: "wikipedia.en wiktionary.en wikiversity.en wikibooks.en wikisource.en gutenberg.en tedbusiness.en teddesign.en tedentertainment.en tedglobalissues.en tedscience.en tedtechnology.en vikidia.en"
-    #  a prendre de iccache :   "wikiversity.en wikibooks.en wikisource.en tedglobalissues.en tedscience.en tedtechnology.en vikidia.en"
-    #  Pas dans idccache :      "wikiversity.en vikidia.en"
-# root@idccache:/var/cache/ideascube/catalog/packages# scp wikibooks.en-2015-11-26 wikisource.en-2016-02-03 tedglobalissues.en-2015-02-02 tedscience.en-2015-02-02 tedtechnology.en-2015-02-02 ideascube@10.10.8.197:
-# The authenticity of host '10.10.8.197 (10.10.8.197)' can't be established.
-# ECDSA key fingerprint is 47:29:d5:27:f2:70:1d:dc:26:e4:9b:dc:97:f5:3e:d8.
-# Are you sure you want to continue connecting (yes/no)? yes
-# Warning: Permanently added '10.10.8.197' (ECDSA) to the list of known hosts.
-# ideascube@10.10.8.197's password: 
-# wikibooks.en-2015-11-26                                                                                                                                                                          100% 1523MB  11.1MB/s   02:17    
-# wikisource.en-2016-02-03                                                                                                                                                                          51% 5259MB  11.2MB/s   07:17 ETA^C
-# root@idccache:/var/cache/ideascube/catalog/packages# shutdown -h now
 
 
 
