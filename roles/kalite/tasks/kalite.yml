@@ -17,6 +17,13 @@
   pip: name=ka-lite version={{ ansible_local.device_list[generic_project_name].kalite.version }}
   tags: ['custom', 'update']
 
+- name: Create a user admin for kalite
+  become: yes
+  become_user: ideascube
+  command: kalite manage setup --username=admin --password=admin --noinput
+  tags:
+    - custom
+
 - name: Initialize ka-lite
   become: yes
   become_user: ideascube
@@ -75,6 +82,13 @@
   tags:
     - custom
   
+- name: Download Kalite EN Full language pack
+  become: yes
+  become_user: ideascube
+  command: kalite manage retrievecontentpack download en
+  tags:
+    - custom
+
 - name: Download Kalite language pack asynchronously
   become: yes
   become_user: ideascube
