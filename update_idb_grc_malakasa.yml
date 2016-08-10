@@ -1,0 +1,17 @@
+---
+# Ansible playbook for Malakasa, GRC
+
+- hosts: localhost
+
+  roles:
+    - logs
+
+
+    - role: kalite
+      version: "0.15.0"
+      lang: ["en","ar"]
+
+    - kiwix
+
+    - role: zim_install
+    zim_name: "wikipedia.ar wikipedia.el wikipedia.en wikipedia.fa wikipedia.ps  wiktionary.ar wiktionary.el wiktionary.en wiktionary.fa wiktionary.ps  wikiversity.ar wikiversity.el wikiversity.en  wikibooks.ar wikibooks.el wikibooks.en wikibooks.fa  wikisource.ar wikisource.el wikisource.en wikisource.fa  wikiquote.ar wikiquote.el wikiquote.en    tedxgeneva2014.fr tedbusiness.en teddesign.en tedentertainment.en tedglobalissues.en tedscience.en tedtechnology.en  vikidia.en  bil-tunisia.ar mullah-piaz-digest.fa "
