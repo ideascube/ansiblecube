@@ -22,4 +22,4 @@
   command: umount /media/synology
 
 - name: Set permission back to the user instead of root after importing the medias
-  file: path=/home/{{username}}/.kalite/content/ owner={{ username }} group={{ username }}  mode=0755 recurse=yes
+  file: path=/home/{{username}}/.kalite/content/ owner={{ username }} group={{ username }}  mode="u=rwX,go=rX" recurse=yes
