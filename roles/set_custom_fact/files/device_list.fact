@@ -227,6 +227,10 @@
 			"activated": "True",
 			"name": "bil-tunisia.ar wikiversity.ar wikiversity.en wikibooks.en wikibooks.ar wikiquote.en wikiquote.ar tedtechnology.en tedscience.en tedglobalissues.en tedentertainment.en teddesign.en tedbusiness.en  gutenberg.en vikidia.en wikisource.en wikisource.ar wiktionary.ar wiktionary.en wikipedia.en wikipedia.ar"
 		}
+		"idc_import": {
+			"activated": "True",
+			"content_name": ["2-Contenus/CSVKBJORDANIE.csv"]
+		},
 	},
 	"idb-fra-grandesynthe": {
 		"kalite": {
