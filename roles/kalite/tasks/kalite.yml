@@ -79,6 +79,7 @@
   become: yes
   become_user: ideascube
   command: kalite start 
+  ignore_errors: yes
   tags: ['custom', 'update']
 
 - name: Get ka-lite version
