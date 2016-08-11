@@ -3,7 +3,7 @@
 # - hosts: SystemPushInstall
 
   roles:
-    - { role: set_custom_fact, tags: [ 'master', 'custom', 'update' ] }
+    - { role: set_custom_fact, tags: [ 'master', 'custom', 'update','idc_import' ] }
     - system
     - nginx
     - uwsgi
@@ -38,7 +38,7 @@
     - role: idc_import
       when: ansible_local.device_list[generic_project_name].idc_import is defined
         and ansible_local.device_list[generic_project_name].idc_import.activated|bool == True
-      tags: ['custom', 'update']
+      tags: ['custom', 'update','idc_import']
 
     - role: appinventor
       when: ansible_local.device_list[generic_project_name].appinventor is defined
