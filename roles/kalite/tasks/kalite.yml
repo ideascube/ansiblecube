@@ -24,30 +24,6 @@
   tags:
     - custom
 
-- name: Initialize ka-lite
-  become: yes
-  become_user: ideascube
-  command: kalite start
-  tags:
-    - custom
-
-- name: Wait for the service Kalite to be completly started
-  wait_for: port=8008 state=started
-  tags:
-    - custom
-
-- name: Stop kalite
-  become: yes
-  become_user: ideascube
-  command: kalite stop
-  tags:
-    - custom
-
-- name: Wait for the service Kalite to be completly started
-  wait_for: port=8008 state=stopped timeout=120
-  tags:
-    - custom
-
 - name: Include task nedeed when using an external hard drive
   include: ext_hdd.yml
   when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l")
@@ -81,27 +57,21 @@
   register: p
   tags:
     - custom
-  
-- name: Download Kalite EN Full language pack
-  become: yes
-  become_user: ideascube
-  command: kalite manage retrievecontentpack download en
+
+- name: Import Kalite videos if managed by bsf
+  include: import_videos.yml
+  when: ansible_local.installed_software.management.managed_by_bsf|bool == True
   tags:
     - custom
 
 - name: Download Kalite language pack asynchronously
   become: yes
   become_user: ideascube
-  command: kalite manage retrievecontentpack download {{ ansible_local.device_list[generic_project_name].kalite.language }}
+  command: kalite manage retrievecontentpack download {{ item }}
+  with_items: "{{ ansible_local.device_list[generic_project_name].kalite.language }}"
   when: p.stat.isdir is defined and p.stat.isdir == False
   async: 1800
   poll: 0
-  tags:
-    - custom
-
-- name: Import Kalite videos if managed by bsf
-  include: import_videos.yml
-  when: ansible_local.installed_software.management.managed_by_bsf|bool == True
   tags:
     - custom
 
