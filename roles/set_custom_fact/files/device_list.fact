@@ -7,7 +7,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "fr"
+			"language": ["fr"]
 		},
 		"idc_import": {
 			"activated": "True",
@@ -26,7 +26,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "fr"
+			"language": ["fr"]
 		},
 		"idc_import": {
 			"activated": "True",
@@ -47,7 +47,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "fr"
+			"language": ["fr"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -58,7 +58,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "fr"
+			"language": ["fr"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -71,7 +71,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "fr"
+			"language": ["fr"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -82,7 +82,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "fr"
+			"language": ["fr"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -93,7 +93,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "fr"
+			"language": ["fr"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -104,7 +104,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "fr"
+			"language": ["fr"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -125,7 +125,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "fr"
+			"language": ["fr"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -136,7 +136,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "fr"
+			"language": ["fr"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -147,7 +147,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "fr"
+			"language": ["fr"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -158,7 +158,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "fr"
+			"language": ["fr"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -169,7 +169,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "fr"
+			"language": ["fr"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -180,7 +180,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "fr"
+			"language": ["fr"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -195,7 +195,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "fr"
+			"language": ["fr"]
 		},
 		"idc_import": {
 			"activated": "True",
@@ -210,7 +210,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "fr"
+			"language": ["fr"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -221,7 +221,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "en"
+			"language": ["en","ar"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -236,7 +236,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "fr"
+			"language": ["fr"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -247,7 +247,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "fr"
+			"language": ["fr"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -278,7 +278,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "fr"
+			"language": ["fr"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -293,7 +293,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "fr"
+			"language": ["fr"]
 		},
 		"idc_import": {
 			"activated": "True",
@@ -308,7 +308,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "fr"
+			"language": ["fr"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -321,7 +321,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "fr"
+			"language": ["fr"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -332,7 +332,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "fr"
+			"language": ["fr"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -343,7 +343,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "fr"
+			"language": ["fr"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -354,7 +354,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "fr"
+			"language": ["fr"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -365,7 +365,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "fr"
+			"language": ["fr"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -376,7 +376,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "fr"
+			"language": ["fr"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -393,7 +393,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "fr"
+			"language": ["fr"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -404,7 +404,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "fr"
+			"language": ["fr"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -415,7 +415,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "fr"
+			"language": ["fr"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -426,7 +426,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "fr"
+			"language": ["fr"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -437,7 +437,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "fr"
+			"language": ["fr"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -448,7 +448,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "fr"
+			"language": ["fr"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -459,7 +459,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "fr"
+			"language": ["fr"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -470,7 +470,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "fr"
+			"language": ["fr"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -481,7 +481,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "en"
+			"language": ["en"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -496,7 +496,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "en"
+			"language": ["en"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -515,7 +515,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "fr"
+			"language": ["fr"]
 		},
 		"idc_import": {
 			"activated": "True",
@@ -530,7 +530,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": "fr"
+			"language": ["fr"]
 		},
 		"zim_install": {
 			"activated": "True",
