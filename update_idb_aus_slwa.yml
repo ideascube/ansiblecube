@@ -7,6 +7,9 @@
     - logs
 
 
+    # We need to upgrade this.
+    - ideascube
+
     #- role: kalite
     #  version: "0.15.0"
     #  lang: ["en"]
