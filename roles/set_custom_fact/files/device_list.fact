@@ -500,15 +500,15 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": ["en"]
+			"language": ["en","ar"]
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "wikipedia.ar wikipedia.el wikipedia.en wikipedia.fa wikipedia.ps  wiktionary.ar wiktionary.el wiktionary.en wiktionary.fa wiktionary.ps  wikiversity.ar wikiversity.el wikiversity.en  wikibooks.ar wikibooks.el wikibooks.en wikibooks.fa  wikisource.ar wikisource.el wikisource.en wikisource.fa  wikiquote.ar wikiquote.el wikiquote.en tedxgeneva2014.fr tedbusiness.en teddesign.en tedentertainment.en tedglobalissues.en tedscience.en tedtechnology.en vikidia.en bil-tunisia.ar mullah-piaz-digest.fa"
+			"name": "wikipedia.ar wikipedia.en wiktionary.ar wiktionary.en wiktionary.ar wikiversity.ar wikiversity.en wikibooks.ar wikibooks.en wikisource.ar wikisource.en wikiquote.ar wikiquote.en tedxgeneva2014.fr tedbusiness.en teddesign.en tedentertainment.en tedglobalissues.en tedscience.en tedtechnology.en bil-tunisia.ar gutenberg.mul"
 		},
 		"idc_import": {
 			"activated": "True",
-			"content_name": ["2-Contenus/Csvmalakasa.csv"]
+			"content_name": ["2-Contenus/CSVSICILE.csv"]
 		}
 	},
 	"kb-bsfcampus-cmr": {
