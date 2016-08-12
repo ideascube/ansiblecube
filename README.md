@@ -40,31 +40,23 @@ Please have a look at others configurations files to see how it has been done. W
    - **version** For some application it is better to lock the version number instead of installing always the last version. A new version has always to be tested before deployment.
    - **language** You can specify the language you wish to use (must be on 2 letters)
    ```
- 	"kb-gin-conakry":{
-		"kalite":{
+ 	"kb-bsfcampus-sen": {
+		"bsfcampus": {
 			"activated": "True",
-			"version": "0.16.5",
-			"language": "fr"
+			"version": "100816"
 		},
-		"zim_install":{
+		"kalite": {
 			"activated": "True",
-			"name": "wikipedia.fr cest-pas-sorcier.fr gutenberg.fr tedxgeneva2014.fr universcience-tv.fr tedxlausanne2012.fr tedxlausanne2013.fr tedxlausanne2014.fr"
+			"version": "0.16.8",
+			"language": ["fr"]
 		},
-		"ideascube":{
+		"idc_import": {
 			"activated": "True",
-			"version": "0.9.11"
+			"content_name": ["2-Contenus/Logiciel-libre/app.csv","21-BSFCAMPUS/KB_Liste_contenus_bsf_campus.csv"]
 		},
-		"bsfcampus":{
+		"zim_install": {
 			"activated": "True",
-			"version": "100516"
-		},
-		"koombookedu":{
-			"activated": "True",
-			"version": "100516"
-		},
-		"idc_import":{
-			"activated": "True",
-			"content_name": "2- Contenus/Logiciel-libre/app.csv"
+			"name": "ubuntudoc.fr tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr  cest-pas-sorcier.fr gutenberg.fr vikidia.fr wikisource.en wikisource.fr wikipedia.fr wikipedia.wo wikipedia.en "
 		}
 	},
 	```
@@ -130,3 +122,18 @@ Ansible will be executed in Pull mode and this file will be called by Network-Ma
 exemple of ```ansiblePullUpdate``` : ```/usr/local/bin/ansible-pull -s 120 -d /var/lib/ansible/local -C oneUpdateFile -i hosts -U https://github.com/ideascube/ansiblecube.git main.yml --tags "update"```
 
 From now on, everything depend from the file ```roles/set_custom_fact/files/device_list.fact```. If you left some application with ```"activated": "True",``` those ones will be updated each time the device will be connected to Internet.
+
+## Available TAGS
+- idc_import : Call the ideascube import medias command with the right file given with 
+```
+		"idc_import": {
+			"activated": "True",
+			"content_name": ["2-Contenus/Logiciel-libre/app.csv","21-BSFCAMPUS/KB_Liste_contenus_bsf_campus.csv"]
+		},
+```
+
+## Rename a device
+You may eventually want to rename a device. This can be done with oneClickDeploy.sh this way : 
+```
+./oneClickDeploy.sh script_action=rename ideascube_project_name=new_name timezone=Africa/Dakar
+```
