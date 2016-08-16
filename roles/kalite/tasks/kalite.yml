@@ -14,7 +14,7 @@
   tags: ['custom', 'update']
 
 - name: Install kalite
-  pip: name=ka-lite version={{ ansible_local.device_list[generic_project_name].kalite.version }}
+  pip: name=ka-lite version={{ ansible_local.device_list[generic_project_name].kalite.version }}  extra_args="--no-cache-dir"
   tags: ['custom', 'update']
 
 - name: Create a user admin for kalite

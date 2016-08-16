@@ -26,7 +26,7 @@
     - custom
 
 - name: Install virtualenv
-  pip: name=virtualenv
+  pip: name=virtualenv extra_args="--no-cache-dir"
   tags:
     - custom
 
@@ -60,6 +60,7 @@
     chdir={{ mook_path }}/{{ mook_name }}/api 
     virtualenv_command=/usr/local/bin/virtualenv 
     virtualenv={{ mook_path }}/{{ mook_name }}/api/env
+    extra_args="--no-cache-dir"
   tags:
     - custom
     

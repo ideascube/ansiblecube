@@ -98,6 +98,10 @@
   tags:
     - master
 
+- name: Upgrade pip to the last version
+  pip: name=pip state=latest
+  tags: ['master', 'custom','update']
+
 - name: Check for Realtek Wireless Network Adapter
   shell: "lspci | grep -F 'Network controller: Realtek Semiconductor'"
   ignore_errors: yes
@@ -117,7 +121,7 @@
     - master
 
 - name: Install ansible
-  pip: name={{ item }}
+  pip: name={{ item }} extra_args="--no-cache-dir"
   with_items:
     - ansible
     - markupsafe
