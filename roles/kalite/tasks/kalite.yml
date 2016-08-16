@@ -52,6 +52,13 @@
   tags:
     - custom
 
+- name: Generate a zone for kalite
+  become: yes
+  become_user: ideascube
+  command: kalite manage generate_zone
+  tags:
+    - custom
+
 - name: Verify if contentpack has been already downloaded
   stat: path=/home/{{ username }}/.kalite/locale/{{ ansible_local.device_list[generic_project_name].kalite.language }}
   register: p
