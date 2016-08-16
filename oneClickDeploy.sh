@@ -9,6 +9,8 @@ ansible_bin="/usr/local/bin/ansible-pull"
 ansible_folder="/var/lib/ansible/local"
 git_repository="https://github.com/ideascube/ansiblecube.git"
 
+date -s `cat </dev/tcp/time.nist.gov/13 | awk -F " " '{print $2 }'`
+
 script_action=`echo $1 | cut -d= -f1`
 action1=`echo $1 | cut -d= -f2 | awk -F "," '{ print $1 }'`
 action2=`echo $1 | cut -d= -f2 | awk -F "," '{ print $2 }'`
