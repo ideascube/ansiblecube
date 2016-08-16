@@ -65,20 +65,18 @@
 			"name": "vikidia.en gutenberg.en wikipedia.en "
 		}
 	},
-	"--init--": {
-	},
 	"kb-esp-avanti": {
 		"kalite": {
-			"activated": "True",
+			"activated": "False",
 			"version": "0.16.8",
 			"language": ["es"]
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": "False",
 			"name": "wikipedia.es gutenberg.es "
 		},
 	"idc_import": {
-			"activated": "True",
+			"activated": "False",
 			"content_name": ["13-NICARALI/CSV-Nicarali.csv"]
 		}
 	},
@@ -223,16 +221,16 @@
 	},
 	"kb-jor-croixrouge": {
 		"kalite": {
-			"activated": "True",
+			"activated": "False",
 			"version": "0.16.8",
 			"language": ["en","ar"]
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": "False",
 			"name": "bil-tunisia.ar wikiversity.ar wikiversity.en wikibooks.en wikibooks.ar wikiquote.en wikiquote.ar tedtechnology.en tedscience.en tedglobalissues.en tedentertainment.en teddesign.en tedbusiness.en  gutenberg.en vikidia.en wikisource.en wikisource.ar wiktionary.ar wiktionary.en wikipedia.en wikipedia.ar"
 		},
 		"idc_import": {
-			"activated": "True",
+			"activated": "False",
 			"content_name": ["2-Contenus/CSVKBJORDANIE.csv"]
 		}
 	},
@@ -289,25 +287,6 @@
 			"name": "universcience.fr tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr  cest-pas-sorcier.fr gutenberg.fr wikipedia.fr "
 		}
 	},
-	"kb": {
-		"bsfcampus": {
-			"activated": "True",
-			"version": "100816"
-		},
-		"kalite": {
-			"activated": "True",
-			"version": "0.16.8",
-			"language": ["fr"]
-		},
-		"idc_import": {
-			"activated": "True",
-			"content_name": ["2-Contenus/Logiciel-libre/app.csv"]
-		},
-		"zim_install": {
-			"activated": "True",
-			"name": "ubuntudoc.fr tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr  cest-pas-sorcier.fr gutenberg.fr vikidia.fr wikisource.en wikisource.fr wikipedia.fr wikipedia.wo wikipedia.en "
-		}
-	},
 	"idb-fra-jeanquarre": {
 		"kalite": {
 			"activated": "True",
@@ -319,8 +298,6 @@
 			"name": "tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr  wiktionary.fr wikibooks.fr wikisource.fr cest-pas-sorcier.fr gutenberg.fr wikipedia.fa wikipedia.ar wikipedia.fr "
 		}
 	},
-	"dev": {
-	},
 	"idb-fra-sarcelles": {
 		"kalite": {
 			"activated": "True",
@@ -330,17 +307,6 @@
 		"zim_install": {
 			"activated": "True",
 			"name": "les-fondamentaux.fr universcience.fr wikiversity.fr wiktionary.fr cest-pas-sorcier.fr dirtybiology.fr gutenberg.fr wikipedia.fr "
-		}
-	},
-	"base": {
-		"kalite": {
-			"activated": "True",
-			"version": "0.16.8",
-			"language": ["fr"]
-		},
-		"zim_install": {
-			"activated": "True",
-			"name": ""
 		}
 	},
 	"idb-lwb-detroit-usa": {
@@ -363,17 +329,6 @@
 		"zim_install": {
 			"activated": "True",
 			"name": "tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr  wiktionary.fr wikibooks.fr wikisource.fr cest-pas-sorcier.fr gutenberg.fr wikipedia.fa wikipedia.ar wikipedia.fr "
-		}
-	},
-	"azraq": {
-		"kalite": {
-			"activated": "True",
-			"version": "0.16.8",
-			"language": ["fr"]
-		},
-		"zim_install": {
-			"activated": "True",
-			"name": ""
 		}
 	},
 	"kb-ifb-bdi": {
@@ -427,17 +382,6 @@
 		}
 	},
 	"idb-eth-bokolmanyo": {
-		"kalite": {
-			"activated": "True",
-			"version": "0.16.8",
-			"language": ["fr"]
-		},
-		"zim_install": {
-			"activated": "True",
-			"name": "gutenberg.fr vikidia.fr wikipedia.fr "
-		}
-	},
-	"idb": {
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
