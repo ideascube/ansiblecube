@@ -1,0 +1,17 @@
+---
+# Ansible playbook for some demo server hosted right here, at BSF headquarters.
+
+- hosts: localhost
+
+  roles:
+    - logs
+
+
+    - role: kalite
+      version: "0.16.8"
+      lang: ['fr','en','es']
+
+    - kiwix
+
+    - role: zim_install
+      zim_name: "wikipedia.en wikipedia.ar wikipedia.el   wiktionary.en wiktionary.ar wiktionary.el    gutenberg.mul   tedbusiness.en teddesign.en tedentertainment.en tedglobalissues.en tedscience.en tedtechnology.en   vikidia.en   bil-tunisia.ar mullah-piaz-digest.fa  world.map athens.map"
