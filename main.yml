@@ -33,7 +33,7 @@
     - role: zim_install
       when: ansible_local.device_list[generic_project_name].zim_install is defined
         and ansible_local.device_list[generic_project_name].zim_install.activated|bool == True
-      tags: ['custom', 'update']
+      tags: ['custom', 'update','zim_install']
 
     - role: appinventor
       when: ansible_local.device_list[generic_project_name].appinventor is defined
