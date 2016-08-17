@@ -469,6 +469,21 @@
 			"name": "ubuntudoc.fr tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr  cest-pas-sorcier.fr gutenberg.fr vikidia.fr wikisource.en wikisource.fr wikipedia.fr wikipedia.wo wikipedia.en "
 		}
 	},
+	"kb-tza-ambassadeDeFrance": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.8",
+			"language": ["fr", "sw"]
+		},
+		"idc_import": {
+			"activated": "True",
+			"content_name": ["2-Contenus/CSVkbtanzanie.csv"]
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": "wikipedia.sw wikipedia.fr wikipedia.en wiktionary.sw wiktionary.fr wiktionary.en wikiversity.fr wikiversity.en wikibooks.fr wikibooks.en wikisource.fr wikisource.en tedtechnology.en tedscience.en tedglobalissues.en tedentertainment.en teddesign.en tedbusiness.en tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr cest-pas-sorcier.fr dirtybiology.fr gutenberg.mul universcience-tv.fr vikidia.fr vikidia.en les-fondamentaux.fr e-penser.fr deus-ex-silicium.fr bouquineux.fr biologie-tout-compris.fr"
+		}
+	},
 	"idb-deu-dusseldorf": {
 		"kalite": {
 			"activated": "True",
