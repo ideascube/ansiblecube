@@ -13,4 +13,4 @@
 #    - kiwix
 
 #    - role: zim_install
-#      zim_name: "wikipedia.fr wikipedia.rn wikipedia.sw gutenberg.fr vikidia.fr cest-pas-sorcier.fr tedxgeneva2014.fr tedxlausanne2012.fr tedxlausanne2013.fr tedxlausanne2014.fr tedxlausannechange2013.fr"
+#      zim_name: "wikipedia.fr wikipedia.rn wikipedia.sw gutenberg.fr vikidia.fr cest-pas-sorcier.fr tedxgeneva2014.fr tedxlausanne2012.fr tedxlausanne2013.fr tedxlausanne2014.fr tedxlausannechange2013.fr world.map burundi.map"
