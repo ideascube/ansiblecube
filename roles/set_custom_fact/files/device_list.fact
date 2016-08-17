@@ -473,7 +473,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-			"language": ["fr", "sw"]
+			"language": ["fr"]
 		},
 		"idc_import": {
 			"activated": "True",
