@@ -35,11 +35,6 @@
         and ansible_local.device_list[generic_project_name].zim_install.activated|bool == True
       tags: ['custom', 'update']
 
-    - role: idc_import
-      when: ansible_local.device_list[generic_project_name].idc_import is defined
-        and ansible_local.device_list[generic_project_name].idc_import.activated|bool == True
-      tags: ['custom', 'update','idc_import']
-
     - role: appinventor
       when: ansible_local.device_list[generic_project_name].appinventor is defined
         and ansible_local.device_list[generic_project_name].appinventor.activated|bool == True
@@ -49,3 +44,8 @@
       when: ansible_local.installed_software.management.managed_by_bsf|bool == True
       tags:
         - update
+
+    - role: idc_import
+      when: ansible_local.device_list[generic_project_name].idc_import is defined
+        and ansible_local.device_list[generic_project_name].idc_import.activated|bool == True
+      tags: ['custom', 'update','idc_import']
