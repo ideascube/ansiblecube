@@ -14,4 +14,4 @@
     - kiwix
 
     - role: zim_install
-      zim_name: "wikipedia.en wikipedia.ar wikipedia.el   wiktionary.en wiktionary.ar wiktionary.el    gutenberg.mul   tedbusiness.en teddesign.en tedentertainment.en tedglobalissues.en tedscience.en tedtechnology.en   vikidia.en   bil-tunisia.ar mullah-piaz-digest.fa  world.map athens.map"
+      zim_name: "wikipedia.en wikipedia.ar wikipedia.es   gutenberg.mul   tedbusiness.en teddesign.en tedentertainment.en tedglobalissues.en tedscience.en tedtechnology.en   vikidia.en   bil-tunisia.ar mullah-piaz-digest.fa  world.map athens.map"
