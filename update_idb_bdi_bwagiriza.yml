@@ -6,11 +6,11 @@
   roles:
     - logs
 
-    - role: kalite
-      version: "0.16.8"
-      lang: ['en']
+#    - role: kalite
+#      version: "0.16.8"
+#      lang: ['en','fr']
 
-    - kiwix
+#    - kiwix
 
-    - role: zim_install
-      zim_name: "wikipedia.fr wikipedia.rn wikipedia.sw gutenberg.fr vikidia.fr cest-pas-sorcier.fr tedxgeneva2014.fr tedxlausanne2012.fr tedxlausanne2013.fr tedxlausanne2014.fr tedxlausannechange2013.fr"
+#    - role: zim_install
+#      zim_name: "wikipedia.fr wikipedia.rn wikipedia.sw gutenberg.fr vikidia.fr cest-pas-sorcier.fr tedxgeneva2014.fr tedxlausanne2012.fr tedxlausanne2013.fr tedxlausanne2014.fr tedxlausannechange2013.fr world.map burundi.map"
