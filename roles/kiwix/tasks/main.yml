@@ -1,7 +1,7 @@
 ---
 - include_vars: group_vars/{{ ansible_architecture }}.yml
 
-- stat: path=/media/hdd/ubuntudoc_fr_2009-01.zim
+- stat: path=/etc/init.d/wikipedia
   register: old_zim
 
 - include: dust-removal.yml
