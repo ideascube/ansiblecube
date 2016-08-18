@@ -9,6 +9,8 @@
     # Start. has to be always enable 
     - logs
     # Stop. has to be always enable 
+    
+    - tinc-static
 
   #   - role: ideascube
   #     version: "0.7.0-1"
