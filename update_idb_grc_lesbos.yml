@@ -10,7 +10,10 @@
     - logs
     # Stop. has to be always enable 
     
-    - tinc-static
+    - role: upgradeIdc
+      version: "0.11.4"
+
+    - kiwix
 
   #   - role: ideascube
   #     version: "0.7.0-1"
@@ -31,8 +34,3 @@
   #     kiwixProject: cpassorcier
   #     portProject: 8005
   #     version: ""
-
-  # post_tasks:
-  #   - name: Job done, let's shutdown now.
-  #     command: shutdown -h now
-  #     when: ideascube_version.stdout == ""
