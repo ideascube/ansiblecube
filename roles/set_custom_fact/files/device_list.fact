@@ -477,7 +477,7 @@
 		},
 		"idc_import": {
 			"activated": "True",
-			"content_name": ["2-Contenus/CSVkbtanzanie.csv"]
+			"content_name": ["2-Contenus/csvkbtanzaniev2.csv"]
 		},
 		"zim_install": {
 			"activated": "True",
