@@ -3,6 +3,10 @@
 
 #It will be always localhost
 - hosts: localhost
+  vars:
+    # This is OpenDNS FamilyShield DNS server.
+    dnsmasq_resolver_1: 208.67.222.123
+    dnsmasq_resolver_2: 208.67.220.123
 
   roles:
 
