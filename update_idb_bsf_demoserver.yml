@@ -7,11 +7,14 @@
     - logs
 
 
-    - role: kalite
-      version: "0.16.8"
-      lang: ['fr','en','es']
+#    - role: kalite
+#      version: "0.16.8"
+#      lang: ['fr','en','es']
 
-    - kiwix
+#    - kiwix
 
-    - role: zim_install
-      zim_name: "wikipedia.en wikipedia.ar wikipedia.es   gutenberg.mul   tedbusiness.en teddesign.en tedentertainment.en tedglobalissues.en tedscience.en tedtechnology.en   vikidia.en   bil-tunisia.ar mullah-piaz-digest.fa  world.map athens.map"
+#    - role: zim_install
+#      zim_name: "wikipedia.en wikipedia.ar wikipedia.es   gutenberg.mul   tedbusiness.en teddesign.en tedentertainment.en tedglobalissues.en tedscience.en tedtechnology.en   vikidia.en   bil-tunisia.ar mullah-piaz-digest.fa  world.map athens.map"
+
+#    - role: idc_import
+#      content_name: "2-Contenus/csvcolombie.csv"
