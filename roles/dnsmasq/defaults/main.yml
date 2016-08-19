@@ -1,0 +1,4 @@
+---
+
+dnsmasq_resolver_1=8.8.8.8
+dnsmasq_resolver_2=8.8.4.4
