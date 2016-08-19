@@ -3,6 +3,11 @@
 
 - hosts: localhost
 
+  # We override some variables here*
+  # cuz this server has several specific configuration tweaks
+  vars:
+    hostname: demo.ideascube.ideas-box.fr
+
   roles:
     - logs
 
