@@ -4,7 +4,7 @@
 - stat: path=/etc/init.d/wikipedia
   register: old_zim
 
-- include: dust-removal.yml
+- include: dust-removal-{{ ansible_architecture }}.yml
   when: old_zim.stat.exists == True
 
 - name: Copying kiwix binaries

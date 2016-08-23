@@ -1,0 +1,51 @@
+---
+- name: Get zim folder name 
+  shell: ls -1 /usr/local/share/kiwix/data/ | egrep "gutenberg|wikipedia" ; echo
+  register: folder_list
+
+- debug: msg="{{ folder_list }}"
+
+- name: Get zim name file
+  shell: ls -1 /usr/local/share/kiwix/data/{{item}} | uniq -w 12 | sed 's/zimaa/zim/' ; echo
+  with_items: "{{ folder_list.stdout_lines }}"
+  register: file_list
+
+- debug: msg="{{ file_list }}"
+
+- name: Stop running kiwix service
+  command: /etc/init.d/{{ item }} stop
+  with_items: "{{ folder_list.stdout_lines }}"
+
+- name: Disable init file for kiwix project
+  command: update-rc.d {{ item }} disable
+  with_items: "{{ folder_list.stdout_lines }}"
+
+- name: Disable Nginx virtual host for kiwix project
+  file: path=/etc/nginx/sites-enabled/{{ item }} state=absent
+  with_items: "{{ folder_list.stdout_lines }}"
+
+- name: create Kiwix directory 
+  file: path={{zim_path}}/data/content/ state=directory
+
+- shell: mv /usr/local/share/kiwix/data/{{item}}/* /var/ideascube/kiwix/data/content/
+  with_items: "{{ folder_list.stdout_lines }}"
+
+- name: Copying kiwix manage to create library.xml
+  get_url: url={{filer_bsf}}/kiwix-manage-{{ ansible_architecture }} dest=/usr/local/bin/kiwix-manage mode=755 timeout=20
+
+- name: Generate library.xml from ZIM file
+  command: /usr/local/bin/kiwix-manage {{zim_path}}/library.xml add {{zim_path}}/data/content/{{ item }}
+  with_items: 
+
+- name: Remove old folder
+  file: path=/media/hdd/{{ item }} state=absent
+  with_items:
+  - cest-pas-sorcier
+  - Gutenberg
+  - TEDvideos
+  - ubuntudoc_fr_2009-01.zim
+  - vikipedia
+  - wikipedia
+  - wikisource
+  - kiwix_library
+  - universcience-tv_fr_all_2015-03.zim
