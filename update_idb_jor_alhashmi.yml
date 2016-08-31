@@ -7,9 +7,9 @@
   roles:
     - logs
 
+    - kiwix
 
     # - kalite
-
 
     #- role: zim_install
     #  zim_name: "wikipedia.ar wikipedia.en wikisource.fr wikisource.fr tedxgeneva2014.fr tedxlausanne2012.fr tedxlausanne2013.fr tedxlausanne2014.fr cest-pas-sorcier.fr gutenberg.fr gutenberg.en ubuntudoc.fr universcience-tv.fr vikidia.fr"
