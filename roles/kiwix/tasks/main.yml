@@ -4,8 +4,12 @@
 - stat: path=/etc/init.d/wikipedia
   register: startup_file
 
-- include: dust-removal-{{ ansible_architecture }}.yml
-  when: startup_file.stat.exists == True
+- include: dust-removal-x86_64.yml
+  when: startup_file.stat.exists == True and ansible_architecture == 'x86_64'
+
+- include: dust-removal-armv7l.yml
+  when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l' and startup_file.stat.exists == True
+
 
 - name: Copying kiwix binaries
   get_url: url={{filer_bsf}}/kiwix-serve-{{ ansible_architecture }} dest=/usr/local/bin/kiwix-serve mode=755 timeout=20
