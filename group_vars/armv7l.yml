@@ -3,6 +3,7 @@
 hostname: koombook.lan
 hotspot_name: koombook
 wpa_pass: KBcampus
+old_kiwix_path: /media/hdd
 
 use_hdd: True
 sync_log: True

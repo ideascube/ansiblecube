@@ -2,10 +2,10 @@
 - include_vars: group_vars/{{ ansible_architecture }}.yml
 
 - stat: path=/etc/init.d/wikipedia
-  register: old_zim
+  register: startup_file
 
 - include: dust-removal-{{ ansible_architecture }}.yml
-  when: old_zim.stat.exists == True
+  when: startup_file.stat.exists == True
 
 - name: Copying kiwix binaries
   get_url: url={{filer_bsf}}/kiwix-serve-{{ ansible_architecture }} dest=/usr/local/bin/kiwix-serve mode=755 timeout=20

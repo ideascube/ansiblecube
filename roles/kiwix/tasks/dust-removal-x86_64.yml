@@ -1,51 +1,59 @@
 ---
-- name: Get zim folder name 
-  shell: ls -1 /usr/local/share/kiwix/data/ | egrep "gutenberg|wikipedia" ; echo
+- name: Get zim file name
+  shell: find {{ old_kiwix_path }} -regextype posix-extended -regex "^.*zim$|^.*zima{2}"
+  register: zim_file
+
+- name: Generate new zim file name
+  shell: find {{ old_kiwix_path }} -type f -regextype posix-extended -regex "^.*zim$|^.*zima{2}" -printf "%f\n" | sed 's/zimaa/zim/' | cut -d "_" -f1-2 | sed 's/_/./'
+  register: zim_file_new
+
+- name: Generate folder list
+  shell: find {{ old_kiwix_path }} -type f -regextype posix-extended -regex "^.*zim$|^.*zima{2}" -printf "%h\n" | sed 's/zimaa/zim/' | cut -d "_" -f1-2 | sed 's/_/./'
   register: folder_list
 
-- debug: msg="{{ folder_list }}"
+# - name: Get Index files
+#   shell: find {{ old_kiwix_path }} -type d -name "*index*" -printf "%h\n"
+#   register: index_files
 
-- name: Get zim name file
-  shell: ls -1 /usr/local/share/kiwix/data/{{item}} | uniq -w 12 | sed 's/zimaa/zim/' ; echo
-  with_items: "{{ folder_list.stdout_lines }}"
-  register: file_list
+- name: Zim file name 
+  debug: msg="{{ zim_file }}"
 
-- debug: msg="{{ file_list }}"
+- name: Zim file name NEW
+  debug: msg="{{ zim_file_new }}"
+
+- name: Get startup file list
+  shell: grep kiwix-serve /etc/init.d/* | cut -d "/" -f4 | cut -d ":" -f1
+  register: startup_file_list 
+
+- debug: msg="{{ startup_file_list }}"
 
 - name: Stop running kiwix service
   command: /etc/init.d/{{ item }} stop
-  with_items: "{{ folder_list.stdout_lines }}"
+  with_items: "{{ startup_file_list.stdout_lines }}"
 
 - name: Disable init file for kiwix project
   command: update-rc.d {{ item }} disable
-  with_items: "{{ folder_list.stdout_lines }}"
+  with_items: "{{ startup_file_list.stdout_lines }}"
 
 - name: Disable Nginx virtual host for kiwix project
   file: path=/etc/nginx/sites-enabled/{{ item }} state=absent
-  with_items: "{{ folder_list.stdout_lines }}"
+  with_items: "{{ startup_file_list.stdout_lines }}"
 
 - name: create Kiwix directory 
   file: path={{zim_path}}/data/content/ state=directory
 
-- shell: mv /usr/local/share/kiwix/data/{{item}}/* /var/ideascube/kiwix/data/content/
-  with_items: "{{ folder_list.stdout_lines }}"
+- name: Move ZIM file to the new content folder
+  shell: mv {{item.0}} {{zim_path}}/data/content/"{{item.1}}"
+  with_together: 
+  - "{{ zim_file.stdout_lines }}"
+  - "{{ zim_file_new.stdout_lines }}"
 
 - name: Copying kiwix manage to create library.xml
   get_url: url={{filer_bsf}}/kiwix-manage-{{ ansible_architecture }} dest=/usr/local/bin/kiwix-manage mode=755 timeout=20
 
 - name: Generate library.xml from ZIM file
   command: /usr/local/bin/kiwix-manage {{zim_path}}/library.xml add {{zim_path}}/data/content/{{ item }}
-  with_items: 
+  with_items: "{{ zim_file_new.stdout_lines }}"
 
-- name: Remove old folder
-  file: path=/media/hdd/{{ item }} state=absent
-  with_items:
-  - cest-pas-sorcier
-  - Gutenberg
-  - TEDvideos
-  - ubuntudoc_fr_2009-01.zim
-  - vikipedia
-  - wikipedia
-  - wikisource
-  - kiwix_library
-  - universcience-tv_fr_all_2015-03.zim
+# - name: Remove empty folder 
+#   shell: find {{ old_kiwix_path }} -type d -empty -delete
