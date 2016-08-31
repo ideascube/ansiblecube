@@ -7,7 +7,7 @@
   roles:
     - logs
 
-    - kiwix
+    # - kiwix
 
     # - kalite
 
