@@ -12,7 +12,7 @@
 
     - role: updateMook
       mook_name: "bsfcampus"
-      version: "120716"
+      version: "010916"
     
     - tinc-static
 
