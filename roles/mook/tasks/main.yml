@@ -2,11 +2,11 @@
 - include_vars: group_vars/{{ ansible_architecture }}.yml
 
 - name: Set mook project name to have the right URL
-  set_fact: url_project_name="gryzzlab"
+  set_fact: url_project_name="bsf-campus"
   when: mook_name == 'bsfcampus'
 
 - name: Set mook project name to have the right URL
-  set_fact: url_project_name="bsfcampus"
+  set_fact: url_project_name="koombook-edu"
   when: mook_name == 'koombookedu'
 
 - name: Set the central server variable for BSF Campus
@@ -22,7 +22,7 @@
 ####
 - name: Clone mook api
   become_user: ideascube
-  git: repo=ssh://git@altssh.bitbucket.org:443/{{url_project_name}}/mook-bsf-api.git dest={{ mook_path }}/{{ mook_name }}/api accept_hostkey=yes depth=1
+  git: repo=ssh://git@altssh.bitbucket.org:443/bsfcampus/mook-bsf-api.git dest={{ mook_path }}/{{ mook_name }}/api accept_hostkey=yes depth=1
   register: mook
 
 - name: Install specific packages
@@ -98,7 +98,7 @@
 ####
 - name: Clone mook front
   become_user: ideascube
-  git: repo=ssh://git@altssh.bitbucket.org:443/{{url_project_name}}/mook-bsf-front-end-backbone.git dest={{ mook_path }}/{{ mook_name }}/front accept_hostkey=yes depth=1
+  git: repo=ssh://git@altssh.bitbucket.org:443/bsfcampus/{{url_project_name}}.git dest={{ mook_path }}/{{ mook_name }}/front accept_hostkey=yes depth=1
   register: mookFront
 
 - name: download vendor package
