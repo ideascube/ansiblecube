@@ -414,6 +414,17 @@
 			"name": "gutenberg.fr vikidia.fr wikipedia.fr "
 		}
 	},
+	"idb-jor-azraq": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.8",
+			"language": ["fr"]
+		},
+		"zim_install": {
+			"activated": "False",
+			"name": "gutenberg.fr vikidia.fr wikipedia.fr "
+		}
+	},
 	"idb-fra-calais": {
 		"kalite": {
 			"activated": "True",
