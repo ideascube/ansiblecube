@@ -80,7 +80,7 @@ If you own an Olimex Lime 2 or Raspberry Pi 2/3, the best is to give a try to An
 > AnsibleCube is able to mount an external hard drive to store large amount of data. The hard drive has to be connected from firstboot and accessible here `/dev/sda1`. This block will be mounted at custom run and used to store the data
 
 ### Case 2 : AMD64
- - [Download the last Debian jessie](http://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-8.2.0-amd64-lxde-desktop.iso), with or without graphical interface : 
+ - [Download the last Debian jessie](http://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-8.5.0-amd64-lxde-desktop.iso), with or without graphical interface : 
  - Set up your server as you will do for any server you own
  - When asked, create a root user and an ideascube user (ideascube user password will be automatically overrided during ansible deployment)
 
