@@ -69,7 +69,7 @@
 - name: Import Kalite videos if we are at BSF
   include: import_videos.yml
   when: ansible_local.installed_software.management.managed_by_bsf|bool == True
-    and ansible_default_ipv4.gateway == {{ synology }}
+    and ansible_default_ipv4.gateway == "{{ synology }}"
   tags:
     - custom
 
