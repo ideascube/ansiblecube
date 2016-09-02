@@ -12,7 +12,7 @@ repo_url: https://github.com/ideascube/ansiblecube.git
 central_server: ansible@37.187.151.52
 filer_bsf: http://filer.bsf-intranet.org
 timezone: "Europe/Paris"
-synology: "synology.montreuil.wan.bsf-intranet.org"
+synology: "10.10.8.9"
 kiwix_version: "0.9"
 mongodb_version: "2.4.10"
 
