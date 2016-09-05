@@ -90,14 +90,14 @@ Now you are ready to start deployment on the targeted device
 #### With SSH
  - ```ssh ideascube@192.168.1.xxx```
  - Login with SSH : Login : `root`, default password is 1234 for Armbian and pi / raspberry for Raspberry 
- - Download the bash script : ```wget https://github.com/ideascube/ansiblecube/raw/oneUpdateFile/oneClickDeploy.sh --no-check-certificate```
+ - Download the bash script : ```wget https://github.com/ideascube/ansiblecube/raw/oneUpdateFile/oneClickDeploy.sh```
  - Modify rights ```chmod +x oneClickDeploy.sh```
  
 #### On the device directly
  - Plug a keyboard on your device
  - Login : `root`, default password is 1234 for Armbian and pi / raspberry for Raspberry 
  - If needed, type this command to change the mapping of your keyboard `loadkeys fr`
- - Download the bash script : ```wget https://github.com/ideascube/ansiblecube/raw/oneUpdateFile/oneClickDeploy.sh --no-check-certificate```
+ - Download the bash script : ```wget https://github.com/ideascube/ansiblecube/raw/oneUpdateFile/oneClickDeploy.sh```
  - Modify rights ```chmod +x oneClickDeploy.sh```
 
 #### Set the right settings
@@ -111,9 +111,9 @@ This script takes 4 arguments :
 
 ### Lunch the deployment 
 /!\ KoomBook image don't need master run
-  1. Create a master : ```./oneClickDeploy.sh script_action=master```
-  2. Customize the master : ```./oneClickDeploy.sh script_action=custom managed_by_bsf=True ideascube_project_name=kb_mooc_cog timezone=Europe/Paris```
-  3. Both at the same time : ```./oneClickDeploy.sh script_action=master,custom managed_by_bsf=True ideascube_project_name=kb_mooc_cog timezone=Europe/Paris```
+  1. Create a master : ```sudo ./oneClickDeploy.sh script_action=master```
+  2. Customize the master : ```sudo ./oneClickDeploy.sh script_action=custom managed_by_bsf=True ideascube_project_name=kb_mooc_cog timezone=Europe/Paris```
+  3. Both at the same time : ```sudo ./oneClickDeploy.sh script_action=master,custom managed_by_bsf=True ideascube_project_name=kb_mooc_cog timezone=Europe/Paris```
 
 ## Keep your system up to date ! 
 Now you have an ideascube system ready to work, great !
