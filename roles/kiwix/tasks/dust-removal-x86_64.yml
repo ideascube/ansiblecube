@@ -1,26 +1,4 @@
 ---
-- name: Get zim file name
-  shell: find {{ old_kiwix_path }} -regextype posix-extended -regex "^.*zim$|^.*zima{2}"
-  register: zim_file
-
-- name: Generate new zim file name
-  shell: find {{ old_kiwix_path }} -type f -regextype posix-extended -regex "^.*zim$|^.*zima{2}" -printf "%f\n" | sed 's/zimaa/zim/' | cut -d "_" -f1-2 | sed 's/_/./'
-  register: zim_file_new
-
-- name: Generate folder list
-  shell: find {{ old_kiwix_path }} -type f -regextype posix-extended -regex "^.*zim$|^.*zima{2}" -printf "%h\n" | sed 's/zimaa/zim/' | cut -d "_" -f1-2 | sed 's/_/./'
-  register: folder_list
-
-# - name: Get Index files
-#   shell: find {{ old_kiwix_path }} -type d -name "*index*" -printf "%h\n"
-#   register: index_files
-
-- name: Zim file name 
-  debug: msg="{{ zim_file }}"
-
-- name: Zim file name NEW
-  debug: msg="{{ zim_file_new }}"
-
 - name: Get startup file list
   shell: grep kiwix-serve /etc/init.d/* | cut -d "/" -f4 | cut -d ":" -f1
   register: startup_file_list 
@@ -42,18 +20,22 @@
 - name: create Kiwix directory 
   file: path={{zim_path}}/data/content/ state=directory
 
-- name: Move ZIM file to the new content folder
-  shell: mv {{item.0}} {{zim_path}}/data/content/"{{item.1}}"
-  with_together: 
-  - "{{ zim_file.stdout_lines }}"
-  - "{{ zim_file_new.stdout_lines }}"
+- name: Copy create_zim_archive.sh file
+  copy: src=create_zim_archive.sh /tmp/create_zim_archive.sh
 
-- name: Copying kiwix manage to create library.xml
-  get_url: url={{filer_bsf}}/kiwix-manage-{{ ansible_architecture }} dest=/usr/local/bin/kiwix-manage mode=755 timeout=20
+- name: Create an archive from available zim
+  command: create_zim_archive.sh
 
-- name: Generate library.xml from ZIM file
-  command: /usr/local/bin/kiwix-manage {{zim_path}}/library.xml add {{zim_path}}/data/content/{{ item }}
-  with_items: "{{ zim_file_new.stdout_lines }}"
+- name: Add a temporary remote to install the zim archive with ideascube catalog
+  command: ideascube catalog remotes add "Temporary catalog" "Temporary catalog" "{{old_kiwix_path}}/catalog.yml"
+
+- name: Get a list of zim archive to install 
+  command: grep "local_" {{old_kiwix_path}}/catalog.yml
+  register: zim_file_to_add
+
+- name: Install zim file with ideascube catalog 
+  command: ideascube catalog install {{item}}
+  with_items: "{{ zim_file_to_add }}"
 
 # - name: Remove empty folder 
 #   shell: find {{ old_kiwix_path }} -type d -empty -delete
