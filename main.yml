@@ -12,6 +12,7 @@
 
     - role: tinc-static
       when: ansible_local.installed_software.management.managed_by_bsf|bool == True
+        and tinc_key_file == ""
       tags: ['custom', 'update','rename']
 
     - role: kalite

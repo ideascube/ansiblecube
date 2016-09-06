@@ -282,3 +282,7 @@
     or fex_file2.stat.exists is defined and fex_file2.stat.exists
   tags:
     - custom
+
+- name: Get the state of tinc key file
+  shell: cat /etc/tinc/idbvpn/hosts/{{idc_uniq_device_name}} | grep "RSA"
+  register: tinc_key_file
