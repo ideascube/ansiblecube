@@ -8,14 +8,17 @@
 - name: Stop running kiwix service
   command: /etc/init.d/{{ item }} stop
   with_items: "{{ startup_file_list.stdout_lines }}"
+  ignore_errors: yes
 
 - name: Disable init file for kiwix project
   command: update-rc.d {{ item }} disable
   with_items: "{{ startup_file_list.stdout_lines }}"
+  ignore_errors: yes
 
 - name: Disable Nginx virtual host for kiwix project
   file: path=/etc/nginx/sites-enabled/{{ item }} state=absent
   with_items: "{{ startup_file_list.stdout_lines }}"
+  ignore_errors: yes
 
 - name: create Kiwix directory 
   file: path={{zim_path}}/data/content/ state=directory
