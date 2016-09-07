@@ -48,12 +48,17 @@
   tags: 
     - master
 
-- shell: systemctl is-enabled wikipedia ; echo
-  register: startup_file
+- shell: ls /etc/rc5.d/S*wikipedia ; echo
+  register: file_exist
   tags: 
     - update
-    
+
+- stat: path={{file_exist.stdout}}
+  register: st
+  tags: 
+    - update
+
 - include: dust-removal-{{ ansible_architecture }}.yml
-  when: startup_file.stdout == "Enable"
+  when: st.stat.exists == True 
   tags: 
     - update
