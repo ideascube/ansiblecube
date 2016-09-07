@@ -1,7 +1,7 @@
 ---
 - include_vars: group_vars/{{ ansible_architecture }}.yml
 
-- shell: grep "wikipedia" /etc/rc5.d/* -l ; echo
+- shell: ls /etc/rc5.d/S*wikipedia ; echo
   register: file_exist
 
 - stat: path={{file_exist.stdout}}
