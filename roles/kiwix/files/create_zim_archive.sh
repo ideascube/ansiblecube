@@ -2,63 +2,48 @@
 
 OLD_PATH=/usr/local/share/kiwix/
 
+ZIM_LIST=`find ./ -type f -regextype posix-extended -regex "^.*zim$|^.*zima{2}"`
+
+if [ -Z $ZIM_LIST ]; then
+        exit 0;
+fi
+
 cd $OLD_PATH
-mkdir -p tmp/
+mkdir -p $OLD_PATH/packages/
+mkdir -p /var/cache/ideascube/catalog/packages
 
-FOLDER=`find ./ -type f -regextype posix-extended -regex "^.*zim$|^.*zima{2}" -printf "%h\n" | uniq | cut -d "/" -f2`
+echo "[+] Zim list..."
+echo "  --> $ZIM_LIST"
 
-echo "[+] Folder list..."
-echo "  --> $FOLDER"
-
-for i in $FOLDER
+for i in $ZIM_LIST
 do
         y=0
 
         echo "[+] Value of this entry $i"
+        new_name=`echo $i | cut -d "/" -f3 | cut -d "_" -f1-2 | sed 's/_/./'`
+        nameWithDate=$new_name-0000-00-00
 
-        LIBRARY_NAME=`find ./ -type f -name "*.xml" |grep "$i"`
-        echo "[+] Library name..."
-        echo "$LIBRARY_NAME"
-        echo "[+] Folder name..."
-        echo "$i"
+        echo "$new_name" >> $OLD_PATH/list.txt
 
-        mkdir -p tmp/$i/data/{content,index,library}
+        mkdir -p $OLD_PATH/packages/$nameWithDate/data/{content,index,library}
 
-        cp -r $LIBRARY_NAME tmp/$i/data/library
-        cp -r $i/* tmp/$i/data/content/
+        $OLD_PATH/kiwix-manage-x86_64 $OLD_PATH/packages/$nameWithDate/data/library/library.xml add $i
 
-        cd tmp/$i/
+        is_several_files=`echo $i | grep zimaa`
 
-        zip -r $i.zip data
+        if [ -n $is_several_files ]; then
+                cp ${i%?}* $OLD_PATH/packages/$nameWithDate/data/content/
+        else
+                cp $i $OLD_PATH/packages/$nameWithDate/data/content/
+        fi    
 
-        mv $i.zip $OLD_PATH
+        cd $OLD_PATH/packages/$nameWithDate/
+
+        zip -r "$new_name-0000-00-00" data
+
+        mv "$new_name-0000-00-00" /var/cache/ideascube/catalog/packages/$new_name-0000-00-00
         cd $OLD_PATH
-        rm -rf tmp
 
-        name=`echo $LIBRARY_NAME | cut -d "_" -f1-2 | sed 's/_/./'`
-        echo "[+] Library name :  $name"
-        title=`echo $LIBRARY_NAME | cut -d "_" -f1`
-
-        sha256sum=`sha256sum $LIBRARY_NAME | cut -d " " -f1`
-
-        echo "local_$name" >> $OLD_PATH/catalog.yml
-
-        for node in version size title language description id
-        do
-                array[$y]=`xmllint --xpath //@$node $LIBRARY_NAME | cut -d "=" -f2`
-                y=`expr $y + 1`
-        done
-
-        echo -e "version: ${array[0]}
-  size: ${array[1]}
-  url: \"$OLD_PATH$i.zip\"
-  name: ${array[2]}
-  language: ${array[3]}
-  description: ${array[4]}
-  id: ${array[5]}
-  title: \"$title\"
-  sha256sum: \"$sha256sum\"
-  langid: \"$name\"
-  type: zipped-zim
-  handler: kiwix\n" >> $OLD_PATH/catalog.yml
 done
+
+rm -rf $OLD_PATH/packages
