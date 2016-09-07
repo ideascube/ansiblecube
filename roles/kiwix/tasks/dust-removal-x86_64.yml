@@ -32,7 +32,7 @@
   copy: src=create_zim_archive.sh dest={{old_kiwix_path}}/create_zim_archive.sh mode=0755
 
 - name: Create an archive from available zim
-  command: {{old_kiwix_path}}/create_zim_archive.sh
+  command: "{{old_kiwix_path}}/create_zim_archive.sh"
 
 - name: Update sha256sum
   command: /usr/bin/python update_sha256sum.py /var/cache/ideascube/catalog/packages/ chdir={{old_kiwix_path}}
