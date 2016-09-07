@@ -48,12 +48,11 @@
   tags: 
     - master
 
-- stat: path=/media/hdd/ubuntudoc_fr_2009-01.zim
-  register: old_zim
+- shell: systemctl is-enabled wikipedia ; echo
+  register: startup_file
   tags: 
     - update
-
-- include: dust-removal.yml
-  when: old_zim.stat.exists == True
+    
+- include: dust-removal-{{ ansible_architecture }}.yml
   tags: 
     - update
