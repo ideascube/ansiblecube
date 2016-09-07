@@ -21,6 +21,28 @@
   - ted
   - ubuntudoc
 
+- name: Remove init file
+  command: rm /etc/init.d/{{ item }}
+  with_items:
+  - wikipedia
+  - wikisource
+  - vikidia
+  - gutenberg
+  - cpassorcier
+  - ted
+  - ubuntudoc
+
+- name: Remove symlink
+  command: update-rc.d {{ item }} remove
+  with_items:
+  - wikipedia
+  - wikisource
+  - vikidia
+  - gutenberg
+  - cpassorcier
+  - ted
+  - ubuntudoc
+
 - name: Disable Nginx virtual host for kiwix project
   file: path=/etc/nginx/sites-enabled/{{ item }} state=absent
   with_items:

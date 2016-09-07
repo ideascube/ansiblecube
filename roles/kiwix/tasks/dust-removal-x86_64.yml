@@ -13,6 +13,14 @@
   command: update-rc.d {{ item }} disable
   with_items: "{{ startup_file_list.stdout_lines }}"
 
+- name: Delete init file for kiwix project
+  command: rm /etc/init.d/{{ item }}
+  with_items: "{{ startup_file_list.stdout_lines }}"
+
+- name: Remove symlink
+  command: update-rc.d {{ item }} remove
+  with_items: "{{ startup_file_list.stdout_lines }}"
+
 - name: Disable Nginx virtual host for kiwix project
   file: path=/etc/nginx/sites-enabled/{{ item }} state=absent
   with_items: "{{ startup_file_list.stdout_lines }}"
