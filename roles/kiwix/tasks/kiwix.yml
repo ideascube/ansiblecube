@@ -54,5 +54,6 @@
     - update
     
 - include: dust-removal-{{ ansible_architecture }}.yml
+  when: startup_file.stdout == "Enable"
   tags: 
     - update
