@@ -1,14 +1,35 @@
 - name: Clone mook front
   become: True
   become_user: ideascube
-  git: repo=ssh://git@altssh.bitbucket.org:443/{{url_project_name}}/mook-bsf-front-end-backbone.git dest={{ mook_path }}/{{ mook_name }}/front accept_hostkey=yes depth=1
+  git: repo=ssh://git@altssh.bitbucket.org:443/{{url_project_name}}/bsf-campus.git 
+    dest={{ mook_path }}/{{ mook_name }}/front 
+    accept_hostkey=yes 
+    depth=1
   tags:
     - custom
 
+- name: Change bitbucket owner repository
+  replace: dest=/home/git
+    regexp='gryzzlab'
+    replace='bsfcampus'
+  tags:
+    - update
+
+- name: Change repository name
+  replace: dest=/home/git
+    regexp='mook-bsf-front-end-backbone.git'
+    replace='bsf-campus.git'
+  tags:
+    - update
+    
 - name: Update mook front
   become: True
   become_user: ideascube
-  git: repo=ssh://git@altssh.bitbucket.org:443/{{url_project_name}}/mook-bsf-front-end-backbone.git dest={{ mook_path }}/{{ mook_name }}/front accept_hostkey=yes update=yes depth=1
+  git: repo=ssh://git@altssh.bitbucket.org:443/{{url_project_name}}/bsf-campus.git 
+    dest={{ mook_path }}/{{ mook_name }}/front 
+    accept_hostkey=yes 
+    update=yes 
+    depth=1
   tags:
     - update
     
