@@ -17,7 +17,7 @@
     #- role: upgradeIdc
     #  version: "0.11.4"
 
-  #   - kiwix
+    - kiwix
 
   #   - role: ideascube
   #     version: "0.7.0-1"
