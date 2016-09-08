@@ -6,12 +6,14 @@
   become: yes
   become_user: ideascube
   command: kalite stop
-  tags: ['custom', 'update']
+  tags:
+    - custom
   ignore_errors: yes
 
 - name: Wait for the service Kalite to be completly started
   wait_for: port=8008 state=stopped timeout=120
-  tags: ['custom', 'update']
+  tags:
+    - custom
 
 - name: Install kalite
   pip: name=ka-lite version={{ ansible_local.device_list[generic_project_name].kalite.version }}  extra_args="--no-cache-dir"
@@ -79,17 +81,26 @@
   command: kalite manage retrievecontentpack download {{ item }}
   with_items: "{{ ansible_local.device_list[generic_project_name].kalite.language }}"
   when: p.stat.isdir is defined and p.stat.isdir == False
+    or ansible_local.installed_software.software.kalite | version_compare('16', '<')
   async: 1800
   poll: 0
-  tags:
-    - custom
+  tags: ['custom', 'update']
 
 - name: Start Kalite
   become: yes
   become_user: ideascube
   command: kalite start 
   ignore_errors: yes
-  tags: ['custom', 'update']
+  tags:
+    - custom
+
+- name: Restart Kalite
+  become: yes
+  become_user: ideascube
+  command: kalite restart 
+  ignore_errors: yes
+  tags:
+    - update
 
 - name: Get ka-lite version
   shell: kalite --version ; echo
