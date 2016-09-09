@@ -21,7 +21,6 @@
     force=yes
     update=yes
     depth=1
-    key_file=/home/{{username}}/.ssh/id_rsa.pub
   tags: ["custom","update"]
     
 - name: Get and unarchive the vendor package
