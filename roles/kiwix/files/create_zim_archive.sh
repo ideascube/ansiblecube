@@ -25,7 +25,7 @@ find ./ -type f -regextype posix-extended -regex "^.*zim$|^.*zima{2}" -print0 | 
 
         mkdir -p $OLD_PATH/packages/$nameWithDate/data/{content,index,library}
 
-        is_several_files=`echo $i | grep zimaa`
+        is_several_files=`echo "$i" | grep zimaa`
 
         if [ -n "$is_several_files" ]; then
                 cp ${i%?}* $OLD_PATH/packages/$nameWithDate/data/content/
