@@ -9,14 +9,14 @@
     - custom
 
 - name: Change bitbucket owner repository
-  replace: dest=/home/git
+  replace: dest={{ mook_path }}/{{ mook_name }}/front/.git/config
     regexp='gryzzlab'
     replace='bsfcampus'
   tags:
     - update
 
 - name: Change repository name
-  replace: dest=/home/git
+  replace: dest={{ mook_path }}/{{ mook_name }}/front/.git/config
     regexp='mook-bsf-front-end-backbone.git'
     replace='bsf-campus.git'
   tags:
