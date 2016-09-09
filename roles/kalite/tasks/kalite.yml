@@ -65,8 +65,7 @@
 - name: Verify if contentpack has been already downloaded
   stat: path=/home/{{ username }}/.kalite/locale/{{ ansible_local.device_list[generic_project_name].kalite.language }}
   register: p
-  tags:
-    - custom
+  tags: ['custom', 'update']
 
 - name: Import Kalite videos if we are at BSF
   include: import_videos.yml
