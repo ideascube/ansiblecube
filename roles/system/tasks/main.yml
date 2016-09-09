@@ -282,9 +282,3 @@
     or fex_file2.stat.exists is defined and fex_file2.stat.exists
   tags:
     - custom
-
-- name: Get the state of tinc key file
-  shell: cat /etc/tinc/idbvpn/hosts/{{ ansible_hostname | replace("-", "_") }} | grep "RSA"
-  register: tinc_key_file
-  tags:
-    - update
