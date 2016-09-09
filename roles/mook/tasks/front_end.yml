@@ -1,13 +1,3 @@
-- name: Clone mook front
-  become: True
-  become_user: ideascube
-  git: repo=ssh://git@altssh.bitbucket.org:443/bsfcampus/{{url_project_name}}.git 
-    dest={{ mook_path }}/{{ mook_name }}/front 
-    accept_hostkey=yes 
-    depth=1
-  tags:
-    - custom
-
 - name: Change bitbucket owner repository
   replace: dest={{ mook_path }}/{{ mook_name }}/front/.git/config
     regexp='gryzzlab'
@@ -21,17 +11,18 @@
     replace='{{url_project_name}}.git'
   tags:
     - update
-    
-- name: Update mook front
+
+- name: Clone/update mook front
   become: True
   become_user: ideascube
   git: repo=ssh://git@altssh.bitbucket.org:443/bsfcampus/{{url_project_name}}.git 
     dest={{ mook_path }}/{{ mook_name }}/front 
     accept_hostkey=yes 
-    update=yes 
+    force=yes
+    update=yes
     depth=1
-  tags:
-    - update
+    key_file=/home/{{username}}/.ssh/id_rsa.pub
+  tags: ["custom","update"]
     
 - name: Get and unarchive the vendor package
   become: True
@@ -47,4 +38,4 @@
     
 - name: Fix rights
   file: path={{ mook_path }}/{{ mook_name }} state=directory owner={{ username }} group={{ username }} recurse=yes
-  tags: [custom,update]
+  tags: ["custom","update"]

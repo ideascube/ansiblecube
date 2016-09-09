@@ -1,23 +1,14 @@
-- name: Clone mook api
+- name: Clone/update mook api
   become: True
   become_user: ideascube
   git: repo=ssh://git@altssh.bitbucket.org:443/bsfcampus/mook-bsf-api.git 
-    dest={{ mook_path }}/{{ mook_name }}/api 
+    dest={{ mook_path }}/{{ mook_name }}/front 
     accept_hostkey=yes 
+    force=yes
+    update=yes
     depth=1
-  tags:
-    - custom
-
-- name: Update mook api
-  become: True
-  become_user: ideascube
-  git: repo=ssh://git@altssh.bitbucket.org:443/bsfcampus/mook-bsf-api.git 
-    dest={{ mook_path }}/{{ mook_name }}/api 
-    accept_hostkey=yes 
-    update=yes 
-    depth=1
-  tags:
-    - update
+    key_file=/home/{{username}}/.ssh/id_rsa.pub
+  tags: ["custom","update"]
 
 - name: Install specific packages
   apt: name={{ item }} state=latest
