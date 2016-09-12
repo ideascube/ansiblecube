@@ -2,7 +2,7 @@
   become: True
   become_user: ideascube
   git: repo=ssh://git@altssh.bitbucket.org:443/bsfcampus/mook-bsf-api.git 
-    dest={{ mook_path }}/{{ mook_name }}/front 
+    dest={{ mook_path }}/{{ mook_name }}/api
     accept_hostkey=yes 
     force=yes
     update=yes
