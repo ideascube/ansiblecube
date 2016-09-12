@@ -14,8 +14,27 @@
 			"content_name": ["2-Contenus/Logiciel-libre/app.csv","21-BSFCAMPUS/KB_Liste_contenus_bsf_campus.csv"]
 		},
 		"zim_install": {
-			"activated": "Famse",
-			"name": "ubuntudoc.fr tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr  cest-pas-sorcier.fr gutenberg.fr vikidia.fr wikisource.en wikisource.fr wikipedia.fr wikipedia.wo wikipedia.en "
+			"activated": "False",
+			"name": "ubuntudoc.fr tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr  cest-pas-sorcier.fr gutenberg.fr vikidia.fr wikisource.en wikisource.fr wikipedia.fr wikipedia.wo wikipedia.en"
+		}
+	},
+	"kb-babylab-civ": {
+		"bsfcampus": {
+			"activated": "True",
+			"version": "080916"
+		},
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.8",
+			"language": ["fr"]
+		},
+		"idc_import": {
+			"activated": "False",
+			"content_name": ["2-Contenus/Logiciel-libre/app.csv","21-BSFCAMPUS/KB_Liste_contenus_bsf_campus.csv"]
+		},
+		"zim_install": {
+			"activated": "False",
+			"name": "wikistage.fr vikidia.fr universcience.fr e-penser.fr deus-ex-silicium.fr cest-pas-sorcier.fr wikipedia.fr wikiversity.fr tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr"
 		}
 	},
 	"kb-servir-ben": {
