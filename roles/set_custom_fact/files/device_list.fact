@@ -34,7 +34,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "wikistage.fr vikidia.fr universcience.fr e-penser.fr deus-ex-silicium.fr cest-pas-sorcier.fr wikipedia.fr wikiversity.fr tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr"
+			"name": "wikistage.fr vikidia.fr universcience-tv.fr e-penser.fr deus-ex-silicium.fr cest-pas-sorcier.fr wikipedia.fr wikiversity.fr tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr"
 		}
 	},
 	"kb-servir-ben": {
@@ -261,7 +261,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "w2eu mullah-piaz-digest.fa bil-tunisia.ar les-fondamentaux.fr universcience.fr wikiversity.ar wikiversity.fr wiktionary.ku wiktionary.ar wiktionary.fa wiktionary.fr tedtechnology.en tedscience.en tedglobalissues.en tedentertainment.en teddesign.en tedbusiness.en  cest-pas-sorcier.fr dirtybiology.fr wikipedia.fr wikipedia.fa wikipedia.ar wikipedia.ku "
+			"name": "w2eu mullah-piaz-digest.fa bil-tunisia.ar les-fondamentaux.fr universcience-tv.fr wikiversity.ar wikiversity.fr wiktionary.ku wiktionary.ar wiktionary.fa wiktionary.fr tedtechnology.en tedscience.en tedglobalissues.en tedentertainment.en teddesign.en tedbusiness.en  cest-pas-sorcier.fr dirtybiology.fr wikipedia.fr wikipedia.fa wikipedia.ar wikipedia.ku "
 		}
 	},
 	"kb-eth-kytabu": {
@@ -303,7 +303,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "universcience.fr tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr  cest-pas-sorcier.fr gutenberg.fr wikipedia.fr "
+			"name": "universcience-tv.fr tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr  cest-pas-sorcier.fr gutenberg.fr wikipedia.fr "
 		}
 	},
 	"idb-fra-jeanquarre": {
@@ -325,7 +325,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "les-fondamentaux.fr universcience.fr wikiversity.fr wiktionary.fr cest-pas-sorcier.fr dirtybiology.fr gutenberg.fr wikipedia.fr "
+			"name": "les-fondamentaux.fr universcience-tv.fr wikiversity.fr wiktionary.fr cest-pas-sorcier.fr dirtybiology.fr gutenberg.fr wikipedia.fr "
 		}
 	},
 	"idb-lwb-detroit-usa": {
@@ -375,7 +375,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "universcience.fr ubuntudoc.fr tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr  wikiversity.fr wiktionary.fr wikivoyage.fr wikibooks.fr wikisource.fr cest-pas-sorcier.fr gutenberg.fr wikipedia.en wikipedia.rn wikipedia.fr "
+			"name": "universcience-tv.fr ubuntudoc.fr tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr  wikiversity.fr wiktionary.fr wikivoyage.fr wikibooks.fr wikisource.fr cest-pas-sorcier.fr gutenberg.fr wikipedia.en wikipedia.rn wikipedia.fr "
 		}
 	},
 	"idb-irq-bardarash": {
