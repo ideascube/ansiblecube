@@ -30,7 +30,7 @@
 		},
 		"idc_import": {
 			"activated": "False",
-			"content_name": ["2-Contenus/logiciellibre/app.csv","kb-bsfcampus/KB_Liste_contenus_bsf_campus.csv"]
+			"content_name": ["11-BABYLAB/CONTENUS/csvbabylab2.csv"]
 		},
 		"zim_install": {
 			"activated": "True",
