@@ -11,7 +11,7 @@
 		},
 		"idc_import": {
 			"activated": "False",
-			"content_name": ["2-Contenus/Logiciel-libre/app.csv","21-BSFCAMPUS/KB_Liste_contenus_bsf_campus.csv"]
+			"content_name": ["2-Contenus/logiciellibre/app.csv","kb-bsfcampus/KB_Liste_contenus_bsf_campus.csv"]
 		},
 		"zim_install": {
 			"activated": "False",
@@ -30,7 +30,7 @@
 		},
 		"idc_import": {
 			"activated": "False",
-			"content_name": ["2-Contenus/Logiciel-libre/app.csv","21-BSFCAMPUS/KB_Liste_contenus_bsf_campus.csv"]
+			"content_name": ["2-Contenus/logiciellibre/app.csv","kb-bsfcampus/KB_Liste_contenus_bsf_campus.csv"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -49,7 +49,7 @@
 		},
 		"idc_import": {
 			"activated": "True",
-			"content_name": ["2-Contenus/Logiciel-libre/app.csv"]
+			"content_name": ["2-Contenus/logiciellibre/app.csv"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -220,7 +220,7 @@
 		},
 		"idc_import": {
 			"activated": "True",
-			"content_name": ["2-Contenus/Logiciel-libre/app.csv","21-BSFCAMPUS/KB_Liste_contenus_bsf_campus.csv"]
+			"content_name": ["2-Contenus/logiciellibre/app.csv","kb-bsfcampus/KB_Liste_contenus_bsf_campus.csv"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -492,7 +492,7 @@
 		},
 		"idc_import": {
 			"activated": "True",
-			"content_name": ["2-Contenus/Logiciel-libre/app.csv","21-BSFCAMPUS/KB_Liste_contenus_bsf_campus.csv"]
+			"content_name": ["2-Contenus/logiciellibre/app.csv","kb-bsfcampus/KB_Liste_contenus_bsf_campus.csv"]
 		},
 		"zim_install": {
 			"activated": "True",
