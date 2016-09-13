@@ -95,6 +95,9 @@
    - screen
    - iftop
    - tmux
+   - mtr-tiny
+   - libwww-perl
+   - httpie
   tags:
     - master
 
