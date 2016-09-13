@@ -33,7 +33,7 @@
 			"content_name": ["2-Contenus/Logiciel-libre/app.csv","21-BSFCAMPUS/KB_Liste_contenus_bsf_campus.csv"]
 		},
 		"zim_install": {
-			"activated": "False",
+			"activated": "True",
 			"name": "wikistage.fr vikidia.fr universcience.fr e-penser.fr deus-ex-silicium.fr cest-pas-sorcier.fr wikipedia.fr wikiversity.fr tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr"
 		}
 	},
