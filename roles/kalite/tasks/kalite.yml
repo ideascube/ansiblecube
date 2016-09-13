@@ -74,15 +74,14 @@
   tags:
     - custom
 
-- name: Download Kalite language pack asynchronously
+- name: Download Kalite language pack
   become: yes
   become_user: ideascube
   command: kalite manage retrievecontentpack download {{ item }}
   with_items: "{{ ansible_local.device_list[generic_project_name].kalite.language }}"
   when: p.stat.isdir is defined and p.stat.isdir == False
     or ansible_local.installed_software.software.kalite | version_compare('16', '<')
-  async: 1800
-  poll: 0
+  ignore_errors: yes
   tags: ['custom', 'update']
 
 - name: Start Kalite
@@ -100,6 +99,14 @@
   ignore_errors: yes
   tags:
     - update
+
+- name: Perfom a video scan on the device
+  become: yes
+  become_user: ideascube
+  command: kalite manage videoscan
+  async: 1800
+  poll: 0
+  tags: ['custom', 'update']
 
 - name: Get ka-lite version
   shell: kalite --version ; echo
