@@ -36,7 +36,7 @@
 - name: Change the PIN for the LED and Activate heartbeat mode
   replace: dest=/boot/dtb/sun7i-a20-olinuxino-lime2.dts
     regexp='gpios = <0x21 0x7 0x2 0x0>;' 
-    replace='gpios = <0x1e 0x7 0x14 0x0>;\n                        linux,default-trigger = "heartbeat";'
+    replace='gpios = <0x21 0x7 0x14 0x0>;\n                        linux,default-trigger = "heartbeat";'
   when: ansible_kernel | version_compare('4', '>')
   tags: ['custom','update']
 
