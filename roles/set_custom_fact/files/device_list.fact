@@ -208,7 +208,7 @@
 			"name": "wikipedia.es gutenberg.es "
 		}
 	},
-	"2-Contenus/kb-bsfcampus-civ": {
+	"kb-bsfcampus-civ": {
 		"bsfcampus": {
 			"activated": "True",
 			"version": "100816"
