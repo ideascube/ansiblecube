@@ -3,7 +3,7 @@
 # - hosts: SystemPushInstall
 
   roles:
-    - { role: set_custom_fact, tags: [ 'master', 'custom', 'update','idc_import' ] }
+    - { role: set_custom_fact, tags: [ 'master', 'custom', 'update','idc_import', 'kalite_import' ] }
     - system
     - nginx
     - uwsgi
