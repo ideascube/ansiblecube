@@ -1,31 +1,38 @@
 ---
-
 - name: check we can use /dev/net/tun
   stat: path=/dev/net/tun
   register: tundevice
+  tags:
+    - custom
+
 - name: Sorry, tinc requires /dev/net/tun. Aborting.
   fail: msg="no /dev/net/tun device found."
   when: tundevice.stat.exists == false
-
-- name: ensure custom facts directory exists
-  file: >
-    path=/etc/ansible/facts.d
-    recurse=yes
-    state=directory
+  tags:
+    - custom
 
 - name: install custom fact module for IP address
   template: >
     src=tinc_facts.sh.j2
     dest=/etc/ansible/facts.d/tinc_facts.fact
     mode=0755
+  tags: ['custom','update','rename']
 
 - name: reload ansible_local
   setup: filter=ansible_local
+  tags: ['custom','update','rename']
 
 - debug: msg="{{ ansible_local.tinc_facts.vpn_ip }}"
+  tags: ['custom','update','rename']
 
 - name: build a hostname for tinc, which doesn't like hyphens
   set_fact: tinc_localhost_name="{{ ansible_hostname | replace("-", "_") }}"
+  tags: ['update','rename']
+
+- name: Get hostname from command line 
+  set_fact: tinc_localhost_name="{{ idc_uniq_device_name }}"
+  tags:
+    - custom
 
 - name: install rsync
   apt: >
@@ -33,6 +40,8 @@
     state=present
     update_cache=yes
     cache_valid_time=3600
+  tags:
+    - custom
 
 - name: install tinc
   apt: >
@@ -40,30 +49,37 @@
     state=present
     update_cache=yes
     cache_valid_time=3600
+  tags:
+    - custom
 
 # iptables module appears in ansible 2.0
 - name: Open tinc ports in firewall
   shell: for port in 655 656 ; do for proto in tcp udp ; do for chain in INPUT OUTPUT ; do iptables -A $chain -m $proto -p $proto --dport $port -j ACCEPT ; done ; done ; done
+  tags: ['custom','update']
 
 - name: ensure tinc vpn name directory exists
   file: >
     path=/etc/tinc/{{ vpn_name }}/hosts
     recurse=True
     state=directory
+  tags: ['custom','update','rename']
 
 - name: ensure tinc.conf exists for vpn name
   template: >
     src=tinc.conf.j2
     dest=/etc/tinc/{{ vpn_name }}/tinc.conf
   notify: hello world
+  tags: ['custom','update','rename']
 
 - name: Get wlan1 IP address when interfaces is up
   set_fact: host_ip_address={{ ansible_wlan1.ipv4.address }}
   when: ansible_wlan1.ipv4.address is defined
+  tags: ['custom','update','rename']
 
 - name: Get eth0 IP address when interface is up
   set_fact: host_ip_address={{ ansible_eth0.ipv4.address }}
   when: ansible_eth0.ipv4.address is defined
+  tags: ['custom','update','rename']
 
 - name: ensure tinc address is properly set in tinc host file
   lineinfile: >
@@ -74,6 +90,7 @@
   notify:
     - reload tinc
     - hello world
+  tags: ['custom','update','rename']
 
 - name: ensure subnet ip address is properly set in tinc host file
   lineinfile: >
@@ -84,12 +101,14 @@
   notify:
     - reload tinc
     - hello world
+  tags: ['custom','update','rename']
 
 - name: add pubkeys for central nodes
   copy: src=hosts/{{ item }} dest=/etc/tinc/{{ vpn_name }}/hosts/{{ item }}
   with_items:
     - bigmama
     - buildbot
+  tags: ['custom','update','rename']
 
 - name: set default options for tinc
   template: >
@@ -97,6 +116,7 @@
     dest=/etc/default/tinc
   notify:
     - reload tinc
+  tags: ['custom','update','rename']
 
 - name: create /etc/tinc/nets.boot file from template
   template: >
@@ -104,12 +124,14 @@
     dest=/etc/tinc/nets.boot
   notify:
     - restart tinc
+  tags: ['custom','update','rename']
 
 - name: create tinc private key
   shell: tincd -n {{ vpn_name }} -K4096
   args:
     creates: /etc/tinc/{{ vpn_name }}/rsa_key.priv
-
+  tags: ['custom','rename']
+  
 - name: create tinc-up file
   template: >
     src=tinc-up.j2
@@ -118,6 +140,7 @@
   notify:
     - reload tinc
     - hello world
+  tags: ['custom','update','rename']
 
 - name: create tinc-down file
   template: >
@@ -126,9 +149,13 @@
     mode=0755
   notify:
     - reload tinc
+  tags: ['custom','update','rename']
 
 - name: Make sure tinc logs are rotated
   copy: src=tinc.logrotate dest=/etc/logrotate.d/tinc mode=0644
+  tags:
+    - custom
 
 - name: send the public key to central nodes
   shell: rsync -azP -e 'ssh -p 443' /etc/tinc/{{ vpn_name }}/hosts/{{tinc_localhost_name }}  {{ central_server }}:/ansible/tinc-{{ vpn_name }}/
+  tags: ['custom','update','rename']  
