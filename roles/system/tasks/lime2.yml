@@ -1,41 +1,58 @@
 ---
 - name: fake-hwclock conf for ARM system 
   copy: content="FORCE=force" dest=/etc/default/fake-hwclock
+  tags:
+    - custom
 
 - name: Check for Ralink Wireless Network Adapter
   shell: "lsusb | grep -F 'Ralink Technology'"
   ignore_errors: yes
   register: lsusb_ralink
+  tags:
+    - custom
 
 - include: ralink.yml
   when: lsusb_ralink.stdout != ""
+  tags:
+    - custom
 
 - name: Ensure the HDD mountpoint exists
   file: path=/media/hdd state=directory
   when: ansible_devices.sda.partitions.sda1 is defined
+  tags:
+    - custom
 
 - name: Mount /dev/sda1
   mount: name=/media/hdd/ src=/dev/sda1 fstype=ext4 state=mounted opts=noatime,nofail
   when: ansible_devices.sda.partitions.sda1 is defined
+  tags:
+    - custom
 
 - name: Convert DTB file to DTS
   command: dtc -I dtb -O dts /boot/dtb/sun7i-a20-olinuxino-lime2.dtb -o /boot/dtb/sun7i-a20-olinuxino-lime2.dts
   when: ansible_kernel | version_compare('4', '>')
+  tags: ['custom','update']
 
 - name: Change the PIN for the LED and Activate heartbeat mode
   replace: dest=/boot/dtb/sun7i-a20-olinuxino-lime2.dts
-    regexp='gpios = <0x1e 0x7 0x2 0x0>;' 
+    regexp='gpios = <0x21 0x7 0x2 0x0>;' 
     replace='gpios = <0x1e 0x7 0x14 0x0>;\n                        linux,default-trigger = "heartbeat";'
   when: ansible_kernel | version_compare('4', '>')
+  tags: ['custom','update']
 
 - name: Convert DTS file to DTB
   command: dtc -I dts -O dtb /boot/dtb/sun7i-a20-olinuxino-lime2.dts -o /boot/dtb/sun7i-a20-olinuxino-lime2.dtb
   when: ansible_kernel | version_compare('4', '>')
+  tags: ['custom','update']
 
 - name: Copy fex.file
   template: src=lime2.fex.j2 dest=/boot/bin/lime2.fex
   when: ansible_kernel | version_compare('4', '<')
+  tags:
+    - custom
 
 - name: Build binary from fex
   shell: sunxi-fexc lime2.fex > lime2.bin chdir=/boot/bin/
   when: ansible_kernel | version_compare('4', '<')
+  tags:
+    - custom
