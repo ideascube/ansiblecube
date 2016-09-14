@@ -1,5 +1,5 @@
 {
-	"kb-bsfcampus-sen": {
+	"2-Contenus/kb-bsfcampus-sen": {
 		"bsfcampus": {
 			"activated": "True",
 			"version": "080916"
@@ -11,7 +11,7 @@
 		},
 		"idc_import": {
 			"activated": "False",
-			"content_name": ["2-Contenus/logiciellibre/app.csv","kb-bsfcampus/KB_Liste_contenus_bsf_campus.csv"]
+			"content_name": ["2-Contenus/logiciellibre/app.csv","2-Contenus/kb-bsfcampus/KB_Liste_contenus_bsf_campus.csv"]
 		},
 		"zim_install": {
 			"activated": "False",
@@ -29,7 +29,7 @@
 			"language": ["fr"]
 		},
 		"idc_import": {
-			"activated": "False",
+			"activated": "True",
 			"content_name": ["11-BABYLAB/CONTENUS/csvbabylab2.csv"]
 		},
 		"zim_install": {
@@ -208,7 +208,7 @@
 			"name": "wikipedia.es gutenberg.es "
 		}
 	},
-	"kb-bsfcampus-civ": {
+	"2-Contenus/kb-bsfcampus-civ": {
 		"bsfcampus": {
 			"activated": "True",
 			"version": "100816"
@@ -220,7 +220,7 @@
 		},
 		"idc_import": {
 			"activated": "True",
-			"content_name": ["2-Contenus/logiciellibre/app.csv","kb-bsfcampus/KB_Liste_contenus_bsf_campus.csv"]
+			"content_name": ["2-Contenus/logiciellibre/app.csv","2-Contenus/kb-bsfcampus/KB_Liste_contenus_bsf_campus.csv"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -480,7 +480,7 @@
 			"content_name": ["2-Contenus/CSVSICILE.csv"]
 		}
 	},
-	"kb-bsfcampus-cmr": {
+	"2-Contenus/kb-bsfcampus-cmr": {
 		"bsfcampus": {
 			"activated": "True",
 			"version": "100816"
@@ -492,7 +492,7 @@
 		},
 		"idc_import": {
 			"activated": "True",
-			"content_name": ["2-Contenus/logiciellibre/app.csv","kb-bsfcampus/KB_Liste_contenus_bsf_campus.csv"]
+			"content_name": ["2-Contenus/logiciellibre/app.csv","2-Contenus/kb-bsfcampus/KB_Liste_contenus_bsf_campus.csv"]
 		},
 		"zim_install": {
 			"activated": "True",
