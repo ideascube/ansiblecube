@@ -1,5 +1,5 @@
 {
-	"2-Contenus/kb-bsfcampus-sen": {
+	"kb-bsfcampus-sen": {
 		"bsfcampus": {
 			"activated": "True",
 			"version": "080916"
@@ -480,7 +480,7 @@
 			"content_name": ["2-Contenus/CSVSICILE.csv"]
 		}
 	},
-	"2-Contenus/kb-bsfcampus-cmr": {
+	"kb-bsfcampus-cmr": {
 		"bsfcampus": {
 			"activated": "True",
 			"version": "100816"
