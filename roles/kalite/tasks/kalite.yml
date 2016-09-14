@@ -71,8 +71,7 @@
   include: import_videos.yml
   when: ansible_local.installed_software.management.managed_by_bsf|bool == True
     and ansible_default_ipv4.gateway == "{{ gateway }}"
-  tags:
-    - custom
+  tags: ['custom', 'kalite_import']
 
 - name: Download Kalite language pack
   become: yes
