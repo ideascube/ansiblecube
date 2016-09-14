@@ -16,7 +16,9 @@
 
 - name: Copy kalite videos
   synchronize: src=/media/synology/videosKalite/{{ item }}/ 
-    dest=/home/{{username}}/.kalite/content/ recursive=yes
+    dest=/home/{{username}}/.kalite/content/ 
+    recursive=yes
+    compress=no
   with_items: "{{ ansible_local.device_list[generic_project_name].kalite.language }}"
 
 - name: Unmount shared folder from a NFS Share
