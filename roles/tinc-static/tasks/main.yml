@@ -18,8 +18,8 @@
     mode=0755
   tags: ['custom','update','rename']
 
-- name: reload ansible_local
-  setup: filter=ansible_local
+- name: reload ansible facts
+  setup: filter=*
   tags: ['custom','update','rename']
 
 - debug: msg="{{ ansible_local.tinc_facts.vpn_ip }}"
@@ -27,12 +27,18 @@
 
 - name: build a hostname for tinc, which doesn't like hyphens
   set_fact: tinc_localhost_name="{{ ansible_hostname | replace("-", "_") }}"
-  tags: ['update','rename']
+  tags: ['custom','update','rename']
 
-- name: Get hostname from command line 
-  set_fact: tinc_localhost_name="{{ idc_uniq_device_name }}"
-  tags:
-    - custom
+- name: Verify if tinc key file exist 
+  stat: path=/etc/tinc/idbvpn/hosts/{{tinc_localhost_name}}
+  register: tinc_key_file
+  tags: ['custom','update','rename']
+
+- name: Check if the RSA key is present in tinc key file
+  shell: cat /etc/tinc/idbvpn/hosts/{{tinc_localhost_name}} | grep "RSA" ; echo
+  register: rsa_in_key_file
+  when: tinc_key_file.stat.exists == True
+  tags: ['custom','update','rename']
 
 - name: install rsync
   apt: >
@@ -87,6 +93,7 @@
     regexp='^Address'
     line="Address = {{ host_ip_address }}"
     create=yes
+  when: rsa_in_key_file is defined and rsa_in_key_file.stdout == ""
   notify:
     - reload tinc
     - hello world
@@ -98,6 +105,7 @@
     regexp='^Subnet'
     line="Subnet = {{ ansible_local.tinc_facts.vpn_ip }}/32"
     create=yes
+  when: rsa_in_key_file is defined and rsa_in_key_file.stdout == ""
   notify:
     - reload tinc
     - hello world
@@ -108,7 +116,8 @@
   with_items:
     - bigmama
     - buildbot
-  tags: ['custom','update','rename']
+  tags:
+    - custom
 
 - name: set default options for tinc
   template: >
@@ -116,7 +125,8 @@
     dest=/etc/default/tinc
   notify:
     - reload tinc
-  tags: ['custom','update','rename']
+  tags:
+    - custom
 
 - name: create /etc/tinc/nets.boot file from template
   template: >
@@ -124,13 +134,16 @@
     dest=/etc/tinc/nets.boot
   notify:
     - restart tinc
-  tags: ['custom','update','rename']
+  tags:
+    - custom
 
 - name: create tinc private key
   shell: tincd -n {{ vpn_name }} -K4096
   args:
     creates: /etc/tinc/{{ vpn_name }}/rsa_key.priv
-  tags: ['custom','rename']
+  when: rsa_in_key_file is defined and rsa_in_key_file.stdout == "" 
+    or tinc_key_file is undefined
+  tags: ['custom','update','rename']
   
 - name: create tinc-up file
   template: >
