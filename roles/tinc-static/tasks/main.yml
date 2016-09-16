@@ -30,14 +30,24 @@
   tags: ['custom','update','rename']
 
 - name: Verify if tinc key file exist 
-  stat: path=/etc/tinc/idbvpn/hosts/{{tinc_localhost_name}}
+  stat: path=/etc/tinc/{{ vpn_name }}/hosts/{{tinc_localhost_name}}
   register: tinc_key_file
   tags: ['custom','update','rename']
 
 - name: Check if the RSA key is present in tinc key file
-  shell: cat /etc/tinc/idbvpn/hosts/{{tinc_localhost_name}} | grep "RSA" ; echo
+  shell: cat /etc/tinc/{{ vpn_name }}/hosts/{{tinc_localhost_name}} | grep "RSA" ; echo
   register: rsa_in_key_file
   when: tinc_key_file.stat.exists == True
+  tags: ['custom','update','rename']
+
+- name: Remove empty public key file
+  file: path=/etc/tinc/{{ vpn_name }}/hosts/{{tinc_localhost_name}} state=absent
+  when: rsa_in_key_file is defined and rsa_in_key_file.stdout == "" 
+  tags: ['custom','update','rename']
+
+- name: Remove private key file
+  file: path=/etc/tinc/{{ vpn_name }}/rsa_key.priv state=absent
+  when: rsa_in_key_file is defined and rsa_in_key_file.stdout == "" 
   tags: ['custom','update','rename']
 
 - name: install rsync
