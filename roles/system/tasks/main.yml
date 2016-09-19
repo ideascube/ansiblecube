@@ -13,6 +13,11 @@
   when: firststart.stat.exists == False or firststart is undefined
   tags: ['master', 'custom','rename']
 
+- name: register old name
+  set_fact: old_hostname ={{ansible_hostname | replace("-", "_") }}
+  tags:
+    - rename
+
 - name: Register if the device is managed by BSF or not
   ini_file: dest=/etc/ansible/facts.d/installed_software.fact
     section=management
