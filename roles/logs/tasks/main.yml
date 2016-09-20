@@ -1,4 +1,8 @@
 ---
+- name: Ensure logrotate is configured to use dateext
+  template: src=000-dateext-for-all.j2 dest=/etc/logrotate.d/000-dateext-for-all owner=root group=root mode=0644
+  when: sync_log|bool == True
+
 - name: copy hdw info script
   copy: src=hdw_info.sh dest=/tmp/hdw_info.sh mode=755
   when: sync_log|bool == True
