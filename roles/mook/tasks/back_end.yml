@@ -63,7 +63,7 @@
     
 - name: Copy settings_local config files
   template: src=settings_local.py.j2 dest={{ mook_path }}/{{ mook_name }}/api/settings_local.py
-  tags: [custom,update]
+  tags: ['custom','rename']
 
 - name: Delete zero octet files
   shell: find ./ -empty -type f -delete chdir="{{ mook_path }}/{{ mook_name }}/static/"
@@ -76,7 +76,7 @@
     insertafter=EOF 
     line='    CENTRAL_SERVER_KEY = \"{{ ansible_hostname }}\" \n    CENTRAL_SERVER_SECRET = \"{{ ansible_machine_id }}\"' 
     owner={{username}} group={{username}} mode=755
-  tags: ['custom','update','rename']
+  tags: ['custom','rename']
   ignore_errors: yes
 
 - name: Add domain name for hotspot interface
