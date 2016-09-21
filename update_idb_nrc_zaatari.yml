@@ -1,0 +1,16 @@
+---
+# Ansible playbook for Zaatari
+
+- hosts: localhost
+
+  roles:
+    - logs
+
+    - role: kalite
+      version: "0.15.0"
+      lang: ["en","ar"]
+
+    - kiwix
+
+    - role: zim_install
+      zim_name: "wikipedia.en wikipedia.ar wiktionary.en wiktionary.ar wikiversity.en wikiversity.ar wikibooks.en wikibooks.ar wikisource.en wikisource.ar wikiquote.en wikiquote.ar tedtechnology.en tedscience.en tedglobalissues.en tedentertainment.en teddesign.en tedbusiness.en ted-ed.en tedmed.en gutenberg.en gutenberg.fr crashcourse.en vikidia.en"
