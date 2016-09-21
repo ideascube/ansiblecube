@@ -26,6 +26,12 @@
 
 # Call those roles if this is the first install
 
+- name: Configure git to avoid so git clone error
+  become: True
+  become_user: ideascube
+  command: git config --global http.postBuffer 524288000
+  tags: ['custom','update','rename']
+
 - include: back_end.yml
 
 - include: front_end.yml
