@@ -525,7 +525,7 @@
 			"name": "w2eu wikipedia.en wikipedia.fa wikipedia.ar wikipedia.de gutenberg.de "
 		}
 	},
-	"idb-nrc-zaatari": {
+	"idb-jor-zaatari": {
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
