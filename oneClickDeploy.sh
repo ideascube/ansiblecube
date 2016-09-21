@@ -88,7 +88,7 @@ function help()
 if [ "$managed_by_bsf" == "managed_by_bsf" ] && [ "$value2" = True ] && [ ! -f "$SSH_KEY" ]; then
 
 	SHOULD_WE_SEND="True"
-	echo -e "\n\n\n" | ssh-keygen -t rsa -f /root/.ssh/id_rsa -b 4096 -C "it@bibliosansfrontieres.org" -N ""
+	echo -e "\n\n\n" | ssh-keygen -t rsa -f /root/.ssh/id_rsa -b 4096 -C "it@bibliosansfrontieres.org $value3" -N ""
 	ssh-copy-id -o StrictHostKeyChecking=no ansible@37.187.151.52
 
 elif [ "$managed_by_bsf" == "managed_by_bsf" ] && [ "$value2" = True ] && [ -f "$SSH_KEY" ]; then
