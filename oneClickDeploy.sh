@@ -25,10 +25,25 @@ value3=`echo $3 | cut -d= -f2`
 timezone=`echo $4 | cut -d= -f1`
 value4=`echo $4 | cut -d= -f2`
 
+function update_sources_list()
+{
+cat <<EOF > /etc/apt/sources.list
+deb http://ftp.fr.debian.org/debian/ jessie main contrib non-free
+
+deb http://security.debian.org/ jessie/updates main contrib non-free
+
+# jessie-updates, previously known as 'volatile'
+deb http://ftp.fr.debian.org/debian/ jessie-updates main contrib non-free
+
+# jessie-backports, previously on backports.debian.org
+deb http://ftp.fr.debian.org/debian/ jessie-backports main contrib non-free
+EOF
+}
+
 function install_ansible()
 {
 	echo "[+] Install ansible..."
-	sed -i -e '/^deb cdrom/d' /etc/apt/sources.list
+	update_sources_list
 	apt-get update
 	apt-get install -y python-pip git python-dev libffi-dev libssl-dev gnutls-bin
 
