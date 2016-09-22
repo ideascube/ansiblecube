@@ -67,8 +67,7 @@
 
 - name: Setup startup file
   template: src=kalite.j2 dest=/etc/init.d/kalite owner=root group=root mode="u+x"
-  tags:
-    - custom
+  tags: ['custom', 'update']
 
 - name: Enable service kalite
   service: name=kalite enabled=yes
