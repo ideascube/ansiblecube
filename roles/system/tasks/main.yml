@@ -191,6 +191,7 @@
     - florian.pub
     - gregoire.pub
     - tom.pub
+  when: managed_by_bsf|bool
   tags:
     - master
 
@@ -200,6 +201,7 @@
     - florian.pub
     - gregoire.pub
     - tom.pub
+  when: managed_by_bsf|bool
   tags:
     - master
 
