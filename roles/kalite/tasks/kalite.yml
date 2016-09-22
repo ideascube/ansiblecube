@@ -32,7 +32,7 @@
     - update
 
 - name: Install Ka-lite
-  pip: name=ka-lite-static
+  pip: name=ka-lite
     version={{ ansible_local.device_list[generic_project_name].kalite.version }}
     chdir=/home/{{ username }}/.kalite
     virtualenv_command=/usr/local/bin/virtualenv
