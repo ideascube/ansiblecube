@@ -5,7 +5,7 @@
 - name: Ensure kalite is stopped if service exist
   become: yes
   become_user: ideascube
-  command: kalite stop
+  command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py stop
   tags:
     - custom
   ignore_errors: yes
@@ -43,7 +43,7 @@
 - name: Create a user admin for kalite
   become: yes
   become_user: ideascube
-  command: kalite manage setup --username=admin --password=admin --noinput
+  command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py manage setup --username=admin --password=admin --noinput
   tags:
     - custom
 
@@ -77,7 +77,7 @@
 - name: Generate a zone for kalite
   become: yes
   become_user: ideascube
-  command: kalite manage generate_zone
+  command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py manage generate_zone
   ignore_errors: yes
   tags:
     - custom
@@ -96,7 +96,7 @@
 - name: Download Kalite language pack
   become: yes
   become_user: ideascube
-  command: kalite manage retrievecontentpack download {{ item }}
+  command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py manage retrievecontentpack download {{ item }}
   with_items: "{{ ansible_local.device_list[generic_project_name].kalite.language }}"
   when: p.stat.isdir is defined and p.stat.isdir == False
     or ansible_local.installed_software.software.kalite | version_compare('0.16.8', '<')
@@ -106,7 +106,7 @@
 - name: Start Kalite
   become: yes
   become_user: ideascube
-  command: kalite start 
+  command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py start 
   ignore_errors: yes
   tags:
     - custom
@@ -114,7 +114,7 @@
 - name: Restart Kalite
   become: yes
   become_user: ideascube
-  command: kalite restart 
+  command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py restart 
   ignore_errors: yes
   tags:
     - update
@@ -122,7 +122,7 @@
 - name: Perfom a video scan on the device
   become: yes
   become_user: ideascube
-  command: kalite manage videoscan
+  command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py manage videoscan
   async: 1800
   poll: 0
   tags: ['custom', 'update']
