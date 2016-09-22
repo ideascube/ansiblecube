@@ -40,6 +40,11 @@
     extra_args="--no-cache-dir"
   tags: ['custom', 'update']
 
+- name: Give rights to ideascube 
+  file: path=/home/{{ username }}/.kalite state=directory
+    owner={{ username }} group={{ username }} recurse=yes
+  tags: ['custom', 'update']
+
 - name: Create a user admin for kalite
   become: yes
   become_user: ideascube
