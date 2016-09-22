@@ -15,8 +15,29 @@
   tags:
     - custom
 
-- name: Install kalite
-  pip: name=ka-lite version={{ ansible_local.device_list[generic_project_name].kalite.version }}  extra_args="--no-cache-dir"
+- name: Create a working dir Kalite
+  file: path=/home/{{ username }}/.kalite state=directory
+  tags:
+    - custom
+
+- name: Install virtualenv
+  pip: name=virtualenv extra_args="--no-cache-dir"
+  tags: ['custom', 'update']
+
+- name: Uninstall previous Ka-lite version
+  pip: name=ka-lite
+    state=absent
+  when: ansible_local.installed_software.software.kalite | version_compare('0.16.9', '<')
+  tags:
+    - update
+
+- name: Install Ka-lite
+  pip: name=ka-lite-static
+    version={{ ansible_local.device_list[generic_project_name].kalite.version }}
+    chdir=/home/{{ username }}/.kalite
+    virtualenv_command=/usr/local/bin/virtualenv
+    virtualenv=/home/{{ username }}/.kalite/env
+    extra_args="--no-cache-dir"
   tags: ['custom', 'update']
 
 - name: Create a user admin for kalite
