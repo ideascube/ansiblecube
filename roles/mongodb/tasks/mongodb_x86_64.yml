@@ -20,6 +20,10 @@
   tags:
     - custom
 
+- name: Copy logrotate file for mongodb
+  copy: src=mongo_logrotate dest=/etc/logrotate.d/mongo mode=755
+  tags: [custom,update]
+
 - name: Get mongodb version
   shell: dpkg-query -W  mongodb  | awk '{print $2}' | sed 's/1://' ; echo
   register: mongodb_ver
