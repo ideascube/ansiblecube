@@ -129,7 +129,7 @@
   tags: ['custom', 'update']
 
 - name: Get ka-lite version
-  shell: kalite --version ; echo
+  shell: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py --version ; echo
   register: kalite_newversion
   tags: ['custom', 'update']
 
