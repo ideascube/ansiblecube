@@ -529,7 +529,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.8",
-                        "language": ["en","ar"]
+            "language": ["en","ar"]
 		},
 		"zim_install": {
 			"activated": "True",
