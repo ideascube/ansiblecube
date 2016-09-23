@@ -27,9 +27,8 @@
   become: True
   become_user: ideascube
   unarchive: src={{filer_bsf}}/vendor.zip dest={{ mook_path }}/{{ mook_name }}/front copy=no
-  tags:
-    - custom
-    
+  tags: ["custom","update"]
+      
 - name: Copy config.js config files
   template: src=config.js.j2 dest={{ mook_path }}/{{ mook_name }}/front/config.js
   tags:
