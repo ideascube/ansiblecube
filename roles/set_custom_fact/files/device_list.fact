@@ -533,7 +533,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "wikipedia.en wikipedia.ar wiktionary.en wiktionary.ar wikiversity.en wikiversity.ar wikibooks.en wikibooks.ar wikisource.en wikisource.ar wikiquote.en wikiquote.ar tedtechnology.en tedscience.en tedglobalissues.en tedentertainment.en teddesign.en tedbusiness.en ted-ed.en tedmed.en gutenberg.en gutenberg.fr crashcourse.en vikidia.en"
+			"name": "wikipedia.en wikipedia.ar wiktionary.en wiktionary.ar wikiversity.en wikiversity.ar wikibooks.en wikibooks.ar wikisource.en wikisource.ar wikiquote.en wikiquote.ar tedtechnology.en tedscience.en tedglobalissues.en tedentertainment.en teddesign.en tedbusiness.en ted-ed.en tedmed.en gutenberg.mul crashcourse.en vikidia.en"
 		},
 		"idc_import": {
 			"activated": "True",
