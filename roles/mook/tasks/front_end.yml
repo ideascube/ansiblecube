@@ -21,12 +21,14 @@
     force=yes
     update=yes
     depth=1
+  register: front_installation
   tags: ["custom","update"]
     
 - name: Get and unarchive the vendor package
   become: True
   become_user: ideascube
   unarchive: src={{filer_bsf}}/vendor.zip dest={{ mook_path }}/{{ mook_name }}/front copy=no
+  when: front_installation.changed == True
   tags: ["custom","update"]
       
 - name: Copy config.js config files
