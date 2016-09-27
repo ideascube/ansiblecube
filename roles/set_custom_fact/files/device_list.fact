@@ -527,16 +527,16 @@
 	},
 	"idb-jor-zaatari": {
 		"kalite": {
-			"activated": "True",
+			"activated": "False",
 			"version": "0.16.8",
             "language": ["en","ar"]
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": "False",
 			"name": "wikipedia.en wikipedia.ar wiktionary.en wiktionary.ar wikiversity.en wikiversity.ar wikibooks.en wikibooks.ar wikisource.en wikisource.ar wikiquote.en wikiquote.ar tedtechnology.en tedscience.en tedglobalissues.en tedentertainment.en teddesign.en tedbusiness.en ted-ed.en tedmed.en gutenberg.mul crashcourse.en vikidia.en"
 		},
 		"idc_import": {
-			"activated": "True",
+			"activated": "False",
 			"content_name": ["2-Contenus/csvjordanienrczaatari.csv"]
 		}
 	}
