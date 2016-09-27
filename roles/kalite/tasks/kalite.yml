@@ -10,7 +10,7 @@
     - custom
   ignore_errors: yes
 
-- name: Wait for the service Kalite to be completly started
+- name: Wait for the service Kalite to be completly stopped
   wait_for: port=8008 state=stopped timeout=120
   tags:
     - custom
@@ -38,6 +38,7 @@
     virtualenv_command=/usr/local/bin/virtualenv
     virtualenv=/home/{{ username }}/.kalite/env
     extra_args="--no-cache-dir"
+  register: kalite_installation 
   tags: ['custom', 'update']
 
 - name: Give rights to ideascube 
@@ -87,11 +88,6 @@
   tags:
     - custom
 
-- name: Verify if contentpack has been already downloaded
-  stat: path=/home/{{ username }}/.kalite/locale/{{ ansible_local.device_list[generic_project_name].kalite.language }}
-  register: p
-  tags: ['custom', 'update']
-
 - name: Import Kalite videos if we are at BSF
   include: import_videos.yml
   when: ansible_default_ipv4.gateway == "{{ gateway }}"
@@ -102,9 +98,7 @@
   become_user: ideascube
   command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py manage retrievecontentpack download {{ item }}
   with_items: "{{ ansible_local.device_list[generic_project_name].kalite.language }}"
-  when: p.stat.isdir is defined and p.stat.isdir == False
-    or ansible_local.installed_software.software.kalite | version_compare('0.16.8', '<')
-  ignore_errors: yes
+  when: kalite_installation.changed == True
   tags: ['custom', 'update']
 
 - name: Start Kalite
@@ -129,6 +123,7 @@
   command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py manage videoscan
   async: 1800
   poll: 0
+  when: kalite_installation.changed == True
   tags: ['custom', 'update']
 
 - name: Get ka-lite version
