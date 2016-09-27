@@ -4,6 +4,7 @@ hostname: koombook.lan
 hotspot_name: koombook
 wpa_pass: KBcampus
 ideascube_project_name: koombook
+managed_by_bsf: True
 
 #Hardware battery for Olimex Lime2
 battery_capacity: 7800
