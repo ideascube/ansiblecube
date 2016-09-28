@@ -122,6 +122,7 @@
   become_user: ideascube
   command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py restart 
   ignore_errors: yes
+  when: kalite_installation.changed == True
   tags:
     - update
 
