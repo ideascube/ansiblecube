@@ -7,6 +7,7 @@
     force=yes
     update=yes
     depth=1
+  register: back_installation
   tags: ["custom","update"]
 
 - name: Install specific packages
@@ -58,8 +59,8 @@
     virtualenv_command=/usr/local/bin/virtualenv 
     virtualenv={{ mook_path }}/{{ mook_name }}/api/env
     extra_args="--no-cache-dir"
-  tags:
-    - custom
+  when: back_installation.changed == True
+  tags: ["custom","update"]
 
 - name: Set mook_name var from local fact when renaming the device try with BSF Campus
   set_fact: mook_name="{{ ansible_local.installed_software.software.bsfcampus }}"
