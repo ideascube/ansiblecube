@@ -93,6 +93,14 @@
   when: ansible_default_ipv4.gateway == "{{ gateway }}"
   tags: ['custom', 'kalite_import']
 
+- name: Run kalite manage setup after upgrade
+  become: yes
+  become_user: ideascube
+  command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py manage setup --noinput
+  when: kalite_installation.changed == True
+  tags:
+    - update
+
 - name: Download Kalite language pack
   become: yes
   become_user: ideascube
