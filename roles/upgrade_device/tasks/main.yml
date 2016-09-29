@@ -26,5 +26,14 @@
 - name: remove old way of lunching ansible-pull
   file: path=/etc/dhcp/dhclient-exit-hooks.d/ansiblePullUpdate state=absent
 
+- name: Fix broken PIP
+  command: mv /usr/local/lib/python2.7/dist-packages/requests /usr/local/lib/python2.7/dist-packages/requests.old/
+  
+- name: Upgrade Pip & Ansible
+  pip: name={{item}} state=latest extra_args="--no-cache-dir"
+  with_items:
+    - pip
+    - ansible
+
 - name: Reboot device
   command: reboot
