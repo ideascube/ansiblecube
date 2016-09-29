@@ -12,8 +12,3 @@
   copy: content="options rtl8723be fwlps=0" dest=/etc/modprobe.d/rtl8723be.conf
   when: driver.stdout != ""
   tags: ['master', 'update']
-
-- name: Reload module 
-  command: "modprobe -r rtl8723be && modprobe rtl8723be"
-  when: driver.stdout != ""
-  tags: ['master', 'update']
