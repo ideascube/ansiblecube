@@ -1,7 +1,8 @@
 --- 
 - name: Install the Realtek firmware for wifi interfaces
   apt: name=firmware-realtek state=present update_cache=yes
-  tags: ['master', 'update']
+  tags:
+    - master
 
 - name: Check for rtl8723be driver
   shell: lspci | grep "RTL8723BE" ; echo

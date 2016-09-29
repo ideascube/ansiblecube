@@ -122,7 +122,7 @@
 - name: Check for Realtek Wireless Network Adapter
   shell: lspci | grep -F "Realtek Semiconductor" ; echo
   register: lspci_realtek
-  tags: ['master', 'custom']
+  tags: ['master', 'update']
 
 - include: realtek.yml
   when: lspci_realtek.stdout != ""
