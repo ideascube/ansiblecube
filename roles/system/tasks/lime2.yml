@@ -16,6 +16,10 @@
   tags:
     - custom
 
+- name: Add pinning for linux-u-boot-lime2-next package == DOT NOT UPGRADE THIS PACKAGE
+  copy: src=u-boot.apt-pin dest=/etc/apt/preferences.d/u-boot
+  tags: ['custom','update']
+
 - name: Convert DTB file to DTS
   command: dtc -I dtb -O dts /boot/dtb/sun7i-a20-olinuxino-lime2.dtb -o /boot/dtb/sun7i-a20-olinuxino-lime2.dts
   when: ansible_kernel | version_compare('4', '>')
