@@ -385,7 +385,7 @@
 			"language": ["fr"]
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": "False",
 			"name": "bil-tunisia.ar gutenberg.en tedtechnology.en tedscience.en tedglobalissues.en tedentertainment.en teddesign.en tedbusiness.en  wikiversity.ar wiktionary.ar wiktionary.en wikipedia.ar wikipedia.en "
 		}
 	},
