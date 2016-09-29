@@ -19,6 +19,12 @@
             option=kalite
             value={{ kalite_version.stdout }}
 
+- name: Register if the device is managed by BSF or not
+  ini_file: dest=/etc/ansible/facts.d/installed_software.fact
+    section=management
+    option=managed_by_bsf
+    value={{ sync_log }}
+
 - name: Create entry to clone/pull git repository
   copy: src=../../network-manager/files/nm-dispatcher dest=/etc/NetworkManager/dispatcher.d/ansiblePullUpdate
     owner=root group=root mode=0755 backup=yes force=yes
