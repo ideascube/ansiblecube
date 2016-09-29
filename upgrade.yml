@@ -1,30 +1,6 @@
 ---
-- name: Get ideascube version
-  shell: dpkg-query -W  ideascube  | awk '{print $2}' ; echo
-  register: ideascube_version
+- hosts: localhost
+# - hosts: SystemPushInstall
 
-- name: Save Ideascube version number
-  ini_file: dest=/etc/ansible/facts.d/installed_software.fact
-            section=software
-            option=ideascube
-            value={{ ideascube_version.stdout }}
-
-- name: Get kalite version
-  shell: kalite --version ; echo
-  register: kalite_version
-
-- name: Save kalite version number
-  ini_file: dest=/etc/ansible/facts.d/installed_software.fact
-            section=software
-            option=kalite
-            value={{ kalite_version.stdout }}
-
-- name: Create entry to clone/pull git repository
-  copy: src=network-manager/files/nm-dispatcher dest=/etc/NetworkManager/dispatcher.d/ansiblePullUpdate
-    owner=root group=root mode=0755 backup=yes force=yes
-
-- name: remove old way of lunching ansible-pull
-  file: path=/etc/dhcp/dhclient-exit-hooks.d/ansiblePullUpdate state=absent
-
-- name: Reboot device
-  command: reboot
+  roles:
+    - role: upgrade_device
