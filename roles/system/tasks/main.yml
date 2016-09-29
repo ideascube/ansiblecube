@@ -120,7 +120,7 @@
   tags: ['master', 'custom']
 
 - name: Check for Realtek Wireless Network Adapter
-  shell: lspci | grep -F "Network controller: Realtek Semiconductor" ; echo
+  shell: lspci | grep -F "Realtek Semiconductor" ; echo
   register: lspci_realtek
   tags: ['master', 'custom']
 
