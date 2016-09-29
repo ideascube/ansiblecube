@@ -110,16 +110,22 @@
   pip: name=pip state=latest
   tags: ['master', 'custom','update']
 
+- name: Check for Ralink Wireless Network Adapter
+  shell: lsusb | grep -F "Ralink Technology" ; echo
+  register: lsusb_ralink
+  tags: ['master', 'custom']
+
+- include: ralink.yml
+  when: lsusb_ralink.stdout != ""
+  tags: ['master', 'custom']
+
 - name: Check for Realtek Wireless Network Adapter
-  shell: "lspci | grep -F 'Network controller: Realtek Semiconductor'"
-  ignore_errors: yes
+  shell: lspci | grep -F "Network controller: Realtek Semiconductor" ; echo
   register: lspci_realtek
-  when: ansible_architecture == 'x86_64'
   tags: ['master', 'custom']
 
 - include: realtek.yml
-  when: ansible_architecture == 'x86_64'
-  tags: ['master', 'custom']
+  when: lspci_realtek.stdout != ""
 
 - name: List services to restart (1/2)
   shell: checkrestart | grep ^service | awk '{print $2}'

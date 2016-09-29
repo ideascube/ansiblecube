@@ -4,18 +4,6 @@
   tags:
     - custom
 
-- name: Check for Ralink Wireless Network Adapter
-  shell: "lsusb | grep -F 'Ralink Technology'"
-  ignore_errors: yes
-  register: lsusb_ralink
-  tags:
-    - custom
-
-- include: ralink.yml
-  when: lsusb_ralink.stdout != ""
-  tags:
-    - custom
-
 - name: Ensure the HDD mountpoint exists
   file: path=/media/hdd state=directory
   when: ansible_devices.sda.partitions.sda1 is defined

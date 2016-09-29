@@ -1,11 +1,19 @@
----
-
-- name: Add non free repository
-  replace: dest=/etc/apt/sources.list
-    regexp='jessie main' 
-    replace='jessie main non-free'
-  when: lspci_realtek.stdout != ""
-  
+--- 
 - name: Install the Realtek firmware for wifi interfaces
   apt: name=firmware-realtek state=present update_cache=yes
-  when: lspci_realtek.stdout != ""
+  tags: ['master', 'update']
+
+- name: Check for rtl8723be driver
+  shell: lspci | grep "RTL8723BE" ; echo
+  register: driver
+  tags: ['master', 'update']
+
+- name: Add option for RTL8723BE driver
+  copy: content="options rtl8723be fwlps=0" dest=/etc/modprobe.d/rtl8723be.conf
+  when: driver.stdout != ""
+  tags: ['master', 'update']
+
+- name: Reload module 
+  command: "modprobe -r rtl8723be && modprobe rtl8723be"
+  when: driver.stdout != ""
+  tags: ['master', 'update']
