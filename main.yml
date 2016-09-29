@@ -47,4 +47,5 @@
     - role: idc_import
       when: ansible_local.device_list[generic_project_name].idc_import is defined
         and ansible_local.device_list[generic_project_name].idc_import.activated|bool == True
+        and ansible_default_ipv4.gateway == "{{ gateway }}"
       tags: ['custom', 'update','idc_import']
