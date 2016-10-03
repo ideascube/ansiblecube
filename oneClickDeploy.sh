@@ -29,7 +29,7 @@ elif [ "$sync_log" = "sync_log" ] && [ "$value1" = False ]; then
 	SHOULD_WE_SEND="False"
 else
 	echo -e "
-	YOU HAVE TO BE ROOT TO LUNCH THIS SCRIPT !
+	YOU HAVE TO BE ROOT TO LAUNCH THIS SCRIPT !
 
 	Usage : ./oneClickDeploy.sh sync_log=True ideascube_id=kb_mooc_cog timezone=Europe/Paris
 
