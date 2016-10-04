@@ -69,7 +69,7 @@
   ignore_errors: yes
 
 - name: Set mook_name var from local fact when renaming the device try with KoomBook EDU
-  set_fact: mook_name="{{ ansible_local.installed_software.software.bsfcampus }}"
+  set_fact: mook_name="{{ ansible_local.installed_software.software.koombookedu }}"
   tags: 
     - rename
   ignore_errors: yes
