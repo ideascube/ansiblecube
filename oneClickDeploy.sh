@@ -9,18 +9,24 @@ ansible_bin="/usr/local/bin/ansible-pull"
 ansible_folder="/var/lib/ansible/local"
 git_repository="https://github.com/ideascube/ansiblecube.git"
 
-script_action=`echo $1 | cut -d= -f1`
-action1=`echo $1 | cut -d= -f2 | awk -F "," '{ print $1 }'`
-action2=`echo $1 | cut -d= -f2 | awk -F "," '{ print $2 }'`
+managed_by_bsf=`echo $1 | cut -d= -f1`
+value1=`echo $1 | cut -d= -f2`
 
-managed_by_bsf=`echo $2 | cut -d= -f1`
+ideascube_project_name=`echo $2 | cut -d= -f1`
 value2=`echo $2 | cut -d= -f2`
 
-ideascube_project_name=`echo $3 | cut -d= -f1`
+timezone=`echo $3 | cut -d= -f1`
 value3=`echo $3 | cut -d= -f2`
 
-timezone=`echo $4 | cut -d= -f1`
-value4=`echo $4 | cut -d= -f2`
+function internet_check()
+{
+	echo "[+] Check Internet connection"
+	if [[ ! `ping -c 2 github.com` ]]
+	then
+		echo "[+] Repository is unreachable, check your Internet connection"
+		exit 0
+	fi
+}
 
 function update_sources_list()
 {
@@ -39,6 +45,8 @@ EOF
 
 function install_ansible()
 {
+	internet_check
+
 	echo "[+] Install ansible..."
 	update_sources_list
 	apt-get update
@@ -47,6 +55,11 @@ function install_ansible()
 	pip install -U distribute
 	pip install ansible markupsafe
 	pip install cryptography --upgrade
+}
+
+function clone_ansiblecube()
+{
+	internet_check
 
 	echo "[+] Clone ansiblecube repo..."
 	mkdir --mode 0755 -p /var/lib/ansible/local
@@ -57,82 +70,93 @@ function install_ansible()
 	cp /var/lib/ansible/local/hosts /etc/ansible/hosts
 }
 
+function test_args()
+{
+	if [[ -z $value1 || -z $value2 || -z $value3 ]]
+  	then
+    		echo "[/!\] No arguments supplied"
+		help
+	fi
+}
+
+function generate_rsa_key()
+{
+	SHOULD_WE_SEND="True"
+	echo "[+] Generating public/private rsa key pair"
+	echo -e "\n\n\n" | ssh-keygen -t rsa -f /root/.ssh/id_rsa -b 4096 -C "it@bibliosansfrontieres.org $value2" -N "" > /dev/null 2>&1
+	echo "[+] Please enter password to copy SSH public key"
+	ssh-copy-id -o StrictHostKeyChecking=no ansible@37.187.151.52
+}
+
 function help()
 {
 	echo -e "
-	YOU HAVE TO BE ROOT TO LUNCH THIS SCRIPT !
+	YOU HAVE TO BE ROOT TO LAUNCH THIS SCRIPT !
 
 	Usage : 
+
+	A master is only a system with Ideascube and Kiwix server with strict minimum 
+	configuration. Once a master has been made, you have to customize your device 
+	and you can install, Ka-lite, import zim and so on. Check out : 
+	https://github.com/ideascube/ansiblecube/blob/oneUpdateFile/roles/set_custom_fact/files/device_list.fact
+
 	Create a master :
-	./oneClickDeploy.sh script_action=master
+	./oneClickDeploy.sh master
 
-	Custom the master: 
-	./oneClickDeploy.sh script_action=custom managed_by_bsf=True ideascube_project_name=kb_mooc_cog timezone=Europe/Paris
+	Create a master BSF (with SSH key) : 
+	./oneClickDeploy.sh master_bsf
 
-	You can do both at the same time : 
-	./oneClickDeploy.sh script_action=master,custom managed_by_bsf=True ideascube_project_name=kb_mooc_cog timezone=Europe/Paris
+	Customize your master : 
+	./oneClickDeploy.sh ideascube_project_name=kb_mooc_cog timezone=Europe/Paris
 
-	Rename a device : 
-	./oneClickDeploy.sh script_action=rename ideascube_project_name=kb_new_name timezone=Africa/Dakar
-
-	- script_action=master|custom|rename : Create a master from scratch or customize the master with specific settings, both option can be used at the same time
-	- managed_by_bsf=True|False : Whether send or not log system to a central server. A server with SSH access is required in this case
+	Arguments : 
 	- ideascube_project_name=File_Name : Must be the same name as the one used for the ideascube configuration file
+	
 	- timezone=Europe/Paris : The timezone
 	"
+	exit 0;
 }
 
-if [ "$managed_by_bsf" == "managed_by_bsf" ] && [ "$value2" = True ] && [ ! -f "$SSH_KEY" ]; then
-
-	SHOULD_WE_SEND="True"
-	echo -e "\n\n\n" | ssh-keygen -t rsa -f /root/.ssh/id_rsa -b 4096 -C "it@bibliosansfrontieres.org $value3" -N ""
-	ssh-copy-id -o StrictHostKeyChecking=no ansible@37.187.151.52
-
-elif [ "$managed_by_bsf" == "managed_by_bsf" ] && [ "$value2" = True ] && [ -f "$SSH_KEY" ]; then
-
-	SHOULD_WE_SEND="True"
-
-elif [ "$managed_by_bsf" == "managed_by_bsf" ] && [ "$value2" = False ]; then
-
-	SHOULD_WE_SEND="False"
-fi
-
-ansible_vars="managed_by_bsf=$SHOULD_WE_SEND ideascube_project_name=$value3 timezone=$value4"
-
-if [[ "$action1" == "master" && "$action2" == "custom"  || "$action2" == "master" && "$action1" == "custom" ]] ; then
-	TAGS="master,custom"
-	EXTRA_VARS="--extra-vars"
-	VARS=$ansible_vars
-	install_ansible
-	START=1
-elif [ "$action1" = "master" -a -z "$action2" ]; then
+if [ "$1" = "master" ]
+then
 	TAGS="master"
-	EXTRA_VARS=""
-	VARS=""
-	install_ansible
-	START=1
-elif [ "$action1" = "custom" -a -z "$action2" -a -n "$value2" -a -n "$value3" -a -n "$value4" ]; then
-	TAGS="custom"
 	EXTRA_VARS="--extra-vars"
-	VARS=$ansible_vars
+	VARS="managed_by_bsf=False"
 	START=1
-elif [ "$action1" = "rename" -a -z "$action2" -a -n "$value2" -a -n "$value3" ]; then
-	TAGS="rename"
+elif [ "$1" = "master_bsf" ]
+then
+	[ -f "$SSH_KEY" ] || generate_rsa_key
+	TAGS="master"
+	EXTRA_VARS="--extra-vars"
+	VARS="managed_by_bsf=True"
+	START=1
+elif [ -x /usr/bin/ideascube ]
+then
+	test_args
+
+	TAGS="custom"
 	EXTRA_VARS="--extra-vars"
 	VARS="ideascube_project_name=$value2 timezone=$value3"
 	START=1
 else
-	help
-	exit 0;
-fi
+	test_args
 
-if [ "$1" = "" ] ; then
-	help
+	if [[ ! -f "$SSH_KEY" && "$value1" = "True" ]]; then
+		generate_rsa_key
+	fi
+	TAGS="master,custom"
+	EXTRA_VARS="--extra-vars"
+	VARS="managed_by_bsf=$value1 ideascube_project_name=$value2 timezone=$value3"
+	START=1
 fi
-
+	
 if [[ "$START" = "1" ]]; then
+	
+	[ -x /usr/local/bin/ansible ] || install_ansible
+	[ -d /var/lib/ansible/local ] || clone_ansiblecube
+
 	echo "[+] Start ansible-pull..."
-	$ansible_bin -C oneUpdateFile -d $ansible_folder -i hosts -U $git_repository main.yml $EXTRA_VARS "$VARS" --tags "$TAGS"
+	echo "[+] ...Log file is stored in /var/log/ansible-pull.log"
+	$ansible_bin -C oneUpdateFile -d $ansible_folder -i hosts -U $git_repository main.yml $EXTRA_VARS "$VARS" --tags "$TAGS" > /var/log/ansible-pull.log 2>&1
 	echo "[+] Done."
 fi
-
