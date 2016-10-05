@@ -1,20 +1,23 @@
 #!/bin/bash
+
+# init vars
 SHOULD_WE_SEND="False"
 START=0
 action1=""
 action2=""
 SSH_KEY="/root/.ssh/id_rsa"
 
+# configuration
 ansible_bin="/usr/local/bin/ansible-pull"
 ansible_folder="/var/lib/ansible/local"
 git_repository="https://github.com/ideascube/ansiblecube.git"
 
+# parse args
 arg_managed_by_bsf=`echo $1 | cut -d= -f2`
-
 arg_ideascube_project_name=`echo $2 | cut -d= -f2`
-
 arg_timezone=`echo $3 | cut -d= -f2`
 
+# functions
 function internet_check()
 {
 	echo "[+] Check Internet connection"
@@ -114,6 +117,7 @@ function help()
 	exit 0;
 }
 
+# main
 if [ "$1" = "master" ]
 then
 	TAGS="master"
