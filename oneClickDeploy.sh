@@ -9,14 +9,11 @@ ansible_bin="/usr/local/bin/ansible-pull"
 ansible_folder="/var/lib/ansible/local"
 git_repository="https://github.com/ideascube/ansiblecube.git"
 
-managed_by_bsf=`echo $1 | cut -d= -f1`
-value1=`echo $1 | cut -d= -f2`
+arg_managed_by_bsf=`echo $1 | cut -d= -f2`
 
-ideascube_project_name=`echo $2 | cut -d= -f1`
-value2=`echo $2 | cut -d= -f2`
+arg_ideascube_project_name=`echo $2 | cut -d= -f2`
 
-timezone=`echo $3 | cut -d= -f1`
-value3=`echo $3 | cut -d= -f2`
+arg_timezone=`echo $3 | cut -d= -f2`
 
 function internet_check()
 {
@@ -72,7 +69,7 @@ function clone_ansiblecube()
 
 function test_args()
 {
-	if [[ -z $value1 || -z $value2 || -z $value3 ]]
+	if [[ -z $arg_managed_by_bsf || -z $arg_ideascube_project_name || -z $arg_timezone ]]
   	then
     		echo "[/!\] No arguments supplied"
 		help
@@ -83,7 +80,7 @@ function generate_rsa_key()
 {
 	SHOULD_WE_SEND="True"
 	echo "[+] Generating public/private rsa key pair"
-	echo -e "\n\n\n" | ssh-keygen -t rsa -f /root/.ssh/id_rsa -b 4096 -C "it@bibliosansfrontieres.org $value2" -N "" > /dev/null 2>&1
+	echo -e "\n\n\n" | ssh-keygen -t rsa -f /root/.ssh/id_rsa -b 4096 -C "it@bibliosansfrontieres.org $arg_ideascube_project_name" -N "" > /dev/null 2>&1
 	echo "[+] Please enter password to copy SSH public key"
 	ssh-copy-id -o StrictHostKeyChecking=no ansible@37.187.151.52
 }
@@ -136,17 +133,17 @@ then
 
 	TAGS="custom"
 	EXTRA_VARS="--extra-vars"
-	VARS="ideascube_project_name=$value2 timezone=$value3"
+	VARS="ideascube_project_name=$arg_ideascube_project_name timezone=$arg_timezone"
 	START=1
 else
 	test_args
 
-	if [[ ! -f "$SSH_KEY" && "$value1" = "True" ]]; then
+	if [[ ! -f "$SSH_KEY" && "$arg_managed_by_bsf" = "True" ]]; then
 		generate_rsa_key
 	fi
 	TAGS="master,custom"
 	EXTRA_VARS="--extra-vars"
-	VARS="managed_by_bsf=$value1 ideascube_project_name=$value2 timezone=$value3"
+	VARS="managed_by_bsf=$arg_managed_by_bsf ideascube_project_name=$arg_ideascube_project_name timezone=$arg_timezone"
 	START=1
 fi
 	
