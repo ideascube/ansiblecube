@@ -21,7 +21,7 @@ arg_timezone=`echo $3 | cut -d= -f2`
 function internet_check()
 {
 	echo "[+] Check Internet connection"
-	if [[ ! `ping -c 2 github.com` ]]
+	if [[ ! `ping -q -c 2 github.com` ]]
 	then
 		echo "[+] Repository is unreachable, check your Internet connection" >&2
 		exit 1
