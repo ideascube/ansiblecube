@@ -85,7 +85,7 @@ function generate_rsa_key()
 	echo "[+] Generating public/private rsa key pair"
 	echo -e "\n\n\n" | ssh-keygen -t rsa -f /root/.ssh/id_rsa -b 4096 -C "it@bibliosansfrontieres.org $arg_ideascube_project_name" -N "" > /dev/null 2>&1
 	echo "[+] Please enter password to copy SSH public key"
-	ssh-copy-id -o StrictHostKeyChecking=no ansible@37.187.151.52
+	ssh-copy-id -o StrictHostKeyChecking=no ansible@idbvpn.bsf-intranet.org
 }
 
 function help()
