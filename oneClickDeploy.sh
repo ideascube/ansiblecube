@@ -118,6 +118,12 @@ function help()
 }
 
 # main
+
+[ $EUID -eq 0 ] || {
+    echo "Error: you have to be root to run this script." >&2
+    exit 1
+}
+
 if [ "$1" = "master" ]
 then
 	TAGS="master"
