@@ -562,7 +562,7 @@
 			"language": ["fr"]
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": "False",
 			"name": "wikipedia.fr gutenberg.fr wiktionary.fr biologie-tout-compris.fr cest-pas-sorcier.fr bouquineux.fr dirtybiology.fr e-penser.fr les-fondamentaux.fr universcience-tv.fr tedxgeneva2014.fr tedxlausanne2012.fr tedxlausanne2013.fr tedxlausanne2014.fr tedxlausannechange2013.fr"
 		},
 		"idc_import": {
