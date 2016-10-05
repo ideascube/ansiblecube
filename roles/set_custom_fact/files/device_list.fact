@@ -559,7 +559,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.9",
-            "language": ["fr"]
+			"language": ["fr"]
 		},
 		"zim_install": {
 			"activated": "True",
@@ -567,7 +567,7 @@
 		},
 		"idc_import": {
 			"activated": "False",
-			"content_name": ["2-Contenus\csvvdp2.csv"]
+			"content_name": ["2-Contenus/csvvdp2.csv"]
 		}
 	}
 }
