@@ -23,8 +23,8 @@ function internet_check()
 	echo "[+] Check Internet connection"
 	if [[ ! `ping -c 2 github.com` ]]
 	then
-		echo "[+] Repository is unreachable, check your Internet connection"
-		exit 0
+		echo "[+] Repository is unreachable, check your Internet connection" >&2
+		exit 1
 	fi
 }
 
