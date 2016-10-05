@@ -103,13 +103,24 @@ function help()
 	Create a master :
 	./oneClickDeploy.sh master
 
-	Create a master BSF (with SSH key) : 
+	[===OR===]
+
+	Create a master_bsf (Install BSF tools) : 
 	./oneClickDeploy.sh master_bsf
+
+	[===AND===]
 
 	Customize your master : 
 	./oneClickDeploy.sh ideascube_project_name=kb_mooc_cog timezone=Europe/Paris
 
+	[===OR===]
+
+	Create and customize your master at the same time : 
+	./oneClickDeploy.sh managed_by_bsf=True ideascube_project_name=kb_mooc_cog timezone=Europe/Paris
+
 	Arguments : 
+	- managed_by_bsf=True|False : Install BSF tools, don't set to True if you are not part of BSF
+
 	- ideascube_project_name=File_Name : Must be the same name as the one used for the ideascube configuration file
 	
 	- timezone=Europe/Paris : The timezone
