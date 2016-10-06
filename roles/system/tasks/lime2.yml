@@ -23,6 +23,15 @@
   tags:
     - update
 
+- name: Upgrade Kernel to Vanilla
+  apt: name={{ item }} state=latest update_cache=yes
+  with_items:
+   - linux-dtb-next-sunxi
+   - linux-headers-next-sunxi
+   - linux-image-next-sunxi
+  tags:
+    - update
+
 - name: Add pinning for linux-u-boot-lime2-next package == DOT NOT UPGRADE THIS PACKAGE
   copy: src=u-boot.apt-pin dest=/etc/apt/preferences.d/u-boot
   tags: ['custom','update']
