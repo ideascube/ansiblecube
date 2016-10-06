@@ -204,8 +204,7 @@
     - gregoire.pub
     - tom.pub
   when: managed_by_bsf|bool
-  tags:
-    - master
+  tags: ['master', 'update']
 
 - name: Set up authorized_keys for root user
   authorized_key: user=root key="{{ item }}"
@@ -214,8 +213,7 @@
     - gregoire.pub
     - tom.pub
   when: managed_by_bsf|bool
-  tags:
-    - master
+  tags: ['master', 'update']
 
 - name: Add locale fr_FR
   locale_gen: name=fr_FR.UTF-8 state=present
