@@ -16,6 +16,13 @@
   tags:
     - custom
 
+- name: Add armbian repository 
+  apt_repository: repo='deb http://apt.armbian.com jessie main utils jessie-desktop' 
+    state=present 
+    filename='armbian'
+  tags:
+    - update
+
 - name: Add pinning for linux-u-boot-lime2-next package == DOT NOT UPGRADE THIS PACKAGE
   copy: src=u-boot.apt-pin dest=/etc/apt/preferences.d/u-boot
   tags: ['custom','update']
