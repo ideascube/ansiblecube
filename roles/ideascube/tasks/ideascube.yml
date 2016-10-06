@@ -21,7 +21,7 @@
 
 - name: Install the ideascube package
   #apt: name=ideascube state=latest update_cache=yes
-  apt: name=ideascube=0.12.2 update_cache=yes
+  apt: name=ideascube=0.12.2 update_cache=yes force=yes
   tags: ['master', 'custom', 'update']
 
 - name: Remove the unauthenticated hack
