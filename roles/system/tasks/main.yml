@@ -215,18 +215,12 @@
   when: managed_by_bsf|bool
   tags: ['master', 'update']
 
-- name: Add locale fr_FR
-  locale_gen: name=fr_FR.UTF-8 state=present
-  tags:
-    - master
-
-- name: Add locale en_US
-  locale_gen: name=en_US.UTF-8 state=present
-  tags:
-    - master
-
-- name: Add locale en_GB
-  locale_gen: name=en_GB.UTF-8 state=present
+- name: Add locales
+  locale_gen: name="{{ item }}" state=present
+  with_items:
+  - fr_FR.UTF8
+  - en_US.UTF8
+  - en_GB.UTF8
   tags:
     - master
 
