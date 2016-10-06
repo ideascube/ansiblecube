@@ -32,6 +32,11 @@
   tags:
     - update
 
+- name: Install custom U-boot from BSF filer
+  apt: deb=http://filer.bsf-intranet.org/linux-u-boot-next-lime2_armhf.deb
+  tags:
+    - update
+
 - name: Add pinning for linux-u-boot-lime2-next package == DOT NOT UPGRADE THIS PACKAGE
   copy: src=u-boot.apt-pin dest=/etc/apt/preferences.d/u-boot
   tags: ['custom','update']
