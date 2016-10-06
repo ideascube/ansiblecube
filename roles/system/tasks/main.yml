@@ -42,17 +42,9 @@
   when: managed_by_bsf|bool and firststart.stat.exists == False or firststart is undefined
   tags: ['custom','rename']
 
-- name: Add non free repository
-  replace: dest=/etc/apt/sources.list
-    regexp='(jessie)\s' 
-    replace='\1 non-free '
-  tags:
-    - master
-
-- name: Remove line cdrom in source.list
-  lineinfile: dest=/etc/apt/sources.list regexp='cdrom:' state=absent
-  tags: 
-    - master
+- name: Drop a complete source.list
+  copy: src=source.list dest=/etc/apt/sources.list
+  tags: ['master','update']
 
 - name: Remove unwanted packages before upgrading
   apt: name={{ item }} state=absent purge=yes
