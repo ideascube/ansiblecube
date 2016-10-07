@@ -7,7 +7,7 @@
   ignore_errors: yes
 
 - name: Upgrade Pip & Ansible
-  pip: name={{item}} state=latest extra_args="--no-cache-dir"
+  pip: name={{item}} state=latest
   with_items:
     - pip
     - ansible
