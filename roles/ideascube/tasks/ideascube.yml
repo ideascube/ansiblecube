@@ -20,8 +20,9 @@
   tags: ['master', 'custom', 'update']
 
 - name: Install the ideascube package
-  #apt: name=ideascube state=latest update_cache=yes
-  apt: name=ideascube=0.12.2 update_cache=yes force=yes
+  apt: name=ideascube state=latest update_cache=yes force=yes
+  #apt: name=ideascube=0.12.2 update_cache=yes 
+  register: is_upgraded
   tags: ['master', 'custom', 'update']
 
 - name: Remove the unauthenticated hack
@@ -71,3 +72,11 @@
 
 - debug: msg="ideascube {{ ideascube_version }} is now the current version."
   tags: ['master', 'custom', 'update']
+
+- name: Enable cards on homepage for ideascube upgrading to 0.13.1
+  become: yes
+  become_user: ideascube
+  commande: ideascube reset_home
+  when: ideascube_newversion == 0.13.1 and is_upgraded.changed == True
+  tags:
+    - update
