@@ -569,5 +569,20 @@
 			"activated": "False",
 			"content_name": ["2-Contenus/csvvdp2.csv"]
 		}
+	},
+	"idb-jor-hostedcommunities": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.9",
+			"language": ["en"]
+		},
+		"zim_install": {
+			"activated": "False",
+			"name": "wikipedia.en wikipedia.ar wiktionary.en wiktionary.ar wikiversity.en wikiversity.ar wikibooks.en wikibooks.ar wikisource.en wikisource.ar wikiquote.en wikiquote.ar tedbusiness.en teddesign.en tedentertainment.en tedglobalissues.en tedscience.en tedtechnology.en ted-ed.en tedmed.en gutenberg.mul vikidia.en crashcourse.en phet.en"
+		},
+		"idc_import": {
+			"activated": "False",
+			"content_name": ["2-Contenus/csvmafraq.csv "]
+		}
 	}
 }
