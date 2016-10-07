@@ -223,9 +223,9 @@
 - name: Add locales
   locale_gen: name="{{ item }}" state=present
   with_items:
-  - fr_FR.UTF8
-  - en_US.UTF8
-  - en_GB.UTF8
+  - fr_FR.UTF-8
+  - en_US.UTF-8
+  - en_GB.UTF-8
   tags:
     - master
 
