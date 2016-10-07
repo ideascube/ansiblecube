@@ -30,7 +30,7 @@ function internet_check()
 
 function update_sources_list()
 {
-cat <<EOF > /etc/apt/sources.list
+    cat <<EOF > /etc/apt/sources.list
 deb http://ftp.fr.debian.org/debian/ jessie main contrib non-free
 
 deb http://security.debian.org/ jessie/updates main contrib non-free
@@ -73,8 +73,8 @@ function clone_ansiblecube()
 function test_args()
 {
 	if [[ -z $arg_managed_by_bsf || -z $arg_ideascube_project_name || -z $arg_timezone ]]
-  	then
-    		echo "[/!\] No arguments supplied"
+    then
+        echo "[/!\] No arguments supplied"
 		help
 	fi
 }
@@ -93,36 +93,36 @@ function help()
 	echo -e "
 	YOU HAVE TO BE ROOT TO LAUNCH THIS SCRIPT !
 
-	Usage : 
+	Usage:
 
-	A master is only a system with Ideascube and Kiwix server with strict minimum 
-	configuration. Once a master has been made, you have to customize your device 
-	and you can install, Ka-lite, import zim and so on. Check out : 
+	A master is only a system with Ideascube and Kiwix server with strict minimal
+	configuration. Once a master has been created, you have to customize your device
+	and you can install, Ka-lite, import zim and so on. Check out:
 	https://github.com/ideascube/ansiblecube/blob/oneUpdateFile/roles/set_custom_fact/files/device_list.fact
 
-	Create a master :
+	Create a master:
 	./oneClickDeploy.sh master
 
 	[===OR===]
 
-	Create a master_bsf (Install BSF tools) : 
+	Create a master_bsf (install BSF tools):
 	./oneClickDeploy.sh master_bsf
 
 	[===AND===]
 
-	Customize your master : 
+	Customize your master:
 	./oneClickDeploy.sh ideascube_project_name=kb_mooc_cog timezone=Europe/Paris
 
 	[===OR===]
 
-	Create and customize your master at the same time : 
+	Create and customize your master at the same time:
 	./oneClickDeploy.sh managed_by_bsf=True ideascube_project_name=kb_mooc_cog timezone=Europe/Paris
 
-	Arguments : 
+	Arguments:
 	- managed_by_bsf=True|False : Install BSF tools, don't set to True if you are not part of BSF
 
 	- ideascube_project_name=File_Name : Must be the same name as the one used for the ideascube configuration file
-	
+
 	- timezone=Europe/Paris : The timezone
 	"
 	exit 0;
@@ -167,14 +167,13 @@ else
 	VARS="managed_by_bsf=$arg_managed_by_bsf ideascube_project_name=$arg_ideascube_project_name timezone=$arg_timezone"
 	START=1
 fi
-	
+
 if [[ "$START" = "1" ]]; then
-	
+
 	[ -x /usr/local/bin/ansible ] || install_ansible
 	[ -d /var/lib/ansible/local ] || clone_ansiblecube
 
-	echo "[+] Start ansible-pull..."
-	echo "[+] ...Log file is stored in /var/log/ansible-pull.log"
+	echo "[+] Start ansible-pull... (log: /var/log/ansible-pull.log)"
 	$ansible_bin -C oneUpdateFile -d $ansible_folder -i hosts -U $git_repository main.yml $EXTRA_VARS "$VARS" --tags "$TAGS" > /var/log/ansible-pull.log 2>&1
 	echo "[+] Done."
 fi
