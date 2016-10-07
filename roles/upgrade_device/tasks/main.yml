@@ -1,4 +1,14 @@
 ---
+- name: Fix broken PIP, ignore if requests folder does not exist
+  command: mv /usr/local/lib/python2.7/dist-packages/requests /usr/local/lib/python2.7/dist-packages/requests.old/
+  ignore_errors: yes
+
+- name: Upgrade Pip & Ansible
+  pip: name={{item}} state=latest extra_args="--no-cache-dir"
+  with_items:
+    - pip
+    - ansible
+
 - name: ensure custom facts directory exists
   file: >
     path=/etc/ansible/facts.d
@@ -38,15 +48,5 @@
 - name: remove old way of lunching ansible-pull
   file: path=/etc/dhcp/dhclient-exit-hooks.d/ansiblePullUpdate state=absent
 
-- name: Fix broken PIP
-  command: mv /usr/local/lib/python2.7/dist-packages/requests /usr/local/lib/python2.7/dist-packages/requests.old/
-  ignore_errors: yes
-  
-- name: Upgrade Pip & Ansible
-  pip: name={{item}} state=latest extra_args="--no-cache-dir"
-  with_items:
-    - pip
-    - ansible
-
-- name: Reboot device
-  command: reboot
+- name: Reboot device to switch to new branch
+  command: shutdown -r now
