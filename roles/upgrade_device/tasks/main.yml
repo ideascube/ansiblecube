@@ -1,4 +1,7 @@
 ---
+- name: Install libffi-dev needed by Ansible 2.0
+  apt: name=libffi-dev state=latest
+
 - name: Fix broken PIP, ignore if requests folder does not exist
   command: mv /usr/local/lib/python2.7/dist-packages/requests /usr/local/lib/python2.7/dist-packages/requests.old/
   ignore_errors: yes
