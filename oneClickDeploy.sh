@@ -66,7 +66,7 @@ function clone_ansiblecube()
 	cd /var/lib/ansible/
 	git clone https://github.com/ideascube/ansiblecube.git local
 
-	[ ! -d /etc/ansible ] && mkdir /etc/ansible
+	mkdir --mode 0755 -p /etc/ansible
 	cp /var/lib/ansible/local/hosts /etc/ansible/hosts
 }
 
