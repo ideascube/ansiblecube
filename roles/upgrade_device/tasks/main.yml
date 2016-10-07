@@ -23,7 +23,7 @@
   copy: src=../../network-manager/files/nm-dispatcher dest=/etc/NetworkManager/dispatcher.d/ansiblePullUpdate
     owner=root group=root mode=0755
 
-- name: remove old way of lunching ansible-pull
+- name: remove old way of launching ansible-pull
   file: path=/etc/dhcp/dhclient-exit-hooks.d/ansiblePullUpdate state=absent
 
 - name: Reboot device

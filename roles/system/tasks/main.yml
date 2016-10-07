@@ -103,7 +103,7 @@
   tags:
     - master
 
-- name: Upgrade pip to the last version
+- name: Upgrade pip to the latest version
   pip: name=pip state=latest
   tags: ['master', 'custom','update']
 

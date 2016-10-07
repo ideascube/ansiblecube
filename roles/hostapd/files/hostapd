@@ -1,5 +1,5 @@
 [Unit]
-Description=Lunch hostapd 
+Description=Launch hostapd 
 After=syslog.target network.target
 
 [Service]

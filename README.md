@@ -61,7 +61,7 @@ Please have a look at others configurations files to see how it has been done. W
 	},
 	```
  - Save, commit and push modification to your repository ```git add . &&  git commit -a && git push origin master```
- At this stage you have a new configuration file. This file is going to lunch several roles that are going to be processed on your device
+ At this stage you have a new configuration file. This file is going to launch several roles that are going to be processed on your device
 
 ### Method 2 : Send me a pull request
 From the github web interface you can also edit ```roles/set_custom_fact/files/device_list.fact``` add your device  and send me a pull request.
@@ -109,7 +109,7 @@ This script takes 4 arguments :
  
 **WARNING** : If you are running this command behind a firewall, be sure the NTP protocol is open for outgoing connection, if not, set manually the date on your system : `date -s 20160513`
 
-### Lunch the deployment 
+### Launch the deployment 
 /!\ KoomBook image don't need master run
   1. Create a master : ```sudo ./oneClickDeploy.sh script_action=master```
   2. Customize the master : ```sudo ./oneClickDeploy.sh script_action=custom managed_by_bsf=True ideascube_project_name=kb_mooc_cog timezone=Europe/Paris```

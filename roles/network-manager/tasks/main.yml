@@ -16,7 +16,7 @@
     job="/etc/NetworkManager/dispatcher.d/ansiblePullUpdate eth0 up"
   tags: ['custom', 'update']
 
-- name: remove old way of lunching ansible-pull
+- name: remove old way of launching ansible-pull
   file: path=/etc/dhcp/dhclient-exit-hooks.d/ansiblePullUpdate state=absent
   tags: 
     - update

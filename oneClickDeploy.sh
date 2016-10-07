@@ -60,7 +60,7 @@ function install_ansible()
 function help()
 {
 	echo -e "
-	YOU HAVE TO BE ROOT TO LUNCH THIS SCRIPT !
+	YOU HAVE TO BE ROOT TO LAUNCH THIS SCRIPT !
 
 	Usage : 
 	Create a master :
