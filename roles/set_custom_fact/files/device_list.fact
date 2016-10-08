@@ -570,7 +570,7 @@
 			"content_name": ["2-Contenus/csvvdp2.csv"]
 		}
 	},
-	"idb-jor-hostedcommunities": {
+	"idb-jor-hostcommunity": {
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.9",
