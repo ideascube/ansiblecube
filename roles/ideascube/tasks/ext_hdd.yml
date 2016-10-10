@@ -27,8 +27,8 @@
   when: p.stat.isdir is defined and p.stat.isdir
   tags: ['custom', 'update']
 
-- name: Move uwsgi_params to the new storage folder
-  command: mv -f /var/ideascube/uwsgi_params /media/hdd/ideascube/storage
+- name: Copy uwsgi_params to the new storage folder
+  command: cp /etc/nginx/uwsgi_params /media/hdd/ideascube/storage
   when: p.stat.isdir is defined and p.stat.isdir
   tags:
     - update
