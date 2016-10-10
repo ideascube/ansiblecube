@@ -2,14 +2,12 @@
 - name: check we can use /dev/net/tun
   stat: path=/dev/net/tun
   register: tundevice
-  tags:
-    - custom
+  tags: ['custom','update']
 
 - name: Sorry, tinc requires /dev/net/tun. Aborting.
   fail: msg="no /dev/net/tun device found."
   when: tundevice.stat.exists == false
-  tags:
-    - custom
+  tags: ['custom','update']
 
 - name: install custom fact module for IP address
   template: >
@@ -56,8 +54,7 @@
     state=present
     update_cache=yes
     cache_valid_time=3600
-  tags:
-    - custom
+  tags: ['custom','update']
 
 - name: install tinc
   apt: >
@@ -65,8 +62,7 @@
     state=present
     update_cache=yes
     cache_valid_time=3600
-  tags:
-    - custom
+  tags: ['custom','update']
 
 # iptables module appears in ansible 2.0
 - name: Open tinc ports in firewall
@@ -126,8 +122,7 @@
   with_items:
     - bigmama
     - buildbot
-  tags:
-    - custom
+  tags: ['custom','update']
 
 - name: set default options for tinc
   template: >
@@ -135,8 +130,7 @@
     dest=/etc/default/tinc
   notify:
     - reload tinc
-  tags:
-    - custom
+  tags: ['custom','update']
 
 - name: create /etc/tinc/nets.boot file from template
   template: >
@@ -144,8 +138,7 @@
     dest=/etc/tinc/nets.boot
   notify:
     - restart tinc
-  tags:
-    - custom
+  tags: ['custom','update']
 
 - name: create tinc private key
   shell: tincd -n {{ vpn_name }} -K4096
@@ -176,8 +169,7 @@
 
 - name: Make sure tinc logs are rotated
   copy: src=tinc.logrotate dest=/etc/logrotate.d/tinc mode=0644
-  tags:
-    - custom
+  tags: ['custom','update']
 
 - name: Rename Key file name
   command: mv /etc/tinc/{{ vpn_name }}/hosts/{{ old_hostname }} /etc/tinc/{{ vpn_name }}/hosts/{{tinc_localhost_name}}
