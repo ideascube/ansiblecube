@@ -13,6 +13,9 @@ def get_roles():
 
 
 def pytest_generate_tests(metafunc):
+    if 'jinja2_file' in metafunc.fixturenames:
+        metafunc.parametrize('jinja2_file', get_files('.j2'))
+
     if 'json_file' in metafunc.fixturenames:
         metafunc.parametrize('json_file', get_files('.fact'))
 
