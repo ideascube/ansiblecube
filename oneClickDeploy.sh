@@ -70,9 +70,18 @@ function clone_ansiblecube()
 	cp /var/lib/ansible/local/hosts /etc/ansible/hosts
 }
 
-function test_args()
+function test_three_args()
 {
 	if [[ -z $arg_managed_by_bsf || -z $arg_ideascube_project_name || -z $arg_timezone ]]
+    then
+        echo "[/!\] No arguments supplied"
+		help
+	fi
+}
+
+function test_two_args()
+{
+	if [[ -z $arg_ideascube_project_name || -z $arg_timezone ]]
     then
         echo "[/!\] No arguments supplied"
 		help
@@ -150,14 +159,14 @@ then
 	START=1
 elif [ -x /usr/bin/ideascube ]
 then
-	test_args
+	test_two_args
 
 	TAGS="custom"
 	EXTRA_VARS="--extra-vars"
 	VARS="ideascube_project_name=$arg_ideascube_project_name timezone=$arg_timezone"
 	START=1
 else
-	test_args
+	test_three_args
 
 	if [[ ! -f "$SSH_KEY" && "$arg_managed_by_bsf" = "True" ]]; then
 		generate_rsa_key
