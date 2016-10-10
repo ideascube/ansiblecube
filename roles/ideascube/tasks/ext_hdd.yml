@@ -22,6 +22,18 @@
   tags:
     - update
 
+- name: Check if ideascube folder contain old folder "storage"
+  stat: path=/media/hdd/ideascube/storage
+  register: p_storage
+  tags:
+    - update
+
+- name: Move content from storage folder to ideascube folder
+  shell: mv /media/hdd/ideascube/storage/* /media/hdd/ideascube/
+  when: p_storage.stat.isdir is defined and p_storage.stat.isdir
+  tags:
+    - update
+
 - name: Symlink the ideascube folder from hard drive to sd card
   file: src=/media/hdd/ideascube dest=/var/ideascube state=link
   when: p.stat.isdir is defined and p.stat.isdir
