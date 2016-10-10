@@ -59,7 +59,7 @@
 	"idb-fra-cultura": {
 		"zim_install": {
 			"activated": "True",
-			"name": "ubuntudoc.fr wikisource.fr cpassorcier.fr "
+			"name": "ubuntudoc.fr wikisource.fr cest-pas-sorcier.fr "
 		}
 	},
 	"idb-lbn-elmarj": {
@@ -278,13 +278,13 @@
 	"idb-bdi": {
 		"zim_install": {
 			"activated": "True",
-			"name": "id cpassorcier.fr "
+			"name": "id cest-pas-sorcier.fr "
 		}
 	},
 	"kb-cdf-fra": {
 		"zim_install": {
 			"activated": "True",
-			"name": "cpassorcier.fr vikidia.fr wikipedia.fr "
+			"name": "cest-pas-sorcier.fr vikidia.fr wikipedia.fr "
 		}
 	},
 	"kb-gin-conakry": {

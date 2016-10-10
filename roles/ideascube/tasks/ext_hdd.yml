@@ -34,6 +34,12 @@
   tags:
     - update
 
+- name: Remove old folder storage
+  file: path=/media/hdd/ideascube/storage/ state=absent
+  when: p_storage.stat.isdir is defined and p_storage.stat.isdir
+  tags:
+    - update
+
 - name: Symlink the ideascube folder from hard drive to sd card
   file: src=/media/hdd/ideascube dest=/var/ideascube state=link
   when: p.stat.isdir is defined and p.stat.isdir
