@@ -12,11 +12,6 @@ ansible_bin="/usr/local/bin/ansible-pull"
 ansible_folder="/var/lib/ansible/local"
 git_repository="https://github.com/ideascube/ansiblecube.git"
 
-# parse args
-arg_managed_by_bsf=`echo $1 | cut -d= -f2`
-arg_ideascube_project_name=`echo $2 | cut -d= -f2`
-arg_timezone=`echo $3 | cut -d= -f2`
-
 # functions
 function internet_check()
 {
@@ -72,6 +67,10 @@ function clone_ansiblecube()
 
 function test_three_args()
 {
+	# parse args
+	arg_managed_by_bsf=`echo $1 | cut -d= -f2`
+	arg_ideascube_project_name=`echo $2 | cut -d= -f2`
+	arg_timezone=`echo $3 | cut -d= -f2`
 	if [[ -z $arg_managed_by_bsf || -z $arg_ideascube_project_name || -z $arg_timezone ]]
     then
         echo "[/!\] No arguments supplied"
@@ -81,6 +80,9 @@ function test_three_args()
 
 function test_two_args()
 {
+	# parse args
+	arg_ideascube_project_name=`echo $1 | cut -d= -f2`
+	arg_timezone=`echo $2 | cut -d= -f2`
 	if [[ -z $arg_ideascube_project_name || -z $arg_timezone ]]
     then
         echo "[/!\] No arguments supplied"
@@ -159,14 +161,14 @@ then
 	START=1
 elif [ -x /usr/bin/ideascube ]
 then
-	test_two_args
+	test_two_args "$@"
 
 	TAGS="custom"
 	EXTRA_VARS="--extra-vars"
 	VARS="ideascube_project_name=$arg_ideascube_project_name timezone=$arg_timezone"
 	START=1
 else
-	test_three_args
+	test_three_args "$@"
 
 	if [[ ! -f "$SSH_KEY" && "$arg_managed_by_bsf" = "True" ]]; then
 		generate_rsa_key
