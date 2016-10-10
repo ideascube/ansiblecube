@@ -14,13 +14,11 @@
 
 - name: Setup startup file
   template: src=kiwix-server.service.j2 dest=/etc/systemd/system/kiwix-server.service
-  tags: 
-    - master
+  tags: ['master', 'update']
 
 - name: Copy nginx vhost
   template: src=nginx.vhost.j2 dest=/etc/nginx/sites-available/kiwix
-  tags: 
-    - master
+  tags: ['master', 'update']
 
 - name: Install Kiwix catalogs
   become: yes
@@ -33,20 +31,17 @@
   - name: "OSMybon"
     description: "Experimental OSM Maps catalog"
     url: http://catalog.yohanboniface.me/catalog.yml
-  tags: 
-    - custom
+  tags: ['master', 'update']
     
 - name: Nginx enable Virtual host
   file: src=/etc/nginx/sites-available/kiwix dest=/etc/nginx/sites-enabled/kiwix state=link
   notify: restart nginx
-  tags: 
-    - master
+  tags: ['master', 'update']
 
 - name: Enable service kiwix
   service: name=kiwix-server enabled=yes
   notify: restart kiwix
-  tags: 
-    - master
+  tags: ['master', 'update']
 
 - shell: ls /etc/rc5.d/S*wikipedia ; echo
   register: file_exist
