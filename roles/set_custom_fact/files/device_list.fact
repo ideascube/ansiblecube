@@ -584,5 +584,20 @@
 			"activated": "False",
 			"content_name": ["2-Contenus/csvmafraq.csv "]
 		}
+	},
+	"kb-bdi-unicef": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.9",
+			"language": ["fr"]
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": "wikipedia.sw wikipedia.fr ted-ed.en biologie-tout-compris.fr cest-pas-sorcier.fr deus-ex-silicium.fr dirtybiology.fr e-penser.fr les-fondamentaux.fr universcience-tv.fr gutenberg.fr wiktionary.sw wiktionary.fr"
+		},
+		"idc_import": {
+			"activated": "True",
+			"content_name": ["2-Contenus/csvburundiunicef.csv"]
+		}
 	}
 }
