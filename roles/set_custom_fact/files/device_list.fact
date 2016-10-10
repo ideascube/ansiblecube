@@ -283,7 +283,7 @@
 	},
 	"kb-cdf-fra": {
 		"zim_install": {
-			"activated": "True",
+			"activated": "False",
 			"name": "cest-pas-sorcier.fr vikidia.fr wikipedia.fr "
 		}
 	},
