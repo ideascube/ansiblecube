@@ -44,7 +44,16 @@
               line='IDEASCUBE_ID={{ ideascube_project_name }}'
               state=present
   notify: restart uwsgi
-  tags: ['custom', 'update','rename']
+  tags: ['custom','rename']
+
+- name: Add IDEASCUBE_ID
+  lineinfile: dest=/etc/default/ideascube
+              regexp='^'
+              line='IDEASCUBE_ID={{ generic_project_name |replace("-", "_") }}'
+              state=present
+  notify: restart uwsgi
+  tags:
+    - update
 
 - name: Remove linsting on 443 because the port is alredy used by sslh
   lineinfile: dest=/etc/nginx/sites-available/ideascube regexp='443' state=absent
