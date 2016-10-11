@@ -99,7 +99,6 @@
     regexp='^Address'
     line="Address = {{ host_ip_address }}"
     create=yes
-  when: rsa_in_key_file is defined and rsa_in_key_file.stdout == ""
   notify:
     - reload tinc
     - hello world
@@ -111,7 +110,6 @@
     regexp='^Subnet'
     line="Subnet = {{ ansible_local.tinc_facts.vpn_ip }}/32"
     create=yes
-  when: rsa_in_key_file is defined and rsa_in_key_file.stdout == ""
   notify:
     - reload tinc
     - hello world
