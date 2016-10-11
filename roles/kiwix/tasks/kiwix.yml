@@ -31,7 +31,7 @@
   - name: "OSMybon"
     description: "Experimental OSM Maps catalog"
     url: http://catalog.yohanboniface.me/catalog.yml
-  tags: ['master', 'update']
+  tags: ['master', 'custom', 'update']
     
 - name: Nginx enable Virtual host
   file: src=/etc/nginx/sites-available/kiwix dest=/etc/nginx/sites-enabled/kiwix state=link
