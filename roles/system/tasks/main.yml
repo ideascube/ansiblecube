@@ -226,8 +226,7 @@
   - fr_FR.UTF-8
   - en_US.UTF-8
   - en_GB.UTF-8
-  tags:
-    - master
+  tags: ['master', 'update']
 
 - name: Copy a blank rc.local
   copy: src=rc.local dest=/etc/rc.local owner=root group=root mode=0644 backup=yes
