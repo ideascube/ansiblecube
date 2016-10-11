@@ -1,4 +1,9 @@
 ---
+- name: Ensure that Ideascube folder belong the ideascube user 
+  file: path=/media/hdd/ideascube/ owner={{ username }} group={{ username }} recurse=yes
+  tags: 
+    - update
+    
 - name: Verify if ideascube folder does exist on system file
   stat: path=/var/ideascube
   register: p
