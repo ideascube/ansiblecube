@@ -1,16 +1,12 @@
 ---
-- name: Install libffi-dev needed by Ansible 2.0
-  apt: name=libffi-dev state=latest
 
-- name: Fix broken PIP, ignore if requests folder does not exist
-  command: mv /usr/local/lib/python2.7/dist-packages/requests /usr/local/lib/python2.7/dist-packages/requests.old/
-  ignore_errors: yes
+- name: Copy upgrade_ansible.sh
+  copy: src=upgrade_ansible.sh dest=/tmp/upgrade_ansible.sh
+  when : ansible_version.full | version_compare('2.0', '<')
 
-- name: Upgrade Pip & Ansible
-  pip: name={{item}} state=latest
-  with_items:
-    - pip
-    - ansible
+- name: Execute upgrade_ansible.sh
+  command: /tmp/upgrade_ansible.sh
+  when : ansible_version.full | version_compare('2.0', '<')  
 
 - name: ensure custom facts directory exists
   file: >
