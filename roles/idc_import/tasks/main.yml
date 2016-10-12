@@ -15,7 +15,7 @@
   ignore_errors: yes
   
 - name: Import data 
-  shell: ideascube import_medias /media/synology/{{ item }}
+  shell: ideascube import_medias /media/synology/{{ item }} > /var/log/ideascube_import.log 2>&1
   with_items: "{{ ansible_local.device_list[generic_project_name].idc_import.content_name }}"
 
 - name: Unmount shared folder from a NFS Share
