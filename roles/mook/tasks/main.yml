@@ -7,22 +7,22 @@
 - name: Set mook project name to have the right URL
   set_fact: url_project_name="bsf-campus"
   when: mook_name == 'bsfcampus'
-  tags: ['custom','update','rename']
+  tags: ['custom','update']
 
 - name: Set mook project name to have the right URL
   set_fact: url_project_name="koombook-edu"
   when: mook_name == 'koombookedu'
-  tags: ['custom','update','rename']
+  tags: ['custom','update']
 
 - name: Set the central server variable for BSF Campus
   set_fact: central_server_host="http://api.bsfcampus.org/"
   when: mook_name == 'bsfcampus'
-  tags: ['custom','update','rename']
+  tags: ['custom','update']
 
 - name: Set the central server variable for KoomBook EDU
   set_fact: central_server_host="http://mook-api.bibliosansfrontieres.fr/"
   when: mook_name == 'koombookedu'
-  tags: ['custom','update','rename']
+  tags: ['custom','update']
 
 # Call those roles if this is the first install
 
