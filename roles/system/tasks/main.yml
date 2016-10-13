@@ -284,3 +284,14 @@
   copy: content={{ timezone }} dest=/etc/timezone owner=root group=root mode=0644 backup=yes
   notify: update timezone
   tags: ['custom','rename']
+
+- name: Shorten GRUB_TIMEOUT
+  lineinfile:
+    dest:       /etc/default/grub
+    state:      present
+    backup:     yes
+    regexp:     '^GRUB_TIMEOUT=.*'
+    line:       'GRUB_TIMEOUT=0'
+  notify: Update grub
+  when: ansible_architecture == "x86_64"
+  tags: ['master','custom']
