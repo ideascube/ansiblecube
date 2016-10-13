@@ -33,7 +33,7 @@ find ./ -type f -regextype posix-extended -regex "^.*zim$|^.*zima{2}" -print0 | 
                 cp $i $OLD_PATH/packages/$nameWithDate/data/content/
         fi
 
-        if [ -n $index_folder_full_path ]; then
+        if [ -n "$index_folder_full_path" ]; then
                 cp -r $index_folder_full_path $OLD_PATH/packages/$nameWithDate/data/index
 
                 cd $OLD_PATH/packages/$nameWithDate/data/library/
