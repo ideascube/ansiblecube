@@ -34,15 +34,15 @@ find ./ -type f -regextype posix-extended -regex "^.*zim$|^.*zima{2}" -print0 | 
         fi
 
         if [ -n "$index_folder_full_path" ]; then
-                cp -r $index_folder_full_path $OLD_PATH/packages/$nameWithDate/data/index
+                cp -r "$index_folder_full_path" $OLD_PATH/packages/$nameWithDate/data/index
 
                 cd $OLD_PATH/packages/$nameWithDate/data/library/
 
-                /usr/local/bin/kiwix-manage library.xml add ../content/$zim_file -i=../index/$index_folder         
+                /usr/local/bin/kiwix-manage $zim_file.xml add ../content/$zim_file -i=../index/$index_folder         
         else
                 cd $OLD_PATH/packages/$nameWithDate/data/library/
 
-                /usr/local/bin/kiwix-manage library.xml add ../content/$zim_file
+                /usr/local/bin/kiwix-manage $zim_file.xml add ../content/$zim_file
         fi 
 
         cd $OLD_PATH/packages/$nameWithDate/
