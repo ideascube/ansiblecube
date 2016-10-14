@@ -168,14 +168,14 @@
   lineinfile: dest=/etc/hosts
     regexp='localhost'
     insertafter='localhost'
-    line='127.0.0.1 localhost {{ idc_uniq_device_name |replace("_", "-") }}.lan {{ hostname }}'
+    line='127.0.0.1 localhost {{ idc_uniq_device_name |replace("_", "-") }} {{ idc_uniq_device_name |replace("_", "-") }}.lan {{ hostname }}'
   when: firststart.stat.exists == False or firststart is undefined
   tags: ['master', 'custom','rename']
 
 - name: Add domain name for hotspot interface
   lineinfile: dest=/etc/hosts
     regexp='^'
-    line='{{hotspotip}} {{ idc_uniq_device_name |replace("_", "-") }}.lan {{ hostname }}'
+    line='{{hotspotip}} {{ idc_uniq_device_name |replace("_", "-") }} {{ idc_uniq_device_name |replace("_", "-") }}.lan {{ hostname }}'
     state=present
   when: firststart.stat.exists == False or firststart is undefined
   tags: ['master', 'custom','rename']

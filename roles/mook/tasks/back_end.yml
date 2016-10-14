@@ -97,11 +97,11 @@
 - name: Add domain name for hotspot interface
   lineinfile: dest=/etc/hosts
     regexp='^{{hotspotip}}'
-    line='{{hotspotip}} {{ idc_uniq_device_name |replace("_", "-") }}.lan {{ hostname }} {{ mook_front_server_name }}'
+    line='{{hotspotip}} {{ idc_uniq_device_name |replace("_", "-") }} {{ idc_uniq_device_name |replace("_", "-") }}.lan {{ hostname }} {{ mook_front_server_name }}'
     state=present
   tags: ['custom','rename']
   ignore_errors: yes
-    
+
 - name: Setup startup file for uwsgi
   copy: src=settings_central.py dest={{ mook_path }}/{{ mook_name }}/api 
     owner={{username}} group={{username}} mode=755
