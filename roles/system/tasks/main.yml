@@ -69,6 +69,7 @@
    - iotop
    - lirc
    - apt-listchanges
+   - clipit
   tags:
     - master
 
