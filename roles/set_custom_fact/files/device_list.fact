@@ -6,15 +6,15 @@
 		},
 		"kalite": {
 			"activated": "True",
-			"version": "0.16.8",
+			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"idc_import": {
-			"activated": "False",
-			"content_name": ["2-Contenus/logiciellibre/app.csv","2-Contenus/kb-bsfcampus/KB_Liste_contenus_bsf_campus.csv"]
+			"activated": "True",
+			"content_name": ["2-Contenus/kb-bsfcampus/KB_Liste_contenus_bsf_campus.csv"]
 		},
 		"zim_install": {
-			"activated": "False",
+			"activated": "True",
 			"name": "ubuntudoc.fr tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr  cest-pas-sorcier.fr gutenberg.fr vikidia.fr wikisource.en wikisource.fr wikipedia.fr wikipedia.wo wikipedia.en"
 		}
 	},
