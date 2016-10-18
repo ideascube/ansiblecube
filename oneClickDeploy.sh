@@ -3,8 +3,6 @@
 # init vars
 SHOULD_WE_SEND="False"
 START=0
-action1=""
-action2=""
 SSH_KEY="/root/.ssh/id_rsa"
 
 # configuration
@@ -90,6 +88,18 @@ function test_two_args()
 	fi
 }
 
+function test_two_args_rename()
+{
+	# parse args
+	arg_ideascube_project_name=`echo $2 | cut -d= -f2`
+	arg_timezone=`echo $3 | cut -d= -f2`
+	if [[ -z $arg_ideascube_project_name || -z $arg_timezone ]]
+    then
+        echo "[/!\] No arguments supplied"
+		help
+	fi
+}
+
 function generate_rsa_key()
 {
 	SHOULD_WE_SEND="True"
@@ -108,8 +118,8 @@ function help()
 
 	A master is only a system with Ideascube and Kiwix server with strict minimal
 	configuration. Once a master has been created, you have to customize your device
-	and you can install, Ka-lite, import zim and so on. Check out:
-	https://github.com/ideascube/ansiblecube/blob/oneUpdateFile/roles/set_custom_fact/files/device_list.fact
+	and you can install, Ka-lite, import zim and so on. Check out the device list for configuration
+	exemple : https://github.com/ideascube/ansiblecube/blob/oneUpdateFile/roles/set_custom_fact/files/device_list.fact
 
 	Create a master:
 	./oneClickDeploy.sh master
@@ -128,6 +138,11 @@ function help()
 
 	Create and customize your master at the same time:
 	./oneClickDeploy.sh managed_by_bsf=True ideascube_project_name=kb_mooc_cog timezone=Europe/Paris
+
+	[===RENAME A DEVICE===]
+
+	If you want to change your project name :
+	./oneClickDeploy.sh rename ideascube_project_name=kb_mooc_cog timezone=Europe/Paris
 
 	Arguments:
 	- managed_by_bsf=True|False : Install BSF tools, don't set to True if you are not part of BSF
@@ -149,22 +164,26 @@ function help()
 if [ "$1" = "master" ]
 then
 	TAGS="master"
-	EXTRA_VARS="--extra-vars"
 	VARS="managed_by_bsf=False"
 	START=1
 elif [ "$1" = "master_bsf" ]
 then
 	[ -f "$SSH_KEY" ] || generate_rsa_key
 	TAGS="master"
-	EXTRA_VARS="--extra-vars"
 	VARS="managed_by_bsf=True"
+	START=1
+elif [ "$1" = "rename" ]
+then
+	test_two_args_rename "$@"
+
+	TAGS="rename"
+	VARS="ideascube_project_name=$arg_ideascube_project_name timezone=$arg_timezone"
 	START=1
 elif [ -x /usr/bin/ideascube ]
 then
 	test_two_args "$@"
 
 	TAGS="custom"
-	EXTRA_VARS="--extra-vars"
 	VARS="ideascube_project_name=$arg_ideascube_project_name timezone=$arg_timezone"
 	START=1
 else
@@ -174,7 +193,6 @@ else
 		generate_rsa_key
 	fi
 	TAGS="master,custom"
-	EXTRA_VARS="--extra-vars"
 	VARS="managed_by_bsf=$arg_managed_by_bsf ideascube_project_name=$arg_ideascube_project_name timezone=$arg_timezone"
 	START=1
 fi
@@ -185,6 +203,6 @@ if [[ "$START" = "1" ]]; then
 	[ -d /var/lib/ansible/local ] || clone_ansiblecube
 
 	echo "[+] Start ansible-pull... (log: /var/log/ansible-pull.log)"
-	$ansible_bin -C oneUpdateFile -d $ansible_folder -i hosts -U $git_repository main.yml $EXTRA_VARS "$VARS" --tags "$TAGS" > /var/log/ansible-pull.log 2>&1
+	$ansible_bin -C oneUpdateFile -d $ansible_folder -i hosts -U $git_repository main.yml --extra-vars "$VARS" --tags "$TAGS" > /var/log/ansible-pull.log 2>&1
 	echo "[+] Done."
 fi
