@@ -28,6 +28,9 @@
   - name: "Kiwix"
     description: "Kiwix ZIM content"
     url: http://catalog.ideascube.org/kiwix.yml
+  - name: "StaticSites"
+    description: "Static sites"
+    url: http://catalog.ideascube.org/static-sites.yml
   - name: "OSMybon"
     description: "Experimental OSM Maps catalog"
     url: http://catalog.yohanboniface.me/catalog.yml
