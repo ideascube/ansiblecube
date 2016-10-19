@@ -13,9 +13,10 @@
     - role: tinc-static
       when: ansible_local.installed_software.management.managed_by_bsf|bool == True
 
-    - role: kalite
-      when: ansible_local.device_list[generic_project_name].kalite is defined
-        and ansible_local.device_list[generic_project_name].kalite.activated|bool == True
+    - role: zim_install
+      when: ansible_local.device_list[generic_project_name].zim_install is defined
+        and ansible_local.device_list[generic_project_name].zim_install.activated|bool == True
+      tags: ['custom', 'update','zim_install']
 
     - role: mook
       mook_name: bsfcampus
@@ -29,11 +30,6 @@
       when: ansible_local.device_list[generic_project_name].koombookedu is defined
         and ansible_local.device_list[generic_project_name].koombookedu.activated|bool == True
 
-    - role: zim_install
-      when: ansible_local.device_list[generic_project_name].zim_install is defined
-        and ansible_local.device_list[generic_project_name].zim_install.activated|bool == True
-      tags: ['custom', 'update','zim_install']
-
     - role: appinventor
       when: ansible_local.device_list[generic_project_name].appinventor is defined
         and ansible_local.device_list[generic_project_name].appinventor.activated|bool == True
@@ -43,6 +39,10 @@
       when: ansible_local.installed_software.management.managed_by_bsf|bool == True
       tags:
         - update
+
+    - role: kalite
+      when: ansible_local.device_list[generic_project_name].kalite is defined
+        and ansible_local.device_list[generic_project_name].kalite.activated|bool == True
 
     - role: idc_import
       when: ansible_local.device_list[generic_project_name].idc_import is defined
