@@ -159,7 +159,7 @@ From now on, everything depend from the file `roles/set_custom_fact/files/device
 
 You may eventually want to rename a device. This can be done with `oneClickDeploy.sh`:
 ```
-./oneClickDeploy.sh script_action=rename ideascube_project_name=new_name timezone=Africa/Dakar
+./oneClickDeploy.sh rename ideascube_project_name=kb_mooc_cog timezone=Europe/Paris
 ```
 
 # Contributing
