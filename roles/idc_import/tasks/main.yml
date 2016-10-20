@@ -1,7 +1,7 @@
 ---
 - include_vars: group_vars/{{ ansible_architecture }}.yml
 
-- name: Open all outgoing connection to allow NFS, dirty but working !
+- name: Open all outgoing connection to allow NFS
   command: iptables -t filter -I OUTPUT -j ACCEPT
 
 - name: Install nfs-common
