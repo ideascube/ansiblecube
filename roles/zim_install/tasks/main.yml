@@ -6,7 +6,23 @@
   become_user: ideascube
   command: ideascube catalog cache update
 
+- name: Check the disk usage
+  shell: df -h /
+  register: df
+  changed_when: False
+- name: Disk Usage on /
+  debug: var=df.stdout_lines
+
 - name: Download and install ZIM content from Kiwix catalog
   become: yes
   become_user: ideascube
   command: ideascube catalog install {{ ansible_local.device_list[generic_project_name].zim_install.name }}
+
+- name: Check the disk usage
+  shell: df -h /
+  register: df
+  changed_when: False
+- name: Disk Usage on /
+  debug: var=df.stdout_lines
+
+
