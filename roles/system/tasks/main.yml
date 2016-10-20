@@ -286,6 +286,10 @@
   notify: update timezone
   tags: ['custom','rename']
 
+- name: Reconfigure openssh-server
+  shell: rm -f /etc/ssh/*key* && dpkg-reconfigure openssh-server
+  tags: ['rename']
+
 - name: Shorten GRUB_TIMEOUT
   lineinfile:
     dest:       /etc/default/grub
