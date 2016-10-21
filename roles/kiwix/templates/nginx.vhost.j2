@@ -11,4 +11,9 @@ server {
         proxy_read_timeout 10;
         proxy_pass http://localhost:8002/;
     }
+    
+    location /book/ {
+        root /var/ideascube/static/;
+        rewrite ^ /kiwix_proxy.html break;
+    }
 }
