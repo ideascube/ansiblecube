@@ -34,7 +34,7 @@
     - update
 
 - name: Move content from storage folder to ideascube folder
-  shell: mv /media/hdd/ideascube/storage/* /media/hdd/ideascube/
+  shell: rsync -av /media/hdd/ideascube/storage/* /media/hdd/ideascube/
   when: p_storage.stat.isdir is defined and p_storage.stat.isdir
   tags:
     - update
