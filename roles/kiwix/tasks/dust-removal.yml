@@ -40,7 +40,7 @@
   copy: src=update_sha256sum.py dest={{old_kiwix_path}}/update_sha256sum.py
 
 - name: Copy create_zim_archive.sh file
-  copy: src=create_zim_archive.sh dest={{old_kiwix_path}}/create_zim_archive.sh mode=0755
+  template: src=create_zim_archive.sh.j2 dest={{old_kiwix_path}}/create_zim_archive.sh mode=0755
 
 - name: Create an archive from available zim
   command: "{{old_kiwix_path}}/create_zim_archive.sh"
