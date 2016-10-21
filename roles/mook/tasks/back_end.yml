@@ -67,14 +67,12 @@
   when: ansible_local.installed_software.software.bsfcampus is defined
   tags: 
     - rename
-  ignore_errors: yes
 
 - name: Set mook_name var from local fact when renaming the device try with KoomBook EDU
   set_fact: mook_name="koombookedu"
   when: ansible_local.installed_software.software.koombookedu is defined
   tags: 
     - rename
-  ignore_errors: yes
 
 - name: Copy settings_local config files
   template: src=settings_local.py.j2 dest={{ mook_path }}/{{ mook_name }}/api/settings_local.py
