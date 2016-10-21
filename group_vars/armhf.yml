@@ -4,3 +4,4 @@ hostname: koombook.lan
 hotspot_name: koombook
 wpa_pass: KBcampus
 ideascube_project_name: koombook
+old_kiwix_path: /media/hdd
