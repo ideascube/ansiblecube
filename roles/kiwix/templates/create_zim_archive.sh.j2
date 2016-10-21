@@ -10,16 +10,27 @@ mkdir -p /var/cache/ideascube/catalog/packages
 
 find ./ -type f -regextype posix-extended -regex "^.*zim$|^.*zima{2}" -print0 | while IFS= read -r -d $'\0' i; do
 
-        zim_file=`echo $i | cut -d "/" -f3`
-
         echo "[+] Create archive for $i"
 
+        zim_file=`echo $i | cut -d "/" -f3`
+
+        if [ -z "$zim_file" ]; then
+                zim_file=`echo $i | cut -d "/" -f2`
+        fi
+
         new_name=`echo $i | cut -d "/" -f3 | cut -d "_" -f1-2 | sed 's/_/./'`
+
+        if [ -z "$new_name" ]; then
+                new_name=`echo $i | cut -d "/" -f2 | cut -d "_" -f1-2 | sed 's/_/./'`
+        fi
+
         folder_name=`echo $i | cut -d "/" -f3 | cut -d "_" -f1-2`
         nameWithDate=$new_name-0000-00-00
 
-        index_folder_full_path=`find ./ -type d -name "$folder_name*"`
-        index_folder=`find ./ -type d -name "$folder_name*" -printf '%f\n'`
+        if [ -n "$folder_name" ]; then
+                index_folder_full_path=`find ./ -type d -name "$folder_name*"`
+                index_folder=`find ./ -type d -name "$folder_name*" -printf '%f\n'`
+        fi
 
         echo "$new_name" >> $OLD_PATH/list.txt
 
