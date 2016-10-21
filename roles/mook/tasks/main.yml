@@ -4,6 +4,18 @@
 
 # Set variables
 
+- name: Set mook_name var from local fact when renaming the device try with BSF Campus
+  set_fact: mook_name="bsfcampus"
+  when: ansible_local.installed_software.software.bsfcampus is defined
+  tags: 
+    - rename
+
+- name: Set mook_name var from local fact when renaming the device try with KoomBook EDU
+  set_fact: mook_name="koombookedu"
+  when: ansible_local.installed_software.software.koombookedu is defined
+  tags: 
+    - rename
+
 - name: Set mook project name to have the right URL
   set_fact: url_project_name="bsf-campus"
   when: mook_name == 'bsfcampus'
@@ -17,12 +29,12 @@
 - name: Set the central server variable for BSF Campus
   set_fact: central_server_host="http://api.bsfcampus.org/"
   when: mook_name == 'bsfcampus'
-  tags: ['custom','update']
+  tags: ['custom','update','rename']
 
 - name: Set the central server variable for KoomBook EDU
   set_fact: central_server_host="http://mook-api.bibliosansfrontieres.fr/"
   when: mook_name == 'koombookedu'
-  tags: ['custom','update']
+  tags: ['custom','update','rename']
 
 # Call those roles if this is the first install
 
