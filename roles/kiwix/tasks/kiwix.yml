@@ -56,7 +56,7 @@
   tags:
     - update
 
-- include: dust-removal.yml
+- include: dust-removal-{{ ansible_architecture }}.yml
   when: st.stat.exists == True
   tags:
     - update
