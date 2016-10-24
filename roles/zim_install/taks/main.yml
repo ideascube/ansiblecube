@@ -1,0 +1,27 @@
+---
+- include_vars: group_vars/{{ ansible_architecture }}.yml
+
+- name: Update ideascube catalog cache before downloading
+  become: yes
+  become_user: ideascube
+  command: ideascube catalog cache update
+
+- name: Check the disk usage
+  shell: df -h /
+  register: df
+  changed_when: False
+- name: Disk Usage on /
+  debug: var=df.stdout_lines
+
+- name: Download/install ZIM files from Kiwix catalog then remove from local cache
+  become: yes
+  become_user: ideascube
+  command: ideascube catalog install {{ item }} && rm -f /var/cache/ideascube/catalog/packages/{{ item }}-*
+  with_items: "{{ ansible_local.device_list[generic_project_name].zim_install.name }}"
+
+- name: Check the disk usage
+  shell: df -h /
+  register: df
+  changed_when: False
+- name: Disk Usage on /
+  debug: var=df.stdout_lines
