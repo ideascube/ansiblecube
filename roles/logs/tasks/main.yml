@@ -1,19 +1,15 @@
 ---
 - name: Ensure logrotate is configured to use dateext
-  template: src=000-dateext-for-all.j2 dest=/etc/logrotate.d/000-dateext-for-all owner=root group=root mode=0644
+  template: src=000-dateext-for-all.j2 dest=/etc/logrotate.d/000-dateext-for-all 
+    owner=root group=root mode=0644
+  tags:
+    - master
 
 - name: copy hdw info script
-  copy: src=hdw_info.sh dest=/tmp/hdw_info.sh mode=755
+  copy: src=hdw_info.sh dest=/home/ideascube/hdw_info.sh mode=755
+  tags: ['master','update']
 
-- name: Collect hardware information
-  command: bash /tmp/hdw_info.sh
-
-- name: A way to get the public IP of the device
-  shell: wget -qO- http://ipecho.net/plain ; echo
-  register: public_ip
-
-- name: Add the IP in the hardware log file
-  lineinfile: dest=/tmp/hdw_info.txt line="{{ public_ip.stdout }}"
-
-- shell: rsync -azP -e 'ssh -p 443' /var/log/nginx/* /var/log/kern.log /var/log/messages /var/log/syslog /var/log/ansible-pull.log /tmp/hdw_info.txt  {{ central_server }}:/ansible/logs/{{ ansible_hostname }}/
-  ignore_errors: yes
+- name: Copy push_log.sh
+  template: src=push_log.sh.j2 dest=/etc/NetworkManager/dispatcher.d/push_log 
+    mode=755
+  tags: ['master','update']

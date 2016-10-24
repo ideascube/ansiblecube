@@ -35,14 +35,12 @@
         and ansible_local.device_list[generic_project_name].appinventor.activated|bool == True
       tags: ['custom']
 
-    - role: logs
-      when: ansible_local.installed_software.management.managed_by_bsf|bool == True
-      tags:
-        - update
-
     - role: kalite
       when: ansible_local.device_list[generic_project_name].kalite is defined
         and ansible_local.device_list[generic_project_name].kalite.activated|bool == True
+
+    - role: logs
+      when: ansible_local.installed_software.management.managed_by_bsf|bool == True
 
     - role: idc_import
       when: ansible_local.device_list[generic_project_name].idc_import is defined

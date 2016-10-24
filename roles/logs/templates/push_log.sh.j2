@@ -1,4 +1,17 @@
 #!/bin/bash
-/home/ideascube/hdw_info.sh
+IF=$1
+STATUS=$2
+PROC=`pgrep rsync`
 
-rsync -azP -e 'ssh -p 443' /var/log/nginx/* /var/log/kern.log /var/log/messages /var/log/syslog /var/log/ansible-pull.log /tmp/hdw_info.txt  {{ central_server }}:/ansible/logs/{{ ansible_hostname }}/
+if [[ "$IF" == "eth0" || "$IF" == "wlan1" ]] && [ -z "$PROC"  ]
+then
+    case "$STATUS" in
+        up)
+			/home/ideascube/hdw_info.sh
+
+			rsync -azP -e 'ssh -p 443' /var/log/nginx/* /var/log/kern.log /var/log/messages /var/log/syslog /var/log/ansible-pull.log /tmp/hdw_info.txt  {{ central_server }}:/ansible/logs/{{ ansible_hostname }}/
+        ;;
+        *)
+        ;;
+    esac
+fi
