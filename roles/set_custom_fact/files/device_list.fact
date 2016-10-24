@@ -15,9 +15,9 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "ubuntudoc.fr tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr  cest-pas-sorcier.fr gutenberg.fr vikidia.fr wikisource.en wikisource.fr wikipedia.fr wikipedia.wo wikipedia.en"
+			"name": ["ubuntudoc.fr","tedxlausanne2014.fr","tedxlausanne2013.fr","tedxlausanne2012.fr","tedxgeneva2014.fr","cest-pas-sorcier.fr","gutenberg.fr","vikidia.fr","wikisource.en","wikisource.fr","wikipedia.fr","wikipedia.wo","wikipedia.en"]
 		}
-	},
+	},	
 	"kb-civ-babylab": {
 		"bsfcampus": {
 			"activated": "True",
@@ -34,7 +34,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "wikistage.fr vikidia.fr universcience-tv.fr e-penser.fr deus-ex-silicium.fr cest-pas-sorcier.fr wikipedia.fr wikiversity.fr tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr"
+			"name": ["wikistage.fr","vikidia.fr","universcience-tv.fr","e-penser.fr","deus-ex-silicium.fr","cest-pas-sorcier.fr","wikipedia.fr","wikiversity.fr","tedxlausanne2014.fr","tedxlausanne2013.fr","tedxlausanne2012.fr","tedxgeneva2014.fr"]
 		}
 	},
 	"kb-servir-ben": {
@@ -53,13 +53,13 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "ubuntudoc.fr tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr  cest-pas-sorcier.fr gutenberg.fr vikidia.fr wikisource.en wikisource.fr wikipedia.fr wikipedia.wo wikipedia.en "
+			"name": ["ubuntudoc.fr","tedxlausanne2014.fr","tedxlausanne2013.fr","tedxlausanne2012.fr","tedxgeneva2014.fr","cest-pas-sorcier.fr","gutenberg.fr","vikidia.fr","wikisource.en","wikisource.fr","wikipedia.fr","wikipedia.wo","wikipedia.en"]
 		}
 	},
 	"idb-fra-cultura": {
 		"zim_install": {
 			"activated": "True",
-			"name": "ubuntudoc.fr wikisource.fr cest-pas-sorcier.fr "
+			"name": ["ubuntudoc.fr","wikisource.fr","cest-pas-sorcier.fr"]
 		}
 	},
 	"idb-lbn-elmarj": {
@@ -70,7 +70,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "bil-tunisia.ar wikiquote.ar wikisource.ar wikibooks.ar wikiversity.ar wiktionary.ar wikipedia.ar"
+			"name": ["bil-tunisia.ar","wikiquote.ar","wikisource.ar","wikibooks.ar","wikiversity.ar","wiktionary.ar","wikipedia.ar"]
 		}
 	},
 	"idb-aus-queensland": {
@@ -81,7 +81,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "vikidia.en gutenberg.en wikipedia.en "
+			"name": ["vikidia.en","gutenberg.en","wikipedia.en"]
 		}
 	},
 	"kb-esp-avanti": {
@@ -92,7 +92,7 @@
 		},
 		"zim_install": {
 			"activated": "False",
-			"name": "wikipedia.es gutenberg.es "
+			"name": ["wikipedia.es","gutenberg.es"]
 		},
 	"idc_import": {
 			"activated": "False",
@@ -107,7 +107,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "gutenberg.fr vikidia.fr wikipedia.fr "
+			"name": ["gutenberg.fr","vikidia.fr","wikipedia.fr"]
 		}
 	},
 	"kb-usa-p2pu": {
@@ -118,7 +118,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "tedtechnology.en tedscience.en tedglobalissues.en tedentertainment.en teddesign.en tedbusiness.en  wiktionary.en wikipedia.en gutenberg.en "
+			"name": ["tedtechnology.en","tedscience.en","tedglobalissues.en","tedentertainment.en","teddesign.en","tedbusiness.en","wiktionary.en","wikipedia.en","gutenberg.en"]
 		}
 	},
 	"idb-bdi-bwagiriza": {
@@ -129,7 +129,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "gutenberg.fr vikidia.fr wikipedia.fr "
+			"name": ["gutenberg.fr","vikidia.fr","wikipedia.fr"]
 		}
 	},
 	"kb-mooc-cog": {
@@ -139,7 +139,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "wikipedia.fr "
+			"name": ["wikipedia.fr"]
 		}
 	},
 	"idb-bdi-musasa": {
@@ -150,7 +150,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "gutenberg.fr vikidia.fr wikipedia.fr "
+			"name": ["gutenberg.fr","vikidia.fr","wikipedia.fr"]
 		}
 	},
 	"idb-eth-melkadida": {
@@ -161,7 +161,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "gutenberg.fr vikidia.fr wikipedia.fr "
+			"name": ["gutenberg.fr","vikidia.fr","wikipedia.fr"]
 		}
 	},
 	"idb-sen-fap": {
@@ -172,7 +172,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "wikistage.fr ubuntudoc.fr ted.fr tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr  wiktionary.fr wikisource.fr cest-pas-sorcier.fr gutenberg.fr wikipedia.wo wikipedia.fr "
+			"name": ["wikistage.fr","ubuntudoc.fr","ted.fr","tedxlausanne2014.fr","tedxlausanne2013.fr","tedxlausanne2012.fr","tedxgeneva2014.fr","wiktionary.fr","wikisource.fr","cest-pas-sorcier.fr","gutenberg.fr","wikipedia.wo","wikipedia.fr"]
 		}
 	},
 	"idb-bdi-makamba": {
@@ -183,7 +183,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "gutenberg.fr vikidia.fr wikipedia.fr "
+			"name": ["gutenberg.fr","vikidia.fr","wikipedia.fr"]
 		}
 	},
 	"idb-fra-aurore": {
@@ -194,7 +194,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "vikidia.fr gutenberg.fr wikipedia.fr "
+			"name": ["vikidia.fr","gutenberg.fr","wikipedia.fr"]
 		}
 	},
 	"kb-nic-nicarali": {
@@ -205,7 +205,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "wikipedia.es gutenberg.es "
+			"name": ["wikipedia.es","gutenberg.es"]
 		}
 	},
 	"kb-bsfcampus-civ": {
@@ -224,7 +224,7 @@
 		},
 		"zim_install": {
 			"activated": "False",
-			"name": "ubuntudoc.fr tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr  cest-pas-sorcier.fr gutenberg.fr vikidia.fr wikisource.en wikisource.fr wikipedia.fr wikipedia.wo wikipedia.en "
+			"name": ["ubuntudoc.fr","tedxlausanne2014.fr","tedxlausanne2013.fr","tedxlausanne2012.fr","tedxgeneva2014.fr","cest-pas-sorcier.fr","gutenberg.fr","vikidia.fr","wikisource.en","wikisource.fr","wikipedia.fr","wikipedia.wo","wikipedia.en"]
 		}
 	},
 	"idb-grc-eleonas": {
@@ -235,7 +235,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "w2eu gutenberg.mul wikipedia.fa wikipedia.ur wikipedia.en wikipedia.ar wikipedia.ps "
+			"name": ["w2eu","gutenberg.mul","wikipedia.fa","wikipedia.ur","wikipedia.en","wikipedia.ar","wikipedia.ps"]
 		}
 	},
 	"kb-jor-croixrouge": {
@@ -246,7 +246,7 @@
 		},
 		"zim_install": {
 			"activated": "False",
-			"name": "bil-tunisia.ar wikiversity.ar wikiversity.en wikibooks.en wikibooks.ar wikiquote.en wikiquote.ar tedtechnology.en tedscience.en tedglobalissues.en tedentertainment.en teddesign.en tedbusiness.en  gutenberg.en vikidia.en wikisource.en wikisource.ar wiktionary.ar wiktionary.en wikipedia.en wikipedia.ar"
+			"name": ["bil-tunisia.ar","wikiversity.ar","wikiversity.en","wikibooks.en","wikibooks.ar","wikiquote.en","wikiquote.ar","tedtechnology.en","tedscience.en","tedglobalissues.en","tedentertainment.en","teddesign.en","tedbusiness.en","gutenberg.en","vikidia.en","wikisource.en","wikisource.ar","wiktionary.ar","wiktionary.en","wikipedia.en","wikipedia.ar"]
 		},
 		"idc_import": {
 			"activated": "False",
@@ -261,7 +261,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "w2eu mullah-piaz-digest.fa bil-tunisia.ar les-fondamentaux.fr universcience-tv.fr wikiversity.ar wikiversity.fr wiktionary.ku wiktionary.ar wiktionary.fa wiktionary.fr tedtechnology.en tedscience.en tedglobalissues.en tedentertainment.en teddesign.en tedbusiness.en  cest-pas-sorcier.fr dirtybiology.fr wikipedia.fr wikipedia.fa wikipedia.ar wikipedia.ku "
+			"name": ["w2eu","mullah-piaz-digest.fa","bil-tunisia.ar","les-fondamentaux.fr","universcience-tv.fr","wikiversity.ar","wikiversity.fr","wiktionary.ku","wiktionary.ar","wiktionary.fa","wiktionary.fr","tedtechnology.en","tedscience.en","tedglobalissues.en","tedentertainment.en","teddesign.en","tedbusiness.en","cest-pas-sorcier.fr","dirtybiology.fr","wikipedia.fr","wikipedia.fa","wikipedia.ar","wikipedia.ku"]
 		}
 	},
 	"kb-eth-kytabu": {
@@ -272,19 +272,13 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "gutenberg.fr "
-		}
-	},
-	"idb-bdi": {
-		"zim_install": {
-			"activated": "True",
-			"name": "id cest-pas-sorcier.fr "
+			"name": ["gutenberg.fr"]
 		}
 	},
 	"kb-cdf-fra": {
 		"zim_install": {
 			"activated": "False",
-			"name": "cest-pas-sorcier.fr vikidia.fr wikipedia.fr "
+			"name": ["cest-pas-sorcier.fr","vikidia.fr","wikipedia.fr"]
 		}
 	},
 	"kb-gin-conakry": {
@@ -303,7 +297,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "universcience-tv.fr tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr  cest-pas-sorcier.fr gutenberg.fr wikipedia.fr "
+			"name": ["universcience-tv.fr","tedxlausanne2014.fr","tedxlausanne2013.fr","tedxlausanne2012.fr","tedxgeneva2014.fr","cest-pas-sorcier.fr","gutenberg.fr","wikipedia.fr"]
 		}
 	},
 	"idb-fra-jeanquarre": {
@@ -314,7 +308,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr  wiktionary.fr wikibooks.fr wikisource.fr cest-pas-sorcier.fr gutenberg.fr wikipedia.fa wikipedia.ar wikipedia.fr "
+			"name": ["tedxlausanne2014.fr","tedxlausanne2013.fr","tedxlausanne2012.fr","tedxgeneva2014.fr","wiktionary.fr","wikibooks.fr","wikisource.fr","cest-pas-sorcier.fr","gutenberg.fr","wikipedia.fa","wikipedia.ar","wikipedia.fr"]
 		}
 	},
 	"idb-fra-sarcelles": {
@@ -325,7 +319,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "les-fondamentaux.fr universcience-tv.fr wikiversity.fr wiktionary.fr cest-pas-sorcier.fr dirtybiology.fr gutenberg.fr wikipedia.fr "
+			"name": ["les-fondamentaux.fr","universcience-tv.fr","wikiversity.fr","wiktionary.fr","cest-pas-sorcier.fr","dirtybiology.fr","gutenberg.fr","wikipedia.fr"]
 		}
 	},
 	"idb-lwb-detroit-usa": {
@@ -336,7 +330,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "gutenberg.fr wikipedia.fr "
+			"name": ["gutenberg.fr","wikipedia.fr"]
 		}
 	},
 	"idb-fra-emmaus": {
@@ -347,7 +341,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr  wiktionary.fr wikibooks.fr wikisource.fr cest-pas-sorcier.fr gutenberg.fr wikipedia.fa wikipedia.ar wikipedia.fr "
+			"name": ["tedxlausanne2014.fr","tedxlausanne2013.fr","tedxlausanne2012.fr","tedxgeneva2014.fr","wiktionary.fr","wikibooks.fr","wikisource.fr","cest-pas-sorcier.fr","gutenberg.fr","wikipedia.fa","wikipedia.ar","wikipedia.fr"]
 		}
 	},
 	"kb-ifb-bdi": {
@@ -358,13 +352,13 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "gutenberg.fr vikidia.fr wikipedia.fr "
+			"name": ["gutenberg.fr","vikidia.fr","wikipedia.fr"]
 		}
 	},
 	"kb-rca-alliancefrancaise": {
 		"zim_install": {
 			"activated": "True",
-			"name": ""
+			"name": [""]
 		}
 	},
 	"kb-bdi-tv5monde": {
@@ -375,7 +369,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "universcience-tv.fr ubuntudoc.fr tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr  wikiversity.fr wiktionary.fr wikivoyage.fr wikibooks.fr wikisource.fr cest-pas-sorcier.fr gutenberg.fr wikipedia.en wikipedia.rn wikipedia.fr "
+			"name": ["universcience-tv.fr","ubuntudoc.fr","tedxlausanne2014.fr","tedxlausanne2013.fr","tedxlausanne2012.fr","tedxgeneva2014.fr","wikiversity.fr","wiktionary.fr","wikivoyage.fr","wikibooks.fr","wikisource.fr","cest-pas-sorcier.fr","gutenberg.fr","wikipedia.en","wikipedia.rn","wikipedia.fr"]
 		}
 	},
 	"idb-irq-bardarash": {
@@ -386,7 +380,7 @@
 		},
 		"zim_install": {
 			"activated": "False",
-			"name": "bil-tunisia.ar gutenberg.en tedtechnology.en tedscience.en tedglobalissues.en tedentertainment.en teddesign.en tedbusiness.en  wikiversity.ar wiktionary.ar wiktionary.en wikipedia.ar wikipedia.en "
+			"name": ["bil-tunisia.ar","gutenberg.en","tedtechnology.en","tedscience.en","tedglobalissues.en","tedentertainment.en","teddesign.en","tedbusiness.en","wikiversity.ar","wiktionary.ar","wiktionary.en","wikipedia.ar","wikipedia.en"]
 		}
 	},
 	"idb-bdi-kavumu": {
@@ -397,7 +391,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "gutenberg.fr vikidia.fr wikipedia.fr "
+			"name": ["gutenberg.fr","vikidia.fr","wikipedia.fr"]
 		}
 	},
 	"idb-eth-bokolmanyo": {
@@ -408,7 +402,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "gutenberg.fr vikidia.fr wikipedia.fr "
+			"name": ["gutenberg.fr","vikidia.fr","wikipedia.fr"]
 		}
 	},
 	"kb-usa-wmapache": {
@@ -419,7 +413,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "wiktionary.en wikipedia.en gutenberg.en "
+			"name": ["wiktionary.en","wikipedia.en","gutenberg.en"]
 		}
 	},
 	"idb-jor-alhashmi": {
@@ -430,7 +424,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "gutenberg.fr vikidia.fr wikipedia.fr "
+			"name": ["gutenberg.fr","vikidia.fr","wikipedia.fr"]
 		}
 	},
 	"idb-jor-azraq": {
@@ -441,7 +435,7 @@
 		},
 		"zim_install": {
 			"activated": "False",
-			"name": "gutenberg.fr vikidia.fr wikipedia.fr "
+			"name": ["gutenberg.fr","vikidia.fr","wikipedia.fr"]
 		}
 	},
 	"idb-fra-calais": {
@@ -452,7 +446,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "vikidia.fr gutenberg.fr wikipedia.fr "
+			"name": ["vikidia.fr","gutenberg.fr","wikipedia.fr"]
 		}
 	},
 	"idb-grc-malakasa": {
@@ -463,7 +457,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "wikipedia.ar wikipedia.el wikipedia.en wikipedia.fa wikipedia.ps  wiktionary.ar wiktionary.el wiktionary.en wiktionary.fa wiktionary.ps  wikiversity.ar wikiversity.el wikiversity.en  wikibooks.ar wikibooks.el wikibooks.en wikibooks.fa  wikisource.ar wikisource.el wikisource.en wikisource.fa  wikiquote.ar wikiquote.el wikiquote.en tedxgeneva2014.fr tedbusiness.en teddesign.en tedentertainment.en tedglobalissues.en tedscience.en tedtechnology.en vikidia.en bil-tunisia.ar mullah-piaz-digest.fa"
+			"name": ["wikipedia.ar","wikipedia.el","wikipedia.en","wikipedia.fa","wikipedia.ps","  wiktionary.ar","wiktionary.el","wiktionary.en","wiktionary.fa","wiktionary.ps","  wikiversity.ar","wikiversity.el","wikiversity.en","wikibooks.ar","wikibooks.el","wikibooks.en","wikibooks.fa","wikisource.ar","wikisource.el","wikisource.en","wikisource.fa","wikiquote.ar","wikiquote.el","wikiquote.en","tedxgeneva2014.fr","tedbusiness.en","teddesign.en","tedentertainment.en","tedglobalissues.en","tedscience.en","tedtechnology.en","vikidia.en","bil-tunisia.ar","mullah-piaz-digest.fa"]
 		},
 		"idc_import": {
 			"activated": "True",
@@ -473,7 +467,7 @@
 	"kb-grc-malakasa": {
 		"zim_install": {
 			"activated": "True",
-			"name": "wikipedia.ar wikipedia.en wiktionary.ar wiktionary.en wiktionary.ar wikiversity.ar wikiversity.en wikibooks.ar wikibooks.en wikisource.ar wikisource.en wikiquote.ar wikiquote.en tedxgeneva2014.fr tedbusiness.en teddesign.en tedentertainment.en tedglobalissues.en tedscience.en tedtechnology.en bil-tunisia.ar gutenberg.mul"
+			"name": ["wikipedia.ar","wikipedia.en","wiktionary.ar","wiktionary.en","wiktionary.ar","wikiversity.ar","wikiversity.en","wikibooks.ar","wikibooks.en","wikisource.ar","wikisource.en","wikiquote.ar","wikiquote.en","tedxgeneva2014.fr","tedbusiness.en","teddesign.en","tedentertainment.en","tedglobalissues.en","tedscience.en","tedtechnology.en","bil-tunisia.ar","gutenberg.mul"]
 		},
 		"idc_import": {
 			"activated": "True",
@@ -496,7 +490,7 @@
 		},
 		"zim_install": {
 			"activated": "False",
-			"name": "ubuntudoc.fr tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr  cest-pas-sorcier.fr gutenberg.fr vikidia.fr wikisource.en wikisource.fr wikipedia.fr wikipedia.wo wikipedia.en "
+			"name": ["ubuntudoc.fr","tedxlausanne2014.fr","tedxlausanne2013.fr","tedxlausanne2012.fr","tedxgeneva2014.fr","cest-pas-sorcier.fr","gutenberg.fr","vikidia.fr","wikisource.en","wikisource.fr","wikipedia.fr","wikipedia.wo","wikipedia.en"]
 		}
 	},
 	"kb-tza-ambassadeDeFrance": {
@@ -511,7 +505,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "wikipedia.sw wikipedia.fr wikipedia.en wiktionary.sw wiktionary.fr wiktionary.en wikiversity.fr wikiversity.en wikibooks.fr wikibooks.en wikisource.fr wikisource.en tedtechnology.en tedscience.en tedglobalissues.en tedentertainment.en teddesign.en tedbusiness.en tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr cest-pas-sorcier.fr dirtybiology.fr gutenberg.mul universcience-tv.fr vikidia.fr vikidia.en les-fondamentaux.fr e-penser.fr deus-ex-silicium.fr bouquineux.fr biologie-tout-compris.fr"
+			"name": ["wikipedia.sw","wikipedia.fr","wikipedia.en","wiktionary.sw","wiktionary.fr","wiktionary.en","wikiversity.fr","wikiversity.en","wikibooks.fr","wikibooks.en","wikisource.fr","wikisource.en","tedtechnology.en","tedscience.en","tedglobalissues.en","tedentertainment.en","teddesign.en","tedbusiness.en","tedxlausanne2014.fr","tedxlausanne2013.fr","tedxlausanne2012.fr","tedxgeneva2014.fr","cest-pas-sorcier.fr","dirtybiology.fr","gutenberg.mul","universcience-tv.fr","vikidia.fr","vikidia.en","les-fondamentaux.fr","e-penser.fr","deus-ex-silicium.fr","bouquineux.fr","biologie-tout-compris.fr"]
 		}
 	},
 	"idb-deu-dusseldorf": {
@@ -522,7 +516,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": "w2eu wikipedia.en wikipedia.fa wikipedia.ar wikipedia.de gutenberg.de "
+			"name": ["w2eu","wikipedia.en","wikipedia.fa","wikipedia.ar","wikipedia.de","gutenberg.de"]
 		}
 	},
 	"idb-jor-zaatari": {
@@ -533,7 +527,7 @@
 		},
 		"zim_install": {
 			"activated": "False",
-			"name": "wikipedia.en wikipedia.ar wiktionary.en wiktionary.ar wikiversity.en wikiversity.ar wikibooks.en wikibooks.ar wikisource.en wikisource.ar wikiquote.en wikiquote.ar tedtechnology.en tedscience.en tedglobalissues.en tedentertainment.en teddesign.en tedbusiness.en ted-ed.en tedmed.en gutenberg.mul crashcourse.en vikidia.en"
+			"name": ["wikipedia.en","wikipedia.ar","wiktionary.en","wiktionary.ar","wikiversity.en","wikiversity.ar","wikibooks.en","wikibooks.ar","wikisource.en","wikisource.ar","wikiquote.en","wikiquote.ar","tedtechnology.en","tedscience.en","tedglobalissues.en","tedentertainment.en","teddesign.en","tedbusiness.en","ted-ed.en","tedmed.en","gutenberg.mul","crashcourse.en","vikidia.en"]
 		},
 		"idc_import": {
 			"activated": "False",
@@ -548,7 +542,7 @@
 		},
 		"zim_install": {
 			"activated": "False",
-			"name": "wikipedia.en wikipedia.ar wikipedia.es gutenberg.mul tedbusiness.en teddesign.en tedentertainment.en tedglobalissues.en tedscience.en tedtechnology.en vikidia.en   bil-tunisia.ar mullah-piaz-digest.fa world.map athens.map"
+			"name": ["wikipedia.en","wikipedia.ar","wikipedia.es","gutenberg.mul","tedbusiness.en","teddesign.en","tedentertainment.en","tedglobalissues.en","tedscience.en","tedtechnology.en","vikidia.en","bil-tunisia.ar","mullah-piaz-digest.fa","world.map","athens.map"]
 		},
 		"idc_import": {
 			"activated": "False",
@@ -563,7 +557,7 @@
 		},
 		"zim_install": {
 			"activated": "False",
-			"name": "wikipedia.fr gutenberg.fr wiktionary.fr biologie-tout-compris.fr cest-pas-sorcier.fr bouquineux.fr dirtybiology.fr e-penser.fr les-fondamentaux.fr universcience-tv.fr tedxgeneva2014.fr tedxlausanne2012.fr tedxlausanne2013.fr tedxlausanne2014.fr tedxlausannechange2013.fr"
+			"name": ["wikipedia.fr","gutenberg.fr","wiktionary.fr","biologie-tout-compris.fr","cest-pas-sorcier.fr","bouquineux.fr","dirtybiology.fr","e-penser.fr","les-fondamentaux.fr","universcience-tv.fr","tedxgeneva2014.fr","tedxlausanne2012.fr","tedxlausanne2013.fr","tedxlausanne2014.fr","tedxlausannechange2013.fr"]
 		},
 		"idc_import": {
 			"activated": "False",
@@ -578,7 +572,7 @@
 		},
 		"zim_install": {
 			"activated": "False",
-			"name": "wikipedia.en wikipedia.ar wiktionary.en wiktionary.ar wikiversity.en wikiversity.ar wikibooks.en wikibooks.ar wikisource.en wikisource.ar wikiquote.en wikiquote.ar tedbusiness.en teddesign.en tedentertainment.en tedglobalissues.en tedscience.en tedtechnology.en ted-ed.en tedmed.en gutenberg.mul vikidia.en crashcourse.en phet.en"
+			"name": ["wikipedia.en","wikipedia.ar","wiktionary.en","wiktionary.ar","wikiversity.en","wikiversity.ar","wikibooks.en","wikibooks.ar","wikisource.en","wikisource.ar","wikiquote.en","wikiquote.ar","tedbusiness.en","teddesign.en","tedentertainment.en","tedglobalissues.en","tedscience.en","tedtechnology.en","ted-ed.en","tedmed.en","gutenberg.mul","vikidia.en","crashcourse.en","phet.en"]
 		},
 		"idc_import": {
 			"activated": "False",
@@ -593,7 +587,7 @@
 		},
 		"zim_install": {
 			"activated": "False",
-			"name": "wikipedia.sw wikipedia.fr ted-ed.en biologie-tout-compris.fr cest-pas-sorcier.fr deus-ex-silicium.fr dirtybiology.fr e-penser.fr les-fondamentaux.fr universcience-tv.fr gutenberg.fr wiktionary.sw wiktionary.fr"
+			"name": ["wikipedia.sw","wikipedia.fr","ted-ed.en","biologie-tout-compris.fr","cest-pas-sorcier.fr","deus-ex-silicium.fr","dirtybiology.fr","e-penser.fr","les-fondamentaux.fr","universcience-tv.fr","gutenberg.fr","wiktionary.sw","wiktionary.fr"]
 		},
 		"idc_import": {
 			"activated": "False",
@@ -608,7 +602,7 @@
 		},
 		"zim_install": {
 			"activated": "False",
-			"name": "wikipedia.en wikipedia.ar wiktionary.en wiktionary.ar wikiversity.en wikiversity.ar wikibooks.en wikibooks.ar wikisource.en wikisource.ar wikiquote.en wikiquote.ar tedbusiness.en teddesign.en tedentertainment.en tedglobalissues.en tedscience.en tedtechnology.en ted-ed.en tedmed.en gutenberg.mul vikidia.en crashcourse.en phet.en"
+			"name": ["wikipedia.en","wikipedia.ar","wiktionary.en","wiktionary.ar","wikiversity.en","wikiversity.ar","wikibooks.en","wikibooks.ar","wikisource.en","wikisource.ar","wikiquote.en","wikiquote.ar","tedbusiness.en","teddesign.en","tedentertainment.en","tedglobalissues.en","tedscience.en","tedtechnology.en","ted-ed.en","tedmed.en","gutenberg.mul","vikidia.en","crashcourse.en","phet.en"]
 		},
 		"idc_import": {
 			"activated": "False",
@@ -623,7 +617,7 @@
 		},
 		"zim_install": {
 			"activated": "False",
-			"name": "gutenberg.es wikipedia.es vikidia.es tedbusiness.en teddesign.en tedentertainment.en tedglobalissues.en tedscience.en tedtechnology.en ted-ed.en tedmed.en cinescuela.es colombia.map"
+			"name": ["gutenberg.es","wikipedia.es","vikidia.es","tedbusiness.en","teddesign.en","tedentertainment.en","tedglobalissues.en","tedscience.en","tedtechnology.en","ted-ed.en","tedmed.en","cinescuela.es","colombia.map"]
 		},
 		"idc_import": {
 			"activated": "False",
