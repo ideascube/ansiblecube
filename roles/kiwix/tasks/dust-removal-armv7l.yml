@@ -85,7 +85,7 @@
 
 - name: Rename ZIM files in Kiwix directory 
   command: mv {{zim_path}}/data/content/{{ item.old }} {{zim_path}}/data/content/{{ item.new }}
-  with_items:
+  with_items: 
   - { new: 'cest-pas-sorcier.fr.zim', old: 'cest-pas-sorcier_fr_all_2015-07.zim' }
   - { new: 'gutenberg.en.zim', old: 'gutenberg_en_all_10_2014.zim' }
   - { new: 'gutenberg.fr.zim', old: 'gutenberg_fr_all_10_2014.zim' }
