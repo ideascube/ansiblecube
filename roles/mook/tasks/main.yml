@@ -38,7 +38,7 @@
 
 # Call those roles if this is the first install
 
-- name: Configure git to avoid so git clone error
+- name: Configure git to avoid git clone error
   become: True
   become_user: ideascube
   command: git config --global http.postBuffer 524288000
