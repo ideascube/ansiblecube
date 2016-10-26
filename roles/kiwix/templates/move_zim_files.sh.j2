@@ -50,7 +50,7 @@ find ./ -type f -regextype posix-extended -regex "^.*zim$|^.*zima{2}" -print0 | 
                 /usr/local/bin/kiwix-manage $NEW_PATH/library.xml add $NEW_PATH/data/content/$new_name
         fi 
 
-        echo `cat /var/cache/ideascube/catalog/catalog.yml | sed -n -e '/$new_name/,/version:/ p'` >> /var/ideascube/main/catalog/installed.yml
+        cat /var/cache/ideascube/catalog/catalog.yml | sed -n -e "/$new_name/,/version:/ p" >> /var/ideascube/main/catalog/installed.yml
         
         cd $OLD_PATH
 done
