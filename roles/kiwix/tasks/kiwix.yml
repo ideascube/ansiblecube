@@ -20,6 +20,11 @@
   template: src=nginx.vhost.j2 dest=/etc/nginx/sites-available/kiwix
   tags: ['master', 'update']
 
+- name: Ensure that Ideascube cache folder belong to ideascube user 
+  file: path=/var/cache/ideascube/catalog/ owner={{ username }} group={{ username }} recurse=yes
+  tags: 
+    - update
+
 - name: Install Kiwix catalogs
   become: yes
   become_user: ideascube
