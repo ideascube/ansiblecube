@@ -13,5 +13,8 @@
 
 - set_fact: generic_project_name={{ ansible_hostname | regex_replace('-\d+', '') }}
 
+- name: Device hostname
+  debug: msg="{{ generic_project_name }}"
+
 - name: reload ansible_local
   setup: filter=ansible_local
