@@ -4,7 +4,7 @@ OLD_PATH={{old_kiwix_path}}
 NEW_PATH="/var/ideascube/kiwix/"
 
 cd $OLD_PATH
-mkdir -p $NEW_PATH/{content,index,library}
+mkdir -p $NEW_PATH/data/{content,index,library}
 mkdir -p /var/ideascube/main/catalog/
 
 find ./ -type f -regextype posix-extended -regex "^.*zim$|^.*zima{2}" -print0 | while IFS= read -r -d $'\0' i; do
@@ -43,11 +43,11 @@ find ./ -type f -regextype posix-extended -regex "^.*zim$|^.*zima{2}" -print0 | 
 
                 cd $NEW_PATH
 
-                /usr/local/bin/kiwix-manage library.xml add content/$new_name -i=index/$index_folder         
+                /usr/local/bin/kiwix-manage $NEW_PATH/library.xml add $NEW_PATH/data/content/$new_name -i=$NEW_PATH/data/index/$index_folder         
         else
                 cd $NEW_PATH
 
-                /usr/local/bin/kiwix-manage library.xml add content/$new_name
+                /usr/local/bin/kiwix-manage $NEW_PATH/library.xml add $NEW_PATH/data/content/$new_name
         fi 
 
         echo `cat /var/cache/ideascube/catalog/catalog.yml | sed -n -e '/$new_name/,/version:/ p'` >> /var/ideascube/main/catalog/installed.yml
