@@ -41,12 +41,11 @@
   tags:
     - custom
     
-- name: Create simlink if we are using an external hard drive
+- name: Create symlink if we are using an external hard drive
   file: src=/media/hdd/{{ mook_name }}/static dest={{ mook_path }}/{{ mook_name }}/static state=link
   when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l")
     and ansible_devices.sda.partitions.sda1 is defined
-  tags:
-    - custom
+  tags: ["custom","update"]
     
 - name: Create static dir
   file: path={{ mook_path }}/{{ mook_name }}/static/tmp state=directory owner={{username}} group={{username}} mode=0775
