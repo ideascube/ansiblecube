@@ -16,7 +16,7 @@
 - name: Download/install ZIM files from Kiwix catalog then remove from local cache
   become: yes
   become_user: ideascube
-  command: ideascube catalog install {{ item }} && rm -f /var/cache/ideascube/catalog/packages/{{ item }}-*
+  shell: ideascube catalog install {{ item }} && rm -f /var/cache/ideascube/catalog/packages/{{ item }}-*
   with_items: "{{ ansible_local.device_list[generic_project_name].zim_install.name }}"
 
 - name: Check the disk usage
