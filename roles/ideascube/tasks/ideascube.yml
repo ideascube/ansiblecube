@@ -47,17 +47,9 @@
 
 # Add settings and conf
 
-- name: Remove old name 
+- name: Change IDEASCUBE_ID
   lineinfile: dest=/etc/default/ideascube
               regexp='IDEASCUBE_ID='
-              line='IDEASCUBE_ID='
-              state=absent
-  tags:
-    - rename
-
-- name: Add IDEASCUBE_ID
-  lineinfile: dest=/etc/default/ideascube
-              regexp='^'
               line='IDEASCUBE_ID={{ ideascube_project_name }}'
               state=present
   notify: restart uwsgi
@@ -65,7 +57,7 @@
 
 - name: Add IDEASCUBE_ID
   lineinfile: dest=/etc/default/ideascube
-              regexp='^'
+              regexp='IDEASCUBE_ID='
               line='IDEASCUBE_ID={{ generic_project_name |replace("-", "_") }}'
               state=present
   notify: restart uwsgi
