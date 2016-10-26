@@ -15,6 +15,16 @@
   apt: name=python3-minimal state=present
   tags: ['master', 'update']
 
+- name: Get ideascube version
+  shell: dpkg-query -W  ideascube  | awk '{print $2}' ; echo
+  register: ideascube_oldversion
+  tags: 
+    - update
+
+- set_fact: ideascube_version="{{ ideascube_oldversion.stdout }}"
+  tags: 
+    - update
+
 - name: Allow unauthenticated packages
   lineinfile: dest=/etc/apt/apt.conf.d/9999IDEASCUBEISABADBADBOY line='APT::Get::AllowUnauthenticated "true";' create=yes
   tags: ['master', 'custom', 'update']
@@ -22,7 +32,14 @@
 - name: Install the ideascube package
   #apt: name=ideascube state=latest update_cache=yes
   apt: name=ideascube=0.12.2 update_cache=yes force=yes dpkg_options="force-confnew"
-  tags: ['master', 'custom', 'update']
+  when: ideascube_version | version_compare('0.12.2', '<')
+  tags: 
+    - update
+
+- name: Install the ideascube package
+  #apt: name=ideascube state=latest update_cache=yes
+  apt: name=ideascube=0.12.2 update_cache=yes force=yes dpkg_options="force-confnew"
+  tags: ['master', 'custom']
 
 - name: Remove the unauthenticated hack
   file: path=/etc/apt/apt.conf.d/9999IDEASCUBEISABADBADBOY state=absent
