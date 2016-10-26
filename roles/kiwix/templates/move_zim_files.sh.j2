@@ -3,6 +3,8 @@
 OLD_PATH={{old_kiwix_path}}
 NEW_PATH="/var/ideascube/kiwix/"
 
+rm -f /var/ideascube/main/catalog/installed.yml
+
 cd $OLD_PATH
 mkdir -p $NEW_PATH/data/{content,index,library}
 mkdir -p /var/ideascube/main/catalog/
