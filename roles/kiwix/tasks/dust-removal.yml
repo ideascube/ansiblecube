@@ -34,5 +34,5 @@
 - name: Move zim files to the new path
   command: "{{old_kiwix_path}}/move_zim_files.sh"
 
-# - name: Remove empty folder 
-#   shell: find {{ old_kiwix_path }} -type d -empty -delete
+- name: Remove empty folder 
+  shell: find {{ old_kiwix_path }} -type d -empty -delete
