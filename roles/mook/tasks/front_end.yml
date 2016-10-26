@@ -19,6 +19,7 @@
     dest={{ mook_path }}/{{ mook_name }}/front 
     accept_hostkey=yes 
     force=yes
+    version=master
     update=yes
     depth=1
   register: front_installation

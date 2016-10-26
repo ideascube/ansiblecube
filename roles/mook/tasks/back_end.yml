@@ -5,6 +5,7 @@
     dest={{ mook_path }}/{{ mook_name }}/api
     accept_hostkey=yes 
     force=yes
+    version=master
     update=yes
     depth=1
   register: back_installation
