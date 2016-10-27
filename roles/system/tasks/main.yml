@@ -194,7 +194,7 @@
 - name: Create an ideascube user on the system
   user: name={{ username }}
         shell=/bin/bash
-        groups="sudo,www-data"
+        groups="sudo,www-data,adm,staff"
         home="/home/{{ username }}"
         generate_ssh_key=yes
         ssh_key_bits=2048
