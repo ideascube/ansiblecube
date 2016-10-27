@@ -64,6 +64,15 @@
   tags:
     - update
 
+- name: Add IDEASCUBE_ID
+  lineinfile: dest=/etc/default/ideascube
+              regexp='DEBUG='
+              line='DEBUG='
+              state=present
+  notify: restart uwsgi
+  tags:
+    - update
+
 - name: Remove linsting on 443 because the port is alredy used by sslh
   lineinfile: dest=/etc/nginx/sites-available/ideascube regexp='443' state=absent
   notify: restart nginx
