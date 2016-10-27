@@ -21,7 +21,8 @@
   tags: ['master', 'update']
 
 - name: Ensure that Ideascube cache folder belong to ideascube user 
-  file: path=/var/cache/ideascube/catalog/ owner={{ username }} group={{ username }} recurse=yes
+  file: path=/var/cache/ideascube/catalog/ 
+    owner={{ username }} group={{ username }} state=directory recurse=yes
   tags: 
     - update
 
