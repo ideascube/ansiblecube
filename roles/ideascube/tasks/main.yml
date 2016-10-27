@@ -1,4 +1,5 @@
 ---
+- include: branding.yml
 - include: ideascube.yml
 
 - include: ../../../post_install.yml task=ideascube task_version="{{ ideascube_version }}"

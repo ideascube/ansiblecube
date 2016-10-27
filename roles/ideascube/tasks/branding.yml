@@ -1,0 +1,11 @@
+---
+- include_vars: group_vars/{{ ansible_architecture }}.yml
+  tags: ['master', 'custom', 'update']
+
+- name: Ensure the branding directory exists
+  file: path=/usr/share/ideascube/branding state=directory owner=root group=root mode=0755
+  tags: ['master', 'custom', 'update']
+
+- name: Install the branding resources
+  copy: src=branding/{{ ideascube_branding }}/ dest=/usr/share/ideascube/branding/ owner=ideascube group=ideascube mode=0644
+  tags: ['master', 'custom', 'update']
