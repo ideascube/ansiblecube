@@ -1,9 +1,7 @@
 #!/bin/bash
 
 OLD_PATH={{old_kiwix_path}}
-NEW_PATH="/var/ideascube/kiwix/"
-
-rm -f /var/ideascube/main/catalog/installed.yml
+NEW_PATH={{zim_path}}
 
 cd $OLD_PATH
 mkdir -p $NEW_PATH/data/{content,index,library}
@@ -32,10 +30,14 @@ find ./ -type f -regextype posix-extended -regex "^.*zim$|^.*zima{2}" -print0 | 
                 index_folder=`find ./ -type d -name "$folder_name*" -printf '%f\n'`
         fi
 
+        echo "$new_name" >> $OLD_PATH/list.txt
+
+        mkdir -p $OLD_PATH/packages/$nameWithDate/data/{content,index,library}
+
         is_several_files=`echo "$i" | grep zimaa`
 
         if [ -n "$is_several_files" ]; then
-                mv ${i%?}* $NEW_PATH/data/content/$new_name
+                mv ${i%?}* $NEW_PATH/data/content/
         else
                 mv $i $NEW_PATH/data/content/$new_name
         fi
@@ -43,16 +45,17 @@ find ./ -type f -regextype posix-extended -regex "^.*zim$|^.*zima{2}" -print0 | 
         if [ -n "$index_folder_full_path" ]; then
                 mv -r "$index_folder_full_path" $NEW_PATH/data/index
 
-                cd $NEW_PATH
-
                 /usr/local/bin/kiwix-manage $NEW_PATH/library.xml add $NEW_PATH/data/content/$new_name -i=$NEW_PATH/data/index/$index_folder
         else
-                cd $NEW_PATH
 
                 /usr/local/bin/kiwix-manage $NEW_PATH/library.xml add $NEW_PATH/data/content/$new_name
         fi 
-
-        cat /var/cache/ideascube/catalog/catalog.yml | sed -n -e "/$new_name/,/version:/ p" >> /var/ideascube/main/catalog/installed.yml
         
+        cd $OLD_PATH/packages/$nameWithDate/
+        zip -r "$new_name-0000-00-00" data
+
+        mv "$new_name-0000-00-00" /var/cache/ideascube/catalog/packages/$new_name-0000-00-00
         cd $OLD_PATH
 done
+
+rm -rf $OLD_PATH/packages
