@@ -1,0 +1,13 @@
+# {{ ansible_managed }}
+/var/log/tinc.*.log {
+    weekly
+    rotate 7
+    compress
+    delaycompress
+    missingok
+    notifempty
+    create 640 root adm
+    postrotate
+        killall -s HUP tincd
+    endscript
+}
