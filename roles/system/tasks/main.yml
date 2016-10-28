@@ -31,6 +31,13 @@
   tags:
     - custom
 
+- name: Register hostname in facts
+  ini_file: dest=/etc/ansible/facts.d/installed_software.fact
+    section=management
+    option=hostname
+    value={{hostname}}
+  tags: ['custom','update','rename']
+
 - name: A way to get the public IP of the device
   shell: wget -qO- http://ipecho.net/plain ; echo
   register: public_ip
