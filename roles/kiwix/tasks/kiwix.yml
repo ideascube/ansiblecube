@@ -66,3 +66,13 @@
   when: st.stat.exists == True
   tags:
     - update
+
+- name: Checkout installed.yml file size 
+  stat: path=/var/ideascube/main/catalog/installed.yml
+  register: installed_zim
+  tags:
+    - update
+
+- include: update_catalog.yml
+  when: installed_zim.stat.size is undefined
+    and installed_zim.stat.size < 5
