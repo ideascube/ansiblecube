@@ -21,7 +21,7 @@
   tags: 
     - update
 
-- set_fact: ideascube_version="{{ ideascube_oldversion.stdout }}"
+- set_fact: ideascube_oldversion="{{ ideascube_oldversion.stdout }}"
   tags: 
     - update
 
@@ -30,15 +30,22 @@
   tags: ['master', 'custom', 'update']
 
 - name: Install the ideascube package
-  #apt: name=ideascube state=latest update_cache=yes
-  apt: name=ideascube=0.12.2 update_cache=yes force=yes dpkg_options="force-confnew"
-  when: ideascube_version | version_compare('0.12.2', '<')
+  apt: name=ideascube state=latest update_cache=yes force=yes dpkg_options="force-confnew"
   register: is_upgraded
   tags: ['master', 'custom', 'update']
 
 - name: Remove the unauthenticated hack
   file: path=/etc/apt/apt.conf.d/9999IDEASCUBEISABADBADBOY state=absent
   tags: ['master', 'custom', 'update']
+
+- name: Enable cards on homepage for ideascube upgrading from < 0.13.0
+  become: yes
+  become_user: ideascube
+  commande: ideascube reset_home
+  when: ideascube_oldversion | version_compare('0.13.0', '<')
+    and is_upgraded.changed == True
+  tags:
+    - update
 
 # Add settings and conf
 
@@ -83,3 +90,13 @@
 
 - debug: msg="ideascube {{ ideascube_version }} is now the current version."
   tags: ['master', 'custom', 'update']
+
+- name: Enable cards on homepage for ideascube upgrading to > 0.13
+  become: yes
+  become_user: ideascube
+  commande: ideascube catalog cache update
+  when: ideascube_oldversion | version_compare('0.13.0', '>') 
+    and ideascube_version | version_compare('0.15.0', '>=')
+    and is_upgraded.changed == True
+  tags:
+    - update
