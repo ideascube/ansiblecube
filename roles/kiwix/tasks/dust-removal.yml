@@ -1,0 +1,38 @@
+---
+- name: Get startup file list
+  shell: grep kiwix-serve /etc/init.d/* | cut -d "/" -f4 | cut -d ":" -f1
+  register: startup_file_list 
+
+- debug: msg="{{ startup_file_list }}"
+
+- name: Stop running kiwix service
+  command: /etc/init.d/{{ item }} stop
+  with_items: "{{ startup_file_list.stdout_lines }}"
+
+- name: Disable init file for kiwix project
+  command: update-rc.d {{ item }} disable
+  with_items: "{{ startup_file_list.stdout_lines }}"
+
+- name: Delete init file for kiwix project
+  command: rm /etc/init.d/{{ item }}
+  with_items: "{{ startup_file_list.stdout_lines }}"
+
+- name: Remove symlink
+  command: update-rc.d {{ item }} remove
+  with_items: "{{ startup_file_list.stdout_lines }}"
+
+- name: Disable Nginx virtual host for kiwix project
+  file: path=/etc/nginx/sites-enabled/{{ item }} state=absent
+  with_items: "{{ startup_file_list.stdout_lines }}"
+
+- name: Copying kiwix manage to create library.xml
+  get_url: url={{filer_bsf}}/kiwix-manage-{{ ansible_architecture }} dest=/usr/local/bin/kiwix-manage mode=755 timeout=20
+
+- name: Copy move_zim_files.sh file
+  template: src=move_zim_files.sh.j2 dest={{old_kiwix_path}}/move_zim_files.sh mode=0755
+
+- name: Move zim files to the new path
+  command: "{{old_kiwix_path}}/move_zim_files.sh"
+
+- name: Remove empty folder 
+  shell: find {{ old_kiwix_path }} -type d -empty -delete
