@@ -69,6 +69,13 @@ function test_three_args()
 	arg_managed_by_bsf=`echo $1 | cut -d= -f2`
 	arg_ideascube_project_name=`echo $2 | cut -d= -f2`
 	arg_timezone=`echo $3 | cut -d= -f2`
+	arg_hostname_temp=`echo $4 | cut -d= -f2`
+
+	if [[ -n $arg_hostname_temp ]]
+	then
+		arg_hostname="hostname=$arg_hostname_temp"
+	fi
+
 	if [[ -z $arg_managed_by_bsf || -z $arg_ideascube_project_name || -z $arg_timezone ]]
     then
         echo "[/!\] No arguments supplied"
@@ -81,6 +88,13 @@ function test_two_args()
 	# parse args
 	arg_ideascube_project_name=`echo $1 | cut -d= -f2`
 	arg_timezone=`echo $2 | cut -d= -f2`
+	arg_hostname_temp=`echo $3 | cut -d= -f2`
+
+	if [[ -n $arg_hostname_temp ]]
+	then
+		arg_hostname="hostname=$arg_hostname_temp"
+	fi
+
 	if [[ -z $arg_ideascube_project_name || -z $arg_timezone ]]
     then
         echo "[/!\] No arguments supplied"
@@ -93,6 +107,13 @@ function test_two_args_rename()
 	# parse args
 	arg_ideascube_project_name=`echo $2 | cut -d= -f2`
 	arg_timezone=`echo $3 | cut -d= -f2`
+	arg_hostname_temp=`echo $4 | cut -d= -f2`
+
+	if [[ -n $arg_hostname_temp ]]
+	then
+		arg_hostname="hostname=$arg_hostname_temp"
+	fi
+
 	if [[ -z $arg_ideascube_project_name || -z $arg_timezone ]]
     then
         echo "[/!\] No arguments supplied"
@@ -147,9 +168,11 @@ function help()
 	Arguments:
 	- managed_by_bsf=True|False : Install BSF tools, don't set to True if you are not part of BSF
 
-	- ideascube_project_name=File_Name : Must be the same name as the one used for the ideascube configuration file
+	- ideascube_project_name=File_Name : Must be the same name as the one used for the ideascube configuration file and AnsibleCube device.list
 
 	- timezone=Europe/Paris : The timezone
+
+	- hostname : You can choose a custom hostname, ex: box.lan Otherwise hostname == ideascube_project_name
 	"
 	exit 0;
 }
@@ -177,14 +200,14 @@ then
 	test_two_args_rename "$@"
 
 	TAGS="rename"
-	VARS="ideascube_project_name=$arg_ideascube_project_name timezone=$arg_timezone"
+	VARS="ideascube_project_name=$arg_ideascube_project_name timezone=$arg_timezone $arg_hostname"
 	START=1
 elif [ -x /usr/bin/ideascube ]
 then
 	test_two_args "$@"
 
 	TAGS="custom"
-	VARS="ideascube_project_name=$arg_ideascube_project_name timezone=$arg_timezone"
+	VARS="ideascube_project_name=$arg_ideascube_project_name timezone=$arg_timezone $arg_hostname"
 	START=1
 else
 	test_three_args "$@"
@@ -193,7 +216,7 @@ else
 		generate_rsa_key
 	fi
 	TAGS="master,custom"
-	VARS="managed_by_bsf=$arg_managed_by_bsf ideascube_project_name=$arg_ideascube_project_name timezone=$arg_timezone"
+	VARS="managed_by_bsf=$arg_managed_by_bsf ideascube_project_name=$arg_ideascube_project_name timezone=$arg_timezone $arg_hostname"
 	START=1
 fi
 
