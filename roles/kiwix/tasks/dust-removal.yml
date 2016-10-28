@@ -25,14 +25,38 @@
   file: path=/etc/nginx/sites-enabled/{{ item }} state=absent
   with_items: "{{ startup_file_list.stdout_lines }}"
 
-- name: Copying kiwix manage to create library.xml
-  get_url: url={{filer_bsf}}/kiwix-manage-{{ ansible_architecture }} dest=/usr/local/bin/kiwix-manage mode=755 timeout=20
+- name: Download catalog file 
+  get_url: url=http://www.daitauha.fr/static/kiwix.yml
+    dest="{{old_kiwix_path}}/kiwix.yml"
 
-- name: Copy move_zim_files.sh file
+- name: Copying kiwix manage to create library.xml
+  get_url: url={{filer_bsf}}/kiwix-manage-{{ ansible_architecture }} 
+    dest=/usr/local/bin/kiwix-manage mode=755 timeout=20
+
+- name: copy update sha256sum script
+  copy: src=update_sha256sum.py dest={{old_kiwix_path}}/update_sha256sum.py
+
+- name: Copy create_zim_archive.sh file
   template: src=move_zim_files.sh.j2 dest={{old_kiwix_path}}/move_zim_files.sh mode=0755
 
-- name: Move zim files to the new path
+- name: Create an archive from available zim
   command: "{{old_kiwix_path}}/move_zim_files.sh"
+
+- name: Update sha256sum
+  command: /usr/bin/python update_sha256sum.py /var/cache/ideascube/catalog/packages/ chdir={{old_kiwix_path}}
+
+- name: Move catalog.yml to the final path 
+  command: mv "{{old_kiwix_path}}/catalog.yml" /var/cache/ideascube/catalog/
+
+- name: Get the content of list.txt
+  command: cat "{{old_kiwix_path}}/list.txt"
+  register: zim_list
+
+- name: Install zim file with ideascube catalog 
+  become: yes
+  become_user: ideascube
+  command: ideascube catalog install {{item}} chdir={{old_kiwix_path}}
+  with_items: "{{ zim_list.stdout_lines}}"
 
 - name: Remove empty folder 
   shell: find {{ old_kiwix_path }} -type d -empty -delete
