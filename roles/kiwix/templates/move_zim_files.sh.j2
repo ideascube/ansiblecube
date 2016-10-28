@@ -45,7 +45,7 @@ find ./ -type f -regextype posix-extended -regex "^.*zim$|^.*zima{2}" -print0 | 
 
                 cd $NEW_PATH
 
-                /usr/local/bin/kiwix-manage $NEW_PATH/library.xml add $NEW_PATH/data/content/$new_name -i=$NEW_PATH/data/index/$index_folder         
+                /usr/local/bin/kiwix-manage $NEW_PATH/library.xml add $NEW_PATH/data/content/$new_name -i=$NEW_PATH/data/index/$index_folder
         else
                 cd $NEW_PATH
 
