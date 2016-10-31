@@ -13,6 +13,9 @@
     - role: tinc-static
       when: ansible_local.installed_software.management.managed_by_bsf|bool == True
 
+    - role: tinc-dynamic
+      when: ansible_local.installed_software.management.managed_by_bsf|bool == True
+
     - role: zim_install
       when: ansible_local.device_list[generic_project_name].zim_install is defined
         and ansible_local.device_list[generic_project_name].zim_install.activated|bool == True
