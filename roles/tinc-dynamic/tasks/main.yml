@@ -9,7 +9,7 @@
   when: tundevice.stat.exists == false
   tags: ['custom','update']
 
-- name: install custom fact module for IP address
+- name: install custom fact module for MAC address
   template: >
     src=tinc_facts.sh.j2
     dest=/etc/ansible/facts.d/tinc_facts2.fact
@@ -27,7 +27,7 @@
   setup: filter=*
   tags: ['custom','update','rename']
 
-- debug: msg="{{ ansible_local.tinc_facts.vpn_ip }}"
+- debug: msg="{{ ansible_local.tinc_facts.tinc_if_mac }}"
   tags: ['custom','update','rename']
 
 - name: insert/update vpn_name2 configuration stanza in /etc/network/interfaces
@@ -97,7 +97,6 @@
   template: >
     src=tinc.conf.j2
     dest=/etc/tinc/{{ vpn_name2 }}/tinc.conf
-  notify: hello world
   tags: ['custom','update','rename']
 
 - name: Get wlan1 IP address when interfaces is up
@@ -172,6 +171,7 @@
 
 - name: copy tinc public key from static conf
   shell: sed -n -e '/-----BEGIN RSA PUBLIC KEY-----/,$p' /etc/tinc/{{ vpn_name }}/hosts/{{tinc_localhost_name }} > /etc/tinc/{{ vpn_name2 }}/hosts/{{ tinc_localhost_name }}
+  tags: ['custom','update','rename']
 
 - name: create tinc-up file
   template: >
