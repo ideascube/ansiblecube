@@ -33,4 +33,4 @@ octetf=`echo "obase=16;$numberf" | bc`
 macadd="${octets}-${octeta}${octetb}-${octetc}${octetd}-${octete}${octetf}"
 #concatenate values and add dashes
 
-echo $macadd
+echo $macadd > generatedMAC
