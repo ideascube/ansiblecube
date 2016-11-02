@@ -58,6 +58,18 @@
   copy: src=source.list dest=/etc/apt/sources.list
   tags: ['master','update']
 
+- name: Run apt-get update  
+  shell: apt-get update ; echo
+  register: result
+  tags:
+    - update
+
+- name: Fix broken package
+  shell: dpkg --configure -a
+  when: "'dpkg --configure -a' in result.stderr"
+  tags:
+    - update
+
 - name: Remove unwanted packages before upgrading
   apt: name={{ item }} state=absent purge=yes
   with_items:
