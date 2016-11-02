@@ -632,7 +632,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": ["wikipedia.sw","wikipedia.fr","ted.fr","tedxlausanne2014.fr","tedxlausanne2013.fr","tedxlausanne2012.fr","tedxgeneva2014.fr","biologie-tout-compris.fr","cest-pas-sorcier.fr","deus-ex-silicium.fr","dirtybiology.fr","e-penser.fr","les-fondamentaux.fr","universcience-tv.fr","gutenberg.fr","wiktionary.fr","wiktionary.sw"]
+			"name": ["wikipedia.sw","wikipedia.fr","tedxlausanne2014.fr","tedxlausanne2013.fr","tedxlausanne2012.fr","tedxgeneva2014.fr","biologie-tout-compris.fr","cest-pas-sorcier.fr","deus-ex-silicium.fr","dirtybiology.fr","e-penser.fr","les-fondamentaux.fr","universcience-tv.fr","gutenberg.fr","wiktionary.fr","wiktionary.sw"]
 		},
 		"idc_import": {
 			"activated": "False",
