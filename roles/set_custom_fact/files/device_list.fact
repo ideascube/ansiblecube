@@ -636,7 +636,7 @@
 		},
 		"idc_import": {
 			"activated": "False",
-			"content_name": [""]
+			"content_name": ["2-Contenus/csvircburundi.csv"]
 		}
 	}
 }
