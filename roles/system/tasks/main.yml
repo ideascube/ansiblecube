@@ -1,6 +1,6 @@
 ---
 - include_vars: group_vars/{{ ansible_architecture }}.yml
-  tags: ['master', 'custom','rename']
+  tags: ['master', 'custom','rename','update']
 
 - name: Register managed_by_bsf var from facts.d
   set_fact: managed_by_bsf="{{ ansible_local.installed_software.management.managed_by_bsf }}"
