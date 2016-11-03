@@ -22,17 +22,13 @@
   tags:
     - update
 
-- name: Upgrade Kernel to Vanilla
-  apt: name={{ item }} state=latest update_cache=yes
+- name: Install last custom Kernel, Headers, DTB and U-Boot
+  apt: deb=http://filer.bsf-intranet.org/{{ item }}
   with_items:
-   - linux-dtb-next-sunxi
-   - linux-headers-next-sunxi
-   - linux-image-next-sunxi
-  tags:
-    - update
-
-- name: Install custom U-boot from BSF filer
-  apt: deb=http://filer.bsf-intranet.org/linux-u-boot-next-lime2_armhf.deb
+   - linux-dtb-next-sunxi_5.23_armhf.deb
+   - linux-headers-next-sunxi_5.23_armhf.deb
+   - linux-image-next-sunxi_5.23_armhf.deb
+   - linux-u-boot-next-lime2_5.23_armhf.deb
   tags:
     - update
 

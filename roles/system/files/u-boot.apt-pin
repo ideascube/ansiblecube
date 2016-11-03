@@ -1,3 +1,15 @@
 Package: linux-u-boot-lime2-next
 Pin: release *
 Pin-Priority: -1
+
+Package: linux-dtb-next-sunxi
+Pin: release *
+Pin-Priority: -1
+
+Package: linux-headers-next-sunxi
+Pin: release *
+Pin-Priority: -1
+
+Package: linux-image-next-sunxi
+Pin: release *
+Pin-Priority: -1
