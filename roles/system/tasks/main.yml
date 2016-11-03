@@ -38,6 +38,10 @@
     value={{hostname}}
   tags: ['custom','update','rename']
 
+- name: Remove udev rules for wifi 
+  file: path=/etc/udev/rules.d/70-persistent-net.rules state=absent
+  tags: ['custom','rename']
+
 - name: A way to get the public IP of the device
   shell: wget -qO- http://ipecho.net/plain ; echo
   register: public_ip
