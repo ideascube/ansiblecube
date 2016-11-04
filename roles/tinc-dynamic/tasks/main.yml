@@ -9,25 +9,17 @@
   when: tundevice.stat.exists == false
   tags: ['custom','update']
 
-- name: install custom fact module for MAC address
-  template: >
-    src=tinc_facts.sh.j2
-    dest=/etc/ansible/facts.d/tinc_facts2.fact
-    mode=0755
-  tags: ['custom','update','rename']
-
-#- name: install MAC generator for new interface
-#  copy: src:macgen.sh dest=/etc/tinc/macgen.sh owner=root group=root mode=0755
-#  tags: ['custom','update','rename']
-#
-#- name: generate MAC if doesn't exist
-#  shell: cd /etc/tinc; test -e generatedMAC || ./macgen.sh
-
 - name: reload ansible facts
   setup: filter=*
   tags: ['custom','update','rename']
 
-- debug: msg="{{ ansible_local.tinc_facts.tinc_if_mac }}"
+- name: Generate new mac address
+  shell: echo "{{ ansible_hostname }}"|md5sum|sed 's/^\(..\)\(..\)\(..\)\(..\)\(..\).*$/02:\1:\2:\3:\4:\5/' ; echo
+  register: tinc_if_mac
+  tags: ['custom','update','rename']
+
+
+- debug: msg="{{ tinc_if_mac.stdout }}"
   tags: ['custom','update','rename']
 
 - name: insert/update vpn_name2 configuration stanza in /etc/network/interfaces
@@ -35,9 +27,9 @@
     dest: /etc/network/interfaces
     block: |
       iface {{ vpn_name2 }} inet dhcp
-	  pre-up ifconfig {{ vpn_name2 }} down || true
-	  pre-up ifconfig {{ vpn_name2 }} hw ether {{ ansible_local.tinc_facts.tinc_if_mac }} || true
-	  post-up route del default dev {{ vpn_name2 }} || true
+        pre-up ifconfig {{ vpn_name2 }} down || true
+        pre-up ifconfig {{ vpn_name2 }} hw ether {{ tinc_if_mac.stdout }} || true
+        post-up route del default dev {{ vpn_name2 }} || true
   tags: ['custom','update','rename']
 
 - name: build a hostname for tinc, which doesn't like hyphens
@@ -132,11 +124,11 @@
 #  tags: ['custom','update','rename']
 
 - name: add pubkeys for central nodes
-  copy: src=hosts/{{ item }} dest=/etc/tinc/{{ vpn_name }}/hosts/{{ item }}
+  copy: src=hosts/{{ item }} dest=/etc/tinc/{{ vpn_name2 }}/hosts/{{ item }} mode=0750
   with_items:
-#    - bigmama
-#    - buildbot
      - tincmaster
+     - tincmaster-up
+     - tincmaster-down
   tags: ['custom','update']
 
 - name: set default options for tinc

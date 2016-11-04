@@ -1,6 +1,7 @@
 Name = {{ tinc_localhost_name }}
 AddressFamily = ipv4
 Interface = {% if vpn_interface is defined %}{{ vpn_interface }}{% else %}tun1{% endif %}
+
 Mode = switch
 
 ConnectTo = tincmaster
