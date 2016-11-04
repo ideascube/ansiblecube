@@ -93,8 +93,8 @@
    - lirc
    - apt-listchanges
    - clipit
-  tags:
-    - master
+   - sslh
+  tags: ['master','update']
 
 - name: Install all requiered package
   apt: name={{ item }} state=latest update_cache=yes
