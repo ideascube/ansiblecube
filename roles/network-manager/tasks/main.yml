@@ -6,10 +6,9 @@
     - master
 
 - name: Create entry to clone/pull git repository
-  copy: src=nm-dispatcher dest=/etc/NetworkManager/dispatcher.d/ansiblePullUpdate
+  template: src=nm-dispatcher.j2 dest=/etc/NetworkManager/dispatcher.d/ansiblePullUpdate
     owner=root group=root mode=0755
-  tags: 
-    - custom
+  tags: ['custom', 'update']
 
 - name: Add a cron entry to execute ansible-pull
   cron: name="Execute ansible-pull automatically" minute="0" hour="0" day="1" 
