@@ -653,5 +653,20 @@
 			"activated": "False",
 			"content_name": ["2-Contenus/csv_acelem.csv"]
 		}
+	},
+	"idb-fra-marseilleville": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.9",
+			"language": ["fr"]
+		},
+		"zim_install": {
+			"activated": "False",
+			"name": ["placeholder.lol"]
+		},
+		"idc_import": {
+			"activated": "False",
+			"content_name": ["2-Contenus/csv_acelem.csv"]
+		}
 	}
 }
