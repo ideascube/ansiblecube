@@ -174,11 +174,6 @@
   tags: 
     - rename
 
-## Move this to tinc-dynamic when dropping tinc-static
-- name: Make sure central_server pubkey is in .ssh/known_hosts
-  lineinfile: dest=/root/.ssh/known_hosts line="|1|vYh52t+A8vZ2smtUooaDUnmvizY=|lxFmsC4Qlvb7X6Zi4tfm5dDNiTI= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBGIi+qKYc46Og0VhD0cCc8jh/dGGoKOOr6Ojo0nWnwo08V7rliEK/FJQ2Lbq6N1CoLowLPEjMuHsN7x6JZO8MKE=" create=yes
-  tags: ['custom','update','rename']
-
 - name: send the public key to central nodes
   shell: rsync -azP -e 'ssh -p 443' /etc/tinc/{{ vpn_name }}/hosts/{{tinc_localhost_name }}  {{ central_server }}:/ansible/tinc-{{ vpn_name }}/
   tags: ['custom','update','rename']  
