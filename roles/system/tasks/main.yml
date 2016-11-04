@@ -124,6 +124,8 @@
    - mtr-tiny
    - libwww-perl
    - httpie
+   - lshw
+   - hwinfo
   tags:
     - master
 
