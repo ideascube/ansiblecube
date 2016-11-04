@@ -9,10 +9,6 @@
   when: tundevice.stat.exists == false
   tags: ['custom','update']
 
-- name: reload ansible facts
-  setup: filter=*
-  tags: ['custom','update','rename']
-
 - name: Generate new mac address
   shell: echo "{{ ansible_hostname }}"|md5sum|sed 's/^\(..\)\(..\)\(..\)\(..\)\(..\).*$/02:\1:\2:\3:\4:\5/' ; echo
   register: tinc_if_mac

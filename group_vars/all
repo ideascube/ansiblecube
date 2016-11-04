@@ -9,7 +9,7 @@ client_interface: wlan1
 username: ideascube
 password: $6$YcJS1HjRAv/$1bUosoPalzHEvfpx71UhnG6vCeckTGbA5U1i6UpA8X21Jrv7fYRPyNrq/YWuiBp3xQWd5kRRhrKKPHcbTkkfQ/
 repo_url: https://github.com/ideascube/ansiblecube.git
-central_server: ansible@37.187.151.52
+central_server: ansible@51.254.97.1
 filer_bsf: http://filer.bsf-intranet.org
 timezone: "Europe/Paris"
 synology: "10.10.8.9"
