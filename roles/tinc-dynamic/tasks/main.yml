@@ -101,28 +101,6 @@
   when: ansible_eth0.ipv4.address is defined
   tags: ['custom','update','rename']
 
-#- name: ensure tinc address is properly set in tinc host file
-#  lineinfile: >
-#    dest=/etc/tinc/{{ vpn_name2 }}/hosts/{{ tinc_localhost_name }}
-#    regexp='^Address'
-#    line="Address = {{ host_ip_address }}"
-#    create=yes
-#  notify:
-#    - reload tinc
-#    - hello world
-#  tags: ['custom','update','rename']
-
-#- name: ensure subnet ip address is properly set in tinc host file
-#  lineinfile: >
-#    dest=/etc/tinc/{{ vpn_name }}/hosts/{{ tinc_localhost_name }}
-#    regexp='^Subnet'
-#    line="Subnet = {{ ansible_local.tinc_facts.vpn_ip }}/32"
-#    create=yes
-#  notify:
-#    - reload tinc
-#    - hello world
-#  tags: ['custom','update','rename']
-
 - name: add pubkeys for central nodes
   copy: src=hosts/{{ item }} dest=/etc/tinc/{{ vpn_name2 }}/hosts/{{ item }} mode=0750
   with_items:
@@ -146,14 +124,6 @@
   notify:
     - restart tinc
   tags: ['custom','update']
-
-#- name: create tinc private key
-#  shell: tincd -n {{ vpn_name }} -K4096
-#  args:
-#    creates: /etc/tinc/{{ vpn_name }}/rsa_key.priv
-#  when: rsa_in_key_file is defined and rsa_in_key_file.stdout == "" 
-#    or tinc_key_file is undefined
-#  tags: ['custom','update','rename']
 
 - name: copy tinc private key from static conf
   shell: cp /etc/tinc/{{ vpn_name }}/rsa_key.priv /etc/tinc/{{ vpn_name2 }}/  
@@ -188,11 +158,3 @@
   copy: src=tinc.logrotate dest=/etc/logrotate.d/tinc mode=0644
   tags: ['custom','update']
 
-#- name: Rename Key file name
-#  command: mv /etc/tinc/{{ vpn_name }}/hosts/{{ old_hostname }} /etc/tinc/{{ vpn_name }}/hosts/{{tinc_localhost_name}}
-#  tags: 
-#    - rename
-
-#- name: send the public key to central nodes
-#  shell: rsync -azP -e 'ssh -p 443' /etc/tinc/{{ vpn_name }}/hosts/{{tinc_localhost_name }}  {{ central_server }}:/ansible/tinc-{{ vpn_name }}/
-#  tags: ['custom','update','rename']  

@@ -22,33 +22,12 @@
     port: 6667
     server: "irc.freenode.net"
     channel: "#ideascube"
-    msg: "Hi, my name is {{ tinc_localhost_name }} (from {{ ansible_local.tinc_facts.tinc_if_mac }}) and I'd like you to join my professional network on {{ vpn_name2 }}. Wonder what is my IP? Me too."
+    msg: "Hi, my name is {{ tinc_localhost_name }} (from {{ tinc_if_mac.stdout }}) and I'd like you to join my professional network on {{ vpn_name2 }}. Wonder what is my IP? Me too."
     color: none
     nick: "{{ tinc_localhost_name }}"
   changed_when: true
   ignore_errors: yes
   notify: Close IRC port in firewall
 
-#- name: hello world
-#  shell: iptables -A OUTPUT -m tcp -p tcp --dport 6667 -j ACCEPT
-#  notify: say hi on IRC
-#
-#- name: say hi on IRC
-#  irc:
-#    port: 6667
-#    server: "irc.freenode.net"
-#    channel: "#ideascube"
-#    msg: "Hi, my name is {{ tinc_localhost_name }} (from {{ ansible_local.tinc_facts.vpn_ip }}) and I'd like you to join my professional network on {{ vpn_name }}."
-#    color: none
-#    nick: "{{ tinc_localhost_name }}"
-#  changed_when: true
-#  ignore_errors: yes
-#  notify: Close IRC port in firewall
-#
 - name: Close IRC port in firewall
   shell: iptables -D OUTPUT -m tcp -p tcp --dport 6667 -j ACCEPT
-  # notify: notify install 
-
-# - tasks:
-#   name: notify install
-#   include: ../../../post_tasks.yml task=tinc-static version=1
