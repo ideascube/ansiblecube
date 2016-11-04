@@ -84,7 +84,7 @@
     - master
 
 - name: Ensure that Ideascube folder belong the ideascube user 
-  file: path=/var/ideascube/main/ owner={{ username }} group={{ username }} recurse=yes
+  file: path=/var/ideascube/main/ owner={{ username }} group={{ username }} recurse=yes state=directory
   tags: 
     - update
 
