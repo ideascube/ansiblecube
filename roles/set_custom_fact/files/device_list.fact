@@ -94,7 +94,7 @@
 			"activated": "False",
 			"name": ["wikipedia.es","gutenberg.es"]
 		},
-	"idc_import": {
+		"idc_import": {
 			"activated": "False",
 			"content_name": ["13-NICARALI/CSV-Nicarali.csv"]
 		}
@@ -523,7 +523,7 @@
 		"kalite": {
 			"activated": "False",
 			"version": "0.16.8",
-            "language": ["en","ar"]
+			"language": ["en","ar"]
 		},
 		"zim_install": {
 			"activated": "False",
@@ -538,7 +538,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.9",
-            "language": ["fr","en","es"]
+			"language": ["fr","en","es"]
 		},
 		"zim_install": {
 			"activated": "False",
