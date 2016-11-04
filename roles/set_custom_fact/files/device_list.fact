@@ -1,691 +1,691 @@
 {
 	"kb-bsfcampus-sen": {
 		"bsfcampus": {
-			"activated": "True",
+			"activated": true,
 			"version": "080916"
 		},
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"idc_import": {
-			"activated": "True",
+			"activated": true,
 			"content_name": ["2-Contenus/kb-bsfcampus/KB_Liste_contenus_bsf_campus.csv"]
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": true,
 			"name": ["ubuntudoc.fr","tedxlausanne2014.fr","tedxlausanne2013.fr","tedxlausanne2012.fr","tedxgeneva2014.fr","cest-pas-sorcier.fr","gutenberg.fr","vikidia.fr","wikisource.en","wikisource.fr","wikipedia.fr","wikipedia.wo","wikipedia.en"]
 		}
 	},	
 	"kb-civ-babylab": {
 		"bsfcampus": {
-			"activated": "False",
+			"activated": false,
 			"version": "080916"
 		},
 		"kalite": {
-			"activated": "False",
+			"activated": false,
 			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"idc_import": {
-			"activated": "False",
+			"activated": false,
 			"content_name": ["11-BABYLAB/CONTENUS/csvbabylab2.csv"]
 		},
 		"zim_install": {
-			"activated": "False",
+			"activated": false,
 			"name": ["wikistage.fr","vikidia.fr","universcience-tv.fr","e-penser.fr","deus-ex-silicium.fr","cest-pas-sorcier.fr","wikipedia.fr","wikiversity.fr","tedxlausanne2014.fr","tedxlausanne2013.fr","tedxlausanne2012.fr","tedxgeneva2014.fr"]
 		}
 	},
 	"kb-servir-ben": {
 		"bsfcampus": {
-			"activated": "True",
+			"activated": true,
 			"version": "100816"
 		},
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"idc_import": {
-			"activated": "True",
+			"activated": true,
 			"content_name": ["2-Contenus/logiciellibre/app.csv"]
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": true,
 			"name": ["ubuntudoc.fr","tedxlausanne2014.fr","tedxlausanne2013.fr","tedxlausanne2012.fr","tedxgeneva2014.fr","cest-pas-sorcier.fr","gutenberg.fr","vikidia.fr","wikisource.en","wikisource.fr","wikipedia.fr","wikipedia.wo","wikipedia.en"]
 		}
 	},
 	"idb-fra-cultura": {
 		"zim_install": {
-			"activated": "True",
+			"activated": true,
 			"name": ["ubuntudoc.fr","wikisource.fr","cest-pas-sorcier.fr"]
 		}
 	},
 	"idb-lbn-elmarj": {
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.8",
 			"language": ["fr"]
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": true,
 			"name": ["bil-tunisia.ar","wikiquote.ar","wikisource.ar","wikibooks.ar","wikiversity.ar","wiktionary.ar","wikipedia.ar"]
 		}
 	},
 	"idb-aus-queensland": {
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.8",
 			"language": ["fr"]
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": true,
 			"name": ["vikidia.en","gutenberg.en","wikipedia.en"]
 		}
 	},
 	"kb-esp-avanti": {
 		"kalite": {
-			"activated": "False",
+			"activated": false,
 			"version": "0.16.8",
 			"language": ["es"]
 		},
 		"zim_install": {
-			"activated": "False",
+			"activated": false,
 			"name": ["wikipedia.es","gutenberg.es"]
 		},
 		"idc_import": {
-			"activated": "False",
+			"activated": false,
 			"content_name": ["13-NICARALI/CSV-Nicarali.csv"]
 		}
 	},
 	"idb-grc-moria": {
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.8",
 			"language": ["fr"]
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": true,
 			"name": ["gutenberg.fr","vikidia.fr","wikipedia.fr"]
 		}
 	},
 	"kb-usa-p2pu": {
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.8",
 			"language": ["en"]
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": true,
 			"name": ["tedtechnology.en","tedscience.en","tedglobalissues.en","tedentertainment.en","teddesign.en","tedbusiness.en","wiktionary.en","wikipedia.en","gutenberg.en"]
 		}
 	},
 	"idb-bdi-bwagiriza": {
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.8",
 			"language": ["fr"]
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": true,
 			"name": ["gutenberg.fr","vikidia.fr","wikipedia.fr"]
 		}
 	},
 	"kb-mooc-cog": {
 		"koombookedu": {
-			"activated": "True",
+			"activated": true,
 			"version": "100816"
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": true,
 			"name": ["wikipedia.fr"]
 		}
 	},
 	"idb-bdi-musasa": {
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.8",
 			"language": ["fr"]
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": true,
 			"name": ["gutenberg.fr","vikidia.fr","wikipedia.fr"]
 		}
 	},
 	"idb-eth-melkadida": {
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.8",
 			"language": ["fr"]
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": true,
 			"name": ["gutenberg.fr","vikidia.fr","wikipedia.fr"]
 		}
 	},
 	"idb-sen-fap": {
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.8",
 			"language": ["fr"]
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": true,
 			"name": ["wikistage.fr","ubuntudoc.fr","ted.fr","tedxlausanne2014.fr","tedxlausanne2013.fr","tedxlausanne2012.fr","tedxgeneva2014.fr","wiktionary.fr","wikisource.fr","cest-pas-sorcier.fr","gutenberg.fr","wikipedia.wo","wikipedia.fr"]
 		}
 	},
 	"idb-bdi-makamba": {
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.8",
 			"language": ["fr"]
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": true,
 			"name": ["gutenberg.fr","vikidia.fr","wikipedia.fr"]
 		}
 	},
 	"idb-fra-aurore": {
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.8",
 			"language": ["fr"]
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": true,
 			"name": ["vikidia.fr","gutenberg.fr","wikipedia.fr"]
 		}
 	},
 	"kb-nic-nicarali": {
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.8",
 			"language": ["fr"]
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": true,
 			"name": ["wikipedia.es","gutenberg.es"]
 		}
 	},
 	"kb-bsfcampus-civ": {
 		"bsfcampus": {
-			"activated": "True",
+			"activated": true,
 			"version": "100816"
 		},
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.8",
 			"language": ["fr"]
 		},
 		"idc_import": {
-			"activated": "False",
+			"activated": false,
 			"content_name": ["2-Contenus/logiciellibre/app.csv","2-Contenus/kb-bsfcampus/KB_Liste_contenus_bsf_campus.csv"]
 		},
 		"zim_install": {
-			"activated": "False",
+			"activated": false,
 			"name": ["ubuntudoc.fr","tedxlausanne2014.fr","tedxlausanne2013.fr","tedxlausanne2012.fr","tedxgeneva2014.fr","cest-pas-sorcier.fr","gutenberg.fr","vikidia.fr","wikisource.en","wikisource.fr","wikipedia.fr","wikipedia.wo","wikipedia.en"]
 		}
 	},
 	"idb-grc-eleonas": {
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.8",
 			"language": ["fr"]
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": true,
 			"name": ["w2eu","gutenberg.mul","wikipedia.fa","wikipedia.ur","wikipedia.en","wikipedia.ar","wikipedia.ps"]
 		}
 	},
 	"kb-jor-croixrouge": {
 		"kalite": {
-			"activated": "False",
+			"activated": false,
 			"version": "0.16.8",
 			"language": ["en","ar"]
 		},
 		"zim_install": {
-			"activated": "False",
+			"activated": false,
 			"name": ["bil-tunisia.ar","wikiversity.ar","wikiversity.en","wikibooks.en","wikibooks.ar","wikiquote.en","wikiquote.ar","tedtechnology.en","tedscience.en","tedglobalissues.en","tedentertainment.en","teddesign.en","tedbusiness.en","gutenberg.en","vikidia.en","wikisource.en","wikisource.ar","wiktionary.ar","wiktionary.en","wikipedia.en","wikipedia.ar"]
 		},
 		"idc_import": {
-			"activated": "False",
+			"activated": false,
 			"content_name": ["2-Contenus/CSVKBJORDANIE.csv"]
 		}
 	},
 	"idb-fra-grandesynthe": {
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.8",
 			"language": ["fr"]
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": true,
 			"name": ["w2eu","mullah-piaz-digest.fa","bil-tunisia.ar","les-fondamentaux.fr","universcience-tv.fr","wikiversity.ar","wikiversity.fr","wiktionary.ku","wiktionary.ar","wiktionary.fa","wiktionary.fr","tedtechnology.en","tedscience.en","tedglobalissues.en","tedentertainment.en","teddesign.en","tedbusiness.en","cest-pas-sorcier.fr","dirtybiology.fr","wikipedia.fr","wikipedia.fa","wikipedia.ar","wikipedia.ku"]
 		}
 	},
 	"kb-eth-kytabu": {
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.8",
 			"language": ["fr"]
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": true,
 			"name": ["gutenberg.fr"]
 		}
 	},
 	"kb-cdf-fra": {
 		"zim_install": {
-			"activated": "False",
+			"activated": false,
 			"name": ["cest-pas-sorcier.fr","vikidia.fr","wikipedia.fr"]
 		}
 	},
 	"kb-gin-conakry": {
 		"bsfcampus": {
-			"activated": "True",
+			"activated": true,
 			"version": "100816"
 		},
 		"koombookedu": {
-			"activated": "True",
+			"activated": true,
 			"version": "100816"
 		},
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.8",
 			"language": ["fr"]
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": true,
 			"name": ["universcience-tv.fr","tedxlausanne2014.fr","tedxlausanne2013.fr","tedxlausanne2012.fr","tedxgeneva2014.fr","cest-pas-sorcier.fr","gutenberg.fr","wikipedia.fr"]
 		}
 	},
 	"idb-fra-jeanquarre": {
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.8",
 			"language": ["fr"]
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": true,
 			"name": ["tedxlausanne2014.fr","tedxlausanne2013.fr","tedxlausanne2012.fr","tedxgeneva2014.fr","wiktionary.fr","wikibooks.fr","wikisource.fr","cest-pas-sorcier.fr","gutenberg.fr","wikipedia.fa","wikipedia.ar","wikipedia.fr"]
 		}
 	},
 	"idb-fra-sarcelles": {
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.8",
 			"language": ["fr"]
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": true,
 			"name": ["les-fondamentaux.fr","universcience-tv.fr","wikiversity.fr","wiktionary.fr","cest-pas-sorcier.fr","dirtybiology.fr","gutenberg.fr","wikipedia.fr"]
 		}
 	},
 	"idb-lwb-detroit-usa": {
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.8",
 			"language": ["fr"]
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": true,
 			"name": ["gutenberg.fr","wikipedia.fr"]
 		}
 	},
 	"idb-fra-emmaus": {
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.8",
 			"language": ["fr"]
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": true,
 			"name": ["tedxlausanne2014.fr","tedxlausanne2013.fr","tedxlausanne2012.fr","tedxgeneva2014.fr","wiktionary.fr","wikibooks.fr","wikisource.fr","cest-pas-sorcier.fr","gutenberg.fr","wikipedia.fa","wikipedia.ar","wikipedia.fr"]
 		}
 	},
 	"kb-ifb-bdi": {
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.8",
 			"language": ["fr"]
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": true,
 			"name": ["gutenberg.fr","vikidia.fr","wikipedia.fr"]
 		}
 	},
 	"kb-rca-alliancefrancaise": {
 		"zim_install": {
-			"activated": "True",
+			"activated": true,
 			"name": [""]
 		}
 	},
 	"kb-bdi-tv5monde": {
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.8",
 			"language": ["fr"]
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": true,
 			"name": ["universcience-tv.fr","ubuntudoc.fr","tedxlausanne2014.fr","tedxlausanne2013.fr","tedxlausanne2012.fr","tedxgeneva2014.fr","wikiversity.fr","wiktionary.fr","wikivoyage.fr","wikibooks.fr","wikisource.fr","cest-pas-sorcier.fr","gutenberg.fr","wikipedia.en","wikipedia.rn","wikipedia.fr"]
 		}
 	},
 	"idb-irq-bardarash": {
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.8",
 			"language": ["fr"]
 		},
 		"zim_install": {
-			"activated": "False",
+			"activated": false,
 			"name": ["bil-tunisia.ar","gutenberg.en","tedtechnology.en","tedscience.en","tedglobalissues.en","tedentertainment.en","teddesign.en","tedbusiness.en","wikiversity.ar","wiktionary.ar","wiktionary.en","wikipedia.ar","wikipedia.en"]
 		}
 	},
 	"idb-bdi-kavumu": {
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.8",
 			"language": ["fr"]
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": true,
 			"name": ["gutenberg.fr","vikidia.fr","wikipedia.fr"]
 		}
 	},
 	"idb-eth-bokolmanyo": {
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.8",
 			"language": ["fr"]
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": true,
 			"name": ["gutenberg.fr","vikidia.fr","wikipedia.fr"]
 		}
 	},
 	"kb-usa-wmapache": {
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.8",
 			"language": ["fr"]
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": true,
 			"name": ["wiktionary.en","wikipedia.en","gutenberg.en"]
 		}
 	},
 	"idb-jor-alhashmi": {
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.8",
 			"language": ["fr"]
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": true,
 			"name": ["gutenberg.fr","vikidia.fr","wikipedia.fr"]
 		}
 	},
 	"idb-jor-azraq": {
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.8",
 			"language": ["fr"]
 		},
 		"zim_install": {
-			"activated": "False",
+			"activated": false,
 			"name": ["gutenberg.fr","vikidia.fr","wikipedia.fr"]
 		}
 	},
 	"idb-fra-calais": {
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.8",
 			"language": ["fr"]
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": true,
 			"name": ["vikidia.fr","gutenberg.fr","wikipedia.fr"]
 		}
 	},
 	"idb-grc-malakasa": {
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.8",
 			"language": ["en"]
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": true,
 			"name": ["wikipedia.ar","wikipedia.el","wikipedia.en","wikipedia.fa","wikipedia.ps","  wiktionary.ar","wiktionary.el","wiktionary.en","wiktionary.fa","wiktionary.ps","  wikiversity.ar","wikiversity.el","wikiversity.en","wikibooks.ar","wikibooks.el","wikibooks.en","wikibooks.fa","wikisource.ar","wikisource.el","wikisource.en","wikisource.fa","wikiquote.ar","wikiquote.el","wikiquote.en","tedxgeneva2014.fr","tedbusiness.en","teddesign.en","tedentertainment.en","tedglobalissues.en","tedscience.en","tedtechnology.en","vikidia.en","bil-tunisia.ar","mullah-piaz-digest.fa"]
 		},
 		"idc_import": {
-			"activated": "True",
+			"activated": true,
 			"content_name": ["2-Contenus/Csvmalakasa.csv"]
 		}
 	},
 	"kb-grc-malakasa": {
 		"zim_install": {
-			"activated": "True",
+			"activated": true,
 			"name": ["wikipedia.ar","wikipedia.en","wiktionary.ar","wiktionary.en","wikiversity.ar","wikiversity.en","wikibooks.ar","wikibooks.en","wikisource.ar","wikisource.en","wikiquote.ar","wikiquote.en","tedxgeneva2014.fr","tedbusiness.en","teddesign.en","tedentertainment.en","tedglobalissues.en","tedscience.en","tedtechnology.en","bil-tunisia.ar","gutenberg.mul"]
 		},
 		"idc_import": {
-			"activated": "True",
+			"activated": true,
 			"content_name": ["2-Contenus/CSVSICILE.csv"]
 		}
 	},
 	"kb-bsfcampus-cmr": {
 		"bsfcampus": {
-			"activated": "True",
+			"activated": true,
 			"version": "100816"
 		},
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"idc_import": {
-			"activated": "False",
+			"activated": false,
 			"content_name": ["2-Contenus/logiciellibre/app.csv","2-Contenus/kb-bsfcampus/KB_Liste_contenus_bsf_campus.csv"]
 		},
 		"zim_install": {
-			"activated": "False",
+			"activated": false,
 			"name": ["ubuntudoc.fr","tedxlausanne2014.fr","tedxlausanne2013.fr","tedxlausanne2012.fr","tedxgeneva2014.fr","cest-pas-sorcier.fr","gutenberg.fr","vikidia.fr","wikisource.en","wikisource.fr","wikipedia.fr","wikipedia.wo","wikipedia.en"]
 		}
 	},
 	"kb-tza-ambassadeDeFrance": {
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.8",
 			"language": ["fr"]
 		},
 		"idc_import": {
-			"activated": "False",
+			"activated": false,
 			"content_name": ["2-Contenus/csvkbtanzaniev2.csv"]
 		},
 		"zim_install": {
-			"activated": "False",
+			"activated": false,
 			"name": ["wikipedia.sw","wikipedia.fr","wikipedia.en","wiktionary.sw","wiktionary.fr","wiktionary.en","wikiversity.fr","wikiversity.en","wikibooks.fr","wikibooks.en","wikisource.fr","wikisource.en","tedtechnology.en","tedscience.en","tedglobalissues.en","tedentertainment.en","teddesign.en","tedbusiness.en","tedxlausanne2014.fr","tedxlausanne2013.fr","tedxlausanne2012.fr","tedxgeneva2014.fr","cest-pas-sorcier.fr","dirtybiology.fr","gutenberg.mul","universcience-tv.fr","vikidia.fr","vikidia.en","les-fondamentaux.fr","e-penser.fr","deus-ex-silicium.fr","bouquineux.fr","biologie-tout-compris.fr"]
 		}
 	},
 	"idb-deu-dusseldorf": {
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.8",
 			"language": ["fr"]
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": true,
 			"name": ["w2eu","wikipedia.en","wikipedia.fa","wikipedia.ar","wikipedia.de","gutenberg.de"]
 		}
 	},
 	"idb-jor-zaatari": {
 		"kalite": {
-			"activated": "False",
+			"activated": false,
 			"version": "0.16.8",
 			"language": ["en","ar"]
 		},
 		"zim_install": {
-			"activated": "False",
+			"activated": false,
 			"name": ["wikipedia.en","wikipedia.ar","wiktionary.en","wiktionary.ar","wikiversity.en","wikiversity.ar","wikibooks.en","wikibooks.ar","wikisource.en","wikisource.ar","wikiquote.en","wikiquote.ar","tedtechnology.en","tedscience.en","tedglobalissues.en","tedentertainment.en","teddesign.en","tedbusiness.en","ted-ed.en","tedmed.en","gutenberg.mul","crashcourse.en","vikidia.en"]
 		},
 		"idc_import": {
-			"activated": "False",
+			"activated": false,
 			"content_name": ["2-Contenus/csvjordanienrczaatari.csv"]
 		}
 	},
 	"idb-bsf-demoserver": {
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.9",
 			"language": ["fr","en","es"]
 		},
 		"zim_install": {
-			"activated": "False",
+			"activated": false,
 			"name": ["wikipedia.en","wikipedia.ar","wikipedia.es","gutenberg.mul","tedbusiness.en","teddesign.en","tedentertainment.en","tedglobalissues.en","tedscience.en","tedtechnology.en","vikidia.en","bil-tunisia.ar","mullah-piaz-digest.fa","world.map","athens.map"]
 		},
 		"idc_import": {
-			"activated": "False",
+			"activated": false,
 			"content_name": ["2-Contenus/csvcolombie.csv"]
 		}
 	},
 	"idb-fra-vdp2": {
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"zim_install": {
-			"activated": "False",
+			"activated": false,
 			"name": ["wikipedia.fr","gutenberg.fr","wiktionary.fr","biologie-tout-compris.fr","cest-pas-sorcier.fr","bouquineux.fr","dirtybiology.fr","e-penser.fr","les-fondamentaux.fr","universcience-tv.fr","tedxgeneva2014.fr","tedxlausanne2012.fr","tedxlausanne2013.fr","tedxlausanne2014.fr","tedxlausannechange2013.fr"]
 		},
 		"idc_import": {
-			"activated": "False",
+			"activated": false,
 			"content_name": ["2-Contenus/csvvdp2.csv"]
 		}
 	},
 	"idb-jor-hostcommunity": {
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.9",
 			"language": ["en"]
 		},
 		"zim_install": {
-			"activated": "False",
+			"activated": false,
 			"name": ["wikipedia.en","wikipedia.ar","wiktionary.en","wiktionary.ar","wikiversity.en","wikiversity.ar","wikibooks.en","wikibooks.ar","wikisource.en","wikisource.ar","wikiquote.en","wikiquote.ar","tedbusiness.en","teddesign.en","tedentertainment.en","tedglobalissues.en","tedscience.en","tedtechnology.en","ted-ed.en","tedmed.en","gutenberg.mul","vikidia.en","crashcourse.en","phet.en"]
 		},
 		"idc_import": {
-			"activated": "False",
+			"activated": false,
 			"content_name": ["2-Contenus/csvmafraq.csv "]
 		}
 	},
 	"kb-bdi-unicef": {
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"zim_install": {
-			"activated": "False",
+			"activated": false,
 			"name": ["wikipedia.sw","wikipedia.fr","ted-ed.en","biologie-tout-compris.fr","cest-pas-sorcier.fr","deus-ex-silicium.fr","dirtybiology.fr","e-penser.fr","les-fondamentaux.fr","universcience-tv.fr","gutenberg.fr","wiktionary.sw","wiktionary.fr"]
 		},
 		"idc_import": {
-			"activated": "False",
+			"activated": false,
 			"content_name": ["2-Contenus/csvburundiunicef.csv"]
 		}
 	},
 	"idb-goethe": {
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.9",
 			"language": ["en"]
 		},
 		"zim_install": {
-			"activated": "False",
+			"activated": false,
 			"name": ["wikipedia.en","wikipedia.ar","wiktionary.en","wiktionary.ar","wikiversity.en","wikiversity.ar","wikibooks.en","wikibooks.ar","wikisource.en","wikisource.ar","wikiquote.en","wikiquote.ar","tedbusiness.en","teddesign.en","tedentertainment.en","tedglobalissues.en","tedscience.en","tedtechnology.en","ted-ed.en","tedmed.en","gutenberg.mul","vikidia.en","crashcourse.en","phet.en"]
 		},
 		"idc_import": {
-			"activated": "False",
+			"activated": false,
 			"content_name": ["2-Contenus/csvmafraq.csv "]
 		}
 	},
 	"idb-col-llavedelsaber": {
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.9",
 			"language": ["en","es"]
 		},
 		"zim_install": {
-			"activated": "False",
+			"activated": false,
 			"name": ["gutenberg.es","wikipedia.es","vikidia.es","tedbusiness.en","teddesign.en","tedentertainment.en","tedglobalissues.en","tedscience.en","tedtechnology.en","ted-ed.en","tedmed.en","cinescuela.es","colombia.map"]
 		},
 		"idc_import": {
-			"activated": "False",
+			"activated": false,
 			"content_name": ["2-Contenus/csvcolombie.csv "]
 		}
 	},
 	"kb-bdi-irc": {
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"zim_install": {
-			"activated": "False",
+			"activated": false,
 			"name": ["wikipedia.sw","wikipedia.fr","tedxlausanne2014.fr","tedxlausanne2013.fr","tedxlausanne2012.fr","tedxgeneva2014.fr","biologie-tout-compris.fr","cest-pas-sorcier.fr","deus-ex-silicium.fr","dirtybiology.fr","e-penser.fr","les-fondamentaux.fr","universcience-tv.fr","gutenberg.fr","wiktionary.fr","wiktionary.sw"]
 		},
 		"idc_import": {
-			"activated": "False",
+			"activated": false,
 			"content_name": ["2-Contenus/csvircburundi.csv"]
 		}
 	},
 	"idb-fra-acelem": {
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"zim_install": {
-			"activated": "False",
+			"activated": false,
 			"name": ["placeholder.lol"]
 		},
 		"idc_import": {
-			"activated": "False",
+			"activated": false,
 			"content_name": ["2-Contenus/csv_acelem.csv"]
 		}
 	},
 	"idb-fra-marseilleville": {
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"zim_install": {
-			"activated": "False",
+			"activated": false,
 			"name": ["placeholder.lol"]
 		},
 		"idc_import": {
-			"activated": "False",
+			"activated": false,
 			"content_name": ["2-Contenus/csv_acelem.csv"]
 		}
 	},
 	"kb-rwa-giz": {
 		"zim_install": {
-			"activated": "True",
+			"activated": true,
 			"name": ["wikipedia.en","wiktionary.en","wikibooks.en","wikiquote.en","tedtechnology.en","tedscience.en","tedglobalissues.en","tedentertainment.en","teddesign.en","tedbusiness.en","gutenberg.en"]
 		},
 		"idc_import": {
-			"activated": "False",
+			"activated": false,
 			"content_name": ["2-Contenus/csvgiz_corrected.csv"]
 		}
 	},
 	"idb-fra-illeetvilaine": {
 		"zim_install": {
-			"activated": "False",
+			"activated": false,
 			"name": ["wikipedia.fr","wikiquote.fr","tedxgeneva2014.fr","gutenberg.fr","e-penser.fr","dirtybiology.fr"]
 		},
 		"idc_import": {
-			"activated": "False",
+			"activated": false,
 			"content_name": ["2-Contenus/csvilleetvilaine.csv"]
 		}
 	}
