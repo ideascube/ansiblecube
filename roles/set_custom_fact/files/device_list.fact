@@ -467,7 +467,7 @@
 	"kb-grc-malakasa": {
 		"zim_install": {
 			"activated": "True",
-			"name": ["wikipedia.ar","wikipedia.en","wiktionary.ar","wiktionary.en","wiktionary.ar","wikiversity.ar","wikiversity.en","wikibooks.ar","wikibooks.en","wikisource.ar","wikisource.en","wikiquote.ar","wikiquote.en","tedxgeneva2014.fr","tedbusiness.en","teddesign.en","tedentertainment.en","tedglobalissues.en","tedscience.en","tedtechnology.en","bil-tunisia.ar","gutenberg.mul"]
+			"name": ["wikipedia.ar","wikipedia.en","wiktionary.ar","wiktionary.en","wikiversity.ar","wikiversity.en","wikibooks.ar","wikibooks.en","wikisource.ar","wikisource.en","wikiquote.ar","wikiquote.en","tedxgeneva2014.fr","tedbusiness.en","teddesign.en","tedentertainment.en","tedglobalissues.en","tedscience.en","tedtechnology.en","bil-tunisia.ar","gutenberg.mul"]
 		},
 		"idc_import": {
 			"activated": "True",
