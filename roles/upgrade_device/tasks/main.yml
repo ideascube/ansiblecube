@@ -1,4 +1,7 @@
 ---
+- name: Change LED state for upgrading 
+  shell: echo default-on >/sys/class/leds/a20-olinuxino-lime2:green:usr/trigger
+  when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l'
 
 - name: Copy upgrade_ansible.sh
   copy: src=upgrade_ansible.sh dest=/tmp/upgrade_ansible.sh mode="u=rwx,g=r,o=r"
