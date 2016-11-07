@@ -91,7 +91,7 @@ function 3rd_party_app()
     read -r MEDIACENTER_PATH
     echo "Download offline ZIM files ? (true/false)"
     read -r KIWIX
-    echo "Offline content you whish to install : \"wikipedia.fr\",\"wikipedia.en\""
+    echo "Offline ZIM file you whish to install : \"wikipedia.fr\",\"wikipedia.en\""
     read -r KIWIX_FILE
 
     echo -e "
@@ -116,7 +116,7 @@ function 3rd_party_app()
         }
     }
 }
-    " > /tmp/pouet.facts
+    " > /etc/ansible/facts.d/device_list.fact
 }
 
 function help()
@@ -168,10 +168,10 @@ function help()
 
 # main
 
-# [ $EUID -eq 0 ] || {
-#     echo "Error: you have to be root to run this script." >&2
-#     exit 1
-# }
+[ $EUID -eq 0 ] || {
+    echo "Error: you have to be root to run this script." >&2
+    exit 1
+}
 
 [ $# -ne 0 ] || help
 
@@ -233,6 +233,7 @@ do
         shift # past argument
         ;;
 
+
         *)
             help
         ;;
@@ -252,8 +253,8 @@ if [[ "$START" = "1" ]]; then
         3rd_party_app
     fi
 
-    # [ -x /usr/local/bin/ansible ] || install_ansible
-    # [ -d /var/lib/ansible/local ] || clone_ansiblecube
+    [ -x /usr/local/bin/ansible ] || install_ansible
+    [ -d /var/lib/ansible/local ] || clone_ansiblecube
 
     echo "[+] Start ansible-pull... (log: /var/log/ansible-pull.log)"
     echo "Launching : $ansible_bin -C oneUpdateFile -d $ansible_folder -i hosts -U $git_repository main.yml --extra-vars "$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE" $TAGS"
