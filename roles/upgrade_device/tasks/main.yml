@@ -1,4 +1,4 @@
----
+  ---
 
 - name: Copy upgrade_ansible.sh
   copy: src=upgrade_ansible.sh dest=/tmp/upgrade_ansible.sh mode="u=rwx,g=r,o=r"
@@ -13,6 +13,9 @@
     path=/etc/ansible/facts.d
     recurse=yes
     state=directory
+
+- name: Create an INI file
+  file: path=/etc/ansible/facts.d/installed_software.fact state=touch 
 
 - name: Get ideascube version
   shell: dpkg-query -W  ideascube  | awk '{print $2}' ; echo
