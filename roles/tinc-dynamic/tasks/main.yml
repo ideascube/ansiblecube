@@ -138,7 +138,7 @@
     mode=0755
   notify:
     - reload tinc
-    - hello world
+    - Announce MAC
   tags: ['custom','update','rename']
 
 - name: create tinc-down file
