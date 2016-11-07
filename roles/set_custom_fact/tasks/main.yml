@@ -10,6 +10,7 @@
     src=device_list.fact
     dest=/etc/ansible/facts.d/device_list.fact
     mode=0666
+  when: configure is undefined or configure == false
 
 - set_fact: generic_project_name={{ ansible_hostname | regex_replace('-\d+', '') }}
 
