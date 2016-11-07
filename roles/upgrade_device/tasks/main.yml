@@ -1,4 +1,4 @@
-  ---
+---
 
 - name: Copy upgrade_ansible.sh
   copy: src=upgrade_ansible.sh dest=/tmp/upgrade_ansible.sh mode="u=rwx,g=r,o=r"
