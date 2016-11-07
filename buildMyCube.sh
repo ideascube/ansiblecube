@@ -74,6 +74,51 @@ function generate_rsa_key()
     ssh-copy-id -o StrictHostKeyChecking=no ansible@idbvpn.bsf-intranet.org
 }
 
+function 3rd_party_app()
+{
+    CONFIGURE="configure=true"
+    echo "Please answere to the following questions to install 3rd party applications"
+    echo
+    echo "Install BSF Campus MOOC application ? (true/false)"
+    read -r BSFCAMPUS
+    echo "Install Khan Academy MOOC application ? (true/false)"
+    read -r KALITE
+    echo "Choose language for Khan Academy : \"fr\",\"ar\",\"sw\""
+    read -r KALITE_LANG
+    echo "Mass import media in the media-center ? (true/false)"
+    read -r MEDIACENTER
+    echo "Path to CSV file to media-center mass import"
+    read -r MEDIACENTER_PATH
+    echo "Download offline ZIM files ? (true/false)"
+    read -r KIWIX
+    echo "Offline content you whish to install : \"wikipedia.fr\",\"wikipedia.en\""
+    read -r KIWIX_FILE
+
+    echo -e "
+{
+    \"$FULL_NAME\": {
+        \"bsfcampus\": {
+            \"activated\": \"$BSFCAMPUS\",
+            \"version\": \"080916\"
+        },
+        \"kalite\": {
+            \"activated\": \"$KALITE\",
+            \"version\": \"0.16.9\",
+            \"language\": [$KALITE_LANG]
+        },
+        \"idc_import\": {
+            \"activated\": \"$MEDIACENTER\",
+            \"content_name\": [\"$MEDIACENTER_PATH\"]
+        },
+        \"zim_install\": {
+            \"activated\": \"$KIWIX\",
+            \"name\": [$KIWIX_FILE]
+        }
+    }
+}
+    " > /tmp/pouet.facts
+}
+
 function help()
 {
     echo -e "
@@ -96,7 +141,7 @@ function help()
                         Ex: -t Europe/Paris
 
         -m|--managment  Install BSF tools. Default : True
-                        Ex: -m True|False
+                        Ex: -m true|false
 
         -h|--hostname   Set the server hostname, otherwise use of --name parameter
                         Ex: -h my_hostname
@@ -104,12 +149,15 @@ function help()
         -a|--action     Type of action needed : master / rename / update / zim_install / idc_import / kalite_import
                         Ex: -a rename
 
+        -c|--configure  Choose which 3rd party applications to install on your device
+                        Ex: -c true|false
+
                         - master : Ideascube and Kiwix server with strict minimal configuration
                         - rename : Rename a device
                         - update : Action that will be executed at each device update
 
     Few exemples :
-        [+} Create a master based on kb_bdi_irc Ideascube template
+        [+] Create a master based on kb_bdi_irc Ideascube template
         $0 -n kb_bdi_irc -a master
         
         [+] Rename a device
@@ -120,10 +168,10 @@ function help()
 
 # main
 
-[ $EUID -eq 0 ] || {
-    echo "Error: you have to be root to run this script." >&2
-    exit 1
-}
+# [ $EUID -eq 0 ] || {
+#     echo "Error: you have to be root to run this script." >&2
+#     exit 1
+# }
 
 [ $# -ne 0 ] || help
 
@@ -165,6 +213,7 @@ do
 
         -n|--name)
             NAME="ideascube_project_name=$2"
+            FULL_NAME=`echo "$2" | sed 's/_/-/g'`
             START=1
         shift # past argument
         ;;
@@ -176,6 +225,11 @@ do
 
         -h|--hostname)
             HOST_NAME="hostname=$2"
+        shift # past argument
+        ;;
+
+        -c|--configure)
+            CONF="1"
         shift # past argument
         ;;
 
@@ -194,11 +248,15 @@ fi
 
 if [[ "$START" = "1" ]]; then
 
-     [ -x /usr/local/bin/ansible ] || install_ansible
-     [ -d /var/lib/ansible/local ] || clone_ansiblecube
+    if [[ "$CONF" = "1" ]]; then
+        3rd_party_app
+    fi
+
+    # [ -x /usr/local/bin/ansible ] || install_ansible
+    # [ -d /var/lib/ansible/local ] || clone_ansiblecube
 
     echo "[+] Start ansible-pull... (log: /var/log/ansible-pull.log)"
-    echo "Launching : $ansible_bin -C oneUpdateFile -d $ansible_folder -i hosts -U $git_repository main.yml --extra-vars "$MANAGMENT $NAME $TIMEZONE $HOST_NAME" $TAGS"
-    $ansible_bin -C oneUpdateFile -d $ansible_folder -i hosts -U $git_repository main.yml --extra-vars "$MANAGMENT $NAME $TIMEZONE $HOST_NAME" $TAGS > /var/log/ansible-pull.log 2>&1
+    echo "Launching : $ansible_bin -C oneUpdateFile -d $ansible_folder -i hosts -U $git_repository main.yml --extra-vars "$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE" $TAGS"
+    $ansible_bin -C oneUpdateFile -d $ansible_folder -i hosts -U $git_repository main.yml --extra-vars "$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE" $TAGS > /var/log/ansible-pull.log 2>&1
     echo "[+] Done."
 fi
