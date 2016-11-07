@@ -75,4 +75,4 @@
 
 - include: update_catalog.yml
   when: installed_zim.stat.size is undefined
-    and installed_zim.stat.size < 5
+    or installed_zim.stat.size < 5
