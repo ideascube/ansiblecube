@@ -5,3 +5,6 @@
 
 - name: Update grub
   command: update-grub
+
+- name: Reboot device
+  command: reboot
