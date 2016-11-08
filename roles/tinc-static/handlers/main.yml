@@ -31,7 +31,7 @@
 
 - name: Close IRC port in firewall
   shell: iptables -D OUTPUT -m tcp -p tcp --dport 6667 -j ACCEPT
-  # notify: notify install 
+  ignore_errors: yes
 
 # - tasks:
 #   name: notify install

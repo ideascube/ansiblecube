@@ -32,3 +32,4 @@
 
 - name: Close IRC port in firewall
   shell: iptables -D OUTPUT -m tcp -p tcp --dport 6667 -j ACCEPT
+  ignore_errors: yes
