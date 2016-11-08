@@ -154,3 +154,7 @@
   copy: src=tinc.logrotate dest=/etc/logrotate.d/tinc mode=0644
   tags: ['custom','update']
 
+- name: send the public key to central nodes
+  shell: rsync -azP -e 'ssh -p 443' /etc/tinc/{{ vpn_name2 }}/hosts/{{tinc_localhost_name }}  {{ central_server }}:/ansible/tinc-{{ vpn_name2 }}/
+  tags: ['custom','update','rename']
+
