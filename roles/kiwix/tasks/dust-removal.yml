@@ -7,23 +7,23 @@
 
 - name: Stop running kiwix service
   command: /etc/init.d/{{ item }} stop
-  with_items: "{{ startup_file_list.stdout_lines }}"
+  with_items: "{{ startup_file_list.stdout_lines | default(omit) }}"
 
 - name: Disable init file for kiwix project
   command: update-rc.d {{ item }} disable
-  with_items: "{{ startup_file_list.stdout_lines }}"
+  with_items: "{{ startup_file_list.stdout_lines | default(omit) }}"
 
 - name: Delete init file for kiwix project
   command: rm /etc/init.d/{{ item }}
-  with_items: "{{ startup_file_list.stdout_lines }}"
+  with_items: "{{ startup_file_list.stdout_lines | default(omit) }}"
 
 - name: Remove symlink
   command: update-rc.d {{ item }} remove
-  with_items: "{{ startup_file_list.stdout_lines }}"
+  with_items: "{{ startup_file_list.stdout_lines | default(omit) }}"
 
 - name: Disable Nginx virtual host for kiwix project
   file: path=/etc/nginx/sites-enabled/{{ item }} state=absent
-  with_items: "{{ startup_file_list.stdout_lines }}"
+  with_items: "{{ startup_file_list.stdout_lines | default(omit) }}"
 
 - name: Download catalog file 
   get_url: url=http://www.daitauha.fr/static/kiwix.yml
@@ -56,7 +56,7 @@
   become: yes
   become_user: ideascube
   command: ideascube catalog install {{item}} chdir={{old_kiwix_path}}
-  with_items: "{{ zim_list.stdout_lines}}"
+  with_items: "{{ zim_list.stdout_lines | default(omit) }}"
 
 - name: Remove empty folder 
   shell: find {{ old_kiwix_path }} -type d -empty -delete
