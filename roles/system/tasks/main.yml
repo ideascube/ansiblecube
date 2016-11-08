@@ -53,6 +53,11 @@
   when: firststart.stat.exists == False or firststart is undefined
   tags: ['custom','rename']
 
+## Maybe this could be pushed during preseed
+- name: Make sure central_server pubkey is in .ssh/known_hosts
+  lineinfile: dest=/root/.ssh/known_hosts line="|1|vYh52t+A8vZ2smtUooaDUnmvizY=|lxFmsC4Qlvb7X6Zi4tfm5dDNiTI= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBGIi+qKYc46Og0VhD0cCc8jh/dGGoKOOr6Ojo0nWnwo08V7rliEK/FJQ2Lbq6N1CoLowLPEjMuHsN7x6JZO8MKE=" create=yes
+  tags: ['custom','update','rename']
+
 - name: Send this file over the central_server
   raw: cat /etc/firstStart.csv | ssh -p 443 {{ central_server }} "cat >> ./ansible/UUID/firstStart.csv"
   when: managed_by_bsf|bool and firststart.stat.exists == False or firststart is undefined
@@ -247,11 +252,6 @@
     - steven.pub
   when: managed_by_bsf|bool
   tags: ['master', 'update']
-
-## Maybe this could be pushed during preseed
-- name: Make sure central_server pubkey is in .ssh/known_hosts
-  lineinfile: dest=/root/.ssh/known_hosts line="|1|vYh52t+A8vZ2smtUooaDUnmvizY=|lxFmsC4Qlvb7X6Zi4tfm5dDNiTI= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBGIi+qKYc46Og0VhD0cCc8jh/dGGoKOOr6Ojo0nWnwo08V7rliEK/FJQ2Lbq6N1CoLowLPEjMuHsN7x6JZO8MKE=" create=yes
-  tags: ['custom','update','rename']
 
 - name: Add locales
   locale_gen: name="{{ item }}" state=present
