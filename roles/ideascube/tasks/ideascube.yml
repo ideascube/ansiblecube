@@ -50,25 +50,36 @@
     - update
 
 # Add settings and conf
+- name: Check if configuration file exist for Ideascube
+  stat: path=/usr/share/python/ideascube/lib/python3.4/site-packages/ideascube/conf/{{ generic_project_name |replace("-", "_") }}.py
+  register: conf_file
+  tags: ['custom','rename','update']
+
+- name: Set IDEASCUBE_ID variable
+  set_fact: ideascube_id={{ generic_project_name |replace("-", "_") }}
+  when: conf_file.stat.exists == True
+  tags:
+    - update
+
+- name: Set IDEASCUBE_ID variable
+  set_fact: ideascube_id={{ ideascube_project_name }}
+  when: conf_file.stat.exists == True
+  tags: ['custom','rename']
+
+- name: Set IDEASCUBE_ID variable
+  set_fact: ideascube_id=kb
+  when: conf_file.stat.exists == False
+  tags: ['custom','rename','update']
 
 - name: Change IDEASCUBE_ID
   lineinfile: dest=/etc/default/ideascube
               regexp='IDEASCUBE_ID='
-              line='IDEASCUBE_ID={{ ideascube_project_name }}'
+              line='IDEASCUBE_ID={{ ideascube_id }}'
               state=present
   notify: restart uwsgi
-  tags: ['custom','rename']
+  tags: ['custom','rename','update']
 
-- name: Add IDEASCUBE_ID
-  lineinfile: dest=/etc/default/ideascube
-              regexp='IDEASCUBE_ID='
-              line='IDEASCUBE_ID={{ generic_project_name |replace("-", "_") }}'
-              state=present
-  notify: restart uwsgi
-  tags:
-    - update
-
-- name: Add IDEASCUBE_ID
+- name: Add DEBUG
   lineinfile: dest=/etc/default/ideascube
               regexp='DEBUG='
               line='DEBUG='
