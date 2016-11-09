@@ -33,6 +33,7 @@
   apt: name=ideascube state=latest update_cache=yes force=yes dpkg_options="force-confnew"
   # apt: name=ideascube=0.12.2 update_cache=yes force=yes dpkg_options="force-confnew"
   # when: ideascube_version | version_compare('0.12.2', '<')
+  register: is_upgraded
   tags: ['master', 'custom','update']
 
 - name: Remove the unauthenticated hack
