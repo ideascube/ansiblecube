@@ -2,6 +2,12 @@
 - hosts: localhost
 # - hosts: SystemPushInstall
 
+  pre_tasks:
+    - name: Set the LED steady before upgrading !!!
+      shell: echo default-on >/sys/class/leds/a20-olinuxino-lime2:green:usr/trigger
+      when: ansible_architecture == 'armv7l'
+      tags: [ 'master', 'custom', 'update','idc_import','zim_install','kalite_import' ]
+
   roles:
     - { role: set_custom_fact, tags: [ 'master', 'custom', 'update','idc_import','zim_install','kalite_import' ] }
     - system
@@ -50,3 +56,9 @@
         and ansible_local.device_list[generic_project_name].idc_import.activated|bool == True
         and ansible_default_ipv4.gateway == "{{ gateway }}"
       tags: ['custom', 'update','idc_import']
+
+  post_tasks:
+    - name: Heartbeat mode on KoomBook LED, update is over !!!
+      shell: echo heartbeat >/sys/class/leds/a20-olinuxino-lime2:green:usr/trigger
+      when: ansible_architecture == 'armv7l'
+      tags: [ 'master', 'custom', 'update','idc_import','zim_install','kalite_import' ]
