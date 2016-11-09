@@ -42,7 +42,7 @@
 - name: Enable cards on homepage for ideascube upgrading from < 0.13.0
   become: yes
   become_user: ideascube
-  commande: ideascube reset_home
+  command: ideascube reset_home
   when: ideascube_oldversion | version_compare('0.13.0', '<')
     and is_upgraded.changed == True
   tags:
@@ -105,7 +105,7 @@
 - name: Enable cards on homepage for ideascube upgrading to > 0.13
   become: yes
   become_user: ideascube
-  commande: ideascube catalog cache update
+  command: ideascube catalog cache update
   when: ideascube_oldversion | version_compare('0.13.0', '>') 
     and ideascube_version | version_compare('0.15.0', '>=')
     and is_upgraded.changed == True
