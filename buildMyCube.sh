@@ -125,10 +125,6 @@ function help()
 
     [+] Build My Cube [+]
 
-    Add your device_name in : 
-     - https://github.com/ideascube/ansiblecube/blob/oneUpdateFile/roles/set_custom_fact/files/device_list.fact
-     - https://github.com/ideascube/ideascube/tree/master/ideascube/conf
-
     Usage:
 
     $0 [-t|--timezone] [-m|--managment] [-h|--hostname] [-a|--action] -n device_name
