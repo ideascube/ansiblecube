@@ -198,7 +198,12 @@
 - name: Drop hosts file on device
   template: src=hosts.j2 dest=/etc/hosts
   when: firststart.stat.exists == False or firststart is undefined
-  tags: ['master', 'custom','rename','update']
+  tags: ['master', 'custom','rename']
+
+- name: Drop hosts file on device
+  template: src=hosts_update.j2 dest=/etc/hosts
+  tags:
+    - update
 
 - name: An hostname can not have _ so we are switching to -, python can not have - so using _ sometime too
   hostname: name={{ idc_uniq_device_name |replace("_", "-") }}
