@@ -195,21 +195,10 @@
   tags:
     - master
 
-- name: Add domain name for loopback interface
-  lineinfile: dest=/etc/hosts
-    regexp='localhost'
-    insertafter='localhost'
-    line='127.0.0.1 localhost {{ idc_uniq_device_name |replace("_", "-") }} {{ idc_uniq_device_name |replace("_", "-") }}.lan {{ hostname }}'
+- name: Drop hosts file on device
+  template: src=hosts.j2 dest=/etc/hosts
   when: firststart.stat.exists == False or firststart is undefined
-  tags: ['master', 'custom','rename']
-
-- name: Add domain name for hotspot interface
-  lineinfile: dest=/etc/hosts
-    regexp='^'
-    line='{{hotspotip}} {{ idc_uniq_device_name |replace("_", "-") }} {{ idc_uniq_device_name |replace("_", "-") }}.lan {{ hostname }}'
-    state=present
-  when: firststart.stat.exists == False or firststart is undefined
-  tags: ['master', 'custom','rename']
+  tags: ['master', 'custom','rename','update']
 
 - name: An hostname can not have _ so we are switching to -, python can not have - so using _ sometime too
   hostname: name={{ idc_uniq_device_name |replace("_", "-") }}

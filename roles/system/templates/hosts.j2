@@ -1,0 +1,5 @@
+127.0.0.1 localhost {{ idc_uniq_device_name |replace("_", "-") }} {{ idc_uniq_device_name |replace("_", "-") }}.lan koombook.lan kiwix.koombook.lan khanacademy.koombook.lan sites.koombook.lan
+fe00::0     ip6-localnet
+ff00::0     ip6-mcastprefix
+ff02::1     ip6-allnodes
+192.168.2.1 {{ idc_uniq_device_name |replace("_", "-") }} {{ idc_uniq_device_name |replace("_", "-") }}.lan koombook.lan kiwix.koombook.lan khanacademy.koombook.lan sites.koombook.lan
