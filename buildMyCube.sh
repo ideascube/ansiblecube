@@ -127,7 +127,7 @@ function help()
 
     Usage:
 
-    $0 [-t|--timezone] [-m|--managment] [-h|--hostname] [-a|--action] -n device_name
+    $0 [-t|--timezone] [-m|--managment] [-h|--hostname] [-a|--action] [-c|--configure] -n device_name
 
     Arguments : 
         -n|--name       Name of Ideascube configuration file
