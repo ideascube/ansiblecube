@@ -131,6 +131,7 @@
    - httpie
    - lshw
    - hwinfo
+   - sqlite3
   tags:
     - master
 
