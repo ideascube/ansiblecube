@@ -32,7 +32,7 @@
   tags: ['custom','update','rename']
 
 - name: Set the central server variable for KoomBook EDU
-  set_fact: central_server_host="http://mook-api.bibliosansfrontieres.fr/"
+  set_fact: central_server_host="http://koombookedu.api.bibliosansfrontieres.org/"
   when: mook_name == 'koombookedu'
   tags: ['custom','update','rename']
 
