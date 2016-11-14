@@ -5,7 +5,7 @@
   command: iptables -t filter -I OUTPUT -j ACCEPT
 
 - name: Install nfs-common
-  apt: name=nfs-common state=present
+  apt: name=cifs-utils state=present
 
 - name: Create a working dir for NFS shared
   file: path=/media/synology/ state=directory
