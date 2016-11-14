@@ -240,7 +240,6 @@ done
 if [[ -x /usr/bin/ideascube && "$LOCK_ACTION" = "0" ]]
 then
     TAGS="--tags custom"
-    MANAGMENT=""
 fi
 
 if [[ "$START" = "1" ]]; then
