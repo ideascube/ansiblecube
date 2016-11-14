@@ -668,5 +668,16 @@
 			"activated": "False",
 			"content_name": ["2-Contenus/csv_acelem.csv"]
 		}
+	},
+	"kb-cog-cog": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.9",
+			"language": ["fr"]
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": ["wikipedia.fr","universcience-tv.fr","les-fondamentaux.fr","icd10.fr","gutenberg.fr","e-penser.fr","deus-ex-silicium.fr","wikiquote.fr","tedxlausanne2014.fr","tedxlausanne2013.fr","tedxlausanne2012.fr","tedxgeneva2014.fr"]
+		}
 	}
 }
