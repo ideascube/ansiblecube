@@ -191,6 +191,7 @@ do
                 ;;
             esac
 
+            LOCK_ACTION=1
             TAGS="--tags $2"
         
         shift # past argument
@@ -200,8 +201,10 @@ do
         
             if [ "$2" = "True" ]
             then
-                MANAGMENT="managed_by_bsf=True" 
+                MANAGMENT="managed_by_bsf=True"
                 [ -f "$SSH_KEY" ] || generate_rsa_key
+            else
+                MANAGMENT="managed_by_bsf=False"
             fi 
 
         shift # past argument
