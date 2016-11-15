@@ -103,6 +103,12 @@
   tags: 
     - update
 
+- name: Set Ideascube name
+  become: yes
+  become_user: ideascube
+  command: ideascube config set server site-name {{ hostname }}
+  tags: ['master', 'custom']
+
 - name: Get ideascube version
   shell: dpkg-query -W  ideascube  | awk '{print $2}' ; echo
   register: ideascube_newversion
