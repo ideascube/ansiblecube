@@ -70,14 +70,12 @@
 - name: Run apt-get update  
   shell: apt-get update ; echo
   register: result
-  tags:
-    - update
+  tags: ['custom','update']
 
 - name: Fix broken package
   shell: dpkg --configure -a
   when: "'dpkg --configure -a' in result.stderr"
-  tags:
-    - update
+  tags: ['custom','update']
 
 - name: Remove unwanted packages before upgrading
   apt: name={{ item }} state=absent purge=yes
