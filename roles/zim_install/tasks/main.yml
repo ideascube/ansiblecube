@@ -13,6 +13,13 @@
 - name: Disk Usage on /
   debug: var=df.stdout_lines
 
+- name: Use the Kiwix mirror if at BSF
+  lineinfile: dest=/etc/hosts
+              regexp='^'
+              line='10.10.9.23 download.kiwix.org'
+              state=present
+  when: ansible_default_ipv4.gateway == "{{ gateway }}"
+
 - name: Download/install ZIM files from Kiwix catalog then remove from local cache
   become: yes
   become_user: ideascube
@@ -25,3 +32,10 @@
   changed_when: False
 - name: Disk Usage on /
   debug: var=df.stdout_lines
+
+- name: Delete Kiwix mirror if at BSF
+  lineinfile: dest=/etc/hosts
+              regexp='^'
+              line='^10.10.9.23'
+              state=absent
+  when: ansible_default_ipv4.gateway == "{{ gateway }}"
