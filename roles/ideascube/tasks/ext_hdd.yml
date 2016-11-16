@@ -1,6 +1,6 @@
 ---
 - name: Ensure that Ideascube folder belong the ideascube user 
-  file: path=/media/hdd/ideascube/ owner={{ username }} group={{ username }} recurse=yes
+  file: path=/media/hdd/ideascube/ owner={{ username }} group={{ username }} recurse=yes state=directory
   tags: 
     - update
     

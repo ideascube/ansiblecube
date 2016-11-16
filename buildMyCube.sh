@@ -77,8 +77,19 @@ function generate_rsa_key()
 function 3rd_party_app()
 {
     CONFIGURE="configure=true"
-    echo "Please answere to the following questions to install 3rd party applications"
-    echo
+	dialog --title 'Message' --msgbox 'Please answere to the following questions to install 3rd party applications' 5 80
+	dialog --title "Message"  --yesno "Install Khan Academy MOOC application ?" 6 25
+	kalite=$?
+
+	if [ "$kalite" == "0" ]
+	then
+		KALITE=True
+		dialog --checklist "Choose Khan Academy supported language:" 20 60 3 \
+				1 fr on\
+				2 ar off\
+				3 es off 2> KALITE_LANG
+	fi
+	echo "LANG $KALITE_LANG"
     echo "Install BSF Campus MOOC application ? (true/false)"
     read -r BSFCAMPUS
     echo "Install Khan Academy MOOC application ? (true/false)"
@@ -129,7 +140,7 @@ function help()
 
     $0 [-t|--timezone] [-m|--managment] [-h|--hostname] [-a|--action] [-c|--configure] -n device_name
 
-    Arguments : 
+    Arguments :
         -n|--name       Name of Ideascube configuration file
                         Ex: -n kb_mooc_cog
 
@@ -155,7 +166,7 @@ function help()
     Few exemples :
         [+] Create a master based on kb_bdi_irc Ideascube template
         $0 -n kb_bdi_irc -a master
-        
+
         [+] Rename a device
         $0 -n kb_bdi_irc -t Europe/Paris -a rename
      "
@@ -177,7 +188,7 @@ do
     case $1 in
         -a|--action)
 
-            case $2 in 
+            case $2 in
                 "rename")
                     LOCK_ACTION=1
                     MANAGMENT=""
@@ -193,19 +204,19 @@ do
 
             LOCK_ACTION=1
             TAGS="--tags $2"
-        
+
         shift # past argument
         ;;
 
         -m|--managment)
-        
+
             if [ "$2" = "True" ]
             then
                 MANAGMENT="managed_by_bsf=True"
                 [ -f "$SSH_KEY" ] || generate_rsa_key
             else
                 MANAGMENT="managed_by_bsf=False"
-            fi 
+            fi
 
         shift # past argument
         ;;
