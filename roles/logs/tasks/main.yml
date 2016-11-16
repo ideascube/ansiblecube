@@ -4,6 +4,10 @@
     owner=root group=root mode=0644
   tags: ['master','update']
 
+- name: Configure ansible-pull logs rotation
+  template: src=ansible-pull.logrotate.j2 dest=/etc/logrotate.d/ansible-pull owner=root group=root mode=0644
+  tags: ['master','update']
+
 - name: copy hdw info script
   copy: src=hdw_info.sh dest=/home/ideascube/hdw_info.sh mode=755
   tags: ['master','update']
