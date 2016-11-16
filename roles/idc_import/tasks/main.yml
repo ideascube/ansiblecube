@@ -4,7 +4,7 @@
 - name: Open all outgoing connection to allow NFS
   command: iptables -t filter -I OUTPUT -j ACCEPT
 
-- name: Install nfs-common
+- name: Install cifs-utils
   apt: name=cifs-utils state=present
 
 - name: Create a working dir for NFS shared
