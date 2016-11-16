@@ -223,7 +223,7 @@
         ssh_key_bits=2048
         ssh_key_file=.ssh/id_rsa
         password={{ password }}
-  when: managed_by_bsf|bool
+        update_password=on_create
   tags:
     - master
 
