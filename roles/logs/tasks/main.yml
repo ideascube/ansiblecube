@@ -1,6 +1,6 @@
 ---
 - name: Ensure logrotate is configured to use dateext
-  template: src=000-dateext-for-all.j2 dest=/etc/logrotate.d/000-dateext-for-all 
+  template: src=000-dateext-for-all.j2 dest=/etc/logrotate.d/000-dateext-for-all
     owner=root group=root mode=0644
   tags: ['master','update']
 
@@ -13,6 +13,5 @@
   tags: ['master','update']
 
 - name: Copy push_log.sh
-  template: src=push_log.sh.j2 dest=/etc/NetworkManager/dispatcher.d/push_log 
-    mode=755
+  template: src=push_log.sh.j2 dest=/etc/NetworkManager/dispatcher.d/push_log mode=755
   tags: ['master','update']
