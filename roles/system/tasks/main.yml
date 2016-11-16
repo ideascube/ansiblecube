@@ -23,6 +23,11 @@
   tags:
     - rename
 
+- name: Create installed_software.fact file
+  file: path=/etc/ansible/facts.d/installed_software.fact state=touch
+  tags:
+    - master
+
 - name: Register if the device is managed by BSF or not
   ini_file: dest=/etc/ansible/facts.d/installed_software.fact
     section=management
