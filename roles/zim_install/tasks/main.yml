@@ -15,7 +15,7 @@
 
 - name: Use the Kiwix mirror if at BSF
   lineinfile: dest=/etc/hosts
-              regexp='^'
+              regexp='10.10.9.23 download.kiwix.org'
               line='10.10.9.23 download.kiwix.org'
               state=present
   when: ansible_default_ipv4.gateway == "{{ gateway }}"
