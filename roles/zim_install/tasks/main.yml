@@ -35,7 +35,6 @@
 
 - name: Delete Kiwix mirror if at BSF
   lineinfile: dest=/etc/hosts
-              regexp='^'
-              line='^10.10.9.23'
+              regexp='10.10.9.23'
               state=absent
   when: ansible_default_ipv4.gateway == "{{ gateway }}"
