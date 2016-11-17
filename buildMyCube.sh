@@ -259,6 +259,7 @@ fi
 if [[ "$START" = "1" ]]; then
 
     if [[ "$CONF" = "1" ]]; then
+        apt-get install dialog
         3rd_party_app
     fi
 
