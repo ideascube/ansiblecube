@@ -58,12 +58,12 @@ function clone_ansiblecube()
     internet_check
 
     echo "[+] Clone ansiblecube repo..."
-    mkdir --mode 0755 -p /var/lib/ansible/local
-    cd /var/lib/ansible/
+    mkdir --mode 0755 -p ${ANSIBLECUBE_PATH}
+    cd ${ANSIBLECUBE_PATH}/../
     git clone https://github.com/ideascube/ansiblecube.git local
 
     mkdir --mode 0755 -p /etc/ansible
-    cp /var/lib/ansible/local/hosts /etc/ansible/hosts
+    cp ${ANSIBLECUBE_PATH}/hosts /etc/ansible/hosts
 }
 
 function generate_rsa_key()
@@ -77,7 +77,7 @@ function generate_rsa_key()
 function 3rd_party_app()
 {
     CONFIGURE="configure=true"
-	dialog --title 'Message' --msgbox 'Please answere to the following questions to install 3rd party applications' 5 80
+	dialog --title 'Message' --msgbox 'Please answer the following questions to install 3rd party applications' 5 80
 	dialog --title "Message"  --yesno "Install Khan Academy MOOC application ?" 6 25
 	install_kalite=$?
 
@@ -264,7 +264,7 @@ if [[ "$START" = "1" ]]; then
     fi
 
     [ -x /usr/local/bin/ansible ] || install_ansible
-    [ -d /var/lib/ansible/local ] || clone_ansiblecube
+    [ -d ${ANSIBLECUBE_PATH} ] || clone_ansiblecube
 
     echo "[+] Start ansible-pull... (log: /var/log/ansible-pull.log)"
     echo "Launching : $ANSIBLE_BIN -C oneUpdateFile -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars "$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE" $TAGS"
