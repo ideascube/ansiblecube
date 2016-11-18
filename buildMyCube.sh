@@ -62,7 +62,7 @@ function clone_ansiblecube()
     cd ${ANSIBLECUBE_PATH}/../
     git clone https://github.com/ideascube/ansiblecube.git local
 
-    mkdir --mode 0755 -p /etc/ansible
+    mkdir --mode 0755 -p /etc/ansible/facts.d
     cp ${ANSIBLECUBE_PATH}/hosts /etc/ansible/hosts
 }
 
