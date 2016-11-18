@@ -41,13 +41,15 @@ EOF
 
 function install_ansible()
 {
+    echo "[+] Checking for internet connectivity..."
     internet_check
 
-    echo "[+] Install ansible..."
+    echo "[+] Updating APT cache..."
     update_sources_list
     apt-get update
-    apt-get install -y python-pip git python-dev libffi-dev libssl-dev gnutls-bin
 
+    echo "[+] Install ansible..."
+    apt-get install -y python-pip git python-dev libffi-dev libssl-dev gnutls-bin
     pip install -U distribute
     pip install ansible markupsafe
     pip install cryptography --upgrade
@@ -55,6 +57,7 @@ function install_ansible()
 
 function clone_ansiblecube()
 {
+    echo "[+] Checking for internet connectivity..."
     internet_check
 
     echo "[+] Clone ansiblecube repo..."
