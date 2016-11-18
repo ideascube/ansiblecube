@@ -46,10 +46,10 @@ function install_ansible()
 
     echo "[+] Updating APT cache..."
     update_sources_list
-    apt-get update
+    apt-get update --quiet
 
     echo "[+] Install ansible..."
-    apt-get install -y python-pip git python-dev libffi-dev libssl-dev gnutls-bin
+    apt-get install --quiet -y python-pip git python-dev libffi-dev libssl-dev gnutls-bin
     pip install -U distribute
     pip install ansible markupsafe
     pip install cryptography --upgrade
@@ -262,7 +262,7 @@ fi
 if [[ "$START" = "1" ]]; then
 
     if [[ "$CONF" = "1" ]]; then
-        apt-get install dialog
+        apt-get --quiet install dialog
         3rd_party_app
     fi
 
