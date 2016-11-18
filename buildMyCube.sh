@@ -9,9 +9,9 @@ TAGS="--tags master,custom"
 LOCK_ACTION=0
 
 # configuration
-ansible_bin="/usr/local/bin/ansible-pull"
-ansible_folder="/var/lib/ansible/local"
-git_repository="https://github.com/ideascube/ansiblecube.git"
+ANSIBLE_BIN="/usr/local/bin/ansible-pull"
+ANSIBLECUBE_PATH="/var/lib/ansible/local"
+GIT_REPO_URL="https://github.com/ideascube/ansiblecube.git"
 
 # functions
 function internet_check()
@@ -79,9 +79,9 @@ function 3rd_party_app()
     CONFIGURE="configure=true"
 	dialog --title 'Message' --msgbox 'Please answere to the following questions to install 3rd party applications' 5 80
 	dialog --title "Message"  --yesno "Install Khan Academy MOOC application ?" 6 25
-	kalite=$?
+	install_kalite=$?
 
-	if [ "$kalite" == "0" ]
+	if [ "$install_kalite" == "0" ]
 	then
 		KALITE=True
 		dialog --checklist "Choose Khan Academy supported language:" 20 60 3 \
@@ -267,7 +267,7 @@ if [[ "$START" = "1" ]]; then
     [ -d /var/lib/ansible/local ] || clone_ansiblecube
 
     echo "[+] Start ansible-pull... (log: /var/log/ansible-pull.log)"
-    echo "Launching : $ansible_bin -C oneUpdateFile -d $ansible_folder -i hosts -U $git_repository main.yml --extra-vars "$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE" $TAGS"
-    $ansible_bin -C oneUpdateFile -d $ansible_folder -i hosts -U $git_repository main.yml --extra-vars "$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE" $TAGS > /var/log/ansible-pull.log 2>&1
+    echo "Launching : $ANSIBLE_BIN -C oneUpdateFile -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars "$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE" $TAGS"
+    $ANSIBLE_BIN -C oneUpdateFile -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars "$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE" $TAGS > /var/log/ansible-pull.log 2>&1
     echo "[+] Done."
 fi
