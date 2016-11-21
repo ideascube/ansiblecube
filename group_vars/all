@@ -23,6 +23,4 @@ zim_path: /var/ideascube/kiwix
 
 #Domaine name
 kalite_server_name: khanacademy.{{hostname}}
-mook_api_server_name: api.{{ mook_name }}.{{ hostname }}
-mook_front_server_name: "{{ mook_name }}.{{ hostname }}"
 appinventor_server_name: appinventor.{{hostname}}
