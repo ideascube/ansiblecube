@@ -24,7 +24,7 @@
   become: yes
   become_user: ideascube
   shell: ideascube catalog install {{ item }} && rm -f /var/cache/ideascube/catalog/packages/{{ item }}-*
-  with_items: "{{ ansible_local.device_list[generic_project_name].zim_install.name }}"
+  with_items: "{{ ansible_local.device_list[generic_project_name].zim_install.name | default(omit) }}"
 
 - name: Check the disk usage
   shell: df -h /
