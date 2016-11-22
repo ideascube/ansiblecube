@@ -9,6 +9,7 @@ TAGS="--tags master,custom"
 LOCK_ACTION=0
 
 # configuration
+ANSIBLE_ETC="/etc/ansible/facts.d/"
 ANSIBLE_BIN="/usr/local/bin/ansible-pull"
 ANSIBLECUBE_PATH="/var/lib/ansible/local"
 GIT_REPO_URL="https://github.com/ideascube/ansiblecube.git"
@@ -80,57 +81,78 @@ function generate_rsa_key()
 function 3rd_party_app()
 {
     CONFIGURE="configure=true"
-	dialog --title 'Message' --msgbox 'Please answer the following questions to install 3rd party applications' 5 80
-	dialog --title "Message"  --yesno "Install Khan Academy MOOC application ?" 6 25
-	install_kalite=$?
+    KALITE=False
+    MEDIACENTER=False
+    ZIM=False
 
-	if [ "$install_kalite" == "0" ]
-	then
-		KALITE=True
-		dialog --checklist "Choose Khan Academy supported language:" 20 60 3 \
-				1 fr on\
-				2 ar off\
-				3 es off 2> KALITE_LANG
-	fi
-	echo "LANG $KALITE_LANG"
-    echo "Install BSF Campus MOOC application ? (true/false)"
-    read -r BSFCAMPUS
-    echo "Install Khan Academy MOOC application ? (true/false)"
-    read -r KALITE
-    echo "Choose language for Khan Academy : \"fr\",\"ar\",\"sw\""
-    read -r KALITE_LANG
-    echo "Mass import media in the media-center ? (true/false)"
-    read -r MEDIACENTER
-    echo "Path to CSV file to media-center mass import"
-    read -r MEDIACENTER_PATH
-    echo "Download offline ZIM files ? (true/false)"
-    read -r KIWIX
-    echo "Offline ZIM file you whish to install : \"wikipedia.fr\",\"wikipedia.en\""
-    read -r KIWIX_FILE
+    mkdir -p "$ANSIBLE_ETC"
 
-    echo -e "
+    dialog --msgbox 'Please answere to the following questions to install 3rd party applications' 5 80
+
+    if (dialog  --yesno "Install Khan Academy MOOC application ?" 5 50) then
+        KALITE=True
+        lang=$(dialog --separate-output --checklist "Choose Khan Academy supported language:" 20 60 3 \
+                fr French on\
+                ar Arabic off\
+                es Spanish off 3>&1 1>&2 2>&3 3>&-)
+
+        if [ $? = 0 ]
+        then
+            KALITE_LANG=`echo $lang | sed 's/ /","/g'`
+        else
+            exit 0;
+        fi
+    fi
+
+    if (dialog  --yesno "Mass import media in the media-center ?" 5 60) then
+        MEDIACENTER=True
+
+        csv_path=$(dialog --stdout --title "Media-center" --inputbox "Path to CSV file on your device:" 8 40 \
+                "/tmp/my_content.csv")
+
+        if [ $? = 0 ]
+        then
+            CSV_FILE_PATH=$csv_path
+        else
+            exit 0;
+        fi
+    fi
+
+    if (dialog  --yesno "Do you want to download offline packages ?" 5 60) then
+        ZIM=True
+        
+        wget http://catalog.ideascube.org/kiwix.yml -O /tmp/kiwix.yml
+        zim_files=$(egrep "\.[a-z][a-z]:|\.[a-z][a-z][a-z]:|size" /tmp/kiwix.yml | sed 's/    size: //' | sed 's/^[ \t]*//;s/[ \t]*$//' | sed 's/://')
+
+        cmd=(dialog --stdout --no-items \
+                --separate-output \
+                --ok-label "Add" \
+                --checklist "Select packages to install :" 100 100 40)
+        choices=$("${cmd[@]}" ${zim_files})
+
+        ZIM_LIST=`echo $choices | sed 's/ /","/g'`
+
+        echo -e "
 {
     \"$FULL_NAME\": {
-        \"bsfcampus\": {
-            \"activated\": \"$BSFCAMPUS\",
-            \"version\": \"080916\"
-        },
         \"kalite\": {
             \"activated\": \"$KALITE\",
             \"version\": \"0.16.9\",
-            \"language\": [$KALITE_LANG]
+            \"language\": [\""$KALITE_LANG"\"]
         },
         \"idc_import\": {
             \"activated\": \"$MEDIACENTER\",
-            \"content_name\": [\"$MEDIACENTER_PATH\"]
+            \"content_name\": ["\"$CSV_FILE_PATH\""]
         },
         \"zim_install\": {
-            \"activated\": \"$KIWIX\",
-            \"name\": [$KIWIX_FILE]
+            \"activated\": \""$ZIM\"",
+            \"name\": [\""$ZIM_LIST"\"]
         }
     }
 }
-    " > /etc/ansible/facts.d/device_list.fact
+" > /etc/ansible/facts.d/device_list.fact
+        hostname $FULL_NAME
+    fi
 }
 
 function help()
@@ -141,34 +163,47 @@ function help()
 
     Usage:
 
-    $0 [-t|--timezone] [-m|--managment] [-h|--hostname] [-a|--action] [-c|--configure] -n device_name
+    $0 -n device_name [-t|--timezone] [-m|--managment] [-h|--hostname] [-a|--action]
 
     Arguments :
-        -n|--name       Name of Ideascube configuration file
+        -n|--name       Name of your device. 
+                        An Ideascube configuration template can be choosen from the links below :
+                            + https://github.com/ideascube/ansiblecube/blob/oneUpdateFile/roles/set_custom_fact/files/device_list.fact
+                            + https://github.com/ideascube/ideascube/tree/master/ideascube/conf
                         Ex: -n kb_mooc_cog
 
-        -t|--timezone   The timezone. Default : Europe/Paris
-                        Ex: -t Europe/Paris
+        -t|--timezone   The timezone. 
+                        Default : Europe/Paris
+                        Ex: -t Africa/Dakar
 
-        -m|--managment  Install BSF tools. Default : True
+        -m|--managment  Install BSF tools, set to false if not from BSF
+                        Default : True
                         Ex: -m true|false
 
-        -h|--hostname   Set the server hostname, otherwise use of --name parameter
+        -h|--hostname   Set the server hostname, 
+                        Default : Equal to -n
                         Ex: -h my_hostname
 
-        -a|--action     Type of action needed : master / rename / update / zim_install / idc_import / kalite_import
+        -a|--action     Type of action : master / custom / rename / update / zim_install / idc_import / kalite_import
+                        Default : master,custom
                         Ex: -a rename
 
-        -c|--configure  Choose which 3rd party applications to install on your device
-                        Ex: -c true|false
+                        - master        : Install Ideascube and Kiwix server with strict minimal configuration
+                                          Nginx, Network-manager, Hostapd, DnsMasq, Iptables rules
+                        - custom        : This action will use the -n and -t parameter to configure your device.
+                                          It will also install and configure third party application such as Kalite, Media-center content, Zim files
+                        - rename        : Rename a device (-n and -t parameter can be redefined)
+                        - update        : Run a full update on the device (same will be done at each Internet connection)
+                        - zim_install   : Special command that will only run the download/installation of zim files
+                        - idc_import    : Special command that will only mass import media in the media-center
+                        - kalite_import : Special command that will only import content for Kalite
 
-                        - master : Ideascube and Kiwix server with strict minimal configuration
-                        - rename : Rename a device
-                        - update : Action that will be executed at each device update
-
-    Few exemples :
+    Few examples :
         [+] Create a master based on kb_bdi_irc Ideascube template
         $0 -n kb_bdi_irc -a master
+
+        [+] Full install with personnal settings (no need of -a parameter)
+        $0 -n my_box -t Africa/Dakar -m false
 
         [+] Rename a device
         $0 -n kb_bdi_irc -t Europe/Paris -a rename
@@ -227,6 +262,14 @@ do
         -n|--name)
             NAME="ideascube_project_name=$2"
             FULL_NAME=`echo "$2" | sed 's/_/-/g'`
+
+            wget https://github.com/ideascube/ansiblecube/blob/oneUpdateFile/roles/set_custom_fact/files/device_list.fact -O /tmp/device_list.fact
+
+            if [[ -z `grep "$FULL_NAME" /tmp/device_list.fact` ]]
+            then
+                CONF="1"
+            fi
+
             START=1
         shift # past argument
         ;;
@@ -240,12 +283,6 @@ do
             HOST_NAME="hostname=$2"
         shift # past argument
         ;;
-
-        -c|--configure)
-            CONF="1"
-        shift # past argument
-        ;;
-
 
         *)
             help
