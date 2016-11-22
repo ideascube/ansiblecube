@@ -20,20 +20,20 @@
 	},	
 	"kb-civ-babylab": {
 		"bsfcampus": {
-			"activated": "True",
+			"activated": "False",
 			"version": "080916"
 		},
 		"kalite": {
-			"activated": "True",
+			"activated": "False",
 			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"idc_import": {
-			"activated": "True",
+			"activated": "False",
 			"content_name": ["11-BABYLAB/CONTENUS/csvbabylab2.csv"]
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": "False",
 			"name": ["wikistage.fr","vikidia.fr","universcience-tv.fr","e-penser.fr","deus-ex-silicium.fr","cest-pas-sorcier.fr","wikipedia.fr","wikiversity.fr","tedxlausanne2014.fr","tedxlausanne2013.fr","tedxlausanne2012.fr","tedxgeneva2014.fr"]
 		}
 	},
