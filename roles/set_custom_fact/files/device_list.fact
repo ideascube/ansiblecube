@@ -674,5 +674,9 @@
 			"activated": "True",
 			"name": ["wikipedia.en","wiktionary.en","wikibooks.en","wikiquote.en","tedtechnology.en","tedscience.en","tedglobalissues.en","tedentertainment.en","teddesign.en","tedbusiness.en","gutenberg.en"]
 		}
+		"idc_import": {
+			"activated": "False",
+			"content_name": ["2-Contenus/csvgiz_corrected.csv"]
+		}
 	}
 }
