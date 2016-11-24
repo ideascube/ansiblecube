@@ -13,6 +13,7 @@ ANSIBLE_ETC="/etc/ansible/facts.d/"
 ANSIBLE_BIN="/usr/local/bin/ansible-pull"
 ANSIBLECUBE_PATH="/var/lib/ansible/local"
 GIT_REPO_URL="https://github.com/ideascube/ansiblecube.git"
+BRANCH="oneUpdateFile"
 
 # functions
 function internet_check()
@@ -163,7 +164,7 @@ function help()
 
     Usage:
 
-    $0 -n device_name [-t|--timezone] [-m|--managment] [-h|--hostname] [-a|--action]
+    $0 -n device_name [-t|--timezone] [-m|--managment] [-h|--hostname] [-a|--action] [-b|--branch]
 
     Arguments :
         -n|--name       Name of your device. 
@@ -175,6 +176,9 @@ function help()
         -t|--timezone   The timezone. 
                         Default : Europe/Paris
                         Ex: -t Africa/Dakar
+
+	-b|--branch	Set Github branch you'd like to use 
+			Default : oneUpdateFile
 
         -m|--managment  Install BSF tools, set to false if not from BSF
                         Default : True
@@ -263,7 +267,7 @@ do
             NAME="ideascube_project_name=$2"
             FULL_NAME=`echo "$2" | sed 's/_/-/g'`
 
-            wget https://github.com/ideascube/ansiblecube/blob/oneUpdateFile/roles/set_custom_fact/files/device_list.fact -O /tmp/device_list.fact
+            wget https://github.com/ideascube/ansiblecube/blob/$BRANCH/roles/set_custom_fact/files/device_list.fact -O /tmp/device_list.fact
 
             if [[ -z `grep "$FULL_NAME" /tmp/device_list.fact` ]]
             then
@@ -283,6 +287,11 @@ do
             HOST_NAME="hostname=$2"
         shift # past argument
         ;;
+	
+	-b|--branch)
+	    BRANCH=$2
+	shift
+	;;
 
         *)
             help
@@ -307,7 +316,7 @@ if [[ "$START" = "1" ]]; then
     [ -d ${ANSIBLECUBE_PATH} ] || clone_ansiblecube
 
     echo "[+] Start ansible-pull... (log: /var/log/ansible-pull.log)"
-    echo "Launching : $ANSIBLE_BIN -C oneUpdateFile -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars "$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE" $TAGS"
-    $ANSIBLE_BIN -C oneUpdateFile -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars "$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE" $TAGS > /var/log/ansible-pull.log 2>&1
+    echo "Launching : $ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars "$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE" $TAGS"
+    $ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars "$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE" $TAGS > /var/log/ansible-pull.log 2>&1
     echo "[+] Done."
 fi
