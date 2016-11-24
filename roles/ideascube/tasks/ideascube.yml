@@ -66,9 +66,15 @@
   when: conf_file.stat.exists == True
   tags: ['custom','rename']
 
-- name: Set IDEASCUBE_ID variable
+- name: Set IDEASCUBE_ID variable for koombook
   set_fact: ideascube_id=kb
-  when: conf_file.stat.exists == False
+  when: (ansible_architecture == 'armhf' or ansible_architecture == 'armv7l')
+    and conf_file.stat.exists == False
+  tags: ['custom','rename','update']
+
+- name: Set IDEASCUBE_ID variable for ideasbox
+  set_fact: ideascube_id=idb
+  when: ansible_architecture == "x86_64" and conf_file.stat.exists == False
   tags: ['custom','rename','update']
 
 - name: Change IDEASCUBE_ID
