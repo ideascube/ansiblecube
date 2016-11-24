@@ -678,5 +678,15 @@
 			"activated": "False",
 			"content_name": ["2-Contenus/csvgiz_corrected.csv"]
 		}
+	},
+	"idb-fra-illeetvilaine": {
+		"zim_install": {
+			"activated": "False",
+			"name": ["wikipedia.fr","wikiquote.fr","tedxgeneva2014.fr","gutenberg.fr","e-penser.fr","dirtybiology.fr"]
+		},
+		"idc_import": {
+			"activated": "False",
+			"content_name": ["2-Contenus/csvilleetvilaine.csv"]
+		}
 	}
 }
