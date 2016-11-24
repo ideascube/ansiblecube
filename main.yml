@@ -24,36 +24,36 @@
 
     - role: zim_install
       when: ansible_local.device_list[generic_project_name].zim_install is defined
-        and ansible_local.device_list[generic_project_name].zim_install.activated|bool == True
+        and ansible_local.device_list[generic_project_name].zim_install.activated
       tags: ['custom', 'update','zim_install']
 
     - role: mook
       mook_name: bsfcampus
       mook_version: "{{ ansible_local.device_list[generic_project_name].bsfcampus.version }}"
       when: ansible_local.device_list[generic_project_name].bsfcampus is defined
-        and ansible_local.device_list[generic_project_name].bsfcampus.activated|bool == True
+        and ansible_local.device_list[generic_project_name].bsfcampus.activated
 
     - role: mook
       mook_name: koombookedu
       mook_version: "{{ ansible_local.device_list[generic_project_name].koombookedu.version }}"
       when: ansible_local.device_list[generic_project_name].koombookedu is defined
-        and ansible_local.device_list[generic_project_name].koombookedu.activated|bool == True
+        and ansible_local.device_list[generic_project_name].koombookedu.activated
 
     - role: appinventor
       when: ansible_local.device_list[generic_project_name].appinventor is defined
-        and ansible_local.device_list[generic_project_name].appinventor.activated|bool == True
+        and ansible_local.device_list[generic_project_name].appinventor.activated
       tags: ['custom']
 
     - role: kalite
       when: ansible_local.device_list[generic_project_name].kalite is defined
-        and ansible_local.device_list[generic_project_name].kalite.activated|bool == True
+        and ansible_local.device_list[generic_project_name].kalite.activated
 
     - role: logs
       when: ansible_local.installed_software.management.managed_by_bsf|bool == True
 
     - role: idc_import
       when: ansible_local.device_list[generic_project_name].idc_import is defined
-        and ansible_local.device_list[generic_project_name].idc_import.activated|bool == True
+        and ansible_local.device_list[generic_project_name].idc_import.activated
         and ansible_default_ipv4.gateway == "{{ gateway }}"
       tags: ['update','idc_import']
 

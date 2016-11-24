@@ -43,26 +43,26 @@ Please have a look at others configurations files to see how it has been done. W
  - Add a new JSON section to describe what must be installed on your device. **This is JSON syntax, comma and quote a really important!**
    - **kb-gin-conakry** is the name of your device
    - **kalite** is the name of the role played but also the name of the application we want to install
-   - **activated** Whether we want install or not the application. If True, the application will be installed and configured on the target device. If leaved True, the target device will be updated continuously at each time the later will be connected on Internet
+   - **activated** Whether we want install or not the application. If true, the application will be installed and configured on the target device. If leaved true, the target device will be updated continuously at each time the later will be connected on Internet
    - **version** For some application it is better to lock the version number instead of installing always the last version. A new version has always to be tested before deployment.
    - **language** You can specify the language you wish to use (must be on 2 letters)
    ```
  	"kb-bsfcampus-sen": {
 		"bsfcampus": {
-			"activated": "True",
+			"activated": true,
 			"version": "100816"
 		},
 		"kalite": {
-			"activated": "True",
+			"activated": true,
 			"version": "0.16.8",
 			"language": ["fr"]
 		},
 		"idc_import": {
-			"activated": "True",
+			"activated": true,
 			"content_name": ["2-Contenus/Logiciel-libre/app.csv","21-BSFCAMPUS/KB_Liste_contenus_bsf_campus.csv"]
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": true,
 			"name": "ubuntudoc.fr tedxlausanne2014.fr tedxlausanne2013.fr tedxlausanne2012.fr tedxgeneva2014.fr  cest-pas-sorcier.fr gutenberg.fr vikidia.fr wikisource.en wikisource.fr wikipedia.fr wikipedia.wo wikipedia.en "
 		}
 	},
@@ -143,14 +143,14 @@ Ansible will be executed in Pull mode and this file will be called by Network-Ma
 
 Example of `ansiblePullUpdate`: `/usr/local/bin/ansible-pull -s 120 -d /var/lib/ansible/local -C oneUpdateFile -i hosts -U https://github.com/ideascube/ansiblecube.git main.yml --tags "update"`
 
-From now on, everything depend from the file `roles/set_custom_fact/files/device_list.fact`. If you left some application with `"activated": "True",` those ones will be updated each time the device will be connected to Internet.
+From now on, everything depend from the file `roles/set_custom_fact/files/device_list.fact`. If you left some application with `"activated": true,` those ones will be updated each time the device will be connected to Internet.
 
 ## Available TAGS
 
 - idc_import: Call the ideascube import medias command with the right file given with
 ```
 		"idc_import": {
-			"activated": "True",
+			"activated": true,
 			"content_name": ["2-Contenus/Logiciel-libre/app.csv","21-BSFCAMPUS/KB_Liste_contenus_bsf_campus.csv"]
 		},
 ```
