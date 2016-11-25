@@ -62,4 +62,5 @@
     - name: Heartbeat mode on KoomBook LED, update is over !!!
       shell: echo heartbeat >/sys/class/leds/a20-olinuxino-lime2:green:usr/trigger
       when: ansible_architecture == 'armv7l'
+      ignore_errors: yes
       tags: [ 'master', 'custom', 'update','idc_import','zim_install','kalite_import' ]
