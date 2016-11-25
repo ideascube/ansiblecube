@@ -680,6 +680,11 @@
 		}
 	},
 	"idb-fra-illeetvilaine": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.9",
+			"language": ["fr"]
+		},
 		"zim_install": {
 			"activated": "False",
 			"name": ["wikipedia.fr","wikiquote.fr","tedxgeneva2014.fr","gutenberg.fr","e-penser.fr","dirtybiology.fr"]
