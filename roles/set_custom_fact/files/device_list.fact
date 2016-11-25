@@ -672,7 +672,7 @@
 	"kb-rwa-giz": {
 		"zim_install": {
 			"activated": "True",
-			"name": ["wikipedia.en","wiktionary.en","wikibooks.en","wikiquote.en","tedtechnology.en","tedscience.en","tedglobalissues.en","tedentertainment.en","teddesign.en","tedbusiness.en","gutenberg.en"]
+			"name": ["wikipedia.en","wiktionary.en","wikibooks.en","wikiquote.en","tedtechnology.en","tedscience.en","tedglobalissues.en","tedentertainment.en","teddesign.en","tedbusiness.en","gutenberg.en","twentyfourhoursinanewsroom"]
 		},
 		"idc_import": {
 			"activated": "False",
