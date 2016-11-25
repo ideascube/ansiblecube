@@ -53,5 +53,8 @@
 - name: remove old way of lunching ansible-pull
   file: path=/etc/dhcp/dhclient-exit-hooks.d/ansiblePullUpdate state=absent
 
+- name: Disable service uwsgi before upgrading ideascube 
+  command: systemctl disable uwsgi
+
 - name: Reboot device to switch to new branch
   command: shutdown -r now
