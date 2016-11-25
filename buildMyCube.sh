@@ -177,8 +177,8 @@ function help()
                         Default : Europe/Paris
                         Ex: -t Africa/Dakar
 
-	-b|--branch	Set Github branch you'd like to use 
-			Default : oneUpdateFile
+        -b|--branch     Set Github branch you'd like to use 
+                        Default : oneUpdateFile
 
         -m|--managment  Install BSF tools, set to false if not from BSF
                         Default : True
@@ -287,11 +287,11 @@ do
             HOST_NAME="hostname=$2"
         shift # past argument
         ;;
-	
-	-b|--branch)
-	    BRANCH=$2
-	shift
-	;;
+
+        -b|--branch)
+            BRANCH=$2
+        shift
+        ;;
 
         *)
             help
