@@ -693,5 +693,20 @@
 			"activated": "False",
 			"content_name": ["2-Contenus/csvilleetvilaine.csv"]
 		}
+	},
+	"kb-fra-commbook": {
+		"bsfcampus": {
+			"activated": "True",
+			"version": "080916"
+		},
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.9",
+			"language": ["fr","en"]
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": ["wikipedia.fr","wikipedia.en","wikipedia.ar","gutenberg.fr","tedxgeneva2014.fr"]
+		}
 	}
 }
