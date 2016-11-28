@@ -38,7 +38,7 @@
   tags: ['custom','update','rename']
 
 - name: Check if the RSA key is present in tinc key file
-  shell: cat /etc/tinc/{{ vpn_name2 }}/hosts/{{tinc_localhost_name}} | grep "RSA" ; echo
+  shell: grep -F 'RSA' /etc/tinc/{{ vpn_name2 }}/hosts/{{tinc_localhost_name}} ; echo
   register: rsa_in_key_file
   when: tinc_key_file.stat.exists == True
   tags: ['custom','update','rename']
