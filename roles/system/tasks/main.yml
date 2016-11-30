@@ -53,6 +53,15 @@
   when: firststart.stat.exists == False or firststart is undefined
   tags: ['custom','rename']
 
+- name: Get eth0 MAC address when interfaces is up
+  set_fact: host_mac_address="{{ ansible_eth0.macaddress }}"
+  when: ansible_eth0.macaddress is defined
+  tags: ['custom','update','rename']
+
+- include: scaleway.yml
+  when: host_mac_address == "{{ crashbook }}"
+  tags: ['custom']
+
 - name: Write all the variables in /etc/firstStart.csv
   copy: content="id,{{ ansible_date_time["date"] }},{{ ansible_date_time["time"] }},{{ idc_uniq_device_name }},{{ ansible_machine_id }},{{ ansible_default_ipv4["macaddress"] }},{{ ansible_default_ipv4["address"] }},{{ public_ip.stdout }}\n" dest=/etc/firstStart.csv
   when: firststart.stat.exists == False or firststart is undefined
