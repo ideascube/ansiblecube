@@ -4,14 +4,19 @@
   tags:
     - custom
 
+- name: Check if /dev/sda1 exists
+  stat: path=/dev/sda1
+  register: sda1
+  tags: ['custom','update']
+
 - name: Ensure the HDD mountpoint exists
   file: path=/media/hdd state=directory mode=0755
-  when: ansible_devices.sda.partitions.sda1 is defined
+  when: sda1.stat.isblk == True 
   tags: ['custom','update']
 
 - name: Mount /dev/sda1
   mount: name=/media/hdd/ src=/dev/sda1 fstype=ext4 state=mounted opts=noatime,nofail
-  when: ansible_devices.sda.partitions.sda1 is defined
+  when: sda1.stat.isblk == True
   tags:
     - custom
 

@@ -53,10 +53,10 @@
   tags:
     - custom
 
-- name: Include task nedeed when using an external hard drive
+- name: Include task needed when using an external hard drive
   include: ext_hdd.yml
   when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l")
-    and ansible_devices.sda.partitions.sda1 is defined
+    and sda1.stat.isblk == True
   tags:
     - custom
 
