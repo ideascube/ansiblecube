@@ -3,6 +3,15 @@
   shell: echo default-on >/sys/class/leds/green\:ph20\:led2/trigger
   when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l'
 
+- name: Install last custom Kernel, Headers, DTB and U-Boot
+  apt: deb=http://filer.bsf-intranet.org/{{ item }}
+  with_items:
+   - linux-dtb-next-sunxi_5.23_armhf.deb
+   - linux-headers-next-sunxi_5.23_armhf.deb
+   - linux-image-next-sunxi_5.23_armhf.deb
+   - linux-u-boot-next-lime2_5.23_armhf.deb
+  when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l'
+  
 - name: Copy upgrade_ansible.sh
   copy: src=upgrade_ansible.sh dest=/tmp/upgrade_ansible.sh mode="u=rwx,g=r,o=r"
   when : ansible_version.full | version_compare('2.0', '<')
