@@ -49,3 +49,5 @@ systemctl status >> $FILE
 echo "##################################" >> $FILE
 echo "#          Public IP address     #" >> $FILE
 echo "##################################" >> $FILE
+wget -qO- http://ipecho.net/plain         >> $FILE
+echo                                      >> $FILE
