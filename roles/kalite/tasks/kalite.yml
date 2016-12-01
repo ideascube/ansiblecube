@@ -82,7 +82,6 @@
 
 - name: Enable service kalite
   service: name=kalite enabled=yes
-  tags:
   tags: ['custom', 'update']
 
 - name: Generate a zone for kalite
