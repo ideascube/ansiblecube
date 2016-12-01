@@ -1,6 +1,6 @@
 ---
 #Network
-hotspotip: 192.168.2.1
+hotspot_ip: 192.168.2.1
 hotspot_interface: wlan0
 lan_interface: eth0
 client_interface: wlan1
