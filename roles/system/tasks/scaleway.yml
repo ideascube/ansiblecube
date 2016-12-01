@@ -1,9 +1,4 @@
 ---
-- name: Check if /dev/sda1 exists
-  stat: path=/dev/sda1
-  register: sda1
-  tags: ['custom','update']
-
 - name: Ensure the HDD mountpoint exists
   file: path=/media/hdd state=directory mode=0755
   when: sda1.stat.isblk == True

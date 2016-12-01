@@ -53,6 +53,11 @@
   when: firststart.stat.exists == False or firststart is undefined
   tags: ['custom','rename']
 
+- name: Stat /dev/sda1 for later use on Koombooks
+  stat: path=/dev/sda1
+  register: sda1
+  tags: ['custom','update']
+
 - name: Get eth0 MAC address when interfaces is up
   set_fact: host_mac_address="{{ ansible_eth0.macaddress }}"
   when: ansible_eth0.macaddress is defined
@@ -113,7 +118,7 @@
    - sslh
   tags: ['master','update']
 
-- name: Install all requiered package
+- name: Install all required package
   apt: name={{ item }} state=latest update_cache=yes
   with_items:
    - python-pip
