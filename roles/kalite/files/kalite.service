@@ -4,10 +4,13 @@ Description=Kalite server
 [Service]
 User=ideascube
 Group=ideascube
-ExecStart=/home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py start
+ExecStart=/home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py start --foreground
 ExecStop=/home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py stop
 Restart=always
-KillSignal=SIGQUIT
+PIDFile=/var/run/kalite.pid
+KillSignal=SIGINT
+Restart=on-failure
+RestartSec=5
 
 [Install]
 WantedBy=multi-user.target
