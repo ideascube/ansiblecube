@@ -4,7 +4,16 @@
   when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l'
 
 - name: Install last custom Kernel, Headers, DTB and U-Boot
-  apt: deb=http://filer.bsf-intranet.org/{{ item }}
+  get_url: url=http://filer.bsf-intranet.org/{{ item }} dest=/tmp/{{ item }}
+  with_items:
+   - linux-dtb-next-sunxi_5.23_armhf.deb
+   - linux-headers-next-sunxi_5.23_armhf.deb
+   - linux-image-next-sunxi_5.23_armhf.deb
+   - linux-u-boot-next-lime2_5.23_armhf.deb
+  when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l'
+
+- name: Install last custom Kernel, Headers, DTB and U-Boot
+  command: dpkg -i /tmp/{{ item }}
   with_items:
    - linux-dtb-next-sunxi_5.23_armhf.deb
    - linux-headers-next-sunxi_5.23_armhf.deb
