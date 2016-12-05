@@ -20,10 +20,6 @@
   tags:
     - custom
 
-- name: Install virtualenv
-  pip: name=virtualenv
-  tags: ['custom', 'update']
-
 - name: Uninstall previous Ka-lite version
   pip: name=ka-lite
     state=absent
