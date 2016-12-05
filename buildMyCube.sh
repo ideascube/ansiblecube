@@ -18,12 +18,13 @@ BRANCH="oneUpdateFile"
 # functions
 function internet_check()
 {
-    echo "[+] Check Internet connection"
+    echo -n "[+] Check Internet connection... "
     if [[ ! `ping -q -c 2 github.com` ]]
     then
-        echo "[+] Repository is unreachable, check your Internet connection" >&2
+        echo "ERROR: Repository is unreachable, check your Internet connection." >&2
         exit 1
     fi
+    echo "Done."
 }
 
 function update_sources_list()
@@ -43,38 +44,44 @@ EOF
 
 function install_ansible()
 {
-    echo "[+] Checking for internet connectivity..."
+    echo -n "[+] Checking for internet connectivity... "
     internet_check
+    echo 'Done.'
 
-    echo "[+] Updating APT cache..."
+    echo -n "[+] Updating APT cache... "
     update_sources_list
     apt-get update --quiet --quiet
+    echo 'Done.'
 
-    echo "[+] Install ansible..."
+    echo -n "[+] Install ansible... "
     apt-get install --quiet --quiet -y python-pip git python-dev libffi-dev libssl-dev gnutls-bin
     pip install -U distribute
     pip install ansible markupsafe
     pip install cryptography --upgrade
+    echo 'Done.'
 }
 
 function clone_ansiblecube()
 {
-    echo "[+] Checking for internet connectivity..."
+    echo -n "[+] Checking for internet connectivity... "
     internet_check
+    echo 'Done.'
 
-    echo "[+] Clone ansiblecube repo..."
+    echo -n "[+] Clone ansiblecube repo... "
     mkdir --mode 0755 -p ${ANSIBLECUBE_PATH}
     cd ${ANSIBLECUBE_PATH}/../
     git clone https://github.com/ideascube/ansiblecube.git local
 
     mkdir --mode 0755 -p /etc/ansible/facts.d
     cp ${ANSIBLECUBE_PATH}/hosts /etc/ansible/hosts
+    echo 'Done.'
 }
 
 function generate_rsa_key()
 {
-    echo "[+] Generating public/private rsa key pair"
+    echo -n "[+] Generating public/private rsa key pair... "
     echo -e "\n\n\n" | ssh-keygen -t rsa -f /root/.ssh/id_rsa -b 4096 -C "it@bibliosansfrontieres.org $FULL_NAME" -N "" > /dev/null 2>&1
+    echo 'Done.'
     echo "[+] Please enter password to copy SSH public key"
     ssh-copy-id -o StrictHostKeyChecking=no ansible@idbvpn.bsf-intranet.org
     ssh-copy-id -o StrictHostKeyChecking=no ansible@tincmaster.wan.bsf-intranet.org
