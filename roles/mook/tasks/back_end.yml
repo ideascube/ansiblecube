@@ -46,9 +46,8 @@
 - name: Install python requierment
   pip: requirements=requirements.txt 
     chdir={{ mook_path }}/{{ mook_name }}/api 
-    virtualenv_command=/usr/local/bin/virtualenv 
+    virtualenv_command=/usr/bin/virtualenv 
     virtualenv={{ mook_path }}/{{ mook_name }}/api/env
-    extra_args="--no-cache-dir"
   when: back_installation.changed == True
   tags: ["custom","update"]
 
