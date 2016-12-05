@@ -110,6 +110,7 @@
    - python-pip
    - python-dev
    - python-setuptools
+   - python-virtualenv
    - git
    - sudo
    - lsb-release
@@ -190,12 +191,6 @@
 
 - name: Upgrade packages
   apt: upgrade=safe
-  tags:
-    - master
-
-# https://github.com/ansible/ansible/issues/16015
-- name: Fix a bug on Exception setuptools 3.6
-  command: pip install -U distribute
   tags:
     - master
 
