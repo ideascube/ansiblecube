@@ -55,7 +55,6 @@ function install_ansible()
 
     echo -n "[+] Install ansible... "
     apt-get install --quiet --quiet -y python-pip git python-dev libffi-dev libssl-dev gnutls-bin
-    pip install -U distribute
     pip install ansible markupsafe
     pip install cryptography --upgrade
     echo 'Done.'
