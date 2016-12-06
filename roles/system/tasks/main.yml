@@ -41,6 +41,7 @@
     section=management
     option=hostname
     value={{hostname}}
+  when: ansible_local.installed_software.management.hostname is not defined
   tags: ['custom','update','rename']
 
 - name: Remove udev rules for wifi 
