@@ -111,6 +111,7 @@
    - python-dev
    - python-setuptools
    - python-virtualenv
+   - virtualenv
    - git
    - sudo
    - lsb-release
