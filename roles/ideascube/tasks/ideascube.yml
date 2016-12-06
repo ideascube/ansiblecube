@@ -29,12 +29,33 @@
   lineinfile: dest=/etc/apt/apt.conf.d/9999IDEASCUBEISABADBADBOY line='APT::Get::AllowUnauthenticated "true";' create=yes
   tags: ['master', 'custom', 'update']
 
-- name: Install the ideascube package
-  apt: name=ideascube state=latest update_cache=yes force=yes dpkg_options="force-confnew"
-  # apt: name=ideascube=0.12.2 update_cache=yes force=yes dpkg_options="force-confnew"
-  # when: ideascube_version | version_compare('0.12.2', '<')
+#### Install last ideascube package
+
+# - name: Install the ideascube package
+#   apt: name=ideascube state=latest update_cache=yes force=yes dpkg_options="force-confnew"
+#   register: is_upgraded
+#   tags: ['master', 'custom','update']
+
+#### Line below don't upgrade ideascube version anymore
+
+- name: Install ideascube 0.16 package
+  apt: name=ideascube=0.16 update_cache=yes force=yes dpkg_options="force-confnew"
+  tags: ['master', 'custom']
+
+- name: Get ideascube version
+  shell: dpkg-query -W  ideascube  | awk '{print $2}' ; echo
+  register: ideascube_version
+  tags:
+    - update
+
+- name: Don't downgrade package >= 0.17
+  apt: name=ideascube=0.16 update_cache=yes force=yes dpkg_options="force-confnew"
+  when: ideascube_version | version_compare('0.17', '<')
   register: is_upgraded
-  tags: ['master', 'custom','update']
+  tags:
+    - update
+
+#### End 
 
 - name: Remove the unauthenticated hack
   file: path=/etc/apt/apt.conf.d/9999IDEASCUBEISABADBADBOY state=absent
