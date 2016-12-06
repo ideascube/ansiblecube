@@ -137,8 +137,7 @@
    - lshw
    - hwinfo
    - sqlite3
-  tags:
-    - master
+  tags: ['master','update']
 
 - name: Upgrade pip to the latest version
   pip: name=pip state=latest
