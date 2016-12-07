@@ -622,7 +622,8 @@
 		"idc_import": {
 			"activated": "False",
 			"content_name": ["2-Contenus/csvcolombie.csv "]
-		}
+		},
+		"ideascube_branding": "bibliotecamovil"
 	},
 	"kb-bdi-irc": {
 		"kalite": {
