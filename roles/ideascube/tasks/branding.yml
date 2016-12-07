@@ -20,7 +20,6 @@
     group=ideascube 
     mode=0644
     force=yes
-  register: new_logo
 
 - name: Install favicon branding resources
   get_url: url={{ filer_bsf }}/branding/{{ ideascube_branding }}/favicon.png 
@@ -30,9 +29,3 @@
     mode=0644
     force=yes
   ignore_errors: yes
-
-- name: Run ideascube collectstatic if a new logo has been copied
-  become: yes
-  become_user: ideascube
-  command: ideascube collectstatic
-  when: new_logo.changed == True
