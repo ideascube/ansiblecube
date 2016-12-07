@@ -39,7 +39,7 @@
 #### Line below don't upgrade ideascube version anymore
 
 - name: Install ideascube 0.16 package
-  apt: name=ideascube=0.16 update_cache=yes force=yes dpkg_options="force-confnew"
+  apt: name=ideascube=0.16.0 update_cache=yes force=yes dpkg_options="force-confnew"
   tags: ['master', 'custom']
 
 - name: Get ideascube version
@@ -49,7 +49,7 @@
     - update
 
 - name: Don't downgrade package >= 0.17
-  apt: name=ideascube=0.16 update_cache=yes force=yes dpkg_options="force-confnew"
+  apt: name=ideascube=0.16.0 update_cache=yes force=yes dpkg_options="force-confnew"
   when: ideascube_version | version_compare('0.17', '<')
   register: is_upgraded
   tags:
