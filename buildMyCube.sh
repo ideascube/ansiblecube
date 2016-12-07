@@ -274,7 +274,7 @@ do
             NAME="ideascube_project_name=$2"
             FULL_NAME=`echo "$2" | sed 's/_/-/g'`
 
-            wget https://github.com/ideascube/ansiblecube/blob/$BRANCH/roles/set_custom_fact/files/device_list.fact -O /tmp/device_list.fact
+            wget https://raw.githubusercontent.com/ideascube/ansiblecube/$BRANCH/roles/set_custom_fact/files/device_list.fact -O /tmp/device_list.fact
 
             if [[ -z `grep "$FULL_NAME" /tmp/device_list.fact` ]]
             then
