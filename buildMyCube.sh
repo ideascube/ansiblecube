@@ -325,5 +325,17 @@ if [[ "$START" = "1" ]]; then
     echo "[+] Start ansible-pull... (log: /var/log/ansible-pull.log)"
     echo "Launching : $ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars "$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE" $TAGS"
     $ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars "$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE" $TAGS > /var/log/ansible-pull.log 2>&1
+    
+    echo "[+] Send ansible-pull report"
+    status=$(tail -2 /var/log/ansible-pull.log)
+    device_hostname=$(hostname)
+
+    if [[ $status == *"failed=1"* ]]
+    then
+            wget http://report.bsf-intranet.org/device=$device_hostname/ansiblepull=fail
+    else
+            wget http://report.bsf-intranet.org/device=$device_hostname/ansiblepull=success
+    fi
+    
     echo "[+] Done."
 fi
