@@ -193,7 +193,7 @@ function help()
 
         -h|--hostname   Set the server hostname, 
                         Default : Equal to -n
-                        Ex: -h my_hostname
+                        Ex: -h my_hostname.lan
 
         -a|--action     Type of action : master / custom / rename / update / zim_install / idc_import / kalite_import
                         Default : master,custom
@@ -342,6 +342,6 @@ if [[ "$START" = "1" ]]; then
             wget http://report.bsf-intranet.org/device=$device_hostname/ansiblepull=modificationExist > /dev/null 2>&1
         ;;
     esac
-    
+
     echo "[+] Done."
 fi
