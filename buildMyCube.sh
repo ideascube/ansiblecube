@@ -18,12 +18,13 @@ BRANCH="oneUpdateFile"
 # functions
 function internet_check()
 {
-    echo "[+] Check Internet connection"
+    echo -n "[+] Check Internet connection... "
     if [[ ! `ping -q -c 2 github.com` ]]
     then
-        echo "[+] Repository is unreachable, check your Internet connection" >&2
+        echo "ERROR: Repository is unreachable, check your Internet connection." >&2
         exit 1
     fi
+    echo "Done."
 }
 
 function update_sources_list()
@@ -43,38 +44,43 @@ EOF
 
 function install_ansible()
 {
-    echo "[+] Checking for internet connectivity..."
+    echo -n "[+] Checking for internet connectivity... "
     internet_check
+    echo 'Done.'
 
-    echo "[+] Updating APT cache..."
+    echo -n "[+] Updating APT cache... "
     update_sources_list
     apt-get update --quiet --quiet
+    echo 'Done.'
 
-    echo "[+] Install ansible..."
+    echo -n "[+] Install ansible... "
     apt-get install --quiet --quiet -y python-pip git python-dev libffi-dev libssl-dev gnutls-bin
-    pip install -U distribute
     pip install ansible markupsafe
     pip install cryptography --upgrade
+    echo 'Done.'
 }
 
 function clone_ansiblecube()
 {
-    echo "[+] Checking for internet connectivity..."
+    echo -n "[+] Checking for internet connectivity... "
     internet_check
+    echo 'Done.'
 
-    echo "[+] Clone ansiblecube repo..."
+    echo -n "[+] Clone ansiblecube repo... "
     mkdir --mode 0755 -p ${ANSIBLECUBE_PATH}
     cd ${ANSIBLECUBE_PATH}/../
     git clone https://github.com/ideascube/ansiblecube.git local
 
     mkdir --mode 0755 -p /etc/ansible/facts.d
     cp ${ANSIBLECUBE_PATH}/hosts /etc/ansible/hosts
+    echo 'Done.'
 }
 
 function generate_rsa_key()
 {
-    echo "[+] Generating public/private rsa key pair"
+    echo -n "[+] Generating public/private rsa key pair... "
     echo -e "\n\n\n" | ssh-keygen -t rsa -f /root/.ssh/id_rsa -b 4096 -C "it@bibliosansfrontieres.org $FULL_NAME" -N "" > /dev/null 2>&1
+    echo 'Done.'
     echo "[+] Please enter password to copy SSH public key"
     ssh-copy-id -o StrictHostKeyChecking=no ansible@idbvpn.bsf-intranet.org
     ssh-copy-id -o StrictHostKeyChecking=no ansible@tincmaster.wan.bsf-intranet.org
@@ -268,7 +274,7 @@ do
             NAME="ideascube_project_name=$2"
             FULL_NAME=`echo "$2" | sed 's/_/-/g'`
 
-            wget https://github.com/ideascube/ansiblecube/blob/$BRANCH/roles/set_custom_fact/files/device_list.fact -O /tmp/device_list.fact
+            wget https://raw.githubusercontent.com/ideascube/ansiblecube/$BRANCH/roles/set_custom_fact/files/device_list.fact -O /tmp/device_list.fact
 
             if [[ -z `grep "$FULL_NAME" /tmp/device_list.fact` ]]
             then
@@ -319,5 +325,23 @@ if [[ "$START" = "1" ]]; then
     echo "[+] Start ansible-pull... (log: /var/log/ansible-pull.log)"
     echo "Launching : $ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars "$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE" $TAGS"
     $ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars "$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE" $TAGS > /var/log/ansible-pull.log 2>&1
+    
+    echo "[+] Send ansible-pull report"
+
+    status=$(tail -3 /var/log/ansible-pull.log)
+    device_hostname=$(hostname)
+
+    case $status in
+        *"failed=1"*)
+            wget http://report.bsf-intranet.org/device=$device_hostname/ansiblepull=fail > /dev/null 2>&1
+        ;;
+        *"failed=0"*)
+            wget http://report.bsf-intranet.org/device=$device_hostname/ansiblepull=success > /dev/null 2>&1
+        ;;
+        *"Local modifications exist in repository"*)
+            wget http://report.bsf-intranet.org/device=$device_hostname/ansiblepull=modificationExist > /dev/null 2>&1
+        ;;
+    esac
+    
     echo "[+] Done."
 fi

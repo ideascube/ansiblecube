@@ -1,9 +1,11 @@
 #!/bin/bash
 FILE="/tmp/hdw_info.txt"
-echo "##################################" > $FILE
-echo "#          BSF Campus            #" >> $FILE
-echo "##################################" >> $FILE
-du -s /media/hdd/bsfcampus >> $FILE
+[ -d /media/hdd/bsfcampus ] && {
+    echo "##################################" > $FILE
+    echo "#          BSF Campus            #" >> $FILE
+    echo "##################################" >> $FILE
+    du -s /media/hdd/bsfcampus >> $FILE
+}
 echo "##################################" >> $FILE
 echo "#          lscpu                 #" >> $FILE
 echo "##################################" >> $FILE
@@ -47,3 +49,5 @@ systemctl status >> $FILE
 echo "##################################" >> $FILE
 echo "#          Public IP address     #" >> $FILE
 echo "##################################" >> $FILE
+wget -qO- http://ipecho.net/plain         >> $FILE
+echo                                      >> $FILE

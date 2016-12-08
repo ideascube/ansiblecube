@@ -1,4 +1,4 @@
-{
+	{
 	"kb-bsfcampus-sen": {
 		"bsfcampus": {
 			"activated": "True",
@@ -622,7 +622,8 @@
 		"idc_import": {
 			"activated": "False",
 			"content_name": ["2-Contenus/csvcolombie.csv "]
-		}
+		},
+		"ideascube_branding": "bibliotecamovil"
 	},
 	"kb-bdi-irc": {
 		"kalite": {
@@ -707,6 +708,21 @@
 		"zim_install": {
 			"activated": "True",
 			"name": ["wikipedia.fr","wikipedia.en","wikipedia.ar","gutenberg.fr","tedxgeneva2014.fr"]
+		}
+	},
+	"kb-fra-scaleway": {
+		"bsfcampus": {
+			"activated": "True",
+			"version": "080916"
+		},
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.9",
+			"language": ["fr"]
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": ["phet.en"]
 		}
 	}
 }

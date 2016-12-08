@@ -1,6 +1,6 @@
 ---
 - include_vars: group_vars/{{ ansible_architecture }}.yml
-  tags: ['master', 'update']
+  tags: ['master','update']
 
 - name: Copying kiwix binaries
   get_url: url={{filer_bsf}}/kiwix-serve-{{ ansible_architecture }} dest=/usr/local/bin/kiwix-serve mode=755 timeout=20
@@ -14,11 +14,16 @@
 
 - name: Setup startup file
   template: src=kiwix-server.service.j2 dest=/etc/systemd/system/kiwix-server.service
-  tags: ['master', 'update']
+  tags: ['master','update']
+
+- name: Remove nginx configuration otherwise, if hostname var change it won't be overrided
+  file: path=/etc/nginx/sites-available/kiwix state=absent
+  tags:
+    - custom
 
 - name: Copy nginx vhost
   template: src=nginx.vhost.j2 dest=/etc/nginx/sites-available/kiwix
-  tags: ['master', 'update']
+  tags: ['master','custom','update']
 
 - name: Ensure that Ideascube cache folder belong to ideascube user 
   file: path=/var/cache/ideascube/catalog/ 
@@ -40,17 +45,17 @@
   - name: "OSMybon"
     description: "Experimental OSM Maps catalog"
     url: http://catalog.yohanboniface.me/catalog.yml
-  tags: ['master', 'custom', 'update']
+  tags: ['master','custom','update']
 
 - name: Nginx enable Virtual host
   file: src=/etc/nginx/sites-available/kiwix dest=/etc/nginx/sites-enabled/kiwix state=link
   notify: restart nginx
-  tags: ['master', 'update']
+  tags: ['master','update']
 
 - name: Enable service kiwix
   service: name=kiwix-server enabled=yes
   notify: restart kiwix
-  tags: ['master', 'update']
+  tags: ['master','update']
 
 - shell: ls /etc/rc5.d/S*wikipedia ; echo
   register: file_exist
