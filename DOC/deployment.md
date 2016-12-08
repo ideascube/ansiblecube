@@ -154,17 +154,17 @@ By default, the hostname will be taken from `--name` argument. If you want to ha
 
 By default this argument is not needed, the default value will be `master,custom`
 
-* #### master
+* master
 
 This argument match an AnsibleCube tag. It means that this argument will match specific action. For instance, this argument is usefull to build a minimal configuration \(like a master image for easy duplicating\). Only Ideascube and Kiwix server will be installed and configured. If you are using an ARM proc you will get to the homepage by typping `http://koombook.lan` or `http://ideasbox.lan` for an AMD64 processor.
 
 This is great to give a try, but not enough for a long term use.
 
-* #### custom
+* custom
 
 This "tag", will match more action within AnsibleCube, meaning configuration of your hotspot name, dns name matching  the `--name`. It will also install and configure 3rd party application.
 
-* #### rename
+* rename
 
 This action can be used in case you have fully installed a device \(master and custom action\) and you are not happy with the device name, then use the rename tag to change it. Fellow exemple below.
 
@@ -172,7 +172,7 @@ This action can be used in case you have fully installed a device \(master and c
 
 > This action can't be used if the **master** and **custom** action have not been executed
 
-* #### update
+* update
 
 This action will keep your device up to date each time the device get an Internet connection. This is done automatically. However you can use it directly with this script.
 
@@ -180,7 +180,7 @@ This action will keep your device up to date each time the device get an Interne
 
 > This action can't be used if the **master** and **custom** action have not been executed
 
-* #### zim\_install
+* zim\_install
 
 This will specifiquelly trigger the task to download and install Zim files from Internet. Be carefull, you will need a fast Internet connection as the ZIM files are pretty havey \(from 200Mo to 60Go\).
 
@@ -188,7 +188,7 @@ This will specifiquelly trigger the task to download and install Zim files from 
 
 > This action can't be used if the **master** and **custom** action have not been executed
 
-* #### idc\_import
+* idc\_import
 
 This will specifiquelly trigger the task to massively import content whithin the Ideascube media-center. 
 
@@ -198,7 +198,7 @@ Before importing, you need to build a csv file and gather all you media in one f
 
 > This action can't be used if the **master** and **custom** action have not been executed
 
-* #### kalite\_import
+* kalite\_import
 
 For faster installation and configuration, we have been mirroring all the kalite videos. It could not be used if you are standing outside of Library Without Border desk. You will have to download manually the videos from the Kalite web interface.
 
