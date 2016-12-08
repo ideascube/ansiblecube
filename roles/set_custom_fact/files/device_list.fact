@@ -711,10 +711,6 @@
 		}
 	},
 	"kb-fra-scaleway": {
-		"bsfcampus": {
-			"activated": "True",
-			"version": "080916"
-		},
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.9",
