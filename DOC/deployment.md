@@ -8,9 +8,9 @@ Your device is now ready to be configured with AnsibleCube, let's do it !
 
 * `ssh ideascube@device_ip_address`
 
-  * **Armbian : **`root / 1234`
+  * **Armbian : ** `root / 1234`
 
-  * **Raspberry : **`pi` \/ `raspberry`
+  * **Raspberry : ** `pi` \/ `raspberry`
 
 * Download the bash script: `wget https://github.com/ideascube/ansiblecube/raw/oneUpdateFile/buildMyCube.sh`
 
@@ -22,9 +22,9 @@ Your device is now ready to be configured with AnsibleCube, let's do it !
 
 * Connect to the device with
 
-  * **Armbian : **`root / 1234`
+  * **Armbian : ** `root / 1234`
 
-  * **Raspberry : **`pi` \/ `raspberry`
+  * **Raspberry : ** `pi` \/ `raspberry`
 
 * If needed, type this command to change the mapping of your keyboard `loadkeys fr`
 

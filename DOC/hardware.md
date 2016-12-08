@@ -7,6 +7,7 @@ If you own an Olimex Lime 2 or Raspberry Pi 2\/3, the best is to give a try to A
 > AnsibleCube is able to mount an external hard drive to store large amount of data. The hard drive has to be connected from first boot and accessible here `/dev/sda1`. This block will be mounted and used to store the data.
 > Olimex boards are specially designed to host a SATA controler, you can directly connect a SATA hard drive to the boad
 > The hard drive can be formated as fellow
+>
 > `sudo parted /dev/sda mklabel msdos mkpart primary ext4 0% 100% -s`
 > `sudo mkfs.ext4 /dev/sda1`
 
@@ -30,9 +31,9 @@ If you own an Olimex Lime 2 or Raspberry Pi 2\/3, the best is to give a try to A
 
 * Login
 
-  * **Armbian : **`root / 1234`
+  * **Armbian : ** `root / 1234`
 
-  * **Raspberry : **`pi` \/ `raspberry`
+  * **Raspberry : ** `pi` \/ `raspberry`
 
 ## Case 2: AMD64 processor
 
