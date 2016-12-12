@@ -48,16 +48,23 @@
   tags:
     - update
 
-- name: Install ideascube 0.17.0 if ideascube >= 0.14.0
+- name: upgrade ideascube 0.17.0 if ideascube >= 0.14.0
   apt: name=ideascube=0.17.0 update_cache=yes force=yes dpkg_options="force-confnew"
-  when: ideascube_version | version_compare('0.14', '>=')
+  when: ideascube_version | version_compare('0.14.0', '>=')
   register: is_upgraded
   tags:
     - update
 
-- name: Freeze ideascube to 0.13.0 if ideascube < 0.14.0
+- name: upgrade ideascube to 0.12.2 if ideascube < 0.13.0
+  apt: name=ideascube=0.12.2 update_cache=yes force=yes dpkg_options="force-confnew"
+  when: ideascube_version | version_compare('0.13.0', '<')
+  register: is_upgraded
+  tags:
+    - update
+
+- name: freeze ideascube to 0.13.0 if ideascube = 0.13.0
   apt: name=ideascube=0.13.0 update_cache=yes force=yes dpkg_options="force-confnew"
-  when: ideascube_version | version_compare('0.14', '<')
+  when: ideascube_version | version_compare('0.13.0', '==')
   register: is_upgraded
   tags:
     - update
