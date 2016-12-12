@@ -6,4 +6,5 @@ Table of content :
 * [Learn how AnsibleCube works](DOC/readme.md)
 * [Setup your hardware](DOC/hardware.md)
 * [Deploy AnsibleCube with BuildMyCube](DOC/deployment.md)
+* [Automate deployment](DOC/automation.md)
 * [Some test case](DOC/test.md)
