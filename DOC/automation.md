@@ -4,7 +4,8 @@ In some case you will need to duplicate on several servers the same configuratio
 
 By default AnsibleCube give a specific name to the device, if you simply clone this device, all your device will have the same name which can be ennoying. 
 
-The workaround is to rename each cloned device. To do so, you can login on each device and launch : 
+The workaround is to rename each cloned device. To do so, you can login on each device and launch :  
+
 `./buildMyCube.sh -n idb_col_llavedelsaber -a rename -h bibliotecamovil.lan`
 
 If you got more than 4 devices to rename, it can be a bit tiring to proceed this way. 
@@ -15,7 +16,9 @@ If you got more than 4 devices to rename, it can be a bit tiring to proceed this
 ### Delete ansiblePullUpdate and add the rename script 
 ```
 sudo rm -f /etc/NetworkManager/dispatcher.d/ansiblePullUpdate
-vi /etc/NetworkManager/dispatcher.d/rename`
+sudo vi /etc/NetworkManager/dispatcher.d/rename
+```
+> ansiblePullUpdate file will be automatically copied during the rename run
 
 ### Add this script in the rename file
 **WARNING** Don't forget to modify the **buidMyCube.sh arguments**
