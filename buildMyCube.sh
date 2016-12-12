@@ -46,9 +46,7 @@ EOF
 
 function install_ansible()
 {
-    echo -n "[+] Checking for internet connectivity... "
     internet_check
-    echo 'Done.'
 
     echo -n "[+] Updating APT cache... "
     update_sources_list
