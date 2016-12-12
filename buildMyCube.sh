@@ -15,6 +15,8 @@ ANSIBLECUBE_PATH="/var/lib/ansible/local"
 GIT_REPO_URL="https://github.com/ideascube/ansiblecube.git"
 BRANCH="oneUpdateFile"
 
+DISTRIBUTION_CODENAME=$(lsb_release -sc)
+
 # functions
 function internet_check()
 {
@@ -226,6 +228,11 @@ function help()
 
 [ $EUID -eq 0 ] || {
     echo "Error: you have to be root to run this script." >&2
+    exit 1
+}
+
+[ "$DISTRIBUTION_CODENAME" == jessie ] || {
+    echo "Error: AnsibleCube run exclusively on Debian Jessie" >&2
     exit 1
 }
 
