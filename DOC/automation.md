@@ -24,7 +24,7 @@ sudo vi /etc/NetworkManager/dispatcher.d/rename
 **WARNING** Don't forget to modify the **buidMyCube.sh arguments**
 
 ```
-!/bin/bash
+#!/bin/bash
 
 IF=$1
 STATUS=$2
