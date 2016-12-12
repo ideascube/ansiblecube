@@ -131,7 +131,7 @@ function 3rd_party_app()
     if (dialog  --yesno "Do you want to download offline packages ?" 5 60) then
         ZIM=True
         
-        wget http://catalog.ideascube.org/kiwix.yml -O /tmp/kiwix.yml
+        wget http://catalog.ideascube.org/kiwix.yml -O /tmp/kiwix.yml > /dev/null 2>&1
         zim_files=$(egrep "\.[a-z][a-z]:|\.[a-z][a-z][a-z]:|size" /tmp/kiwix.yml | sed 's/    size: //' | sed 's/^[ \t]*//;s/[ \t]*$//' | sed 's/://')
 
         cmd=(dialog --stdout --no-items \
@@ -281,7 +281,7 @@ do
             NAME="ideascube_project_name=$2"
             FULL_NAME=`echo "$2" | sed 's/_/-/g'`
 
-            wget https://raw.githubusercontent.com/ideascube/ansiblecube/$BRANCH/roles/set_custom_fact/files/device_list.fact -O /tmp/device_list.fact
+            wget https://raw.githubusercontent.com/ideascube/ansiblecube/$BRANCH/roles/set_custom_fact/files/device_list.fact -O /tmp/device_list.fact > /dev/null 2>&1
 
             if [[ -z `grep "$FULL_NAME" /tmp/device_list.fact` ]]
             then
