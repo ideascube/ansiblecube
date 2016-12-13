@@ -41,7 +41,7 @@
     section=management
     option=own_config_file
     value={{ configure }}
-    when: configure is defined and configure == true
+  when: configure is defined and configure == true
   tags:
     - custom
 
