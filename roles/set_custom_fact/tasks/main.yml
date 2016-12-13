@@ -7,7 +7,7 @@
 
 - name: reload ansible_local
   setup: filter=ansible_local
-  when: own_config_file is defined and own_config_file == True
+  when: own_config_file is defined and own_config_file|bool == True
 
 - name: install custom fact module for device list
   copy: >
@@ -15,7 +15,7 @@
     dest=/etc/ansible/facts.d/device_list.fact
     mode=0666
   when: ansible_local.installed_software.management.own_config_file is defined
-    and ansible_local.installed_software.management.own_config_file == False
+    and ansible_local.installed_software.management.own_config_file|bool == False
 
 - set_fact: generic_project_name={{ ansible_hostname | regex_replace('-\d+', '') }}
 
