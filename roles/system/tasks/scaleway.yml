@@ -1,0 +1,8 @@
+---
+- name: Ensure the HDD mountpoint exists
+  file: path=/media/hdd state=directory mode=0755
+  when: sda1.stat.isblk == True
+
+- name: Mount /dev/sda1
+  mount: name=/media/hdd/ src=/dev/sda1 fstype=ext4 state=mounted opts=noatime,nofail
+  when: sda1.stat.isblk == True

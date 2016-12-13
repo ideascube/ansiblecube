@@ -24,3 +24,6 @@ zim_path: /var/ideascube/kiwix
 #Domaine name
 kalite_server_name: khanacademy.{{hostname}}
 appinventor_server_name: appinventor.{{hostname}}
+
+#Preprod vars
+crashbook_dns_domain: "cloud.online.net"

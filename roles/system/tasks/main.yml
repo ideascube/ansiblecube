@@ -113,7 +113,7 @@
    - sslh
   tags: ['master','update']
 
-- name: Install all requiered package
+- name: Install all required package
   apt: name={{ item }} state=latest update_cache=yes
   with_items:
    - python-pip
@@ -169,6 +169,11 @@
 - include: realtek.yml
   when: lspci_realtek.stdout != ""
 
+- name: Stat /dev/sda1 for later use on Koombooks
+  stat: path=/dev/sda1
+  register: sda1
+  tags: ['custom','update']
+
 - name: Test if a fex file exist, if yes, the device is an Olimex
   stat: path=/boot/bin/lime2.bin
   register: fex_file
@@ -182,6 +187,10 @@
 - include: lime2.yml
   when: fex_file.stat.exists is defined and fex_file.stat.exists 
     or fex_file2.stat.exists is defined and fex_file2.stat.exists
+
+- include: scaleway.yml
+  when: ansible_dns.domain == "{{ crashbook_dns_domain }}"
+  tags: ['custom','update']
 
 - name: List services to restart (1/2)
   shell: checkrestart | grep ^service | awk '{print $2}'
