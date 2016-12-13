@@ -5,6 +5,7 @@ START=0
 SSH_KEY="/root/.ssh/id_rsa"
 MANAGMENT="managed_by_bsf=True"
 TIMEZONE="timezone=Europe/Paris"
+CONFIGURE="own_config_file=False"
 TAGS="--tags master,custom"
 LOCK_ACTION=0
 
@@ -88,7 +89,7 @@ function generate_rsa_key()
 
 function 3rd_party_app()
 {
-    CONFIGURE="configure=true"
+    CONFIGURE="own_config_file=True"
     KALITE=False
     MEDIACENTER=False
     ZIM=False
