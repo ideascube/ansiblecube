@@ -1,6 +1,6 @@
 ---
 #Network
-hotspotip: 192.168.2.1
+hotspot_ip: 192.168.2.1
 hotspot_interface: wlan0
 lan_interface: eth0
 client_interface: wlan1
@@ -9,7 +9,7 @@ client_interface: wlan1
 username: ideascube
 password: $6$YcJS1HjRAv/$1bUosoPalzHEvfpx71UhnG6vCeckTGbA5U1i6UpA8X21Jrv7fYRPyNrq/YWuiBp3xQWd5kRRhrKKPHcbTkkfQ/
 repo_url: https://github.com/ideascube/ansiblecube.git
-central_server: ansible@51.254.97.1
+central_server: ansible@tincmaster.wan.bsf-intranet.org
 filer_bsf: http://filer.bsf-intranet.org
 timezone: "Europe/Paris"
 kawax: "10.10.9.23"
@@ -26,4 +26,4 @@ kalite_server_name: khanacademy.{{hostname}}
 appinventor_server_name: appinventor.{{hostname}}
 
 #Preprod vars
-crashbook: "00:07:cb:03:2f:f1"
+crashbook_dns_domain: "cloud.online.net"

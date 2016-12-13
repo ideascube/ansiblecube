@@ -41,6 +41,7 @@
     section=management
     option=hostname
     value={{hostname}}
+  when: ansible_local.installed_software.management.hostname is undefined
   tags: ['custom','update','rename']
 
 - name: Remove udev rules for wifi 
@@ -53,13 +54,18 @@
   when: firststart.stat.exists == False or firststart is undefined
   tags: ['custom','rename']
 
-- name: Get eth0 MAC address when interfaces is up
-  set_fact: host_mac_address="{{ ansible_eth0.macaddress }}"
-  when: ansible_eth0.macaddress is defined
+- name: Stat /dev/sda1 for later use on Koombooks
+  stat: path=/dev/sda1
+  register: sda1
+  tags: ['custom','update']
+
+- name: Get domain name when interfaces is configured
+  set_fact: host_domainname="{{ ansible_dns.domain }}"
+  when: ansible_dns.domain is defined
   tags: ['custom','update','rename']
 
 - include: scaleway.yml
-  when: host_mac_address == "{{ crashbook }}"
+  when: host_domainname == "{{ crashbook_dns_domain }}"
   tags: ['custom']
 
 - name: Write all the variables in /etc/firstStart.csv
@@ -113,12 +119,14 @@
    - sslh
   tags: ['master','update']
 
-- name: Install all requiered package
+- name: Install all required package
   apt: name={{ item }} state=latest update_cache=yes
   with_items:
    - python-pip
    - python-dev
    - python-setuptools
+   - python-virtualenv
+   - virtualenv
    - git
    - sudo
    - lsb-release
@@ -144,8 +152,7 @@
    - lshw
    - hwinfo
    - sqlite3
-  tags:
-    - master
+  tags: ['master','update']
 
 - name: Upgrade pip to the latest version
   pip: name=pip state=latest
@@ -199,12 +206,6 @@
 
 - name: Upgrade packages
   apt: upgrade=safe
-  tags:
-    - master
-
-# https://github.com/ansible/ansible/issues/16015
-- name: Fix a bug on Exception setuptools 3.6
-  command: pip install -U distribute
   tags:
     - master
 

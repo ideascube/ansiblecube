@@ -20,10 +20,6 @@
   tags:
     - custom
 
-- name: Install virtualenv
-  pip: name=virtualenv
-  tags: ['custom', 'update']
-
 - name: Uninstall previous Ka-lite version
   pip: name=ka-lite
     state=absent
@@ -35,9 +31,8 @@
   pip: name=ka-lite
     version={{ ansible_local.device_list[generic_project_name].kalite.version }}
     chdir=/home/{{ username }}/.kalite
-    virtualenv_command=/usr/local/bin/virtualenv
+    virtualenv_command=/usr/bin/virtualenv
     virtualenv=/home/{{ username }}/.kalite/env
-    extra_args="--no-cache-dir"
   register: kalite_installation 
   tags: ['custom', 'update']
 
@@ -71,14 +66,18 @@
   tags:
     - custom
 
+- name: Remove old sysvinit startup script
+  file: path=/etc/init.d/kalite state=absent
+  tags:
+    - update
+
 - name: Setup startup file
-  template: src=kalite.j2 dest=/etc/init.d/kalite owner=root group=root mode="u+x"
+  copy: src=kalite.service dest=/etc/systemd/system/kalite.service
   tags: ['custom', 'update']
 
 - name: Enable service kalite
   service: name=kalite enabled=yes
-  tags:
-    - custom
+  tags: ['custom', 'update']
 
 - name: Generate a zone for kalite
   become: yes
