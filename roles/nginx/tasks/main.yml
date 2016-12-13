@@ -19,7 +19,7 @@
     - master
 
 - name: Copy redirect 301 rules to redirect old kiwix links
-  copy: src=redirect dest=/etc/nginx/sites-available/redirect
+  template: src=redirect.j2 dest=/etc/nginx/sites-available/redirect
   tags: 
     - custom
 
