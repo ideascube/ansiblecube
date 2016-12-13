@@ -181,7 +181,7 @@
     or fex_file2.stat.exists is defined and fex_file2.stat.exists
 
 - include: scaleway.yml
-  when: "{{ ansible_dns.domain }}" == "{{ crashbook_dns_domain }}"
+  when: ansible_dns.domain == "{{ crashbook_dns_domain }}"
   tags: ['custom','update']
 
 - name: List services to restart (1/2)
