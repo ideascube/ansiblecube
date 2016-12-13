@@ -1,4 +1,0 @@
-server {
-        server_name wikipedia.{{ hostname }} gutenberg.{{ hostname }} wikiversity.{{ hostname }} vikidia.{{ hostname }} www.{{ hostname }};
-        rewrite ^ $scheme://{{ hostname }};
-}
