@@ -40,8 +40,7 @@
   ini_file: dest=/etc/ansible/facts.d/installed_software.fact
     section=management
     option=own_config_file
-    value={{ configure }}
-  when: configure is defined
+    value={{ own_config_file }}
   tags:
     - custom
 
