@@ -12,7 +12,7 @@ You may want to use the tests locally:
 
 From now on, you can run the tests against the repo:
 
-    (pytest-ansible) ~/dev/ansiblecube $ py.test[...tests run...]
+    (pytest-ansible) ~/dev/ansiblecube $ py.test
 
 You can even set these tests to run as a pre-pushed git hook, so you cannot push crazy YAML indentation and no invalid Jinja2 templates:
 
