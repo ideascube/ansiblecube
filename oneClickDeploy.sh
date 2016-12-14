@@ -1,1 +1,0 @@
-buildMyCube.sh
