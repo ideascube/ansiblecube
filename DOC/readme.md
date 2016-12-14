@@ -6,19 +6,19 @@ _AnsibleCube aim to automatically deploy the [Ideascube plateform](http://github
 
 Ansible has been chosen to pull config file, software and content to the ideascube box which can be an AMD64 server or an ARM server.
 
-Ansible is originally design to push configuration files from a master to several slaves. But you can use it the other way around where the slaves are able to pull content from a Git server.
+Ansible is originally designed to push configuration files from a master to several slaves. But you can use it the other way around where the slaves are able to pull content from a Git server.
 
 ## How we use it
 
-In our case the master is this GitHub repository. It contain a playbook with several roles. Each time the ideascube box get an Internet connection, it synchronize the distant Git repository with his local Git repository and tough get an update of what must be done on the system. **At this stage your are able to do almost anything!**
+In our case the master is this GitHub repository. It contain a playbook with several roles. Each time the ideascube box gets an Internet connection, it synchronizes the distant Git repository with its local Git repository and then gets an update of what must be done on the system. **At this stage your are able to do almost anything!**
 
 ### The network configuration
 
 Our network architecture is based on :
 
-* A GitHub repo which hold all the recipe 
+* A GitHub repo which holds all the recipes 
 
-* A Filer which hold all the heavy files \(so synchronizing the GitRepo is fast) 
+* A Filer which holds all the heavy files \(so synchronizing the GitRepo is fast) 
 
 * A Data server where content from the ideascube box can be automatically pushed towards the server
 
@@ -30,9 +30,9 @@ So far ansiblecube has been tested only on a ARM Olimex Lime2 A20, Debian Jessie
 
 ### What does Ansible ?
 
-This playbook install :
+This playbook installs :
 
-* [ideascube software](http://github.com/ideascube/ideascube/). It can be installed simply with the [apt tool from Debian](http://repos.ideascube.org/debian/jessie). However, ansiblecube take care of all the small tweak to make it work.
+* [ideascube software](http://github.com/ideascube/ideascube/). It can be installed simply with the [apt tool from Debian](http://repos.ideascube.org/debian/jessie). However, ansiblecube will take care of all the small tweaks to make it work.
 
 * Kiwix-server to load ZIM files
 
@@ -44,17 +44,17 @@ This playbook install :
 
 * Synchronise Kalite videos
 
-It setup :
+It will setup :
 
 * Dnsmasq \(to resolv local domain\)
 
 * Hostapd \(to setup the local wifi hotspot\)
 
-* Nginx \(to server http content\)
+* Nginx \(to serve http content\)
 
-* Uwsgi \(to manage python script\)
+* Uwsgi \(to manage python scripts\)
 
 * Network-manager
 
-* All system tweak
+* All system tweaks
 

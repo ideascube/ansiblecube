@@ -1,8 +1,8 @@
 # Tests
 
-The repo is plugged to some [Travis CI](https://travis-ci.org/ideascube/ansiblecube). 
+The repo is plugged in [Travis CI](https://travis-ci.org/ideascube/ansiblecube). 
 
-You may want to use the tests localy:
+You may want to use the tests locally:
 
 ```
 
@@ -28,7 +28,7 @@ $ py.test[...tests run...]
 
 ```
 
-You can even set this tests run as a pre-push git hook, so you cannot push crazy YAML indentation and no invalid Jinja2 templates:
+You can even set these tests to run as a pre-pushed git hook, so you cannot push crazy YAML indentation and no invalid Jinja2 templates:
 
 ```
 

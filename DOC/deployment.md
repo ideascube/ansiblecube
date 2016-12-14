@@ -32,21 +32,21 @@ Your device is now ready to be configured with AnsibleCube, let's do it !
 
 * Modify rights: `chmod +x buildMyCube.sh`
 
-**WARNING**: If you are running this command behind a firewall, be sure the NTP protocol is open for outgoing connection, if not, set manually the date on your system: `date -s 20160513`
+**WARNING**: If you are running this command behind a firewall, be sure the NTP protocol is allowed for outgoing connections. If not, manually set the date on your system: `date -s 20160513`
 
 ## Execute buildMyCube.sh
 
-builMyCube is a wrapper around the ansible-pull command line tool.
+buildMyCube is a wrapper around the ansible-pull command line tool.
 
-Ansible-pull needs some parameters to run **AnsibleCube **correctly. This script will built the right command line for you.
+Ansible-pull needs some parameters to run **AnsibleCube** correctly. This script will built the right command line for you.
 
-At Library Without Borders we use two important files
+At Library Without Borders we use two important files :
 
 1. [Ideascube configuration file](https://github.com/ideascube/ideascube/tree/master/ideascube/conf "Fichier de configuration Ideascube") on Ideascube github repository
 
 2. [Device configuration file](https://github.com/ideascube/ansiblecube/blob/oneUpdateFile/roles/set_custom_fact/files/device_list.fact) on Ansiblecube github repository
 
-Thoses files help us to automate deployment. If you would like to use one of our template, go for it, dig in thoses files, find configuration you like, and give it in argument to `buildMyCube.sh` otherwhise, feel free to give the name you want to your device and the script will ask few questions about the configuration you would like to have !
+Thoses files helps us to automate deployment. If you would like to use one of our templates, go for it, dig in those files, find the configuration you like, and pass the arguments to `buildMyCube.sh`. Otherwise, feel free to give the name you want to your device and the script will ask a few questions about the configuration you would like to have !
 
 ### Script help
 
@@ -130,85 +130,85 @@ Thoses files help us to automate deployment. If you would like to use one of our
 
 ### --name
 
-This is the only mendatory argument. This one will be used to set your server name, wifi hotspot name, dns name, ideascube name.
+This is the only mandatory argument. It will be used to set your server name, wifi hotspot name, dns name, ideascube name.
 
-If the latter match with one found in the [AnsibleCube device configuration file](https://github.com/ideascube/ansiblecube/blob/oneUpdateFile/roles/set_custom_fact/files/device_list.fact) the configuration template will be used. Otherwise a dialog box will pop up to ask you some questions about 3rd party software \(Khan Academy, Zim files\) you would like to install and configure.
+If the latter matches with one found in the [AnsibleCube device configuration file](https://github.com/ideascube/ansiblecube/blob/oneUpdateFile/roles/set_custom_fact/files/device_list.fact) the configuration template will be used. Otherwise a dialog box will pop up to ask you some questions about 3rd party softwares \(Khan Academy, Zim files\) you would like to install and configure.
 
 ### --timezone
 
-By default the timezone is `Europe/Paris` usefull if you headquarter is somewhere else. Timezone can be found on [Wikipedia](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
+By default the timezone is `Europe/Paris`. This option is useful if your headquarter is somewhere else. Timezone can be found on [Wikipedia](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 
 ### --branch
 
-This is meant for test only. In most case you won't have to use this argument
+This is meant for testing only. In most case you won't have to use this argument.
 
 ### --managment
 
-By default this argument is set to `True`, meaning that the device installed will be managed remotlly by Library Whitout Border. If your device is used for a personnal project set this argument to `False`
+By default this argument is set to `True`, meaning that the device installed will be managed remotely by Library Whitout Border. If your device is used for a personal project, set this argument to `False`.
 
 ### --hostname
 
-By default, the hostname will be taken from `--name` argument. If you want to have a specific name and a specific hostame, set this variable. Don't forget to add **.lan**
+By default, the hostname will be taken from `--name` argument. If you want to have a specific name and a specific hostame, set this variable. Don't forget to add **.lan**.
 
 ### --action
 
-By default this argument is not needed, the default value will be `master,custom`
+By default this argument is not needed, the default value will be `master,custom`.
 
 * master
 
-This argument match an AnsibleCube tag. It means that this argument will match specific action. For instance, this argument is usefull to build a minimal configuration \(like a master image for easy duplicating\). Only Ideascube and Kiwix server will be installed and configured. If you are using an ARM proc you will get to the homepage by typping `http://koombook.lan` or `http://ideasbox.lan` for an AMD64 processor.
+This argument matches an AnsibleCube tag. It means that this argument will match specific action. For instance, this argument is usefull to build a minimal configuration \(like a master image for easy duplicating\). Only Ideascube and Kiwix server will be installed and configured. If you are using an ARM CPU you will get to the homepage by typing `http://koombook.lan`. Using `http://ideasbox.lan` for an AMD64 processor.
 
 This is great to give a try, but not enough for a long term use.
 
 * custom
 
-This "tag", will match more action within AnsibleCube, meaning configuration of your hotspot name, dns name matching  the `--name`. It will also install and configure 3rd party application.
+This "tag", will match more actions within AnsibleCube, like configuration of your hotspot name, dns name matching the `--name`. It will also install and configure 3rd party applications.
 
 * rename
 
-This action can be used in case you have fully installed a device \(master and custom action\) and you are not happy with the device name, then use the rename tag to change it. Fellow exemple below.
+This action can be used in case you have fully installed a device \(master and custom action\) and you are not happy with the device name, then use the rename tag to change it. Examples following.
 
 > **WARNING**
 
-> This action can't be used if the **master** and **custom** action have not been executed
+> This action can't be used if the **master** and **custom** action have not been executed.
 
 * update
 
-This action will keep your device up to date each time the device get an Internet connection. This is done automatically. However you can use it directly with this script.
+This action will keep your device up to date each time the device get an Internet connection. This is done automatically. However you can use it manually with this script.
 
 > **WARNING**
 
-> This action can't be used if the **master** and **custom** action have not been executed
+> This action can't be used if the **master** and **custom** action have not been executed.
 
 * zim\_install
 
-This will specifiquelly trigger the task to download and install Zim files from Internet. Be carefull, you will need a fast Internet connection as the ZIM files are pretty havey \(from 200Mo to 60Go\).
+This will trigger the task of downloading and installing Zim files from Internet. Be carefull, you will need a fast Internet connection as the ZIM files are pretty heavy \(from 200Mo to 60Go\).
 
 > **WARNING**
 
-> This action can't be used if the **master** and **custom** action have not been executed
+> This action can't be used if the **master** and **custom** action have not been executed.
 
 * idc\_import
 
-This will specifiquelly trigger the task to massively import content whithin the Ideascube media-center. 
+This will trigger the task of massively importing content within the Ideascube media-center. 
 
-Before importing, you need to build a csv file and gather all you media in one folder. The best is to ask for help on \#ideascube on @freenode.org
+Before importing, you will need to build a csv file and gather all you medias in one folder. The best is to ask for help on \#ideascube on @freenode.org.
 
 > **WARNING**
 
-> This action can't be used if the **master** and **custom** action have not been executed
+> This action can't be used if the **master** and **custom** action have not been executed.
 
 * kalite\_import
 
-For faster installation and configuration, we have been mirroring all the kalite videos. It could not be used if you are standing outside of Library Without Border desk. You will have to download manually the videos from the Kalite web interface.
+For faster installation and configuration, we have been mirroring all the kalite videos. Unfortunaltery, this mirror cannot be used if you are standing outside of Library Without Border office. You will have to download manually the videos from the Kalite web interface.
 
 > **WARNING**
 
-> This action can't be used if the **master** and **custom** action have not been executed
+> This action can't be used if the **master** and **custom** action have not been executed.
 
 ## Launch the deployment
 
-### Exemples
+### Examples
 
 ##### Create a master based on kb\_bdi\_irc Ideascube template
 
@@ -218,11 +218,11 @@ For faster installation and configuration, we have been mirroring all the kalite
 
 `./buildMyCube.sh -n kb_bdi_irc -a master -h box.lan`
 
-##### Full install with personnal configuration and without managment
+##### Full install with personal configuration and without management
 
 `./buildMyCube.sh -n my_box -t Africa/Dakar -m false`
 
-##### Full install with personnal configuration, without managment and custom hostname
+##### Full install with personal configuration, without management and custom hostname
 
 `./buildMyCube.sh -n my_box -t Africa/Dakar -m false -h foo.lan`
 
@@ -234,21 +234,21 @@ For faster installation and configuration, we have been mirroring all the kalite
 
 `./buildMyCube.sh -a update`
 
-> You can fellow the installation with `tail -f /var/log/ansible-pull.log`
+> You can follow the installation with `tail -f /var/log/ansible-pull.log`
 
 ## Connect to your device
 
-Once `buildMyCube.sh` will have finish, reboot your device recently configured and look for an new wifi hotspot on your laptop.
+Once `buildMyCube.sh` is done installing, reboot your newly configured device and look for an new wifi hotspot on your laptop.
 
 ## Keep your system up to date!
 
 Now you have an ideascube system ready to work, great!
 
-Ansible will be executed in Pull mode. The fellowing file will be called by Network-Manager each time a network interface goes up : `/etc/NetworkManager/dispatcher.d/ansiblePullUpdate`
+Ansible will be executed in Pull mode. The following file will be called by Network-Manager each time a network interface goes up : `/etc/NetworkManager/dispatcher.d/ansiblePullUpdate`
 
 Example of `ansiblePullUpdate` file : `/usr/local/bin/ansible-pull -s 120 -d /var/lib/ansible/local -C oneUpdateFile -i hosts -U https://github.com/ideascube/ansiblecube.git main.yml --tags update`
 
-The file `roles/set_custom_fact/files/device_list.fact` is used to know what action have to be done on the device. 
+The file `roles/set_custom_fact/files/device_list.fact` is used to know what actions have to be done on the device. 
 
-If the latter have `actived : True`, the fellowing action will be executed each time the device get an Internet connection
+If the latter have `actived : True`, the following action will be executed each time the device get an Internet connection.
 

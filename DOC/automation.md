@@ -1,8 +1,8 @@
 # How to automate deployment
 
-In some case you will need to duplicate on several servers the same configuration.
+You may have to duplicate on several servers the same configuration.
 
-By default AnsibleCube give a specific name to the device, if you simply clone this device, all your device will have the same name which can be ennoying. 
+By default AnsibleCube give a specific name to the device, if you simply clone this device, all your devices will have the same name which can be annoying. 
 
 The workaround is to rename each cloned device. To do so, you can login on each device and launch :  
 
@@ -10,7 +10,7 @@ The workaround is to rename each cloned device. To do so, you can login on each 
 
 If you got more than 4 devices to rename, it can be a bit tiring to proceed this way. 
 
-**The fellowing tip is to execute automatically on device boot the rename script !**
+**The following tip allows you to run automatically the rename script on device boot!**
 
 ## Login in your master device
 ### Delete ansiblePullUpdate and add the rename script 
@@ -18,10 +18,10 @@ If you got more than 4 devices to rename, it can be a bit tiring to proceed this
 sudo rm -f /etc/NetworkManager/dispatcher.d/ansiblePullUpdate
 sudo vi /etc/NetworkManager/dispatcher.d/rename
 ```
-> ansiblePullUpdate file will be automatically copied during the rename run
+> ansiblePullUpdate file will be automatically recreated during the rename operation.
 
 ### Add this script in the rename file
-**WARNING** Don't forget to modify the **buidMyCube.sh arguments**
+**WARNING** Don't forget to modify the **buidMyCube.sh arguments** to match your needs.
 
 ```
 #!/bin/bash
@@ -45,6 +45,6 @@ fi
 ### Enable the script 
 `sudo chmod +x /etc/NetworkManager/dispatcher.d/rename`
 
-### Finalise 
+### Finalize 
 Shutdown your master device, clone it, then start your newly cloned device.
-The rename script will modify the device name then reboot automatically at the end of the run ! 
+The rename script will modify the device name then reboot automatically when done ! 
