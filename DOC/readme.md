@@ -16,19 +16,19 @@ In our case the master is this GitHub repository. It contain a playbook with sev
 
 Our network architecture is based on :
 
-* A GitHub repo which holds all the recipes 
+* A GitHub repo which holds all the recipes
 
-* A Filer which holds all the heavy files \(so synchronizing the GitRepo is fast) 
+* A Filer which holds all the heavy files \(so synchronizing the GitRepo is fast)
 
 * A Data server where content from the ideascube box can be automatically pushed towards the server
 
 #### It works for...
 
-So far ansiblecube has been tested only on a ARM Olimex Lime2 A20, Debian Jessie, Kernel 3.4\/4.8 and AMD64 server.It should work on any Jessie distribution, probably on Ubuntu and Raspberry Pi.
+So far ansiblecube has been tested only on a ARM Olimex Lime2 A20, Debian Jessie, Kernel 3.4/4.8 and AMD64 server. It should work on any Jessie distribution, probably on Ubuntu and Raspberry Pi.
 
 ## Deployment
 
-### What does Ansible ?
+### What does Ansible do?
 
 This playbook installs :
 
@@ -46,15 +46,15 @@ This playbook installs :
 
 It will setup :
 
-* Dnsmasq \(to resolv local domain\)
+* dnsmasq \(to resolv local domain\)
 
-* Hostapd \(to setup the local wifi hotspot\)
+* hostapd \(to setup the local wifi hotspot\)
 
-* Nginx \(to serve http content\)
+* nginx \(to serve http content\)
 
-* Uwsgi \(to manage python scripts\)
+* uwsgi \(to manage python scripts\)
 
-* Network-manager
+* Network-Manager
 
 * All system tweaks
 
