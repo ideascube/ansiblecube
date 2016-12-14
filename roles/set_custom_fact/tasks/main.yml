@@ -20,8 +20,7 @@
     section=management
     option=managed_by_bsf
     value={{ managed_by_bsf }}
-  tags:
-    - custom
+  tags: ['master','custom']
 
 - name: Register if the user has been build is own configuration file
   ini_file: dest=/etc/ansible/facts.d/installed_software.fact
