@@ -14,10 +14,10 @@ If you got more than 4 devices to rename, it can be a bit tiring to proceed this
 
 * Login in your master device
 * Delete ansiblePullUpdate and add the rename script:
-
+```
     sudo rm -f /etc/NetworkManager/dispatcher.d/ansiblePullUpdate
     sudo vi /etc/NetworkManager/dispatcher.d/rename
-
+```
 The ansiblePullUpdate file will be automatically recreated during the rename operation.
 
 * Add this script in the rename file:
@@ -42,7 +42,7 @@ The ansiblePullUpdate file will be automatically recreated during the rename ope
 
 * Enable the script
 
-    sudo chmod +x /etc/NetworkManager/dispatcher.d/rename
+    `sudo chmod +x /etc/NetworkManager/dispatcher.d/rename`
 
 Shutdown your master device, clone it, then start your newly cloned device.
 The rename script will modify the device name then reboot automatically when done!
