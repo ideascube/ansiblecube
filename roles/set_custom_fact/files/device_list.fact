@@ -710,7 +710,7 @@
 			"name": ["wikipedia.fr","wikipedia.en","wikipedia.ar","gutenberg.fr","tedxgeneva2014.fr"]
 		}
 	},
-	"kb-fra-scaleway": {
+	"kb-bsf-scaleway": {
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.9",
