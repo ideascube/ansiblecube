@@ -247,6 +247,7 @@ do
                 "rename")
                     LOCK_ACTION=1
                     MANAGMENT=""
+                    CONFIGURE=""
                 ;;
 
                 "update"|"zim_install"|"idc_import"|"kalite_import")
@@ -254,6 +255,7 @@ do
                     MANAGMENT=""
                     START=1
                     TIMEZONE=""
+                    CONFIGURE=""
                 ;;
             esac
 
