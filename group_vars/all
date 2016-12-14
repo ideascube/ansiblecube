@@ -16,6 +16,7 @@ kawax: "10.10.9.23"
 bsf_gateway: "10.10.9.1"
 kiwix_version: "0.9"
 mongodb_version: "2.4.10"
+own_config_file: False
 
 #Apps path
 mook_path: /home/{{ username }}
