@@ -1,13 +1,49 @@
 ---
+- include_vars: group_vars/{{ ansible_architecture }}.yml
+  tags: [ 'master', 'custom', 'rename', 'update','idc_import','zim_install','kalite_import' ]
+
 - name: ensure custom facts directory exists
   file: >
     path=/etc/ansible/facts.d
     recurse=yes
     state=directory
+  tags:
+    - master
+
+- name: Create installed_software.fact file
+  file: path=/etc/ansible/facts.d/installed_software.fact state=touch
+  tags:
+    - master
+
+- name: Register if the device is managed by BSF or not
+  ini_file: dest=/etc/ansible/facts.d/installed_software.fact
+    section=management
+    option=managed_by_bsf
+    value={{ managed_by_bsf }}
+  tags:
+    - custom
+
+- name: Register if the user has been build is own configuration file
+  ini_file: dest=/etc/ansible/facts.d/installed_software.fact
+    section=management
+    option=own_config_file
+    value={{ own_config_file }}
+  when: ansible_local.installed_software.management.own_config_file is undefined
+  register: set_config_file
+  tags: ['custom','update']
+
+- name: Register hostname in facts
+  ini_file: dest=/etc/ansible/facts.d/installed_software.fact
+    section=management
+    option=hostname
+    value={{ hostname }}
+  when: ansible_local.installed_software.management.hostname is undefined
+  tags: ['custom','update','rename']
 
 - name: reload ansible_local
   setup: filter=ansible_local
-  when: own_config_file is defined and own_config_file|bool == True
+  when: set_config_file.changed == True
+  tags: ['custom','update','rename']
 
 - name: install custom fact module for device list
   copy: >
@@ -16,11 +52,15 @@
     mode=0666
   when: ansible_local.installed_software.management.own_config_file is defined
     and ansible_local.installed_software.management.own_config_file|bool == False
+  tags: ['custom','update','rename']
 
 - set_fact: generic_project_name={{ ansible_hostname | regex_replace('-\d+', '') }}
+  tags: [ 'master', 'custom', 'rename', 'update','idc_import','zim_install','kalite_import' ]
 
 - name: Device hostname
   debug: msg="{{ generic_project_name }}"
+  tags: [ 'master', 'custom', 'rename', 'update','idc_import','zim_install','kalite_import' ]
 
 - name: reload ansible_local
   setup: filter=ansible_local
+  tags: [ 'master', 'custom', 'rename', 'update','idc_import','zim_install','kalite_import' ]
