@@ -51,6 +51,7 @@
 
     - role: logs
       when: ansible_local.installed_software.management.managed_by_bsf|bool == True
+      tags: ['master','update']
 
     - role: idc_import
       when: ansible_local.device_list[generic_project_name].idc_import is defined
