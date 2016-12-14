@@ -10,7 +10,7 @@
       tags: [ 'master', 'custom', 'update','idc_import','zim_install','kalite_import' ]
 
   roles:
-    - { role: set_custom_fact, tags: [ 'master', 'custom', 'update','idc_import','zim_install','kalite_import' ] }
+    - set_custom_fact
     - system
     - nginx
     - uwsgi
