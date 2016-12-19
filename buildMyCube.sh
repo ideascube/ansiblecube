@@ -196,6 +196,9 @@ function help()
                         Default : Equal to -n
                         Ex: -h my_hostname.lan
 
+        -w|--wifi-pwd   Override the default AP wifi password. Must be >= 8 caracteres
+                        Ex: -w 12ET4690
+
         -a|--action     Type of action : master / custom / rename / update / zim_install / idc_import / kalite_import
                         Default : master,custom
                         Ex: -a rename
@@ -303,6 +306,15 @@ do
         shift # past argument
         ;;
 
+        -w|--wifi-pwd)
+            [[ `expr length $2` < 8 ]] && {
+                echo "Error: Your wifi password must be >= 8 caracteres" >&2
+                exit 1
+            }
+            WIFIPWD="wpa_pass=$2"
+        shift # past argument
+        ;;
+
         -b|--branch)
             BRANCH=$2
         shift
@@ -331,8 +343,8 @@ if [[ "$START" = "1" ]]; then
     [ -d ${ANSIBLECUBE_PATH} ] || clone_ansiblecube
 
     echo "[+] Start ansible-pull... (log: /var/log/ansible-pull.log)"
-    echo "Launching : $ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars "$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE" $TAGS"
-    $ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars "$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE" $TAGS > /var/log/ansible-pull.log 2>&1
+    echo "Launching : $ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars "$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE $WIFIPWD" $TAGS"
+    $ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars "$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE $WIFIPWD" $TAGS > /var/log/ansible-pull.log 2>&1
     
     echo "[+] Send ansible-pull report"
 
