@@ -2,11 +2,6 @@
 - include_vars: group_vars/{{ ansible_architecture }}.yml
   tags: ['master', 'custom']
 
-- name: Include task needed when using an external hard drive
-  include: ext_hdd.yml
-  when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l")
-    and sda1.stat.isblk == True
-
 - name: Configure the ideascube package repository
   template: src=ideascube.list.j2 dest=/etc/apt/sources.list.d/ideascube.list owner=root group=root mode=644
   tags: ['master', 'custom', 'update']
@@ -41,6 +36,11 @@
 - name: Install ideascube 0.17 package
   apt: name=ideascube=0.17.0 update_cache=yes force=yes dpkg_options="force-confnew"
   tags: ['master', 'custom']
+
+- name: Include task needed when using an external hard drive
+  include: ext_hdd.yml
+  when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l")
+    and sda1.stat.isblk == True
 
 - name: Get ideascube version
   shell: dpkg-query -W  ideascube  | awk '{print $2}' ; echo
