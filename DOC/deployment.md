@@ -92,6 +92,10 @@ Thoses files helps us to automate deployment. If you would like to use one of ou
 
                 Ex: -h my_hostname.lan
 
+
+-w|--wifi-pwd   Override the default AP wifi password
+                Ex: -w 12ET4690
+
  -a|--action    Type of action : master / custom / rename / update / zim_install / idc_import / kalite_import
 
                 Default : master,custom
@@ -149,6 +153,10 @@ By default this argument is set to `True`, meaning that the device installed wil
 ### --hostname
 
 By default, the hostname will be taken from `--name` argument. If you want to have a specific name and a specific hostame, set this variable. Don't forget to add **`.lan`**.
+
+### --wifi-pwd
+
+Override the default wifi hotspot password with the given one
 
 ### --action
 
