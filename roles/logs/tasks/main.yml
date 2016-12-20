@@ -9,6 +9,9 @@
 - name: Configure dpkg.list logs rotation
   template: src=dpkg-list.logrotate.j2 dest=/etc/logrotate.d/dpkg-list owner=root group=root mode=0644
 
+- name: Configure pip.freeze logs rotation
+  template: src=pip-freeze.logrotate.j2 dest=/etc/logrotate.d/pip-freeze owner=root group=root mode=0644
+
 - name: copy hdw info script
   copy: src=hdw_info.sh dest=/home/ideascube/hdw_info.sh mode=755
 
