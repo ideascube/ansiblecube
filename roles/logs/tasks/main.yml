@@ -1,16 +1,16 @@
 ---
-- name: Ensure logrotate is configured to use dateext
-  template: src=000-dateext-for-all.j2 dest=/etc/logrotate.d/000-dateext-for-all
-    owner=root group=root mode=0644
 
-- name: Configure ansible-pull logs rotation
-  template: src=ansible-pull.logrotate.j2 dest=/etc/logrotate.d/ansible-pull owner=root group=root mode=0644
-
-- name: Configure dpkg.list logs rotation
-  template: src=dpkg-list.logrotate.j2 dest=/etc/logrotate.d/dpkg-list owner=root group=root mode=0644
-
-- name: Configure pip.freeze logs rotation
-  template: src=pip-freeze.logrotate.j2 dest=/etc/logrotate.d/pip-freeze owner=root group=root mode=0644
+- name: Configure logrotate to handle our custom logs.
+  template: src={{ item.src }} dest=/etc/logrotate.d/{{ item.dest }} owner=root group=root mode=0644
+  with_items:
+    - src: 000-dateext-for-all.j2
+      dest: 000-dateext-for-all
+    - src: ansible-pull.logrotate.j2
+      dest: ansible-pull
+    - src: dpkg-list.logrotate.j2
+      dest: dpkg-list
+    - src: pip-freeze.logrotate.j2
+      dest: pip-freeze
 
 - name: copy hdw info script
   copy: src=hdw_info.sh dest=/home/ideascube/hdw_info.sh mode=755
