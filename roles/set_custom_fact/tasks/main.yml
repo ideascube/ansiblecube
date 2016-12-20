@@ -29,7 +29,7 @@
     value={{ own_config_file }}
   when: ansible_local.installed_software.management.own_config_file is undefined
   register: set_config_file
-  tags: ['custom','update']
+  tags: ['custom','update','rename']
 
 - name: Register hostname in facts
   ini_file: dest=/etc/ansible/facts.d/installed_software.fact
