@@ -17,4 +17,19 @@ then
         *)
         ;;
     esac
+
+    status=$(tail -3 /var/log/ansible-pull.log)
+    device_hostname=$(hostname)
+
+    case $status in
+        *"failed=1"*)
+            wget http://report.bsf-intranet.org/device=$device_hostname/ansiblepull=fail > /dev/null 2>&1
+        ;;
+        *"failed=0"*)
+            wget http://report.bsf-intranet.org/device=$device_hostname/ansiblepull=success > /dev/null 2>&1
+        ;;
+        *"Local modifications exist in repository"*)
+            wget http://report.bsf-intranet.org/device=$device_hostname/ansiblepull=modificationExist > /dev/null 2>&1
+        ;;
+    esac
 fi
