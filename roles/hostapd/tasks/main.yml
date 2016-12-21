@@ -37,7 +37,7 @@
     - master
 
 - name: Enable service hostapd
-  service: name=hostapd enabled=yes
+  command: systemctl enable hostapd
   tags: 
     - master
     
