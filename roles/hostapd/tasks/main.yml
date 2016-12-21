@@ -21,7 +21,6 @@
 
 - name: Remove sysVinit startup file
   file: path=/etc/init.d/hostapd state=absent
-  when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l'
   tags: ['master', 'update']
 
 - include_vars: group_vars/{{ ansible_architecture }}.yml
