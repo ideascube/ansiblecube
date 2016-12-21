@@ -11,7 +11,8 @@ dnsmasq_resolver_2: 8.8.4.4
 username: ideascube
 password: $6$YcJS1HjRAv/$1bUosoPalzHEvfpx71UhnG6vCeckTGbA5U1i6UpA8X21Jrv7fYRPyNrq/YWuiBp3xQWd5kRRhrKKPHcbTkkfQ/
 repo_url: https://github.com/ideascube/ansiblecube.git
-central_server: ansible@tincmaster.wan.bsf-intranet.org
+central_server: tincmaster.wan.bsf-intranet.org
+central_server_user: ansible
 filer_bsf: http://filer.bsf-intranet.org
 timezone: "Europe/Paris"
 zim_path: /var/ideascube/kiwix

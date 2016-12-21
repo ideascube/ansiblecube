@@ -23,7 +23,7 @@
   copy: content=id,{{ date }},{{ time }},{{ ideascubeName }},{{ UUID }},{{ ansible_default_ipv4["macaddress"] }},{{ ansible_default_ipv4["address"] }},{{ public_ip.stdout }}\n dest=/etc/firstStart.csv
 
 - name: Send this file over the central_server 
-  raw: cat /etc/firstStart.csv | ssh -p 443 {{ central_server }} "cat >> ./ansible/UUID/firstStart.csv"
+  raw: cat /etc/firstStart.csv | ssh -p 443 {{ central_server_user }}@{{ central_server }} "cat >> ./ansible/UUID/firstStart.csv"
   when: sync_log|bool
 
 - name: Update packages list
