@@ -97,6 +97,11 @@
   when: ansible_eth0.ipv4.address is defined
   tags: ['custom','update','rename']
 
+- name: Get eth1 IP address when interface is up
+  set_fact: host_ip_address={{ ansible_eth1.ipv4.address }}
+  when: ansible_eth1.ipv4.address is defined
+  tags: ['custom','update','rename']
+
 - name: add pubkeys for central nodes
   copy: src=hosts/{{ item }} dest=/etc/tinc/{{ vpn_name2 }}/hosts/{{ item }} mode=0750
   with_items:
