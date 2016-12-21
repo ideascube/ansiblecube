@@ -172,7 +172,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": ["wikistage.fr","ubuntudoc.fr","ted.fr","tedxlausanne2014.fr","tedxlausanne2013.fr","tedxlausanne2012.fr","tedxgeneva2014.fr","wiktionary.fr","wikisource.fr","cest-pas-sorcier.fr","gutenberg.fr","wikipedia.wo","wikipedia.fr"]
+			"name": ["wikistage.fr","ubuntudoc.fr","tedxlausanne2014.fr","tedxlausanne2013.fr","tedxlausanne2012.fr","tedxgeneva2014.fr","wiktionary.fr","wikisource.fr","cest-pas-sorcier.fr","gutenberg.fr","wikipedia.wo","wikipedia.fr"]
 		}
 	},
 	"idb-bdi-makamba": {
