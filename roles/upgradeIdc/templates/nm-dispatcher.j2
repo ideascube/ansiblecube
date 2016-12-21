@@ -3,7 +3,7 @@
 IF=$1
 STATUS=$2
 
-if [ "$IF" == "eth0" ] || [ "$IF" == "wlan1" ]
+if [ "$IF" == eth* ] || [ "$IF" == "wlan1" ]
 then
     case "$STATUS" in
         up)
