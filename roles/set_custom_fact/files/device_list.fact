@@ -720,5 +720,16 @@
 			"activated": "True",
 			"name": ["phet.en"]
 		}
+	},
+	"idb-bsf-vagrant": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.9",
+			"language": ["fr"]
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": ["phet.en"]
+		}
 	}
 }
