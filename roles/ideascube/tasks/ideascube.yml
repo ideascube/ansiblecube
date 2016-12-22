@@ -10,14 +10,18 @@
   apt: name=python3-minimal state=present
   tags: ['master', 'update']
 
-- name: Get ideascube version
-  shell: dpkg-query -W  ideascube  | awk '{print $2}' ; echo
-  register: ideascube_oldversion
-  tags: 
+- name: Get ideascube installed (versions.stdout_lines.0) et candidate (versions.stdout_lines.1) version 
+- raw: LANG=C apt-cache policy ideascube | awk ' $1~/Installed|Candidate/ { print $2 }' 
+  register: versions
+  tags:
     - update
 
-- set_fact: ideascube_oldversion="{{ ideascube_oldversion.stdout }}"
-  tags: 
+- set_fact: ideascube_installed="{{ versions.stdout_lines.0 }}"
+  tags:
+    - update
+
+- set_fact: ideascube_candidate="{{ versions.stdout_lines.1 }}"
+  tags:
     - update
 
 - name: Allow unauthenticated packages
@@ -31,8 +35,6 @@
 #   register: is_upgraded
 #   tags: ['master', 'custom','update']
 
-#### Line below don't upgrade ideascube version anymore
-
 - name: Install ideascube 0.17 package
   apt: name=ideascube=0.17.0 update_cache=yes force=yes dpkg_options="force-confnew"
   tags: ['master', 'custom']
@@ -42,46 +44,41 @@
   when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l")
     and sda1.stat.isblk == True
 
-- name: Get ideascube version
-  shell: dpkg-query -W  ideascube  | awk '{print $2}' ; echo
-  register: ideascube_version
+- block:
+  - name: Backup data before upgrading
+    shell: cp /var/ideascube/main/default.sqlite /var/ideascube/main/default.sqlite-{{ ideascube_installed }}-{{ ansible_date_time["date"] }}-{{ ansible_date_time["time"] }}
+
+  - name: upgrade ideascube 0.17.0 if ideascube >= 0.14.0
+    apt: name=ideascube=0.17.0 update_cache=yes force=yes dpkg_options="force-confnew"
+    register: is_upgraded
+
+  when: ideascube_installed | version_compare('0.14.0', '>=')
   tags:
     - update
 
-#- name: upgrade ideascube 0.17.0 if ideascube >= 0.14.0
-#  apt: name=ideascube=0.17.0 update_cache=yes force=yes dpkg_options="force-confnew"
-#  when: ideascube_version.stdout | version_compare('0.14.0', '>=')
-#  register: is_upgraded
-#  tags:
-#    - update
-#
-#- name: upgrade ideascube to 0.12.2 if ideascube < 0.13.0
-#  apt: name=ideascube=0.12.2 update_cache=yes force=yes dpkg_options="force-confnew"
-#  when: ideascube_version.stdout | version_compare('0.13.0', '<')
-#  register: is_upgraded
-#  tags:
-#    - update
-#
-#- name: freeze ideascube to 0.13.0 if ideascube = 0.13.0
-#  apt: name=ideascube=0.13.0 update_cache=yes force=yes dpkg_options="force-confnew"
-#  when: ideascube_version.stdout | version_compare('0.13.0', '==')
-#  register: is_upgraded
-#  tags:
-#    - update
+- block:
+  - name: Backup data before upgrading
+    shell: cp /var/ideascube/main/default.sqlite /var/ideascube/main/default.sqlite-{{ ideascube_installed }}-{{ ansible_date_time["date"] }}-{{ ansible_date_time["time"] }}
 
+  - name: upgrade ideascube to 0.12.2 if ideascube < 0.13.0
+    apt: name=ideascube=0.12.2 update_cache=yes force=yes dpkg_options="force-confnew"
+    register: is_upgraded
 
-#
-# This is Xmas hack
-#
+  when: ideascube_installed | version_compare('0.13.0', '<')
+  tags:
+    - update
 
-- name: Dont upgrade on holidays. As a fact, we dont. Set the fact as a fact. Facts.
-  set_fact: is_upgraded=False
+- block:
+  - name: Backup data before upgrading
+    shell: cp /var/ideascube/main/default.sqlite /var/ideascube/main/default.sqlite-{{ ideascube_installed }}-{{ ansible_date_time["date"] }}-{{ ansible_date_time["time"] }}
 
-#
-# Facts: XMas hates you.
-#
+  - name: freeze ideascube to 0.13.0 if ideascube = 0.13.0
+    apt: name=ideascube=0.13.0 update_cache=yes force=yes dpkg_options="force-confnew"
+    register: is_upgraded
 
-#### End 
+  when: ideascube_installed | version_compare('0.13.0', '==')
+  tags:
+    - update
 
 - name: Remove the unauthenticated hack
   file: path=/etc/apt/apt.conf.d/9999IDEASCUBEISABADBADBOY state=absent
@@ -91,7 +88,7 @@
   become: yes
   become_user: ideascube
   command: ideascube reset_home
-  when: ideascube_oldversion | version_compare('0.13.0', '<')
+  when: ideascube_installed | version_compare('0.13.0', '<')
     and is_upgraded.changed == True
   tags:
     - update
@@ -167,18 +164,15 @@
   register: ideascube_newversion
   tags: ['master', 'custom', 'update']
 
-- set_fact: ideascube_version="{{ ideascube_newversion.stdout }}"
+- debug: msg="ideascube {{ ideascube_newversion.stdout }} is now the current version."
   tags: ['master', 'custom', 'update']
 
-- debug: msg="ideascube {{ ideascube_version }} is now the current version."
-  tags: ['master', 'custom', 'update']
-
-- name: Enable cards on homepage for ideascube upgrading to > 0.13
+- name: Update catalog 
   become: yes
   become_user: ideascube
   command: ideascube catalog cache update
-  when: ideascube_oldversion | version_compare('0.13.0', '>') 
-    and ideascube_version | version_compare('0.15.0', '>=')
+  when: ideascube_installed | version_compare('0.13.0', '>') 
+    and ideascube_newversion.stdout | version_compare('0.15.0', '>=')
     and is_upgraded.changed == True
   tags:
     - update
