@@ -88,7 +88,6 @@
 - name: add pubkeys for central nodes
   copy: src=hosts/{{ item }} dest=/etc/tinc/{{ vpn_name }}/hosts/{{ item }}
   with_items:
-    - bigmama
     - buildbot
 
 - name: set default options for tinc
@@ -131,4 +130,4 @@
   copy: src=tinc.logrotate dest=/etc/logrotate.d/tinc mode=0644
 
 - name: send the public key to central nodes
-  shell: rsync -azP -e 'ssh -p 443' /etc/tinc/{{ vpn_name }}/hosts/{{tinc_localhost_name }}  {{ central_server }}:/ansible/tinc-{{ vpn_name }}/
+  shell: rsync -azP -e 'ssh -p 443' /etc/tinc/{{ vpn_name }}/hosts/{{tinc_localhost_name }}  {{ central_server_user }}@{{ central_server }}:/ansible/tinc-{{ vpn_name }}/

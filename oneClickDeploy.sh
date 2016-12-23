@@ -1,6 +1,7 @@
 #!/bin/bash
 SHOULD_WE_SEND="False"
 SSH_KEY="/root/.ssh/id_rsa" 
+LOGSERV_NAME="tincmaster.wan.bsf-intranet.org"
 
 sync_log=`echo $1 | cut -d= -f1`
 value1=`echo $1 | cut -d= -f2`
@@ -11,6 +12,9 @@ value2=`echo $2 | cut -d= -f2`
 timezone=`echo $3 | cut -d= -f1`
 value3=`echo $3 | cut -d= -f2`
 
+## Push log server SSH fingerprint to known hosts
+ssh-keyscan -H $LOGSERV_NAME >> /etc/ssh/ssh_known_hosts
+
 echo "$sync_log"
 
 
@@ -18,7 +22,7 @@ if [ "$sync_log" = sync_log ] && [ "$value1" = True ] && [ ! -f "$SSH_KEY" ]; th
 
 	SHOULD_WE_SEND="True"
 	echo -e "\n\n\n" | ssh-keygen -t rsa -f /root/.ssh/id_rsa -b 4096 -C "it@bibliosansfrontieres.org" -N ""
-	ssh-copy-id -o StrictHostKeyChecking=no ansible@37.187.151.52 
+	ssh-copy-id -o StrictHostKeyChecking=no ansible@$LOGSERV_NAME
 
 elif [ "$sync_log" = sync_log ] && [ "$value1" = True ] && [ -f "$SSH_KEY" ]; then
 

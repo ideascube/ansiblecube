@@ -5,6 +5,6 @@
   copy: content=id,{{ date }},{{ ansible_hostname }},{{ task }},{{ version }}\n dest=/var/lib/ansible/{{ task }}-{{ version }}.csv
 
 - name: Push file to central_server
-  shell: echo "{{ date }},{{ time }},{{ ansible_hostname }},{{ task }},{{ version }}" | ssh -p 443 {{ central_server }} "cat >> ./ansible/installed_software/sofware_list.csv"
+  shell: echo "{{ date }},{{ time }},{{ ansible_hostname }},{{ task }},{{ version }}" | ssh -p 443 {{ central_server_user }}@{{ central_server }} "cat >> ./ansible/installed_software/sofware_list.csv"
   when: sync_log|bool == True
   ignore_errors: yes

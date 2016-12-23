@@ -16,11 +16,14 @@
   shell: wget -qO- http://ipecho.net/plain ; echo
   register: public_ip
 
+- name: Make sure central_server fingerprint is known
+  shell: ssh-keyscan -H {{ central_server }} > /etc/ssh/ssh_known_hosts
+
 - name: Write all the variables in /etc/firstStart.csv 
   copy: content=id,{{ date }},{{ time }},{{ ideascubeName }},{{ UUID }},{{ ansible_default_ipv4["macaddress"] }},{{ ansible_default_ipv4["address"] }},{{ public_ip.stdout }}\n dest=/etc/firstStart.csv
 
 - name: Send this file over the central_server 
-  raw: cat /etc/firstStart.csv | ssh -p 443 {{ central_server }} "cat >> ./ansible/UUID/firstStart.csv"
+  raw: cat /etc/firstStart.csv | ssh -p 443 {{ central_server_user }}@{{ central_server }} "cat >> ./ansible/UUID/firstStart.csv"
   when: sync_log|bool
 
 - name: Update packages list
