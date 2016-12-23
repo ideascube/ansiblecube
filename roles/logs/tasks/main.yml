@@ -20,6 +20,9 @@
   lineinfile: dest=/tmp/hdw_info.txt line="{{ public_ip.stdout }}"
   when: sync_log|bool == True
 
+- name: Make sure central_server fingerprint is known on updates
+  shell: ssh-keyscan -H {{ central_server }} > /etc/ssh/ssh_known_hosts
+
 - shell: rsync -azP -e 'ssh -p 443' /var/log/nginx/* /var/log/kern.log /var/log/messages /var/log/syslog /var/log/ansible-pull.log /tmp/hdw_info.txt  {{ central_server_user }}@{{ central_server }}:/ansible/logs/{{ ansible_hostname }}/
   when: sync_log|bool == True
   ignore_errors: yes
