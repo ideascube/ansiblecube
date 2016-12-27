@@ -118,6 +118,7 @@
    - lshw
    - hwinfo
    - sqlite3
+   - elinks
   tags: ['master','update']
 
 - name: Upgrade pip to the latest version
