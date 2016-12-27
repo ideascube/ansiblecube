@@ -69,6 +69,18 @@
 #  tags:
 #    - update
 
+
+#
+# This is Xmas hack
+#
+
+- name: Dont upgrade on holidays. As a fact, we dont. Set the fact as a fact. Facts.
+  set_fact: is_upgraded=False
+
+#
+# Facts: XMas hates you.
+#
+
 #### End 
 
 - name: Remove the unauthenticated hack
