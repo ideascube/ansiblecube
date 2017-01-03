@@ -45,7 +45,6 @@
     and sda1.stat.isblk == True
 
 - block:
-
   - name: Backup data before upgrading
     shell: cp /var/ideascube/main/default.sqlite /var/ideascube/main/default.sqlite-{{ ideascube_installed }}-{{ ansible_date_time["date"] }}-{{ ansible_date_time["time"] }}
 
@@ -58,7 +57,6 @@
     - update
 
 - block:
-
   - name: Backup data before upgrading
     shell: cp /var/ideascube/main/default.sqlite /var/ideascube/main/default.sqlite-{{ ideascube_installed }}-{{ ansible_date_time["date"] }}-{{ ansible_date_time["time"] }}
 
@@ -71,7 +69,6 @@
     - update
 
 - block:
-
   - name: Backup data before upgrading
     shell: cp /var/ideascube/main/default.sqlite /var/ideascube/main/default.sqlite-{{ ideascube_installed }}-{{ ansible_date_time["date"] }}-{{ ansible_date_time["time"] }}
 
