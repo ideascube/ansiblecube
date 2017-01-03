@@ -10,8 +10,8 @@
   apt: name=python3-minimal state=present
   tags: ['master', 'update']
 
-- name: Get ideascube installed (versions.stdout_lines.0) et candidate (versions.stdout_lines.1) version 
-  raw: LANG=C apt-cache policy ideascube | awk ' $1~/Installed|Candidate/ { print $2 }' 
+- name: Get ideascube installed (versions.stdout_lines.0) et candidate (versions.stdout_lines.1) version
+  raw: LANG=C apt-cache policy ideascube | awk ' $1~/Installed|Candidate/ { print $2 }'
   register: versions
   tags:
     - update
@@ -75,7 +75,11 @@
   - name: freeze ideascube to 0.13.0 if ideascube = 0.13.0
     apt: name=ideascube=0.13.0 update_cache=yes force=yes dpkg_options="force-confnew"
     register: is_upgraded
+<<<<<<< f0d589a5c3b10345da304489f1627be3374cc7e4
 
+=======
+    
+>>>>>>> Move register on ideascube task
   when: ideascube_installed | version_compare('0.13.0', '==')
   tags:
     - update
