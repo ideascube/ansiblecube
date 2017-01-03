@@ -75,11 +75,15 @@
   - name: freeze ideascube to 0.13.0 if ideascube = 0.13.0
     apt: name=ideascube=0.13.0 update_cache=yes force=yes dpkg_options="force-confnew"
     register: is_upgraded
+<<<<<<< c27b4aca3b362a41f7ecee6e91c64d19b38afb43
 <<<<<<< f0d589a5c3b10345da304489f1627be3374cc7e4
 
 =======
     
 >>>>>>> Move register on ideascube task
+=======
+
+>>>>>>> Add tag update
   when: ideascube_installed | version_compare('0.13.0', '==')
   tags:
     - update
