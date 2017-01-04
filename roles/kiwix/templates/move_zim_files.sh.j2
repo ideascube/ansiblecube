@@ -24,7 +24,8 @@ find ./ -type f -regextype posix-extended -regex "^.*zim$|^.*zima{2}" -print0 | 
         echo "[+] Move $i"
         
         folder_name=`echo $i | cut -d "/" -f3 | cut -d "_" -f1-2`
-
+        nameWithDate=$new_name-0000-00-00
+        
         if [ -n "$folder_name" ]; then
                 index_folder_full_path=`find ./ -type d -name "$folder_name*"`
                 index_folder=`find ./ -type d -name "$folder_name*" -printf '%f\n'`
