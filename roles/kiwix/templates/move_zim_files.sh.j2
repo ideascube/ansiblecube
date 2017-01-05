@@ -3,6 +3,7 @@
 OLD_PATH={{old_kiwix_path}}
 NEW_PATH={{zim_path}}
 
+
 cd $OLD_PATH
 mkdir -p $NEW_PATH/data/{content,index,library}
 mkdir -p /var/ideascube/main/catalog/
@@ -39,24 +40,27 @@ find ./ -type f -regextype posix-extended -regex "^.*zim$|^.*zima{2}" -print0 | 
 
         if [ -n "$is_several_files" ]; then
                 mv ${i%?}* $NEW_PATH/data/content/
-                new_name=$zim_file
+                full_zim_name=$zim_file
         else
-                mv $i $NEW_PATH/data/content/$new_name
+                zip_file_name=$new_name
+                full_zim_name="$new_name".zim
+                mv $i $NEW_PATH/data/content/$full_zim_name
         fi
 
         if [ -n "$index_folder_full_path" ]; then
                 mv "$index_folder_full_path" $NEW_PATH/data/index
 
-                /usr/local/bin/kiwix-manage $NEW_PATH/library.xml add $NEW_PATH/data/content/$new_name -i=$NEW_PATH/data/index/$index_folder
+                cd $NEW_PATH
+                /usr/local/bin/kiwix-manage $OLD_PATH/packages/$nameWithDate/data/library/"$zim_file".xml add data/content/$full_zim_name -i=data/index/$index_folder
         else
-
-                /usr/local/bin/kiwix-manage $NEW_PATH/library.xml add $NEW_PATH/data/content/$new_name
+                cd $NEW_PATH
+                /usr/local/bin/kiwix-manage $OLD_PATH/packages/$nameWithDate/data/library/"$zim_file".xml add data/content/$full_zim_name
         fi 
         
         cd $OLD_PATH/packages/$nameWithDate/
-        zip -r "$new_name-0000-00-00" data
+        zip -r "$zip_file_name-0000-00-00" data
 
-        mv "$new_name-0000-00-00" /var/cache/ideascube/catalog/packages/$new_name-0000-00-00
+        mv "$zip_file_name-0000-00-00" /var/cache/ideascube/catalog/packages/$zip_file_name-0000-00-00
         cd $OLD_PATH
 done
 
