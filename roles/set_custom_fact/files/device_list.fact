@@ -776,5 +776,25 @@
 			"activated": "False",
 			"content_name": ["2-Contenus/csvkonitsa.csv"]
 		}
+	},
+	"kb-cod-mooc": {
+		"bsfcampus": {
+			"activated": "False",
+			"version": "141116"
+		},
+		"kalite": {
+			"activated": "False",
+			"version": "0.16.9",
+			"language": ["fr"]
+		},
+		"idc_import": {
+			"activated": "False",
+			"content_name": ["2-Contenus/contenus_bukavu/0_csvkbrdc.csv"]
+		},
+		"zim_install": {
+			"activated": "False",
+			"name": ["wikipedia.fr","wikipedia.sw","universcience-tv.fr","les-fondamentaux.fr","gutenberg.fr","e-penser.fr","deus-ex-silicium.fr","tedxlausanne2014.fr","tedxlausanne2013.fr","tedxlausanne2012.fr","tedxgeneva2014.fr","biologie-tout-compris.fr","cest-pas-sorcier.fr","dirtybiology.fr","wiktionary.fr"]
+
+		}
 	}
 }
