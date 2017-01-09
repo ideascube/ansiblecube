@@ -4,7 +4,7 @@
 - name: Update ideascube catalog cache before downloading
   become: yes
   become_user: ideascube
-  command: ideascube catalog cache update
+  shell: ideascube catalog cache update
 
 - name: Check the disk usage
   shell: df -h /
