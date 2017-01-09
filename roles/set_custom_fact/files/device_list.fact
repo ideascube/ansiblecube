@@ -748,14 +748,9 @@
 		}
 	},
 	"kb-grc-ioannina": {
-		"kalite": {
-			"activated": "True",
-			"version": "0.16.9",
-			"language": ["en"]
-		},
 		"zim_install": {
 			"activated": "False",
-			"name": ["wikipedia.fa","wikipedia.en","wikipedia.ar","wikipedia.ckb","gutenberg.en","tedtechnology.en","tedscience.en","tedglobalissues.en","tedentertainment.en","teddesign.en","tedbusiness.en","mullah-piaz-digest.fa","wikibooks.ar","wikibooks.en","wikibooks.fa","wikiquote.en","wikiquote.ar","wikiquote.fa","w2eu","athens.map","world.map"]
+			"name": ["wikipedia.fa","wikipedia.en","wikipedia.ar","wikipedia.ckb","mullah-piaz-digest.fa","wikibooks.ar","wikibooks.en","wikibooks.fa","wikiquote.en","wikiquote.ar","wikiquote.fa","w2eu","athens.map","world.map"]
 		},
 		"idc_import": {
 			"activated": "False",
@@ -763,14 +758,9 @@
 		}
 	},
 	"kb-grc-konitsa": {
-		"kalite": {
-			"activated": "True",
-			"version": "0.16.9",
-			"language": ["en"]
-		},
 		"zim_install": {
 			"activated": "False",
-			"name": ["wikipedia.en","wikipedia.ar","gutenberg.en","tedtechnology.en","tedscience.en","tedglobalissues.en","tedentertainment.en","teddesign.en","tedbusiness.en","wikibooks.ar","wikibooks.en","wikiquote.en","wikiquote.ar","w2eu","athens.map","world.map"]
+			"name": ["wikipedia.en","wikipedia.ar","wikibooks.ar","wikibooks.en","wikiquote.en","wikiquote.ar","w2eu","athens.map","world.map"]
 		},
 		"idc_import": {
 			"activated": "False",
