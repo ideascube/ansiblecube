@@ -796,6 +796,10 @@
 		"zim_install": {
 			"activated": "False",
 			"name": ["wikipedia.en","wikipedia.fr","wikipedia.sw","wikiversity.en","wikiversity.fr","wikibooks.en","wikibooks.fr","bouquineux.fr","universcience-tv.fr","les-fondamentaux.fr","gutenberg.en","gutenberg.fr","e-penser.fr","dirtybiology.fr","cest-pas-sorcier.fr","biologie-tout-compris.fr"]
+		},
+		"idc_import": {
+			"activated": "False",
+			"content_name": ["2-Contenus/paquets_rwanda/csv_rwanda_hi_allcontents.csv"]
 		}
 	}
 }
