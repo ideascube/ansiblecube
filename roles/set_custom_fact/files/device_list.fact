@@ -786,5 +786,15 @@
 			"name": ["wikipedia.fr","wikipedia.sw","universcience-tv.fr","les-fondamentaux.fr","gutenberg.fr","e-penser.fr","deus-ex-silicium.fr","tedxlausanne2014.fr","tedxlausanne2013.fr","tedxlausanne2012.fr","tedxgeneva2014.fr","biologie-tout-compris.fr","cest-pas-sorcier.fr","dirtybiology.fr","wiktionary.fr"]
 
 		}
+	},
+	"idb-rwa-hi": {
+		"kalite": {
+			"activated": "False",
+			"version": "0.16.9",
+			"language": ["fr"]
+		"zim_install": {
+			"activated": "False",
+			"name": ["wikipedia.en","wikipedia.fr","wikipedia.sw","wikiversity.en","wikiversity.fr","wikibooks.en",wikibooks.fr","bouquineux.fr","universcience-tv.fr","les-fondamentaux.fr","gutenberg.en","gutenberg.fr","e-penser.fr","dirtybiology.fr","cest-pas-sorcier.fr","biologie-tout-compris.fr"]
+		}
 	}
 }
