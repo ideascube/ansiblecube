@@ -799,7 +799,7 @@
 		},
 		"idc_import": {
 			"activated": "False",
-			"content_name": ["2-Contenus/paquets_rwanda/csv_rwanda_hi_allcontents.csv"]
+			"content_name": ["2-Contenus/csv_rwanda_hi_allcontents.csv"]
 		}
 	}
 }
