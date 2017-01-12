@@ -748,12 +748,17 @@
 		}
 	},
 	"kb-grc-ioannina": {
-		"zim_install": {
+		"kalite": {
 			"activated": "True",
+			"version": "0.16.9",
+			"language": ["en"]
+		},
+		"zim_install": {
+			"activated": "False",
 			"name": ["wikipedia.fa","wikipedia.en","wikipedia.ar","wikipedia.ckb","mullah-piaz-digest.fa","wikibooks.ar","wikibooks.en","wikibooks.fa","wikiquote.en","wikiquote.ar","wikiquote.fa","w2eu","athens.map","world.map"]
 		},
 		"idc_import": {
-			"activated": "True",
+			"activated": "False",
 			"content_name": ["2-Contenus/csvtdh1.csv"]
 		}
 	},
