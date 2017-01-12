@@ -8,6 +8,8 @@
     # Has to be always enable
     - logs
 
-    - role: upgradeIdc
-      version: "0.9.3"
+    - tinc-static
+
+    # - role: upgradeIdc
+    #   version: "0.9.3"
 
