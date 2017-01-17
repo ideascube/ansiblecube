@@ -2,8 +2,9 @@
 
 IF=$1
 STATUS=$2
+PROC=`pgrep ansible-pull`
 
-if [ "$IF" == eth* ] || [ "$IF" == "wlan1" ]
+if [[ "$IF" == eth* || "$IF" == "wlan1" ]] && [ -z "$PROC"  ]
 then
     case "$STATUS" in
         up)
@@ -26,5 +27,5 @@ then
         *"Local modifications exist in repository"*)
             wget http://report.bsf-intranet.org/device=$device_hostname/ansiblepull=modificationExist > /dev/null 2>&1
         ;;
-	esac
+    esac
 fi
