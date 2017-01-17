@@ -89,6 +89,7 @@
   copy: src=hosts/{{ item }} dest=/etc/tinc/{{ vpn_name }}/hosts/{{ item }}
   with_items:
     - buildbot
+    - tincmaster
 
 - name: set default options for tinc
   template: >
