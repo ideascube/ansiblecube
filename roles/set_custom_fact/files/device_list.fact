@@ -763,6 +763,11 @@
 		}
 	},
 	"kb-grc-konitsa": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.9",
+			"language": ["en"]
+		},
 		"zim_install": {
 			"activated": "True",
 			"name": ["wikipedia.en","wikipedia.ar","wikibooks.ar","wikibooks.en","wikiquote.en","wikiquote.ar","w2eu","athens.map","world.map"]
