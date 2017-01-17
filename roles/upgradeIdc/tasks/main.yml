@@ -117,7 +117,6 @@
 - name: Create entry to clone/pull git repository
   template: src=nm-dispatcher.j2 dest=/etc/NetworkManager/dispatcher.d/ansiblePullUpdate
     owner=root group=root mode=0755
-  when: st.stat.exists == False
 
 - name: remove old way of lunching ansible-pull
   file: path=/etc/dhcp/dhclient-exit-hooks.d/ansiblePullUpdate state=absent
