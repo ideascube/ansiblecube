@@ -15,6 +15,12 @@
   tags:
     - master
 
+- name: Checkout if a kawax cache machine is present on the local network
+  wait_for: host="{{ kawax }}" port=80 state=present timeout=3
+  register: cache_machine
+  tags: ['custom', 'update','idc_import','zim_install','kalite_import' ]
+  ignore_errors: yes
+
 - name: Register if the device is managed by BSF or not
   ini_file: dest=/etc/ansible/facts.d/installed_software.fact
     section=management
