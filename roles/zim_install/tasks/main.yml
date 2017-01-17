@@ -18,7 +18,7 @@
               regexp='10.10.9.23 download.kiwix.org'
               line='10.10.9.23 download.kiwix.org'
               state=present
-  when: cache_machine.state|default(omit) == "present"
+  when: ansible_default_ipv4.gateway == "{{ bsf_gateway }}"
 
 - name: Download/install ZIM files from Kiwix catalog then remove from local cache
   become: yes
@@ -37,4 +37,4 @@
   lineinfile: dest=/etc/hosts
               regexp='10.10.9.23'
               state=absent
-  when: cache_machine.state|default(omit) == "present"
+  when: ansible_default_ipv4.gateway == "{{ bsf_gateway }}"
