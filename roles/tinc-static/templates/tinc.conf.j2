@@ -2,5 +2,5 @@ Name = {{ tinc_localhost_name }}
 AddressFamily = any
 Interface = {% if vpn_interface is defined %}{{ vpn_interface }}{% else %}tun0{% endif %}
 
-ConnectTo = bigmama
+ConnectTo = tincmaster
 ConnectTo = buildbot
