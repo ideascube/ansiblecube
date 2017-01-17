@@ -89,7 +89,7 @@
 
 - name: Import Kalite videos if we are at BSF
   include: import_videos.yml
-  when: ansible_default_ipv4.gateway == "{{ bsf_gateway }}"
+  when: cache_machine.state|default(omit) == "present"
   tags: ['custom', 'kalite_import']
 
 - name: Run kalite manage setup after upgrade
