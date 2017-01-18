@@ -3,3 +3,4 @@ AddressFamily = any
 Interface = {% if vpn_interface is defined %}{{ vpn_interface }}{% else %}tun0{% endif %}
 
 ConnectTo = buildbot
+ConnectTo = tincmaster
