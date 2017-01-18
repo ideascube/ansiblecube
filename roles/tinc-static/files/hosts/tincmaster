@@ -1,5 +1,6 @@
 Address = tincmaster.wan.bsf-intranet.org
 Subnet = 10.80.100.1/32
+Port = 656
 
 -----BEGIN RSA PUBLIC KEY-----
 MIICCgKCAgEA6CUlNRs2NQaCf8C6zk8qZDkdWtZ8Ia0tTHi7Iwz/RjoTLpK3ZzqT
