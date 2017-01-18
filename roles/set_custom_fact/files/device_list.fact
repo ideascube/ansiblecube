@@ -86,16 +86,16 @@
 	},
 	"kb-esp-avanti": {
 		"kalite": {
-			"activated": "False",
-			"version": "0.16.8",
+			"activated": "True",
+			"version": "0.16.9",
 			"language": ["es"]
 		},
 		"zim_install": {
-			"activated": "False",
+			"activated": "True",
 			"name": ["wikipedia.es","gutenberg.es"]
 		},
 		"idc_import": {
-			"activated": "False",
+			"activated": "True",
 			"content_name": ["13-NICARALI/CSV-Nicarali.csv"]
 		}
 	},
