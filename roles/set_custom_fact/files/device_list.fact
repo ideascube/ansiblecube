@@ -805,11 +805,26 @@
 		},
 		"zim_install": {
 			"activated": "False",
-			"name": ["wikipedia.en","wikipedia.fr","wikipedia.sw","wikiversity.en","wikiversity.fr","wikibooks.en","wikibooks.fr","bouquineux.fr","universcience-tv.fr","les-fondamentaux.fr","gutenberg.en","gutenberg.fr","e-penser.fr","dirtybiology.fr","cest-pas-sorcier.fr","biologie-tout-compris.fr"]
+			"name": ["wikipedia.en","wikipedia.ar","wikibooks.en","wikibooks.ar","gutenberg.en",""]
 		},
 		"idc_import": {
 			"activated": "False",
 			"content_name": ["2-Contenus/csv_rwanda_hi_allcontents.csv"]
+		}
+	},
+	"idb_jor_drcamman": {
+		"kalite": {
+			"activated": "False",
+			"version": "0.16.9",
+			"language": ["en"]
+		},
+		"zim_install": {
+			"activated": "False",
+			"name": ["wikipedia.en","wikipedia.ar","wikibooks.en","wikibooks.ar","wikiquote.en","wikiquote.ar","gutenberg.en","tedtechnology.en","tedscience.en","tedglobalissues.en","tedentertainment.en","teddesign.en","tedbusiness.en"]
+		},
+		"idc_import": {
+			"activated": "False",
+			"content_name": ["2-Contenus/csvdrc.csv"]
 		}
 	}
 }
