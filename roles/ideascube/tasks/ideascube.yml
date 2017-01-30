@@ -35,8 +35,8 @@
 #   register: is_upgraded
 #   tags: ['master', 'custom','update']
 
-- name: Install ideascube 0.19 package
-  apt: name=ideascube=0.19.0 update_cache=yes force=yes dpkg_options="force-confnew"
+- name: Install ideascube
+  apt: name=ideascube update_cache=yes force=yes dpkg_options="force-confnew"
   tags: ['master', 'custom']
 
 - name: Include task needed when using an external hard drive
@@ -48,37 +48,48 @@
   - name: Backup data before upgrading
     shell: cp /var/ideascube/main/default.sqlite /var/ideascube/main/default.sqlite-{{ ideascube_installed }}-{{ ansible_date_time["date"] }}-{{ ansible_date_time["time"] }}
 
-  - name: upgrade ideascube 0.19.0 if ideascube >= 0.14.0
-    apt: name=ideascube=0.19.0 update_cache=yes force=yes dpkg_options="force-confnew"
+  - name: upgrade ideascube to the last version
+    apt: name=ideascube update_cache=yes force=yes dpkg_options="force-confnew"
     register: is_upgraded
 
-  when: ideascube_installed | version_compare('0.14.0', '>=')
   tags:
     - update
 
-- block:
-  - name: Backup data before upgrading
-    shell: cp /var/ideascube/main/default.sqlite /var/ideascube/main/default.sqlite-{{ ideascube_installed }}-{{ ansible_date_time["date"] }}-{{ ansible_date_time["time"] }}
+# - block:
+#   - name: Backup data before upgrading
+#     shell: cp /var/ideascube/main/default.sqlite /var/ideascube/main/default.sqlite-{{ ideascube_installed }}-{{ ansible_date_time["date"] }}-{{ ansible_date_time["time"] }}
 
-  - name: upgrade ideascube to 0.12.2 if ideascube < 0.13.0
-    apt: name=ideascube=0.12.2 update_cache=yes force=yes dpkg_options="force-confnew"
-    register: is_upgraded
+#   - name: upgrade ideascube 0.19.0 if ideascube >= 0.14.0
+#     apt: name=ideascube=0.19.0 update_cache=yes force=yes dpkg_options="force-confnew"
+#     register: is_upgraded
 
-  when: ideascube_installed | version_compare('0.13.0', '<')
-  tags:
-    - update
+#   when: ideascube_installed | version_compare('0.14.0', '>=')
+#   tags:
+#     - update
 
-- block:
-  - name: Backup data before upgrading
-    shell: cp /var/ideascube/main/default.sqlite /var/ideascube/main/default.sqlite-{{ ideascube_installed }}-{{ ansible_date_time["date"] }}-{{ ansible_date_time["time"] }}
+# - block:
+#   - name: Backup data before upgrading
+#     shell: cp /var/ideascube/main/default.sqlite /var/ideascube/main/default.sqlite-{{ ideascube_installed }}-{{ ansible_date_time["date"] }}-{{ ansible_date_time["time"] }}
 
-  - name: freeze ideascube to 0.13.0 if ideascube = 0.13.0
-    apt: name=ideascube=0.13.0 update_cache=yes force=yes dpkg_options="force-confnew"
-    register: is_upgraded
+#   - name: upgrade ideascube to 0.12.2 if ideascube < 0.13.0
+#     apt: name=ideascube=0.12.2 update_cache=yes force=yes dpkg_options="force-confnew"
+#     register: is_upgraded
 
-  when: ideascube_installed | version_compare('0.13.0', '==')
-  tags:
-    - update
+#   when: ideascube_installed | version_compare('0.13.0', '<')
+#   tags:
+#     - update
+
+# - block:
+#   - name: Backup data before upgrading
+#     shell: cp /var/ideascube/main/default.sqlite /var/ideascube/main/default.sqlite-{{ ideascube_installed }}-{{ ansible_date_time["date"] }}-{{ ansible_date_time["time"] }}
+
+#   - name: freeze ideascube to 0.13.0 if ideascube = 0.13.0
+#     apt: name=ideascube=0.13.0 update_cache=yes force=yes dpkg_options="force-confnew"
+#     register: is_upgraded
+
+#   when: ideascube_installed | version_compare('0.13.0', '==')
+#   tags:
+#     - update
 
 - name: Remove the unauthenticated hack
   file: path=/etc/apt/apt.conf.d/9999IDEASCUBEISABADBADBOY state=absent
