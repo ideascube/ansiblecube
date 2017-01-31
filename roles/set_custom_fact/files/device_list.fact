@@ -652,7 +652,7 @@
 		},
 		"idc_import": {
 			"activated": "False",
-			"content_name": ["2-Contenus/csv_acelem.csv"]
+			"content_name": ["2-Contenus/csvmarseille.csv"]
 		}
 	},
 	"idb-fra-marseilleville": {
@@ -667,7 +667,7 @@
 		},
 		"idc_import": {
 			"activated": "False",
-			"content_name": ["2-Contenus/csv_acelem.csv"]
+			"content_name": ["2-Contenus/csvmarseille.csv"]
 		}
 	},
 	"kb-rwa-giz": {
