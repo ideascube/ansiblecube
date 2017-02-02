@@ -1,0 +1,16 @@
+---
+- name: Copy clear_iptables.sh to /usr/bin/local
+  copy: 
+    src: clean_iptables.sh
+    dest: /usr/local/bin/clean_iptables.sh
+    owner: root
+    group: root
+    mode: 0755
+
+- name: Copy captive portal script to /var/www/captiveportal
+  copy:
+    src: cap.py
+    dest: /var/www/captiveportal/cap.py
+    owner: ideascube
+    group: ideascube
+    mode: 0755
