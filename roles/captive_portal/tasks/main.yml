@@ -22,6 +22,24 @@
   file: src=/etc/nginx/sites-available/captiveportal dest=/etc/nginx/sites-enabled/captiveportal state=link
   notify: restart nginx
 
+- name: Copy captive portal public key
+  copy: 
+    src: ideascube.crt
+    dest: /etc/nginx/ssl/ideascube.crt
+    owner: root
+    group: root
+    mode: 0644
+  notify: restart nginx
+
+- name: Copy captive portal private key
+  copy:
+    src: ideascube.key
+    dest: /etc/nginx/ssl/ideascube.key
+    owner: root
+    group: root
+    mode: 0640
+  notify: restart nginx
+
 - name: Copy clear_iptables.sh to /usr/bin/local
   copy:
     src: clean_iptables.sh
