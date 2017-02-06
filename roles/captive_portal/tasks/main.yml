@@ -3,8 +3,8 @@
   apt: name=conntrack state=latest
   
 - name: Copy captive portal script to /var/www/captiveportal
-  copy:
-    src: cap.py
+  template:
+    src: cap.py.j2
     dest: /var/www/captiveportal/cap.py
     owner: ideascube
     group: ideascube
