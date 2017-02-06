@@ -45,6 +45,10 @@
 - name: Update sha256sum
   command: /usr/bin/python update_sha256sum.py /var/cache/ideascube/catalog/packages/ chdir={{old_kiwix_path}}
 
+- name: Give rights to ideascube on Kiwix folder
+  file: path=/var/ideascube/kiwix/ state=directory
+    owner={{ username }} group={{ username }} recurse=yes
+
 - name: Move catalog.yml to the final path 
   become: yes
   become_user: ideascube
