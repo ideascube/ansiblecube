@@ -50,6 +50,10 @@
   file: path=/var/ideascube/kiwix/ state=directory
     owner={{ username }} group={{ username }} recurse=yes
 
+- name: Give rights to ideascube on cache folder
+  file: path=/var/cache/ideascube/ state=directory
+    owner={{ username }} group={{ username }} recurse=yes
+
 - name: Move catalog.yml to the final path 
   command: mv "{{old_kiwix_path}}/catalog.yml" /var/cache/ideascube/catalog/
 
