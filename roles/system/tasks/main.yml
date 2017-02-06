@@ -119,7 +119,6 @@
    - hwinfo
    - sqlite3
    - elinks
-   - conntrack
   tags: ['master','update']
 
 - name: Upgrade pip to the latest version
