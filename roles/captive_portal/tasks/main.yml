@@ -2,14 +2,6 @@
 - name: Install conntrack
   apt: name=conntrack state=latest
   
-- name: Copy clear_iptables.sh to /usr/bin/local
-  copy: 
-    src: clean_iptables.sh
-    dest: /usr/local/bin/clean_iptables.sh
-    owner: root
-    group: root
-    mode: 0755
-
 - name: Copy captive portal script to /var/www/captiveportal
   copy:
     src: cap.py
@@ -29,6 +21,14 @@
 - name: Enable captive portal vhost
   file: src=/etc/nginx/sites-available/captiveportal dest=/etc/nginx/sites-enabled/captiveportal state=link
   notify: restart nginx
+
+- name: Copy clear_iptables.sh to /usr/bin/local
+  copy:
+    src: clean_iptables.sh
+    dest: /usr/local/bin/clean_iptables.sh
+    owner: root
+    group: root
+    mode: 0755
 
 - name: Add a cron entry to clean iptables rules
   cron:
