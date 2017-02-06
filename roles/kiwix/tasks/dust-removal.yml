@@ -49,10 +49,6 @@
   file: path=/var/ideascube/kiwix/ state=directory
     owner={{ username }} group={{ username }} recurse=yes
 
-- name: Give rights to ideascube on cache folder
-  file: path=/var/cache/ideascube/ state=directory
-    owner={{ username }} group={{ username }} recurse=yes
-
 - name: Move catalog.yml to the final path 
   become: yes
   become_user: ideascube
@@ -61,6 +57,10 @@
 - name: Get the content of list.txt
   command: cat "{{old_kiwix_path}}/list.txt"
   register: zim_list
+
+- name: Give rights to ideascube on cache folder
+  file: path=/var/cache/ideascube/ state=directory
+    owner={{ username }} group={{ username }} recurse=yes
 
 - name: Install zim file with ideascube catalog 
   become: yes
