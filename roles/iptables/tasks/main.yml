@@ -10,8 +10,12 @@
     - master
 
 - name: Copy iptables rules file
-  copy: src=iptables.rules dest=/etc/iptables.rules owner=root group=root mode=755 backup=yes
-  tags: ['master', 'custom', 'update']
+  template: src=iptables.template.j2 dest=/etc/iptables.rules owner=root group=rootmode=644
+  tags: ['master', 'custom','update']
+
+#- name: Copy iptables rules file
+#  copy: src=iptables.rules dest=/etc/iptables.rules owner=root group=root mode=755 backup=yes
+#  tags: ['master', 'custom', 'update']
 
 - name: Copy iptables restore file
   copy: src=iptables dest=/etc/network/if-up.d/iptables owner=root group=root mode=755
