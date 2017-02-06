@@ -46,6 +46,8 @@
   command: /usr/bin/python update_sha256sum.py /var/cache/ideascube/catalog/packages/ chdir={{old_kiwix_path}}
 
 - name: Move catalog.yml to the final path 
+  become: yes
+  become_user: ideascube
   command: mv "{{old_kiwix_path}}/catalog.yml" /var/cache/ideascube/catalog/
 
 - name: Get the content of list.txt
