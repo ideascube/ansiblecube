@@ -50,7 +50,7 @@
   file: path=/var/ideascube/kiwix/ state=directory
     owner={{ username }} group={{ username }} recurse=yes
 
-- name: Move catalog.yml to the final path
+- name: Move catalog.yml to the final path 
   command: mv "{{old_kiwix_path}}/catalog.yml" /var/cache/ideascube/catalog/
 
 - name: Get the content of list.txt
