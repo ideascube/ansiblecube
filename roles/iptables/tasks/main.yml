@@ -4,7 +4,7 @@
   tags: 
     - master
 
-- name: Authorize NAT
+- name: Authorize routing
   replace: dest=/etc/sysctl.conf regexp='^#net.ipv4.ip_forward=1$' replace='net.ipv4.ip_forward=1' backup=yes
   tags: 
     - master
