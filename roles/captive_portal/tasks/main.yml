@@ -72,7 +72,7 @@
     state: present
   tags: ['custom', 'update']
 
-- name: Authorize www-data to add new IPs to CAPTIVE_PASSLIST
+- name: Authorize ideascube user to add new IPs to CAPTIVE_PASSLIST
   lineinfile:
     dest: /etc/sudoers
     line: 'ideascube ALL = NOPASSWD: /sbin/iptables -I CAPTIVE_PASSLIST 1 -s * -j ACCEPT'
