@@ -20,7 +20,9 @@ COMMIT
 -A PREROUTING ! -s {{hotspot_ip}}/32 ! -d {{hotspot_ip}}/32 -p tcp -m tcp --dport 443 -j CAPTIVE_HTTPS
 -A POSTROUTING -o {{lan_interface}} -j MASQUERADE
 -A POSTROUTING -o {{client_interface}} -j MASQUERADE
+-A CAPTIVE_HTTP -p tcp -j CAPTIVE_PASSLIST
 -A CAPTIVE_HTTP -p tcp -j DNAT --to-destination 192.168.2.1:82
+-A CAPTIVE_HTTPS -p tcp -j CAPTIVE_PASSLIST
 -A CAPTIVE_HTTPS -p tcp -j DNAT --to-destination 192.168.2.1:83
 -A CAPTIVE_PASSLIST -p tcp -j RETURN
 COMMIT
