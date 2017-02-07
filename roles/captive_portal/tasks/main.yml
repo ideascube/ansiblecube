@@ -1,6 +1,9 @@
 ---
 - name: Install conntrack
-  apt: name=conntrack state=latest
+  apt: name={{item}} state=latest
+  with_items:
+    - conntrack
+    - uwsgi-plugin-python
   
 - name: Copy captive portal script to /var/www/captiveportal
   template:
