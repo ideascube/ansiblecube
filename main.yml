@@ -14,7 +14,7 @@
     - system
     - nginx
     - uwsgi
-    - CaptivePortal
+    - captive_portal
     - ideascube
     - kiwix
 
