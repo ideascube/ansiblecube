@@ -75,4 +75,5 @@
 - name: Authorize www-data to add new IPs to CAPTIVE_PASSLIST
   lineinfile:
     dest: /etc/sudoers
-    line: 'www-data ALL = NOPASSWD: /sbin/iptables -I CAPTIVE_PASSLIST 1 -s * -j ACCEPT'
+    line: 'ideascube ALL = NOPASSWD: /sbin/iptables -I CAPTIVE_PASSLIST 1 -s * -j ACCEPT'
+  tags: ['custom', 'update']
