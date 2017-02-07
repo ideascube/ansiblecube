@@ -40,6 +40,19 @@
     mode: 0640
   notify: restart nginx
 
+- name: Add UWSGI specific configuration file
+  copy:
+    src: captive.ini
+    dest: /etc/uwsgi/apps-available/captive.ini
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Enable captive.ini for UWSGI
+  file: src=/etc/uwsgi/apps-available/captive.ini dest=/etc/uwsgi/apps-enabled/captive.ini state=link
+  notify: restart uwsgi
+
+
 - name: Copy clear_iptables.sh to /usr/bin/local
   copy:
     src: clean_iptables.sh
