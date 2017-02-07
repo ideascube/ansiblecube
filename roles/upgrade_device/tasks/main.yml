@@ -68,8 +68,8 @@
     value={{ sync_log }}
 
 - name: Create entry to clone/pull git repository
-  copy: src=../../network-manager/files/nm-dispatcher dest=/etc/NetworkManager/dispatcher.d/ansiblePullUpdate
-    owner=root group=root mode=0755 backup=yes force=yes
+  template: src=nm-dispatcher.j2 dest=/etc/NetworkManager/dispatcher.d/ansiblePullUpdate
+    owner=root group=root mode=0755 backup=yes
 
 - name: remove old way of lunching ansible-pull
   file: path=/etc/dhcp/dhclient-exit-hooks.d/ansiblePullUpdate state=absent
