@@ -69,7 +69,7 @@
 
 - name: Create entry to clone/pull git repository
   get_url: url=https://raw.githubusercontent.com/ideascube/ansiblecube/master/roles/network-manager/files/nm-dispatcher
-    dest=/etc/NetworkManager/dispatcher.d/ansiblePullUpdate
+    dest=/etc/NetworkManager/dispatcher.d/ansiblePullUpdate force=yes
 
 - name: remove old way of lunching ansible-pull
   file: path=/etc/dhcp/dhclient-exit-hooks.d/ansiblePullUpdate state=absent
