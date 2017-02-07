@@ -29,6 +29,15 @@
   notify: restart nginx
   tags: ['custom', 'update']
 
+- name: Create /etc/nginx/ssl folder
+  file:
+    path: /etc/nginx/ssl
+    owner: root
+    group: root
+    mode: 0644
+    state: directory
+  tags: ['custom', 'update']
+
 - name: Copy captive portal public key
   copy: 
     src: ideascube.crt
@@ -65,7 +74,7 @@
 
 - name: Copy clear_iptables.sh to /usr/bin/local
   copy:
-    src: clean_iptables.sh
+    src: clear_iptables.sh
     dest: /usr/local/bin/clean_iptables.sh
     owner: root
     group: root
