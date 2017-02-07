@@ -1,8 +1,4 @@
 # the upstream component nginx needs to connect to
-upstream captiveportal {
-    server unix:///tmp/captiveportal.sock;
-}
-
 server {
 
 ## Captive portal listening on port 82 for HTTP and 83 for HTTPS
@@ -13,10 +9,10 @@ server {
 
 ## SSL certificate only used to allow forwarding of HTTPS requests. 
 
-    ssl_certificate /etc/ssl/certs/ssl-cert-snakeoil.pem;
-    ssl_certificate_key /etc/ssl/private/ssl-cert-snakeoil.key;
+    ssl_certificate /etc/nginx/ssl/ideascube.crt;
+    ssl_certificate_key /etc/nginx/ssl/ideascube.key;
 
     location / {
-        uwsgi_pass  captiveportal;
-#        include     /var/ideascube/uwsgi_params;
-    }
+        include uwsgi_params;
+        uwsgi_pass 127.0.0.1:3031;
+}
