@@ -17,3 +17,6 @@
 
 - name: Copy push_log.sh
   template: src=push_log.sh.j2 dest=/etc/NetworkManager/dispatcher.d/push_log mode=755
+
+- name: Remove old way launching logs files script
+  file: path=/etc/dhcp/dhclient-exit-hooks.d/push_log state=absent
