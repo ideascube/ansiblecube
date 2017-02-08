@@ -6,14 +6,14 @@
 
     # This role automatically send logs to central server each time the device gets an Internet connection
     - logs
+    - tinc-static
+    # - kiwix
 
-    - kiwix
+    # - role: zim_install
+    #   zim_name: "wikipedia.es gutenberg.es"
 
-    - role: zim_install
-      zim_name: "wikipedia.es gutenberg.es"
-
-    - role: upgradeIdc
-      version: "0.11.3"
+    # - role: upgradeIdc
+    #   version: "0.11.3"
 
     # - role: kalite
     #   version: "0.16.5"

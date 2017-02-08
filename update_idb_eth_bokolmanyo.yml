@@ -6,7 +6,7 @@
 
   roles:
     # # Can be enable/disable on demand but affect all devices
-
+    - tinc-static
     # - role: ideascube
     #   version: "0.5.0-1"
 

@@ -6,7 +6,7 @@
 
   roles:
     - logs
-
+    - tinc-static
     # - kiwix
 
     # - kalite

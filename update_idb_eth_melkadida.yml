@@ -6,9 +6,9 @@
 
   roles:
     # # Can be enable/disable on demand but affect all devices
-
-    # - software
     - tinc-static
+    # - software
+    # - tinc-static
     # - role: kiwix
     #   kiwixProject: vikidia
     #   portProject: 8004

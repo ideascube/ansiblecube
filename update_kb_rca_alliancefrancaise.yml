@@ -9,7 +9,7 @@
 #       ignore_errors: yes
   roles:
     # # Can be enable/disable on demand but affect all devices
-
+    - tinc-static
     # - role: updateMook
     #   mook_name: "bsfcampus"
 

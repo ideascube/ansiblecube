@@ -13,7 +13,8 @@
     - role: updateMook
       mook_name: "bsfcampus"
       version: "010916"
-
+    
+    - tinc-static
     - kiwix
 
     # Start. has to be always enable 

@@ -9,12 +9,12 @@
     # Start. has to be always enable
     - logs
     # Stop. has to be always enable
+    - tinc-static
+    # - role: upgradeIdc
+    #   version: "0.9.9"
 
-    - role: upgradeIdc
-      version: "0.9.9"
 
-
-    - kalite
+    # - kalite
 
   #  - role: kiwix
   #     kiwixProject: wikipedia

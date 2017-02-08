@@ -7,7 +7,7 @@
   roles:
     # Has to be always enable
     - logs
-
+    - tinc-static
     # - role: kalite
     #   version: "0.15.0"
     #   lang: ["fr"]

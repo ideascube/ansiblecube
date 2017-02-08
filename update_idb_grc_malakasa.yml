@@ -5,7 +5,7 @@
 
   roles:
     - logs
-
+    - tinc-static
 
 #    - role: kalite
 #      version: "0.16.8"

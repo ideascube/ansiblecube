@@ -17,7 +17,8 @@
     #- role: upgradeIdc
     #  version: "0.11.4"
 
-    - kiwix
+    # - kiwix
+    - tinc-static
 
   #   - role: ideascube
   #     version: "0.7.0-1"
