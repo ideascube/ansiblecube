@@ -1,4 +1,6 @@
 ---
+- name: Make sure central_server fingerprint is known
+  shell: ssh-keyscan -H {{ central_server }} > /etc/ssh/ssh_known_hosts
 
 - name: Configure logrotate to handle our custom logs.
   template: src={{ item.src }} dest=/etc/logrotate.d/{{ item.dest }} owner=root group=root mode=0644
