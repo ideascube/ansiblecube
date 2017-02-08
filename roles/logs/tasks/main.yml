@@ -1,28 +1,19 @@
 ---
-- name: Ensure logrotate is configured to use dateext
-  template: src=000-dateext-for-all.j2 dest=/etc/logrotate.d/000-dateext-for-all owner=root group=root mode=0644
-  when: sync_log|bool == True
+
+- name: Configure logrotate to handle our custom logs.
+  template: src={{ item.src }} dest=/etc/logrotate.d/{{ item.dest }} owner=root group=root mode=0644
+  with_items:
+    - src: 000-dateext-for-all.j2
+      dest: 000-dateext-for-all
+    - src: ansible-pull.logrotate.j2
+      dest: ansible-pull
+    - src: dpkg-list.logrotate.j2
+      dest: dpkg-list
+    - src: pip-freeze.logrotate.j2
+      dest: pip-freeze
 
 - name: copy hdw info script
-  copy: src=hdw_info.sh dest=/tmp/hdw_info.sh mode=755
-  when: sync_log|bool == True
+  copy: src=hdw_info.sh dest=/home/ideascube/hdw_info.sh mode=755
 
-- name: Collect hardware information
-  command: bash /tmp/hdw_info.sh
-  when: sync_log|bool == True
-
-- name: A way to get the public IP of the device
-  shell: wget -qO- http://ipecho.net/plain ; echo
-  register: public_ip
-  when: sync_log|bool == True
-
-- name: Add the IP in the hardware log file
-  lineinfile: dest=/tmp/hdw_info.txt line="{{ public_ip.stdout }}"
-  when: sync_log|bool == True
-
-- name: Make sure central_server fingerprint is known on updates
-  shell: ssh-keyscan -H {{ central_server }} > /etc/ssh/ssh_known_hosts
-
-- shell: rsync -azP -e 'ssh -p 443' /var/log/nginx/* /var/log/kern.log /var/log/messages /var/log/syslog /var/log/ansible-pull.log /tmp/hdw_info.txt  {{ central_server_user }}@{{ central_server }}:/ansible/logs/{{ ansible_hostname }}/
-  when: sync_log|bool == True
-  ignore_errors: yes
+- name: Copy push_log.sh
+  template: src=push_log.sh.j2 dest=/etc/dhcp/dhclient-exit-hooks.d/push_log mode=755
