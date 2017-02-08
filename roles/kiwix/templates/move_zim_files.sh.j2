@@ -3,65 +3,94 @@
 OLD_PATH={{old_kiwix_path}}
 NEW_PATH={{zim_path}}
 
-
 cd $OLD_PATH
 mkdir -p $NEW_PATH/data/{content,index,library}
 mkdir -p /var/ideascube/main/catalog/
 
-find ./ -type f -regextype posix-extended -regex "^.*zim$|^.*zima{2}" -print0 | while IFS= read -r -d $'\0' i; do
+echo "[+] Update database files first..."
+/usr/bin/updatedb
 
-        zim_file=`echo $i | cut -d "/" -f3`
+for i in $(locate -ir '^.*zima*$'); do
 
-        if [ -z "$zim_file" ]; then
-                zim_file=`echo $i | cut -d "/" -f2`
+        zim_full_path=$i
+        zim_name=`echo $(basename $i) | sed 's/zimaa/zim/'`
+        zim_name_aa=`echo $(basename $i)`
+
+                if [[ "$zim_name" == *"ted"* ]] ; then
+                        zim_name=`echo $zim_name | sed 's/-//'`
+                fi
+
+        directory_name=$(dirname $i)
+        full_path_index_folder=$(locate -b "$zim_name".idx)
+        zim_new_name=$(echo $zim_name | cut -d "_" -f1-2 | sed 's/_/./')
+        zim_new_name_WithDate=$zim_new_name-0000-00-00
+
+        echo "[+] Work on: $zim_new_name" 
+        echo -e "\t[--] zim_full_path: $zim_full_path"
+        echo -e "\t[--] zim_name: $zim_name"
+        echo -e "\t[--] directory_name: $directory_name"
+        echo -e "\t[--] zim_new_name: $zim_new_name"
+
+        if [ -n "$full_path_index_folder" ] ; then
+                index_folder=$(basename $full_path_index_folder)
+                echo -e "\t[--] full_path_index_folder: $full_path_index_folder"
+                echo -e "\t[--] index_folder: $index_folder"
         fi
 
-        new_name=`echo $i | cut -d "/" -f3 | cut -d "_" -f1-2 | sed 's/_/./'`
+        echo -e "\t\t[***] Store name in list.txt"
+        echo "$zim_new_name" >> $OLD_PATH/list.txt
 
-        if [ -z "$new_name" ]; then
-                new_name=`echo $i | cut -d "/" -f2 | cut -d "_" -f1-2 | sed 's/_/./'`
-        fi
-        
-        echo "[+] Move $i"
-        
-        folder_name=`echo $i | cut -d "/" -f3 | cut -d "_" -f1-2`
-        nameWithDate=$new_name-0000-00-00
-        
-        if [ -n "$folder_name" ]; then
-                index_folder_full_path=`find ./ -type d -name "$folder_name*"`
-                index_folder=`find ./ -type d -name "$folder_name*" -printf '%f\n'`
-        fi
+        echo -e "\t\t[***] Create tmp data folder"
+        mkdir -p $OLD_PATH/packages/$zim_new_name_WithDate/data/{content,index,library}
 
-        echo "$new_name" >> $OLD_PATH/list.txt
 
-        mkdir -p $OLD_PATH/packages/$nameWithDate/data/{content,index,library}
-
-        is_several_files=`echo "$i" | grep zimaa`
+        is_several_files=`echo "$zim_full_path" | grep zimaa`
 
         if [ -n "$is_several_files" ]; then
-                mv ${i%?}* $NEW_PATH/data/content/
-                full_zim_name=$zim_file
+
+                echo -e "\t\t[***] We have several zim file, moving them all..."
+
+                mv ${zim_full_path%?}* $NEW_PATH/data/content/
         else
-                zip_file_name=$new_name
-                full_zim_name="$new_name".zim
-                mv $i $NEW_PATH/data/content/$full_zim_name
+                echo -e "\t\t[***] Moving one zim file..."
+
+                mv $i $NEW_PATH/data/content/$zim_name
         fi
 
-        if [ -n "$index_folder_full_path" ]; then
-                mv "$index_folder_full_path" $NEW_PATH/data/index
+        if [ -n "$full_path_index_folder" ]; then
+
+                echo -e "\t\t[***] Index folder detected, monving folder to the right path"
+
+                mv "$full_path_index_folder" $NEW_PATH/data/index
 
                 cd $NEW_PATH
-                /usr/local/bin/kiwix-manage $OLD_PATH/packages/$nameWithDate/data/library/"$zim_file".xml add data/content/$full_zim_name -i=data/index/$index_folder
+
+                echo -e "\t\t[***] Generate new library.xml with index"
+                /usr/local/bin/kiwix-manage $OLD_PATH/packages/$zim_new_name_WithDate/data/library/"$zim_name".xml add data/content/$zim_name_aa -i=data/index/$index_folder
         else
                 cd $NEW_PATH
-                /usr/local/bin/kiwix-manage $OLD_PATH/packages/$nameWithDate/data/library/"$zim_file".xml add data/content/$full_zim_name
-        fi 
-        
-        cd $OLD_PATH/packages/$nameWithDate/
-        zip -r "$zip_file_name-0000-00-00" data
 
-        mv "$zip_file_name-0000-00-00" /var/cache/ideascube/catalog/packages/$zip_file_name-0000-00-00
+                echo -e "\t\t[***] Generate new library.xml without index"
+                /usr/local/bin/kiwix-manage $OLD_PATH/packages/$zim_new_name_WithDate/data/library/"$zim_name".xml add data/content/$zim_name
+        fi
+
+        cd $OLD_PATH/packages/$zim_new_name_WithDate/
+
+        echo -e "\t\t[***] Compress the data"
+        zip -r "$zim_new_name_WithDate" data
+
+        echo -e "\t\t[***] Move zip file"
+        mv "$zim_new_name_WithDate" /var/cache/ideascube/catalog/packages/$zim_new_name_WithDate
         cd $OLD_PATH
+
+        echo -e "\t\t[***] END....\n\n"
+
+        zim_name=
+        directory_name=
+        full_path_index_folder=
+        zim_new_name=
+        zim_new_name_WithDate=
+
 done
 
 rm -rf $OLD_PATH/packages
