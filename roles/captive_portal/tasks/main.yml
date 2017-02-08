@@ -5,6 +5,15 @@
     - conntrack
     - uwsgi-plugin-python
   tags: ['custom', 'update']
+
+- name: Create /var/www/captiveportal folder
+  file:
+    path: /var/www/captiveportal
+    owner: ideascube
+    group: ideascube
+    mode: 0644
+    state: directory
+  tags: ['custom', 'update']
   
 - name: Copy captive portal script to /var/www/captiveportal
   template:
