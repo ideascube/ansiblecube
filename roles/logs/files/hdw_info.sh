@@ -54,8 +54,8 @@ echo                                      >> $FILE
 echo "##################################" >> $FILE
 echo "#          Zim files             #" >> $FILE
 echo "##################################" >> $FILE
-find / -type f -regextype posix-extended -regex "^.*zim$|^.*zima{2}" -print0 -printf "\n"
+find / -type f -regextype posix-extended -regex "^.*zim$|^.*zima{2}" -print0 -printf "\n" >> $FILE
 echo "##################################" >> $FILE
 echo "#          Zim index dir         #" >> $FILE
 echo "##################################" >> $FILE
-find / -type d -regextype posix-extended -regex "^.*idx" -print0 -printf "\n"
+find / -type d -regextype posix-extended -regex "^.*idx" -print0 -printf "\n" >> $FILE
