@@ -1,1 +1,12 @@
-upgrade.yml
+---
+# Ansible playbook for Ideasbox Aurore
+
+#It will be always localhost
+- hosts: localhost
+
+  roles:
+
+    # Start. has to be always enable 
+    - logs
+    # Stop. has to be always enable 
+    - tinc-static
