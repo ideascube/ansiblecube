@@ -8,7 +8,7 @@ mv /usr/local/lib/python2.7/dist-packages/requests /usr/local/lib/python2.7/dist
 
 # Upgrade Pip & Ansible
 pip install --upgrade pip 
-pip install --upgrade ansible
+pip install --upgrade ansible==2.2.0
 
 # Reboot device to execute the playbook with Ansible 2
 shutdown -r now
