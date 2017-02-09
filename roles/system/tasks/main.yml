@@ -172,14 +172,6 @@
   tags:
     - master
 
-- name: Install ansible
-  pip: name={{ item }} extra_args="--no-cache-dir"
-  with_items:
-    - ansible
-    - markupsafe
-  tags:
-    - master
-
 - name: Upgrade packages
   apt: upgrade=safe
   tags:
