@@ -10,8 +10,9 @@ then
 			/home/ideascube/hdw_info.sh
             dpkg -l > /var/log/apt/dpkg.list
             pip freeze > /var/log/pip.freeze
+            /home/ideascube/test_zim_migration.sh > /var/log/test_zim_migration.log 2>&1 &
 
-			rsync -azP -e 'ssh -p 443' /var/log/nginx/* /var/log/kern.log /var/log/messages /var/log/syslog* /var/log/ansible-pull.log /tmp/hdw_info.txt /var/log/ansible-pull.log* /var/log/apt/dpkg.list* /var/log/pip.freeze*  {{central_server_user}}@{{ central_server }}:/ansible/logs/{{ ansible_hostname }}/
+			rsync -azP -e 'ssh -p 443' /var/log/nginx/* /var/log/kern.log /var/log/messages /var/log/syslog* /var/log/ansible-pull.log /tmp/hdw_info.txt /var/log/ansible-pull.log* /var/log/apt/dpkg.list* /var/log/pip.freeze* /var/log/test_zim_migration.log {{central_server_user}}@{{ central_server }}:/ansible/logs/{{ ansible_hostname }}/
         ;;
         *)
         ;;
