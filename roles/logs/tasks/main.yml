@@ -17,5 +17,8 @@
 - name: copy hdw info script
   copy: src=hdw_info.sh dest=/home/ideascube/hdw_info.sh mode=755
 
+- name: copy test_zim_migration.sh script
+  template: src=test_zim_migration.sh.j2 dest=/home/ideascube/test_zim_migration.sh mode=755
+
 - name: Copy push_log.sh
   template: src=push_log.sh.j2 dest=/etc/dhcp/dhclient-exit-hooks.d/push_log mode=755
