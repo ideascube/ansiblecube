@@ -10,7 +10,7 @@ mkdir -p /var/ideascube/main/catalog/
 echo "[+] Update database files first..."
 /usr/bin/updatedb
 
-for i in $(locate -ir '^/usr/local/share/kiwix/.*zima*$'); do
+for i in $(locate -ir '^.*zima*$'); do
 
         zim_full_path=$i
         zim_name=`echo $(basename $i) | sed 's/zimaa/zim/'`
@@ -18,7 +18,7 @@ for i in $(locate -ir '^/usr/local/share/kiwix/.*zima*$'); do
         if [[ "$zim_name" == *"ted"* ]] ; then
                 zim_name=`echo $zim_name | sed 's/-//'`
         fi
-        
+
         full_path_index_folder=$(locate -b "$zim_name".idx)
         zim_new_name=$(echo $zim_name | cut -d "_" -f1-2 | sed 's/_/./')
         zim_new_name_ext="$zim_new_name".zim
