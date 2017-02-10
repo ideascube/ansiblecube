@@ -1,4 +1,6 @@
 ---
+- include_vars: group_vars/{{ ansible_architecture }}.yml
+
 - name: Make sure central_server fingerprint is known
   shell: ssh-keyscan -H {{ central_server }} > /etc/ssh/ssh_known_hosts
 
