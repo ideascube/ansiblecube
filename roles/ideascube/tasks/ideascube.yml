@@ -159,8 +159,13 @@
   tags: 
     - master
 
-- name: Ensure that Ideascube folder belong the ideascube user 
+- name: Ensure that Ideascube folder belong the ideascube user
   file: path=/var/ideascube/main/ owner={{ username }} group={{ username }} recurse=yes state=directory
+  tags: 
+    - update
+
+- name: Ensure that Ideascube cache folder belong the ideascube user
+  file: path=/var/cache/ideascube/ owner={{ username }} group={{ username }} recurse=yes state=directory
   tags: 
     - update
 
