@@ -63,7 +63,7 @@
 - name: Install zim file with ideascube catalog 
   become: yes
   become_user: ideascube
-  command: ideascube catalog install {{item}} && sleep 5 chdir={{old_kiwix_path}}
+  shell: ideascube catalog install {{item}} && sleep 5 chdir={{old_kiwix_path}}
   with_items: "{{ zim_list.stdout_lines | default(omit) }}"
 
 - name: Remove empty folder 
