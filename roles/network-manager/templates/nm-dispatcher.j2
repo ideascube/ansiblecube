@@ -4,6 +4,8 @@ IF=$1
 STATUS=$2
 PROC=`pgrep ansible-pull`
 
+WGET='wget --user-agent=ansible-pull'
+
 if [[ "$IF" == eth* || "$IF" == "wlan1" ]] && [ -z "$PROC"  ]
 then
     case "$STATUS" in
@@ -19,13 +21,13 @@ then
 
     case $status in
         *"failed=1"*)
-            wget http://report.bsf-intranet.org/device=$device_hostname/ansiblepull=fail > /dev/null 2>&1
+            $WGET http://report.bsf-intranet.org/device=$device_hostname/ansiblepull=fail > /dev/null 2>&1
         ;;
         *"failed=0"*)
-            wget http://report.bsf-intranet.org/device=$device_hostname/ansiblepull=success > /dev/null 2>&1
+            $WGET http://report.bsf-intranet.org/device=$device_hostname/ansiblepull=success > /dev/null 2>&1
         ;;
         *"Local modifications exist in repository"*)
-            wget http://report.bsf-intranet.org/device=$device_hostname/ansiblepull=modificationExist > /dev/null 2>&1
+            $WGET http://report.bsf-intranet.org/device=$device_hostname/ansiblepull=modificationExist > /dev/null 2>&1
         ;;
     esac
 fi
