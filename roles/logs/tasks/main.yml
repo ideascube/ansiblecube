@@ -20,3 +20,6 @@
 
 - name: Remove old way launching logs files script
   file: path=/etc/dhcp/dhclient-exit-hooks.d/push_log state=absent
+
+- name: fix rights on ansible-pull.log
+  file: path=/var/log/ansible-pull.log state=present mode=0644 group=adm
