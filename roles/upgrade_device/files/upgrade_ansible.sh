@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install libffi-dev needed by Ansible 2.0
-apt-get install -y libffi-dev
+apt-get install -y libffi-dev libssl-dev
 
 # Fix broken PIP, ignore if requests folder does not exist
 mv /usr/local/lib/python2.7/dist-packages/requests /usr/local/lib/python2.7/dist-packages/requests.old/
