@@ -65,7 +65,7 @@
 	"idb-lbn-elmarj": {
 		"kalite": {
 			"activated": "True",
-			"version": "0.16.8",
+			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"zim_install": {
@@ -76,7 +76,7 @@
 	"idb-aus-queensland": {
 		"kalite": {
 			"activated": "True",
-			"version": "0.16.8",
+			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"zim_install": {
@@ -102,7 +102,7 @@
 	"idb-grc-moria": {
 		"kalite": {
 			"activated": "True",
-			"version": "0.16.8",
+			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"zim_install": {
@@ -113,7 +113,7 @@
 	"kb-usa-p2pu": {
 		"kalite": {
 			"activated": "True",
-			"version": "0.16.8",
+			"version": "0.16.9",
 			"language": ["en"]
 		},
 		"zim_install": {
@@ -124,7 +124,7 @@
 	"idb-bdi-bwagiriza": {
 		"kalite": {
 			"activated": "True",
-			"version": "0.16.8",
+			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"zim_install": {
@@ -145,7 +145,7 @@
 	"idb-bdi-musasa": {
 		"kalite": {
 			"activated": "True",
-			"version": "0.16.8",
+			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"zim_install": {
@@ -156,7 +156,7 @@
 	"idb-eth-melkadida": {
 		"kalite": {
 			"activated": "True",
-			"version": "0.16.8",
+			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"zim_install": {
@@ -167,7 +167,7 @@
 	"idb-sen-fap": {
 		"kalite": {
 			"activated": "True",
-			"version": "0.16.8",
+			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"zim_install": {
@@ -178,7 +178,7 @@
 	"idb-bdi-makamba": {
 		"kalite": {
 			"activated": "True",
-			"version": "0.16.8",
+			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"zim_install": {
@@ -204,7 +204,7 @@
 	"kb-nic-nicarali": {
 		"kalite": {
 			"activated": "True",
-			"version": "0.16.8",
+			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"zim_install": {
@@ -219,7 +219,7 @@
 		},
 		"kalite": {
 			"activated": "True",
-			"version": "0.16.8",
+			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"idc_import": {
@@ -234,7 +234,7 @@
 	"idb-grc-eleonas": {
 		"kalite": {
 			"activated": "True",
-			"version": "0.16.8",
+			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"zim_install": {
@@ -245,7 +245,7 @@
 	"kb-jor-croixrouge": {
 		"kalite": {
 			"activated": "False",
-			"version": "0.16.8",
+			"version": "0.16.9",
 			"language": ["en","ar"]
 		},
 		"zim_install": {
@@ -260,7 +260,7 @@
 	"idb-fra-grandesynthe": {
 		"kalite": {
 			"activated": "True",
-			"version": "0.16.8",
+			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"zim_install": {
@@ -271,7 +271,7 @@
 	"kb-eth-kytabu": {
 		"kalite": {
 			"activated": "True",
-			"version": "0.16.8",
+			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"zim_install": {
@@ -296,7 +296,7 @@
 		},
 		"kalite": {
 			"activated": "True",
-			"version": "0.16.8",
+			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"zim_install": {
@@ -307,7 +307,7 @@
 	"idb-fra-jeanquarre": {
 		"kalite": {
 			"activated": "True",
-			"version": "0.16.8",
+			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"zim_install": {
@@ -318,7 +318,7 @@
 	"idb-fra-sarcelles": {
 		"kalite": {
 			"activated": "True",
-			"version": "0.16.8",
+			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"zim_install": {
@@ -329,7 +329,7 @@
 	"idb-lwb-detroit-usa": {
 		"kalite": {
 			"activated": "True",
-			"version": "0.16.8",
+			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"zim_install": {
@@ -340,7 +340,7 @@
 	"idb-fra-emmaus": {
 		"kalite": {
 			"activated": "True",
-			"version": "0.16.8",
+			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"zim_install": {
@@ -351,7 +351,7 @@
 	"kb-ifb-bdi": {
 		"kalite": {
 			"activated": "True",
-			"version": "0.16.8",
+			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"zim_install": {
@@ -368,7 +368,7 @@
 	"kb-bdi-tv5monde": {
 		"kalite": {
 			"activated": "True",
-			"version": "0.16.8",
+			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"zim_install": {
@@ -379,7 +379,7 @@
 	"idb-irq-bardarash": {
 		"kalite": {
 			"activated": "True",
-			"version": "0.16.8",
+			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"zim_install": {
@@ -390,7 +390,7 @@
 	"idb-bdi-kavumu": {
 		"kalite": {
 			"activated": "True",
-			"version": "0.16.8",
+			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"zim_install": {
@@ -401,7 +401,7 @@
 	"idb-eth-bokolmanyo": {
 		"kalite": {
 			"activated": "True",
-			"version": "0.16.8",
+			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"zim_install": {
@@ -412,7 +412,7 @@
 	"kb-usa-wmapache": {
 		"kalite": {
 			"activated": "True",
-			"version": "0.16.8",
+			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"zim_install": {
@@ -423,7 +423,7 @@
 	"idb-jor-alhashmi": {
 		"kalite": {
 			"activated": "True",
-			"version": "0.16.8",
+			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"zim_install": {
@@ -434,7 +434,7 @@
 	"idb-jor-azraq": {
 		"kalite": {
 			"activated": "True",
-			"version": "0.16.8",
+			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"zim_install": {
@@ -445,7 +445,7 @@
 	"idb-fra-calais": {
 		"kalite": {
 			"activated": "True",
-			"version": "0.16.8",
+			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"zim_install": {
@@ -456,7 +456,7 @@
 	"idb-grc-malakasa": {
 		"kalite": {
 			"activated": "True",
-			"version": "0.16.8",
+			"version": "0.16.9",
 			"language": ["en"]
 		},
 		"zim_install": {
@@ -500,7 +500,7 @@
 	"kb-tza-ambassadeDeFrance": {
 		"kalite": {
 			"activated": "True",
-			"version": "0.16.8",
+			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"idc_import": {
@@ -515,7 +515,7 @@
 	"idb-deu-dusseldorf": {
 		"kalite": {
 			"activated": "True",
-			"version": "0.16.8",
+			"version": "0.16.9",
 			"language": ["fr"]
 		},
 		"zim_install": {
@@ -526,7 +526,7 @@
 	"idb-jor-zaatari": {
 		"kalite": {
 			"activated": "False",
-			"version": "0.16.8",
+			"version": "0.16.9",
 			"language": ["en","ar"]
 		},
 		"zim_install": {
