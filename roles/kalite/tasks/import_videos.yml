@@ -10,8 +10,13 @@
 - name: Create a working dir for NFS shared
   file: path=/media/synology/ state=directory
 
-- name: Mount shared folder from a NFS Share
-  command: mount -t cifs -o guest //{{kawax}}/content /media/synology
+- name: Mount CIFS Share
+  mount:
+    name: /media/synology
+    src: //{{kawax}}/content
+    fstype: cifs
+    opts: guest
+    state: mounted
 
 - name: Copy kalite videos
   synchronize: src=/media/synology/videosKalite/{{ item }}/ 
