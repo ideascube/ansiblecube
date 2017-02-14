@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Update date / time
+ntpdate-debian
+
 # Install libffi-dev needed by Ansible 2.0
 apt-get install -y libffi-dev libssl-dev
 
