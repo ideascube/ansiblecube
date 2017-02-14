@@ -117,7 +117,7 @@
 			"language": ["en"]
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": "False",
 			"name": ["tedtechnology.en","tedscience.en","tedglobalissues.en","tedentertainment.en","teddesign.en","tedbusiness.en","wiktionary.en","wikipedia.en","gutenberg.en"]
 		}
 	},
