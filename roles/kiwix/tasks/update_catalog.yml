@@ -18,6 +18,14 @@
 - name: Move catalog.yml to the final path 
   command: mv "{{zim_path}}/catalog.yml" /var/cache/ideascube/catalog/
 
+- name: Give rights to ideascube on Kiwix folder
+  file: path=/var/ideascube/kiwix/ state=directory
+    owner={{ username }} group={{ username }} recurse=yes
+
+- name: Give rights to ideascube on cache folder
+  file: path=/var/cache/ideascube/ state=directory
+    owner={{ username }} group={{ username }} recurse=yes
+
 - name: Get the content of list.txt
   command: cat "{{zim_path}}/list.txt"
   register: zim_list
