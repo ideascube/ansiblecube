@@ -14,7 +14,7 @@ find ./ -type f -regextype posix-extended -regex "^.*zim$|^.*zima{2}" -print0 | 
 
         echo "[+] Create fake archive for $i"
 
-        new_name=`echo $zim_file | sed 's/.zim//'`
+        new_name=`echo $zim_file | sed -E 's/.zim|.zimaa//'`
         nameWithDate=$new_name-0000-00-00
 
         echo "$new_name" >> $ZIM_PATH/list.txt
