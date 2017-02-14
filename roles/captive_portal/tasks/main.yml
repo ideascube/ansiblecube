@@ -11,7 +11,7 @@
     path: /var/www/captiveportal
     owner: ideascube
     group: ideascube
-    mode: 0644
+    mode: 0755
     state: directory
   tags: ['custom', 'update']
   
