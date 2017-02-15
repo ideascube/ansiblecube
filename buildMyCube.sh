@@ -287,7 +287,7 @@ do
 
             wget https://raw.githubusercontent.com/ideascube/ansiblecube/$BRANCH/roles/set_custom_fact/files/device_list.fact -O /tmp/device_list.fact > /dev/null 2>&1
 
-            if [[ -z `grep "$FULL_NAME" /tmp/device_list.fact` ]]
+            if [ -z `grep "$FULL_NAME" /tmp/device_list.fact` ] && [ "$TAGS" != "--tags master" ]
             then
                 CONF="1"
             fi
