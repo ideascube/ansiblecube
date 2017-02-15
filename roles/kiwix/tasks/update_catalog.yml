@@ -34,4 +34,4 @@
   become: yes
   become_user: ideascube
   command: ideascube catalog install {{item}} chdir={{zim_path}}
-  with_items: "{{ zim_list.stdout_lines}}"
+  with_items: "{{ zim_list.stdout_lines | default(omit) }}"
