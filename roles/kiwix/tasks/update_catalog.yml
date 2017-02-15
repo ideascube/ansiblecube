@@ -27,7 +27,7 @@
     owner={{ username }} group={{ username }} recurse=yes
 
 - name: Get the content of list.txt
-  command: cat "{{zim_path}}/list.txt"
+  shell: cat "{{zim_path}}/list.txt" ; echo
   register: zim_list
 
 - name: Install zim file with ideascube catalog 
