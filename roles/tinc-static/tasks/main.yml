@@ -83,26 +83,11 @@
   notify: hello world
   tags: ['custom','update','rename']
 
-- name: Get wlan1 IP address when interfaces is up
-  set_fact: host_ip_address={{ ansible_wlan1.ipv4.address }}
-  when: ansible_wlan1.ipv4.address is defined
-  tags: ['custom','update','rename']
-
-- name: Get eth0 IP address when interface is up
-  set_fact: host_ip_address={{ ansible_eth0.ipv4.address }}
-  when: ansible_eth0.ipv4.address is defined
-  tags: ['custom','update','rename']
-
-- name: Get eth1 IP address when interface is up
-  set_fact: host_ip_address={{ ansible_eth1.ipv4.address }}
-  when: ansible_eth1.ipv4.address is defined
-  tags: ['custom','update','rename']
-
 - name: ensure tinc address is properly set in tinc host file
   lineinfile: >
     dest=/etc/tinc/{{ vpn_name }}/hosts/{{ tinc_localhost_name }}
     regexp='^Address'
-    line="Address = {{ host_ip_address }}"
+    line="Address = {{ ansible_default_ipv4.address }}"
     create=yes
   notify:
     - reload tinc
