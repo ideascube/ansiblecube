@@ -28,7 +28,7 @@
   tags: ['custom','rename']
 
 - name: A way to get the public IP of the device
-  shell: wget -qO- http://ipecho.net/plain ; echo
+  shell: curl icanhazip.com ; echo
   register: public_ip
   when: firststart.stat.exists == False or firststart is undefined
   tags: ['custom','rename']
