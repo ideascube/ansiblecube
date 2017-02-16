@@ -349,11 +349,12 @@ if [[ "$START" = "1" ]]; then
     echo "[+] Send ansible-pull report"
 
     status=$(tail -3 /var/log/ansible-pull.log)
+    description=$(grep TASK /var/log/ansible-pull.log | sed -n '$p' | cut -d "[" -f 2 | sed 's/*//g' | sed 's/ /_/g')
     device_hostname=$(hostname)
 
     case $status in
         *"failed=1"*)
-            wget http://report.bsf-intranet.org/device=$device_hostname/ansiblepull=fail > /dev/null 2>&1
+            wget http://report.bsf-intranet.org/device=$device_hostname/ansiblepull=fail/msg="$description" > /dev/null 2>&1
         ;;
         *"failed=0"*)
             wget http://report.bsf-intranet.org/device=$device_hostname/ansiblepull=success > /dev/null 2>&1
