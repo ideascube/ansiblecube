@@ -165,5 +165,5 @@
     - rename
 
 - name: send the public key to central nodes
-  shell: rsync -azP -e 'ssh -p 443' /etc/tinc/{{ vpn_name }}/hosts/{{tinc_localhost_name }}  {{ central_server }}:/ansible/tinc-{{ vpn_name }}/
+  shell: rsync /etc/tinc/{{ vpn_name }}/hosts/{{tinc_localhost_name }}  {{ central_server }}:/ansible/tinc-{{ vpn_name }}/
   tags: ['custom','update','rename']  

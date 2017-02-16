@@ -45,7 +45,7 @@
   tags: ['custom','update','rename']
 
 - name: Send this file over the central_server
-  raw: cat /etc/firstStart.csv | ssh -p 443 {{ central_server }} "cat >> ./ansible/UUID/firstStart.csv"
+  raw: cat /etc/firstStart.csv | ssh {{ central_server }} "cat >> ./ansible/UUID/firstStart.csv"
   when: managed_by_bsf|bool and firststart.stat.exists == False or firststart is undefined
   tags: ['custom','rename']
 
