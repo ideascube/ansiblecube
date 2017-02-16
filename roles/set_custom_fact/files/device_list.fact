@@ -830,5 +830,15 @@
 			"activated": "False",
 			"content_name": ["2-Contenus/csvdrc.csv"]
 		}
+	},
+	"kb-fra-crfaix": {
+		"zim_install": {
+			"activated": "True",
+			"name": ["wikipedia.fr","wikipedia.ar","wikipedia.cbk","wikipedia.ru","wikipedia.sr","biologie-tout-compris.fr","cest-pas-sorcier.fr","dirtybiology.fr","gutenberg.fr"]
+		},
+		"idc_import": {
+			"activated": "True",
+			"content_name": ["2-Contenus/kb_crf_1_cada_castiglione.csv"]
+		}
 	}
 }
