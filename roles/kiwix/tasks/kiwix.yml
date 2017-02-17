@@ -3,7 +3,7 @@
   tags: ['master','update']
 
 - name: Copying kiwix binaries
-  get_url: url={{filer_bsf}}/kiwix-serve-{{ ansible_architecture }} dest=/usr/local/bin/kiwix-serve mode=755 timeout=20
+  get_url: url={{filer_bsf}}/kiwix-serve-{{ ansible_architecture }} dest=/usr/local/bin/kiwix-serve mode=755 timeout=30
   tags:
     - master
 
