@@ -28,10 +28,11 @@
 - name: Download catalog file 
   get_url: url=http://www.daitauha.fr/static/kiwix.yml
     dest="{{old_kiwix_path}}/kiwix.yml"
+    timeout=30
 
 - name: Copying kiwix manage to create library.xml
   get_url: url={{filer_bsf}}/kiwix-manage-{{ ansible_architecture }} 
-    dest=/usr/local/bin/kiwix-manage mode=755 timeout=20
+    dest=/usr/local/bin/kiwix-manage mode=755 timeout=30
 
 - name: copy update sha256sum script
   copy: src=update_sha256sum.py dest={{old_kiwix_path}}/update_sha256sum.py

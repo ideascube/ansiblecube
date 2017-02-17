@@ -2,6 +2,7 @@
 - name: Download catalog file 
   get_url: url=http://www.daitauha.fr/static/kiwix.yml
     dest="{{zim_path}}/kiwix.yml"
+    timeout=30
 
 - name: copy update sha256sum script
   copy: src=update_sha256sum.py dest={{zim_path}}/update_sha256sum.py
