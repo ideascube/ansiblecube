@@ -22,6 +22,11 @@
   tags:
     - update
 
+- name: Get kernel package version
+  shell: dpkg-query -W linux-image-next-sunxi | awk '{print $2}' ; echo
+  register: pkg_kernel_version
+  tags: ['custom', 'update']
+
 - name: Install last custom Kernel, Headers, DTB and U-Boot
   apt: deb=http://filer.bsf-intranet.org/{{ item }}
   with_items:
@@ -30,6 +35,7 @@
    - linux-image-next-sunxi_5.23_armhf.deb
    - linux-u-boot-next-lime2_5.23_armhf.deb
   notify: Reboot device
+  when: pkg_kernel_version | version_compare('5.23', '<') 
   tags: ['custom','update']
 
 - name: Add pinning for linux-u-boot-lime2-next package == DOT NOT UPGRADE THIS PACKAGE
