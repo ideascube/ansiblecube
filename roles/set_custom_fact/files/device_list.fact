@@ -834,7 +834,7 @@
 	"kb-fra-crfaix": {
 		"zim_install": {
 			"activated": "True",
-			"name": ["wikipedia.fr","wikipedia.ar","wikipedia.cbk","wikipedia.ru","wikipedia.sr","biologie-tout-compris.fr","cest-pas-sorcier.fr","dirtybiology.fr","gutenberg.fr"]
+			"name": ["wikipedia.fr","wikipedia.ar","wikipedia.cbkzam","wikipedia.ru","wikipedia.sr","biologie-tout-compris.fr","cest-pas-sorcier.fr","dirtybiology.fr","gutenberg.fr"]
 		},
 		"idc_import": {
 			"activated": "True",
