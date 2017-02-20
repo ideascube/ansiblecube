@@ -836,5 +836,34 @@
 			"activated": "False",
 			"content_name": ["2-Contenus/csvdrc.csv"]
 		}
+	},
+	"kb-fra-crfaix": {
+		"zim_install": {
+			"activated": "True",
+			"name": ["wikipedia.fr","wikipedia.ar","wikipedia.cbkzam","wikipedia.ru","wikipedia.sr","biologie-tout-compris.fr","cest-pas-sorcier.fr","dirtybiology.fr","gutenberg.fr"]
+		},
+		"idc_import": {
+			"activated": "True",
+			"content_name": ["2-Contenus/kb_crf_1_cada_castiglione.csv"]
+		}
+	},
+	"kb-cod-kinlab": {
+		"bsfcampus": {
+			"activated": "True",
+			"version": "280217"
+		},
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.9",
+			"language": ["fr"]
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": ["wikipedia.fr","biologie-tout-compris.fr","deus-ex-silicium.fr","dirtybiology.fr","e-penser.fr","gutenberg.fr","gutenberg.en","universcience-tv.fr","tedxlausanne2014.fr","tedxlausanne2013.fr","tedxlausanne2012.fr","tedxgeneva2014.fr"]
+		},
+		"idc_import": {
+			"activated": "True",
+			"content_name": ["2-Contenus/csv_kinlab.csv"]
+		}
 	}
 }
