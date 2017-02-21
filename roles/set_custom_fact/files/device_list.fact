@@ -198,7 +198,7 @@
 		},
 		"zim_install": {
 			"activated": "False",
-			"name": ["vikidia.fr","gutenberg.fr","wikipedia.ar","wikipedia.en","wikipedia.fa","wikipedia.ti","wikipedia.fr","wiktionary.fr","wiktionary.ar","wiktionary.en","wiktionary.fa","wiktionary.ti","wikibooks.fr","wikibooks.en","wikibooks.fa","wikibooks.ar","mullah-piaz-digest.fa"]
+			"name": ["vikidia.fr","gutenberg.fr","wikipedia.ar","wikipedia.en","wikipedia.fa","wikipedia.fr","wiktionary.fr","wiktionary.ar","wiktionary.en","wiktionary.fa","wikibooks.fr","wikibooks.en","wikibooks.fa","wikibooks.ar","mullah-piaz-digest.fa"]
 		}
 	},
 	"kb-nic-nicarali": {
