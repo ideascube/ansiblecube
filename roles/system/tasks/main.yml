@@ -119,7 +119,7 @@
    - hwinfo
    - sqlite3
    - elinks
-  tags: ['master','update']
+  tags: ['master','custom','update']
 
 - name: Upgrade pip to the latest version
   pip: name=pip state=latest
