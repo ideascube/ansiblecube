@@ -1,22 +1,77 @@
 #!/usr/bin/python
 import subprocess
-import thread
-import time
 
 def allow_host(ipaddress):
 
-##	Wait for 10s (tablets/phone tend to do requests frequently, so bypassing this captive portal) before allowing them.
-        time.sleep(10)
-	cmd = "sudo iptables -t nat -I CAPTIVE_PASSLIST 1 -s {ip} -j ACCEPT".format(ip=ipaddress)
-	subprocess.check_output(cmd, shell=True)
+    cmd = "sudo iptables -t nat -I CAPTIVE_PASSLIST 1 -s {ip} -j ACCEPT".format(ip=ipaddress)
+    subprocess.check_output(cmd, shell=True)
+	
 
-def application(environ, start_response):
-        start_response('200 OK', [('Content-Type', 'text/html')])
-
-## Send HTML redirect to forward user to ideasbox.lan/koombook.lan
-
+def application(env, start_response):
+    start_response('200 OK', [('Content-Type','text/html')])
+    if env['REQUEST_URI'] != "/letmein.html":
+	html = """
+<html>
+<head>
+<style>
+html, body { width: 100%; height: 100%; position: relative; }
+.myButton {
+	-moz-box-shadow: 0px 10px 14px -7px #3e7327;
+	-webkit-box-shadow: 0px 10px 14px -7px #3e7327;
+	box-shadow: 0px 10px 14px -7px #3e7327;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #77b55a), color-stop(1, #72b352));
+	background:-moz-linear-gradient(top, #77b55a 5%, #72b352 100%);
+	background:-webkit-linear-gradient(top, #77b55a 5%, #72b352 100%);
+	background:-o-linear-gradient(top, #77b55a 5%, #72b352 100%);
+	background:-ms-linear-gradient(top, #77b55a 5%, #72b352 100%);
+	background:linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77b55a', endColorstr='#72b352',GradientType=0);
+	background-color:#77b55a;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+	border:1px solid #4b8f29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:6px 12px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #5b8a3c;
+}
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #72b352), color-stop(1, #77b55a));
+	background:-moz-linear-gradient(top, #72b352 5%, #77b55a 100%);
+	background:-webkit-linear-gradient(top, #72b352 5%, #77b55a 100%);
+	background:-o-linear-gradient(top, #72b352 5%, #77b55a 100%);
+	background:-ms-linear-gradient(top, #72b352 5%, #77b55a 100%);
+	background:linear-gradient(to bottom, #72b352 5%, #77b55a 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#72b352', endColorstr='#77b55a',GradientType=0);
+	background-color:#72b352;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+.center {
+position: absolute; top: calc(50% - 60px);left: calc(50% - 260px);
+width: 500px; height: 100px; border: 0px; padding: 10px;
+text-align:center;
+}
+</style>
+</head>
+<body>
+<div class="center">
+<h3>You will now be redirected to machin.lan</h3>
+<a href="letmein.html" class="myButton">Ok</a>
+</div>
+</body>
+</html>
+"""
+    else:
+        allow_host(env['REMOTE_ADDR'])
         html = """<html><head><meta http-equiv="refresh" content="0; URL='http://{{hostname}}'" />Going to http://{{hostname}}</head></html>"""
 
-## Starting thread to have async behavior, so we are sure HTML redirect is sent long before iptables rule is actually inserted.
-        thread.start_new_thread(allow_host, (environ['REMOTE_ADDR'],))
-        return html
+    return html
