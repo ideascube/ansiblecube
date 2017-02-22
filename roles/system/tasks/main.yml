@@ -120,6 +120,7 @@
    - sqlite3
    - elinks
    - avahi-daemon
+   - libnss-mdns
   tags: ['master','custom','update']
 
 - name: Upgrade pip to the latest version
