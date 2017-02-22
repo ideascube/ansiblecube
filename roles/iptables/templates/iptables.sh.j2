@@ -39,6 +39,10 @@ iptables -t filter -A OUTPUT -p udp --dport 53 -j ACCEPT
 iptables -t filter -A INPUT -p tcp --dport 53 -j ACCEPT
 iptables -t filter -A INPUT -p udp --dport 53 -j ACCEPT
 
+#mDNS In/Out
+iptables -t filter -A OUTPUT -p udp --dport 5353 -j ACCEPT
+iptables -t filter -A INPUT -p udp --dport 5353 -j ACCEPT
+
 #Boot TP/PS for Hostapd
 iptables -t filter -A OUTPUT -p tcp --dport 67 -j ACCEPT
 iptables -t filter -A OUTPUT -p udp --dport 67 -j ACCEPT
