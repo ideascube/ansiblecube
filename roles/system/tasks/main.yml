@@ -121,6 +121,7 @@
    - elinks
    - avahi-daemon
    - libnss-mdns
+   - avahi-utils
   tags: ['master','custom','update']
 
 - name: Upgrade pip to the latest version
