@@ -119,6 +119,7 @@
    - hwinfo
    - sqlite3
    - elinks
+   - avahi-daemon
   tags: ['master','custom','update']
 
 - name: Upgrade pip to the latest version
