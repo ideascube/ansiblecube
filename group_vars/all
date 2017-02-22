@@ -12,7 +12,7 @@ repo_url: https://github.com/ideascube/ansiblecube.git
 central_server: ansible@tincmaster.wan.bsf-intranet.org
 filer_bsf: http://filer.bsf-intranet.org
 timezone: "Europe/Paris"
-kawax: "kawax.cinema.montreuil.wan.bsf-intranet.org"
+koombook-doctor: "koombook-doctor.local"
 bsf_gateway: "10.10.9.1"
 kiwix_version: "0.9"
 mongodb_version: "2.4.10"
