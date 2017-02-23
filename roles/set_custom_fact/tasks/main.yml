@@ -15,8 +15,8 @@
   tags:
     - master
 
-- name: Checkout if a koombook-doctor cache machine is present on the local network
-  wait_for: host="{{ koombook-doctor }}" port=80 state=present timeout=3
+- name: Checkout if a koombookDoctor cache machine is present on the local network
+  wait_for: host="{{ koombookDoctor }}" port=80 state=present timeout=3
   register: cache_machine
   tags: ['custom', 'update','idc_import','zim_install','kalite_import' ]
   ignore_errors: yes
