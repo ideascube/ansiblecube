@@ -131,7 +131,7 @@ function 3rd_party_app()
         ZIM=True
         
         wget http://catalog.ideascube.org/kiwix.yml -O /tmp/kiwix.yml > /dev/null 2>&1
-        zim_files=$(egrep "\.[a-z][a-z]:|\.[a-z][a-z][a-z]:|size" /tmp/kiwix.yml | sed 's/    size: //' | sed 's/^[ \t]*//;s/[ \t]*$//' | sed 's/://')
+        zim_files=$(egrep "\.[a-z][a-z]:|\.[a-z][a-z][a-z]:|\.[a-z][a-z][a-z][a-z][a-z][a-z]:|size" /tmp/kiwix.yml | sed 's/    size: //' | sed 's/^[ \t]*//;s/[ \t]*$//' | sed 's/://')
 
         cmd=(dialog --stdout --no-items \
                 --separate-output \
