@@ -722,7 +722,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": ["phet.en"]
+			"name": ["wikiquote.fa"]
 		}
 	},
 	"idb-bsf-vagrant": {
@@ -733,7 +733,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": ["phet.en"]
+			"name": ["wikiquote.fa"]
 		}
 	},
 	"idb-grc-ioannina": {
