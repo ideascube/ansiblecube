@@ -22,6 +22,7 @@
     owner: ideascube
     group: ideascube
     mode: 0755
+  notify: restart uwsgi
   tags: ['custom', 'update']
 
 - name: Add nginx specific configuration file
