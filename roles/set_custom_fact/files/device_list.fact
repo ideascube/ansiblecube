@@ -722,7 +722,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": ["phet.en"]
+			"name": ["wikiquote.fa"]
 		},
 		"portal": {
 			"activated": "True"
@@ -736,7 +736,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": ["phet.en"]
+			"name": ["wikiquote.fa"]
 		},
 		"portal": {
 			"activated": "True"
