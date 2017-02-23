@@ -34,6 +34,7 @@ COMMIT
 -A INPUT -p tcp -m tcp --dport 22 -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 53 -j ACCEPT
 -A INPUT -p udp -m udp --dport 53 -j ACCEPT
+-A INPUT -p udp -m udp --dport 5353 -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 67 -j ACCEPT
 -A INPUT -p udp -m udp --dport 67 -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 68 -j ACCEPT
@@ -56,6 +57,7 @@ COMMIT
 -A OUTPUT -p tcp -m tcp --dport 22 -j ACCEPT
 -A OUTPUT -p tcp -m tcp --dport 53 -j ACCEPT
 -A OUTPUT -p udp -m udp --dport 53 -j ACCEPT
+-A OUTPUT -p udp -m udp --dport 5353 -j ACCEPT
 -A OUTPUT -p tcp -m tcp --dport 67 -j ACCEPT
 -A OUTPUT -p udp -m udp --dport 67 -j ACCEPT
 -A OUTPUT -p tcp -m tcp --dport 68 -j ACCEPT
