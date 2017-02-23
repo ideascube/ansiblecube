@@ -13,7 +13,12 @@
 - name: Create entry to ping the KoomBook-doctor
   template: src=02koombook-doctor.j2 dest=/etc/NetworkManager/dispatcher.d/02koombook-doctor
     owner=root group=root mode=0755
-  tags: ['custom', 'update','rename']
+  tags: ['custom', 'update']
+
+- name: Start KoomBook-doctor script 
+  command: /etc/NetworkManager/dispatcher.d/02koombook-doctor eth0 up
+  tags: 
+    - custom
 
 - name: Add a cron entry to execute ansible-pull
   cron: name="Execute ansible-pull automatically" minute="0" hour="0" day="1" 
