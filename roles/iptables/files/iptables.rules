@@ -32,6 +32,7 @@ COMMIT
 -A INPUT -i lo -j ACCEPT
 -A INPUT -p icmp -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 22 -j ACCEPT
+-A INPUT -p udp -m tcp --dport 60000:61000 -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 53 -j ACCEPT
 -A INPUT -p udp -m udp --dport 53 -j ACCEPT
 -A INPUT -p udp -m udp --dport 5353 -j ACCEPT
