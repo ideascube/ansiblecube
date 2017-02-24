@@ -23,7 +23,7 @@
 - name: Uninstall previous Ka-lite version
   pip: name=ka-lite
     state=absent
-  when: ansible_local.installed_software.software.kalite | version_compare('0.16.9', '<')
+  when: ansible_local.installed_software.software.kalite | default (omit) | version_compare('0.16.9', '<')
   tags:
     - update
 
