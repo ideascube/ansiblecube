@@ -52,7 +52,7 @@
     apt: name=ideascube force=yes dpkg_options="force-confnew" state=latest
     register: is_upgraded
 
-  when: {{ideascube_upgrade_frozen}} == False
+  when: ideascube_upgrade_frozen == False
   tags:
     - update
 
