@@ -13,7 +13,7 @@
 - name: Mount CIFS Share
   mount:
     name: /media/synology
-    src: //{{kawax}}/content
+    src: //{{koombookDoctor}}/content
     fstype: cifs
     opts: guest
     state: mounted

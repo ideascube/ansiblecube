@@ -1,0 +1,24 @@
+#!/bin/bash
+IF=$1
+STATUS=$2
+
+if [[ "$IF" == "eth0" || "$IF" == "wlan1" ]]
+then
+    case "$STATUS" in
+        up)
+            if [[ `ping -q -c 2 koombook-doctor.local` ]]
+            then
+                kb_doctor_ip=`avahi-resolve-host-name koombook-doctor.local | awk -F " " '{print $2}'`
+                echo "$kb_doctor_ip" koombook-doctor.local download.kiwix.org catalog.yohanboniface.me >> /etc/hosts
+            fi
+        ;;
+        down)
+            if [ -n "$(grep "koombook-doctor.local" /etc/hosts)" ]
+            then
+                    sed -i "/koombook-doctor.local/d" /etc/hosts
+            fi
+        ;;
+        *)
+        ;;
+    esac
+fi
