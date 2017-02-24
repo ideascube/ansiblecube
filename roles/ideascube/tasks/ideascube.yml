@@ -44,16 +44,17 @@
   when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l")
     and sda1.stat.isblk == True
 
-# - block:
-#   - name: Backup data before upgrading
-#     shell: cp /var/ideascube/main/default.sqlite /var/ideascube/main/default.sqlite-{{ ideascube_installed }}-{{ ansible_date_time["date"] }}-{{ ansible_date_time["time"] }}
+- block:
+  - name: Backup data before upgrading
+    shell: cp /var/ideascube/main/default.sqlite /var/ideascube/main/default.sqlite-{{ ideascube_installed }}-{{ ansible_date_time["date"] }}-{{ ansible_date_time["time"] }}
 
-#   - name: upgrade ideascube to the last version
-#     apt: name=ideascube force=yes dpkg_options="force-confnew" state=latest
-#     register: is_upgraded
+  - name: upgrade ideascube to the last version
+    apt: name=ideascube force=yes dpkg_options="force-confnew" state=latest
+    register: is_upgraded
 
-#   tags:
-#     - update
+  when: {{ideascube_upgrade_frozen}} == False
+  tags:
+    - update
 
 # - block:
 #   - name: Backup data before upgrading
