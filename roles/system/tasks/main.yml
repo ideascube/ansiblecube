@@ -122,6 +122,7 @@
    - avahi-daemon
    - libnss-mdns
    - avahi-utils
+   - mosh
   tags: ['master','custom','update']
 
 - name: Upgrade pip to the latest version
