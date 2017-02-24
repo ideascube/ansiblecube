@@ -1,6 +1,6 @@
 --- 
 - name: Install the Realtek firmware for wifi interfaces
-  apt: name=firmware-realtek state=present update_cache=yes
+  apt: name=firmware-realtek state=present
   tags:
     - master
 

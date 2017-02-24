@@ -56,12 +56,12 @@
 - name: Run apt-get update  
   shell: apt-get update ; echo
   register: result
-  tags: ['custom','update']
+  tags: ['master','custom','update']
 
 - name: Fix broken package
   shell: dpkg --configure -a
   when: "'dpkg --configure -a' in result.stderr"
-  tags: ['custom','update']
+  tags: ['master','custom','update']
 
 - name: Remove unwanted packages before upgrading
   apt: name={{ item }} state=absent purge=yes
@@ -86,7 +86,7 @@
   tags: ['master','update']
 
 - name: Install all required package
-  apt: name={{ item }} state=latest update_cache=yes
+  apt: name={{ item }} state=latest
   with_items:
    - python-pip
    - python-dev
