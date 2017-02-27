@@ -865,5 +865,20 @@
 			"activated": "True",
 			"content_name": ["2-Contenus/csv_kinlab.csv"]
 		}
+	},
+	"kb-cmr-ani": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.9",
+			"language": ["fr"]
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": ["wikipedia.fr","wikipedia.en","wikiquote.fr","wikiquote.en","universcience-tv.fr","les-fondamentaux.fr","gutenberg.fr","gutenberg.en","e-penser.fr","cest-pas-sorcier.fr","tedtechnology.en","tedscience.en","tedglobalissues.en","tedentertainment.en","teddesign.en","tedbusiness.en"]
+		},
+		"idc_import": {
+			"activated": "True",
+			"content_name": ["2-Contenus/csvcamerounani.csv"]
+		}
 	}
 }
