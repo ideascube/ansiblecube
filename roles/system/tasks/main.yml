@@ -306,5 +306,5 @@
     regexp:     '^GRUB_TIMEOUT=.*'
     line:       'GRUB_TIMEOUT=0'
   notify: Update grub
-  when: ansible_architecture == "x86_64"
+  when: ansible_architecture == "x86_64" and ansible_dns.domain|default(omit) != "{{ crashbook_dns_domain }}" 
   tags: ['master','custom']
