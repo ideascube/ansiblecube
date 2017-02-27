@@ -187,7 +187,6 @@
 
 - name: Upgrade packages
   apt: upgrade=safe
-  tags:
   tags: ['master', 'custom']
 
 - name: Remove the unauthenticated hack
