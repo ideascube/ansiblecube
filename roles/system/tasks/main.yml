@@ -162,7 +162,7 @@
     or fex_file2.stat.exists is defined and fex_file2.stat.exists
 
 - include: scaleway.yml
-  when: ansible_dns.domain|default(omit) == "{{ crashbook_dns_domain }}"
+  when: ansible_dns.domain|default(omit) == "{{ crashbook_dns_domain }}" and ansible_architecture == "armv7l"
   tags: ['custom','update']
 
 - name: List services to restart (1/2)
