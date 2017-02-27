@@ -188,7 +188,7 @@
 - name: Upgrade packages
   apt: upgrade=safe
   tags:
-    - master
+  tags: ['master', 'custom']
 
 - name: Remove the unauthenticated hack
   file: path=/etc/apt/apt.conf.d/9999IDEASCUBEISABADBADBOY state=absent
