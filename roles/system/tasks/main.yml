@@ -180,10 +180,18 @@
   tags:
     - master
 
+- name: Allow unauthenticated packages
+  lineinfile: dest=/etc/apt/apt.conf.d/9999IDEASCUBEISABADBADBOY line='APT::Get::AllowUnauthenticated "true";' create=yes
+  tags: ['master', 'custom']
+
 - name: Upgrade packages
   apt: upgrade=safe
   tags:
     - master
+
+- name: Remove the unauthenticated hack
+  file: path=/etc/apt/apt.conf.d/9999IDEASCUBEISABADBADBOY state=absent
+  tags: ['master', 'custom']
 
 - name: Drop hosts file on device
   template: src=hosts.j2 dest=/etc/hosts
