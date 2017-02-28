@@ -842,6 +842,10 @@
 		}
 	},
 	"kb-cod-kinlab": {
+		"bsfcampus": {
+			"activated": "True",
+			"version": "280217"
+		},
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.9",
