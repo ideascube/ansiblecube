@@ -1,4 +1,6 @@
 ---
+- name: Make sure central_server fingerprint is known here too
+  shell: ssh-keyscan -H {{ central_server }} > /etc/ssh/ssh_known_hosts
 
 - name: check we can use /dev/net/tun
   stat: path=/dev/net/tun
