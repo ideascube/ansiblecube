@@ -107,7 +107,7 @@
 
 # Add settings and conf
 - name: Check if configuration file exist for Ideascube
-  stat: path=/usr/share/python/ideascube/lib/python3.4/site-packages/ideascube/conf/{{ generic_project_name |replace("-", "_") }}.py
+  stat: path=/opt/venvs/ideascube/lib/python3.4/site-packages/ideascube/conf/{{ generic_project_name |replace("-", "_") }}.py
   register: conf_file
   tags: ['custom','rename','update']
 
