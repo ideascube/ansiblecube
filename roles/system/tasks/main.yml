@@ -131,7 +131,7 @@
   tags: ['master', 'custom']
 
 - include: ralink.yml
-  when: lsusb_ralink.stdout != ""
+  when: lsusb_ralink.stdout != "" and ansible_architecture == "x86_64"
   tags: ['master', 'custom']
 
 - name: Check for Realtek Wireless Network Adapter
@@ -140,7 +140,7 @@
   tags: ['master', 'update']
 
 - include: realtek.yml
-  when: lspci_realtek.stdout != ""
+  when: lspci_realtek.stdout != "" and ansible_architecture == "x86_64"
 
 - name: Stat /dev/sda1 for later use on Koombooks
   stat: path=/dev/sda1
