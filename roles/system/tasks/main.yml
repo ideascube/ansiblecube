@@ -119,11 +119,16 @@
    - hwinfo
    - sqlite3
    - elinks
+   - mosh
+  tags: ['master','custom','update']
+
+- name: Install avahi packages
+  apt: name={{ item }} state=latest
+  with_items:
    - avahi-daemon
    - libnss-mdns
    - avahi-utils
-   - mosh
-  tags: ['master','custom','update']
+  tags: ['custom','update']
 
 - name: Upgrade pip to the latest version
   pip: name=pip state=latest
