@@ -40,7 +40,7 @@
   template: src=move_zim_files.sh.j2 dest={{old_kiwix_path}}/move_zim_files.sh mode=0755
 
 - name: Create an archive from available zim
-  command: "{{old_kiwix_path}}/move_zim_files.sh"
+  command: "{{old_kiwix_path}}/move_zim_files.sh > /var/log/move_zim_files.log 2>&1"
 
 - name: Update sha256sum
   command: /usr/bin/python update_sha256sum.py /var/cache/ideascube/catalog/packages/ chdir={{old_kiwix_path}}
