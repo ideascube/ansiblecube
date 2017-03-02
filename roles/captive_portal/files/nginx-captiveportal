@@ -11,8 +11,11 @@ server {
 
     ssl_certificate /etc/nginx/ssl/ideascube.crt;
     ssl_certificate_key /etc/nginx/ssl/ideascube.key;
+    keepalive_timeout 0;
 
     location / {
+        expires 0;
+        add_header Cache-Control no-store;
         include uwsgi_params;
         uwsgi_pass 127.0.0.1:3031;
     }
