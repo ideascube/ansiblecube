@@ -868,7 +868,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": ["wikipedia.fr","wikipedia.en","wikiquote.fr","wikiquote.en","universcience-tv.fr","les-fondamentaux.fr","gutenberg.fr","gutenberg.en","e-penser.fr","cest-pas-sorcier.fr","tedtechnology.en","tedscience.en","tedglobalissues.en","tedentertainment.en","teddesign.en","tedbusiness.en"]
+			"name": ["wikipedia.fr","wikipedia.en","universcience-tv.fr","les-fondamentaux.fr","gutenberg.fr","cest-pas-sorcier.fr"]
 		},
 		"idc_import": {
 			"activated": "True",
