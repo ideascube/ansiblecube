@@ -16,11 +16,9 @@
   tags:
     - update
 
-- set_fact: ideascube_installed="{{ versions.stdout_lines.0 }}"
-  tags:
-    - update
-
-- set_fact: ideascube_candidate="{{ versions.stdout_lines.1 }}"
+- set_fact:
+    ideascube_installed="{{ versions.stdout_lines.0 }}"
+    ideascube_candidate="{{ versions.stdout_lines.1 }}"
   tags:
     - update
 
