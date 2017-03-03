@@ -8,6 +8,12 @@ TIMEZONE="timezone=Europe/Paris"
 CONFIGURE="own_config_file=False"
 TAGS="--tags master,custom"
 LOCK_ACTION=0
+KALITE=False
+KALITE_LANG=""
+MEDIACENTER=False
+CSV_FILE_PATH=""
+ZIM=False
+ZIM_LIST=""
 
 # configuration
 ANSIBLE_ETC="/etc/ansible/facts.d/"
