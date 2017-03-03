@@ -33,7 +33,8 @@
     section=management
     option=own_config_file
     value={{ own_config_file }}
-  when: ansible_local.installed_software.management.own_config_file is undefined
+  when: ansible_local.installed_software.management.own_config_file is undefined 
+    or own_config_file|bool == True
   register: set_config_file
   tags: ['custom','update','rename']
 
