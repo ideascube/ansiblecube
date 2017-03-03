@@ -140,8 +140,9 @@ function 3rd_party_app()
         choices=$("${cmd[@]}" ${zim_files})
 
         ZIM_LIST=`echo $choices | sed 's/ /","/g'`
+    fi
 
-        echo -e "
+    echo -e "
 {
     \"$FULL_NAME\": {
         \"kalite\": {
@@ -161,7 +162,6 @@ function 3rd_party_app()
 }
 " > /etc/ansible/facts.d/device_list.fact
         hostname $FULL_NAME
-    fi
 }
 
 function help()
