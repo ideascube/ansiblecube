@@ -1,5 +1,5 @@
 ---
-- name: Ensure the HDD mountpoint exists
+- name: Ensure the HDD mountpoint exists on Scaleway cloud device
   file: path=/media/hdd state=directory mode=0755
   when: sda1.stat.isblk == True
 
