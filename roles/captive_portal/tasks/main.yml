@@ -141,3 +141,24 @@
     protocol: tcp
     jump: CAPTIVE_PASSLIST
 
+- name: DNAT HTTP to hotspot_ip:82
+  iptables:
+    table: nat
+    chain: CAPTIVE_HTTP
+    protocol: tcp
+    jump: DNAT
+    to-destination: {{ hotspot_ip }}
+    to-port: 82
+    comment: Redirect HTTP traffic to server port 82
+
+- name: DNAT HTTPS to hotspot_ip:83
+  iptables:
+    table: nat
+    chain: CAPTIVE_HTTPS
+    protocol: tcp
+    jump: DNAT
+    to-destination: {{ hotspot_ip }}
+    to-port: 83
+    comment: Redirect HTTPS traffic to server port 83
+
+
