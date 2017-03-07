@@ -731,6 +731,9 @@
 			"activated": "True",
 			"name": ["phet.en"]
 		}
+		"portal": {
+			"activated": "True"
+		}
 	},
 	"idb-grc-ioannina": {
 		"kalite": {
