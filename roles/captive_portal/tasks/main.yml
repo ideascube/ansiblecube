@@ -116,4 +116,14 @@
     match: tcp
     jump: CAPTIVE_HTTP
 
+- name: Send to CAPTIVE_HTTPS if destination *:443/tcp
+  iptables:
+    table: nat
+    chain: PREROUTING
+    source: ! {{ hotspot_ip }}
+    destinaion: ! {{ hotspot_ip }}
+    destination_port: 443
+    protocol: tcp
+    match: tcp
+    jump: CAPTIVE_HTTPS
 
