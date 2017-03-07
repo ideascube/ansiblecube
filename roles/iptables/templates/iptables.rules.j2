@@ -47,7 +47,7 @@ COMMIT
 -A INPUT -p udp -m udp --dport 655 -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 656 -j ACCEPT
 -A INPUT -p udp -m udp --dport 656 -j ACCEPT
--A INPUT -p tcp -m tcp --dport 5353 -j ACCEPT
+-A INPUT -p udp -m udp --dport 5353 -j ACCEPT
 -A INPUT -p udp -m tcp --dport 60000:61000 -j ACCEPT
 -A FORWARD -i {{lan_interface}} -o {{hotspot_interface}} -m state --state RELATED,ESTABLISHED -j ACCEPT
 -A FORWARD -i {{hotspot_interface}} -o {{lan_interface}} -j ACCEPT
