@@ -740,6 +740,9 @@
 			"activated": "True",
 			"name": ["wikiquote.fa"]
 		}
+		"portal": {
+			"activated": "True"
+		}
 	},
 	"idb-grc-ioannina": {
 		"kalite": {
