@@ -110,7 +110,7 @@
     table: nat
     chain: PREROUTING
     source: ! {{ hotspot_ip }}
-    destinaion: ! {{ hotspot_ip }}
+    destination: ! {{ hotspot_ip }}
     destination_port: 80
     protocol: tcp
     match: tcp
@@ -121,9 +121,23 @@
     table: nat
     chain: PREROUTING
     source: ! {{ hotspot_ip }}
-    destinaion: ! {{ hotspot_ip }}
+    destination: ! {{ hotspot_ip }}
     destination_port: 443
     protocol: tcp
     match: tcp
     jump: CAPTIVE_HTTPS
+
+- name: From CAPTIVE_HTTP, send to CAPTIVE_PASSLIST
+  iptables:
+    table: nat
+    chain: CAPTIVE_HTTP
+    protocol: tcp
+    jump: CAPTIVE_PASSLIST
+
+- name: From CAPTIVE_HTTPS, send to CAPTIVE_PASSLIST
+  iptables:
+    table: nat
+    chain: CAPTIVE_HTTPS
+    protocol: tcp
+    jump: CAPTIVE_PASSLIST
 
