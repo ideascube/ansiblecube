@@ -161,4 +161,10 @@
     to-port: 83
     comment: Redirect HTTPS traffic to server port 83
 
+- name: Last CAPTIVE_PASSLIST rules RETURN to calling chain
+  iptables:
+    table: nat
+    chain: CAPTIVE_PASSLIST
+    protocol: tcp
+    jump: RETURN
 
