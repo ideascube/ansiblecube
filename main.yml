@@ -14,9 +14,12 @@
     - system
     - nginx
     - uwsgi
-    - captive_portal
     - ideascube
     - kiwix
+
+    - role: captive_portal
+      when: ansible_local.device_list[generic_project_name].portal is defined
+        and ansible_local.device_list[generic_project_name].portal.activated|bool == True
 
     - role: tinc-static
       when: ansible_local.installed_software.management.managed_by_bsf|bool == True
