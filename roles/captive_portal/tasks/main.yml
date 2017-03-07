@@ -98,3 +98,9 @@
     job: "/usr/local/bin/clean_iptables.sh"
     state: present
   tags: ['custom', 'update']
+
+- name: Create iptables empty chains
+  command: |
+    /sbin/iptables -t nat -N CAPTIVE_HTTP
+    /sbin/iptables -t nat -N CAPTIVE_HTTPS
+    /sbin/iptables -t nat -N CAPTIVE_PASSLIST
