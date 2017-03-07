@@ -104,3 +104,16 @@
     /sbin/iptables -t nat -N CAPTIVE_HTTP
     /sbin/iptables -t nat -N CAPTIVE_HTTPS
     /sbin/iptables -t nat -N CAPTIVE_PASSLIST
+
+- name: Send to CAPTIVE_HTTP if destination *:80/tcp
+  iptables:
+    table: nat
+    chain: PREROUTING
+    source: ! {{ hotspot_ip }}
+    destinaion: ! {{ hotspot_ip }}
+    destination_port: 80
+    protocol: tcp
+    match: tcp
+    jump: CAPTIVE_HTTP
+
+
