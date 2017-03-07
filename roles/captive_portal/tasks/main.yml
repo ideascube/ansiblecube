@@ -109,8 +109,8 @@
   iptables:
     table: nat
     chain: PREROUTING
-    source: ! {{ hotspot_ip }}
-    destination: ! {{ hotspot_ip }}
+    source: ! "{{ hotspot_ip }}"
+    destination: ! "{{ hotspot_ip }}"
     destination_port: 80
     protocol: tcp
     match: tcp
@@ -120,8 +120,8 @@
   iptables:
     table: nat
     chain: PREROUTING
-    source: ! {{ hotspot_ip }}
-    destination: ! {{ hotspot_ip }}
+    source: ! "{{ hotspot_ip }}"
+    destination: ! "{{ hotspot_ip }}"
     destination_port: 443
     protocol: tcp
     match: tcp
@@ -147,7 +147,7 @@
     chain: CAPTIVE_HTTP
     protocol: tcp
     jump: DNAT
-    to-destination: {{ hotspot_ip }}
+    to-destination: "{{ hotspot_ip }}"
     to-port: 82
     comment: Redirect HTTP traffic to server port 82
 
@@ -157,7 +157,7 @@
     chain: CAPTIVE_HTTPS
     protocol: tcp
     jump: DNAT
-    to-destination: {{ hotspot_ip }}
+    to-destination: "{{ hotspot_ip }}"
     to-port: 83
     comment: Redirect HTTPS traffic to server port 83
 
