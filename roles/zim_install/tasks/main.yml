@@ -6,6 +6,11 @@
   become_user: ideascube
   shell: ideascube catalog cache update
 
+- name: Upgrade existing ZIM files
+  become: yes
+  become_user: ideascube
+  shell: ideascube catalog upgrade
+
 - name: Check the disk usage
   shell: df -h /
   register: df
