@@ -360,6 +360,11 @@
 		}
 	},
 	"kb-rca-alliancefrancaise": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.9",
+			"language": ["fr"]
+		},
 		"zim_install": {
 			"activated": "False",
 			"name": ["cest-pas-sorcier.fr","gutenberg.en","gutenberg.fr","gutenberg.fr","wikipedia.fr","tedxgeneva2014.fr","tedxlausanne2012.fr","tedxlausanne2013.fr","tedxlausanne2014.fr","tedxlausannechange2013.fr","ubuntudoc.fr","universcience-tv.fr","vikidia.fr","wikipedia.en","wikipedia.fr","wikipedia.fr","wikipedia.wo","wikisource.en","wikisource.fr"]
