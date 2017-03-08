@@ -360,6 +360,11 @@
 		}
 	},
 	"kb-rca-alliancefrancaise": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.9",
+			"language": ["fr"]
+		},
 		"zim_install": {
 			"activated": "True",
 			"name": [""]
