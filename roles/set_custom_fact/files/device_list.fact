@@ -729,6 +729,9 @@
 			"activated": "True",
 			"name": ["wikiquote.fa"]
 		}
+                "portal": {
+                        "activated": "True"
+                }
 	},
 	"idb-bsf-vagrant": {
 		"kalite": {
