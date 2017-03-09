@@ -728,10 +728,10 @@
 		"zim_install": {
 			"activated": "True",
 			"name": ["wikiquote.fa"]
+		},
+		"portal": {
+			"activated": "True"
 		}
-                "portal": {
-                        "activated": "True"
-                }
 	},
 	"idb-bsf-vagrant": {
 		"kalite": {
@@ -742,7 +742,7 @@
 		"zim_install": {
 			"activated": "True",
 			"name": ["wikiquote.fa"]
-		}
+		},
 		"portal": {
 			"activated": "True"
 		}
