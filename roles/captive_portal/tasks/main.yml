@@ -104,6 +104,8 @@
     /sbin/iptables -t nat -N CAPTIVE_HTTP
     /sbin/iptables -t nat -N CAPTIVE_HTTPS
     /sbin/iptables -t nat -N CAPTIVE_PASSLIST
+  tags: ['custom', 'update']
+
 
 - name: Send to CAPTIVE_HTTP if destination *:80/tcp
   iptables:
@@ -115,6 +117,7 @@
     protocol: tcp
     match: tcp
     jump: CAPTIVE_HTTP
+  tags: ['custom', 'update']
 
 - name: Send to CAPTIVE_HTTPS if destination *:443/tcp
   iptables:
@@ -126,6 +129,7 @@
     protocol: tcp
     match: tcp
     jump: CAPTIVE_HTTPS
+  tags: ['custom', 'update']
 
 - name: From CAPTIVE_HTTP, send to CAPTIVE_PASSLIST
   iptables:
@@ -133,6 +137,7 @@
     chain: CAPTIVE_HTTP
     protocol: tcp
     jump: CAPTIVE_PASSLIST
+  tags: ['custom', 'update']
 
 - name: From CAPTIVE_HTTPS, send to CAPTIVE_PASSLIST
   iptables:
@@ -140,6 +145,7 @@
     chain: CAPTIVE_HTTPS
     protocol: tcp
     jump: CAPTIVE_PASSLIST
+  tags: ['custom', 'update']
 
 - name: DNAT HTTP to hotspot_ip:82
   iptables:
@@ -150,6 +156,7 @@
     to-destination: "{{ hotspot_ip }}"
     to-port: 82
     comment: Redirect HTTP traffic to server port 82
+  tags: ['custom', 'update']
 
 - name: DNAT HTTPS to hotspot_ip:83
   iptables:
@@ -160,6 +167,7 @@
     to-destination: "{{ hotspot_ip }}"
     to-port: 83
     comment: Redirect HTTPS traffic to server port 83
+  tags: ['custom', 'update']
 
 - name: Last CAPTIVE_PASSLIST rules RETURN to calling chain
   iptables:
@@ -167,6 +175,8 @@
     chain: CAPTIVE_PASSLIST
     protocol: tcp
     jump: RETURN
+  tags: ['custom', 'update']
 
 - name: Overwrite /etc/iptables.rules to include new rules
   shell: /sbin/iptables-save > /etc/iptables.rules
+  tags: ['custom', 'update']
