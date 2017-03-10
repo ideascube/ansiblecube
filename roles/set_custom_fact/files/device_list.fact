@@ -879,5 +879,20 @@
 			"activated": "False",
 			"content_name": ["2-Contenus/csvcamerounani.csv"]
 		}
+	},
+	"kb-usa-demolwb": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.9",
+			"language": ["es"]
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": ["wikipedia.es","gutenberg.es"]
+		},
+		"idc_import": {
+			"activated": "False",
+			"content_name": ["13-NICARALI/CSV-Nicarali.csv"]
+		}
 	}
 }
