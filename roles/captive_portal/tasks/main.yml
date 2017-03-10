@@ -155,7 +155,7 @@
     protocol: tcp
     jump: DNAT
     to-destination: "{{ hotspot_ip }}"
-    to-port: 82
+    to-ports: 82
     comment: Redirect HTTP traffic to server port 82
   tags: ['custom', 'update']
 
@@ -166,7 +166,7 @@
     protocol: tcp
     jump: DNAT
     to-destination: "{{ hotspot_ip }}"
-    to-port: 83
+    to-ports: 83
     comment: Redirect HTTPS traffic to server port 83
   tags: ['custom', 'update']
 
