@@ -100,12 +100,13 @@
   tags: ['custom', 'update']
 
 - name: Create iptables empty chains
-  command: |
-    /sbin/iptables -t nat -N CAPTIVE_HTTP
-    /sbin/iptables -t nat -N CAPTIVE_HTTPS
-    /sbin/iptables -t nat -N CAPTIVE_PASSLIST
+  command: "{{item}}"
+  with_items:
+    - /sbin/iptables -t nat -N CAPTIVE_HTTP
+    - /sbin/iptables -t nat -N CAPTIVE_HTTPS
+    - /sbin/iptables -t nat -N CAPTIVE_PASSLIST
   tags: ['custom', 'update']
-
+  ignore_errors: yes
 
 - name: Send to CAPTIVE_HTTP if destination *:80/tcp
   iptables:
