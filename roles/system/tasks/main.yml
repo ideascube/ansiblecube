@@ -128,7 +128,6 @@
    - avahi-daemon
    - libnss-mdns
    - avahi-utils
-   - conntrack
   tags: ['custom','update']
 
 - name: Upgrade pip to the latest version

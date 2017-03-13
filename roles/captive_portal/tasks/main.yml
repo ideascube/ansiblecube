@@ -1,4 +1,7 @@
 ---
+- name: Install conntrack
+  apt: name=conntrack state=latest
+  
 - name: Copy clear_iptables.sh to /usr/bin/local
   copy: 
     src: clean_iptables.sh
@@ -22,3 +25,8 @@
     job: "/usr/local/bin/clean_iptables.sh"
     state: present
   tags: ['custom', 'update']
+
+- name: Authorize www-data to add new IPs to CAPTIVE_PASSLIST
+  lineinfile:
+    dest: /etc/sudoers
+    line: 'www-data ALL = NOPASSWD: /sbin/iptables -I CAPTIVE_PASSLIST 1 -s * -j ACCEPT'
