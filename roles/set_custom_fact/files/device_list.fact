@@ -870,7 +870,6 @@
 			"activated": "True",
 			"content_name": ["2-Contenus/csv_kinlab.csv"]
 		}
-<<<<<<< 2989edf6db63a52271ea0870f2d8b1f1535a3b2b
 	},
 	"kb-cmr-ani": {
 		"kalite": {
@@ -901,7 +900,5 @@
 			"activated": "False",
 			"content_name": ["13-NICARALI/CSV-Nicarali.csv"]
 		}
-=======
->>>>>>> Add configuration kb-cod-kinlab
 	}
 }
