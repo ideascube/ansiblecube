@@ -194,7 +194,7 @@
 		},
 		"idc_import": {
 			"activated": "False",
-"content_name": ["2-Contenus/aurore_ivry_serveuridb_update.csv"]
+			"content_name": ["2-Contenus/aurore_ivry_serveuridb_update.csv"]
 		},
 		"zim_install": {
 			"activated": "False",
