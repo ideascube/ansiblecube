@@ -5,7 +5,7 @@
   pre_tasks:
     - name: Set the LED steady before upgrading !!!
       shell: echo default-on >/sys/class/leds/a20-olinuxino-lime2:green:usr/trigger
-      when: ansible_architecture == 'armv7l'
+      when: ansible_architecture == 'armv7l' and ansible_lsb.id == 'Debian'
       ignore_errors: yes
       tags: [ 'master', 'custom', 'update','idc_import','zim_install','kalite_import' ]
 
@@ -62,6 +62,6 @@
   post_tasks:
     - name: Heartbeat mode on KoomBook LED, update is over !!!
       shell: echo heartbeat >/sys/class/leds/a20-olinuxino-lime2:green:usr/trigger
-      when: ansible_architecture == 'armv7l'
+      when: ansible_architecture == 'armv7l' and ansible_lsb.id == 'Debian'
       ignore_errors: yes
       tags: [ 'master', 'custom', 'update','idc_import','zim_install','kalite_import' ]
