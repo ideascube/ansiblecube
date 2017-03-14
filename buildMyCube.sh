@@ -38,6 +38,8 @@ function internet_check()
 
 function update_sources_list()
 {
+    if [[ "Debian" == `lsb_release -is` ]]
+    then
     cat <<EOF > /etc/apt/sources.list
 deb http://ftp.fr.debian.org/debian/ jessie main contrib non-free
 
@@ -49,6 +51,7 @@ deb http://ftp.fr.debian.org/debian/ jessie-updates main contrib non-free
 # jessie-backports, previously on backports.debian.org
 deb http://ftp.fr.debian.org/debian/ jessie-backports main contrib non-free
 EOF
+    fi
 }
 
 function install_ansible()
