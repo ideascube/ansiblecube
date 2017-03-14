@@ -51,6 +51,7 @@
 
 - name: Drop a complete source.list
   copy: src=source.list dest=/etc/apt/sources.list
+  when: ansible_lsb.id == "Debian"
   tags: ['master','update']
 
 - name: Run apt-get update  
