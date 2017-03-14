@@ -99,6 +99,10 @@
     state: present
   tags: ['custom', 'update']
 
+- name: Load current IPtables configuration
+  shell: /etc/network/if-up.d/iptables
+  tags: ['custom', 'update']
+
 - name: Create iptables empty chains
   command: "{{item}}"
   with_items:
