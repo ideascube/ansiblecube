@@ -105,7 +105,7 @@
   become_user: ideascube
   command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py manage retrievecontentpack download {{ item }}
   with_items: "{{ (ansible_local.device_list[generic_project_name].kalite | default (omit)).language | default(omit) }}"
-  when: kalite_installation.changed == True
+  when: kalite_installation.changed == True and cache_machine.state|default(omit) != "present"
   tags: ['custom', 'update']
 
 - name: Start Kalite
