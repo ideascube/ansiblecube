@@ -8,25 +8,32 @@
   apt: name=cifs-utils state=present
 
 - name: Create a working dir for NFS shared
-  file: path=/media/synology/ state=directory
+  file: path=/media/koombookDoctor/ state=directory
 
 - name: Mount CIFS Share
   mount:
     name: /media/synology
-    src: //{{koombookDoctor}}/content
+    src: //{{koombookDoctor}}/kalite
     fstype: cifs
     opts: guest
     state: mounted
 
 - name: Copy kalite videos
-  synchronize: src=/media/synology/videosKalite/{{ item }}/ 
+  synchronize: src=/media/koombookDoctor/{{ item }}/ 
     dest=/home/{{username}}/.kalite/content/ 
     recursive=yes
     compress=no
   with_items: "{{ ansible_local.device_list[generic_project_name].kalite.language }}"
 
+- name: Install Kalite language pack
+  become: yes
+  become_user: ideascube
+  command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py manage retrievecontentpack local {{ item }} /media/koombookDoctor/kalite/contentpacks/{{ item }}.zip
+  with_items: "{{ (ansible_local.device_list[generic_project_name].kalite | default (omit)).language | default(omit) }}"
+  when: kalite_installation.changed == True
+
 - name: Unmount shared folder from a NFS Share
-  command: umount /media/synology
+  command: umount /media/koombookDoctor
 
 - name: Set permission back to the user instead of root after importing the medias
   file: path=/home/{{username}}/.kalite/content/ owner={{ username }} group={{ username }}  mode="u=rwX,go=rX" recurse=yes
