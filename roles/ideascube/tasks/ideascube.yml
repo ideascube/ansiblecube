@@ -191,3 +191,15 @@
     and is_upgraded.changed == True
   tags:
     - update
+
+- name: Copy ideascube_leftover_files.service systemd unit
+  copy: src=ideascube_leftover_files.service dest=/etc/systemd/system/ideascube_leftover_files.service
+  tags: ['master', 'custom', 'update']
+
+- name: Copy ideascube_leftover_files.timer systemd unit
+  copy: src=ideascube_leftover_files.timer dest=/etc/systemd/system/ideascube_leftover_files.timer
+  tags: ['master', 'custom', 'update']
+
+- name: Enable unit ideascube_leftover_files.timer
+  service: name=ideascube_leftover_files.timer enabled=yes
+  tags: ['master', 'custom', 'update']
