@@ -736,6 +736,9 @@
 		"zim_install": {
 			"activated": "True",
 			"name": ["wikipedia.fr","wikipedia.en","wikipedia.ar","gutenberg.fr","tedxgeneva2014.fr"]
+		},
+		"portal": {
+			"activated": "True"
 		}
 	},
 	"kb-bsf-scaleway": {
