@@ -166,6 +166,9 @@ function 3rd_party_app()
         \"zim_install\": {
             \"activated\": \""$ZIM\"",
             \"name\": [\""$ZIM_LIST"\"]
+        },
+        \"portal\": {
+            \"activated\": \"True\"
         }
     }
 }
