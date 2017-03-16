@@ -747,6 +747,9 @@
 		"zim_install": {
 			"activated": "True",
 			"name": ["wikiquote.fa"]
+		},
+		"portal": {
+			"activated": "True"
 		}
 	},
 	"idb-bsf-vagrant": {
@@ -758,6 +761,9 @@
 		"zim_install": {
 			"activated": "True",
 			"name": ["wikiquote.fa"]
+		},
+		"portal": {
+			"activated": "True"
 		}
 	},
 	"idb-grc-ioannina": {

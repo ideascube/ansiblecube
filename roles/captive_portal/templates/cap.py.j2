@@ -1,0 +1,60 @@
+#!/usr/bin/python
+import subprocess
+
+def allow_host(ipaddress):
+
+    cmd = "sudo iptables -t nat -I CAPTIVE_PASSLIST 1 -s {ip} -j ACCEPT".format(ip=ipaddress)
+    subprocess.check_output(cmd, shell=True)
+	
+
+def application(env, start_response):
+    start_response('200 OK', [('Content-Type','text/html')])
+    if env['REQUEST_URI'] != "/letmein.html":
+	html = """
+<html>
+<head>
+<style>
+html, body { width: 100%; height: 100%; position: relative; }
+.myButton {
+    border: none;
+    border-radius: 2px;
+    padding: 0 10px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1em;
+    background-color: #6C7A89;
+    display: inline-block;
+    margin-top: 10px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+}
+.myButton:hover {
+    background-color: #95A5A6;
+    color: #fff;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+.center {
+position: absolute; top: calc(50% - 60px);left: calc(50% - 260px);
+width: 500px; height: 100px; border: 0px; padding: 10px;
+text-align:center;
+}
+</style>
+</head>
+<body>
+<div class="center">
+<h3>You will now be redirected to {{hostname}}</h3>
+<a href="/letmein.html" class="myButton">Ok</a>
+</div>
+</body>
+</html>
+"""
+    else:
+        allow_host(env['REMOTE_ADDR'])
+        html = """<html><head><meta http-equiv="refresh" content="0; URL='http://{{hostname}}'" />Going to http://{{hostname}}</head></html>"""
+
+    return html
