@@ -1,7 +1,5 @@
 [Unit]
 Description=Run ideascube clean leftover-files weekly and on boot
-RefuseManualStart=no
-RefuseManualStop=no
 
 [Timer]
 OnBootSec=10min
