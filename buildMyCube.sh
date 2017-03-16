@@ -109,9 +109,9 @@ function 3rd_party_app()
 
     if (dialog  --yesno "Install Khan Academy MOOC application ?" 5 50) then
         KALITE=True
-        lang=$(dialog --separate-output --checklist "Choose Khan Academy supported language:" 20 60 3 \
+        lang=$(dialog --separate-output --checklist "Choose Khan Academy supported language:" 20 60 5 \
                 fr French on\
-                en English on\
+                en English off\
                 ar Arabic off\
                 es Spanish off 3>&1 1>&2 2>&3 3>&-)
 
