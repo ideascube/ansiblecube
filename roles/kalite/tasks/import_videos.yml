@@ -12,7 +12,7 @@
 
 - name: Mount CIFS Share
   mount:
-    name: /media/synology
+    name: /media/koombookDoctor
     src: //{{koombookDoctor}}/kalite
     fstype: cifs
     opts: guest
