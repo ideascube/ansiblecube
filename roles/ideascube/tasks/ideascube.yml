@@ -40,7 +40,7 @@
 - name: Include task needed when using an external hard drive
   include: ext_hdd.yml
   when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l")
-    and (sda1.stat.isblk|default(omit)) == True
+    and (sda1.stat.isblk| default (omit)) == True
 
 - block:
   - name: Backup data before upgrading
