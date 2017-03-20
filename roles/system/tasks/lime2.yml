@@ -27,6 +27,14 @@
   register: pkg_kernel_version
   tags: ['custom', 'update']
 
+- name: Remove old firmware-ralink packages
+  apt: name=firmware-ralink state=absent purge=yes
+  tags: ['master','custom']
+
+- name: Install new armbian-firmware
+  apt: name=armbian-firmware state=latest
+  tags: ['master','custom']
+
 - name: Install last custom Kernel, Headers, DTB and U-Boot
   apt: deb=http://filer.bsf-intranet.org/{{ item }}
   with_items:
