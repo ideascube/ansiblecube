@@ -228,7 +228,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": ["wikipedia.es","gutenberg.es"]
+			"name": ["wikipedia.es","wikipedia.en","gutenberg.es","gutenberg.en","wikisource.es","wikisource.en"]
 		}
 	},
 	"kb-bsfcampus-civ": {
