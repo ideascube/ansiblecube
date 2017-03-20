@@ -41,15 +41,15 @@ function update_sources_list()
     if [[ "Debian" == `lsb_release -is` ]]
     then
     cat <<EOF > /etc/apt/sources.list
-deb http://ftp.fr.debian.org/debian/ jessie main contrib non-free
+deb http://deb.debian.org/debian/ jessie main contrib non-free
 
 deb http://security.debian.org/ jessie/updates main contrib non-free
 
 # jessie-updates, previously known as 'volatile'
-deb http://ftp.fr.debian.org/debian/ jessie-updates main contrib non-free
+deb http://deb.debian.org/debian/ jessie-updates main contrib non-free
 
 # jessie-backports, previously on backports.debian.org
-deb http://ftp.fr.debian.org/debian/ jessie-backports main contrib non-free
+deb http://deb.debian.org/debian/ jessie-backports main contrib non-free
 EOF
     fi
 }
