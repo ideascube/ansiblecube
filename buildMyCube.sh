@@ -329,10 +329,10 @@ do
         ;;
 
         -w|--wifi-pwd)
-            [[ `expr length $2` < 8 ]] && {
-                echo "Error: Your wifi password must be >= 8 caracteres" >&2
+            if [ ${#2} -lt "8" ] ; then
+                echo -e "\n\t[+] ERROR\n\tThe supplied password is too short (>= 8)"
                 exit 1
-            }
+            fi
             WIFIPWD="wpa_pass=$2"
         shift # past argument
         ;;
