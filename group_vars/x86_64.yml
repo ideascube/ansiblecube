@@ -2,7 +2,6 @@
 #Network
 hostname: ideasbox.lan
 hotspot_name: ideasbox
-wpa_pass: idb258456
 ideascube_project_name: ideasbox
 ideascube_branding: ideasbox
 managed_by_bsf: True

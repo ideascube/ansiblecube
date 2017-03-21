@@ -2,7 +2,6 @@
 #Network
 hostname: koombook.lan
 hotspot_name: koombook
-wpa_pass: KBcampus
 ideascube_project_name: koombook
 ideascube_branding: koombook
 managed_by_bsf: True
