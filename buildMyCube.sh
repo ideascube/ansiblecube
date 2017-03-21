@@ -283,7 +283,7 @@ do
 
         -m|--managment)
 
-            if [ "$2" = "True" ]
+            if [ "$2" = "True" || "$2" = "true" ]
             then
                 MANAGMENT="managed_by_bsf=True"
                 [ -f "$SSH_KEY" ] || generate_rsa_key
