@@ -872,6 +872,9 @@
 		"idc_import": {
 			"activated": "False",
 			"content_name": ["2-Contenus/kb_crf_1_cada_castiglione.csv"]
+		},
+		"portal": {
+			"activated": "True"
 		}
 	},
 	"kb-cod-kinlab": {
