@@ -202,7 +202,7 @@ function help()
                         Default : oneUpdateFile
 
         -m|--managment  Install BSF tools, set to false if not from BSF
-                        Default : True
+                        Default : true
                         Ex: -m true|false
 
         -h|--hostname   Set the server hostname, 
