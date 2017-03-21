@@ -296,6 +296,14 @@ do
         ;;
 
         -n|--name)
+
+            if [ -z "$2" ]
+            then
+                echo -e "\n\t[+] ERROR\n\t--name : Missing device name\n"
+
+                exit 0;
+            fi
+
             NAME="ideascube_project_name=$2"
             FULL_NAME=`echo "$2" | sed 's/_/-/g'`
 
@@ -379,4 +387,7 @@ if [[ "$START" = "1" ]]; then
     esac
 
     echo "[+] Done."
+else
+    echo -e "\n\t[+] ERROR\n\t--name : Missing device name\n"
+    exit 0;
 fi
