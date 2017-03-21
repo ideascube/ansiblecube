@@ -229,6 +229,9 @@
 		"zim_install": {
 			"activated": "True",
 			"name": ["wikipedia.es","wikipedia.en","gutenberg.es","gutenberg.en","wikisource.es","wikisource.en"]
+		},
+		"portal": {
+			"activated": "True"
 		}
 	},
 	"kb-bsfcampus-civ": {
