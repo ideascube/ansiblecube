@@ -185,14 +185,15 @@ function help()
 
     Usage:
 
-    $0 -n device_name [-t|--timezone] [-m|--managment] [-h|--hostname] [-a|--action] [-b|--branch]
+    $0 [OPTIONS] -n|--name [device_name]
 
-    Arguments :
         -n|--name       Name of your device. 
                         An Ideascube configuration template can be choosen from the links below :
                             + https://github.com/ideascube/ansiblecube/blob/oneUpdateFile/roles/set_custom_fact/files/device_list.fact
                             + https://github.com/ideascube/ideascube/tree/master/ideascube/conf
                         Ex: -n kb_mooc_cog
+
+    OPTIONS :
 
         -t|--timezone   The timezone. 
                         Default : Europe/Paris
@@ -206,7 +207,7 @@ function help()
                         Ex: -m true|false
 
         -h|--hostname   Set the server hostname, 
-                        Default : Equal to -n
+                        Default : Equal to --name
                         Ex: -h my_hostname.lan
 
         -w|--wifi-pwd   Override the default AP wifi password. Must be >= 8 caracteres
