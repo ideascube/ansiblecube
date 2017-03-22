@@ -2,16 +2,24 @@
 - include_vars: group_vars/{{ ansible_architecture }}.yml
   tags: ['custom', 'update']
 
-- name: Ensure kalite is stopped if service exist
-  become: yes
-  become_user: ideascube
-  command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py stop
-  tags:
-    - custom
-  ignore_errors: yes
+- block:
+  - name: Ensure kalite is stopped if service exist
+    become: yes
+    become_user: ideascube
+    command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py stop
 
-- name: Wait for the service Kalite to be completly stopped
-  wait_for: port=8008 state=stopped timeout=120
+  - name: Wait for the service Kalite to be completly stopped
+    wait_for: port=8008 state=stopped timeout=120
+
+  rescue:
+  - name: Get Kalite PID
+    command: pgrep -f kalite
+    register: kalite_proc
+
+  - name: Kill kalite PID
+    become: yes
+    become_user: ideascube
+    command: kill {{ kalite_proc.stdout }} ; echo
   tags:
     - custom
 
