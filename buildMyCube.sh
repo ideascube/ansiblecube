@@ -196,25 +196,26 @@ function help()
     OPTIONS :
 
         -t|--timezone   The timezone. 
-                        Default : Europe/Paris
+                        Default: Europe/Paris
                         Ex: -t Africa/Dakar
 
         -b|--branch     Set Github branch you'd like to use 
-                        Default : oneUpdateFile
+                        Default: oneUpdateFile
 
         -m|--managment  Install BSF tools, set to false if not from BSF
-                        Default : true
+                        Default: true
                         Ex: -m true|false
 
         -h|--hostname   Set the server hostname, 
-                        Default : Equal to --name
+                        Default: Equal to --name
                         Ex: -h my_hostname.lan
 
-        -w|--wifi-pwd   Override the default AP wifi password. Must be >= 8 caracteres
+        -w|--wifi-pwd   Lock the Wifi Hotspot with a password. Must be >= 8 caracteres
+                        Default: Open
                         Ex: -w 12ET4690
 
         -a|--action     Type of action : master / custom / rename / update / zim_install / idc_import / kalite_import
-                        Default : master,custom
+                        Default: master,custom
                         Ex: -a rename
 
                         - master        : Install Ideascube and Kiwix server with strict minimal configuration
