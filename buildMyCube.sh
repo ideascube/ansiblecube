@@ -8,6 +8,7 @@ TIMEZONE="timezone=Europe/Paris"
 CONFIGURE="own_config_file=False"
 TAGS="--tags master,custom"
 LOCK_ACTION=0
+SEND_REPORT=0
 KALITE=False
 KALITE_LANG=""
 MEDIACENTER=False
@@ -289,6 +290,7 @@ do
             then
                 MANAGMENT="managed_by_bsf=True"
                 [ -f "$SSH_KEY" ] || generate_rsa_key
+                SEND_REPORT="1"
             else
                 MANAGMENT="managed_by_bsf=False"
             fi
@@ -372,23 +374,26 @@ if [[ "$START" = "1" ]]; then
        --and-widget  --begin 11 20 --title "[+] Log in /var/log/ansible-pull.log" --tailbox    /var/log/dmesg  35 150
     
     clear
-    echo "[+] Send ansible-pull report"
 
-    status=$(tail -3 /var/log/ansible-pull.log)
-    description=$(grep TASK /var/log/ansible-pull.log | sed -n '$p' | cut -d "[" -f 2 | sed 's/*//g' | sed 's/ /_/g')
-    device_hostname=$(hostname)
+    if [[ "$SEND_REPORT" = "1" ]]; then
+        echo "[+] Send ansible-pull report"
 
-    case $status in
-        *"failed=1"*)
-            wget http://report.bsf-intranet.org/device=$device_hostname/ansiblepull=fail/msg="$description" > /dev/null 2>&1
-        ;;
-        *"failed=0"*)
-            wget http://report.bsf-intranet.org/device=$device_hostname/ansiblepull=success > /dev/null 2>&1
-        ;;
-        *"Local modifications exist in repository"*)
-            wget http://report.bsf-intranet.org/device=$device_hostname/ansiblepull=modificationExist > /dev/null 2>&1
-        ;;
-    esac
+        status=$(tail -3 /var/log/ansible-pull.log)
+        description=$(grep TASK /var/log/ansible-pull.log | sed -n '$p' | cut -d "[" -f 2 | sed 's/*//g' | sed 's/ /_/g')
+        device_hostname=$(hostname)
+
+        case $status in
+            *"failed=1"*)
+                wget http://report.bsf-intranet.org/device=$device_hostname/ansiblepull=fail/msg="$description" > /dev/null 2>&1
+            ;;
+            *"failed=0"*)
+                wget http://report.bsf-intranet.org/device=$device_hostname/ansiblepull=success > /dev/null 2>&1
+            ;;
+            *"Local modifications exist in repository"*)
+                wget http://report.bsf-intranet.org/device=$device_hostname/ansiblepull=modificationExist > /dev/null 2>&1
+            ;;
+        esac
+    fi
 
     echo "[+] Done."
 else
