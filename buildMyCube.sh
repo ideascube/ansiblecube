@@ -365,10 +365,14 @@ if [[ "$START" = "1" ]]; then
     [ -x /usr/local/bin/ansible ] || install_ansible
     [ -d ${ANSIBLECUBE_PATH} ] || clone_ansiblecube
 
-    echo "[+] Start ansible-pull... (log: /var/log/ansible-pull.log)"
-    echo "Launching : $ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars "$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE $WIFIPWD" $TAGS"
-    $ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars "$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE $WIFIPWD" $TAGS > /var/log/ansible-pull.log 2>&1
+    $ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars "$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE $WIFIPWD" $TAGS > /var/log/ansible-pull.log 2>&1 &
+    sleep 2
+
+    echo "$ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars \"$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE $WIFIPWD\" $TAGS" >> /var/lib/ansible/local/cmd.txt
+    dialog --keep-window --begin 2 20  --infobox "[+] Command line stored in /var/lib/ansible/ansible-pull-cmd-line.sh\n\n$ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars \"$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE $WIFIPWD\" $TAGS" 8 150 \
+       --and-widget  --begin 11 20 --title "[+] Log in /var/log/ansible-pull.log" --tailbox    /var/log/dmesg  35 150
     
+    clear
     echo "[+] Send ansible-pull report"
 
     status=$(tail -3 /var/log/ansible-pull.log)
