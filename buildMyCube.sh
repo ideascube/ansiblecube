@@ -57,8 +57,6 @@ EOF
 
 function install_ansible()
 {
-    internet_check
-
     echo -n "[+] Updating APT cache... "
     update_sources_list
     apt-get update --quiet --quiet
@@ -243,6 +241,7 @@ function help()
 }
 
 # main
+internet_check
 
 [ $EUID -eq 0 ] || {
     echo "Error: you have to be root to run this script." >&2
