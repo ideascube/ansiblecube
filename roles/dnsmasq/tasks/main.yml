@@ -13,4 +13,5 @@
 
 - name: Create a new interfaces file
   template: src=interfaces.j2 dest=/etc/network/interfaces backup=yes
+  notify: restart dnsmasq
   tags: ['master', 'custom','rename']

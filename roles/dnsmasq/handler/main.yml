@@ -1,0 +1,5 @@
+---
+- name: restart dsnmasq
+  service: name=dsnmasq state=restarted
+  tags: ['master', 'custom','rename']
+  
