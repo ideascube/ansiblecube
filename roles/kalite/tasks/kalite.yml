@@ -3,15 +3,8 @@
   tags: ['custom', 'update']
 
 - name: Ensure kalite is stopped if service exist
-  become: yes
-  become_user: ideascube
-  command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py stop
-  tags:
-    - custom
+  service: name=kalite state=stopped
   ignore_errors: yes
-
-- name: Wait for the service Kalite to be completly stopped
-  wait_for: port=8008 state=stopped timeout=120
   tags:
     - custom
 
@@ -109,18 +102,12 @@
   tags: ['custom', 'update']
 
 - name: Start Kalite
-  become: yes
-  become_user: ideascube
-  command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py start 
-  ignore_errors: yes
+  service: name=kalite state=started
   tags:
     - custom
 
 - name: Restart Kalite
-  become: yes
-  become_user: ideascube
-  command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py restart 
-  ignore_errors: yes
+  service: name=kalite state=restarted
   when: kalite_installation.changed == True
   tags:
     - update
