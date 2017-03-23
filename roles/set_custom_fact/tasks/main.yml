@@ -58,7 +58,7 @@
     mode=0666
   when: ansible_local.installed_software.management.own_config_file is defined
     and ansible_local.installed_software.management.own_config_file|bool == False
-  tags: ['custom','update','rename']
+  tags: [ 'master', 'custom', 'rename', 'update','idc_import','zim_install','kalite_import' ]
 
 - set_fact: generic_project_name={{ ansible_hostname | regex_replace('-\d+', '') }}
   tags: [ 'master', 'custom', 'rename', 'update','idc_import','zim_install','kalite_import' ]
