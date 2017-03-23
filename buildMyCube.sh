@@ -368,7 +368,7 @@ if [[ "$START" = "1" ]]; then
     $ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars "$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE $WIFIPWD" $TAGS > /var/log/ansible-pull.log 2>&1 &
     sleep 2
 
-    echo "$ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars \"$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE $WIFIPWD\" $TAGS" >> /var/lib/ansible/local/cmd.txt
+    echo "$ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars \"$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE $WIFIPWD\" $TAGS" >> /var/lib/ansible/ansible-pull-cmd-line.sh
     dialog --keep-window --begin 2 20  --infobox "[+] Command line stored in /var/lib/ansible/ansible-pull-cmd-line.sh\n\n$ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars \"$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE $WIFIPWD\" $TAGS" 8 150 \
        --and-widget  --begin 11 20 --title "[+] Log in /var/log/ansible-pull.log" --tailbox    /var/log/dmesg  35 150
     
