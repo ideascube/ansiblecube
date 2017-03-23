@@ -205,7 +205,7 @@ function help()
                         Default: true
                         Ex: -m true|false
 
-        -h|--hostname   Set the server hostname, 
+        -h|--hostname   Set the server hostname, with .lan
                         Default: Equal to --name
                         Ex: -h my_hostname.lan
 
@@ -326,6 +326,12 @@ do
         ;;
 
         -h|--hostname)
+            fqdn=`echo $2 | grep -P '(?=^.{1,254}$)(^(?>(?!\d+\.)[a-zA-Z0-9_\-]{1,63}\.?)+(?:[a-zA-Z]{2,})$)'`
+            if [[ -z "$fqdn" ]]
+            then
+                echo -e "\n\t[+] ERROR\n\tThe supplied domain name is not valid. Format : domain.extension"
+                exit 1
+            fi
             HOST_NAME="hostname=$2"
         shift # past argument
         ;;
