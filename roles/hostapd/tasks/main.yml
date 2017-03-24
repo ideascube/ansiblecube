@@ -27,13 +27,8 @@
   tags: ['master', 'custom']
 
 - name: Copy hostapd_no_pwd.conf file
-  template: src=hostapd_no_pwd.conf.j2 dest=/etc/hostapd/hostapd.conf owner=root group=root mode=755
+  template: src=hostapd.conf.j2 dest=/etc/hostapd/hostapd.conf owner=root group=root mode=755
   when: wpa_pass is undefined
-  tags: ['master', 'custom','rename']
-
-- name: Copy hostapd_pwd.conf file
-  template: src=hostapd_pwd.conf.j2 dest=/etc/hostapd/hostapd.conf owner=root group=root mode=755
-  when: wpa_pass is defined
   tags: ['master', 'custom','rename']
 
 - name: Copy startup script
