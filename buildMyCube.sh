@@ -25,6 +25,16 @@ BRANCH="oneUpdateFile"
 
 DISTRIBUTION_CODENAME=$(lsb_release -sc)
 
+[ $EUID -eq 0 ] || {
+    echo "Error: you have to be root to run this script." >&2
+    exit 1
+}
+
+[ "$DISTRIBUTION_CODENAME" == jessie ] || {
+    echo "Error: AnsibleCube run exclusively on Debian Jessie" >&2
+    exit 1
+}
+
 # Install Dialog
 apt-get install --quiet --quiet -y dialog
 
@@ -248,16 +258,6 @@ function help()
 
 # main
 internet_check
-
-[ $EUID -eq 0 ] || {
-    echo "Error: you have to be root to run this script." >&2
-    exit 1
-}
-
-[ "$DISTRIBUTION_CODENAME" == jessie ] || {
-    echo "Error: AnsibleCube run exclusively on Debian Jessie" >&2
-    exit 1
-}
 
 [ $# -ne 0 ] || help
 
