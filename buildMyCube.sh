@@ -141,8 +141,11 @@ function 3rd_party_app()
 
     if (dialog  --yesno "Do you want to download offline packages ?" 5 60) then
         ZIM=True
-        
-        wget http://catalog.ideascube.org/kiwix.yml -O /tmp/kiwix.yml > /dev/null 2>&1
+
+        wget -O - http://catalog.ideascube.org/kiwix.yml > /tmp/kiwix.yml 2> /dev/null
+        wget -O - http://catalog.ideascube.org/static-sites.yml >> /tmp/kiwix.yml 2> /dev/null
+        wget -O - http://catalog.ideascube.org/bibliotecamovil.yml >> /tmp/kiwix.yml 2> /dev/null
+
         zim_files=$(egrep "\.[a-z][a-z]:|\.[a-z][a-z][a-z]:|\.[a-z][a-z][a-z][a-z][a-z][a-z]:|size" /tmp/kiwix.yml | sed 's/    size: //' | sed 's/^[ \t]*//;s/[ \t]*$//' | sed 's/://')
 
         cmd=(dialog --stdout --no-items \
