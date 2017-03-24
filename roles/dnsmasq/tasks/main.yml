@@ -16,5 +16,5 @@
   tags: ['master', 'custom','rename']
 
 - name: restart dsnmasq
-  service: name=dsnmasq state=restarted
+  service: name=dnsmasq state=restarted
   tags: ['master', 'custom','rename']
