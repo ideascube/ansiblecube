@@ -227,11 +227,11 @@
 			"language": ["en"]
 		},
 		"zim_install": {
-			"activated": "True",
+			"activated": "False",
 			"name": ["wikipedia.es","wikipedia.en","gutenberg.es","gutenberg.en","wikisource.es","wikisource.en"]
 		},
 		"idc_import": {
-			"activated": "True",
+			"activated": "False",
 			"content_name": ["2-Contenus/csv_nicarali_centro_de_salud.csv","2-Contenus/csv_nicarali_sebaco_version_cinq.csv","2-Contenus/csv_nicarali_laguna_de_perlas_es_en_version_deux.csv"]
 		},
 		"portal": {
