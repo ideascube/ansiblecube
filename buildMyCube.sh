@@ -25,6 +25,9 @@ BRANCH="oneUpdateFile"
 
 DISTRIBUTION_CODENAME=$(lsb_release -sc)
 
+# Install Dialog
+apt-get install --quiet --quiet -y dialog
+
 # functions
 function internet_check()
 {
