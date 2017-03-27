@@ -43,7 +43,7 @@
 
 - name: Include task needed when using an external hard drive
   include: ext_hdd.yml
-  when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l")
+  when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l" or ansible_architecture == "armv6l")
     and sda1.stat.isblk == True
   tags:
     - custom
