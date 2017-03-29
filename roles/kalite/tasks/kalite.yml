@@ -131,3 +131,11 @@
 
 - debug: msg="kalite {{ kalite_version }} is now the current version."
   tags: ['custom', 'update']
+
+- name: Upgrade content pack
+  become: yes
+  become_user: ideascube
+  command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py manage contentpackchecker all --update
+  when: kalite_version | version_compare('0.17.0', '==')
+  tags:
+    - update
