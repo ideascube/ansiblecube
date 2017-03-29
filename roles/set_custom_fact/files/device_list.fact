@@ -768,7 +768,7 @@
 	"idb-bsf-vagrant": {
 		"kalite": {
 			"activated": "True",
-			"version": "0.16.9",
+			"version": "0.17.0",
 			"language": ["fr"]
 		},
 		"zim_install": {
