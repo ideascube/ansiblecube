@@ -2,7 +2,13 @@
 - include_vars: group_vars/{{ ansible_architecture }}.yml
 
 - name: Make sure central_server fingerprint is known
-  shell: ssh-keyscan -H {{ central_server }} > /etc/ssh/ssh_known_hosts
+  known_hosts:
+    path: /etc/ssh/ssh_known_hosts
+    name: tincmaster.bsf-intranet.org
+    key: {{ item }}
+  with_items:
+    - "AAAAB3NzaC1yc2EAAAADAQABAAABAQC3ZSPUHn2fbrLu/2z6Px54z7PFObdejHbyC8HGawDIoDiZ47Rjh0P5CRrsfTWgpabZW3RJ0YtcY5NSilbZ1D8KmiQH3EFl/fDrRsk8yDpo8rF27iT4locj10/KZp9i2FqCAswnjw37CNdATBdTbHjB319/hIGJGPGcXVPz7Cx4oHKPtL4MfDxTKlNbUALAyUfLCGLXcYeQj750/iCilA+zO0hWVGeP/s6R5tg0/IC4Ru2sP6Xqi4kox1GmS6ZmqBgNr2oZlwGGWx//xo/KscePkscAiBvcs9NDP5b5ZsKx5jRo0U8jzU4N4tRVU21mYFSPY54DcKmSeNrSILX1EUt5"
+    - "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBGIi+qKYc46Og0VhD0cCc8jh/dGGoKOOr6Ojo0nWnwo08V7rliEK/FJQ2Lbq6N1CoLowLPEjMuHsN7x6JZO8MKE="
 
 - name: Configure logrotate to handle our custom logs.
   template: src={{ item.src }} dest=/etc/logrotate.d/{{ item.dest }} owner=root group=root mode=0644
