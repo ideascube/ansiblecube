@@ -172,7 +172,7 @@ function 3rd_party_app()
     \"$FULL_NAME\": {
         \"kalite\": {
             \"activated\": \"$KALITE\",
-            \"version\": \"0.16.9\",
+            \"version\": \"0.17.0\",
             \"language\": [\""$KALITE_LANG"\"]
         },
         \"idc_import\": {
