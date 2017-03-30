@@ -18,6 +18,7 @@ kiwix_version: "0.9"
 mongodb_version: "2.4.10"
 own_config_file: False
 ideascube_upgrade_frozen: False
+git_branch: oneUpdateFile
 
 #Apps path
 mook_path: /home/{{ username }}
