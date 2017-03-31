@@ -228,7 +228,7 @@
 		},
 		"zim_install": {
 			"activated": "False",
-			"name": ["wikipedia.es","wikipedia.en","gutenberg.es","gutenberg.en","wikisource.es","wikisource.en"]
+			"name": ["wikipedia.es","wikipedia.en","gutenberg.es","gutenberg.en","wikisource.es","wikisource.en","icarito.es","sabelotodo.es"]
 		},
 		"idc_import": {
 			"activated": "False",
