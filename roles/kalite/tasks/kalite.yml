@@ -21,6 +21,8 @@
     - update
 
 - name: Install Ka-lite
+  become: yes
+  become_user: ideascube
   pip: name=ka-lite
     version={{ ansible_local.device_list[generic_project_name].kalite.version }}
     chdir=/home/{{ username }}/.kalite
