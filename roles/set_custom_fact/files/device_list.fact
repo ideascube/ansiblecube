@@ -935,5 +935,19 @@
 			"activated": "False",
 			"content_name": ["13-NICARALI/CSV-Nicarali.csv"]
 		}
+	},
+	"kb-fra-ssp": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.9",
+			"language": ["fr"]
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": ["wikipedia.fr","wikipedia.ar","wikipedia.pl","gutenberg.fr"]
+		},
+		"portal": {
+			"activated": "True"
+		}
 	}
 }
