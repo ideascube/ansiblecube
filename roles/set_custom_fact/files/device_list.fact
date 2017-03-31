@@ -904,6 +904,9 @@
 		"idc_import": {
 			"activated": "True",
 			"content_name": ["2-Contenus/csv_kinlab.csv"]
+		},
+		"portal": {
+			"activated": "True"
 		}
 	},
 	"kb-cmr-ani": {
@@ -934,6 +937,9 @@
 		"idc_import": {
 			"activated": "False",
 			"content_name": ["13-NICARALI/CSV-Nicarali.csv"]
+		},
+		"portal": {
+			"activated": "True"
 		}
 	},
 	"kb-fra-ssp": {
