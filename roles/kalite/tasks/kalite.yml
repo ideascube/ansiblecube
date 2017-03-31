@@ -9,6 +9,8 @@
     - custom
 
 - name: Create a working dir Kalite
+  become: yes
+  become_user: ideascube
   file: path=/home/{{ username }}/.kalite state=directory
   tags:
     - custom
