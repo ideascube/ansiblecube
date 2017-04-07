@@ -4,6 +4,7 @@
 
 - name: Ensure kalite is stopped if service exist
   systemd: name=kalite state=stopped
+  ignore_errors: yes
   tags:
     - custom
 
