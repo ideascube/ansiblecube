@@ -138,7 +138,8 @@
 - name: Upgrade content pack
   become: yes
   become_user: ideascube
-  command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/bin/kalite manage contentpackchecker all --update
+  command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/bin/kalite manage contentpackchecker {{item}} --update
+  with_items: "{{ (ansible_local.device_list[generic_project_name].kalite | default (omit)).language | default(omit) }}"
   when: kalite_version | version_compare('0.17.0', '==') and kalite_installation.changed == True
   tags:
     - update
