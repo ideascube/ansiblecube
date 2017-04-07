@@ -140,6 +140,6 @@
   become: yes
   become_user: ideascube
   command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/bin/kalite manage contentpackchecker all --update
-  when: kalite_version | version_compare('0.17.0', '==')
+  when: kalite_version | version_compare('0.17.0', '==') and kalite_installation.changed == True
   tags:
     - update
