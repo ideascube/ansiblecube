@@ -378,13 +378,12 @@ if [[ "$START" = "1" ]]; then
     [ -x /usr/local/bin/ansible ] || install_ansible
     [ -d ${ANSIBLECUBE_PATH} ] || clone_ansiblecube
 
-    $ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars "$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE $WIFIPWD $GIT_BRANCH" $TAGS > /var/log/ansible-pull.log 2>&1 &
-    sleep 2
-
     echo "$ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars \"$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE $WIFIPWD $GIT_BRANCH\" $TAGS" >> /var/lib/ansible/ansible-pull-cmd-line.sh
     dialog --keep-window --begin 2 20  --infobox "[+] Command line stored in /var/lib/ansible/ansible-pull-cmd-line.sh\n\n$ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars \"$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE $WIFIPWD $GIT_BRANCH\" $TAGS" 8 150 \
-       --and-widget  --begin 11 20 --title "[+] Log in /var/log/ansible-pull.log" --tailbox    /var/log/ansible-pull.log  35 150
-    
+       --and-widget  --begin 11 20 --title "[+] Log in /var/log/ansible-pull.log" --tailbox    /var/log/ansible-pull.log  35 150 &
+
+    $ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars "$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE $WIFIPWD $GIT_BRANCH" $TAGS > /var/log/ansible-pull.log 2>&1
+
     clear
 
     if [[ "$SEND_REPORT" = "1" ]]; then
