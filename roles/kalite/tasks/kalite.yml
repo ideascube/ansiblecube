@@ -3,8 +3,7 @@
   tags: ['custom', 'update']
 
 - name: Ensure kalite is stopped if service exist
-  service: name=kalite state=stopped
-  ignore_errors: yes
+  systemd: name=kalite state=stopped
   tags:
     - custom
 
@@ -73,7 +72,7 @@
   tags: ['custom', 'update']
 
 - name: Enable service kalite
-  service: name=kalite enabled=yes
+  systemd: name=kalite enabled=yes
   tags: ['custom', 'update']
 
 - name: Generate a zone for kalite
@@ -106,12 +105,12 @@
   tags: ['custom', 'update']
 
 - name: Start Kalite
-  service: name=kalite state=started
+  systemd: name=kalite state=started
   tags:
     - custom
 
 - name: Restart Kalite
-  service: name=kalite state=restarted
+  systemd: name=kalite state=restarted daemon_reload=yes
   when: kalite_installation.changed == True
   tags:
     - update
