@@ -13,7 +13,7 @@
 
 - name: Create a new interfaces file
   template: src=interfaces.j2 dest=/etc/network/interfaces backup=yes
-  tags: ['master', 'custom','rename']
+  tags: ['master','rename']
 
 - name: restart dsnmasq
   service: name=dnsmasq state=restarted
