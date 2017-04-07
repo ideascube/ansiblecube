@@ -384,7 +384,7 @@ if [[ "$START" = "1" ]]; then
 
     $ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars "$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE $WIFIPWD $GIT_BRANCH" $TAGS > /var/log/ansible-pull.log 2>&1
 
-    clear
+    reset
 
     if [[ "$SEND_REPORT" = "1" ]]; then
         echo "[+] Send ansible-pull report"
