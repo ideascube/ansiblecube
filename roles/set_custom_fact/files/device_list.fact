@@ -955,5 +955,19 @@
 		"portal": {
 			"activated": "True"
 		}
+	},
+	"kb-bdi-tdh": {
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.9",
+			"language": ["fr","en"]
+		},
+		"zim_install": {
+			"activated": "True",
+			"name": ["wikipedia.fr","wikipedia.en","gutenberg.fr","gutenberg.en","tedxlausanne2014.fr","tedxlausanne2013.fr","tedxlausanne2012.fr","tedxgeneva2014.fr","tedtechnology.en","tedscience.en","tedglobalissues.en","tedentertainment.en","teddesign.en","tedbusiness.en","cest-pas-sorcier.fr","universcience-tv.fr","e-penser.fr"]
+		},
+		"portal": {
+			"activated": "True"
+		},
 	}
 }
