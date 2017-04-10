@@ -3,9 +3,8 @@
   tags: ['master','update']
 
 - name: Copying kiwix binaries
-  get_url: url={{filer_bsf}}/kiwix-serve-{{ ansible_architecture }} dest=/usr/local/bin/kiwix-serve mode=755 timeout=30
-  tags:
-    - master
+  get_url: url={{filer_bsf}}/kiwix-serve-{{ ansible_architecture }}.v{{ kiwix_version }} dest=/usr/local/bin/kiwix-serve mode=755 timeout=30
+  tags: ['master','update']
 
 - name: Create a kiwix directory in ideascube folder
   file: path={{zim_path}}/ owner={{username}} group={{username}} state=directory
