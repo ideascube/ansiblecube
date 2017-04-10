@@ -950,7 +950,7 @@
 		},
 		"zim_install": {
 			"activated": "True",
-			"name": ["wikipedia.fr","wikipedia.ar","wikipedia.pl","gutenberg.fr"]
+			"name": ["wikipedia.fr","wikipedia.ar","wikipedia.pl","gutenberg.fr","apprentissage-francais-fr","bien-etre-dev-perso-communication-fr","cinema-et-creation-video-fr","citoyennete-et-politique-fr","connaissance-droits-universels-fr","cuisine-et-nutrition-fr","cuisine-pl","dessin-et-origami-fr","discriminations-fr","droits-et-demarches-administratives-fr","fictions-divertissements-ar","musique-ar","musique-fr","photographie-fr","programmation-informatique-fr","recherche-demploi-fr","sa-relation-au-corps-fr","sport-football-fr"]
 		},
 		"portal": {
 			"activated": "True"
