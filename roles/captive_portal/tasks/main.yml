@@ -34,6 +34,14 @@
     mode: 0644
   tags: ['custom', 'update']
 
+- name: Make sure ideascube is not default_server
+  lineinfile:
+    path: /etc/nginx/sites-enabled/ideascube
+    regexp: '^(.*)listen(.*)default_server(.*)'
+    line: "    listen      80 ;"
+    backrefs: yes
+  tags: ['custom', 'update']
+
 - name: Enable captive portal vhost
   file: src=/etc/nginx/sites-available/captiveportal dest=/etc/nginx/sites-enabled/captiveportal state=link
   notify: restart nginx
