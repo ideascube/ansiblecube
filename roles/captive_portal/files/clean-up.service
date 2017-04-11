@@ -1,6 +1,6 @@
 [Unit]
 Description=Boot-only system-wide cleanup script
-Before=network.target
+Before=network.target dnsmasq.service
 RefuseManualStart=no
 RefuseManualStop=no
 
