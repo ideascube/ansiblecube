@@ -112,6 +112,13 @@
     mode: 755
   tags: ['custom', 'update']
 
+- name: Copy dnsmasq script for NetworkManager
+  template:
+    src: dnsmasq.j2
+    dest: /etc/NetworkManager/dispatcher.d/dnsmasq
+    mode: 0755
+  tags: ['custom', 'update']
+
 - name: Copy clear_iptables.sh to /usr/bin/local
   copy:
     src: clear_iptables.sh
