@@ -97,6 +97,21 @@
   notify: restart uwsgi
   tags: ['custom', 'update']
 
+- name: Copy Systemd script to set /etc/default/dnsmasq default options
+  copy:
+    src: clean-up.service
+    dest: /etc/systemd/system/clean-up.service
+  tags: ['custom', 'update']
+
+- name: Copy shell script that actually does the job
+  copy:
+    src: clean-up.sh
+    dest: /usr/local/bin/clean-up.sh
+    owner: root
+    group: root
+    mode: 755
+  tags: ['custom', 'update']
+
 - name: Copy clear_iptables.sh to /usr/bin/local
   copy:
     src: clear_iptables.sh
