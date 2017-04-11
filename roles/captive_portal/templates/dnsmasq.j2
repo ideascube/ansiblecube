@@ -9,4 +9,5 @@ if [ $1 == "eth0" ] || [ $1 == "eth1" ]
 	  down) sed -i 's/^DNSMASQ_OPTS=.*/DNSMASQ_OPTS="--conf-file=\/etc\/dnsmasq-spoof.conf --local-ttl=600"/g' /etc/default/dnsmasq;;
 	  *) exit 0;;
 	esac
+	systemctl restart dnsmasq.service
 fi
