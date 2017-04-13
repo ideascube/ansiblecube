@@ -126,7 +126,7 @@
 - name: Copy dnsmasq script for NetworkManager
   template:
     src: dnsmasq.j2
-    dest: /etc/NetworkManager/dispatcher.d/dnsmasq
+    dest: /etc/NetworkManager/dispatcher.d/03dnsmasq
     mode: 0755
   tags: ['custom', 'update']
 
