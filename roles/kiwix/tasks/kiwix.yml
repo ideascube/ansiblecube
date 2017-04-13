@@ -14,7 +14,7 @@
   service: name=kiwix-server state=stopped
   when: kiwix_version > ansible_local.installed_software.software.kiwix 
     or kiwix_version < ansible_local.installed_software.software.kiwix
-  tags: ['custom','update']
+  tags: ['update']
 
 - name: Copying kiwix binaries x86_64 architecture
   get_url: url={{filer_bsf}}/kiwix-serve-x86_64.v{{ kiwix_version }} dest=/usr/local/bin/kiwix-serve mode=755 timeout=30 backup=yes force=yes
