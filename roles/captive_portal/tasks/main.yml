@@ -36,7 +36,7 @@
 
 - name: Make sure ideascube is not default_server
   lineinfile:
-    path: /etc/nginx/sites-enabled/ideascube
+    dest: /etc/nginx/sites-enabled/ideascube
     regexp: '^(.*)listen(.*)default_server(.*)'
     line: "    listen      80 ;"
     backrefs: yes
@@ -49,7 +49,7 @@
 
 - name: Start dnsmasq-spoof.conf file by default - forcing short TTL
   lineinfile: 
-    path: /etc/default/dnsmasq
+    dest: /etc/default/dnsmasq
     line: 'DNSMASQ_OPTS="--conf-file=/etc/dnsmasq-spoof.conf --local-ttl=600"'
     state: present
   tags: ['custom', 'update'] 
