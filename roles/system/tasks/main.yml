@@ -175,6 +175,10 @@
   when: ansible_dns.domain|default(omit) == "{{ crashbook_dns_domain }}" and ansible_architecture == "armv7l"
   tags: ['custom','update']
 
+- include: raspberry.yml
+  when: ansible_lsb.id == "Raspbian" and ansible_architecture == "armv7l"
+  tags: ['custom','update']
+
 - name: List services to restart (1/2)
   shell: checkrestart | grep ^service | awk '{print $2}'
   register: services
