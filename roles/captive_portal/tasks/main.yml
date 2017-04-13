@@ -83,6 +83,12 @@
   notify: restart nginx
   tags: ['custom', 'update']
 
+- name: Copy new catch-all redirect 301 vhost
+  template:
+    src: redirect.j2
+    dest: /etc/nginx/sites-enabled/redirect
+  tags: ['custom', 'update']
+
 - name: Add UWSGI specific configuration file
   copy:
     src: captive.ini
