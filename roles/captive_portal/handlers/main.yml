@@ -6,3 +6,7 @@
 - name: restart uwsgi
   service: name=uwsgi state=restarted
   tags: ['custom', 'update']
+
+- name: restart dnsmasq
+  service: name=dnsmasq state=restarted
+  tags: ['custom', 'update']

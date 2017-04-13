@@ -34,11 +34,27 @@
     mode: 0644
   tags: ['custom', 'update']
 
+- name: Make sure ideascube is not default_server
+  lineinfile:
+    dest: /etc/nginx/sites-enabled/ideascube
+    regexp: '^(.*)listen(.*)default_server(.*)'
+    line: "    listen      80 ;"
+    backrefs: yes
+  tags: ['custom', 'update']
+
 - name: Enable captive portal vhost
   file: src=/etc/nginx/sites-available/captiveportal dest=/etc/nginx/sites-enabled/captiveportal state=link
   notify: restart nginx
   tags: ['custom', 'update']
 
+- name: Start dnsmasq-spoof.conf file by default - forcing short TTL
+  lineinfile: 
+    dest: /etc/default/dnsmasq
+    line: 'DNSMASQ_OPTS="--conf-file=/etc/dnsmasq-spoof.conf --local-ttl=600"'
+    state: present
+  notify: restart dnsmasq
+  tags: ['custom', 'update'] 
+              
 - name: Create /etc/nginx/ssl folder
   file:
     path: /etc/nginx/ssl
@@ -68,6 +84,12 @@
   notify: restart nginx
   tags: ['custom', 'update']
 
+- name: Copy new catch-all redirect 301 vhost
+  template:
+    src: redirect.j2
+    dest: /etc/nginx/sites-enabled/redirect
+  tags: ['custom', 'update']
+
 - name: Add UWSGI specific configuration file
   copy:
     src: captive.ini
@@ -80,6 +102,32 @@
 - name: Enable captive.ini for UWSGI
   file: src=/etc/uwsgi/apps-available/captive.ini dest=/etc/uwsgi/apps-enabled/captive.ini state=link
   notify: restart uwsgi
+  tags: ['custom', 'update']
+
+- name: Copy Systemd script to set /etc/default/dnsmasq default options
+  copy:
+    src: clean-up.service
+    dest: /etc/systemd/system/clean-up.service
+  tags: ['custom', 'update']
+
+- name: Enabling systemd service clean-up.service
+  service: enabled=yes name=clean-up
+  tags: ['custom', 'update']
+
+- name: Copy shell script that actually does the job
+  copy:
+    src: clean-up-dnsmasq.sh
+    dest: /usr/local/bin/clean-up-dnsmasq.sh
+    owner: root
+    group: root
+    mode: 755
+  tags: ['custom', 'update']
+
+- name: Copy dnsmasq script for NetworkManager
+  template:
+    src: dnsmasq.j2
+    dest: /etc/NetworkManager/dispatcher.d/03dnsmasq
+    mode: 0755
   tags: ['custom', 'update']
 
 - name: Copy clear_iptables.sh to /usr/bin/local
