@@ -109,6 +109,10 @@
     dest: /etc/systemd/system/clean-up.service
   tags: ['custom', 'update']
 
+- name: Enabling systemd service clean-up.service
+  service: enabled=yes name=clean-up
+  tags: ['custom', 'update']
+
 - name: Copy shell script that actually does the job
   copy:
     src: clean-up.sh
