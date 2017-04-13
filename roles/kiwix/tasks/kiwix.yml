@@ -7,8 +7,31 @@
   when: ansible_local.device_list[generic_project_name].kiwix_version | default (omit) is defined
   tags: ['master','custom','update']
 
-- name: Copying kiwix binaries
-  get_url: url={{filer_bsf}}/kiwix-serve-{{ ansible_architecture }}.v{{ kiwix_version }} dest=/usr/local/bin/kiwix-serve mode=755 timeout=30
+- debug: msg="kiwix_version {{ kiwix_version }}"
+  tags: ['master','custom','update']
+
+- name: Stop kiwix-serve if needed
+  service: name=kiwix-server state=stopped
+  when: kiwix_version > ansible_local.installed_software.software.kiwix
+    or kiwix_version < ansible_local.installed_software.software.kiwix
+  tags: ['master','custom','update']
+
+- name: Copying kiwix binaries x86_64 architecture
+  get_url: url={{filer_bsf}}/kiwix-serve-x86_64.v{{ kiwix_version }} dest=/usr/local/bin/kiwix-serve mode=755 timeout=30 backup=yes force=yes
+    checksum="md5:195540566f0b251b04d729a0e9611622"
+  when: ansible_architecture == "x86_64"
+  tags: ['master','custom','update']
+
+- name: Copying kiwix binaries v1.0 for armhf architecture
+  get_url: url={{filer_bsf}}/kiwix-serve-armhf.v{{ kiwix_version }} dest=/usr/local/bin/kiwix-serve mode=755 timeout=30 backup=yes force=yes
+    checksum="md5:65f9e6ceeac16c1910a3ef9fae35646e"
+  when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and kiwix_version == "1.0"
+  tags: ['master','custom','update']
+
+- name: Copying kiwix binaries v0.9 for armhf architecture
+  get_url: url={{filer_bsf}}/kiwix-serve-armhf.v{{ kiwix_version }} dest=/usr/local/bin/kiwix-serve mode=755 timeout=30 backup=yes force=yes
+    checksum="md5:e0ebaad429daf2825d4d316600198b43"
+  when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and kiwix_version == "0.9"
   tags: ['master','custom','update']
 
 - name: Create a kiwix directory in ideascube folder
