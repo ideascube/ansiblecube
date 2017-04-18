@@ -792,6 +792,9 @@
 		"idc_import": {
 			"activated": "False",
 			"content_name": ["2-Contenus/csvtdh1.csv"]
+		},
+		"portal": {
+			"activated": "True"
 		}
 	},
 	"kb-grc-ioannina": {
@@ -807,7 +810,11 @@
 		"idc_import": {
 			"activated": "False",
 			"content_name": ["2-Contenus/csvtdh1.csv"]
-		}
+		},
+		"portal": {
+			"activated": "True"
+		},
+		"kiwix_version": "1.0"
 	},
 	"kb-grc-konitsa": {
 		"kalite": {
@@ -822,7 +829,11 @@
 		"idc_import": {
 			"activated": "True",
 			"content_name": ["2-Contenus/csvkonitsa.csv"]
-		}
+		},
+		"portal": {
+			"activated": "True"
+		},
+		"kiwix_version": "1.0"
 	},
 	"kb-cod-mooc": {
 		"bsfcampus": {
