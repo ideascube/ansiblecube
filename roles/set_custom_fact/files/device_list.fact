@@ -885,7 +885,8 @@
 		},
 		"portal": {
 			"activated": "True"
-		}
+		},
+		"kiwix_version": "1.0"
 	},
 	"kb-cod-kinlab": {
 		"bsfcampus": {
