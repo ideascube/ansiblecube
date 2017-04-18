@@ -980,7 +980,7 @@
 			"name": ["wikipedia.fr","wikipedia.en","gutenberg.fr","gutenberg.en","tedxlausanne2014.fr","tedxlausanne2013.fr","tedxlausanne2012.fr","tedxgeneva2014.fr","tedtechnology.en","tedscience.en","tedglobalissues.en","tedentertainment.en","teddesign.en","tedbusiness.en","cest-pas-sorcier.fr","universcience-tv.fr","e-penser.fr"]
 		},
 		"idc_import": {
-			"activated": "True",
+			"activated": "False",
 			"content_name": ["2-Contenus/csv_tdh_burundi.csv"]
 		},
 		"portal": {
