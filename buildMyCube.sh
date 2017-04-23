@@ -6,6 +6,9 @@ SSH_KEY="/root/.ssh/id_rsa"
 MANAGMENT="managed_by_bsf=True"
 TIMEZONE="timezone=Europe/Paris"
 CONFIGURE="own_config_file=False"
+HOST_NAME=""
+WIFI_PWD=""
+GIT_BRANCH=""
 TAGS="--tags master,custom"
 LOCK_ACTION=0
 SEND_REPORT=0
