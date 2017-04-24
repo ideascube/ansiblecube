@@ -13,7 +13,7 @@
 				"activated": "False",
 				"content_name": ["2-Contenus/kb-bsfcampus/KB_Liste_contenus_bsf_campus.csv"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "ubuntudoc.fr",
 					"status": ["installed"]
 				},
@@ -81,7 +81,7 @@
 				"activated": "False",
 				"content_name": ["2-Contenus/kb-bsfcampus/KB_Liste_contenus_bsf_campus.csv"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "ubuntudoc.fr",
 					"status": ["installed"]
 				},
@@ -149,7 +149,7 @@
 				"activated": "False",
 				"content_name": ["11-BABYLAB/CONTENUS/csvbabylab2.csv"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "wikistage.fr",
 					"status": ["installed"]
 				},
@@ -213,7 +213,7 @@
 				"activated": "True",
 				"content_name": ["2-Contenus/logiciellibre/app.csv"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "ubuntudoc.fr",
 					"status": ["installed"]
 				},
@@ -268,7 +268,7 @@
 			]
 		},
 		"idb-fra-cultura": {
-			"zim_install": [{
+			"package_management": [{
 					"name": "ubuntudoc.fr",
 					"status": ["installed"]
 				},
@@ -288,7 +288,7 @@
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "bil-tunisia.ar",
 					"status": ["installed"]
 				},
@@ -324,7 +324,7 @@
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "vikidia.en",
 					"status": ["installed"]
 				},
@@ -344,7 +344,7 @@
 				"version": "0.16.9",
 				"language": ["es"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "wikipedia.es",
 					"status": ["installed"]
 				},
@@ -364,7 +364,7 @@
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "gutenberg.fr",
 					"status": ["installed"]
 				},
@@ -384,7 +384,7 @@
 				"version": "0.16.9",
 				"language": ["en"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "tedtechnology.en",
 					"status": ["installed"]
 				},
@@ -428,7 +428,7 @@
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "gutenberg.fr",
 					"status": ["installed"]
 				},
@@ -447,7 +447,7 @@
 				"activated": "True",
 				"version": "100816"
 			},
-			"zim_install": [{
+			"package_management": [{
 				"name": "wikipedia.fr",
 				"status": ["installed"]
 			}]
@@ -458,7 +458,7 @@
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "gutenberg.fr",
 					"status": ["installed"]
 				},
@@ -478,7 +478,7 @@
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "gutenberg.fr",
 					"status": ["installed"]
 				},
@@ -498,7 +498,7 @@
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "wikistage.fr",
 					"status": ["installed"]
 				},
@@ -554,7 +554,7 @@
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "gutenberg.fr",
 					"status": ["installed"]
 				},
@@ -578,7 +578,7 @@
 				"activated": "False",
 				"content_name": ["2-Contenus/aurore_ivry_serveuridb_update.csv"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "vikidia.fr",
 					"status": ["installed"]
 				},
@@ -646,7 +646,7 @@
 				"version": "0.16.9",
 				"language": ["en"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "wikipedia.es",
 					"status": ["installed"]
 				},
@@ -701,7 +701,7 @@
 				"activated": "False",
 				"content_name": ["2-Contenus/logiciellibre/app.csv", "2-Contenus/kb-bsfcampus/KB_Liste_contenus_bsf_campus.csv"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "ubuntudoc.fr",
 					"status": ["installed"]
 				},
@@ -761,7 +761,7 @@
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "w2eu",
 					"status": ["installed"]
 				},
@@ -797,7 +797,7 @@
 				"version": "0.16.9",
 				"language": ["en", "ar"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "bil-tunisia.ar",
 					"status": ["installed"]
 				},
@@ -893,7 +893,7 @@
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "w2eu",
 					"status": ["installed"]
 				},
@@ -993,13 +993,13 @@
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-			"zim_install": [{
+			"package_management": [{
 				"name": "gutenberg.fr",
 				"status": ["installed"]
 			}]
 		},
 		"kb-cdf-fra": {
-			"zim_install": [{
+			"package_management": [{
 					"name": "cest-pas-sorcier.fr",
 					"status": ["installed"]
 				},
@@ -1027,7 +1027,7 @@
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "universcience-tv.fr",
 					"status": ["installed"]
 				},
@@ -1067,7 +1067,7 @@
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-			"zim_install": [
+			"package_management": [
 
 				{
 					"name": "tedxlausanne2014.fr",
@@ -1125,7 +1125,7 @@
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "les-fondamentaux.fr",
 					"status": ["installed"]
 				},
@@ -1165,7 +1165,7 @@
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "gutenberg.fr",
 					"status": ["installed"]
 				},
@@ -1181,7 +1181,7 @@
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "tedxlausanne2014.fr",
 					"status": ["installed"]
 				},
@@ -1237,7 +1237,7 @@
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "gutenberg.fr",
 					"status": ["installed"]
 				},
@@ -1257,7 +1257,7 @@
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "cest-pas-sorcier.fr",
 					"status": ["installed"]
 				},
@@ -1344,7 +1344,7 @@
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "universcience-tv.fr",
 					"status": ["installed"]
 				},
@@ -1416,7 +1416,7 @@
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "bil-tunisia.ar",
 					"status": ["installed"]
 				},
@@ -1476,7 +1476,7 @@
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "gutenberg.fr",
 					"status": ["installed"]
 				},
@@ -1496,7 +1496,7 @@
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "gutenberg.fr",
 					"status": ["installed"]
 				},
@@ -1516,7 +1516,7 @@
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "wiktionary.en",
 					"status": ["installed"]
 				},
@@ -1536,7 +1536,7 @@
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "gutenberg.fr",
 					"status": ["installed"]
 				},
@@ -1556,7 +1556,7 @@
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "gutenberg.fr",
 					"status": ["installed"]
 				},
@@ -1576,7 +1576,7 @@
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "vikidia.fr",
 					"status": ["installed"]
 				},
@@ -1596,7 +1596,7 @@
 				"version": "0.16.9",
 				"language": ["en"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "wikipedia.ar",
 					"status": ["installed"]
 				},
@@ -1731,7 +1731,7 @@
 			}
 		},
 		"kb-grc-malakasa": {
-			"zim_install": [{
+			"package_management": [{
 					"name": "wikipedia.ar",
 					"status": ["installed"]
 				},
@@ -1835,7 +1835,7 @@
 				"activated": "False",
 				"content_name": ["2-Contenus/logiciellibre/app.csv", "2-Contenus/kb-bsfcampus/KB_Liste_contenus_bsf_campus.csv"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "ubuntudoc.fr",
 					"status": ["installed"]
 				},
@@ -1899,7 +1899,7 @@
 				"activated": "False",
 				"content_name": ["2-Contenus/csvkbtanzaniev2.csv"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "wikipedia.sw",
 					"status": ["installed"]
 				},
@@ -2039,7 +2039,7 @@
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "w2eu",
 					"status": ["installed"]
 				},
@@ -2071,7 +2071,7 @@
 				"version": "0.16.9",
 				"language": ["en", "ar"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "wikipedia.en",
 					"status": ["installed"]
 				},
@@ -2175,7 +2175,7 @@
 				"version": "0.16.9",
 				"language": ["fr", "en", "es"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "wikipedia.en",
 					"status": ["installed"]
 				},
@@ -2247,7 +2247,7 @@
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "wikipedia.fr",
 					"status": ["installed"]
 				},
@@ -2319,7 +2319,7 @@
 				"version": "0.16.9",
 				"language": ["en"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "wikipedia.en",
 					"status": ["installed"]
 				},
@@ -2427,7 +2427,7 @@
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "wikipedia.sw",
 					"status": ["installed"]
 				},
@@ -2491,7 +2491,7 @@
 				"version": "0.16.9",
 				"language": ["en"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "wikipedia.en",
 					"status": ["installed"]
 				},
@@ -2599,7 +2599,7 @@
 				"version": "0.16.9",
 				"language": ["en", "es"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "gutenberg.es",
 					"status": ["installed"]
 				},
@@ -2664,7 +2664,7 @@
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "wikipedia.sw",
 					"status": ["installed"]
 				},
@@ -2740,7 +2740,7 @@
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "wikipedia.fr",
 					"status": ["installed"]
 				},
@@ -2780,7 +2780,7 @@
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "wikipedia.fr",
 					"status": ["installed"]
 				},
@@ -2815,7 +2815,7 @@
 			}
 		},
 		"kb-rwa-giz": {
-			"zim_install": [{
+			"package_management": [{
 					"name": "wikipedia.en",
 					"status": ["installed"]
 				},
@@ -2875,7 +2875,7 @@
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "wikipedia.fr",
 					"status": ["installed"]
 				},
@@ -2915,7 +2915,7 @@
 				"version": "0.16.9",
 				"language": ["fr", "en"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "wikipedia.fr",
 					"status": ["installed"]
 				},
@@ -2946,7 +2946,7 @@
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-			"zim_install": [{
+			"package_management": [{
 				"name": "wikiquote.fa",
 				"status": ["installed"]
 			}],
@@ -2960,7 +2960,7 @@
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-			"zim_install": [{
+			"package_management": [{
 				"name": "wikiquote.fa",
 				"status": ["installed"]
 			}],
@@ -2974,7 +2974,7 @@
 				"version": "0.16.9",
 				"language": ["en"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "wikipedia.fa",
 					"status": ["installed"]
 				},
@@ -3073,7 +3073,7 @@
 				"version": "0.16.9",
 				"language": ["en"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "wikipedia.fa",
 					"status": ["installed"]
 				},
@@ -3145,7 +3145,7 @@
 				"version": "0.16.9",
 				"language": ["en"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "wikipedia.en",
 					"status": ["installed"]
 				},
@@ -3205,7 +3205,7 @@
 				"activated": "False",
 				"content_name": ["2-Contenus/contenus_bukavu/0_csvkbrdc.csv"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "wikipedia.fr",
 					"status": ["installed"]
 				},
@@ -3273,7 +3273,7 @@
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "wikipedia.en",
 					"status": ["installed"]
 				},
@@ -3349,7 +3349,7 @@
 				"version": "0.16.9",
 				"language": ["en"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "wikipedia.en",
 					"status": ["installed"]
 				},
@@ -3408,7 +3408,7 @@
 			}
 		},
 		"kb-fra-crfaix": {
-			"zim_install": [{
+			"package_management": [{
 					"name": "wikipedia.fr",
 					"status": ["installed"]
 				},
@@ -3464,7 +3464,7 @@
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "wikipedia.fr",
 					"status": ["installed"]
 				},
@@ -3527,7 +3527,7 @@
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "wikipedia.fr",
 					"status": ["installed"]
 				},
@@ -3563,7 +3563,7 @@
 				"version": "0.16.9",
 				"language": ["es"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "wikipedia.es",
 					"status": ["installed"]
 				},
@@ -3586,7 +3586,7 @@
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "wikipedia.fr",
 					"status": ["installed"]
 				},
@@ -3686,7 +3686,7 @@
 				"version": "0.16.9",
 				"language": ["fr", "en"]
 			},
-			"zim_install": [{
+			"package_management": [{
 					"name": "wikipedia.fr",
 					"status": ["installed"]
 				},

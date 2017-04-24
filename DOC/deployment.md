@@ -96,7 +96,7 @@ Thoses files helps us to automate deployment. If you would like to use one of ou
 -w|--wifi-pwd   Override the default AP wifi password
                 Ex: -w 12ET4690
 
- -a|--action    Type of action : master / custom / rename / update / zim_install / idc_import / kalite_import
+ -a|--action    Type of action : master / custom / rename / update / package_management / idc_import / kalite_import
 
                 Default : master,custom
 
@@ -108,7 +108,7 @@ Thoses files helps us to automate deployment. If you would like to use one of ou
 
      - rename : Rename a device (-n and -t parameter can be redefined) - update : Run a full update on the device (same will be done at each Internet connection)
 
-     - zim_install : Special command that will only run the download/installation of zim files
+     - package_management : Special command that will only run the download/installation of zim files
 
      - idc_import : Special command that will only mass import media in the media-center
 

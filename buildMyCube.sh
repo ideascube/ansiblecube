@@ -179,7 +179,7 @@ function 3rd_party_app()
             \"activated\": \"$MEDIACENTER\",
             \"content_name\": ["\"$CSV_FILE_PATH\""]
         },
-        \"zim_install\": {
+        \"package_management\": {
             \"activated\": \""$ZIM\"",
             \"name\": [\""$ZIM_LIST"\"]
         },
@@ -229,19 +229,19 @@ function help()
                         Default: Open
                         Ex: -w 12ET4690
 
-        -a|--action     Type of action : master / custom / rename / update / zim_install / idc_import / kalite_import
+        -a|--action     Type of action : master / custom / rename / update / package_management / idc_import / kalite_import
                         Default: master,custom
                         Ex: -a rename
 
-                        - master        : Install Ideascube and Kiwix server with strict minimal configuration
-                                          Nginx, Network-manager, Hostapd, DnsMasq, Iptables rules
-                        - custom        : This action will use the -n and -t parameter to configure your device.
-                                          It will also install and configure third party application such as Kalite, Media-center content, Zim files
-                        - rename        : Rename a device (-n and -t parameter can be redefined)
-                        - update        : Run a full update on the device (same will be done at each Internet connection)
-                        - zim_install   : Special command that will only run the download/installation of zim files
-                        - idc_import    : Special command that will only mass import media in the media-center
-                        - kalite_import : Special command that will only import content for Kalite
+                        - master            : Install Ideascube and Kiwix server with strict minimal configuration
+                                              Nginx, Network-manager, Hostapd, DnsMasq, Iptables rules
+                        - custom            : This action will use the -n and -t parameter to configure your device.
+                                              It will also install and configure third party application such as Kalite, Media-center content, Zim files
+                        - rename            : Rename a device (-n and -t parameter can be redefined)
+                        - update            : Run a full update on the device (same will be done at each Internet connection)
+                        - package_management: Special command to manage package : Install, update and remove a package
+                        - idc_import        : Special command that will only mass import media in the media-center
+                        - kalite_import     : Special command that will only import content for Kalite
 
     Few examples :
         [+] Create a master based on kb_bdi_irc Ideascube template
@@ -274,7 +274,7 @@ do
                     CONFIGURE=""
                 ;;
 
-                "update"|"zim_install"|"idc_import"|"kalite_import")
+                "update"|"package_management"|"idc_import"|"kalite_import")
                     LOCK_ACTION=1
                     MANAGMENT=""
                     START=1

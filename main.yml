@@ -7,7 +7,7 @@
       shell: echo default-on >/sys/class/leds/a20-olinuxino-lime2:green:usr/trigger
       when: ansible_architecture == 'armv7l' and ansible_lsb.id == 'Debian'
       ignore_errors: yes
-      tags: [ 'master', 'custom', 'update','idc_import','zim_install','kalite_import' ]
+      tags: [ 'master', 'custom', 'update','idc_import','package_management','kalite_import' ]
 
   roles:
     - set_custom_fact
@@ -16,7 +16,7 @@
     - uwsgi
     - ideascube
     - kiwix
-    - zim_install
+    - package_management
 
     - role: captive_portal
       when: ansible_local.device_list[generic_project_name].portal is defined
@@ -64,4 +64,4 @@
       shell: echo heartbeat >/sys/class/leds/a20-olinuxino-lime2:green:usr/trigger
       when: ansible_architecture == 'armv7l' and ansible_lsb.id == 'Debian'
       ignore_errors: yes
-      tags: [ 'master', 'custom', 'update','idc_import','zim_install','kalite_import' ]
+      tags: [ 'master', 'custom', 'update','idc_import','package_management','kalite_import' ]
