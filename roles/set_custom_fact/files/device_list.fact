@@ -15,55 +15,55 @@
 			},
 			"package_management": [{
 					"name": "ubuntudoc.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2013.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2012.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxgeneva2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "cest-pas-sorcier.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "vikidia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikisource.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikisource.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.wo",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.en",
-					"status": ["installed"]
+					"status": "present"
 				}
 			]
 		},
@@ -83,55 +83,55 @@
 			},
 			"package_management": [{
 					"name": "ubuntudoc.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2013.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2012.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxgeneva2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "cest-pas-sorcier.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "vikidia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikisource.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikisource.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.wo",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.en",
-					"status": ["installed"]
+					"status": "present"
 				}
 			]
 		},
@@ -151,51 +151,51 @@
 			},
 			"package_management": [{
 					"name": "wikistage.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "vikidia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "universcience-tv.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "e-penser.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "deus-ex-silicium.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "cest-pas-sorcier.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiversity.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2013.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2012.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxgeneva2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				}
 			]
 		},
@@ -215,70 +215,70 @@
 			},
 			"package_management": [{
 					"name": "ubuntudoc.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2013.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2012.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxgeneva2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "cest-pas-sorcier.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "vikidia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikisource.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikisource.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.wo",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.en",
-					"status": ["installed"]
+					"status": "present"
 				}
 			]
 		},
 		"idb-fra-cultura": {
 			"package_management": [{
 					"name": "ubuntudoc.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikisource.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "cest-pas-sorcier.fr",
-					"status": ["installed"]
+					"status": "present"
 				}
 			]
 		},
@@ -290,31 +290,31 @@
 			},
 			"package_management": [{
 					"name": "bil-tunisia.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiquote.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikisource.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikibooks.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiversity.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.ar",
-					"status": ["installed"]
+					"status": "present"
 				}
 			]
 		},
@@ -326,15 +326,15 @@
 			},
 			"package_management": [{
 					"name": "vikidia.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.en",
-					"status": ["installed"]
+					"status": "present"
 				}
 			]
 		},
@@ -346,11 +346,11 @@
 			},
 			"package_management": [{
 					"name": "wikipedia.es",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.es",
-					"status": ["installed"]
+					"status": "present"
 				}
 			],
 			"idc_import": {
@@ -366,15 +366,15 @@
 			},
 			"package_management": [{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "vikidia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				}
 			]
 		},
@@ -386,39 +386,39 @@
 			},
 			"package_management": [{
 					"name": "tedtechnology.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedscience.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedglobalissues.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedentertainment.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "teddesign.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedbusiness.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.en",
-					"status": ["installed"]
+					"status": "present"
 				}
 			]
 		},
@@ -430,15 +430,15 @@
 			},
 			"package_management": [{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "vikidia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				}
 			]
 		},
@@ -449,7 +449,7 @@
 			},
 			"package_management": [{
 				"name": "wikipedia.fr",
-				"status": ["installed"]
+				"status": "present"
 			}]
 		},
 		"idb-bdi-musasa": {
@@ -460,15 +460,15 @@
 			},
 			"package_management": [{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "vikidia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				}
 			]
 		},
@@ -480,15 +480,15 @@
 			},
 			"package_management": [{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "vikidia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				}
 			]
 		},
@@ -500,51 +500,51 @@
 			},
 			"package_management": [{
 					"name": "wikistage.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "ubuntudoc.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2013.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2012.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxgeneva2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikisource.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "cest-pas-sorcier.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.wo",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				}
 			]
 		},
@@ -556,15 +556,15 @@
 			},
 			"package_management": [{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "vikidia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				}
 			]
 		},
@@ -580,63 +580,63 @@
 			},
 			"package_management": [{
 					"name": "vikidia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fa",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.fa",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikibooks.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikibooks.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikibooks.fa",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikibooks.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "mullah-piaz-digest.fa",
-					"status": ["installed"]
+					"status": "present"
 				}
 			]
 		},
@@ -648,35 +648,35 @@
 			},
 			"package_management": [{
 					"name": "wikipedia.es",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.es",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikisource.es",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikisource.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "icarito.es",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "sabelotodo.es",
-					"status": ["installed"]
+					"status": "present"
 				}
 			],
 			"idc_import": {
@@ -703,55 +703,55 @@
 			},
 			"package_management": [{
 					"name": "ubuntudoc.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2013.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2012.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxgeneva2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "cest-pas-sorcier.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "vikidia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikisource.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikisource.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.wo",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.en",
-					"status": ["installed"]
+					"status": "present"
 				}
 			]
 		},
@@ -763,31 +763,31 @@
 			},
 			"package_management": [{
 					"name": "w2eu",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.mul",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fa",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.ur",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.ps",
-					"status": ["installed"]
+					"status": "present"
 				}
 			]
 		},
@@ -799,87 +799,87 @@
 			},
 			"package_management": [{
 					"name": "bil-tunisia.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiversity.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiversity.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikibooks.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikibooks.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiquote.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiquote.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedtechnology.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedscience.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedglobalissues.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedentertainment.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "teddesign.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedbusiness.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "vikidia.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikisource.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikisource.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.ar",
-					"status": ["installed"]
+					"status": "present"
 				}
 			],
 			"idc_import": {
@@ -895,95 +895,95 @@
 			},
 			"package_management": [{
 					"name": "w2eu",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "mullah-piaz-digest.fa",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "bil-tunisia.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "les-fondamentaux.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "universcience-tv.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiversity.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiversity.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.ku",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.fa",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedtechnology.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedscience.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedglobalissues.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedentertainment.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "teddesign.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedbusiness.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "cest-pas-sorcier.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "dirtybiology.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fa",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.ku",
-					"status": ["installed"]
+					"status": "present"
 				}
 			]
 		},
@@ -995,21 +995,21 @@
 			},
 			"package_management": [{
 				"name": "gutenberg.fr",
-				"status": ["installed"]
+				"status": "present"
 			}]
 		},
 		"kb-cdf-fra": {
 			"package_management": [{
 					"name": "cest-pas-sorcier.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "vikidia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				}
 			]
 		},
@@ -1029,35 +1029,35 @@
 			},
 			"package_management": [{
 					"name": "universcience-tv.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2013.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2012.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxgeneva2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "cest-pas-sorcier.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				}
 			]
 		},
@@ -1071,51 +1071,51 @@
 
 				{
 					"name": "tedxlausanne2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2013.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2012.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxgeneva2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikibooks.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikisource.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "cest-pas-sorcier.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fa",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				}
 			]
 		},
@@ -1127,35 +1127,35 @@
 			},
 			"package_management": [{
 					"name": "les-fondamentaux.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "universcience-tv.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiversity.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "cest-pas-sorcier.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "dirtybiology.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				}
 			]
 		},
@@ -1167,11 +1167,11 @@
 			},
 			"package_management": [{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				}
 			]
 		},
@@ -1183,51 +1183,51 @@
 			},
 			"package_management": [{
 					"name": "tedxlausanne2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2013.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2012.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxgeneva2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikibooks.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikisource.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "cest-pas-sorcier.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fa",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				}
 			]
 		},
@@ -1239,15 +1239,15 @@
 			},
 			"package_management": [{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "vikidia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				}
 			]
 		},
@@ -1259,79 +1259,79 @@
 			},
 			"package_management": [{
 					"name": "cest-pas-sorcier.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxgeneva2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2012.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2013.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausannechange2013.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "ubuntudoc.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "universcience-tv.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "vikidia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.wo",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikisource.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikisource.fr",
-					"status": ["installed"]
+					"status": "present"
 				}
 			],
 			"portal": {
@@ -1346,67 +1346,67 @@
 			},
 			"package_management": [{
 					"name": "universcience-tv.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "ubuntudoc.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2013.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2012.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxgeneva2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiversity.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikivoyage.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikibooks.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikisource.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "cest-pas-sorcier.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.rn",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				}
 			]
 		},
@@ -1418,55 +1418,55 @@
 			},
 			"package_management": [{
 					"name": "bil-tunisia.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedtechnology.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedscience.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedglobalissues.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedentertainment.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "teddesign.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedbusiness.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiversity.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.en",
-					"status": ["installed"]
+					"status": "present"
 				}
 			]
 		},
@@ -1478,15 +1478,15 @@
 			},
 			"package_management": [{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "vikidia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				}
 			]
 		},
@@ -1498,15 +1498,15 @@
 			},
 			"package_management": [{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "vikidia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				}
 			]
 		},
@@ -1518,15 +1518,15 @@
 			},
 			"package_management": [{
 					"name": "wiktionary.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.en",
-					"status": ["installed"]
+					"status": "present"
 				}
 			]
 		},
@@ -1538,15 +1538,15 @@
 			},
 			"package_management": [{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "vikidia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				}
 			]
 		},
@@ -1558,15 +1558,15 @@
 			},
 			"package_management": [{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "vikidia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				}
 			]
 		},
@@ -1578,15 +1578,15 @@
 			},
 			"package_management": [{
 					"name": "vikidia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				}
 			]
 		},
@@ -1598,131 +1598,131 @@
 			},
 			"package_management": [{
 					"name": "wikipedia.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.el",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fa",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.ps",
-					"status": ["installed"]
+					"status": "present"
 				},
 				"  wiktionary.ar", {
 					"name": "wiktionary.el",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.fa",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.ps",
-					"status": ["installed"]
+					"status": "present"
 				},
 				"  wikiversity.ar", {
 					"name": "wikiversity.el",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiversity.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikibooks.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikibooks.el",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikibooks.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikibooks.fa",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikisource.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikisource.el",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikisource.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikisource.fa",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiquote.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiquote.el",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiquote.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxgeneva2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedbusiness.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "teddesign.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedentertainment.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedglobalissues.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedscience.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedtechnology.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "vikidia.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "bil-tunisia.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "mullah-piaz-digest.fa",
-					"status": ["installed"]
+					"status": "present"
 				}
 			],
 			"idc_import": {
@@ -1733,87 +1733,87 @@
 		"kb-grc-malakasa": {
 			"package_management": [{
 					"name": "wikipedia.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiversity.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiversity.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikibooks.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikibooks.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikisource.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikisource.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiquote.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiquote.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxgeneva2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedbusiness.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "teddesign.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedentertainment.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedglobalissues.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedscience.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedtechnology.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "bil-tunisia.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.mul",
-					"status": ["installed"]
+					"status": "present"
 				}
 			],
 			"idc_import": {
@@ -1837,55 +1837,55 @@
 			},
 			"package_management": [{
 					"name": "ubuntudoc.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2013.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2012.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxgeneva2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "cest-pas-sorcier.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "vikidia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikisource.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikisource.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.wo",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.en",
-					"status": ["installed"]
+					"status": "present"
 				}
 			]
 		},
@@ -1901,135 +1901,135 @@
 			},
 			"package_management": [{
 					"name": "wikipedia.sw",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.sw",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiversity.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiversity.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikibooks.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikibooks.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikisource.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikisource.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedtechnology.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedscience.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedglobalissues.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedentertainment.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "teddesign.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedbusiness.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2013.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2012.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxgeneva2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "cest-pas-sorcier.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "dirtybiology.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.mul",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "universcience-tv.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "vikidia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "vikidia.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "les-fondamentaux.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "e-penser.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "deus-ex-silicium.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "bouquineux.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "biologie-tout-compris.fr",
-					"status": ["installed"]
+					"status": "present"
 				}
 			]
 		},
@@ -2041,27 +2041,27 @@
 			},
 			"package_management": [{
 					"name": "w2eu",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fa",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.de",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.de",
-					"status": ["installed"]
+					"status": "present"
 				}
 			]
 		},
@@ -2073,95 +2073,95 @@
 			},
 			"package_management": [{
 					"name": "wikipedia.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiversity.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiversity.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikibooks.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikibooks.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikisource.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikisource.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiquote.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiquote.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedtechnology.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedscience.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedglobalissues.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedentertainment.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "teddesign.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedbusiness.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "ted-ed.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedmed.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.mul",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "crashcourse.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "vikidia.en",
-					"status": ["installed"]
+					"status": "present"
 				}
 			],
 			"idc_import": {
@@ -2177,59 +2177,59 @@
 			},
 			"package_management": [{
 					"name": "wikipedia.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.es",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.mul",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedbusiness.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "teddesign.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedentertainment.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedglobalissues.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedscience.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedtechnology.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "vikidia.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "bil-tunisia.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "mullah-piaz-digest.fa",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "athens.map",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "world.map",
@@ -2249,63 +2249,63 @@
 			},
 			"package_management": [{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "biologie-tout-compris.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "cest-pas-sorcier.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "bouquineux.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "dirtybiology.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "e-penser.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "les-fondamentaux.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "universcience-tv.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxgeneva2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2012.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2013.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausannechange2013.fr",
-					"status": ["installed"]
+					"status": "present"
 				}
 			],
 			"idc_import": {
@@ -2321,99 +2321,99 @@
 			},
 			"package_management": [{
 					"name": "wikipedia.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiversity.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiversity.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikibooks.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikibooks.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikisource.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikisource.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiquote.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiquote.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedbusiness.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "teddesign.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedentertainment.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedglobalissues.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedscience.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedtechnology.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "ted-ed.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedmed.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.mul",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "vikidia.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "crashcourse.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "phet.en",
-					"status": ["installed"]
+					"status": "present"
 				}
 			],
 			"idc_import": {
@@ -2429,55 +2429,55 @@
 			},
 			"package_management": [{
 					"name": "wikipedia.sw",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "ted-ed.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "biologie-tout-compris.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "cest-pas-sorcier.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "deus-ex-silicium.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "dirtybiology.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "e-penser.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "les-fondamentaux.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "universcience-tv.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.sw",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.fr",
-					"status": ["installed"]
+					"status": "present"
 				}
 			],
 			"idc_import": {
@@ -2493,99 +2493,99 @@
 			},
 			"package_management": [{
 					"name": "wikipedia.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiversity.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiversity.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikibooks.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikibooks.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikisource.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikisource.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiquote.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiquote.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedbusiness.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "teddesign.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedentertainment.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedglobalissues.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedscience.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedtechnology.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "ted-ed.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedmed.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.mul",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "vikidia.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "crashcourse.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "phet.en",
-					"status": ["installed"]
+					"status": "present"
 				}
 			],
 			"idc_import": {
@@ -2601,55 +2601,55 @@
 			},
 			"package_management": [{
 					"name": "gutenberg.es",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.es",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "vikidia.es",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedbusiness.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "teddesign.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedentertainment.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedglobalissues.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedscience.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedtechnology.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "ted-ed.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedmed.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "cinescuela.es",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "colombia.map",
-					"status": ["installed"]
+					"status": "present"
 				}
 			],
 			"idc_import": {
@@ -2666,67 +2666,67 @@
 			},
 			"package_management": [{
 					"name": "wikipedia.sw",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2013.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2012.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxgeneva2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "biologie-tout-compris.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "cest-pas-sorcier.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "deus-ex-silicium.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "dirtybiology.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "e-penser.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "les-fondamentaux.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "universcience-tv.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.sw",
-					"status": ["installed"]
+					"status": "present"
 				}
 			],
 			"idc_import": {
@@ -2742,31 +2742,31 @@
 			},
 			"package_management": [{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikibooks.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiquote.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxgeneva2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "e-penser.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "dirtybiology.fr",
-					"status": ["installed"]
+					"status": "present"
 				}
 			],
 			"idc_import": {
@@ -2782,31 +2782,31 @@
 			},
 			"package_management": [{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikibooks.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiquote.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxgeneva2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "e-penser.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "dirtybiology.fr",
-					"status": ["installed"]
+					"status": "present"
 				}
 			],
 			"idc_import": {
@@ -2817,51 +2817,51 @@
 		"kb-rwa-giz": {
 			"package_management": [{
 					"name": "wikipedia.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikibooks.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiquote.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedtechnology.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedscience.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedglobalissues.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedentertainment.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "teddesign.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedbusiness.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "twentyfourhoursinanewsroom",
-					"status": ["installed"]
+					"status": "present"
 				}
 			],
 			"idc_import": {
@@ -2877,27 +2877,27 @@
 			},
 			"package_management": [{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiquote.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxgeneva2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "e-penser.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "dirtybiology.fr",
-					"status": ["installed"]
+					"status": "present"
 				}
 			],
 			"idc_import": {
@@ -2917,23 +2917,23 @@
 			},
 			"package_management": [{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxgeneva2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				}
 			],
 			"portal": {
@@ -2948,7 +2948,7 @@
 			},
 			"package_management": [{
 				"name": "wikiquote.fa",
-				"status": ["installed"]
+				"status": "present"
 			}],
 			"portal": {
 				"activated": "True"
@@ -2962,7 +2962,7 @@
 			},
 			"package_management": [{
 				"name": "wikiquote.fa",
-				"status": ["installed"]
+				"status": "present"
 			}],
 			"portal": {
 				"activated": "True"
@@ -2976,87 +2976,87 @@
 			},
 			"package_management": [{
 					"name": "wikipedia.fa",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.ckb",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedtechnology.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedscience.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedglobalissues.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedentertainment.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "teddesign.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedbusiness.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "mullah-piaz-digest.fa",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikibooks.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikibooks.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikibooks.fa",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiquote.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiquote.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiquote.fa",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "w2eu",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "athens.map",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "world.map",
-					"status": ["installed"]
+					"status": "present"
 				}
 			],
 			"idc_import": {
@@ -3075,59 +3075,59 @@
 			},
 			"package_management": [{
 					"name": "wikipedia.fa",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.ckb",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "mullah-piaz-digest.fa",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikibooks.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikibooks.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikibooks.fa",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiquote.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiquote.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiquote.fa",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "w2eu",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "athens.map",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "world.map",
-					"status": ["installed"]
+					"status": "present"
 				}
 			],
 			"idc_import": {
@@ -3147,39 +3147,39 @@
 			},
 			"package_management": [{
 					"name": "wikipedia.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikibooks.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikibooks.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiquote.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiquote.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "w2eu",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "athens.map",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "world.map",
-					"status": ["installed"]
+					"status": "present"
 				}
 			],
 			"idc_import": {
@@ -3207,63 +3207,63 @@
 			},
 			"package_management": [{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.sw",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "universcience-tv.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "les-fondamentaux.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "e-penser.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "deus-ex-silicium.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2013.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2012.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxgeneva2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "biologie-tout-compris.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "cest-pas-sorcier.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "dirtybiology.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wiktionary.fr",
-					"status": ["installed"]
+					"status": "present"
 				}
 			]
 		},
@@ -3275,67 +3275,67 @@
 			},
 			"package_management": [{
 					"name": "wikipedia.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.sw",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiversity.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiversity.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikibooks.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikibooks.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "bouquineux.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "universcience-tv.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "les-fondamentaux.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "e-penser.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "dirtybiology.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "cest-pas-sorcier.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "biologie-tout-compris.fr",
-					"status": ["installed"]
+					"status": "present"
 				}
 			],
 			"idc_import": {
@@ -3351,55 +3351,55 @@
 			},
 			"package_management": [{
 					"name": "wikipedia.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikibooks.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikibooks.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiquote.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikiquote.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedtechnology.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedscience.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedglobalissues.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedentertainment.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "teddesign.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedbusiness.en",
-					"status": ["installed"]
+					"status": "present"
 				}
 			],
 			"idc_import": {
@@ -3410,39 +3410,39 @@
 		"kb-fra-crfaix": {
 			"package_management": [{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.cbkzam",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.ru",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.sr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "biologie-tout-compris.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "cest-pas-sorcier.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "dirtybiology.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				}
 			],
 			"idc_import": {
@@ -3466,51 +3466,51 @@
 			},
 			"package_management": [{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "biologie-tout-compris.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "deus-ex-silicium.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "dirtybiology.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "e-penser.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "universcience-tv.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2013.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2012.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxgeneva2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				}
 			],
 			"idc_import": {
@@ -3529,27 +3529,27 @@
 			},
 			"package_management": [{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "universcience-tv.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "les-fondamentaux.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "cest-pas-sorcier.fr",
-					"status": ["installed"]
+					"status": "present"
 				}
 			],
 			"idc_import": {
@@ -3565,11 +3565,11 @@
 			},
 			"package_management": [{
 					"name": "wikipedia.es",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.es",
-					"status": ["installed"]
+					"status": "present"
 				}
 			],
 			"idc_import": {
@@ -3588,91 +3588,91 @@
 			},
 			"package_management": [{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.pl",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "apprentissage-francais-fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "bien-etre-dev-perso-communication-fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "cinema-et-creation-video-fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "citoyennete-et-politique-fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "connaissance-droits-universels-fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "cuisine-et-nutrition-fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "cuisine-pl",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "dessin-et-origami-fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "discriminations-fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "droits-et-demarches-administratives-fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "fictions-divertissements-ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "musique-ar",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "musique-fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "photographie-fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "programmation-informatique-fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "recherche-demploi-fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "sa-relation-au-corps-fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "sport-football-fr",
-					"status": ["installed"]
+					"status": "present"
 				}
 			],
 			"portal": {
@@ -3688,71 +3688,71 @@
 			},
 			"package_management": [{
 					"name": "wikipedia.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "wikipedia.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "gutenberg.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2013.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxlausanne2012.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedxgeneva2014.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedtechnology.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedscience.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedglobalissues.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedentertainment.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "teddesign.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "tedbusiness.en",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "cest-pas-sorcier.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "universcience-tv.fr",
-					"status": ["installed"]
+					"status": "present"
 				},
 				{
 					"name": "e-penser.fr",
-					"status": ["installed"]
+					"status": "present"
 				}
 			],
 			"idc_import": {
