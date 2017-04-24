@@ -1,32 +1,19 @@
 ---
 - include_vars: group_vars/{{ ansible_architecture }}.yml
+  tags: ['custom', 'update','zim_install']
 
 - name: Update ideascube catalog cache before downloading
   become: yes
   become_user: ideascube
   shell: ideascube catalog cache update
+  tags: ['custom', 'update','zim_install']
 
-- name: Upgrade existing ZIM files
+- name: Install, upgrade or remove a package present in device_list.fact
   become: yes
   become_user: ideascube
-  shell: ideascube catalog upgrade
-
-- name: Check the disk usage
-  shell: df -h /
-  register: df
-  changed_when: False
-- name: Disk Usage on /
-  debug: var=df.stdout_lines
-
-- name: Download/install ZIM files from Kiwix catalog then remove from local cache
-  become: yes
-  become_user: ideascube
-  shell: ideascube catalog install {{ item }} && rm -f /var/cache/ideascube/catalog/packages/{{ item }}-*
-  with_items: '{{ (ansible_local.device_list[generic_project_name].zim_install | default (omit)).name | default (omit) }}'
-
-- name: Check the disk usage
-  shell: df -h /
-  register: df
-  changed_when: False
-- name: Disk Usage on /
-  debug: var=df.stdout_lines
+  shell: "{% if 'installed' in item.status %}ideascube catalog install {{ item.name }}
+    {% elif 'updated' in item.status %}ideascube catalog install {{ item.name }} && ideascube catalog update {{ item.name }}
+    {% elif 'removed' in item.status %}ideascube catalog remove {{ item.name }}
+    {% else %}echo '[+] nothing to do'{% endif %}"
+  with_items: '{{ ansible_local.device_list[generic_project_name].zim_install }}'
+  tags: ['custom','update','zim_install']
