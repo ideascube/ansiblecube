@@ -11,9 +11,10 @@
 - name: Install, upgrade or remove a package present in device_list.fact
   become: yes
   become_user: ideascube
-  shell: "{% if 'installed' in item.status %}ideascube catalog install {{ item.name }}
-    {% elif 'updated' in item.status %}ideascube catalog install {{ item.name }} && ideascube catalog update {{ item.name }}
-    {% elif 'removed' in item.status %}ideascube catalog remove {{ item.name }}
+  shell: "{% if 'present' in item.status %}ideascube catalog install {{ item.name }}
+    {% elif 'latest' in item.status %}ideascube catalog install {{ item.name }} && ideascube catalog update {{ item.name }}
+    {% elif 'absent' in item.status %}ideascube catalog remove {{ item.name }}
     {% else %}echo '[+] nothing to do'{% endif %}"
   with_items: '{{ ansible_local.device_list[generic_project_name].package_management }}'
+  ignore_errors: yes
   tags: ['custom','update','package_management']
