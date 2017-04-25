@@ -919,7 +919,8 @@
 		},
 		"portal": {
 			"activated": "True"
-		}
+		},
+		"kiwix_version": "1.0"
 	},
 	"kb-cmr-ani": {
 		"kalite": {
