@@ -11,10 +11,9 @@
 - name: Install, upgrade or remove a package present in device_list.fact
   become: yes
   become_user: ideascube
-  shell: "{% if 'present' in item.status %}ideascube catalog install {{ item.name }}
-    {% elif 'latest' in item.status %}ideascube catalog install {{ item.name }} && ideascube catalog update {{ item.name }}
-    {% elif 'absent' in item.status %}ideascube catalog remove {{ item.name }}
+  shell: "{% if 'present' in item.status %}grep -m 1 -w \"{{ item.name }}\" /var/ideascube/main/catalog/installed.yml || ideascube catalog install {{ item.name }}
+    {% elif 'latest' in item.status %}grep -m 1 -w \"{{ item.name }}\" /var/ideascube/main/catalog/installed.yml || ideascube catalog install {{ item.name }} || ideascube catalog update {{ item.name }}
+    {% elif 'absent' in item.status %}grep -m 1 -w \"{{ item.name }}\" /var/ideascube/main/catalog/installed.yml && ideascube catalog remove {{ item.name }}
     {% else %}echo '[+] nothing to do'{% endif %}"
   with_items: '{{ ansible_local.device_list[generic_project_name].package_management }}'
-  ignore_errors: yes
   tags: ['custom','update','package_management']
