@@ -202,7 +202,6 @@ function 3rd_party_app()
     echo -e "        \"portal\": {
             \"activated\": \"True\"
         },
-        \"kiwix_version\": \"1.0\"
     }
 }" >> /etc/ansible/facts.d/device_list.fact
 
