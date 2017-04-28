@@ -889,7 +889,7 @@
 		"kalite": {
 			"activated": "True",
 			"version": "0.16.9",
-			"language": ["fr"]
+			"language": ["fr","en"]
 		},
 		"zim_install": {
 			"activated": "False",
