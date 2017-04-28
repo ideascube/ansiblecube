@@ -4,8 +4,8 @@ Description=Kalite server
 [Service]
 User=ideascube
 Group=ideascube
-ExecStart=/home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py start --foreground
-ExecStop=/home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py stop
+ExecStart=/home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/bin/kalite start --foreground
+ExecStop=/home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/bin/kalite stop
 Restart=always
 TimeoutStopSec=60
 PIDFile=/var/run/kalite.pid

@@ -3,12 +3,14 @@
   tags: ['custom', 'update']
 
 - name: Ensure kalite is stopped if service exist
-  service: name=kalite state=stopped
+  systemd: name=kalite state=stopped
   ignore_errors: yes
   tags:
     - custom
 
 - name: Create a working dir Kalite
+  become: yes
+  become_user: ideascube
   file: path=/home/{{ username }}/.kalite state=directory
   tags:
     - custom
@@ -21,6 +23,8 @@
     - update
 
 - name: Install Ka-lite
+  become: yes
+  become_user: ideascube
   pip: name=ka-lite
     version={{ ansible_local.device_list[generic_project_name].kalite.version }}
     chdir=/home/{{ username }}/.kalite
@@ -37,7 +41,7 @@
 - name: Create a user admin for kalite
   become: yes
   become_user: ideascube
-  command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py manage setup --username=admin --password=admin --noinput
+  command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/bin/kalite manage setup --username=admin --password=admin --noinput
   tags:
     - custom
 
@@ -69,13 +73,13 @@
   tags: ['custom', 'update']
 
 - name: Enable service kalite
-  service: name=kalite enabled=yes
+  systemd: name=kalite enabled=yes
   tags: ['custom', 'update']
 
 - name: Generate a zone for kalite
   become: yes
   become_user: ideascube
-  command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py manage generate_zone
+  command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/bin/kalite manage generate_zone
   ignore_errors: yes
   tags:
     - custom
@@ -88,7 +92,7 @@
 - name: Run kalite manage setup after upgrade
   become: yes
   become_user: ideascube
-  command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py manage setup --noinput
+  command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/bin/kalite manage setup --noinput
   when: kalite_installation.changed == True
   tags:
     - update
@@ -96,18 +100,18 @@
 - name: Download Kalite language pack
   become: yes
   become_user: ideascube
-  command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py manage retrievecontentpack download {{ item }}
+  command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/bin/kalite manage retrievecontentpack download {{ item }}
   with_items: "{{ (ansible_local.device_list[generic_project_name].kalite | default (omit)).language | default(omit) }}"
   when: kalite_installation.changed == True and cache_machine.state|default(omit) != "present"
   tags: ['custom', 'update']
 
 - name: Start Kalite
-  service: name=kalite state=started
+  systemd: name=kalite state=started
   tags:
     - custom
 
 - name: Restart Kalite
-  service: name=kalite state=restarted
+  systemd: name=kalite state=restarted daemon_reload=yes
   when: kalite_installation.changed == True
   tags:
     - update
@@ -115,14 +119,14 @@
 - name: Perfom a video scan on the device
   become: yes
   become_user: ideascube
-  command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py manage videoscan
+  command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/bin/kalite manage videoscan
   async: 1800
   poll: 0
   when: kalite_installation.changed == True
   tags: ['custom', 'update']
 
 - name: Get ka-lite version
-  shell: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py --version ; echo
+  shell: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/bin/kalite --version ; echo
   register: kalite_newversion
   tags: ['custom', 'update']
 
@@ -131,3 +135,12 @@
 
 - debug: msg="kalite {{ kalite_version }} is now the current version."
   tags: ['custom', 'update']
+
+- name: Upgrade content pack
+  become: yes
+  become_user: ideascube
+  command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/bin/kalite manage contentpackchecker {{item}} --update
+  with_items: "{{ (ansible_local.device_list[generic_project_name].kalite | default (omit)).language | default(omit) }}"
+  when: kalite_version | version_compare('0.17.0', '==') and kalite_installation.changed == True
+  tags:
+    - update
