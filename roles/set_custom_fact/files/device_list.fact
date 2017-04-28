@@ -886,8 +886,13 @@
 		}
 	},
 	"kb-fra-crfaix": {
-		"zim_install": {
+		"kalite": {
 			"activated": "True",
+			"version": "0.16.9",
+			"language": ["fr"]
+		},
+		"zim_install": {
+			"activated": "False",
 			"name": ["wikipedia.fr","wikipedia.ar","wikipedia.cbkzam","wikipedia.ru","wikipedia.sr","biologie-tout-compris.fr","cest-pas-sorcier.fr","dirtybiology.fr","gutenberg.fr"]
 		},
 		"idc_import": {
