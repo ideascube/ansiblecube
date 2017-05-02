@@ -2917,23 +2917,23 @@
 			},
 			"package_management": [{
 					"name": "wikipedia.fr",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "wikipedia.en",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "wikipedia.ar",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "gutenberg.fr",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "tedxgeneva2014.fr",
-					"status": "present"
+					"status": "latest"
 				}
 			],
 			"portal": {
@@ -2948,7 +2948,7 @@
 			},
 			"package_management": [{
 				"name": "wikiquote.fa",
-				"status": "present"
+				"status": "latest"
 			}],
 			"portal": {
 				"activated": "True"
@@ -2962,7 +2962,7 @@
 			},
 			"package_management": [{
 				"name": "wikiquote.fa",
-				"status": "present"
+				"status": "latest"
 			}],
 			"portal": {
 				"activated": "True"
