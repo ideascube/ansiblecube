@@ -94,6 +94,20 @@
   file: path=/etc/apt/apt.conf.d/9999IDEASCUBEISABADBADBOY state=absent
   tags: ['master', 'custom', 'update']
 
+- name: Add router_cache to plugin uwsgi list
+  lineinfile: dest=/etc/uwsgi/apps-enabled/ideascube.ini
+              regexp='plugins'
+              line='plugins         = python3,router_cache'
+              state=present
+  tags:
+    - update
+
+- name: Create and set up a cache for uwsgi
+  blockinfile: block="{{ lookup('file', 'uwsgi-cache.ini') }}" dest="/etc/uwsgi/apps-enabled/ideascube.ini"
+  notify: restart uwsgi
+  tags:
+    - update
+
 - name: Enable cards on homepage for ideascube upgrading from < 0.13.0
   become: yes
   become_user: ideascube
