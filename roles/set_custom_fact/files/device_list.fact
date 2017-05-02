@@ -763,7 +763,7 @@
 			},
 			"package_management": [{
 					"name": "w2eu",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "gutenberg.mul",
@@ -895,7 +895,7 @@
 			},
 			"package_management": [{
 					"name": "w2eu",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "mullah-piaz-digest.fa",
@@ -2041,7 +2041,7 @@
 			},
 			"package_management": [{
 					"name": "w2eu",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "wikipedia.en",
@@ -3048,7 +3048,7 @@
 				},
 				{
 					"name": "w2eu",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "athens.map",
@@ -3119,7 +3119,7 @@
 				},
 				{
 					"name": "w2eu",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "athens.map",
@@ -3171,7 +3171,7 @@
 				},
 				{
 					"name": "w2eu",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "athens.map",
