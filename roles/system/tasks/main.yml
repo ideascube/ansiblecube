@@ -132,7 +132,7 @@
   tags: ['custom','update']
 
 - name: Upgrade pip to the latest version
-  pip: name=pip state=latest
+  pip: name=pip version=9.0.1
   tags: ['master', 'custom','update']
 
 - name: Check for Ralink Wireless Network Adapter
