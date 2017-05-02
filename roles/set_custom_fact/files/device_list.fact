@@ -3057,6 +3057,10 @@
 				{
 					"name": "world.map",
 					"status": "present"
+				},
+				{
+					"name": "help.unhcr.org",
+					"status": "latest"
 				}
 			],
 			"idc_import": {
