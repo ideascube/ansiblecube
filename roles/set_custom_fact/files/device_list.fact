@@ -3408,6 +3408,11 @@
 			}
 		},
 		"kb-fra-crfaix": {
+			"kalite": {
+				"activated": "True",
+				"version": "0.16.9",
+				"language": ["fr","en"]
+			},
 			"package_management": [{
 					"name": "wikipedia.fr",
 					"status": "present"
