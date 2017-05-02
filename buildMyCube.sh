@@ -13,8 +13,8 @@ KALITE=False
 KALITE_LANG=""
 MEDIACENTER=False
 CSV_FILE_PATH=""
-ZIM=False
-ZIM_LIST=""
+PACKAGES_MANAGEMENT=False
+PACKAGES_LIST=""
 
 # configuration
 ANSIBLE_ETC="/etc/ansible/facts.d/"
@@ -113,7 +113,7 @@ function 3rd_party_app()
     CONFIGURE="own_config_file=True"
     KALITE=False
     MEDIACENTER=False
-    ZIM=False
+    PACKAGES_MANAGEMENT=False
 
     mkdir -p "$ANSIBLE_ETC"
 
@@ -150,7 +150,7 @@ function 3rd_party_app()
     fi
 
     if (dialog  --yesno "Do you want to download offline packages ?" 5 60) then
-        ZIM=True
+        PACKAGES_MANAGEMENT=True
 
         wget -O - http://catalog.ideascube.org/kiwix.yml > /tmp/kiwix.yml 2> /dev/null
         wget -O - http://catalog.ideascube.org/static-sites.yml >> /tmp/kiwix.yml 2> /dev/null
@@ -162,9 +162,7 @@ function 3rd_party_app()
                 --separate-output \
                 --ok-label "Add" \
                 --checklist "Select packages to install :" 100 100 40)
-        choices=$("${cmd[@]}" ${zim_files})
-
-        ZIM_LIST=`echo $choices | sed 's/ /","/g'`
+        declare -a PACKAGES_LIST=($("${cmd[@]}" ${zim_files}))
     fi
 
     echo -e "
@@ -178,17 +176,35 @@ function 3rd_party_app()
         \"idc_import\": {
             \"activated\": \"$MEDIACENTER\",
             \"content_name\": ["\"$CSV_FILE_PATH\""]
-        },
-        \"zim_install\": {
-            \"activated\": \""$ZIM\"",
-            \"name\": [\""$ZIM_LIST"\"]
-        },
-        \"portal\": {
+        }," > /etc/ansible/facts.d/device_list.fact
+
+    if [ $PACKAGES_MANAGEMENT == "True" ]; then
+
+        echo -e "        \"package_management\":[{
+                    \"name\": \"${PACKAGES_LIST[0]}\",
+                    \"status\": \"present\"
+                " >> /etc/ansible/facts.d/device_list.fact
+
+        unset PACKAGES_LIST[0]
+        for PACKAGE in ${PACKAGES_LIST[@]}; do
+        echo -e "                },
+                {
+                    \"name\": \"$PACKAGE\",
+                    \"status\": \"present\"
+                " >> /etc/ansible/facts.d/device_list.fact
+        done
+
+        echo -e "                }
+        ]," >> /etc/ansible/facts.d/device_list.fact
+
+    fi
+
+    echo -e "        \"portal\": {
             \"activated\": \"True\"
-        }
+        },
     }
-}
-" > /etc/ansible/facts.d/device_list.fact
+}" >> /etc/ansible/facts.d/device_list.fact
+
         hostname $FULL_NAME
 }
 
@@ -229,19 +245,19 @@ function help()
                         Default: Open
                         Ex: -w 12ET4690
 
-        -a|--action     Type of action : master / custom / rename / update / zim_install / idc_import / kalite_import
+        -a|--action     Type of action : master / custom / rename / update / package_management / idc_import / kalite_import
                         Default: master,custom
                         Ex: -a rename
 
-                        - master        : Install Ideascube and Kiwix server with strict minimal configuration
-                                          Nginx, Network-manager, Hostapd, DnsMasq, Iptables rules
-                        - custom        : This action will use the -n and -t parameter to configure your device.
-                                          It will also install and configure third party application such as Kalite, Media-center content, Zim files
-                        - rename        : Rename a device (-n and -t parameter can be redefined)
-                        - update        : Run a full update on the device (same will be done at each Internet connection)
-                        - zim_install   : Special command that will only run the download/installation of zim files
-                        - idc_import    : Special command that will only mass import media in the media-center
-                        - kalite_import : Special command that will only import content for Kalite
+                        - master            : Install Ideascube and Kiwix server with strict minimal configuration
+                                              Nginx, Network-manager, Hostapd, DnsMasq, Iptables rules
+                        - custom            : This action will use the -n and -t parameter to configure your device.
+                                              It will also install and configure third party application such as Kalite, Media-center content, Zim files
+                        - rename            : Rename a device (-n and -t parameter can be redefined)
+                        - update            : Run a full update on the device (same will be done at each Internet connection)
+                        - package_management: Special command to manage package : Install, update and remove a package
+                        - idc_import        : Special command that will only mass import media in the media-center
+                        - kalite_import     : Special command that will only import content for Kalite
 
     Few examples :
         [+] Create a master based on kb_bdi_irc Ideascube template
@@ -261,6 +277,20 @@ internet_check
 
 [ $# -ne 0 ] || help
 
+if [[ -e /etc/ansible/facts.d/device_list.fact ]]; then
+    echo -n "[+] Local configuration file exist, would you like to delete it ? (y/n)" >&2
+    read response
+
+    case $response in
+        [OoYy]*)
+            rm -f /etc/ansible/facts.d/device_list.fact /tmp/device_list.fact /etc/ansible/facts.d/installed_software.fact
+        ;;
+        *)
+            cp /etc/ansible/facts.d/device_list.fact /tmp/device_list.fact
+        ;;
+    esac
+fi
+
 # Get argument from command line
 while [[ $# -gt 0 ]]
 do
@@ -274,7 +304,7 @@ do
                     CONFIGURE=""
                 ;;
 
-                "update"|"zim_install"|"idc_import"|"kalite_import")
+                "update"|"package_management"|"idc_import"|"kalite_import")
                     LOCK_ACTION=1
                     MANAGMENT=""
                     START=1
@@ -315,7 +345,7 @@ do
             NAME="ideascube_project_name=$2"
             FULL_NAME=`echo "$2" | sed 's/_/-/g'`
 
-            wget https://raw.githubusercontent.com/ideascube/ansiblecube/$BRANCH/roles/set_custom_fact/files/device_list.fact -O /tmp/device_list.fact > /dev/null 2>&1
+            [[ -e /tmp/device_list.fact ]] || wget https://raw.githubusercontent.com/ideascube/ansiblecube/$BRANCH/roles/set_custom_fact/files/device_list.fact -O /tmp/device_list.fact > /dev/null 2>&1
 
             if [[ -z `grep -w "$FULL_NAME" /tmp/device_list.fact` ]] && [ "$TAGS" != "--tags master" ]
             then
