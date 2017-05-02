@@ -2177,63 +2177,63 @@
 			},
 			"package_management": [{
 					"name": "wikipedia.en",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "wikipedia.ar",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "wikipedia.es",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "gutenberg.mul",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "tedbusiness.en",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "teddesign.en",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "tedentertainment.en",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "tedglobalissues.en",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "tedscience.en",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "tedtechnology.en",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "vikidia.en",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "bil-tunisia.ar",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "mullah-piaz-digest.fa",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "athens.map",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "world.map",
-					"status": ["false "]
+					"status": "latest"
 				}
 			],
 			"idc_import": {
