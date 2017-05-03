@@ -12,8 +12,8 @@
   become: yes
   become_user: ideascube
   shell: "{% if 'present' in item.status %}grep -m 1 -w \"{{ item.name }}\" /var/ideascube/main/catalog/installed.yml || ideascube catalog install {{ item.name }}
-    {% elif 'latest' in item.status %}grep -m 1 -w \"{{ item.name }}\" /var/ideascube/main/catalog/installed.yml || ideascube catalog install {{ item.name }} || ideascube catalog update {{ item.name }}
+    {% elif 'latest' in item.status %}grep -m 1 -w \"{{ item.name }}\" /var/ideascube/main/catalog/installed.yml || ideascube catalog install {{ item.name }} || ideascube catalog update {{ item.name }} && ideascube catalog cache clear
     {% elif 'absent' in item.status %}grep -m 1 -w \"{{ item.name }}\" /var/ideascube/main/catalog/installed.yml && ideascube catalog remove {{ item.name }}
     {% else %}echo '[+] nothing to do'{% endif %}"
-  with_items: '{{ ansible_local.device_list[generic_project_name].package_management }}'
+  with_items: '{{ ansible_local.device_list[generic_project_name].package_management | default(omit) }}'
   tags: ['custom','update','package_management']
