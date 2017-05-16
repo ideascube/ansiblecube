@@ -3616,81 +3616,85 @@
 					"name": "wikipedia.pl",
 					"status": "present"
 				},
+                                {
+                                        "name": "wikipedia.en",
+                                        "status": "present"
+                                },
 				{
 					"name": "gutenberg.fr",
 					"status": "present"
 				},
 				{
 					"name": "apprentissage-francais-fr",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "bien-etre-dev-perso-communication-fr",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "cinema-et-creation-video-fr",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "citoyennete-et-politique-fr",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "connaissance-droits-universels-fr",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "cuisine-et-nutrition-fr",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "cuisine-pl",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "dessin-et-origami-fr",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "discriminations-fr",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "droits-et-demarches-administratives-fr",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "fictions-divertissements-ar",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "musique-ar",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "musique-fr",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "photographie-fr",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "programmation-informatique-fr",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "recherche-demploi-fr",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "sa-relation-au-corps-fr",
-					"status": "present"
+					"status": "latest"
 				},
 				{
 					"name": "sport-football-fr",
-					"status": "present"
+					"status": "latest"
 				}
 			],
 			"portal": {
