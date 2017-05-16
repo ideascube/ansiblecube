@@ -201,7 +201,7 @@ function 3rd_party_app()
 
     echo -e "        \"portal\": {
             \"activated\": \"True\"
-        },
+        }
     }
 }" >> /etc/ansible/facts.d/device_list.fact
 
