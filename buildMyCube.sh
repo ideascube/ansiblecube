@@ -284,6 +284,7 @@ if [[ -e /etc/ansible/facts.d/device_list.fact ]]; then
     case $response in
         [OoYy]*)
             rm -f /etc/ansible/facts.d/device_list.fact /tmp/device_list.fact /etc/ansible/facts.d/installed_software.fact
+            touch /etc/ansible/facts.d/installed_software.fact
         ;;
         *)
             cp /etc/ansible/facts.d/device_list.fact /tmp/device_list.fact
