@@ -365,15 +365,23 @@
 				"language": ["fr"]
 			},
 			"package_management": [{
-					"name": "gutenberg.fr",
+					"name": "gutenberg.mul",
 					"status": "present"
 				},
 				{
-					"name": "vikidia.fr",
+					"name": "wikipedia.en",
 					"status": "present"
 				},
 				{
-					"name": "wikipedia.fr",
+					"name": "wikipedia.ar",
+					"status": "present"
+				},
+				{
+					"name": "wikipedia.fa",
+					"status": "present"
+				},
+				{
+					"name": "wikipedia.ps",
 					"status": "present"
 				},
 				{
@@ -384,7 +392,10 @@
 					"name": "w2eu",
 					"status": "latest"
 				}
-			]
+			],
+			"portal": {
+				"activated": "True"
+			}
 		},
 		"kb-usa-p2pu": {
 			"kalite": {
