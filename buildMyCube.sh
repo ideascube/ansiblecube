@@ -201,7 +201,7 @@ function 3rd_party_app()
 
     echo -e "        \"portal\": {
             \"activated\": \"True\"
-        },
+        }
     }
 }" >> /etc/ansible/facts.d/device_list.fact
 
@@ -283,7 +283,8 @@ if [[ -e /etc/ansible/facts.d/device_list.fact ]]; then
 
     case $response in
         [OoYy]*)
-            rm -f /etc/ansible/facts.d/device_list.fact /tmp/device_list.fact /etc/ansible/facts.d/installed_software.fact
+            rm -f /etc/firstStart.csv /etc/ansible/facts.d/device_list.fact /tmp/device_list.fact /etc/ansible/facts.d/installed_software.fact
+            touch /etc/ansible/facts.d/installed_software.fact
         ;;
         *)
             cp /etc/ansible/facts.d/device_list.fact /tmp/device_list.fact
@@ -409,8 +410,8 @@ if [[ "$START" = "1" ]]; then
     [ -d ${ANSIBLECUBE_PATH} ] || clone_ansiblecube
 
     echo "$ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars \"$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE $WIFIPWD $GIT_BRANCH\" $TAGS" >> /var/lib/ansible/ansible-pull-cmd-line.sh
-    dialog --keep-window --begin 2 20  --infobox "[+] Command line stored in /var/lib/ansible/ansible-pull-cmd-line.sh\n\n$ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars \"$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE $WIFIPWD $GIT_BRANCH\" $TAGS" 8 150 \
-       --and-widget  --begin 11 20 --title "[+] Log in /var/log/ansible-pull.log" --tailbox    /var/log/ansible-pull.log  35 150 &
+    echo -e "[+] Command line stored in /var/lib/ansible/ansible-pull-cmd-line.sh"
+    echo -e "[+] Launch ansiblepull with following arguments: \n$ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars \"$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE $WIFIPWD $GIT_BRANCH\" $TAGS"
 
     $ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars "$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE $WIFIPWD $GIT_BRANCH" $TAGS > /var/log/ansible-pull.log 2>&1
 

@@ -213,7 +213,7 @@
   when: firststart.stat.exists == False or firststart is undefined
   tags: ['master', 'custom','rename']
 
-- name: If /etc/firststart.csv exist then hostname is already defined
+- name: If /etc/firstStart.csv exist then hostname is already defined
   set_fact: idc_uniq_device_name="{{ ansible_hostname }}"
   when: firststart.stat.exists is defined and firststart.stat.exists or firststart is undefined
   tags: ['custom','rename']

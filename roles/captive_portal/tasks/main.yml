@@ -50,6 +50,7 @@
 - name: Start dnsmasq-spoof.conf file by default - forcing short TTL
   lineinfile: 
     dest: /etc/default/dnsmasq
+    regexp: 'DNSMASQ_OPTS='
     line: 'DNSMASQ_OPTS="--conf-file=/etc/dnsmasq-spoof.conf --local-ttl=600"'
     state: present
   notify: restart dnsmasq
