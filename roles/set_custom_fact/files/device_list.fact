@@ -3636,8 +3636,8 @@
 					"status": "present"
 				},
                                 {
-                                        "name": "wikipedia.en",
-                                        "status": "present"
+					"name": "wikipedia.en",
+					"status": "present"
                                 },
 				{
 					"name": "gutenberg.fr",
@@ -3713,6 +3713,30 @@
 				},
 				{
 					"name": "sport-football-fr",
+					"status": "latest"
+				},
+				{
+					"name": "monter-son-projet-professionnel-fr",
+					"status": "latest"
+				},
+				{
+					"name": "audiobooks-et-fictions-sonores-fr",
+					"status": "latest"
+				},
+				{
+					"name": "films-fr",
+					"status": "latest"
+				},
+				{
+					"name": "jardinage-et-agriculture-fr",
+					"status": "latest"
+				},
+				{
+					"name": "hyigene-de-base-fr",
+					"status": "latest"
+				},
+				{
+					"name": "prevention-addictions-fr",
 					"status": "latest"
 				}
 			],
