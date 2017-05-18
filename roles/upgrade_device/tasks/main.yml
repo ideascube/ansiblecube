@@ -61,6 +61,12 @@
             option=kalite
             value={{ kalite_version.stdout }}
 
+- name: Save Kiwix version number
+  ini_file: dest=/etc/ansible/facts.d/installed_software.fact
+            section=software
+            option=kiwix
+            value=0.9
+
 - name: Register if the device is managed by BSF or not
   ini_file: dest=/etc/ansible/facts.d/installed_software.fact
     section=management
