@@ -411,6 +411,9 @@ if [[ "$START" = "1" ]]; then
     [ -x /usr/local/bin/ansible ] || install_ansible
     [ -d ${ANSIBLECUBE_PATH} ] || clone_ansiblecube
 
+    echo "Checking file access" >> /var/log/ansible-pull.log
+    [ $? -ne 0 ] && echo "No space left to write logs or permission problem, exiting." && exit 1
+
     echo "$ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars \"$MANAGEMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE $WIFIPWD $GIT_BRANCH\" $TAGS" >> /var/lib/ansible/ansible-pull-cmd-line.sh
     echo -e "[+] Command line stored in /var/lib/ansible/ansible-pull-cmd-line.sh"
     echo -e "[+] Launch ansiblepull with following arguments: \n$ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars \"$MANAGEMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE $WIFIPWD $GIT_BRANCH\" $TAGS"
