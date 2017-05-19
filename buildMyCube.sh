@@ -270,9 +270,10 @@ function help()
 }
 
 # main
-internet_check
 
 [ $# -ne 0 ] || help
+
+internet_check
 
 if [[ -e /etc/ansible/facts.d/device_list.fact ]]; then
     echo -n "[+] Local configuration file exist, would you like to delete it ? (y/n)" >&2
