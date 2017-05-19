@@ -7,11 +7,11 @@ if [[ "$IF" == "eth0" || "$IF" == "wlan1" ]] && [ -z "$PROC"  ]
 then
     case "$STATUS" in
         up)
-			/home/ideascube/hdw_info.sh
+            /home/ideascube/hdw_info.sh
             dpkg -l > /var/log/apt/dpkg.list
             pip freeze > /var/log/pip.freeze
-
-			rsync -azP /var/log/nginx/* /var/log/kern.log /var/log/messages /var/log/syslog* /var/log/ansible-pull.log /tmp/hdw_info.txt /var/log/ansible-pull.log* /var/log/apt/dpkg.list* /var/log/pip.freeze*  {{ central_server }}:/ansible/logs/{{ ansible_hostname }}/
+            iptables-save > /var/log/iptables.rules
+            rsync -azP /var/log/nginx/* /var/log/kern.log /var/log/messages /var/log/syslog* /var/log/ansible-pull.log /tmp/hdw_info.txt /var/log/ansible-pull.log* /var/log/apt/dpkg.list* /var/log/pip.freeze* /var/log/iptables.rules {{ central_server }}:/ansible/logs/{{ ansible_hostname }}/
         ;;
         *)
         ;;
