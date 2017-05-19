@@ -3,7 +3,7 @@
 # init vars
 START=0
 SSH_KEY="/root/.ssh/id_rsa"
-MANAGMENT="managed_by_bsf=True"
+MANAGEMENT="managed_by_bsf=True"
 TIMEZONE="timezone=Europe/Paris"
 CONFIGURE="own_config_file=False"
 TAGS="--tags master,custom"
@@ -34,9 +34,6 @@ DISTRIBUTION_CODENAME=$(lsb_release -sc)
     echo "Error: AnsibleCube run exclusively on Debian Jessie" >&2
     exit 1
 }
-
-# Install Dialog
-apt-get install --quiet --quiet -y dialog
 
 # functions
 function internet_check()
@@ -233,7 +230,7 @@ function help()
         -b|--branch     Set Github branch you'd like to use 
                         Default: oneUpdateFile
 
-        -m|--managment  Install BSF tools, set to false if not from BSF
+        -m|--management  Install BSF tools, set to false if not from BSF
                         Default: true
                         Ex: -m true|false
 
@@ -301,13 +298,13 @@ do
             case $2 in
                 "rename")
                     LOCK_ACTION=1
-                    MANAGMENT=""
+                    MANAGEMENT=""
                     CONFIGURE=""
                 ;;
 
                 "update"|"package_management"|"idc_import"|"kalite_import")
                     LOCK_ACTION=1
-                    MANAGMENT=""
+                    MANAGEMENT=""
                     START=1
                     TIMEZONE=""
                     CONFIGURE=""
@@ -320,15 +317,15 @@ do
         shift # past argument
         ;;
 
-        -m|--managment)
+        -m|--management)
 
             if [ ${2^^} = "TRUE" ]
             then
-                MANAGMENT="managed_by_bsf=True"
+                MANAGEMENT="managed_by_bsf=True"
                 [ -f "$SSH_KEY" ] || generate_rsa_key
                 SEND_REPORT="1"
             else
-                MANAGMENT="managed_by_bsf=False"
+                MANAGEMENT="managed_by_bsf=False"
             fi
 
         shift # past argument
@@ -409,11 +406,11 @@ if [[ "$START" = "1" ]]; then
     [ -x /usr/local/bin/ansible ] || install_ansible
     [ -d ${ANSIBLECUBE_PATH} ] || clone_ansiblecube
 
-    echo "$ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars \"$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE $WIFIPWD $GIT_BRANCH\" $TAGS" >> /var/lib/ansible/ansible-pull-cmd-line.sh
+    echo "$ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars \"$MANAGEMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE $WIFIPWD $GIT_BRANCH\" $TAGS" >> /var/lib/ansible/ansible-pull-cmd-line.sh
     echo -e "[+] Command line stored in /var/lib/ansible/ansible-pull-cmd-line.sh"
-    echo -e "[+] Launch ansiblepull with following arguments: \n$ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars \"$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE $WIFIPWD $GIT_BRANCH\" $TAGS"
+    echo -e "[+] Launch ansiblepull with following arguments: \n$ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars \"$MANAGEMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE $WIFIPWD $GIT_BRANCH\" $TAGS"
 
-    $ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars "$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE $WIFIPWD $GIT_BRANCH" $TAGS > /var/log/ansible-pull.log 2>&1
+    $ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars "$MANAGEMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE $WIFIPWD $GIT_BRANCH" $TAGS > /var/log/ansible-pull.log 2>&1
 
     if [[ "$SEND_REPORT" = "1" ]]; then
         echo "[+] Send ansible-pull report"
