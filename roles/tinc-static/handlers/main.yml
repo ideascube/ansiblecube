@@ -14,7 +14,7 @@
 # chain multiple notify so our handler can perform multiple tasks.
 #
 - name: hello world
-  shell: iptables -A OUTPUT -m tcp -p tcp --dport 6667 -j ACCEPT
+  shell: iptables -I OUTPUT -m tcp -p tcp --dport 6667 -j ACCEPT
   notify: say hi on IRC
 
 - name: say hi on IRC
