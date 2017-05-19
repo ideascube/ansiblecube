@@ -269,6 +269,13 @@ function help()
     exit 0;
 }
 
+function go_manage()
+{
+    [ -f "$SSH_KEY" ] || generate_rsa_key
+    SEND_REPORT="1"
+    return $SEND_REPORT
+}
+
 # main
 
 [ $# -ne 0 ] || help
@@ -320,14 +327,7 @@ do
 
         -m|--management)
 
-            if [ ${2^^} = "TRUE" ]
-            then
-                MANAGEMENT="managed_by_bsf=True"
-                [ -f "$SSH_KEY" ] || generate_rsa_key
-                SEND_REPORT="1"
-            else
-                MANAGEMENT="managed_by_bsf=False"
-            fi
+            [ ${2^^} = "FALSE" ] && MANAGEMENT="managed_by_bsf=False"
 
         shift # past argument
         ;;
@@ -399,6 +399,8 @@ if [[ -x /usr/bin/ideascube && "$LOCK_ACTION" = "0" ]]
 then
     TAGS="--tags custom"
 fi
+
+[ "$MANAGEMENT" == managed_by_bsf=True ] && go_manage
 
 if [[ "$START" = "1" ]]; then
 
