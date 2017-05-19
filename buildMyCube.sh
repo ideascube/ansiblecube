@@ -30,7 +30,7 @@ DISTRIBUTION_CODENAME=$(lsb_release -sc)
     exit 1
 }
 
-[ "$DISTRIBUTION_CODENAME" == jessie ] || {
+[ "$DISTRIBUTION_CODENAME" == woody ] || {
     echo "Error: AnsibleCube run exclusively on Debian Jessie" >&2
     exit 1
 }
