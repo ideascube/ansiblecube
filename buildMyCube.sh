@@ -346,7 +346,9 @@ do
 
             [[ -e /tmp/device_list.fact ]] || wget https://raw.githubusercontent.com/ideascube/ansiblecube/$BRANCH/roles/set_custom_fact/files/device_list.fact -O /tmp/device_list.fact > /dev/null 2>&1
 
-            if [[ -z `grep -w "$FULL_NAME" /tmp/device_list.fact` ]] && [ "$TAGS" != "--tags master" ]
+            is_present=$(grep -w "$FULL_NAME" /tmp/device_list.fact)
+
+            if [[ -z "$is_present" ]] && [ "$TAGS" != "--tags master" ]
             then
                 CONF="1"
             fi
