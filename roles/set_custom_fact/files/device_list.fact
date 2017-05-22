@@ -2960,10 +2960,8 @@
 			}
 		},
 		"kb-bsf-scaleway": {
-			"kalite": {
-				"activated": "True",
-				"version": "0.16.9",
-				"language": ["fr"]
+			"kolibri": {
+				"activated": "True"
 			},
 			"package_management": [{
 				"name": "wikiquote.fa",
