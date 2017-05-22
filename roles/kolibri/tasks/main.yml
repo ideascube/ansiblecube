@@ -1,38 +1,41 @@
 ---
-- hosts: 127.0.0.1
-# Don't forget to add "localhost ansible_connection=local" to /etc/ansible/hosts + install recent version of ansible from : http://docs.ansible.com/ansible/intro_installation.html#latest-releases-via-apt-debian. Finally, run ansible-playbook kolibri.yml
-  tasks: 
-    - name: make sure ideascube user exists
-      user: name=ideascube shell=/bin/bash
+- name: Install necessary packages
+  apt: name={{ item }} state=latest
+  with_items:
+    - python-virtualenv
+    - python-pip
+   
+- name: Create a working dir kolibri
+  become: yes
+  become_user: ideascube
+  file: path=/home/ideascube/.kolibri state=directory
 
-    - name: Update APT cache if older than 1 hour
-      apt: update_cache=yes cache_valid_time=3600
+- name: Install Kolibri in virtualenv
+  become: yes
+  become_user: ideascube
+  pip: 
+    name=kolibri
+    chdir=/home/ideascube/.kolibri
+    virtualenv_command=/usr/bin/virtualenv
+    virtualenv=/home/ideascube/.kolibri/env
 
-    - name: Install necessary packages
-      apt: name={{ item }} state=latest
-      with_items:
-        - python-virtualenv
-        - python-pip
-       
-    - name: Create a working dir kolibri
-      become: yes
-      become_user: ideascube
-      file: path=/home/ideascube/.kolibri state=directory
+- name: Include task needed when using an external hard drive
+  include: ext_hdd.yml
+  when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l")
+    and sda1.stat.isblk == True
+  tags:
+    - custom
 
-    - name: Install Kolibri in virtualenv
-      become: yes
-      become_user: ideascube
-      pip: 
-        name=kolibri
-        chdir=/home/ideascube/.kolibri
-        virtualenv_command=/usr/bin/virtualenv
-        virtualenv=/home/ideascube/.kolibri/env
+- name: Copy nginx vhost
+  template: src=kolibri.vhost.j2 dest=/etc/nginx/sites-available/kolibri
+  tags:
+    - custom
 
-    - name: Copy systemd startup file
-      copy: src=kolibri.service dest=/etc/systemd/system/kolibri.service
+- name: Copy systemd startup file
+  copy: src=kolibri.service dest=/etc/systemd/system/kolibri.service
 
-    - name: Enable service kolibri
-      service: name=kolibri enabled=yes
+- name: Enable service kolibri
+  service: name=kolibri enabled=yes
 
-    - name: Start Kolibri
-      service: name=kolibri state=started
+- name: Start Kolibri
+  service: name=kolibri state=started
