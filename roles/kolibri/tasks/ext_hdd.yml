@@ -3,8 +3,8 @@
   file: 
     path: /media/hdd/KolibriContent/
     state: directory
-    owner: {{ username }}
-    group: {{ username }}
+    owner: "{{ username }}"
+    group: "{{ username }}"
     recurse: yes
 
 - name: Remove old content folder
