@@ -1,14 +1,10 @@
 ---
-- name: Install necessary packages
-  apt: name={{ item }} state=latest
-  with_items:
-    - python-virtualenv
-    - python-pip
-   
 - name: Create a working dir kolibri
   become: yes
   become_user: ideascube
   file: path=/home/ideascube/.kolibri state=directory
+  tags:
+    - custom
 
 - name: Install Kolibri in virtualenv
   become: yes
@@ -18,6 +14,8 @@
     chdir=/home/ideascube/.kolibri
     virtualenv_command=/usr/bin/virtualenv
     virtualenv=/home/ideascube/.kolibri/env
+  tags:
+    - custom
 
 - name: Include task needed when using an external hard drive
   include: ext_hdd.yml
@@ -33,9 +31,16 @@
 
 - name: Copy systemd startup file
   copy: src=kolibri.service dest=/etc/systemd/system/kolibri.service
+  tags:
+    - custom
 
 - name: Enable service kolibri
   service: name=kolibri enabled=yes
+  tags:
+    - custom
 
 - name: Start Kolibri
   service: name=kolibri state=started
+  tags:
+    - custom
+
