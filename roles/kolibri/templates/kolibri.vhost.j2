@@ -1,0 +1,31 @@
+# NGINX configuration for Kolibri
+
+server {
+
+    listen 80;
+    server_name {{kolibri_server_name}};
+
+    # Default value, overwritten in nginx.d
+    set $kolibri_home /home/ideascube/.kolibri/;
+#    include /etc/ka-lite/nginx.d/*.conf;
+
+    location / {
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Scheme $scheme;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_pass http://localhost:8000;
+        #error_page 502 = @502;
+    }
+
+#    location @502 {
+#        types { }
+#        default_type "text/html";
+#        return 502 "
+#        <BR>
+#        <H1>KA-Lite might be busy - wait a few moments and then reload this page
+#        <BR><BR>
+#        <H2>If KA-Lite is still busy, get help from the system administrator
+#        <H3>Error code: nginx 502 Bad Gateway (maybe the KA-Lite webserver is not working correctly)";
+#    }
+#
+}
