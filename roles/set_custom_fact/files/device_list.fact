@@ -3828,5 +3828,125 @@
 				"activated": "True"
 			},
 			"kiwix_version": "1.0"
+		},
+                "idb-bdi-mutambara": {
+                        "kalite": {
+                                "activated": "True",
+                                "version": "0.16.9",
+                                "language": ["fr"]
+                        },
+                        "package_management": [{
+                                        "name": "wikipedia.fr",
+                                        "status": "present"
+                                },
+                                {
+                                        "name": "wikipedia.en",
+                                        "status": "present"
+                                },
+                                {
+                                        "name": "gutenberg.fr",
+                                        "status": "present"
+                                },
+                                {
+                                        "name": "gutenberg.en",
+                                        "status": "present"
+				},
+				{
+                                        "name": "e-penser.fr",
+                                        "status": "present"
+                                },
+				{
+                                        "name": "universcience-tv.fr",
+                                        "status": "present"
+                                },
+				{
+                                        "name": "tedxgeneva2014.fr",
+                                        "status": "present"
+                                },
+				{
+                                        "name": "les-fondamentaux.fr",
+                                        "status": "present"
+                                },
+				{
+                                        "name": "apprentissage-francais-fr",
+                                        "status": "latest"
+                                },
+                                {
+                                        "name": "bien-etre-dev-perso-communication-fr",
+                                        "status": "latest"
+                                },
+                                {
+                                        "name": "cinema-et-creation-video-fr",
+                                        "status": "latest"
+                                },
+                                {
+                                        "name": "sexualite-fr",
+                                        "status": "latest"
+                                },
+                                {
+                                        "name": "connaissance-droits-universels-fr",
+                                        "status": "latest"
+                                },
+                                {
+                                        "name": "cuisine-et-nutrition-fr",
+                                        "status": "latest"
+                                },
+                                {
+                                        "name": "histoire-afrique-fr",
+                                        "status": "latest"
+                                },
+                                {
+                                        "name": "ebooks-enfants-fr",
+                                        "status": "latest"
+                                },
+                                {
+                                        "name": "discriminations-fr",
+                                        "status": "latest"
+                                },
+                                {
+                                        "name": "creation-d-entreprise-fr",
+                                        "status": "latest"
+                                },
+                                {
+                                        "name": "innovation-en-afrique-fr",
+                                        "status": "latest"
+                                },
+				{
+                                        "name": "film-fr",
+                                        "status": "latest"
+                                },
+				{
+                                        "name": "droits-de-l-enfants-fr",
+                                        "status": "latest"
+                                },
+				{
+                                        "name": "contes-et-dessins-animes-fr",
+                                        "status": "latest"
+                                },
+				{
+                                        "name": "arts-afrique-fr",
+                                        "status": "latest"
+                                },
+                                {
+                                        "name": "geographie-afrique-de-l-est-fr",
+                                        "status": "latest"
+                                },
+                                {
+                                        "name": "discriminations-enfants-fr",
+                                        "status": "latest"
+                                },
+                                {
+                                        "name": "creation-audio-fr",
+                                        "status": "latest"
+                                },
+                                {
+                                        "name": "hygiene-enfants-fr",
+                                        "status": "latest"
+                                }],
+                        "portal": {
+                                "activated": "True"
+                        },
+                        "kiwix_version": "1.0"
 		}
+
 	}
