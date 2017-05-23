@@ -2978,7 +2978,7 @@
 		},
 		"idb-bsf-vagrant": {
 			"kalite": {
-				"activated": "False"
+				"activated": "False",
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
