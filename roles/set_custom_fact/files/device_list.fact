@@ -2963,6 +2963,11 @@
 			"kolibri": {
 				"activated": "True"
 			},
+                        "kalite": {
+                                "activated": "False",
+                                "version": "0.16.9",
+                                "language": ["fr"]
+			},
 			"package_management": [{
 				"name": "wikiquote.fa",
 				"status": "latest"
@@ -2974,6 +2979,8 @@
 		"idb-bsf-vagrant": {
 			"kalite": {
 				"activated": "False"
+				"version": "0.16.9",
+				"language": ["fr"]
 			},
                         "kolibri": {
                                 "activated": "True"
