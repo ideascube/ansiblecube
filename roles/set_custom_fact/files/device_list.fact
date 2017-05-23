@@ -2973,10 +2973,11 @@
 		},
 		"idb-bsf-vagrant": {
 			"kalite": {
-				"activated": "True",
-				"version": "0.16.9",
-				"language": ["fr"]
+				"activated": "False"
 			},
+                        "kolibri": {
+                                "activated": "True"
+                        },
 			"package_management": [{
 				"name": "wikiquote.fa",
 				"status": "latest"
