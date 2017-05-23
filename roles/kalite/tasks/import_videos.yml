@@ -23,7 +23,7 @@
     dest=/home/{{username}}/.kalite/content/ 
     recursive=yes
     compress=no
-  with_items: "{{ ansible_local.device_list[generic_project_name].kalite.language }}"
+  with_items: "{{ ansible_local.device_list[generic_project_name].kalite.language | default('fr')}}"
 
 - name: Install Kalite language pack
   become: yes
