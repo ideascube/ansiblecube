@@ -39,7 +39,7 @@
     
 - name: Create static dir
   file: path={{ mook_path }}/{{ mook_name }}/static/tmp state=directory owner={{username}} group={{username}} mode=0775
-  when: ansible_architecture == "x86_64"
+  when: (ansible_architecture == 'x86_64' or ansible_architecture == 'i386')
   tags:
     - custom
     

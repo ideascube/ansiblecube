@@ -142,7 +142,7 @@
 
 - name: Set IDEASCUBE_ID variable for ideasbox
   set_fact: ideascube_id=idb
-  when: ansible_architecture == "x86_64" and conf_file.stat.exists == False
+  when: (ansible_architecture == 'x86_64' or ansible_architecture == 'i386') and conf_file.stat.exists == False
   tags: ['custom','rename','update']
 
 - name: Change IDEASCUBE_ID

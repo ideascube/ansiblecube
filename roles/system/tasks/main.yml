@@ -141,7 +141,7 @@
   tags: ['master', 'custom']
 
 - include: ralink.yml
-  when: lsusb_ralink.stdout != "" and ansible_architecture == "x86_64"
+  when: lsusb_ralink.stdout != "" and (ansible_architecture == 'x86_64' or ansible_architecture == 'i386')
   tags: ['master', 'custom']
 
 - name: Check for Realtek Wireless Network Adapter
@@ -150,7 +150,7 @@
   tags: ['master', 'update']
 
 - include: realtek.yml
-  when: lspci_realtek.stdout != "" and ansible_architecture == "x86_64"
+  when: lspci_realtek.stdout != "" and (ansible_architecture == 'x86_64' or ansible_architecture == 'i386')
 
 - name: Stat /dev/sda1 for later use on Koombooks
   stat: path=/dev/sda1
@@ -327,5 +327,5 @@
     regexp:     '^GRUB_TIMEOUT=.*'
     line:       'GRUB_TIMEOUT=0'
   notify: Update grub
-  when: ansible_architecture == "x86_64" and ansible_dns.domain|default(omit) != "{{ crashbook_dns_domain }}" 
+  when: (ansible_architecture == 'x86_64' or ansible_architecture == 'i386') and ansible_dns.domain|default(omit) != "{{ crashbook_dns_domain }}" 
   tags: ['master','custom']

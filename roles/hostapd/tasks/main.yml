@@ -1,7 +1,7 @@
 ---
 - name: Unblock wlan
   command: rfkill unblock wlan
-  when: ansible_architecture == 'x86_64'
+  when: (ansible_architecture == 'x86_64' or ansible_architecture == 'i386')
   ignore_errors: yes
   tags: 
     - master
