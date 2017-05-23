@@ -29,6 +29,13 @@
   tags:
     - custom
 
+- name: Create a symlink for Kolibri vhost to Nginx-enabled folder
+  file:
+    src: /etc/nginx/sites-available/kolibri
+    dest: /etc/nginx/sites-enabled/kolibri
+    state: link
+    force: yes
+
 - name: Copy systemd startup file
   copy: src=kolibri.service dest=/etc/systemd/system/kolibri.service
   tags:
