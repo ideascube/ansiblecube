@@ -35,4 +35,4 @@
   file: path=/var/log/ansible-pull.log mode=0644 group=adm
 
 - name: Say Hi on the logs
-  shell: wget http://report.bsf-intranet.org/device={{ansible_hostname}}/ansiblepull=OldBoxUpgraded
+  shell: wget http://report.bsf-intranet.org/device={{ansible_hostname}}/ansiblepull=IamOnOldMasterBranch
