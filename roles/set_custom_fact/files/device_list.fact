@@ -3942,6 +3942,70 @@
                                 {
                                         "name": "hygiene-enfants-fr",
                                         "status": "latest"
+                                }
+                                {
+                                        "name": "learn-english-enfants-en",
+                                        "status": "latest"
+                                },
+                                {
+                                        "name": "learn-english-adults-en",
+                                        "status": "latest"
+                                },
+                                {
+                                        "name": "sante-fr",
+                                        "status": "latest"
+                                },
+                                {
+                                        "name": "cuisine-et-nutrition-enfants-fr",
+                                        "status": "latest"
+                                },
+                                {
+                                        "name": "sports-enfants-fr",
+                                        "status": "latest"
+                                }
+                                {
+                                        "name": "sport-football-fr",
+                                        "status": "latest"
+                                },
+                                {
+                                        "name": "musique-fr",
+                                        "status": "latest"
+                                },
+                                {
+                                        "name": "sa-relation-au-corps-fr",
+                                        "status": "latest"
+                                },
+                                {
+                                        "name": "programmation-informatique-fr",
+                                        "status": "latest"
+                                },
+                                {
+                                        "name": "photographie-fr",
+                                        "status": "latest"
+                                },
+                                {
+                                        "name": "audiobooks-et-fictions-sonores-fr",
+                                        "status": "latest"
+                                },
+                                {
+                                        "name": "prevention-addictions-fr",
+                                        "status": "latest"
+                                },
+                                {
+                                        "name": "hygiene-afrique-fr",
+                                        "status": "latest"
+                                },
+                                {
+                                        "name": "ecriture-et-litterature-fr",
+                                        "status": "latest"
+                                },
+                                {
+                                        "name": "biologie-adolescents-fr",
+                                        "status": "latest"
+                                },
+				{
+                                        "name": "nature-fr",
+                                        "status": "latest"
                                 }],
                         "portal": {
                                 "activated": "True"
