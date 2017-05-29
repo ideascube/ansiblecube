@@ -4137,6 +4137,7 @@
 			"portal": {
 				"activated": "True"
 			},
-			"kiwix_version": "1.0"
+			"kiwix_version": "1.0",
+			"nas": "True"
 		}
 	}
