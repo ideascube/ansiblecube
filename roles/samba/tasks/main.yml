@@ -1,0 +1,50 @@
+---
+- include_vars: group_vars/{{ ansible_architecture }}.yml
+
+- name: Install Samba packages
+  apt:
+    pkg: '{{ item }}'
+    state: 'latest'
+    install_recommends: False
+  with_flattened:
+    - 'samba'
+    - 'samba-common'
+    - 'samba-common-bin'
+
+- name: Create root Samba directories
+  file:
+    path: '{{ samba_dir }}'
+    state: 'directory'
+    owner: 'nobody'
+    group: 'nogroup'
+    mode: '0751'
+
+- name: Configure Samba
+  template:
+    src: 'smb.conf.j2'
+    dest: '/etc/samba/smb.conf'
+    owner: 'root'
+    group: 'root'
+    mode: '0644'
+  notify: [ 'Check samba config' ]
+
+- name: Test if a fex file exist, if yes, the device is an Olimex
+  stat: path=/boot/bin/lime2.bin
+  register: fex_file
+  when: ansible_architecture == 'armhf'
+    or ansible_architecture == 'armv7l'
+
+- name: Test if a fex file exist, if yes, the device is an Olimex
+  stat: path=/boot/script.bin
+  register: fex_file2
+  when: ansible_architecture == 'armhf'
+    or ansible_architecture == 'armv7l'
+
+- include: lime2.yml
+  when: (fex_file.stat.exists is defined and fex_file.stat.exists 
+    or fex_file2.stat.exists is defined and fex_file2.stat.exists)
+    and (ansible_architecture == 'armhf' 
+    or ansible_architecture == 'armv7l')
+
+- name: Register Samba service
+  service: name=samba-ad-dc enabled=yes

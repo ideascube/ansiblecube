@@ -1,0 +1,17 @@
+[global]
+workgroup = WORKGROUP
+server string = Samba Server %v
+netbios name = {{ hostname }}
+security = user
+map to guest = bad user
+dns proxy = no
+
+#============================ Share Definitions ==============================
+
+[koombook]
+path = "/srv/"
+browsable =yes
+writable = yes
+guest ok = yes
+read only = yes
+force user = nobody

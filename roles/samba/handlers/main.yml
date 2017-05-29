@@ -1,0 +1,10 @@
+---
+
+- name: Check samba config
+  command: testparm -s
+  notify: Reload samba
+
+- name: Reload samba
+  service:
+    name: smbd
+    state: 'reloaded'
