@@ -4010,6 +4010,133 @@
 			"portal": {
 				"activated": "True"
 			}
+		},
+		"kb-fra-croixrouge": {
+			"kalite": {
+				"activated": "True",
+				"version": "0.16.9",
+				"language": ["fr"]
+			},
+			"package_management": [{
+					"name": "wikipedia.fr",
+					"status": "present"
+				},
+				{
+					"name": "wikipedia.ar",
+					"status": "present"
+				},
+				{
+					"name": "wikipedia.pl",
+					"status": "present"
+				},
+				{
+					"name": "wikipedia.en",
+					"status": "present"
+				},
+				{
+					"name": "gutenberg.fr",
+					"status": "present"
+				},
+				{
+					"name": "apprentissage-francais-fr",
+					"status": "latest"
+				},
+				{
+					"name": "bien-etre-dev-perso-communication-fr",
+					"status": "latest"
+				},
+				{
+					"name": "cinema-et-creation-video-fr",
+					"status": "latest"
+				},
+				{
+					"name": "citoyennete-et-politique-fr",
+					"status": "latest"
+				},
+				{
+					"name": "connaissance-droits-universels-fr",
+					"status": "latest"
+				},
+				{
+					"name": "cuisine-et-nutrition-fr",
+					"status": "latest"
+				},
+				{
+					"name": "cuisine-pl",
+					"status": "latest"
+				},
+				{
+					"name": "dessin-et-origami-fr",
+					"status": "latest"
+				},
+				{
+					"name": "discriminations-fr",
+					"status": "latest"
+				},
+				{
+					"name": "droits-et-demarches-administratives-fr",
+					"status": "latest"
+				},
+				{
+					"name": "fictions-divertissements-ar",
+					"status": "latest"
+				},
+				{
+					"name": "musique-ar",
+					"status": "latest"
+				},
+				{
+					"name": "musique-fr",
+					"status": "latest"
+				},
+				{
+					"name": "photographie-fr",
+					"status": "latest"
+				},
+				{
+					"name": "programmation-informatique-fr",
+					"status": "latest"
+				},
+				{
+					"name": "recherche-demploi-fr",
+					"status": "latest"
+				},
+				{
+					"name": "sa-relation-au-corps-fr",
+					"status": "latest"
+				},
+				{
+					"name": "sport-football-fr",
+					"status": "latest"
+				},
+				{
+					"name": "monter-son-projet-professionnel-fr",
+					"status": "latest"
+				},
+				{
+					"name": "audiobooks-et-fictions-sonores-fr",
+					"status": "latest"
+				},
+				{
+					"name": "films-fr",
+					"status": "latest"
+				},
+				{
+					"name": "jardinage-et-agriculture-fr",
+					"status": "latest"
+				},
+				{
+					"name": "hyigene-de-base-fr",
+					"status": "latest"
+				},
+				{
+					"name": "prevention-addictions-fr",
+					"status": "latest"
+				}
+			],
+			"portal": {
+				"activated": "True"
+			},
+			"kiwix_version": "1.0"
 		}
-
 	}
