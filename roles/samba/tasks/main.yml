@@ -44,6 +44,7 @@
     or fex_file2.stat.exists is defined and fex_file2.stat.exists)
     and (ansible_architecture == 'armhf' 
     or ansible_architecture == 'armv7l')
+    and sda1.stat.isblk == True
 
 - name: add RPC service, nbname, nbdatagram, nbsession, windows share
   iptables:
