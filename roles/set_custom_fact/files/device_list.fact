@@ -3594,29 +3594,6 @@
 				"content_name": ["2-Contenus/csvcamerounani.csv"]
 			}
 		},
-		"kb-usa-demolwb": {
-			"kalite": {
-				"activated": "True",
-				"version": "0.16.9",
-				"language": ["es"]
-			},
-			"package_management": [{
-					"name": "wikipedia.es",
-					"status": "present"
-				},
-				{
-					"name": "gutenberg.es",
-					"status": "present"
-				}
-			],
-			"idc_import": {
-				"activated": "False",
-				"content_name": ["13-NICARALI/CSV-Nicarali.csv"]
-			},
-			"portal": {
-				"activated": "True"
-			}
-		},
 		"kb-fra-ssp": {
 			"kalite": {
 				"activated": "True",
