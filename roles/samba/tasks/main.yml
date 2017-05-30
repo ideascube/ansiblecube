@@ -51,7 +51,7 @@
     chain: INPUT
     protocol: tcp
     match: tcp
-    destination_port: {{item}}
+    destination_port: "{{item}}"
     jump: ACCEPT
   with_items:
     - 137
@@ -64,7 +64,7 @@
     chain: INPUT
     protocol: udp
     match: udp
-    destination_port: {{item}}
+    destination_port: "{{item}}"
     jump: ACCEPT
   with_items:
     - 137
