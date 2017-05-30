@@ -18,7 +18,7 @@
 
 - name: Copying kiwix binaries x86_64 architecture
   get_url: url={{filer_bsf}}/kiwix-serve-x86_64.v{{ kiwix_version }} dest=/usr/local/bin/kiwix-serve mode=755 timeout=30 backup=yes force=yes
-    checksum="md5:195540566f0b251b04d729a0e9611622"
+    checksum="md5:717d8ffda5cabee56afbaa0d9cbcbe75"
   when: ansible_architecture == "x86_64"
   tags: ['master','custom','update']
 

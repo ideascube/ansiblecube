@@ -14,7 +14,7 @@ filer_bsf: http://filer.bsf-intranet.org
 timezone: "Europe/Paris"
 koombookDoctor: "koombook-doctor.local"
 bsf_gateway: "10.10.9.1"
-kiwix_version: "0.9"
+kiwix_version: "1.0"
 mongodb_version: "2.4.10"
 own_config_file: False
 ideascube_upgrade_frozen: False
