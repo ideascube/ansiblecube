@@ -5,8 +5,8 @@
 
 - name: Remove /srv/ directory to link it to external HDD
   file: path=/srv/ state=absent
-  when: srv_dir.stat.islnk is not defined
+  when: srv_dir.stat.isdir is defined
 
 - name: Symlink /srv/ to external HDD
   file: src=/media/hdd/samba dest=/srv/ state=link
-  when: srv_dir.stat.islnk is not defined
+  when: srv_dir.stat.isdir is defined
