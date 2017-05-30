@@ -3,10 +3,9 @@
 
 - name: Install Samba packages
   apt:
-    pkg: '{{ item }}'
+    name: '{{ item }}'
     state: 'latest'
-    install_recommends: False
-  with_flattened:
+  with_items:
     - 'samba'
     - 'samba-common'
     - 'samba-common-bin'
