@@ -58,7 +58,7 @@
 
     - role: samba
       when: ansible_local.device_list[generic_project_name].samba is defined
-        and ansible_local.device_list[generic_project_name].samba.activated|bool == True
+        and ansible_local.device_list[generic_project_name].samba|bool == True
       tags: ['custom','update']
 
     - role: idc_import
