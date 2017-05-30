@@ -54,21 +54,6 @@
     destination_port: {{item}}
     jump: ACCEPT
   with_items:
-    - 135
-    - 137
-    - 138
-    - 139
-    - 445
-
-- name: add RPC service, nbname, nbdatagram, nbsession, windows share
-  iptables:
-    chain: OUTPUT
-    protocol: tcp
-    match: tcp
-    destination_port: {{item}}
-    jump: ACCEPT
-  with_items:
-    - 135
     - 137
     - 138
     - 139
@@ -82,22 +67,9 @@
     destination_port: {{item}}
     jump: ACCEPT
   with_items:
-    - 135
     - 137
     - 138
-    - 445
-
-- name: add RPC service, nbname, nbdatagram, nbsession, windows share
-  iptables:
-    chain: OUTPUT
-    protocol: udp
-    match: udp
-    destination_port: {{item}}
-    jump: ACCEPT
-  with_items:
-    - 135
-    - 137
-    - 138
+    - 139
     - 445
 
 - name: Overwrite /etc/iptables.rules to include new rules
