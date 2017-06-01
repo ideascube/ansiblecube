@@ -75,6 +75,9 @@
   - name: "Omeka"
     description: "Omeka packages"
     url: http://catalog.ideascube.org/omeka.yml
+  - name: "bibliotecamovil"
+    description: "Spanish packages"
+    url: http://catalog.ideascube.org/bibliotecamovil.yml
   tags: ['master','custom','update']
 
 - name: Nginx enable Virtual host
