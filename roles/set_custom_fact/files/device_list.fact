@@ -4170,7 +4170,64 @@
 				{
 					"name": "tedmed.en",
 					"status": "present"
+				},
+				{
+					"name": "introduction-to-the-history-of-the-world-en",
+					"status": "present"
+				},
+				{
+					"name": "introduction-to-3d-modelling-with-blender-en",
+					"status": "present"
+				},
+				{
+					"name": "learning-french-en",
+					"status": "present"
+				},
+				{
+					"name": "introduction-to-healthcare-en",
+					"status": "present"
+				},
+				{
+					"name": "introduction-to-human-rights-en",
+					"status": "present"
+				},
+				{
+					"name": "introduction-to-human-rights-for-children-en",
+					"status": "present"
+				},
+				{
+					"name": "non-violent-communication-en",
+					"status": "present"
+				},
+				{
+					"name": "greek-mythology-en",
+					"status": "present"
+				},
+				{
+					"name": "cartoon-en",
+					"status": "present"
+				},
+				{
+					"name": "introduction-to-ecology-en",
+					"status": "present"
+				},
+				{
+					"name": "introduction-to-journalism-en",
+					"status": "present"
+				},
+				{
+					"name": "women-in-african-history-en",
+					"status": "present"
+				},
+				{
+					"name": "astronomy-en",
+					"status": "present"
+				},
+				{
+					"name": "introduction-to-sciences-en",
+					"status": "present"
 				}
+
 			],
 			"portal": {
 				"activated": "True"
