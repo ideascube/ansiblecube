@@ -17,7 +17,7 @@ bsf_gateway: "10.10.9.1"
 kiwix_version: "1.0"
 mongodb_version: "2.4.10"
 own_config_file: False
-ideascube_upgrade_frozen: True
+ideascube_upgrade_frozen: False
 git_branch: oneUpdateFile
 
 #Apps path
