@@ -56,11 +56,6 @@
     apt: name=ideascube force=yes update_cache=yes dpkg_options="force-confnew" state=latest
     register: is_upgraded
 
-  - name: Run migration for ideascube
-    become: yes
-    become_user: ideascube
-    shell: ideascube migrate --database=default && ideascube migrate --database=transient
-
   when: ideascube_upgrade_frozen == False
   tags:
     - update
