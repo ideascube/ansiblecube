@@ -101,7 +101,7 @@
   tags: ['master', 'custom', 'update']
 
 - name: Add router_cache to plugin uwsgi list
-  lineinfile: dest=/etc/uwsgi/apps-enabled/ideascube.ini
+  lineinfile: dest=/etc/uwsgi/apps-available/ideascube.ini
               regexp='^plugins'
               line='plugins         = python3,router_cache'
               state=present
@@ -109,7 +109,7 @@
     - update
 
 - name: Create and set up a cache for uwsgi
-  blockinfile: block="{{ lookup('file', 'uwsgi-cache.ini') }}" dest="/etc/uwsgi/apps-enabled/ideascube.ini"
+  blockinfile: block="{{ lookup('file', 'uwsgi-cache.ini') }}" dest="/etc/uwsgi/apps-available/ideascube.ini"
   notify: restart uwsgi
   tags:
     - update
