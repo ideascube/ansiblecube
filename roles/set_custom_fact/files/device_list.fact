@@ -4129,27 +4129,27 @@
 				},
 				{
 					"name": "gutenberg.en",
-					"status": "present"
+					"status": "absent"
 				},
 				{
 					"name": "vikidia.en",
-					"status": "present"
+					"status": "absent"
 				},
 				{
 					"name": "wikiversity.en",
-					"status": "present"
+					"status": "absent"
 				},
 				{
 					"name": "tedbusiness.en",
-					"status": "present"
+					"status": "absent"
 				},
 				{
 					"name": "teddesign.en",
-					"status": "present"
+					"status": "absent"
 				},
 				{
 					"name": "tedentertainment.en",
-					"status": "present"
+					"status": "absent"
 				},
 				{
 					"name": "tedglobalissues.en",
@@ -4161,15 +4161,15 @@
 				},
 				{
 					"name": "tedtechnology.en",
-					"status": "present"
+					"status": "absent"
 				},
 				{
 					"name": "ted-ed.en",
-					"status": "present"
+					"status": "absent"
 				},
 				{
 					"name": "tedmed.en",
-					"status": "present"
+					"status": "absent"
 				},
 				{
 					"name": "introduction-to-the-history-of-the-world-en",
