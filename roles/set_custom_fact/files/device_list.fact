@@ -4129,11 +4129,11 @@
 				},
 				{
 					"name": "gutenberg.en",
-					"status": "absent"
+					"status": "present"
 				},
 				{
 					"name": "vikidia.en",
-					"status": "absent"
+					"status": "present"
 				},
 				{
 					"name": "wikiversity.en",
