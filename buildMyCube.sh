@@ -3,7 +3,7 @@
 # init vars
 START=0
 SSH_KEY="/root/.ssh/id_rsa"
-MANAGMENT="managed_by_bsf=True"
+MANAGEMENT="managed_by_bsf=True"
 TIMEZONE="timezone=Europe/Paris"
 CONFIGURE="own_config_file=False"
 TAGS="--tags master,custom"
@@ -34,9 +34,6 @@ DISTRIBUTION_CODENAME=$(lsb_release -sc)
     echo "Error: AnsibleCube run exclusively on Debian Jessie" >&2
     exit 1
 }
-
-# Install Dialog
-apt-get install --quiet --quiet -y dialog
 
 # functions
 function internet_check()
@@ -233,7 +230,7 @@ function help()
         -b|--branch     Set Github branch you'd like to use 
                         Default: oneUpdateFile
 
-        -m|--managment  Install BSF tools, set to false if not from BSF
+        -m|--management  Install BSF tools, set to false if not from BSF
                         Default: true
                         Ex: -m true|false
 
@@ -272,10 +269,18 @@ function help()
     exit 0;
 }
 
+function go_manage()
+{
+    [ -f "$SSH_KEY" ] || generate_rsa_key
+    SEND_REPORT="1"
+    return $SEND_REPORT
+}
+
 # main
-internet_check
 
 [ $# -ne 0 ] || help
+
+internet_check
 
 if [[ -e /etc/ansible/facts.d/device_list.fact ]]; then
     echo -n "[+] Local configuration file exist, would you like to delete it ? (y/n)" >&2
@@ -301,13 +306,13 @@ do
             case $2 in
                 "rename")
                     LOCK_ACTION=1
-                    MANAGMENT=""
+                    MANAGEMENT=""
                     CONFIGURE=""
                 ;;
 
                 "update"|"package_management"|"idc_import"|"kalite_import")
                     LOCK_ACTION=1
-                    MANAGMENT=""
+                    MANAGEMENT=""
                     START=1
                     TIMEZONE=""
                     CONFIGURE=""
@@ -320,16 +325,9 @@ do
         shift # past argument
         ;;
 
-        -m|--managment)
+        -m|--management)
 
-            if [ ${2^^} = "TRUE" ]
-            then
-                MANAGMENT="managed_by_bsf=True"
-                [ -f "$SSH_KEY" ] || generate_rsa_key
-                SEND_REPORT="1"
-            else
-                MANAGMENT="managed_by_bsf=False"
-            fi
+            [ ${2^^} = "FALSE" ] && MANAGEMENT="managed_by_bsf=False"
 
         shift # past argument
         ;;
@@ -348,7 +346,9 @@ do
 
             [[ -e /tmp/device_list.fact ]] || wget https://raw.githubusercontent.com/ideascube/ansiblecube/$BRANCH/roles/set_custom_fact/files/device_list.fact -O /tmp/device_list.fact > /dev/null 2>&1
 
-            if [[ -z `grep -w "$FULL_NAME" /tmp/device_list.fact` ]] && [ "$TAGS" != "--tags master" ]
+            is_present=$(grep -w "$FULL_NAME" /tmp/device_list.fact)
+
+            if [[ -z "$is_present" ]] && [ "$TAGS" != "--tags master" ]
             then
                 CONF="1"
             fi
@@ -400,6 +400,8 @@ then
     TAGS="--tags custom"
 fi
 
+[ "$MANAGEMENT" == managed_by_bsf=True ] && go_manage
+
 if [[ "$START" = "1" ]]; then
 
     if [[ "$CONF" = "1" ]]; then
@@ -409,13 +411,14 @@ if [[ "$START" = "1" ]]; then
     [ -x /usr/local/bin/ansible ] || install_ansible
     [ -d ${ANSIBLECUBE_PATH} ] || clone_ansiblecube
 
-    echo "$ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars \"$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE $WIFIPWD $GIT_BRANCH\" $TAGS" >> /var/lib/ansible/ansible-pull-cmd-line.sh
+    echo "Checking file access" >> /var/log/ansible-pull.log
+    [ $? -ne 0 ] && echo "No space left to write logs or permission problem, exiting." && exit 1
+
+    echo "$ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars \"$MANAGEMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE $WIFIPWD $GIT_BRANCH\" $TAGS" >> /var/lib/ansible/ansible-pull-cmd-line.sh
     echo -e "[+] Command line stored in /var/lib/ansible/ansible-pull-cmd-line.sh"
-    echo -e "[+] Launch ansiblepull with following arguments: \n$ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars \"$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE $WIFIPWD $GIT_BRANCH\" $TAGS"
+    echo -e "[+] Launch ansiblepull with following arguments: \n$ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars \"$MANAGEMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE $WIFIPWD $GIT_BRANCH\" $TAGS"
 
-    $ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars "$MANAGMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE $WIFIPWD $GIT_BRANCH" $TAGS > /var/log/ansible-pull.log 2>&1
-
-    reset
+    $ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars "$MANAGEMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE $WIFIPWD $GIT_BRANCH" $TAGS > /var/log/ansible-pull.log 2>&1
 
     if [[ "$SEND_REPORT" = "1" ]]; then
         echo "[+] Send ansible-pull report"
