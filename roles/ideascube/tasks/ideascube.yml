@@ -174,10 +174,9 @@
   tags: ['master', 'custom', 'update']
 
 - name: Create simLink
-  file: src=/etc/uwsgi/apps-available/ideascube.ini dest=/etc/uwsgi/apps-enabled/ideascube.ini state=link
-  tags: 
-    - master
-
+  file: src=/etc/uwsgi/apps-available/ideascube.ini dest=/etc/uwsgi/apps-enabled/ideascube.ini state=link force=yes
+  tags: ['master','update']
+  
 - name: Ensure that Ideascube folder belong the ideascube user
   file: path=/var/ideascube/main/ owner={{ username }} group={{ username }} recurse=yes state=directory
   tags: 
