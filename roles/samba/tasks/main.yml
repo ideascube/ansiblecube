@@ -72,6 +72,11 @@
     - 139
     - 445
 
+- name: TEST: Accept all connection on OUTPUT chain
+  iptables:
+    chain: OUTPUT
+    jump: ACCEPT
+
 - name: Overwrite /etc/iptables.rules to include new rules
   shell: /sbin/iptables-save > /etc/iptables.rules
 
