@@ -6,6 +6,7 @@ security = user
 map to guest = bad user
 dns proxy = no
 wins support = yes
+socket options = TCP_NODELAY
 
 #============================ Share Definitions ==============================
 
@@ -16,11 +17,9 @@ writable = yes
 guest ok = yes
 read only = yes
 force user = nobody
+force group = nogroup
 create mask = 664
 force create mode = 664
-security mask = 664
-force security mode = 664
 directory mask = 2775
 force directory mode = 2775
-directory security mask = 2775
-force directory security mode = 2775
+
