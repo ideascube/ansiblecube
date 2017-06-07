@@ -46,7 +46,7 @@
     or ansible_architecture == 'armv7l')
     and sda1.stat.isblk == True
 
-- name: add RPC service, nbname, nbdatagram, nbsession, windows share
+- name: Open iptables ports for Samba (TCP)
   iptables:
     chain: INPUT
     protocol: tcp
@@ -54,12 +54,12 @@
     destination_port: "{{item}}"
     jump: ACCEPT
   with_items:
+    - 135
     - 137
-    - 138
     - 139
     - 445
 
-- name: add RPC service, nbname, nbdatagram, nbsession, windows share
+- name: Open iptables ports for Samba (UDP)
   iptables:
     chain: INPUT
     protocol: udp
@@ -67,12 +67,12 @@
     destination_port: "{{item}}"
     jump: ACCEPT
   with_items:
+    - 135
     - 137
     - 138
-    - 139
     - 445
 
-- name: TEST: Accept all connection on OUTPUT chain
+- name: TO FIX, Accept all connection on OUTPUT chain
   iptables:
     chain: OUTPUT
     jump: ACCEPT
