@@ -37,16 +37,16 @@
   apt: name=ideascube force=yes update_cache=yes dpkg_options="force-confnew" state=latest
   tags: ['master', 'custom']
 
+- name: Include task needed when using an external hard drive
+  include: ext_hdd.yml
+  when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l")
+    and (sda1.stat.isblk| default (omit)) == True
+
 - name: Run migration for ideascube
   become: yes
   become_user: ideascube
   shell: ideascube migrate --database=default && ideascube migrate --database=transient
   tags: ['master', 'custom']
-
-- name: Include task needed when using an external hard drive
-  include: ext_hdd.yml
-  when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l")
-    and (sda1.stat.isblk| default (omit)) == True
 
 - block:
   - name: Backup data before upgrading
