@@ -4022,39 +4022,39 @@
 					"name": "wikibooks.en",
 					"status": "present"
 				},
-				}
+				{
 					"name": "wikibooks.fr",
 					"status": "present"
 				},
-				}
+				{
 					"name": "tedbusiness.en",
 					"status": "present"
 				},
-				}
+				{
 					"name": "teddesign.en",
 					"status": "present"
 				},
-				}
+				{
 					"name": "tedentertainment.en",
 					"status": "present"
 				},
-				}
+				{
 					"name": "tedglobalissues.en",
 					"status": "present"
 				},
-				}
+				{
 					"name": "tedscience.en",
 					"status": "present"
 				},
-				}
+				{
 					"name": "tedtechnology.en",
 					"status": "present"
 				},
-				}
+				{
 					"name": "ted-ed.en",
 					"status": "present"
 				},
-				}
+				{
 					"name": "tedmed.en",
 					"status": "present"
 				},
