@@ -6,3 +6,7 @@
 - name: Remove the old service file
   file: path=/etc/systemd/system/uwsgi.service state=absent
   tags: ['update']
+
+- name: just force systemd to reread configs (to be replaced with systemctl task)
+  command: systemctl daemon-reload
+  tags: ['update']
