@@ -51,7 +51,7 @@
   lineinfile: 
     dest: /etc/default/dnsmasq
     regexp: 'DNSMASQ_OPTS='
-    line: 'DNSMASQ_OPTS="--conf-file=/etc/dnsmasq-spoof.conf --local-ttl=600"'
+    line: 'DNSMASQ_OPTS="--conf-file=/etc/dnsmasq.conf --local-ttl=600"'
     state: present
   notify: restart dnsmasq
   tags: ['custom', 'update'] 
