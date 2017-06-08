@@ -11,7 +11,7 @@
   tags: ['master', 'update']
 
 - name: Get ideascube installed (versions.stdout_lines.0) et candidate (versions.stdout_lines.1) version
-  raw: LANG=C apt-cache policy ideascube | awk ' $1~/Installed|Candidate|Installé|Candidat/ { print $2 }'
+  raw: LANG=C.UTF-8 apt-cache policy ideascube | awk ' $1~/Installed|Candidate|Installé|Candidat/ { print $2 }'
   register: versions
   tags:
     - update
