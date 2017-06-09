@@ -4371,5 +4371,46 @@
 			"portal": {
 				"activated": "True"
 			}
-		}
+		},
+                "idb-bsf-elkteam": {
+                        "kalite": {
+                                "activated": "True",
+                                "version": "0.16.9",
+                                "language": ["en"]
+                        },
+                        "package_management": [{
+                                        "name": "vikidia.en",
+                                        "status": "present"
+                                },
+                                {
+                                        "name": "wikipedia.wo",
+                                        "status": "present"
+                                },
+                                {
+                                        "name": "wiktionary.ti",
+                                        "status": "present"
+                                },
+				{
+                                        "name": "tedxlausannechange2013.fr",
+                                        "status": "present"
+                                },
+				{
+                                        "name": "manual-ideascube-all",
+                                        "status": "present"
+                                },
+				{
+                                        "name": "prevention-addictions-fr",
+                                        "status": "present"
+                                },
+				{
+                                        "name": "icarito.es",
+                                        "status": "present"
+                                },
+				{
+                                        "name": "wiktionary.ti",
+                                        "status": "present"
+                                }
+                        ]
+                }
+
 	}
