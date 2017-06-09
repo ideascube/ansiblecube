@@ -11,7 +11,7 @@ then
                 kb_doctor_ip=`avahi-resolve-host-name koombook-doctor.local | awk -F " " '{print $2}'`
                 if [ -z "$(grep "koombook-doctor.local" /etc/hosts)" ]
                 then
-                    echo "$kb_doctor_ip" koombook-doctor.local download.kiwix.org catalog.yohanboniface.me >> /etc/hosts
+                    echo "$kb_doctor_ip" koombook-doctor.local download.kiwix.org catalog.yohanboniface.me packages.ideascube.org >> /etc/hosts
                 fi
             fi
         ;;
