@@ -2984,7 +2984,7 @@
 				"status": "latest"
 			}],
 			"portal": {
-				"activated": "True"
+				"activated": "False"
 			}
 		},
 		"idb-grc-ioannina": {
