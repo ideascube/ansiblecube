@@ -3162,7 +3162,7 @@
 				"content_name": ["2-Contenus/csvtdh1.csv"]
 			},
 			"portal": {
-				"activated": "False"
+				"activated": "True"
 			},
 			"kiwix_version": "1.0"
 		},
