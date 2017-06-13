@@ -29,7 +29,10 @@
   tags: ['custom', 'update']
 
 - name: Setting default dnsmasq config file
-  command: sed -i 's/^DNSMASQ_OPTS=.*/DNSMASQ_OPTS="--conf-file=\/etc\/dnsmasq.conf"/g' /etc/default/dnsmasq
+  lineinfile: 
+    dest: /etc/default/dnsmasq
+    regexp: '^DNSMASQ_OPTS='
+    line: 'DNSMASQ_OPTS="--conf-file=/etc/dnsmasq.conf"'
   notify: restart dnsmasq
 
 - name: Remove unneeded files
@@ -50,4 +53,3 @@
   notify: 
     - restart nginx
     - restart uwsgi
-
