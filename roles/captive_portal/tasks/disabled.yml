@@ -11,6 +11,7 @@
     - /sbin/iptables -t nat -X CAPTIVE_HTTPS
     - /sbin/iptables -t nat -X CAPTIVE_PASSLIST
   tags: ['custom', 'update']
+  ignore_errors: yes
 
 - name: Overwrite /etc/iptables.rules to include new rules set
   shell: /sbin/iptables-save > /etc/iptables.rules

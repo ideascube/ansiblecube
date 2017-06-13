@@ -19,6 +19,7 @@ mongodb_version: "2.4.10"
 own_config_file: False
 ideascube_upgrade_frozen: False
 git_branch: oneUpdateFile
+managed_by_bsf: False
 
 #Apps path
 mook_path: /home/{{ username }}
