@@ -3087,7 +3087,7 @@
 				"content_name": ["2-Contenus/csvtdh1.csv"]
 			},
 			"portal": {
-				"activated": "True"
+				"activated": "False"
 			}
 		},
 		"kb-grc-ioannina": {
