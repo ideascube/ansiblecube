@@ -5062,7 +5062,7 @@
 				"activated":"True"
 			}
 		},
-		"kb_fra_ssphotels":{
+		"kb-fra-ssphotels":{
 			"kalite":{
 				"activated":"True",
 				"version":"0.16.9",
