@@ -2970,7 +2970,7 @@
 				"status": "latest"
 			}],
 			"portal": {
-				"activated": "True"
+				"activated": "False"
 			}
 		},
 		"idb-bsf-vagrant": {
