@@ -70,7 +70,7 @@
     description: "Static sites"
     url: http://catalog.ideascube.org/static-sites.yml
   - name: "OSMybon"
-    description: "Experimental OSM Maps catalog"
+    description: "Experimental OSM catalog"
     url: http://catalog.yohanboniface.me/catalog.yml
   - name: "Omeka"
     description: "Omeka packages"
