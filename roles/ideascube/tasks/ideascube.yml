@@ -18,10 +18,6 @@
   tags:
     - update
 
-- name: Allow unauthenticated packages
-  lineinfile: dest=/etc/apt/apt.conf.d/9999IDEASCUBEISABADBADBOY line='APT::Get::AllowUnauthenticated "true";' create=yes
-  tags: ['master', 'custom', 'update']
-
 #### Install last ideascube package
 
 - name: Install ideascube
@@ -44,10 +40,6 @@
   when: ideascube_upgrade_frozen == False
   tags:
     - update
-
-- name: Remove the unauthenticated hack
-  file: path=/etc/apt/apt.conf.d/9999IDEASCUBEISABADBADBOY state=absent
-  tags: ['master', 'custom', 'update']
 
 - name: Add router_cache to plugin uwsgi list
   lineinfile: dest=/etc/uwsgi/apps-available/ideascube.ini
