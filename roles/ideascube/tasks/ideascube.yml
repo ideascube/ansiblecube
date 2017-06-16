@@ -41,20 +41,6 @@
   tags:
     - update
 
-- name: Add router_cache to plugin uwsgi list
-  lineinfile: dest=/etc/uwsgi/apps-available/ideascube.ini
-              regexp='^plugins'
-              line='plugins         = pam,python3,router_cache'
-              state=present
-  tags:
-    - update
-
-- name: Create and set up a cache for uwsgi
-  blockinfile: block="{{ lookup('file', 'uwsgi-cache.ini') }}" dest="/etc/uwsgi/apps-available/ideascube.ini"
-  notify: restart uwsgi
-  tags:
-    - update
-
 - name: Enable cards on homepage for ideascube upgrading from < 0.13.0
   become: yes
   become_user: ideascube
@@ -135,6 +121,20 @@
   when: ideascube_installed | version_compare('0.13.0', '>') 
     and ideascube_newversion.stdout | version_compare('0.15.0', '>=')
     and is_upgraded.changed == True
+  tags:
+    - update
+
+- name: Add router_cache to plugin uwsgi list
+  lineinfile: dest=/etc/uwsgi/apps-available/ideascube.ini
+              regexp='^plugins'
+              line='plugins         = pam,python3,router_cache'
+              state=present
+  tags:
+    - update
+
+- name: Create and set up a cache for uwsgi
+  blockinfile: block="{{ lookup('file', 'uwsgi-cache.ini') }}" dest="/etc/uwsgi/apps-available/ideascube.ini"
+  notify: restart uwsgi
   tags:
     - update
 
