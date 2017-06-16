@@ -108,11 +108,6 @@
   notify: restart uwsgi
   tags: ['custom','rename','update']
 
-- name: Remove linsting on 443 because the port is alredy used by sslh
-  lineinfile: dest=/etc/nginx/sites-available/ideascube regexp='443' state=absent
-  notify: restart nginx
-  tags: ['master', 'custom', 'update']
-
 - name: Create simLink
   file: src=/etc/uwsgi/apps-available/ideascube.ini dest=/etc/uwsgi/apps-enabled/ideascube.ini state=link force=yes
   tags: ['master','update']
