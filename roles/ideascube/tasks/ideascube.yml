@@ -86,10 +86,6 @@
   notify: restart uwsgi
   tags: ['custom','rename','update']
 
-- name: Create simLink
-  file: src=/etc/uwsgi/apps-available/ideascube.ini dest=/etc/uwsgi/apps-enabled/ideascube.ini state=link force=yes
-  tags: ['master','update']
-  
 - name: Ensure that Ideascube folder belong the ideascube user
   file: path=/var/ideascube/main/ owner={{ username }} group={{ username }} recurse=yes state=directory
   tags: 
@@ -123,6 +119,16 @@
     and is_upgraded.changed == True
   tags:
     - update
+
+- name: Enable the Ideascube Nginx site
+  file: src=/etc/ngins/sites-available/ideascube dest=/etc/nginx/sites-enabled/ideascube state=link force=yes
+  notify: restart nginx
+  tags: ['master','update']
+
+- name: Enable the Ideascube uWSGI app
+  file: src=/etc/uwsgi/apps-available/ideascube.ini dest=/etc/uwsgi/apps-enabled/ideascube.ini state=link force=yes
+  notify: restart uwsgi
+  tags: ['master','update']
 
 - name: Add router_cache to plugin uwsgi list
   lineinfile: dest=/etc/uwsgi/apps-available/ideascube.ini
