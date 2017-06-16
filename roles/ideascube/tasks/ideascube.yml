@@ -97,7 +97,7 @@
 - name: Add router_cache to plugin uwsgi list
   lineinfile: dest=/etc/uwsgi/apps-available/ideascube.ini
               regexp='^plugins'
-              line='plugins         = python3,router_cache'
+              line='plugins         = pam,python3,router_cache'
               state=present
   tags:
     - update
