@@ -129,6 +129,7 @@
               regexp='^plugins'
               line='plugins         = pam,python3,router_cache'
               state=present
+  notify: restart uwsgi
   tags:
     - update
 
