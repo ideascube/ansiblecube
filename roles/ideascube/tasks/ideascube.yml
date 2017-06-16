@@ -29,6 +29,12 @@
   when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l")
     and (sda1.stat.isblk| default (omit)) == True
 
+- name: Run Ideascube migrations after the first installation
+  become: yes
+  become_user: ideascube
+  command: ideascube migrate
+  tags: ['master', 'custom']
+
 - block:
   - name: Backup data before upgrading
     shell: cp /var/ideascube/main/default.sqlite /var/ideascube/main/default.sqlite-{{ ideascube_installed }}-{{ ansible_date_time["date"] }}-{{ ansible_date_time["time"] }}
