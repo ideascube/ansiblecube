@@ -6,10 +6,6 @@
   template: src=ideascube.list.j2 dest=/etc/apt/sources.list.d/ideascube.list owner=root group=root mode=644
   tags: ['master', 'custom', 'update']
 
-- name: Install ideascube dependencies
-  apt: name=python3-minimal state=present
-  tags: ['master', 'update']
-
 - name: Get ideascube installed (versions.stdout_lines.0) et candidate (versions.stdout_lines.1) version
   raw: LANG=C.UTF-8 apt-cache policy ideascube | awk ' $1~/Installed|Candidate|Installé|Candidat/ { print $2 }'
   register: versions
