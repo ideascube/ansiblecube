@@ -5098,7 +5098,7 @@
 				},
 				{
 					"name":"wikipedia.sq",
-					"status":"present"
+					"status":"absent"
 				},
 				{
 					"name":"cest-pas-sorcier.fr",
