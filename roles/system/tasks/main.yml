@@ -27,14 +27,8 @@
   file: path=/etc/udev/rules.d/70-persistent-net.rules state=absent
   tags: ['custom','rename']
 
-- name: A way to get the public IP of the device
-  shell: curl icanhazip.com ; echo
-  register: public_ip
-  when: firststart.stat.exists == False or firststart is undefined
-  tags: ['custom','rename']
-
 - name: Write all the variables in /etc/firstStart.csv
-  copy: content="id,{{ ansible_date_time["date"] }},{{ ansible_date_time["time"] }},{{ idc_uniq_device_name }},{{ ansible_machine_id }},{{ ansible_default_ipv4["macaddress"] }},{{ ansible_default_ipv4["address"] }},{{ public_ip.stdout }}\n" dest=/etc/firstStart.csv
+  copy: content="id,{{ ansible_date_time["date"] }},{{ ansible_date_time["time"] }},{{ idc_uniq_device_name }},{{ ansible_machine_id }},{{ ansible_default_ipv4["macaddress"] }},{{ ansible_default_ipv4["address"] }}\n" dest=/etc/firstStart.csv
   when: firststart.stat.exists == False or firststart is undefined
   tags: ['custom','rename']
 
