@@ -76,7 +76,7 @@
   tags: ['master']
 
 - name: Install all required package
-  apt: name={{ item }} state=latest
+  apt: name={{ item }} state=present
   with_items:
    - python-pip
    - python-dev
@@ -110,7 +110,7 @@
    - sqlite3
    - elinks
    - mosh
-  tags: ['master','custom','update']
+  tags: ['master']
 
 - name: Install avahi packages
   apt: name={{ item }} state=latest
