@@ -18,11 +18,6 @@
   when: firststart.stat.exists == False or firststart is undefined
   tags: ['master', 'custom','rename']
 
-- name: register old name
-  set_fact: old_hostname="{{ansible_hostname | replace("-", "_") }}"
-  tags:
-    - rename
-
 - name: Remove udev rules for wifi 
   file: path=/etc/udev/rules.d/70-persistent-net.rules state=absent
   tags: ['custom','rename']
