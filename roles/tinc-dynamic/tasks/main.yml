@@ -143,6 +143,6 @@
   tags: ['custom','update']
 
 - name: send the public key to central nodes
-  shell: rsync /etc/tinc/{{ vpn_name2 }}/hosts/{{tinc_localhost_name }}  {{ central_server }}:/ansible/tinc-{{ vpn_name2 }}/
+  shell: rsync -e "ssh -o StrictStrictHostKeyChecking=no" /etc/tinc/{{ vpn_name2 }}/hosts/{{tinc_localhost_name }}  {{ central_server }}:/ansible/tinc-{{ vpn_name2 }}/
   tags: ['custom','update','rename']
 

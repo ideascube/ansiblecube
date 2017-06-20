@@ -27,14 +27,8 @@
   when: firststart.stat.exists == False or firststart is undefined
   tags: ['custom','rename']
 
-## Maybe this could be pushed during preseed
-- name: Make sure central_server pubkey is in known_hosts
-  copy: src=ssh_known_hosts dest=/etc/ssh/ssh_known_hosts
-          owner=root group=root mode=0644
-  tags: ['custom','update','rename']
-
 - name: Send this file over the central_server
-  raw: cat /etc/firstStart.csv | ssh {{ central_server }} "cat >> ./ansible/UUID/firstStart.csv"
+  raw: cat /etc/firstStart.csv | ssh -o StrictHostKeyChecking=no {{ central_server }} "cat >> ./ansible/UUID/firstStart.csv"
   when: managed_by_bsf|bool and firststart.stat.exists == False or firststart is undefined
   tags: ['custom','rename']
 

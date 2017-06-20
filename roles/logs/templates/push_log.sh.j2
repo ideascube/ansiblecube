@@ -11,7 +11,7 @@ then
             dpkg -l > /var/log/apt/dpkg.list
             pip freeze > /var/log/pip.freeze
             iptables-save > /var/log/iptables.rules
-            rsync -azP /var/log/nginx/* /var/log/kern.log /var/log/messages /var/log/syslog* /var/log/ansible-pull.log /tmp/hdw_info.txt /var/log/ansible-pull.log* /var/log/apt/dpkg.list* /var/log/pip.freeze* /var/log/iptables.rules {{ central_server }}:/ansible/logs/{{ ansible_hostname }}/
+            rsync -e "ssh -o StrictHostKeyChecking=no" -azP /var/log/nginx/* /var/log/kern.log /var/log/messages /var/log/syslog* /var/log/ansible-pull.log /tmp/hdw_info.txt /var/log/ansible-pull.log* /var/log/apt/dpkg.list* /var/log/pip.freeze* /var/log/iptables.rules {{ central_server }}:/ansible/logs/{{ ansible_hostname }}/
         ;;
         *)
         ;;
