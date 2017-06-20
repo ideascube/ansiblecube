@@ -73,7 +73,7 @@
    - apt-listchanges
    - clipit
    - sslh
-  tags: ['master','update']
+  tags: ['master']
 
 - name: Install all required package
   apt: name={{ item }} state=latest
