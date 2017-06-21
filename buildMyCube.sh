@@ -73,9 +73,8 @@ function install_ansible()
     echo 'Done.'
 
     echo -n "[+] Install ansible... "
-    apt-get install --quiet --quiet -y python-pip git python-dev libffi-dev libssl-dev gnutls-bin dialog
-    pip install ansible==2.2.0 markupsafe
-    pip install cryptography --upgrade
+    apt-get install --quiet --quiet -y python-pip python-yaml python-jinja2 python-httplib2 python-paramiko python-pkg-resources libffi-dev libssl-dev git dialog
+    pip install ansible==2.2.0
     echo 'Done.'
 }
 
