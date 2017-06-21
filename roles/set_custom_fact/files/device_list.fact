@@ -5069,16 +5069,12 @@
 				"language":["fr"]
 			},
 			"package_management":[{
-					"name":"les-fondamentaux.fr",
-					"status":"present"
-				},
-				{
 					"name":"gutenberg.fr",
 					"status":"present"
 				},
 				{
 					"name":"gutenberg.en",
-					"status":"present"
+					"status":"absent"
 				},
 				{
 					"name":"wikipedia.fr",
@@ -5090,10 +5086,14 @@
 				},
 				{
 					"name":"wikipedia.en",
-					"status":"absent"
+					"status":"present"
 				},
 				{
 					"name":"wikipedia.ru",
+					"status":"present"
+				},
+				{
+					"name":"wikipedia.ar",
 					"status":"present"
 				},
 				{
@@ -5102,15 +5102,15 @@
 				},
 				{
 					"name":"cest-pas-sorcier.fr",
-					"status":"present"
+					"status":"absent"
 				},
 				{
 					"name":"biologie-tout-compris.fr",
-					"status":"present"
+					"status":"absent"
 				},
 				{
 					"name":"e-penser.fr",
-					"status":"present"
+					"status":"absent"
 				},
 				{
 					"name":"connaissance-des-droits-universels-fr",
