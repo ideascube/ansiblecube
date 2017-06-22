@@ -142,7 +142,7 @@
     - update
 
 - name: Enable the Ideascube Nginx site
-  file: src=/etc/ngins/sites-available/ideascube dest=/etc/nginx/sites-enabled/ideascube state=link force=yes
+  file: src=/etc/nginx/sites-available/ideascube dest=/etc/nginx/sites-enabled/ideascube state=link force=yes
   notify: restart nginx
   tags: ['master','update']
 
