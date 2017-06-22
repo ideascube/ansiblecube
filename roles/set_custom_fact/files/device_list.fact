@@ -2960,11 +2960,8 @@
 			}
 		},
 		"kb-bsf-scaleway": {
-			"kolibri": {
-				"activated": "True"
-			},
                         "kalite": {
-                                "activated": "False",
+                                "activated": "True",
                                 "version": "0.16.9",
                                 "language": ["fr"]
 			},
@@ -2978,13 +2975,10 @@
 		},
 		"idb-bsf-vagrant": {
 			"kalite": {
-				"activated": "False",
+				"activated": "True",
 				"version": "0.16.9",
 				"language": ["fr"]
 			},
-                        "kolibri": {
-                                "activated": "True"
-                        },
 			"package_management": [{
 				"name": "wikiquote.fa",
 				"status": "latest"
