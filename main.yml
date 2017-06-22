@@ -21,9 +21,6 @@
     - role: captive_portal
       when: ansible_local.device_list[generic_project_name].portal is defined
 
-    - role: tinc-static
-      when: ansible_local.installed_software.management.managed_by_bsf|bool == True
-
     - role: tinc-dynamic
       when: ansible_local.installed_software.management.managed_by_bsf|bool == True
 
