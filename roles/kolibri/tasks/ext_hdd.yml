@@ -1,0 +1,18 @@
+---
+- name: Create Kolibri content directory on external HDD
+  file: 
+    path: /media/hdd/KolibriContent/
+    state: directory
+    owner: "{{ username }}"
+    group: "{{ username }}"
+    recurse: yes
+
+- name: Remove old content folder
+  file: path=/home/{{username}}/.kolibri/content state=absent
+
+- name: Create a symlink from Kolibri content folder to HDD
+  file: 
+    src: /media/hdd/KolibriContent/
+    dest: /home/{{username}}/.kolibri/content
+    state: link
+    force: yes

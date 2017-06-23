@@ -1,0 +1,18 @@
+# NGINX configuration for Kolibri
+
+server {
+
+    listen 80;
+    server_name {{kolibri_server_name}};
+
+    # Default value, overwritten in nginx.d
+    set $kolibri_home /home/ideascube/.kolibri/;
+
+    location / {
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Scheme $scheme;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_pass http://localhost:8080;
+        #error_page 502 = @502;
+    }
+}
