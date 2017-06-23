@@ -30,8 +30,7 @@
   tags: ['custom', 'update']
 
 - name: Give rights to ideascube 
-  file: path=/home/{{ username }}/.kalite state=directory
-    owner={{ username }} group={{ username }} recurse=yes
+  command: chown -R {{ username }}:{{ username }} /home/{{ username }}/.kalite
   tags: ['custom', 'update']
 
 - name: Create a user admin for kalite
