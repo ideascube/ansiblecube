@@ -2,40 +2,8 @@
 - include_vars: group_vars/{{ ansible_architecture }}.yml
   tags: ['master', 'custom','rename','update']
 
-- name: Register managed_by_bsf var from facts.d
-  set_fact: managed_by_bsf="{{ ansible_local.installed_software.management.managed_by_bsf|default(False) }}"
-  tags:
-  - update
-
-- name: Check if the device has already a name defined
-  stat: path=/etc/firstStart.csv
-  register: firststart
-  tags: ['master', 'custom']
-
-- name: Generate a random number for the idc_uniq_device_name
-  set_fact: idc_uniq_device_name="{{ ideascube_project_name }}_{{ 1000 | random }}"
-    generic_project_name={{ ideascube_project_name |replace("_", "-") }}
-  when: firststart.stat.exists == False or firststart is undefined
-  tags: ['master', 'custom','rename']
-
-- name: register old name
-  set_fact: old_hostname="{{ansible_hostname | replace("-", "_") }}"
-  tags:
-    - rename
-
 - name: Remove udev rules for wifi 
   file: path=/etc/udev/rules.d/70-persistent-net.rules state=absent
-  tags: ['custom','rename']
-
-- name: A way to get the public IP of the device
-  shell: curl icanhazip.com ; echo
-  register: public_ip
-  when: firststart.stat.exists == False or firststart is undefined
-  tags: ['custom','rename']
-
-- name: Write all the variables in /etc/firstStart.csv
-  copy: content="id,{{ ansible_date_time["date"] }},{{ ansible_date_time["time"] }},{{ idc_uniq_device_name }},{{ ansible_machine_id }},{{ ansible_default_ipv4["macaddress"] }},{{ ansible_default_ipv4["address"] }},{{ public_ip.stdout }}\n" dest=/etc/firstStart.csv
-  when: firststart.stat.exists == False or firststart is undefined
   tags: ['custom','rename']
 
 ## Maybe this could be pushed during preseed
@@ -43,11 +11,6 @@
   copy: src=ssh_known_hosts dest=/etc/ssh/ssh_known_hosts
           owner=root group=root mode=0644
   tags: ['custom','update','rename']
-
-- name: Send this file over the central_server
-  raw: cat /etc/firstStart.csv | ssh {{ central_server }} "cat >> ./ansible/UUID/firstStart.csv"
-  when: managed_by_bsf|bool and firststart.stat.exists == False or firststart is undefined
-  tags: ['custom','rename']
 
 - name: Drop a complete source.list
   copy: src=source.list dest=/etc/apt/sources.list
@@ -207,16 +170,6 @@
   template: src=hosts_update.j2 dest=/etc/hosts
   tags:
     - update
-
-- name: An hostname can not have _ so we are switching to -, python can not have - so using _ sometime too
-  shell: echo {{ idc_uniq_device_name |replace("_", "-") }} > /etc/hostname
-  when: firststart.stat.exists == False or firststart is undefined
-  tags: ['master', 'custom','rename']
-
-- name: If /etc/firstStart.csv exist then hostname is already defined
-  set_fact: idc_uniq_device_name="{{ ansible_hostname }}"
-  when: firststart.stat.exists is defined and firststart.stat.exists or firststart is undefined
-  tags: ['custom','rename']
 
 - name: Create an ideascube user on the system
   user: name={{ username }}
