@@ -100,8 +100,7 @@ function generate_rsa_key()
     echo -e "\n\n\n" | ssh-keygen -t rsa -f /root/.ssh/id_rsa -b 4096 -C "it@bibliosansfrontieres.org $FULL_NAME" -N "" > /dev/null 2>&1
     echo 'Done.'
     echo "[+] Please enter password to copy SSH public key"
-    ssh-copy-id -o StrictHostKeyChecking=no ansible@idbvpn.bsf-intranet.org
-    ssh-copy-id -o StrictHostKeyChecking=no ansible@tincmaster.wan.bsf-intranet.org
+    ssh-copy-id -o StrictHostKeyChecking=no ansible@tincmaster.bsf-intranet.org
 }
 
 function 3rd_party_app()
