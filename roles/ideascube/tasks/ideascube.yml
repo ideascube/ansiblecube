@@ -108,12 +108,12 @@
   tags: ['custom','rename','update']
 
 - name: Ensure that Ideascube folder belong the ideascube user
-  file: path=/var/ideascube/main/ owner={{ username }} group={{ username }} recurse=yes state=directory
+  command: chown -R {{ username }}:{{ username }} /var/ideascube/main/
   tags: 
     - update
 
 - name: Ensure that Ideascube cache folder belong the ideascube user
-  file: path=/var/cache/ideascube/ owner={{ username }} group={{ username }} recurse=yes state=directory
+  command: chown -R {{ username }}:{{ username }} /var/cache/ideascube/
   tags: 
     - update
 
