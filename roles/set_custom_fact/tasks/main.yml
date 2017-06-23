@@ -87,7 +87,8 @@
 
 - name: Register managed_by_bsf var from facts.d
   set_fact: managed_by_bsf="{{ ansible_local.installed_software.management.managed_by_bsf|default(False) }}"
-  tags: ['custom','rename']
+  tags:
+    - update
 
 - name: register old name
   set_fact: old_hostname="{{ansible_hostname | replace("-", "_") }}"
