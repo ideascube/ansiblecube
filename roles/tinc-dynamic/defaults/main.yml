@@ -1,6 +1,5 @@
 ---
 
-vpn_name: idbvpn
 vpn_name2: testvpn
 vpn_interface: "{{ vpn_name2 }}"
 
