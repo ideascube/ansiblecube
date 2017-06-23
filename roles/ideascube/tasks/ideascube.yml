@@ -6,10 +6,6 @@
   template: src=ideascube.list.j2 dest=/etc/apt/sources.list.d/ideascube.list owner=root group=root mode=644
   tags: ['master', 'custom', 'update']
 
-- name: Install ideascube dependencies
-  apt: name=python3-minimal state=present
-  tags: ['master', 'update']
-
 - name: Get ideascube installed (versions.stdout_lines.0) et candidate (versions.stdout_lines.1) version
   raw: LANG=C.UTF-8 apt-cache policy ideascube | awk ' $1~/Installed|Candidate|Installé|Candidat/ { print $2 }'
   register: versions
@@ -22,19 +18,24 @@
   tags:
     - update
 
-- name: Allow unauthenticated packages
-  lineinfile: dest=/etc/apt/apt.conf.d/9999IDEASCUBEISABADBADBOY line='APT::Get::AllowUnauthenticated "true";' create=yes
-  tags: ['master', 'custom', 'update']
+- name: Checkout staticfiles.json file size
+  stat: path=/var/ideascube/static/staticfiles.json
+  register: ideascube_staticfiles
+  tags:
+    - update
+
+- name: Delete staticfiles.json file if size is null
+  file: path=/var/ideascube/static/staticfiles.json state=absent
+  when: ideascube_staticfiles.stat.size is defined
+    and ideascube_staticfiles.stat.size == "0"
+  tags:
+    - update
 
 #### Install last ideascube package
 
-# - name: Install the ideascube package
-#   apt: name=ideascube state=latest update_cache=yes force=yes dpkg_options="force-confnew"
-#   register: is_upgraded
-#   tags: ['master', 'custom','update']
-
 - name: Install ideascube
   apt: name=ideascube force=yes update_cache=yes dpkg_options="force-confnew" state=latest
+  register: has_been_installed
   tags: ['master', 'custom']
 
 - name: Include task needed when using an external hard drive
@@ -42,10 +43,11 @@
   when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l")
     and (sda1.stat.isblk| default (omit)) == True
 
-- name: Run migration for ideascube
+- name: Run Ideascube migrations after the first installation
   become: yes
   become_user: ideascube
-  shell: ideascube migrate --database=default && ideascube migrate --database=transient
+  command: ideascube migrate
+  when: has_been_installed.changed == True
   tags: ['master', 'custom']
 
 - block:
@@ -57,60 +59,6 @@
     register: is_upgraded
 
   when: ideascube_upgrade_frozen == False
-  tags:
-    - update
-
-# - block:
-#   - name: Backup data before upgrading
-#     shell: cp /var/ideascube/main/default.sqlite /var/ideascube/main/default.sqlite-{{ ideascube_installed }}-{{ ansible_date_time["date"] }}-{{ ansible_date_time["time"] }}
-
-#   - name: upgrade ideascube 0.19.0 if ideascube >= 0.14.0
-#     apt: name=ideascube=0.19.0 update_cache=yes force=yes dpkg_options="force-confnew"
-#     register: is_upgraded
-
-#   when: ideascube_installed | version_compare('0.14.0', '>=')
-#   tags:
-#     - update
-
-# - block:
-#   - name: Backup data before upgrading
-#     shell: cp /var/ideascube/main/default.sqlite /var/ideascube/main/default.sqlite-{{ ideascube_installed }}-{{ ansible_date_time["date"] }}-{{ ansible_date_time["time"] }}
-
-#   - name: upgrade ideascube to 0.12.2 if ideascube < 0.13.0
-#     apt: name=ideascube=0.12.2 update_cache=yes force=yes dpkg_options="force-confnew"
-#     register: is_upgraded
-
-#   when: ideascube_installed | version_compare('0.13.0', '<')
-#   tags:
-#     - update
-
-# - block:
-#   - name: Backup data before upgrading
-#     shell: cp /var/ideascube/main/default.sqlite /var/ideascube/main/default.sqlite-{{ ideascube_installed }}-{{ ansible_date_time["date"] }}-{{ ansible_date_time["time"] }}
-
-#   - name: freeze ideascube to 0.13.0 if ideascube = 0.13.0
-#     apt: name=ideascube=0.13.0 update_cache=yes force=yes dpkg_options="force-confnew"
-#     register: is_upgraded
-
-#   when: ideascube_installed | version_compare('0.13.0', '==')
-#   tags:
-#     - update
-
-- name: Remove the unauthenticated hack
-  file: path=/etc/apt/apt.conf.d/9999IDEASCUBEISABADBADBOY state=absent
-  tags: ['master', 'custom', 'update']
-
-- name: Add router_cache to plugin uwsgi list
-  lineinfile: dest=/etc/uwsgi/apps-available/ideascube.ini
-              regexp='^plugins'
-              line='plugins         = python3,router_cache'
-              state=present
-  tags:
-    - update
-
-- name: Create and set up a cache for uwsgi
-  blockinfile: block="{{ lookup('file', 'uwsgi-cache.ini') }}" dest="/etc/uwsgi/apps-available/ideascube.ini"
-  notify: restart uwsgi
   tags:
     - update
 
@@ -159,31 +107,13 @@
   notify: restart uwsgi
   tags: ['custom','rename','update']
 
-- name: Add DEBUG
-  lineinfile: dest=/etc/default/ideascube
-              regexp='DEBUG='
-              line='DEBUG='
-              state=present
-  notify: restart uwsgi
-  tags:
-    - update
-
-- name: Remove linsting on 443 because the port is alredy used by sslh
-  lineinfile: dest=/etc/nginx/sites-available/ideascube regexp='443' state=absent
-  notify: restart nginx
-  tags: ['master', 'custom', 'update']
-
-- name: Create simLink
-  file: src=/etc/uwsgi/apps-available/ideascube.ini dest=/etc/uwsgi/apps-enabled/ideascube.ini state=link force=yes
-  tags: ['master','update']
-  
 - name: Ensure that Ideascube folder belong the ideascube user
-  file: path=/var/ideascube/main/ owner={{ username }} group={{ username }} recurse=yes state=directory
+  command: chown -R {{ username }}:{{ username }} /var/ideascube/main/
   tags: 
     - update
 
 - name: Ensure that Ideascube cache folder belong the ideascube user
-  file: path=/var/cache/ideascube/ owner={{ username }} group={{ username }} recurse=yes state=directory
+  command: chown -R {{ username }}:{{ username }} /var/cache/ideascube/
   tags: 
     - update
 
@@ -208,6 +138,31 @@
   when: ideascube_installed | version_compare('0.13.0', '>') 
     and ideascube_newversion.stdout | version_compare('0.15.0', '>=')
     and is_upgraded.changed == True
+  tags:
+    - update
+
+- name: Enable the Ideascube Nginx site
+  file: src=/etc/nginx/sites-available/ideascube dest=/etc/nginx/sites-enabled/ideascube state=link force=yes
+  notify: restart nginx
+  tags: ['master','update']
+
+- name: Enable the Ideascube uWSGI app
+  file: src=/etc/uwsgi/apps-available/ideascube.ini dest=/etc/uwsgi/apps-enabled/ideascube.ini state=link force=yes
+  notify: restart uwsgi
+  tags: ['master','update']
+
+- name: Add router_cache to plugin uwsgi list
+  lineinfile: dest=/etc/uwsgi/apps-available/ideascube.ini
+              regexp='^plugins'
+              line='plugins         = pam,python3,router_cache'
+              state=present
+  notify: restart uwsgi
+  tags:
+    - update
+
+- name: Create and set up a cache for uwsgi
+  blockinfile: block="{{ lookup('file', 'uwsgi-cache.ini') }}" dest="/etc/uwsgi/apps-available/ideascube.ini"
+  notify: restart uwsgi
   tags:
     - update
 

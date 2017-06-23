@@ -2960,10 +2960,10 @@
 			}
 		},
 		"kb-bsf-scaleway": {
-			"kalite": {
-				"activated": "True",
-				"version": "0.16.9",
-				"language": ["fr"]
+                        "kalite": {
+                                "activated": "True",
+                                "version": "0.16.9",
+                                "language": ["fr"]
 			},
 			"package_management": [{
 				"name": "wikiquote.fa",
@@ -5069,16 +5069,12 @@
 				"language":["fr"]
 			},
 			"package_management":[{
-					"name":"les-fondamentaux.fr",
-					"status":"present"
-				},
-				{
 					"name":"gutenberg.fr",
 					"status":"present"
 				},
 				{
 					"name":"gutenberg.en",
-					"status":"present"
+					"status":"absent"
 				},
 				{
 					"name":"wikipedia.fr",
@@ -5097,20 +5093,24 @@
 					"status":"present"
 				},
 				{
-					"name":"wikipedia.sq",
+					"name":"wikipedia.ar",
 					"status":"present"
+				},
+				{
+					"name":"wikipedia.sq",
+					"status":"absent"
 				},
 				{
 					"name":"cest-pas-sorcier.fr",
-					"status":"present"
+					"status":"absent"
 				},
 				{
 					"name":"biologie-tout-compris.fr",
-					"status":"present"
+					"status":"absent"
 				},
 				{
 					"name":"e-penser.fr",
-					"status":"present"
+					"status":"absent"
 				},
 				{
 					"name":"connaissance-des-droits-universels-fr",
@@ -5233,6 +5233,10 @@
 					"status":"present"
 				},
 				{
+					"name":"arriver-en-france-et-connaitre-ses-droits",
+					"status":"present"
+				},
+				{
 					"name":"biologie-enfants-fr",
 					"status":"present"
 				}
@@ -5240,5 +5244,121 @@
 			"portal":{
 				"activated":"True"
 			}
-	}
+	},
+		"kb-usa-legallibrary": {
+			"kalite": {
+				"activated": "True",
+				"version": "0.16.9",
+				"language": ["en"]
+			},
+			"package_management": [{
+					"name": "wikipedia.en",
+					"status": "present"
+				},
+				{
+					"name": "gutenberg.en",
+					"status": "present"
+				},
+				{
+					"name": "vikidia.en",
+					"status": "present"
+				},
+				{
+					"name": "wikiversity.en",
+					"status": "absent"
+				},
+				{
+					"name": "tedbusiness.en",
+					"status": "absent"
+				},
+				{
+					"name": "teddesign.en",
+					"status": "absent"
+				},
+				{
+					"name": "tedentertainment.en",
+					"status": "absent"
+				},
+				{
+					"name": "tedglobalissues.en",
+					"status": "present"
+				},
+				{
+					"name": "tedscience.en",
+					"status": "present"
+				},
+				{
+					"name": "tedtechnology.en",
+					"status": "absent"
+				},
+				{
+					"name": "ted-ed.en",
+					"status": "absent"
+				},
+				{
+					"name": "tedmed.en",
+					"status": "absent"
+				},
+				{
+					"name": "introduction-to-the-history-of-the-world-en",
+					"status": "present"
+				},
+				{
+					"name": "introduction-to-3d-modelling-with-blender-en",
+					"status": "present"
+				},
+				{
+					"name": "learning-french-en",
+					"status": "present"
+				},
+				{
+					"name": "introduction-to-healthcare-en",
+					"status": "present"
+				},
+				{
+					"name": "introduction-to-human-rights-en",
+					"status": "present"
+				},
+				{
+					"name": "introduction-to-human-rights-for-children-en",
+					"status": "present"
+				},
+				{
+					"name": "non-violent-communication-en",
+					"status": "present"
+				},
+				{
+					"name": "greek-mythology-en",
+					"status": "present"
+				},
+				{
+					"name": "cartoons-en",
+					"status": "present"
+				},
+				{
+					"name": "introduction-to-ecology-en",
+					"status": "present"
+				},
+				{
+					"name": "introduction-to-journalism-en",
+					"status": "present"
+				},
+				{
+					"name": "women-in-african-history-en",
+					"status": "present"
+				},
+				{
+					"name": "astronomy-en",
+					"status": "present"
+				},
+				{
+					"name": "introduction-to-sciences-en",
+					"status": "present"
+				}
+
+			],
+			"portal": {
+				"activated": "True"
+			}
+		}
 }

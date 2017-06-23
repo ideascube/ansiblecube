@@ -1,0 +1,57 @@
+---
+- name: Create a working dir kolibri
+  become: yes
+  become_user: ideascube
+  file: path=/home/ideascube/.kolibri state=directory
+  tags:
+    - custom
+
+- name: Install Kolibri in virtualenv
+  become: yes
+  become_user: ideascube
+  pip: 
+    version={{ ansible_local.device_list[generic_project_name].kolibri.version }}
+    name=kolibri
+    chdir=/home/ideascube/.kolibri
+    virtualenv=/home/ideascube/.kolibri/env
+  tags:
+    - custom
+
+- name: Include task needed when using an external hard drive
+  include: ext_hdd.yml
+  when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l")
+    and sda1.stat.isblk == True
+  tags:
+    - custom
+
+- name: Copy nginx vhost
+  template: src=kolibri.vhost.j2 dest=/etc/nginx/sites-available/kolibri
+  tags:
+    - custom
+
+- name: Create a symlink for Kolibri vhost to Nginx-enabled folder
+  file:
+    src: /etc/nginx/sites-available/kolibri
+    dest: /etc/nginx/sites-enabled/kolibri
+    state: link
+    force: yes
+  notify: restart nginx
+  tags:
+    - custom
+
+- name: Copy systemd startup file
+  copy: src=kolibri.service dest=/etc/systemd/system/kolibri.service
+  notify: Reload systemd
+  tags:
+    - custom
+
+- name: Enable service kolibri
+  service: name=kolibri enabled=yes
+  tags:
+    - custom
+
+- name: Start Kolibri
+  service: name=kolibri state=started
+  tags:
+    - custom
+
