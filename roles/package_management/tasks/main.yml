@@ -21,5 +21,6 @@
   tags: ['custom','update','package_management']
 
 - name: Print out what really happened just before
-  debug:   msg="{{ ideascube_catalog_cmd.stdout }}"
+  debug:   msg={{ item }}
+  with_items: "{{ ideascube_catalog_cmd.stdout }}"
   tags: ['custom','update','package_management']
