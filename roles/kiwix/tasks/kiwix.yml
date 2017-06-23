@@ -71,7 +71,7 @@
     url: http://catalog.ideascube.org/static-sites.yml
   - name: "OSMybon"
     description: "Experimental OSM catalog"
-    url: http://catalog.yohanboniface.me/catalog.yml
+    url: http://catalog.ideascube.org/osmaps.yml
   - name: "Omeka"
     description: "Omeka packages"
     url: http://catalog.ideascube.org/omeka.yml
