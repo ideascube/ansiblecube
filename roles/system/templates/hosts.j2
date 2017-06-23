@@ -1,5 +1,5 @@
-127.0.0.1   localhost {{ idc_uniq_device_name |replace("_", "-") }} {{ hostname }} kiwix.{{ hostname }} khanacademy.{{ hostname }} sites.{{ hostname }} kolibri.{{ hostname }}
+127.0.0.1   localhost {{ ansible_local.installed_software.management.hostname }} {{ ansible_local.installed_software.management.hostname }} kiwix.{{ ansible_local.installed_software.management.hostname }} khanacademy.{{ ansible_local.installed_software.management.hostname }} sites.{{ ansible_local.installed_software.management.hostname }}
 fe00::0     ip6-localnet
 ff00::0     ip6-mcastprefix
 ff02::1     ip6-allnodes
-192.168.2.1 {{ idc_uniq_device_name |replace("_", "-") }} {{ hostname }} kiwix.{{ hostname }} khanacademy.{{ hostname }} sites.{{ hostname }} bsfcampus.{{ hostname }} koombookedu.{{ hostname }} kolibri.{{ hostname }}
+192.168.2.1 {{ ansible_local.installed_software.management.hostname }} {{ ansible_local.installed_software.management.hostname }} kiwix.{{ ansible_local.installed_software.management.hostname }} khanacademy.{{ ansible_local.installed_software.management.hostname }} sites.{{ ansible_local.installed_software.management.hostname }} bsfcampus.{{ ansible_local.installed_software.management.hostname }} koombookedu.{{ ansible_local.installed_software.management.hostname }}
