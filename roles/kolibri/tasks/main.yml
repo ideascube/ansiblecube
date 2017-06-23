@@ -36,9 +36,13 @@
     dest: /etc/nginx/sites-enabled/kolibri
     state: link
     force: yes
+  notify: restart nginx
+  tags:
+    - custom
 
 - name: Copy systemd startup file
   copy: src=kolibri.service dest=/etc/systemd/system/kolibri.service
+  notify: Reload systemd
   tags:
     - custom
 
