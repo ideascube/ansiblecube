@@ -13,8 +13,7 @@
     version={{ ansible_local.device_list[generic_project_name].kolibri.version }}
     name=kolibri
     chdir=/home/ideascube/.kolibri
-    virtualenv_command=/usr/bin/virtualenv
-    virtualenv=/home/ideascube/.kolibri/env
+    irtualenv=/home/ideascube/.kolibri/env
   tags:
     - custom
 
