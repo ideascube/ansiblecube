@@ -109,14 +109,12 @@
     - restart tinc
   tags: ['custom','update']
 
-- name: copy tinc private key from static conf
-  shell: cp /etc/tinc/{{ vpn_name }}/rsa_key.priv /etc/tinc/{{ vpn_name2 }}/  
+- name: create tinc private key
+  shell: tincd -n {{ vpn_name2 }} -K4096
   args:
     creates: /etc/tinc/{{ vpn_name2 }}/rsa_key.priv
-  tags: ['custom','update','rename']
-
-- name: copy tinc public key from static conf
-  shell: sed -n -e '/-----BEGIN RSA PUBLIC KEY-----/,$p' /etc/tinc/{{ vpn_name }}/hosts/{{tinc_localhost_name }} > /etc/tinc/{{ vpn_name2 }}/hosts/{{ tinc_localhost_name }}
+  when: rsa_in_key_file is defined and rsa_in_key_file.stdout == "" 
+    or tinc_key_file is undefined
   tags: ['custom','update','rename']
 
 - name: create tinc-up file
