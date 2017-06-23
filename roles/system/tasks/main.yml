@@ -165,6 +165,11 @@
   template: src=hosts.j2 dest=/etc/hosts
   tags: ['master','custom','update','rename']
 
+- name: Add domain name entry in /etc/hosts if a cache machine is around
+  command: /etc/NetworkManager/dispatcher.d/02koombook-doctor eth0 up
+  when: cache_machine.state|default(omit) == "present"
+  tags: ['update','idc_import','package_management','kalite_import' ]
+
 - name: Create an ideascube user on the system
   user: name={{ username }}
         shell=/bin/bash
