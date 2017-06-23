@@ -163,13 +163,7 @@
 
 - name: Drop hosts file on device
   template: src=hosts.j2 dest=/etc/hosts
-  when: firststart.stat.exists == False or firststart is undefined
-  tags: ['master', 'custom','rename']
-
-- name: Drop hosts file on device
-  template: src=hosts_update.j2 dest=/etc/hosts
-  tags:
-    - update
+  tags: ['master','custom','update','rename']
 
 - name: Create an ideascube user on the system
   user: name={{ username }}
