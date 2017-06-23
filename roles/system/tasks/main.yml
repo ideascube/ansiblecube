@@ -271,6 +271,11 @@
   tags: ['rename']
   notify: Reboot device
 
+- name: Checking if grub conf file is there
+  stat: path=/etc/default/grub
+  register: is_grub
+  tags: ['master','custom']
+
 - name: Shorten GRUB_TIMEOUT
   lineinfile:
     dest:       /etc/default/grub
