@@ -3709,7 +3709,7 @@
 					"status": "latest"
 				},
 				{
-					"name": "hyigene-de-base-fr",
+					"name": "hygiene-de-base-fr",
 					"status": "latest"
 				},
 				{
@@ -4147,7 +4147,7 @@
 					"status": "absent"
 				},
 				{
-					"name": "hyigene-de-base-fr",
+					"name": "hygiene-de-base-fr",
 					"status": "latest"
 				},
 				{
@@ -4959,7 +4959,7 @@
 					"status":"present"
 				},
 				{
-					"name":"hyigene-de-base-fr",
+					"name":"hygiene-de-base-fr",
 					"status":"present"
 				},
 				{
@@ -5157,7 +5157,7 @@
 					"status":"present"
 				},
 				{
-					"name":"hyigene-de-base-fr",
+					"name":"hygiene-de-base-fr",
 					"status":"present"
 				},
 				{
