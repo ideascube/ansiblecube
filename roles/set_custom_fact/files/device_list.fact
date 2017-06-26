@@ -2189,75 +2189,66 @@
 			}
 		},
 		"idb-bsf-demoserver": {
-			"kalite": {
-				"activated": "True",
-				"version": "0.16.9",
-				"language": ["fr", "en", "es"]
+			"kalite":{
+				"activated":"True",
+				"version":"0.16.9",
+				"language":["fr"]
 			},
-			"package_management": [{
-					"name": "wikipedia.en",
-					"status": "latest"
+			"package_management":[{
+					"name":"les-fondamentaux.fr",
+					"status":"present"
 				},
 				{
-					"name": "wikipedia.ar",
-					"status": "latest"
+					"name":"gutenberg.fr",
+					"status":"present"
 				},
 				{
-					"name": "wikipedia.es",
-					"status": "latest"
+					"name":"wikipedia.fr",
+					"status":"present"
 				},
 				{
-					"name": "gutenberg.mul",
-					"status": "latest"
+					"name":"universcience-tv.fr",
+					"status":"present"
 				},
 				{
-					"name": "tedbusiness.en",
-					"status": "latest"
+					"name":"monter-son-projet-professionnel-fr",
+					"status":"present"
 				},
 				{
-					"name": "teddesign.en",
-					"status": "latest"
+					"name":"economie-fr",
+					"status":"present"
 				},
 				{
-					"name": "tedentertainment.en",
-					"status": "latest"
+					"name":"sociologie-du-travail-fr",
+					"status":"present"
 				},
 				{
-					"name": "tedglobalissues.en",
-					"status": "latest"
+					"name":"bien-etre-et-communication-au-travail-fr",
+					"status":"present"
 				},
 				{
-					"name": "tedscience.en",
-					"status": "latest"
+					"name":"management-fr",
+					"status":"present"
 				},
 				{
-					"name": "tedtechnology.en",
-					"status": "latest"
+					"name":"innovation-en-afrique-fr",
+					"status":"present"
 				},
 				{
-					"name": "vikidia.en",
-					"status": "latest"
+					"name":"administration-gestion-comptabilite-fr",
+					"status":"present"
 				},
 				{
-					"name": "bil-tunisia.ar",
-					"status": "latest"
+					"name":"marketing-fr",
+					"status":"present"
 				},
 				{
-					"name": "mullah-piaz-digest.fa",
-					"status": "latest"
-				},
-				{
-					"name": "athens.map",
-					"status": "latest"
-				},
-				{
-					"name": "world.map",
-					"status": "latest"
+					"name":"creation-d-entreprise-fr",
+					"status":"present"
 				}
 			],
-			"idc_import": {
-				"activated": "False",
-				"content_name": ["2-Contenus/csvcolombie.csv"]
+			"portal":{
+				"activated":"False"
 			}
 		},
 		"idb-fra-vdp2": {
