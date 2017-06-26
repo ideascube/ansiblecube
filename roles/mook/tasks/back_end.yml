@@ -27,14 +27,14 @@
 - name: Create a static dir if we are using an external hard drive
   file: path=/media/hdd/{{ mook_name }}/static/tmp state=directory mode=0755 owner={{ username }} group={{ username }}
   when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l")
-    and sda1.stat.isblk == True
+    and sda1.stat.isblk | default(omit) == True
   tags:
     - custom
     
 - name: Create symlink if we are using an external hard drive
   file: src=/media/hdd/{{ mook_name }}/static dest={{ mook_path }}/{{ mook_name }}/static state=link
   when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l")
-    and sda1.stat.isblk == True
+    and sda1.stat.isblk | default(omit) == True
   tags: ["custom","update"]
     
 - name: Create static dir
