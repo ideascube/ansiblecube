@@ -44,3 +44,19 @@
   service: name=hostapd state=started
   tags: 
     - custom
+
+- name: Enable 802.11n
+  lineinfile: dest=/etc/hostapd/hostapd.conf
+              regexp='ieee80211n=1'
+              line='ieee80211n=1'
+              insertafter='EOF'
+  notify: restart hostapd
+  tags: ['custom', 'update']
+
+- name: Enable 802.11n
+  lineinfile: dest=/etc/hostapd/hostapd.conf
+              regexp='wmm_enabled=1'
+              line='wmm_enabled=1'
+              insertafter='EOF'
+  notify: restart hostapd
+  tags: ['custom', 'update']
