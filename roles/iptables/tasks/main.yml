@@ -9,20 +9,8 @@
   tags: 
     - master
 
-- name: Flush any existing IPtables rule.
-  command: "{{item}}"
-  with_items:
-    - /sbin/iptables -P INPUT ACCEPT
-    - /sbin/iptables -P FORWARD ACCEPT
-    - /sbin/iptables -P OUTPUT ACCEPT
-    - /sbin/iptables -F INPUT
-    - /sbin/iptables -F FORWARD
-    - /sbin/iptables -F OUTPUT
-  tags: ['custom', 'update']
-  ignore_errors: yes
-
-- name: Save IPtables empty rules to /etc/iptables.rules
-  shell: /sbin/iptables-save > /etc/iptables.rules
+- name: Copy iptables rules file
+  template: src=iptables.rules.j2 dest=/etc/iptables.rules owner=root group=root mode=644
   tags: ['master', 'custom','update']
 
 - name: Copy iptables restore file
