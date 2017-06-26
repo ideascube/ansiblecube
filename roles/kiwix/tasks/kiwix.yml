@@ -58,6 +58,13 @@
   tags: 
     - update
 
+- name: Remove old OSMybon quick fix
+  become: yes
+  become_user: ideascube
+  command: ideascube catalog remotes remove OSMybon
+  tags: ['master','custom','update']
+  ignore_errors: yes
+
 - name: Install catalogs
   become: yes
   become_user: ideascube
