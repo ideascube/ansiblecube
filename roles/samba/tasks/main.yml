@@ -46,39 +46,5 @@
     or ansible_architecture == 'armv7l')
     and sda1.stat.isblk == True
 
-- name: Open iptables ports for Samba (TCP)
-  iptables:
-    chain: INPUT
-    protocol: tcp
-    match: tcp
-    destination_port: "{{item}}"
-    jump: ACCEPT
-  with_items:
-    - 135
-    - 137
-    - 139
-    - 445
-
-- name: Open iptables ports for Samba (UDP)
-  iptables:
-    chain: INPUT
-    protocol: udp
-    match: udp
-    destination_port: "{{item}}"
-    jump: ACCEPT
-  with_items:
-    - 135
-    - 137
-    - 138
-    - 445
-
-- name: TO FIX, Accept all connection on OUTPUT chain
-  iptables:
-    chain: OUTPUT
-    jump: ACCEPT
-
-- name: Overwrite /etc/iptables.rules to include new rules
-  shell: /sbin/iptables-save > /etc/iptables.rules
-
 - name: Register Samba service
   service: name=samba-ad-dc enabled=yes
