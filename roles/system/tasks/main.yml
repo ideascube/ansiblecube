@@ -208,7 +208,6 @@
   with_items:
   - fr_FR.UTF-8
   - en_US.UTF-8
-  - en_GB.UTF-8
   tags: ['master', 'update']
 
 - name: Copy a blank rc.local
