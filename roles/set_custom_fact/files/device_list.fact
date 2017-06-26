@@ -354,7 +354,7 @@
 				}
 			],
 			"idc_import": {
-				"activated": "True",
+				"activated": "False",
 				"content_name": ["13-NICARALI/CSV-Nicarali.csv"]
 			}
 		},
