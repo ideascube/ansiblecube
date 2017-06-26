@@ -27,7 +27,7 @@
 - name: Delete staticfiles.json file if size is null
   file: path=/var/ideascube/static/staticfiles.json state=absent
   when: ideascube_staticfiles.stat.size is defined
-    and ideascube_staticfiles.stat.size == "0"
+    and ideascube_staticfiles.stat.size == 0
   tags:
     - update
 
