@@ -49,7 +49,7 @@
       generic_project_name={{ ideascube_project_name |replace("_", "-") }}
 
   - name: Set device hostname by replacing _ by -
-    shell: hostname {{ idc_uniq_device_name |replace("_", "-") }}
+    shell: hostnamectl set-hostname {{ idc_uniq_device_name |replace("_", "-") }}
 
   - name: reload ansible_hostname
     setup: filter=ansible_hostname
@@ -65,7 +65,7 @@
       generic_project_name={{ ideascube_project_name |replace("_", "-") }}
 
   - name: Set device hostname by replacing _ by -
-    shell: hostname {{ idc_uniq_device_name |replace("_", "-") }}
+    shell: hostnamectl set-hostname {{ idc_uniq_device_name |replace("_", "-") }}
 
   - name: reload ansible_hostname
     setup: filter=ansible_hostname
