@@ -17,4 +17,10 @@
     {% else %}echo '[+] nothing to do'{% endif %}"
   with_items: '{{ ansible_local.device_list[generic_project_name].package_management | default(omit) }}'
   when: ansible_local.device_list[generic_project_name].package_management is defined
+  register: ideascube_catalog_cmd
+  tags: ['custom','update','package_management']
+
+- name: Print out what really happened
+  debug: msg={{ ideascube_catalog_cmd.stdout }}
+  when: ideascube_catalog_cmd.stdout is defined
   tags: ['custom','update','package_management']
