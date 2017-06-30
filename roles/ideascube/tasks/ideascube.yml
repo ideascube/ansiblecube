@@ -57,9 +57,9 @@
   - name: upgrade ideascube to the last version
     apt: name=ideascube force=yes update_cache=yes dpkg_options="force-confnew" state=latest
     register: is_upgraded
+    notify: restart uwsgi
 
   when: ideascube_upgrade_frozen == False
-  notify: restart uwsgi
   tags:
     - update
 
