@@ -59,6 +59,7 @@
     register: is_upgraded
 
   when: ideascube_upgrade_frozen == False
+  notify: restart uwsgi
   tags:
     - update
 
