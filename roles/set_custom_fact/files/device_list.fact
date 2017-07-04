@@ -5447,10 +5447,6 @@
 					"status": "present"
 				},
 				{
-					"name": "marketing-fr",
-					"status": "present"
-				},
-				{
 					"name": "administration-gestion-comptabilite-fr",
 					"status": "present"
 				},
@@ -5476,10 +5472,6 @@
 				},
 				{
 					"name": "jardinage-et-agriculture-fr",
-					"status": "present"
-				},
-				{
-					"name": "hygiene-de-base-fr",
 					"status": "present"
 				},
 				{
@@ -5582,7 +5574,7 @@
 		},
 	"kb-rca-buc":{
 			"kalite":{
-				"activated":"False",
+				"activated":"True",
 				"version":"0.16.9",
 				"language":["fr"]
 			},
@@ -5657,7 +5649,7 @@
 		},
 	"kb-rca-faseg":{
 			"kalite":{
-				"activated":"False",
+				"activated":"True",
 				"version":"0.16.9",
 				"language":["fr"]
 			},
@@ -5727,8 +5719,8 @@
 			}
 		},
 	"kb-rca-facss":{
-					"kalite":{
-				"activated":"False",
+			"kalite":{
+				"activated":"True",
 				"version":"0.16.9",
 				"language":["fr"]
 			},
