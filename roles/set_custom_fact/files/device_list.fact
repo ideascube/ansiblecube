@@ -5077,7 +5077,7 @@
 				},
 				{
 					"name":"wikipedia.en",
-					"status":"present"
+					"status":"absent"
 				},
 				{
 					"name":"wikipedia.ru",
