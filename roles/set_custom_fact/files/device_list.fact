@@ -5093,11 +5093,11 @@
 				},
 				{
 					"name":"cest-pas-sorcier.fr",
-					"status":"absent"
+					"status":"present"
 				},
 				{
 					"name":"biologie-tout-compris.fr",
-					"status":"absent"
+					"status":"present"
 				},
 				{
 					"name":"e-penser.fr",
