@@ -5762,6 +5762,10 @@
 				},
 				{
 					"name":"hygiene-afrique-fr",
+					"status":"absent"
+				},
+				{
+					"name":"sensibilisation-a-la-gestion-des-epidemies-fr",
 					"status":"present"
 				},
 				{
