@@ -1,0 +1,24 @@
+[global]
+workgroup = WORKGROUP
+server string = Samba Server %v
+netbios name = {{ansible_hostname}}
+security = user
+map to guest = bad user
+dns proxy = no
+wins support = yes
+socket options = TCP_NODELAY
+
+#============================ Share Definitions ==============================
+
+[storage]
+path = "/srv/"
+browsable =yes
+writable = yes
+guest ok = yes
+read only = yes
+force user = nobody
+force group = nogroup
+create mask = 664
+force create mode = 664
+directory mask = 2775
+force directory mode = 2775
