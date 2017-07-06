@@ -41,7 +41,7 @@
 
 - include: lime2.yml
   when: (fex_file.stat.exists is defined and fex_file.stat.exists 
-    or dtb_file.stat.exists is defined and dtb_file.stat.exists
+    or dtb_file.stat.exists is defined and dtb_file.stat.exists)
     and (ansible_architecture == "armhf" 
     or ansible_architecture == "armv7l")
     and sda1.stat.isblk == True
