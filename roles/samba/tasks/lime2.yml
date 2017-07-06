@@ -8,5 +8,5 @@
   when: srv_dir.stat.isdir is defined
 
 - name: Symlink /srv/ to external HDD
-  file: src={{samba_dir}} dest=/srv/ state=link
+  file: src={{samba_dir}} dest=/srv state=link
   when: srv_dir.stat.isdir is defined
