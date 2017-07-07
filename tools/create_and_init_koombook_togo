@@ -33,6 +33,9 @@ if [[ -b /dev/sda && ! -b /dev/sda1 ]]; then
     # Set permissions back to ideascube user
     chown -R ideascube:ideascube /media/hdd/
 
+    # Set permissions back to samba user
+    chown -R nobody:nogroup /media/hdd/samba_share
+
     # This image is 2,2 Go, resize partition to it maximum
     /bin/bash /home/ideascube/resize2fs start
 
