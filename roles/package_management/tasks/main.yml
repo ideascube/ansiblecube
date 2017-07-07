@@ -25,4 +25,4 @@
   tags: ['custom','update','package_management']
 
 - debug: var=pkg_list
-   tags: ['custom','update','package_management']
+  tags: ['custom','update','package_management']
