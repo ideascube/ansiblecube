@@ -8,6 +8,8 @@
 # Mount the newly partition and copy the ideascube data folder on the external HDD
 # The last operation will give a new name to the device
 
+koombook_name="kb_tgo_aneho"
+
 function die() {
         echo "$1"
         exit 1
@@ -38,7 +40,7 @@ if [[ -b /dev/sda && ! -b /dev/sda1 ]]; then
     chmod -x $0
 
     # Rename KoomBook
-    /var/lib/ansible/local/buildMyCube.sh -n kb_tgo_aneho -a rename
+    /var/lib/ansible/local/buildMyCube.sh -n "$koombook_name" -a rename
 
     reboot
 fi
