@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# This script should be drop in /etc/NetworkManager/dispatcher.d/ with chmod 755
+# It works along the KoomBook image file : KoomBook-master-aneho-1.0.img (2,2 Go)
+# The purpose of this script is to automate the configuration of a brand new
+# assembled KoomBook.
+# It will detect the main external HDD /dev/sda and create a new partition on ext4 format.
+# Mount the newly partition and copy the ideascube data folder on the external HDD
+# The last operation will give a new name to the device
+
 function die() {
         echo "$1"
         exit 1
@@ -14,12 +22,13 @@ if [[ -b /dev/sda && ! -b /dev/sda1 ]]; then
     # mount partition
     mount /dev/sda1 /media/hdd/ || die "Unable to mount partition"
 
+    # Write to fstab
     echo "/dev/sda1 /media/hdd/ ext4 noatime,nofail 0 0" >> /etc/fstab
 
     # Move ideascube files to the external HDD
     mv /home/ideascube/hdd/* /media/hdd/
 
-    # Set permissions for ideascube user
+    # Set permissions back to ideascube user
     chown -R ideascube:ideascube /media/hdd/
 
     # Disable script 
