@@ -28,7 +28,7 @@ if [[ -b /dev/sda && ! -b /dev/sda1 ]]; then
     echo "/dev/sda1 /media/hdd/ ext4 noatime,nofail 0 0" >> /etc/fstab
 
     # Move ideascube files to the external HDD
-    mv /home/ideascube/hdd/* /media/hdd/
+    cp -r /home/ideascube/hdd/* /media/hdd/
 
     # Set permissions back to ideascube user
     chown -R ideascube:ideascube /media/hdd/
@@ -39,6 +39,9 @@ if [[ -b /dev/sda && ! -b /dev/sda1 ]]; then
 
     # This image is 2,2 Go, resize partition to it maximum
     /bin/bash /home/ideascube/resize2fs start
+
+    # Make sure udev rules are deleted for wifi usb dongle
+    rm -f /etc/udev/rules.d/70-persistent-net.rules
 
     # Disable script 
     chmod -x $0
