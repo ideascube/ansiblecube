@@ -11,7 +11,7 @@
 koombook_name="KoomBook"
 
 function die() {
-        echo "$1"
+        echo $@ >&2
         exit 1
 }
 
