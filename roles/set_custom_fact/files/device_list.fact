@@ -5792,5 +5792,20 @@
 			"portal":{
 				"activated":"True"
 			}
-		}
+		},
+	"KoomBook":{
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.9",
+			"language": [""]
+		},
+		"idc_import": {
+			"activated": "False",
+			"content_name": [""]
+		},
+			"portal": {
+			"activated": "True"
+		},
+		"samba": "True"
+	}
 }
