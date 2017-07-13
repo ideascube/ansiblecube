@@ -45,22 +45,6 @@
 - block:
 
   - name: Generate a random number for the idc_uniq_device_name
-    set_fact: idc_uniq_device_name="{{ ideascube_project_name }}"
-      generic_project_name={{ ideascube_project_name |replace("_", "-") }}
-
-  - name: Set device hostname by replacing _ by -
-    shell: hostnamectl set-hostname {{ idc_uniq_device_name |replace("_", "-") }}
-
-  - name: reload ansible_hostname
-    setup: filter=ansible_hostname
-
-  when: firststart.stat.exists == false or firststart is undefined
-  tags:
-    - master
-
-- block:
-
-  - name: Generate a random number for the idc_uniq_device_name
     set_fact: idc_uniq_device_name="{{ ideascube_project_name }}_{{ 1000 | random }}"
       generic_project_name={{ ideascube_project_name |replace("_", "-") }}
 
@@ -81,7 +65,7 @@
     setup: filter=ansible_hostname
 
   when: firststart.stat.exists == false or firststart is undefined
-  tags: ['custom','rename']
+  tags: ['custom', 'rename', 'master']
 
 - debug: msg="My name is {{ ansible_hostname }}"
   tags: [ 'master', 'custom', 'rename', 'update','idc_import','package_management','kalite_import' ]
