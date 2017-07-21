@@ -80,8 +80,17 @@
 - name: remove old way of lunching ansible-pull
   file: path=/etc/dhcp/dhclient-exit-hooks.d/ansiblePullUpdate state=absent
 
+- name: Stop uwsgi
+  service: name=uwsgi state=stop
+
 - name: Disable service uwsgi before upgrading ideascube 
   command: systemctl disable uwsgi
+
+- name: Remove uwsgi installed using pip (bug #17)
+  pip: name=uwsgi state=absent
+
+- name: Make sure init file from uwsgi pip is removed
+  file: path=/etc/init.d/uwsgi state=absent
 
 - name: Reboot device to switch to new branch
   command: shutdown -r now
