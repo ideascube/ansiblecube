@@ -28,6 +28,7 @@
   file: path=/var/ideascube/static/staticfiles.json state=absent
   when: ideascube_staticfiles.stat.size is defined
     and ideascube_staticfiles.stat.size == 0
+  notify: restart uwsgi
   tags:
     - update
 
