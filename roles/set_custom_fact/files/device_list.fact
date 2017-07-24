@@ -5807,5 +5807,25 @@
 			"activated": "True"
 		},
 		"samba": "True"
+		},
+	"kb-bsf-itjordan":{
+		"kalite": {
+			"activated": "True",
+			"version": "0.16.9",
+			"language": ["fr"]
+		},
+        "package_management":[{
+                "name":"icd10.fr",
+                "status":"present"
+            }
+        ],
+		"idc_import": {
+			"activated": "False",
+			"content_name": [""]
+		},
+			"portal": {
+			"activated": "False"
+		},
+		"samba": "False"
 	}
 }
