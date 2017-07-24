@@ -2951,15 +2951,19 @@
 			}
 		},
 		"kb-bsf-scaleway": {
-                        "kalite": {
-                                "activated": "True",
-                                "version": "0.16.9",
-                                "language": ["fr"]
+			"kalite": {
+				"activated": "True",
+				"version": "0.16.9",
+				"language": ["fr"]
 			},
 			"package_management": [{
 				"name": "wikiquote.fa",
 				"status": "latest"
 			}],
+			"syncthing": {
+				"activated": "True",
+				"syncthing_master_id_device": ""
+			},
 			"portal": {
 				"activated": "False"
 			}
@@ -2974,6 +2978,10 @@
 				"name": "wikiquote.fa",
 				"status": "latest"
 			}],
+			"syncthing": {
+				"activated": "True",
+				"syncthing_master_id_device": ""
+			},
 			"portal": {
 				"activated": "False"
 			}
