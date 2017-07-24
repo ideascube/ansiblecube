@@ -34,5 +34,16 @@
 - name: fix rights on ansible-pull.log
   file: path=/var/log/ansible-pull.log mode=0644 group=adm
 
+- name: copy idcstats script
+  copy: src=idcstats.sh dest=/usr/local/bin/idcstats.sh mode=755
+
+- name: Add a cron entry to run the idcstats script
+  cron:
+    name: "Run idcstats"
+    hour: "*/6"
+    job: "/usr/local/bin/idcstats.sh"
+    state: present
+  tags: ['custom', 'update']
+
 - name: Say Hi on the logs
   shell: wget http://report.bsf-intranet.org/device={{ansible_hostname}}/ansiblepull=IamOnOldMasterBranch
