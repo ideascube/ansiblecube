@@ -36,8 +36,8 @@
   file:
     path: "/media/hdd/samba_share"
     state: "directory"
-    owner: "nobody"
-    group: "nogroup"
+    owner: "ideascube"
+    group: "ideascube"
     mode: "0777"
   when: ext_hdd
 
