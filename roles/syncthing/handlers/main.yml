@@ -1,0 +1,9 @@
+---
+- name: restart syncthing
+  shell: systemctl restart syncthing@{{ username }}.service
+  notify: reload systemd
+  tags: ['custom']
+
+- name: reload systemd
+  shell: systemctl daemon-reload
+  tags: ['custom']

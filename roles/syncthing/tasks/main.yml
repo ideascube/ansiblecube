@@ -1,0 +1,5 @@
+---
+- include: syncthing.yml
+
+- include: ../../../post_install.yml task=syncthing task_version="{{ syncthing_version.stdout }}"
+  tags: ['custom', 'update']
