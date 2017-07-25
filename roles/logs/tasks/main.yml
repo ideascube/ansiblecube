@@ -33,5 +33,4 @@
     hour: "*/6"
     job: "/usr/local/bin/idcstats.sh"
     state: present
-  tags: ['custom', 'update']
 
