@@ -25,6 +25,7 @@ syncthing_master_id_device: ""
 
 #Apps path
 mook_path: /home/{{ username }}
+samba_dir: /home/{{username}}/samba_share
 zim_path: /var/ideascube/kiwix
 
 #Domaine name
