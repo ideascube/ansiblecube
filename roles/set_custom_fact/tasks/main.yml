@@ -70,6 +70,16 @@
   - name: reload ansible_hostname
     setup: filter=ansible_hostname
 
+  rescue:
+
+  - debug: msg="No bus connection is available yet, set hostname manually"
+
+  - name: Set device hostname by replacing _ by -
+    shell: cat {{ idc_uniq_device_name |replace("_", "-") }} > /etc/hostname
+
+  - name: reload ansible_hostname
+    setup: filter=ansible_hostname
+
   when: firststart.stat.exists == false or firststart is undefined
   tags: ['custom','rename']
 

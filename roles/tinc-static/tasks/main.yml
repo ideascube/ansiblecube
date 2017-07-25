@@ -159,6 +159,7 @@
 
 - name: Rename Key file name
   command: mv /etc/tinc/{{ vpn_name }}/hosts/{{ old_hostname }} /etc/tinc/{{ vpn_name }}/hosts/{{tinc_localhost_name}}
+  ignore_errors: yes
   tags: 
     - rename
 

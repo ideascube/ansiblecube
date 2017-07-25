@@ -115,14 +115,14 @@
 - include: realtek.yml
   when: lspci_realtek.stdout != "" and (ansible_architecture == 'x86_64' or ansible_architecture == 'i386')
 
-- name: Test if a fex file exist, if yes, the device is an Olimex
+- name: Test if a fex file exist (old olimex lime2 image)
   stat: path=/boot/bin/lime2.bin
   register: fex_file
   tags: ['custom','update']
 
-- name: Test if a fex file exist, if yes, the device is an Olimex
-  stat: path=/boot/script.bin
-  register: fex_file2
+- name: Test if a DTB Lime2 file exist (new olimex lime2 image)
+  stat: path=/boot/dtb/sun7i-a20-olinuxino-lime2.dtb
+  register: dtb_file
   tags: ['custom','update']
 
 - name: Ensure the HDD mountpoint exists
@@ -138,7 +138,7 @@
 
 - include: lime2.yml
   when: fex_file.stat.exists is defined and fex_file.stat.exists 
-    or fex_file2.stat.exists is defined and fex_file2.stat.exists
+    or dtb_file.stat.exists is defined and dtb_file.stat.exists
 
 - name: List services to restart (1/2)
   shell: checkrestart | grep ^service | awk '{print $2}'

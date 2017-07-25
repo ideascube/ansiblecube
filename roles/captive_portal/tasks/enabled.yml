@@ -36,7 +36,7 @@
 
 - name: Make sure ideascube is not default_server
   lineinfile:
-    dest: /etc/nginx/sites-enabled/ideascube
+    dest: /etc/nginx/sites-available/ideascube
     regexp: '^(.*)listen(.*)default_server(.*)'
     line: "    listen      80 ;"
     backrefs: yes

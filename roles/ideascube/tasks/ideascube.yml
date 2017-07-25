@@ -27,7 +27,8 @@
 - name: Delete staticfiles.json file if size is null
   file: path=/var/ideascube/static/staticfiles.json state=absent
   when: ideascube_staticfiles.stat.size is defined
-    and ideascube_staticfiles.stat.size == "0"
+    and ideascube_staticfiles.stat.size == 0
+  notify: restart uwsgi
   tags:
     - update
 
@@ -56,6 +57,7 @@
   - name: upgrade ideascube to the last version
     apt: name=ideascube force=yes update_cache=yes dpkg_options="force-confnew" state=latest
     register: is_upgraded
+    notify: restart uwsgi
 
   when: ideascube_upgrade_frozen == False
   tags:
