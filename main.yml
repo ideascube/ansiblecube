@@ -61,6 +61,11 @@
         and ansible_local.device_list[generic_project_name].samba|bool == True
       tags: ['custom','update']
 
+    - role: syncthing
+      when: ansible_local.device_list[generic_project_name].syncthing is defined
+        and ansible_local.device_list[generic_project_name].syncthing.activated|bool == True
+      tags: ['custom','update','syncthing']
+
     - role: idc_import
       when: ansible_local.device_list[generic_project_name].idc_import is defined
         and ansible_local.device_list[generic_project_name].idc_import.activated|bool == True
