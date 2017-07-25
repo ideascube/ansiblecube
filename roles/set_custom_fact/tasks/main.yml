@@ -153,6 +153,5 @@
 
 - name: Use sda1 as external hard drive if sda1 exists and on arm architecture
   set_fact: ext_hdd={{ (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and (sda1.stat.isblk | default (omit)) == True }}
-  when: firststart.stat.exists == false or firststart is undefined
   tags: ['always']
 
