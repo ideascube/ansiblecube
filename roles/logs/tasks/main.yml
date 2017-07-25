@@ -43,7 +43,6 @@
     hour: "*/6"
     job: "/usr/local/bin/idcstats.sh"
     state: present
-  tags: ['custom', 'update']
 
 - name: Say Hi on the logs
   shell: wget http://report.bsf-intranet.org/device={{ansible_hostname}}/ansiblepull=IamOnOldMasterBranch
