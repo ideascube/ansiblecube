@@ -20,6 +20,8 @@ own_config_file: False
 ideascube_upgrade_frozen: True
 git_branch: oneUpdateFile
 samba: False
+syncthing: False
+syncthing_master_id_device: ""
 
 #Apps path
 mook_path: /home/{{ username }}
