@@ -115,11 +115,6 @@
 - include: realtek.yml
   when: lspci_realtek.stdout != "" and (ansible_architecture == 'x86_64' or ansible_architecture == 'i386')
 
-- name: Stat /dev/sda1 for later use on Koombooks
-  stat: path=/dev/sda1
-  register: sda1
-  tags: ['custom','update']
-
 - name: Test if a fex file exist (old olimex lime2 image)
   stat: path=/boot/bin/lime2.bin
   register: fex_file
@@ -130,17 +125,20 @@
   register: dtb_file
   tags: ['custom','update']
 
+- name: Ensure the HDD mountpoint exists
+  file: path=/media/hdd state=directory mode=0755
+  when: ext_hdd
+  tags: ['custom','update']
+
+- name: Mount /dev/sda1
+  mount: name=/media/hdd/ src=/dev/sda1 fstype=ext4 state=mounted opts=noatime,nofail
+  when: ext_hdd
+  tags:
+    - custom
+
 - include: lime2.yml
   when: fex_file.stat.exists is defined and fex_file.stat.exists 
     or dtb_file.stat.exists is defined and dtb_file.stat.exists
-
-- include: scaleway-arm.yml
-  when: ansible_dns.domain|default(omit) == "{{ crashbook_dns_domain }}" and ansible_architecture == "armv7l"
-  tags: ['custom','update']
-
-- include: raspberry.yml
-  when: ansible_lsb.id == "Raspbian" and ansible_architecture == "armv7l"
-  tags: ['custom','update']
 
 - name: List services to restart (1/2)
   shell: checkrestart | grep ^service | awk '{print $2}'

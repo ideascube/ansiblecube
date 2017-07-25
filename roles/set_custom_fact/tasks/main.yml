@@ -155,3 +155,13 @@
 - name: Set variable generic_project_name
   set_fact: generic_project_name={{ ansible_hostname | regex_replace('-\d+', '') }}
   tags: [ 'master', 'custom', 'rename', 'update','idc_import','package_management','kalite_import' ]
+
+- name: Stat /dev/sda1
+  stat: path=/dev/sda1
+  register: sda1
+  tags: ['always']
+
+- name: Use sda1 as external hard drive if sda1 exists and on arm architecture
+  set_fact: ext_hdd={{ (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and (sda1.stat.isblk | default (omit)) == True }}
+  tags: ['always']
+

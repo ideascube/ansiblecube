@@ -41,8 +41,7 @@
 
 - name: Include task needed when using an external hard drive
   include: ext_hdd.yml
-  when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l")
-    and (sda1.stat.isblk| default (omit)) == True
+  when: ext_hdd
 
 - name: Run Ideascube migrations after the first installation
   become: yes
