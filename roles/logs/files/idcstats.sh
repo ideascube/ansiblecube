@@ -36,10 +36,16 @@ sqcount() {
 
 users=$(  sqcount ideascube_user )
 staff=$(  squery "select count(*) from ideascube_user where is_staff = 1" )
+
 medias=$( sqcount mediacenter_document )
 tags=$(   sqcount taggit_tag )
+
 books=$(  sqcount library_book )
-blog=$(   sqcount blog_content )
+
+blogposts=$(     sqcount blog_content )
+blogdrafts=$(    squery "select count(*) from blog_content where status = 1" )
+blogpublished=$( squery "select count(*) from blog_content where status = 2" )
+blogdeleted=$(   squery "select count(*) from blog_content where status = 3" )
 
 # send this to syslog - no need of a separated file, use grep/awk/whatever
-logger --tag idcstats "$users users, $staff staffs, $medias medias, $tags tags, $blog blogposts, $books books"
+logger --tag idcstats "$users users, $staff staffs, $medias medias, $tags tags, $blogposts blogposts, $blogdrafts blogdrafts, $blogpublished blogpublished, $blogdeleted blogdeleted, $books books"
