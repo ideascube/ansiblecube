@@ -12,8 +12,8 @@
 
 - name: Install Syncthing
   apt: 
-    name: syncthing
-    state: latest
+    name: syncthing=0.14.32
+    state: present
 
 - name: Install systemd unit file
   copy:
