@@ -1,0 +1,75 @@
+---
+- include_vars: group_vars/{{ ansible_architecture }}.yml
+
+- name: Add the Syncthing release PGP keys
+  shell: curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
+
+- name: Add Syncthing repository
+  apt_repository:
+    repo: deb https://apt.syncthing.net/ syncthing stable
+    state: present
+    update_cache: yes
+
+- name: Install Syncthing
+  apt: 
+    name: syncthing=0.14.32
+    state: present
+
+- name: Install systemd unit file
+  copy:
+    src: syncthing-resume.service
+    dest: /etc/systemd/system/syncthing-resume.service
+    mode: 755
+
+- name: Install systemd unit file
+  template:
+    src: syncthing.service.j2
+    dest: /etc/systemd/system/syncthing.service
+    mode: 755
+  notify: restart syncthing
+
+- name: Enable unit syncthing-resume.service
+  service:
+    name: syncthing-resume.service
+    enabled: yes
+
+- name: Enable unit syncthing.service
+  service:
+    name: syncthing.service
+    enabled: yes
+
+- name: Verify if config.xml exist
+  stat: path=/home/{{username}}/.config/syncthing/config.xml
+  register: config_file
+
+- name: Generate config.xml file and get device ID
+  become: true
+  become_user: "{{ username }}"
+  shell: syncthing -generate="/home/ideascube/.config/syncthing" | grep "Device ID" | cut -d " " -f5
+  register: device_id
+  when: config_file.stat.exists == False
+
+- name: waiting for configfile (takes some time)
+  become: true
+  become_user: "{{ username }}"
+  wait_for: path=/home/{{username}}/.config/syncthing/config.xml
+  when: config_file.stat.exists == False
+
+- name: Generate new API key
+  shell: date +%s | sha256sum | base64 | head -c 32 ; echo
+  register: api_key
+  when: config_file.stat.exists == False
+
+- name: Copy custom config file
+  become: true
+  become_user: "{{ username }}"
+  template: 
+    src: config.xml.j2
+    dest: /home/ideascube/.config/syncthing/config.xml
+    mode: 0600
+  notify: restart syncthing
+  when: config_file.stat.exists == False
+
+- name: Get Syncthing version
+  shell: syncthing -version | cut -d " " -f2 ; echo
+  register: syncthing_version
