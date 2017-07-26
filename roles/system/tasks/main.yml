@@ -84,6 +84,8 @@
    - sqlite3
    - elinks
    - mosh
+   - curl
+   - apt-transport-https
   tags: ['master','custom','update']
 
 - name: Install avahi packages

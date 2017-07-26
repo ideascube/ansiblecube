@@ -10,13 +10,9 @@
     - "samba-common"
     - "samba-common-bin"
 
-- name: Create root Samba directories
-  file:
-    path: "{{ samba_dir }}"
-    state: "directory"
-    owner: "nobody"
-    group: "nogroup"
-    mode: "0751"
+- name: Generate netbios name
+  shell: echo {{ansible_hostname}} | cut -d "-" -f3,4
+  register: netbios_name
 
 - name: Configure Samba
   template:
@@ -27,24 +23,32 @@
     mode: "0644"
   notify: [ "Check samba config" ]
 
-- name: Test if a fex file exist, if yes, the device is an Olimex
-  stat: path=/boot/bin/lime2.bin
-  register: fex_file
-  when: ansible_architecture == "armhf"
-    or ansible_architecture == "armv7l"
+- name: Create samba directory for device w/o external HDD
+  file:
+    path: "{{ samba_dir }}"
+    state: "directory"
+    owner: "ideascube"
+    group: "ideascube"
+    mode: "0777"
+  when: ext_hdd == False
 
-- name: Test if a DTB Lime2 file exist (new olimex lime2 image)
-  stat: path=/boot/dtb/sun7i-a20-olinuxino-lime2.dtb
-  register: dtb_file
-  when: ansible_architecture == "armhf"
-    or ansible_architecture == "armv7l"
+- name: Create samba directory on external HDD
+  file:
+    path: "/media/hdd/samba_share"
+    state: "directory"
+    owner: "ideascube"
+    group: "ideascube"
+    mode: "0777"
+  when: ext_hdd
 
-- include: lime2.yml
-  when: (fex_file.stat.exists is defined and fex_file.stat.exists 
-    or dtb_file.stat.exists is defined and dtb_file.stat.exists)
-    and (ansible_architecture == "armhf" 
-    or ansible_architecture == "armv7l")
-    and sda1.stat.isblk == True
+- name: Symlink {{samba_dir}} to external HDD
+  file:
+    src: /media/hdd/samba_share
+    dest: "{{samba_dir}}"
+    state: link
+  when: ext_hdd
 
 - name: Register Samba service
-  service: name=samba-ad-dc enabled=yes
+  service:
+    name: samba-ad-dc
+    enabled: yes
