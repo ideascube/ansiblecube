@@ -63,7 +63,6 @@
 
     - role: syncthing
       when: ansible_local.device_list[generic_project_name].syncthing is defined
-        and ansible_local.device_list[generic_project_name].syncthing.activated|bool == True
       tags: ['custom','update','syncthing']
 
     - role: idc_import
