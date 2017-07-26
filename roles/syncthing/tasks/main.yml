@@ -1,5 +1,12 @@
 ---
-- include: syncthing.yml
+- name: Check if syncthing service is installed
+  command: systemctl is-active syncthing
+  register: syncthing_status
+  failed_when: "'FAILED' in syncthing_status.stderr"
 
-- include: ../../../post_install.yml task=syncthing task_version="{{ syncthing_version.stdout }}"
-  tags: ['custom', 'update']
+- include: enabled.yml
+  when: (ansible_local.device_list[generic_project_name].syncthing.activated | default(False)) |bool == True
+
+- include: disabled.yml
+  when: (ansible_local.device_list[generic_project_name].syncthing.activated | default(False)) |bool == False
+    and syncthing_status.stdout == "active"
