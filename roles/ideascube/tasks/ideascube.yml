@@ -178,3 +178,15 @@
 - name: Enable unit ideascube_leftover_files.timer
   service: name=ideascube_leftover_files.timer enabled=yes
   tags: ['master', 'custom', 'update']
+
+- name: Copy remove_staticfiles_json.sh
+  copy: src=remove_staticfiles_json.sh dest=/usr/local/bin/remove_staticfiles_json.sh mode=0755
+  tags: ['master', 'custom', 'update']
+
+- name: Copy remove_staticfiles_json.service
+  copy: src=remove_staticfiles_json.service dest=/etc/systemd/system/remove_staticfiles_json.service
+  tags: ['master', 'custom', 'update']
+
+- name: Enable unit remove_staticfiles_json.service
+  service: name=remove_staticfiles_json.service enabled=yes
+  tags: ['master', 'custom', 'update']
