@@ -97,12 +97,14 @@
   notify: restart kiwix
   tags: ['master','update']
 
-- shell: ls /etc/rc5.d/S*wikipedia ; echo
+- name: check for wikipedia rc.d files
+  shell: ls /etc/rc5.d/S*wikipedia ; echo
   register: file_exist
   tags:
     - update
 
-- stat: path={{file_exist.stdout}}
+- name: parse rc.d files check output
+  stat: path={{file_exist.stdout}}
   register: st
   tags:
     - update
