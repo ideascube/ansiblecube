@@ -5535,6 +5535,94 @@
 				{
 					"name": "introduction-to-sciences-en",
 					"status": "present"
+				},
+				{
+					"name": "what-visas-are-available-for-people-who-do-not-have-any-legal-papers-in-the-united-states",
+					"status": "present"
+				},
+				{
+					"name": "hay-visas-disponibles-para-personas-que-no-tienen-papeles-legales-en-los-estados-unidos",
+					"status": "present"
+				},
+				{
+					"name": "are-you-afraid-of-returning-to-your-home-country-what-is-asylum-and-how-do-you-apply",
+					"status": "present"
+				},
+				{
+					"name": "tiene-miedo-de-regresar-a-su-pais-de-origen-que-es-el-asilo-y-como-se-aplica",
+					"status": "present"
+				},
+				{
+					"name": "i-am-worried-about-getting-deported-how-do-i-protect-myself-and-my-family",
+					"status": "present"
+				},
+				{
+					"name": "estoy-preocupado-que-me-vayan-a-deportar-como-me-protejo-a-mi-ya-mi-familia",
+					"status": "present"
+				},
+				{
+					"name": "what-is-going-to-happen-to-tps",
+					"status": "present"
+				},
+				{
+					"name": "que-va-a-pasar-con-tps",
+					"status": "present"
+				},
+				{
+					"name": "i-do-not-feel-safe-around-my-partner-or-my-parents-what-can-i-do",
+					"status": "present"
+				},
+				{
+					"name": "no-me-siento-seguro-con-mi-pareja-o-mis-padres-que-puedo-hacer",
+					"status": "present"
+				},
+				{
+					"name": "my-employer-isn-t-paying-me-what-they-owe-me-what-can-i-do",
+					"status": "present"
+				},
+				{
+					"name": "mi-patron-no-me-esta-pagando-lo-que-me-deben-que-puedo-hacer",
+					"status": "present"
+				},
+				{
+					"name": "my-employer-physically-or-verbally-mistreats-me-what-can-i-do",
+					"status": "present"
+				},
+				{
+					"name": "mi-empleador-me-maltrata-fisica-o-verbalmente-que-puedo-hacer",
+					"status": "present"
+				},
+				{
+					"name": "my-landlord-threatens-to-get-me-deported-when-i-complain-about-the-conditions-in-my-house-what-can-i-do",
+					"status": "present"
+				},
+				{
+					"name": "mi-dueno-amenaza-que-me-deporte-cuando-me-quejo-de-las-condiciones-en-mi-casa-que-puedo-hacer",
+					"status": "present"
+				},
+				{
+					"name": "my-house-is-unsafe-and-my-landlord-is-unwilling-to-help-what-can-i-do",
+					"status": "present"
+				},
+				{
+					"name": "mi-casa-no-es-segura-y-mi-dueno-no-esta-dispuesto-a-ayudar-que-puedo-hacer",
+					"status": "present"
+				},
+				{
+					"name": "i-have-a-hearing-in-court-but-i-don-t-have-a-lawyer-what-can-i-do",
+					"status": "present"
+				},
+				{
+					"name": "tengo-una-audiencia-en-la-corte-pero-no-tengo-abogado-que-puedo-hacer",
+					"status": "present"
+				},
+				{
+					"name": "how-do-i-find-an-honest-and-licensed-lawyer",
+					"status": "present"
+				},
+				{
+					"name": "como-puedo-encontrar-un-abogado-honesto-y-con-licencia",
+					"status": "present"
 				}
 
 			],
