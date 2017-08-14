@@ -3892,7 +3892,7 @@
 				"status": "latest"
 			},
 			{
-				"name": "droits-de-l-enfants-fr",
+				"name": "droits-de-l-enfant-fr",
 				"status": "latest"
 			},
 			{
@@ -4074,7 +4074,7 @@
 				"status": "latest"
 			},
 			{
-				"name": "droits-de-l-enfants-fr",
+				"name": "droits-de-l-enfant-fr",
 				"status": "latest"
 			},
 			{
@@ -5152,7 +5152,7 @@
 					"status":"present"
 				},
 				{
-					"name":"droits-de-l-enfants-fr",
+					"name":"droits-de-l-enfant-fr",
 					"status":"present"
 				},
 				{
@@ -5350,7 +5350,7 @@
 					"status":"present"
 				},
 				{
-					"name":"droits-de-l-enfants-fr",
+					"name":"droits-de-l-enfant-fr",
 					"status":"present"
 				},
 				{
@@ -5765,7 +5765,7 @@
 					"status": "present"
 				},
 				{
-					"name": "droits-de-l-enfants-fr",
+					"name": "droits-de-l-enfant-fr",
 					"status": "present"
 				},
 				{
@@ -6177,7 +6177,7 @@
 					"status":"present"
 				},
 				{
-					"name":"droits-de-l-enfants-fr",
+					"name":"droits-de-l-enfant-fr",
 					"status":"present"
 				},
 				{
