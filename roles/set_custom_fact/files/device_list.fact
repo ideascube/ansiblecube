@@ -6070,7 +6070,7 @@
 			"portal":{
 				"activated":"True"
 			}
-		},	"idb-rdc-savethechildren-lusenda":{
+		},	"idb-rdc-save-lusenda":{
 			"kalite":{
 				"activated":"True",
 				"version":"0.16.9",
