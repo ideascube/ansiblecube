@@ -346,6 +346,12 @@ do
                 exit 0;
             fi
 
+            # An SSID length can not exceed 32 characters. SSID == name + _XXX ; do name must be 28 chars max
+            [[ ${#2} -gt 28 ]] && {
+                echo "Error: the name should be less than 28 characters long." >&2
+                exit 16
+            }
+
             NAME="ideascube_project_name=$2"
             FULL_NAME=`echo "$2" | sed 's/_/-/g'`
 
