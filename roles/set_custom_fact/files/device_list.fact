@@ -6244,6 +6244,24 @@
 			"portal":{
 				"activated":"True"
 			}
+		},	"idb-irq-oxfamhs":{
+			"kalite":{
+				"activated":"True",
+				"version":"0.16.9",
+				"language":["fr"]
+			},
+			"package_management":[{
+					"name":"wikipedia.en",
+					"status":"present"
+				},
+				{
+					"name":"wikipedia.ar",
+					"status":"present"
+				}
+			],
+			"portal":{
+				"activated":"True"
+			}
 		},
 	"KoomBook":{
 		"kalite": {
