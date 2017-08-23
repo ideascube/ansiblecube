@@ -42,7 +42,6 @@
    - fping
    - stress
    - iperf
-   - iotop
    - lirc
    - apt-listchanges
    - clipit
@@ -86,6 +85,8 @@
    - mosh
    - curl
    - apt-transport-https
+   - iotop
+   - htop
   tags: ['master','custom','update']
 
 - name: Install avahi packages
