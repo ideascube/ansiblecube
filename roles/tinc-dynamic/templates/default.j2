@@ -1,2 +1,2 @@
 # Extra options to be passed to tincd.
-{% if vpn_log_level is defined %}EXTRA="-d1 --logfile{% if vpn_log_file is defined %} {{ vpn_log_file }}{% endif%}"{% endif %}
+{% if vpn_log_level is defined %}EXTRA="-d1 --logfile"{% endif %}
