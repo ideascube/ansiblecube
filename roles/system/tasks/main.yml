@@ -166,6 +166,10 @@
   template: src=hosts.j2 dest=/etc/hosts
   tags: ['master','custom','update','rename']
   
+- name: Drop dhclient.conf file on device
+  template: src=dhclient.conf.j2 dest=/etc/dhcp/dhclient.conf
+  tags: ['master','custom','update','rename']
+  
 - name: Add domain name entry in /etc/hosts if a cache machine is around
   command: /etc/NetworkManager/dispatcher.d/02koombook-doctor eth0 up
   when: cache_machine.state|default(omit) == "present"
