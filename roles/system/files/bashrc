@@ -15,3 +15,10 @@ alias mv='mv -i'
 # ENV
 export LS_OPTS='--color=auto'
 export GREP_OPTIONS='--color=auto'
+
+# Bash completion
+if [ -f /etc/profile.d/bash-completion ] ; then
+    source /etc/profile.d/bash-completion
+elif [ -f /etc/bash_completion ] ; then
+    source /etc/bash_completion
+fi
