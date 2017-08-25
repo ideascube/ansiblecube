@@ -41,3 +41,6 @@ export PS4='$0.$LINENO+ '
 
 [ -x /usr/bin/colordiff ] \
     && alias diff='colordiff -u'
+
+[ -x /usr/bin/tree ] \
+    && alias tree='tree -C -I ".git*|.svn|.bzr|*.pyc|*.swp|.ikiwiki"'
