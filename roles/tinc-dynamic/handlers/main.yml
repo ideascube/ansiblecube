@@ -9,26 +9,17 @@
   shell: pkill --signal HUP tincd
   ignore_errors: yes
 
-
 #
 # chain multiple notify so our handler can perform multiple tasks.
 #
 - name: Announce MAC
-  shell: iptables -I OUTPUT -m tcp -p tcp --dport 6667 -j ACCEPT
-  notify: say hi with MAC on IRC
-
-- name: say hi with MAC on IRC
   irc:
     port: 6667
     server: "irc.freenode.net"
     channel: "#ideascube"
-    msg: "Hi, my name is {{ tinc_localhost_name }} (from {{ tinc_if_mac.stdout }}) and I'd like you to join my professional network on {{ vpn_name2 }}. Wonder what is my IP? Me too."
+    msg: "Hi, my name is {{ tinc_localhost_name }} (from {{ tinc_if_mac.stdout }}) and I'd like you to join my professional network on {{ vpn_name }}. Wonder what is my IP? Me too."
     color: none
     nick: "{{ tinc_localhost_name }}"
   changed_when: true
   ignore_errors: yes
   notify: Close IRC port in firewall
-
-- name: Close IRC port in firewall
-  shell: iptables -D OUTPUT -m tcp -p tcp --dport 6667 -j ACCEPT
-  ignore_errors: yes
