@@ -11,3 +11,36 @@ alias l='ls $LS_OPTIONS -lA'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
+
+# ENV
+export LS_OPTS='--color=auto'
+export GREP_OPTIONS='--color=auto'
+
+# Bash completion
+if [ -f /etc/profile.d/bash-completion ] ; then
+    source /etc/profile.d/bash-completion
+elif [ -f /etc/bash_completion ] ; then
+    source /etc/bash_completion
+fi
+
+# custom prompt
+if [ "$EUID" = '0' ] || [ "$USER" = 'root' ]; then
+    PS1="\[\033[01;31m\]\h\[\033[01;34m\] \w \\$\[\033[00m\] "
+else
+    PS1="\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \\$\[\033[00m\] "
+fi
+# PS4 to prefix 'set -x' tracing output
+export PS4='$0.$LINENO+ '
+
+#
+# misc aliases
+#
+
+[ -x /usr/bin/diff ] \
+    && alias diff='diff -u'
+
+[ -x /usr/bin/colordiff ] \
+    && alias diff='colordiff -u'
+
+[ -x /usr/bin/tree ] \
+    && alias tree='tree -C -I ".git*|.svn|.bzr|*.pyc|*.swp|.ikiwiki"'
