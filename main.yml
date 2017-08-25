@@ -22,19 +22,16 @@
       when: ansible_local.device_list[generic_project_name].portal is defined
 
     - role: tinc-dynamic
-      vpn_name: "tesvpn"
+      vpn_name: "testvpn"
       vpn_port: "656"
       vpn_master_server: "tincmaster"
       when: ansible_local.installed_software.management.managed_by_bsf|bool == True
-  
-    # Loop inside the role instead, no other way!
-    # This does not work !!!!
-    # - role: tinc-dynamic
-    #   vpn_name: "{{ item.name }}"
-    #   vpn_port: "{{ item.port }}"
-    #   vpn_master_server: "{{ item.master_server }}"
-    #   with_items: '{{ ansible_local.device_list[generic_project_name].vpn }}'
-    #   when: ansible_local.device_list[generic_project_name].vpn is defined
+
+    - role: tinc-dynamic
+      vpn_name: "{{ ansible_local.device_list[generic_project_name].vpn.name }}"
+      vpn_port: "{{ ansible_local.device_list[generic_project_name].vpn.port }}"
+      vpn_master_server: "{{ ansible_local.device_list[generic_project_name].vpn.master_server }}"
+      when: ansible_local.device_list[generic_project_name].vpn is defined
 
     - role: mook
       mook_name: bsfcampus
