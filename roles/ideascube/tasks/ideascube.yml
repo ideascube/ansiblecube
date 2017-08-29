@@ -114,7 +114,7 @@
     - update
 
 - name: Ensure that Ideascube cache folder belong the ideascube user
-  command: chown -R {{ username }}:{{ username }} /var/cache/ideascube/
+  shell: chown -R {{ username }}:{{ username }} /var/cache/ideascube/
   tags: 
     - update
 

@@ -67,7 +67,7 @@
 
     - role: modoboa
       when: ansible_local.device_list[generic_project_name].modoboa is defined
-        and ansible_local.device_list[generic_project_name].modoboa|bool == True
+        and ansible_local.device_list[generic_project_name].modoboa.activated|bool == True
       tags: ['custom','update','modoboa']
 
     - role: idc_import
