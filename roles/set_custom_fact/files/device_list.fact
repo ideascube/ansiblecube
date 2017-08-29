@@ -6594,7 +6594,83 @@
         "status": "present"
       },
       {
+        "name": "wiktionary.en",
+        "status": "present"
+      },
+      {
+        "name": "wikiversity.en",
+        "status": "present"
+      },
+      {
+        "name": "wikibooks.en",
+        "status": "present"
+      },
+      {
+        "name": "wikisource.en",
+        "status": "present"
+      },
+      {
+        "name": "tedentertainment.en",
+        "status": "present"
+      },
+      {
+        "name": "tedscience.en",
+        "status": "present"
+      },
+      {
+        "name": "tedtechnology.en",
+        "status": "present"
+      },
+      {
         "name": "wikipedia.ar",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.ku",
+        "status": "present"
+      },
+      {
+        "name": "wiktionary.ku",
+        "status": "present"
+      },
+      {
+        "name": "wiktionary.ar",
+        "status": "present"
+      },
+      {
+        "name": "wikiversity.ar",
+        "status": "present"
+      },
+      {
+        "name": "wikibooks.ar",
+        "status": "present"
+      },
+      {
+        "name": "wikisource.ar",
+        "status": "present"
+      },
+      {
+        "name": "wikiquote.ar",
+        "status": "present"
+      },
+      {
+        "name": "wikiquote.en",
+        "status": "present"
+      },
+      {
+        "name": "ted-ed.en",
+        "status": "present"
+      },
+      {
+        "name": "tedmed.en",
+        "status": "present"
+      },
+      {
+        "name": "crashcourse.en",
+        "status": "present"
+      },
+      {
+        "name": "vikidia.en",
         "status": "present"
       }
     ],
