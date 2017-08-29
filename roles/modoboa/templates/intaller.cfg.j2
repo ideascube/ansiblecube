@@ -1,0 +1,104 @@
+[general]
+# %(domain)s is the value specified when launching the installer
+hostname = mail.%(domain)s
+
+[certificate]
+generate = false
+# Choose between self-signed or letsencrypt
+type = self-signed
+#type = letsencrypt
+
+[letsencrypt]
+email = admin@%(domain)s
+
+[database]
+# Select database engine : postgres or mysql
+engine = postgres
+#engine = mysql
+host = 127.0.0.1
+install = true
+
+[postgres]
+user = postgres
+password =
+
+[mysql]
+user = root
+password = MDppRZDZw5O3E9De
+charset = utf8
+collation = utf8_general_ci
+
+[modoboa]
+user = modoboa
+home_dir = /srv/modoboa
+venv_path = %(home_dir)s/env
+instance_path = %(home_dir)s/instance
+timezone = {{ timezone }}
+dbname = modoboa
+dbuser = modoboa
+dbpassword = T6BzvFXUL6alN86O
+# Extensions to install
+# also available: modoboa-radicale modoboa-dmarc modoboa-imap-migration modoboa-amavis
+extensions = modoboa-pdfcredentials modoboa-postfix-autoreply modoboa-sievefilters modoboa-stats modoboa-webmail modoboa-contacts
+
+# Deploy Modoboa and enable development mode
+devmode = false
+
+[automx]
+enabled = false
+user = automx
+config_dir = /etc
+home_dir = /srv/automx
+venv_path = %(home_dir)s/env
+instance_path = %(home_dir)s/instance
+
+[amavis]
+enabled = false
+user = amavis
+max_servers = 1
+
+dbname = amavis
+dbuser = amavis
+dbpassword = yK08lz18WeUXTutt
+
+[clamav]
+enabled = false
+user = clamav
+
+[dovecot]
+enabled = true
+config_dir = /etc/dovecot
+user = vmail
+home_dir = /srv/vmail
+mailboxes_owner = vmail
+# Enable extra procotols (in addition to imap and lmtp)
+# Example: pop3
+extra_protocols =
+# Replace localhost with your domain
+postmaster_address = postmaster@localhost
+
+[nginx]
+enabled = true
+config_dir = /etc/nginx
+
+[razor]
+enabled = false
+config_dir = /etc/razor
+
+[postfix]
+enabled = true
+config_dir = /etc/postfix
+message_size_limit = 11534336
+
+[spamassassin]
+enabled = false
+config_dir = /etc/mail/spamassassin
+
+dbname = spamassassin
+dbuser = spamassassin
+dbpassword = wPQHqY0i6L0JOsAy
+
+[uwsgi]
+enabled = true 
+config_dir = /etc/uwsgi
+nb_processes = 2
