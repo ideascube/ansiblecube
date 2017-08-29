@@ -2,15 +2,15 @@
 - name: Clone modoboa repo
   git:
     repo: https://github.com/modoboa/modoboa-installer
-    dest: ~/
+    dest: /tmp/modoboa-installer
 
 - name: Copy modoboa installer configuration file
   template:
-    src:   installer.cfg.j2
-    dest:  ~/modoboa-installer/installer.cfg
+    src: installer.cfg.j2
+    dest: /tmp/modoboa-installer/installer.cfg
 
 - name: Run modoboa script installer
-  command: ./run.py {{ fqdn_mail }}
+  command: python /tmp/modoboa-installer/run.py {{ fqdn_mail }}
 
 - name: Enable queue lifetime
   lineinfile:
