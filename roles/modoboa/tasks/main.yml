@@ -11,6 +11,7 @@
 
 - name: Run modoboa script installer
   command: python /tmp/modoboa-installer/run.py {{ fqdn_mail }}
+  chdir: /tmp/modoboa-installer/
 
 - name: Enable queue lifetime
   lineinfile:
