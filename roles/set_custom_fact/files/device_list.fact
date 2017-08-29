@@ -6664,6 +6664,122 @@
       {
         "name": "tedxgeneva2014.fr",
         "status": "present"
+      },
+      {
+        "name": "decouvrez-de-nouvelles-musiques-fr",
+        "status": "present"
+      },
+      {
+        "name": "relation-au-corps-fr",
+        "status": "present"
+      },
+      {
+        "name": "combattons-les-discriminations-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-fr",
+        "status": "present"
+      },
+      {
+        "name": "decouvrez-les-arts-plastiques-fr",
+        "status": "present"
+      },
+      {
+        "name": "initiez-vous-a-la-photographie-fr",
+        "status": "present"
+      },
+      {
+        "name": "comprendre-et-exprimer-ses-emotions-fr",
+        "status": "present"
+      },
+      {
+        "name": "initiez-vous-a-la-creation-video-fr",
+        "status": "present"
+      },
+      {
+        "name": "audiobooks-et-fictions-sonores-fr",
+        "status": "present"
+      },
+      {
+        "name": "films-fr",
+        "status": "present"
+      },
+      {
+        "name": "sexualite-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "droits-de-l-enfant-fr",
+        "status": "present"
+      },
+      {
+        "name": "contes-et-dessins-animes-fr",
+        "status": "present"
+      },
+      {
+        "name": "arts-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "geographie-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "discriminations-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "creation-audio-fr",
+        "status": "present"
+      },
+      {
+        "name": "ebooks-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "sante-fr",
+        "status": "present"
+      },
+      {
+        "name": "ecriture-et-litterature-fr",
+        "status": "present"
+      },
+      {
+        "name": "biologie-adolescents-fr",
+        "status": "present"
+      },
+      {
+        "name": "nature-fr",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-adults-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-teenagers-en",
+        "status": "present"
+      },
+      {
+        "name": "biologie-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "women-in-african-history-en",
+        "status": "present"
+      },
+      {
+        "name": "experiences-de-femmes-fr",
+        "status": "present"
+      },
+      {
+        "name": "kit-de-l-animateur-fr",
+        "status": "present"
       }
     ],
     "portal": {
