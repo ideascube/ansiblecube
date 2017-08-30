@@ -35,3 +35,11 @@
     line: 'relayhost'
     regexp: 'relayhost = {{ tinc_relay_mail_server }}'
   notify: restart postfix
+
+- name: Flush postfix queue when target devices gets up
+  lineinfile:
+    dest: '/etc/tinc/email/host-up'
+    line: 'sleep 10 && postqueue -f'
+    regexp: 'sleep'
+    create: yes
+  notify: reload tinc

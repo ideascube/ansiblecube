@@ -1,2 +1,5 @@
 - name: restart postfix
   service: name=postfix state=restarted
+
+- name: reload tinc
+  service: name=tinc state=reloaded
