@@ -1,4 +1,8 @@
 ---
+- name: reload tinc
+  shell: pkill --signal HUP tincd
+  ignore_errors: yes
+
 - name: restart dnsmasq
   service: name=dnsmasq state=restarted
   tags: ['custom', 'update']

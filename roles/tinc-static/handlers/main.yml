@@ -1,10 +1,5 @@
 ---
 
-- name: reload tinc
-  shell: pkill --signal HUP tincd
-  ignore_errors: yes
-
-
 #
 # chain multiple notify so our handler can perform multiple tasks.
 #
