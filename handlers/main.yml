@@ -13,3 +13,7 @@
 
 - name: restart tinc
   service: name=tinc state=restarted
+
+- name: restart uwsgi
+  service: name=uwsgi state=restarted
+  tags: ['custom', 'update']

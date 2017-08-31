@@ -1,8 +1,4 @@
 ---
-- name: restart uwsgi
-  service: name=uwsgi state=restarted
-  tags: ['custom', 'update']
-
 - name: restart mook-sync
   service: name=mook-sync-{{ mook_name }} state=restarted
   tags: ['custom', 'update']
