@@ -31,8 +31,8 @@
 - name: Enable relayhost
   lineinfile:
     dest: '/etc/postfix/main.cf'
-    line: 'relayhost'
-    regexp: 'relayhost = {{ tinc_relay_mail_server }}'
+    line: 'relayhost = {{ tinc_relay_mail_server }}'
+    regexp: 'relayhost'
   notify: restart postfix
 
 - name: Flush postfix queue when target devices gets up
