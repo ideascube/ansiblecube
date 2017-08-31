@@ -6,3 +6,6 @@
 - name: restart nginx
   service: name=nginx state=restarted
   tags: ['custom', 'update']
+
+- name: restart tinc
+  service: name=tinc state=restarted
