@@ -1,4 +1,8 @@
 ---
+- name: restart dnsmasq
+  service: name=dnsmasq state=restarted
+  tags: ['custom', 'update']
+
 - name: restart nginx
   service: name=nginx state=restarted
   tags: ['custom', 'update']
