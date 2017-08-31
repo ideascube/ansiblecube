@@ -1,0 +1,19 @@
+---
+- name: reload tinc
+  shell: pkill --signal HUP tincd
+  ignore_errors: yes
+
+- name: restart dnsmasq
+  service: name=dnsmasq state=restarted
+  tags: ['custom', 'update']
+
+- name: restart nginx
+  service: name=nginx state=restarted
+  tags: ['custom', 'update']
+
+- name: restart tinc
+  service: name=tinc state=restarted
+
+- name: restart uwsgi
+  service: name=uwsgi state=restarted
+  tags: ['custom', 'update']
