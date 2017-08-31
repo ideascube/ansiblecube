@@ -18,20 +18,6 @@
   tags:
     - update
 
-- name: Checkout staticfiles.json file size
-  stat: path=/var/ideascube/static/staticfiles.json
-  register: ideascube_staticfiles
-  tags:
-    - update
-
-- name: Delete staticfiles.json file if size is null
-  file: path=/var/ideascube/static/staticfiles.json state=absent
-  when: ideascube_staticfiles.stat.size is defined
-    and ideascube_staticfiles.stat.size == 0
-  notify: restart uwsgi
-  tags:
-    - update
-
 #### Install last ideascube package
 
 - name: Install ideascube
@@ -177,16 +163,4 @@
 
 - name: Enable unit ideascube_leftover_files.timer
   service: name=ideascube_leftover_files.timer enabled=yes
-  tags: ['master', 'custom', 'update']
-
-- name: Copy remove_staticfiles_json.sh
-  copy: src=remove_staticfiles_json.sh dest=/usr/local/bin/remove_staticfiles_json.sh mode=0755
-  tags: ['master', 'custom', 'update']
-
-- name: Copy remove_staticfiles_json.service
-  copy: src=remove_staticfiles_json.service dest=/etc/systemd/system/remove_staticfiles_json.service
-  tags: ['master', 'custom', 'update']
-
-- name: Enable unit remove_staticfiles_json.service
-  service: name=remove_staticfiles_json.service enabled=yes
   tags: ['master', 'custom', 'update']
