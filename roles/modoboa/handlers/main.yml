@@ -3,3 +3,6 @@
 
 - name: reload tinc
   service: name=tinc state=reloaded
+
+- name: reload nginx
+  service: name=nginx state=reloaded
