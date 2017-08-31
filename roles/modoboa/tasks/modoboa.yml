@@ -8,7 +8,7 @@
   git:
     repo: https://github.com/modoboa/modoboa-installer
     dest: /tmp/modoboa-installer
-    version: {{ modoboa_version }}
+    version: "{{ modoboa_version }}"
 
 - name: Copy modoboa installer configuration file
   template:
