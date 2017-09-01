@@ -6672,6 +6672,102 @@
       {
         "name": "vikidia.en",
         "status": "present"
+      },
+      {
+        "name": "fictions-and-entertainment-in-arabic-ar",
+        "status": "present"
+      },
+      {
+        "name": "musique-en-arabe-ar",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-adults-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-teenagers-en",
+        "status": "present"
+      },
+      {
+        "name": "cartoons-en",
+        "status": "present"
+      },
+      {
+        "name": "music-in-kurdish-ckb",
+        "status": "present"
+      },
+      {
+        "name": "kurdish-dramas-tv-shows-ckb",
+        "status": "present"
+      },
+      {
+        "name": "abuse-and-harassment-ar",
+        "status": "present"
+      },
+      {
+        "name": "arabic-alphabet-ar",
+        "status": "present"
+      },
+      {
+        "name": "cooking-ar",
+        "status": "present"
+      },
+      {
+        "name": "poetry-ar",
+        "status": "present"
+      },
+      {
+        "name": "physics-ar",
+        "status": "present"
+      },
+      {
+        "name": "self-development-ar",
+        "status": "present"
+      },
+      {
+        "name": "sports-ar",
+        "status": "present"
+      },
+      {
+        "name": "fashion-and-beauty-ar",
+        "status": "present"
+      },
+      {
+        "name": "motherhood-and-parenting-ar",
+        "status": "present"
+      },
+      {
+        "name": "mathematics-ar",
+        "status": "present"
+      },
+      {
+        "name": "philosophy-of-language-ar",
+        "status": "present"
+      },
+      {
+        "name": "let-s-speak-english-ar",
+        "status": "present"
+      },
+      {
+        "name": "health-and-diseases-ar",
+        "status": "present"
+      },
+      {
+        "name": "girl-talk-puberty-ar",
+        "status": "present"
+      },
+      {
+        "name": "let-s-be-clean-ar",
+        "status": "present"
+      },
+      {
+        "name": "let-s-speak-arabic-ar",
+        "status": "present"
+      },
+      {
+        "name": "biology-ar",
+        "status": "present"
       }
     ],
     "portal": {
