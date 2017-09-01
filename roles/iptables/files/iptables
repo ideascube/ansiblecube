@@ -1,2 +1,2 @@
 #!/bin/sh
-iptables-restore /etc/iptables.rules
+/sbin/iptables-restore /etc/iptables.rules
