@@ -1,0 +1,5 @@
+---
+- include: modoboa.yml
+  when: ansible_local.installed_software.software.modoboa is undefined
+
+- include: ../../../post_install.yml task=modoboa task_version="{{modoboa_version}}"

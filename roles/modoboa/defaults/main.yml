@@ -1,0 +1,3 @@
+fqdn_mail: ideas-box.cc
+tinc_relay_mail_server: 192.168.10.254
+modoboa_version: "1.8.2"

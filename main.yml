@@ -65,6 +65,11 @@
       when: ansible_local.device_list[generic_project_name].syncthing is defined
       tags: ['custom','update','syncthing']
 
+    - role: modoboa
+      when: ansible_local.device_list[generic_project_name].modoboa is defined
+        and ansible_local.device_list[generic_project_name].modoboa.activated|bool == True
+      tags: ['custom','update','modoboa']
+
     - role: idc_import
       when: ansible_local.device_list[generic_project_name].idc_import is defined
         and ansible_local.device_list[generic_project_name].idc_import.activated|bool == True

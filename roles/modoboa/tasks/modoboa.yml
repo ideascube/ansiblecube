@@ -1,0 +1,51 @@
+---
+- name: Install pexpect for auto answere in task expect
+  pip:
+    name: pexpect
+    state: present
+
+- name: Clone modoboa repo
+  git:
+    repo: https://github.com/modoboa/modoboa-installer
+    dest: /tmp/modoboa-installer
+
+- name: Copy modoboa installer configuration file
+  template:
+    src: installer.cfg.j2
+    dest: /tmp/modoboa-installer/installer.cfg
+
+- name: Run modoboa script installer
+  expect:
+    command: python /tmp/modoboa-installer/run.py {{ fqdn_mail }}
+    chdir: /tmp/modoboa-installer/
+    responses:
+      confirm: "Y"
+
+- name: Enable queue lifetime
+  lineinfile:
+    dest: '/etc/postfix/main.cf'
+    line: 'maximal_queue_lifetime = 30d'
+    regexp: 'maximal_queue_lifetime'
+  notify: restart postfix
+
+- name: Enable relayhost
+  lineinfile:
+    dest: '/etc/postfix/main.cf'
+    line: 'relayhost = {{ tinc_relay_mail_server }}'
+    regexp: 'relayhost'
+  notify: restart postfix
+
+- name: Flush postfix queue when target devices gets up
+  lineinfile:
+    dest: '/etc/tinc/email/host-up'
+    line: 'sleep 10 && postqueue -f'
+    regexp: 'sleep'
+    create: yes
+  notify: reload tinc
+
+- name: Enable default server for SSL
+  lineinfile:
+    dest: '/etc/nginx/sites-enabled/mail.{{ fqdn_mail }}.conf'
+    line: 'listen 443 ssl default_server;'
+    regexp: 'listen 443'
+  notify: reload nginx

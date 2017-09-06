@@ -3187,6 +3187,11 @@
       "activated": "True",
       "syncthing_master_id_device": ""
     },
+    "modoboa": {
+        "activated": "True",
+        "fqdn_mail": "mail.ideas-box.cc",
+        "tinc_relay_mail_server": "192.168.10.254"
+    },
     "portal": {
       "activated": "False"
     }
