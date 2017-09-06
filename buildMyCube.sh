@@ -100,10 +100,10 @@ function generate_rsa_key()
     echo -e "\n\n\n" | ssh-keygen -t rsa -f /root/.ssh/id_rsa -b 4096 -C "it@bibliosansfrontieres.org $FULL_NAME" -N "" > /dev/null 2>&1
     echo 'Done.'
     while true; do
-     ssh -o BatchMode=yes "ansible@tincmaster.bsf-intranet.org" true
+     ssh -o BatchMode=yes "ansible@tincmaster.wan.bsf-intranet.org" true
      if [[ $? -ne 0 ]]; then
       echo "[+] Please enter password to copy SSH public key"
-      ssh-copy-id -o StrictHostKeyChecking=no ansible@tincmaster.bsf-intranet.org
+      ssh-copy-id -o StrictHostKeyChecking=no ansible@tincmaster.wan.bsf-intranet.org
      else
       break
      fi
