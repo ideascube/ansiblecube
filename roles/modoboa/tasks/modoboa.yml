@@ -15,11 +15,9 @@
     dest: /tmp/modoboa-installer/installer.cfg
 
 - name: Run modoboa script installer
-  expect:
-    command: python /tmp/modoboa-installer/run.py {{ fqdn_mail }}
+  shell: yes | python /tmp/modoboa-installer/run.py {{ fqdn_mail }}
+  args:
     chdir: /tmp/modoboa-installer/
-    responses:
-      confirm: "Y"
 
 - name: Enable queue lifetime
   lineinfile:
