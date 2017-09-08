@@ -22,4 +22,3 @@
     nick: "{{ tinc_localhost_name }}"
   changed_when: true
   ignore_errors: yes
-  notify: Close IRC port in firewall
