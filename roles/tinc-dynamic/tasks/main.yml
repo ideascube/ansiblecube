@@ -21,7 +21,7 @@
   blockinfile: 
     block: "{{ lookup('template', 'vpn_interface.j2') }}" 
     dest: "/etc/network/interfaces"
-    marker: "#{{vpn_name}} VPN interface"
+    marker: "## {mark} {{vpn_name}} VPN interface"
   tags: ['custom','update','rename']
 
 - name: build a hostname for tinc, which doesn't like hyphens
