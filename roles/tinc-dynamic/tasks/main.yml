@@ -17,6 +17,13 @@
 - debug: msg="{{ tinc_if_mac.stdout }}"
   tags: ['custom','update','rename']
 
+- name: Remove old vpn interface
+  blockinfile:
+    dest: "/etc/network/interfaces"
+    marker: "# {mark} ANSIBLE MANAGED BLOCK"
+    content: ""
+  tags: ['update','rename']
+
 - name: insert/update vpn_name configuration in /etc/network/interfaces
   blockinfile: 
     block: "{{ lookup('template', 'vpn_interface.j2') }}" 
