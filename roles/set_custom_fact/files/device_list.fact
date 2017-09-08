@@ -5899,7 +5899,7 @@
         "status": "present"
       },
       {
-        "name": "no-me-siento-seguro-con-mi-pareja-o-mis-padres-que-puedo-hacer",
+        "name": "no-me-siento-seguro-con-mi-pareja-o-mis-padres-en-mi-hogar-que-puedo-hacer",
         "status": "present"
       },
       {
@@ -5915,7 +5915,7 @@
         "status": "present"
       },
       {
-        "name": "mi-empleador-me-maltrata-fisica-o-verbalmente-que-puedo-hacer",
+        "name": "mi-patron-me-maltrata-fisica-o-verbalmente-que-puedo-hacer",
         "status": "present"
       },
       {
