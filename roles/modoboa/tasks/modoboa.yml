@@ -31,14 +31,14 @@
 - name: Enable relayhost
   lineinfile:
     dest: '/etc/postfix/main.cf'
-    line: 'relayhost = {{ tinc_relay_mail_server }}'
+    line: 'relayhost = {{ ansible_local.device_list[generic_project_name].modoboa.tinc_relay_mail_server }}'
     regexp: 'relayhost'
   notify: restart postfix
 
 - name: Change myhostname with mx_domaine var
   lineinfile:
     dest: '/etc/postfix/main.cf'
-    line: 'myhostname = {{ mx_domaine }}'
+    line: 'myhostname = {{ ansible_local.device_list[generic_project_name].modoboa.mx_domain }}'
     regexp: 'myhostname'
   notify: restart postfix
 
