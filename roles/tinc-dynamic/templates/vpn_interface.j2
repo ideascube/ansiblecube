@@ -1,0 +1,4 @@
+iface {{ vpn_name }} inet dhcp
+	pre-up ifconfig {{ vpn_name }} down || true
+	pre-up ifconfig {{ vpn_name }} hw ether {{ tinc_if_mac.stdout }} || true
+	post-up route del default dev {{ vpn_name }} || true

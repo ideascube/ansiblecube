@@ -21,11 +21,17 @@
     - role: captive_portal
       when: ansible_local.device_list[generic_project_name].portal is defined
 
-    - role: tinc-static
+    - role: tinc-dynamic
+      vpn_name: "testvpn"
+      vpn_port: "656"
+      vpn_master_server: "tincmaster"
       when: ansible_local.installed_software.management.managed_by_bsf|bool == True
 
     - role: tinc-dynamic
-      when: ansible_local.installed_software.management.managed_by_bsf|bool == True
+      vpn_name: "{{ ansible_local.device_list[generic_project_name].vpn.name }}"
+      vpn_port: "{{ ansible_local.device_list[generic_project_name].vpn.port }}"
+      vpn_master_server: "{{ ansible_local.device_list[generic_project_name].vpn.master_server }}"
+      when: ansible_local.device_list[generic_project_name].vpn is defined
 
     - role: mook
       mook_name: bsfcampus

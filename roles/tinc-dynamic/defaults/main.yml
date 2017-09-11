@@ -1,8 +1,7 @@
 ---
-
-vpn_name: idbvpn
-vpn_name2: testvpn
-vpn_interface: "{{ vpn_name2 }}"
-
 # unset to disable logging
 vpn_log_level: 1
+
+# if vpn_log_level is set but vpn_log_file is not,
+# it will use syslog by default.
+vpn_log_file: "/var/log/tinc.{{ vpn_name }}.log"

@@ -14,18 +14,21 @@
   register: tinc_if_mac
   tags: ['custom','update','rename']
 
-
 - debug: msg="{{ tinc_if_mac.stdout }}"
   tags: ['custom','update','rename']
 
-- name: insert/update vpn_name2 configuration stanza in /etc/network/interfaces
+- name: Remove old vpn interface
   blockinfile:
-    dest: /etc/network/interfaces
-    block: |
-      iface {{ vpn_name2 }} inet dhcp
-        pre-up ifconfig {{ vpn_name2 }} down || true
-        pre-up ifconfig {{ vpn_name2 }} hw ether {{ tinc_if_mac.stdout }} || true
-        post-up route del default dev {{ vpn_name2 }} || true
+    dest: "/etc/network/interfaces"
+    marker: "# {mark} ANSIBLE MANAGED BLOCK"
+    content: ""
+  tags: ['update','rename']
+
+- name: insert/update vpn_name configuration in /etc/network/interfaces
+  blockinfile: 
+    block: "{{ lookup('template', 'vpn_interface.j2') }}" 
+    dest: "/etc/network/interfaces"
+    marker: "## {mark} {{vpn_name}} VPN interface"
   tags: ['custom','update','rename']
 
 - name: build a hostname for tinc, which doesn't like hyphens
@@ -33,48 +36,39 @@
   tags: ['custom','update','rename']
 
 - name: Verify if tinc key file exist 
-  stat: path=/etc/tinc/{{ vpn_name2 }}/hosts/{{tinc_localhost_name}}
+  stat: path=/etc/tinc/{{ vpn_name }}/hosts/{{tinc_localhost_name}}
   register: tinc_key_file
   tags: ['custom','update','rename']
 
 - name: Check if the RSA key is present in tinc key file
-  shell: grep -F 'RSA' /etc/tinc/{{ vpn_name2 }}/hosts/{{tinc_localhost_name}} ; echo
+  shell: grep -F 'RSA' /etc/tinc/{{ vpn_name }}/hosts/{{tinc_localhost_name}} ; echo
   register: rsa_in_key_file
   when: tinc_key_file.stat.exists == True
   tags: ['custom','update','rename']
 
 - name: Remove empty public key file
-  file: path=/etc/tinc/{{ vpn_name2 }}/hosts/{{tinc_localhost_name}} state=absent
+  file: path=/etc/tinc/{{ vpn_name }}/hosts/{{tinc_localhost_name}} state=absent
   when: rsa_in_key_file is defined and rsa_in_key_file.stdout == "" 
   tags: ['custom','update','rename']
 
 - name: Remove private key file
-  file: path=/etc/tinc/{{ vpn_name2 }}/rsa_key.priv state=absent
+  file: path=/etc/tinc/{{ vpn_name }}/rsa_key.priv state=absent
   when: rsa_in_key_file is defined and rsa_in_key_file.stdout == "" 
   tags: ['custom','update','rename']
 
-- name: install rsync
-  apt: >
-    name=rsync
-    state=present
-    cache_valid_time=3600
-  tags: ['custom','update']
-
-- name: install tinc
-  apt: >
-    name=tinc
-    state=present
-    cache_valid_time=3600
-  tags: ['custom','update']
-
-# iptables module appears in ansible 2.0
-- name: Open tinc ports in firewall
-  shell: for port in 655 656 ; do for proto in tcp udp ; do for chain in INPUT OUTPUT ; do iptables -A $chain -m $proto -p $proto --dport $port -j ACCEPT ; done ; done ; done
+- name: Install tinc, rsync
+  apt:
+    name: "{{ item }}"
+    state: present
+    cache_valid_time: 3600
+  with_items:
+  - tinc
+  - rsync
   tags: ['custom','update']
 
 - name: ensure tinc vpn name directory exists
   file: >
-    path=/etc/tinc/{{ vpn_name2 }}/hosts
+    path=/etc/tinc/{{ vpn_name }}/hosts
     recurse=True
     state=directory
   tags: ['custom','update','rename']
@@ -82,15 +76,20 @@
 - name: ensure tinc.conf exists for vpn name
   template: >
     src=tinc.conf.j2
-    dest=/etc/tinc/{{ vpn_name2 }}/tinc.conf
+    dest=/etc/tinc/{{ vpn_name }}/tinc.conf
   tags: ['custom','update','rename']
 
-- name: add pubkeys for central nodes
-  copy: src=hosts/{{ item }} dest=/etc/tinc/{{ vpn_name2 }}/hosts/{{ item }} mode=0750
-  with_items:
-     - tincmaster
-     - tincmaster-up
-     - tincmaster-down
+- name: Add interfaces controler for remote vpn_master_server
+  copy: src=hosts/vpn_master_server-up dest=/etc/tinc/{{ vpn_name }}/hosts/{{vpn_master_server}}-up mode=0750
+  tags: ['custom','update']
+
+- name: Add interfaces controler for remote vpn_master_server
+  copy: src=hosts/vpn_master_server-down dest=/etc/tinc/{{ vpn_name }}/hosts/{{vpn_master_server}}-down mode=0750
+  tags: ['custom','update']
+
+- name: add pubkeys for tincmaster
+  copy: src=hosts/tincmaster dest=/etc/tinc/{{ vpn_name }}/hosts/tincmaster mode=0750
+  when: vpn_master_server == "tincmaster"
   tags: ['custom','update']
 
 - name: set default options for tinc
@@ -101,28 +100,27 @@
     - reload tinc
   tags: ['custom','update']
 
-- name: create /etc/tinc/nets.boot file from template
-  template: >
-    src=nets.boot.j2
-    dest=/etc/tinc/nets.boot
+- name: Add vpn_name to /etc/tinc/nets.boot file
+  lineinfile: 
+    dest: /etc/tinc/nets.boot
+    line: '{{ vpn_name }}'
+    create: yes
   notify:
     - restart tinc
   tags: ['custom','update']
 
-- name: copy tinc private key from static conf
-  shell: cp /etc/tinc/{{ vpn_name }}/rsa_key.priv /etc/tinc/{{ vpn_name2 }}/  
+- name: create tinc private key
+  shell: tincd -n {{ vpn_name }} -K4096
   args:
-    creates: /etc/tinc/{{ vpn_name2 }}/rsa_key.priv
-  tags: ['custom','update','rename']
-
-- name: copy tinc public key from static conf
-  shell: sed -n -e '/-----BEGIN RSA PUBLIC KEY-----/,$p' /etc/tinc/{{ vpn_name }}/hosts/{{tinc_localhost_name }} > /etc/tinc/{{ vpn_name2 }}/hosts/{{ tinc_localhost_name }}
+    creates: /etc/tinc/{{ vpn_name }}/rsa_key.priv
+  when: rsa_in_key_file is defined and rsa_in_key_file.stdout == "" 
+    or tinc_key_file is undefined
   tags: ['custom','update','rename']
 
 - name: create tinc-up file
   template: >
     src=tinc-up.j2
-    dest=/etc/tinc/{{ vpn_name2 }}/tinc-up
+    dest=/etc/tinc/{{ vpn_name }}/tinc-up
     mode=0755
   notify:
     - reload tinc
@@ -132,7 +130,7 @@
 - name: create tinc-down file
   template: >
     src=tinc-down.j2
-    dest=/etc/tinc/{{ vpn_name2 }}/tinc-down
+    dest=/etc/tinc/{{ vpn_name }}/tinc-down
     mode=0755
   notify:
     - reload tinc
@@ -143,6 +141,5 @@
   tags: ['custom','update']
 
 - name: send the public key to central nodes
-  shell: rsync /etc/tinc/{{ vpn_name2 }}/hosts/{{tinc_localhost_name }}  {{ central_server }}:/ansible/tinc-{{ vpn_name2 }}/
+  shell: rsync /etc/tinc/{{ vpn_name }}/hosts/{{tinc_localhost_name }}  {{ central_server }}:/ansible/tinc-{{ vpn_name }}/
   tags: ['custom','update','rename']
-
