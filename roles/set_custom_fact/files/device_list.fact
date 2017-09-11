@@ -7015,5 +7015,33 @@
       "activated": "False"
     },
     "samba": "False"
+  },
+  "kb-sen-kb78telemaquesow": {
+    "kalite": {
+      "activated": "True",
+      "version": "0.16.9",
+      "language": [
+        "fr"
+      ]
+    },
+    "package_management": [
+    ],
+    "syncthing": {
+      "activated": "True",
+      "syncthing_master_id_device": ""
+    },
+    "modoboa": {
+        "activated": "True",
+        "mx_domaine": "mail.ideas-box.cc",
+        "tinc_relay_mail_server": "192.168.10.254"
+    },
+    "vpn": {
+        "name": "email",
+        "port": "658",
+        "master_server" : "ruminant"
+    },
+    "portal": {
+      "activated": "False"
+    }
   }
 }
