@@ -1,4 +1,6 @@
 ---
+- include_vars: group_vars/{{ ansible_architecture }}.yml
+
 - name: Install pexpect for auto answere in task expect
   pip:
     name: pexpect
