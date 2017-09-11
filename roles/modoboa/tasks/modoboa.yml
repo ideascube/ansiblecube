@@ -15,7 +15,7 @@
     dest: /tmp/modoboa-installer/installer.cfg
 
 - name: Run modoboa script installer
-  shell: yes | python /tmp/modoboa-installer/run.py {{ fqdn_mail }}
+  shell: yes | python /tmp/modoboa-installer/run.py --version={{modoboa_version}} {{ fqdn_mail }}
   args:
     chdir: /tmp/modoboa-installer/
 
