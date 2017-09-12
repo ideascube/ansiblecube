@@ -12,7 +12,7 @@
 
 - name: Install Syncthing
   apt: 
-    name: syncthing=0.14.32
+    name: syncthing
     state: present
 
 - name: Install systemd unit file
