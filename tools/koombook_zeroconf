@@ -8,9 +8,11 @@
 # Mount the newly partition and move the ideascube data folder to the external HDD. 
 # The last operation will give a new name to the device
 
-koombook_name="KoomBook"
+koombook_name="KoomBook"-$RANDOM
+device_hostname=$(hostname)
 
 function die() {
+        wget http://report.bsf-intranet.org/device=$device_hostname/KoomBookFirstInit=fail/msg="$@" > /dev/null 2>&1
         echo $@ >&2
         exit 1
 }
@@ -45,11 +47,18 @@ if [[ -b /dev/sda && ! -b /dev/sda1 ]]; then
     # Make sure udev rules are deleted for wifi usb dongle
     rm -f /etc/udev/rules.d/70-persistent-net.rules
 
+    wget http://preseed.cinema.montreuil.wan.bsf-intranet.org/getMyDeviceName -O /tmp/getMyDeviceName
+
+    deviceName=`cat /tmp/getMyDeviceName | cut -d ";" -f1`
+    timeZone=`cat /tmp/getMyDeviceName | cut -d ";" -f2`
+
     # Disable script 
     chmod -x $0
 
-    # Rename KoomBook
-    /var/lib/ansible/local/buildMyCube.sh -n "$koombook_name" -a rename
+    # Start builMyCube
+    /var/lib/ansible/local/buildMyCube.sh -n "$deviceName" -t "$timeZone"
+
+    wget http://report.bsf-intranet.org/device=$device_hostname/KoomBookFirstInit=Success
 
     reboot
 
@@ -59,6 +68,9 @@ if [[ -b /dev/sda && ! -b /dev/sda1 ]]; then
 else
         # Delete parition
         parted /dev/sda rm 1
-  
+
+        # Set temporary KoomBook name
+        hostnamectl set-hostname $koombook_name
+
         reboot
 fi

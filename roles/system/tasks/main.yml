@@ -164,7 +164,7 @@
 
 - name: Drop hosts file on device
   template: src=hosts.j2 dest=/etc/hosts
-  tags: ['master','custom','update','rename']
+  tags: ['custom','update','rename']
   
 - name: Drop dhclient.conf file on device
   template: src=dhclient.conf.j2 dest=/etc/dhcp/dhclient.conf
