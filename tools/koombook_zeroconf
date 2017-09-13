@@ -23,6 +23,8 @@ if [[ -b /dev/sda && ! -b /dev/sda1 ]]; then
     parted /dev/sda mklabel msdos mkpart primary ext4 0% 100% -s || die "Paritioning issue"
     mkfs.ext4 /dev/sda1 || die "/dev/sda1 can not be formated"
 
+    mkdir -p /media/hdd/
+
     # mount partition
     mount /dev/sda1 /media/hdd/ || die "Unable to mount partition"
 
