@@ -6972,7 +6972,7 @@
       "activated": "True"
     }
   },
-  "KoomBook": {
+  "koombook": {
     "kalite": {
       "activated": "True",
       "version": "0.16.9",
