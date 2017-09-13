@@ -141,7 +141,7 @@
     option=hostname
     value={{ hostname }}
   when: ansible_local.installed_software.management.hostname is undefined
-  tags: ['custom','update','rename']
+  tags: ['master','custom','update','rename']
 
 - name: reload ansible_local
   setup: filter=ansible_local
