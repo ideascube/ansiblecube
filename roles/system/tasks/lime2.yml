@@ -44,7 +44,6 @@
               regexp='^gpio'
               insertbefore=BOF
               line='gpio set PH20\nsetenv bootdelay 0\nsaveenv'
-              backup=yes
   tags: ['custom','update']
 
 - name: Convert file from .cmd to .scr
