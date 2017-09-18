@@ -140,8 +140,9 @@
     - custom
 
 - include: lime2.yml
-  when: fex_file.stat.exists is defined and fex_file.stat.exists 
-    or dtb_file.stat.exists is defined and dtb_file.stat.exists
+  when: (fex_file.stat.exists is defined and fex_file.stat.exists 
+    or dtb_file.stat.exists is defined and dtb_file.stat.exists)
+    and ansible_kernel | version_compare('4.11.0', '<')
 
 - name: List services to restart (1/2)
   shell: checkrestart | grep ^service | awk '{print $2}'
