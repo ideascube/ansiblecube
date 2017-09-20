@@ -35,7 +35,7 @@
     regexp: 'relayhost'
   notify: restart postfix
 
-- name: Change myhostname with mx_domaine var
+- name: Change myhostname with mx_domain var
   lineinfile:
     dest: '/etc/postfix/main.cf'
     line: 'myhostname = {{ ansible_local.device_list[generic_project_name].modoboa.mx_domain }}'
@@ -55,4 +55,11 @@
     dest: '/etc/nginx/sites-enabled/mail.{{ fqdn_mail }}.conf'
     line: 'listen 443 ssl default_server;'
     regexp: 'listen 443'
+  notify: reload nginx
+
+- name: Add domain name mail.koombook.lan to vhost
+  lineinfile:
+    dest: '/etc/nginx/sites-enabled/mail.{{ fqdn_mail }}.conf'
+    line: 'server_name mail.{{ hostname }};'
+    regexp: 'server_name'
   notify: reload nginx
