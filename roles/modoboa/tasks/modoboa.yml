@@ -35,11 +35,11 @@
     regexp: 'relayhost'
   notify: restart postfix
 
-- name: Change myhostname with mx_domaine var
+- name: Change myhostname with mx_domain var
   lineinfile:
     dest: '/etc/postfix/main.cf'
     line: 'myhostname = {{ ansible_local.device_list[generic_project_name].modoboa.mx_domain }}'
-    regexp: 'myhostname'
+    regexp: 'myhostname ='
   notify: restart postfix
 
 - name: Flush postfix queue when target devices gets up
