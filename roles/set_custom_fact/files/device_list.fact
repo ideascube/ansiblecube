@@ -7041,7 +7041,7 @@
         "master_server" : "ruminant"
     },
     "portal": {
-      "activated": "False"
+      "activated": "True"
     }
   }
 }
