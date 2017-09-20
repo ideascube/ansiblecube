@@ -19,6 +19,9 @@ function die() {
 
 if [[ -b /dev/sda && ! -b /dev/sda1 ]]; then
 
+    # Resize fs on sd card
+    /bin/bash /etc/init.d/resize2fs start || die "Resize fs on SD card failed"
+
     # TO ENABLE ONLY ON PURPOSE : Format SSD, in case of any issue, report it !
     parted /dev/sda mklabel msdos mkpart primary ext4 0% 100% -s || die "Paritioning issue"
     mkfs.ext4 /dev/sda1 || die "/dev/sda1 can not be formated"
@@ -54,7 +57,7 @@ if [[ -b /dev/sda && ! -b /dev/sda1 ]]; then
         timeZone="Europe/Paris"
     fi
 
-    # Disable script 
+    # Disable script 
     chmod -x $0
 
     # Start builMyCube
