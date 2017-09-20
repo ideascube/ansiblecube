@@ -63,3 +63,10 @@
     line: 'server_name mail.{{ hostname }};'
     regexp: 'server_name'
   notify: reload nginx
+
+- name: Add domain name mail.koombook.lan as ALLOWED_HOSTS in uwsgi
+  lineinfile:
+    dest: '/srv/modoboa/instance/instance/settings.py'
+    line: 'mail.{{ hostname }}'
+    regexp: 'mail.{{ fqdn_mail }}'
+  notify: reload uwsgi
