@@ -49,10 +49,3 @@
     regexp: 'sleep'
     create: yes
   notify: reload tinc
-
-- name: Enable default server for SSL
-  lineinfile:
-    dest: '/etc/nginx/sites-enabled/mail.{{ fqdn_mail }}.conf'
-    line: 'listen 443 ssl default_server;'
-    regexp: 'listen 443'
-  notify: reload nginx
