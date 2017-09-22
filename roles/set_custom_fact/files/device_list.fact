@@ -5954,6 +5954,26 @@
       {
         "name": "como-puedo-encontrar-un-abogado-honesto-y-con-licencia",
         "status": "present"
+      },
+      {
+        "name": "j-ai-peur-de-rentrer-dans-mon-pays-qu-est-ce-que-l-asile-et-comment-puis-je-le-demander",
+        "status": "present"
+      },
+      {
+        "name": "je-suis-inquiet-d-etre-expulse-comment-puis-je-me-proteger-et-ma-famille",
+        "status": "present"
+      },
+      {
+        "name": "mon-patron-me-maltraite-au-travail-quels-sont-mes-droits-en-tant-que-travailleur",
+        "status": "present"
+      },
+      {
+        "name": "que-va-a-pasar-con-daca",
+        "status": "present"
+      },
+      {
+        "name": "what-is-going-to-happen-to-daca",
+        "status": "present"
       }
     ],
     "portal": {
