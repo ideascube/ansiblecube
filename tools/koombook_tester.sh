@@ -8,7 +8,7 @@ if [ -e /root/rebooted ]; then
     unixDate=`cat /root/rebooted`
 
     function die() {
-            wget http://report.bsf-intranet.org/device=$unixDate/msg="$1" > /dev/null 2>&1
+            wget --quiet http://report.bsf-intranet.org/device=$unixDate/msg="$1" > /dev/null 2>&1
             exit 1
     }
 

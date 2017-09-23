@@ -12,7 +12,7 @@ koombook_name="koombook"-$RANDOM
 device_hostname=$(hostname)
 
 function die() {
-        wget http://report.bsf-intranet.org/device=$device_hostname/KoomBookFirstInit=fail/msg="$@" > /dev/null 2>&1
+        wget --quiet http://report.bsf-intranet.org/device=$device_hostname/KoomBookFirstInit=fail/msg="$@" > /dev/null 2>&1
         echo $@ >> /var/log/koombookInit.log
         exit 1
 }

@@ -9,7 +9,7 @@ project_name="kb_fra_test"
 time_zone="Europe/Paris"
 
 function die() {
-        wget http://report.bsf-intranet.org/device=$device_hostname/msg="$1" > /dev/null 2>&1
+        wget --quiet http://report.bsf-intranet.org/device=$device_hostname/msg="$1" > /dev/null 2>&1
         exit 1
 }
 
