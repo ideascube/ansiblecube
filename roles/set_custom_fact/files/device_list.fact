@@ -7032,6 +7032,24 @@
     },
     "samba": "False"
   },
+  "idb-grc-atlas": {
+    "kalite": {
+      "activated": "True",
+      "version": "0.16.9",
+      "language": [
+        "en"
+      ]
+    },
+    "package_management": [
+      {
+        "name": "wikipedia.en",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": "True"
+    }
+  },
   "kb-sen-kb78telemaquesow": {
     "kalite": {
       "activated": "True",
