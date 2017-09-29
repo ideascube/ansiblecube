@@ -35,15 +35,9 @@
   set_fact: tinc_localhost_name="{{ ansible_hostname | replace("-", "_") }}"
   tags: ['custom','update','rename']
 
-- name: Verify if tinc key file exist 
-  stat: path=/etc/tinc/{{ vpn_name }}/hosts/{{tinc_localhost_name}}
-  register: tinc_key_file
-  tags: ['custom','update','rename']
-
 - name: Check if the RSA key is present in tinc key file
   shell: grep -F 'RSA' /etc/tinc/{{ vpn_name }}/hosts/{{tinc_localhost_name}} ; echo
   register: rsa_in_key_file
-  when: tinc_key_file.stat.exists == True
   tags: ['custom','update','rename']
 
 - name: Remove empty public key file
@@ -114,7 +108,6 @@
   args:
     creates: /etc/tinc/{{ vpn_name }}/rsa_key.priv
   when: rsa_in_key_file is defined and rsa_in_key_file.stdout == "" 
-    or tinc_key_file is undefined
   tags: ['custom','update','rename']
 
 - name: create tinc-up file
