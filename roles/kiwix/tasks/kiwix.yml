@@ -12,8 +12,8 @@
 
 - name: Stop kiwix-serve if needed
   service: name=kiwix-server state=stopped
-  when: kiwix_version > ansible_local.installed_software.software.kiwix 
-    or kiwix_version < ansible_local.installed_software.software.kiwix
+  when: kiwix_version > ansible_local.installed_software.software.kiwix | default ('0.9')
+    or kiwix_version < ansible_local.installed_software.software.kiwix | default ('0.9')
   tags: ['update']
 
 - name: Copying kiwix binaries x86_64 architecture
