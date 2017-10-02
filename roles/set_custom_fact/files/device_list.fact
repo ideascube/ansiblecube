@@ -7310,7 +7310,7 @@
       "activated": "True"
     }
   },
-  "kb_fra_crfsable": {
+  "kb-fra-crfsable": {
     "kalite": {
       "activated": "True",
       "version": "0.16.9",
