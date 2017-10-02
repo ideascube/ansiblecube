@@ -5765,15 +5765,15 @@
     "package_management": [
       {
         "name": "wikipedia.en",
-        "status": "present"
+        "status": "absent"
       },
       {
         "name": "gutenberg.en",
-        "status": "present"
+        "status": "absent"
       },
       {
         "name": "vikidia.en",
-        "status": "present"
+        "status": "absent"
       },
       {
         "name": "wikiversity.en",
@@ -5793,11 +5793,11 @@
       },
       {
         "name": "tedglobalissues.en",
-        "status": "present"
+        "status": "absent"
       },
       {
         "name": "tedscience.en",
-        "status": "present"
+        "status": "absent"
       },
       {
         "name": "tedtechnology.en",
