@@ -7320,54 +7320,6 @@
     },
     "package_management": [
       {
-        "name": "wikipedia.en",
-        "status": "present"
-      },
-            {
-        "name": "wiktionary.en",
-        "status": "present"
-      },
-            {
-        "name": "wikibooks.en",
-        "status": "present"
-      },
-            {
-        "name": "wikiquote.en",
-        "status": "present"
-      },
-            {
-        "name": "tedbusiness.en",
-        "status": "present"
-      },
-            {
-        "name": "teddesign.en",
-        "status": "present"
-      },
-            {
-        "name": "tedentertainment.en",
-        "status": "present"
-      },
-            {
-        "name": "tedglobalissues.en",
-        "status": "present"
-      },
-            {
-        "name": "tedscience.en",
-        "status": "present"
-      },
-            {
-        "name": "tedtechnology.en",
-        "status": "present"
-      },
-            {
-        "name": "ted-ed.en",
-        "status": "present"
-      },
-            {
-        "name": "tedmed.en",
-        "status": "present"
-      },
-      {
         "name": "wikipedia.fr",
         "status": "present"
       },
@@ -7525,6 +7477,10 @@
       },
       {
         "name": "fictions-for-adults-fa",
+        "status": "present"
+      },
+      {
+        "name": "kit-de-l-animateur",
         "status": "present"
       },
       {
