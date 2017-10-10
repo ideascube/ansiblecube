@@ -15,7 +15,7 @@
   tags:
     - master
 
-- name: Register if the user has been build is own configuration file
+- name: Register whether the user has built its own configuration file or not
   ini_file: dest=/etc/ansible/facts.d/installed_software.fact
     section=management
     option=own_config_file
@@ -27,14 +27,6 @@
 
 - name: reload ansible_local
   setup: filter=ansible_local
-  tags: ['custom', 'rename', 'update','idc_import','package_management','kalite_import' ]
-
-- name: install custom fact module for device list
-  copy: src=device_list.fact 
-    dest=/etc/ansible/facts.d/device_list.fact 
-    mode=0666
-  when: ansible_local.installed_software.management.own_config_file is defined
-    and ansible_local.installed_software.management.own_config_file|bool == False
   tags: ['custom', 'rename', 'update','idc_import','package_management','kalite_import' ]
 
 - name: Check if the device has already a name defined
@@ -93,17 +85,14 @@
   when: firststart.stat.exists == false or firststart is undefined
   tags: ['custom','rename']
 
-- debug: msg="My name is {{ ansible_hostname }}"
+- name: Download device definition from Kinto
+  get_url:
+    url: http://{{ kinto_master }}/v1/buckets/{{ kinto_project }}/collections/{{ kinto_collection }}/records/{{ ansible_hostname }}
+    dest: /etc/ansible/facts.d/{{ ansible_hostname }}.fact
   tags: [ 'master', 'custom', 'rename', 'update','idc_import','package_management','kalite_import' ]
 
-- block:
-  - name: Check if device name match a known name in device_list.fact
-    command: grep -w {{ ansible_hostname | regex_replace('-\d+', '') }} /etc/ansible/facts.d/device_list.fact
-
-  rescue:
-  - fail: msg="Device name does not correspond to any records in /etc/ansible/facts.d/device_list.fact"
-
-  tags: ['custom','rename','update']
+- debug: msg="My name is {{ ansible_hostname }}"
+  tags: [ 'master', 'custom', 'rename', 'update','idc_import','package_management','kalite_import' ]
 
 - name: Register managed_by_bsf var from facts.d
   set_fact: managed_by_bsf="{{ ansible_local.installed_software.management.managed_by_bsf|default(False) }}"
