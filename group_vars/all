@@ -22,13 +22,16 @@ git_branch: oneUpdateFile
 samba: False
 syncthing: False
 syncthing_master_id_device: ""
+kinto_master: kinto.bsf-intranet.org
+kinto_project: projets_bsf
+kinto_collection: kb-idb
 
 #Apps path
 mook_path: /home/{{ username }}
 samba_dir: /home/{{username}}/samba_share
 zim_path: /var/ideascube/kiwix
 
-#Domaine name
+#Domain name
 kalite_server_name: khanacademy.{{hostname}}
 kolibri_server_name: kolibri.{{hostname}}
 appinventor_server_name: appinventor.{{hostname}}
