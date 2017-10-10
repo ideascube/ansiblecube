@@ -11,8 +11,8 @@ then
             dpkg -l > /var/log/apt/dpkg.list
             pip freeze > /var/log/pip.freeze
             iptables-save > /var/log/iptables.rules
-            sqlite3 /var/ideascube/main/default.sqlite "select id,original from mediacenter_document" > /var/log/ideascube_doc_mapping.log
-            rsync -azP /var/log/nginx/* /var/log/kern.log /var/log/messages /var/log/syslog* /var/log/ansible-pull.log /tmp/hdw_info.txt /var/log/ansible-pull.log* /var/log/apt/dpkg.list* /var/log/pip.freeze* /var/log/iptables.rules /var/log/uwsgi /var/log/ideascube_doc_mapping.log {{ central_server }}:/ansible/logs/{{ ansible_hostname }}/
+            sqlite3 /var/ideascube/main/default.sqlite "select id,title from mediacenter_document" | awk -F'|' '{print "\""$1"\": " $2}' > /var/log/bsf/ideascube_doc_mapping.log
+            rsync -azP /var/log/nginx/* /var/log/kern.log /var/log/messages /var/log/syslog* /var/log/ansible-pull.log /tmp/hdw_info.txt /var/log/ansible-pull.log* /var/log/apt/dpkg.list* /var/log/pip.freeze* /var/log/iptables.rules /var/log/uwsgi /var/log/bsf/ideascube_doc_mapping.log {{ central_server }}:/ansible/logs/{{ ansible_hostname }}/
         ;;
         *)
         ;;
