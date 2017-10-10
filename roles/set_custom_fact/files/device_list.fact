@@ -1,18 +1,18 @@
 {
   "kb-bsfcampus-sen": {
     "bsfcampus": {
-      "activated": "True",
+      "activated": true,
       "version": "080916"
     },
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
       ]
     },
     "idc_import": {
-      "activated": "False",
+      "activated": false,
       "content_name": [
         "2-Contenus/kb-bsfcampus/KB_Liste_contenus_bsf_campus.csv"
       ]
@@ -74,18 +74,18 @@
   },
   "kb-bfa-bsfcampus": {
     "bsfcampus": {
-      "activated": "True",
+      "activated": true,
       "version": "080916"
     },
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
       ]
     },
     "idc_import": {
-      "activated": "False",
+      "activated": false,
       "content_name": [
         "2-Contenus/kb-bsfcampus/KB_Liste_contenus_bsf_campus.csv"
       ]
@@ -147,18 +147,18 @@
   },
   "kb-civ-babylab": {
     "bsfcampus": {
-      "activated": "False",
+      "activated": false,
       "version": "080916"
     },
     "kalite": {
-      "activated": "False",
+      "activated": false,
       "version": "0.16.9",
       "language": [
         "fr"
       ]
     },
     "idc_import": {
-      "activated": "False",
+      "activated": false,
       "content_name": [
         "11-BABYLAB/CONTENUS/csvbabylab2.csv"
       ]
@@ -216,18 +216,18 @@
   },
   "kb-servir-ben": {
     "bsfcampus": {
-      "activated": "True",
+      "activated": true,
       "version": "100816"
     },
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
       ]
     },
     "idc_import": {
-      "activated": "True",
+      "activated": true,
       "content_name": [
         "2-Contenus/logiciellibre/app.csv"
       ]
@@ -305,7 +305,7 @@
   },
   "idb-lbn-elmarj": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -344,7 +344,7 @@
   },
   "idb-aus-queensland": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -367,7 +367,7 @@
   },
   "kb-esp-avanti": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "es"
@@ -384,7 +384,7 @@
       }
     ],
     "idc_import": {
-      "activated": "False",
+      "activated": false,
       "content_name": [
         "13-NICARALI/CSV-Nicarali.csv"
       ]
@@ -392,7 +392,7 @@
   },
   "idb-grc-moria": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -429,12 +429,12 @@
       }
     ],
     "portal": {
-      "activated": "True"
+      "activated": true
     }
   },
   "kb-usa-p2pu": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "en"
@@ -481,7 +481,7 @@
   },
   "idb-bdi-bwagiriza": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -504,7 +504,7 @@
   },
   "kb-mooc-cog": {
     "koombookedu": {
-      "activated": "True",
+      "activated": true,
       "version": "100816"
     },
     "package_management": [
@@ -516,7 +516,7 @@
   },
   "idb-bdi-musasa": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -539,7 +539,7 @@
   },
   "idb-eth-melkadida": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -562,7 +562,7 @@
   },
   "idb-sen-fap": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -621,7 +621,7 @@
   },
   "idb-bdi-makamba": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -644,14 +644,14 @@
   },
   "idb-fra-aurore": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
       ]
     },
     "idc_import": {
-      "activated": "False",
+      "activated": false,
       "content_name": [
         "2-Contenus/aurore_ivry_serveuridb_update.csv"
       ]
@@ -721,7 +721,7 @@
   },
   "kb-nic-nicarali": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "en"
@@ -762,7 +762,7 @@
       }
     ],
     "idc_import": {
-      "activated": "False",
+      "activated": false,
       "content_name": [
         "2-Contenus/csv_nicarali_centro_de_salud.csv",
         "2-Contenus/csv_nicarali_sebaco_version_cinq.csv",
@@ -770,23 +770,23 @@
       ]
     },
     "portal": {
-      "activated": "True"
+      "activated": true
     }
   },
   "kb-bsfcampus-civ": {
     "bsfcampus": {
-      "activated": "True",
+      "activated": true,
       "version": "100816"
     },
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
       ]
     },
     "idc_import": {
-      "activated": "False",
+      "activated": false,
       "content_name": [
         "2-Contenus/logiciellibre/app.csv",
         "2-Contenus/kb-bsfcampus/KB_Liste_contenus_bsf_campus.csv"
@@ -849,7 +849,7 @@
   },
   "idb-grc-eleonas": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -888,7 +888,7 @@
   },
   "kb-jor-tdhazraqejc": {
     "kalite": {
-      "activated": "False",
+      "activated": false,
       "version": "0.16.9",
       "language": [
         "en",
@@ -982,7 +982,7 @@
       }
     ],
     "idc_import": {
-      "activated": "False",
+      "activated": false,
       "content_name": [
         "2-Contenus/CSVKBJORDANIE.csv"
       ]
@@ -990,7 +990,7 @@
   },
   "idb-fra-grandesynthe": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -1093,7 +1093,7 @@
   },
   "kb-eth-kytabu": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -1124,15 +1124,15 @@
   },
   "kb-gin-conakry": {
     "bsfcampus": {
-      "activated": "True",
+      "activated": true,
       "version": "100816"
     },
     "koombookedu": {
-      "activated": "True",
+      "activated": true,
       "version": "100816"
     },
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -1175,7 +1175,7 @@
   },
   "idb-fra-jeanquarre": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -1234,7 +1234,7 @@
   },
   "idb-fra-sarcelles": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -1277,7 +1277,7 @@
   },
   "idb-lwb-detroit-usa": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -1296,7 +1296,7 @@
   },
   "idb-fra-emmaus": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -1355,7 +1355,7 @@
   },
   "kb-ifb-bdi": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -1378,7 +1378,7 @@
   },
   "kb-rca-alliancefrancaise": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -1463,12 +1463,12 @@
       }
     ],
     "portal": {
-      "activated": "True"
+      "activated": true
     }
   },
   "kb-bdi-tv5monde": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -1543,7 +1543,7 @@
   },
   "idb-irq-bardarash": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -1606,7 +1606,7 @@
   },
   "idb-bdi-kavumu": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -1629,7 +1629,7 @@
   },
   "idb-eth-bokolmanyo": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -1652,7 +1652,7 @@
   },
   "kb-usa-wmapache": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -1675,7 +1675,7 @@
   },
   "idb-jor-alhashmi": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -1698,7 +1698,7 @@
   },
   "idb-jor-azraq": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -1721,7 +1721,7 @@
   },
   "idb-fra-calais": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -1744,7 +1744,7 @@
   },
   "idb-grc-malakasa": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "en"
@@ -1883,7 +1883,7 @@
       }
     ],
     "idc_import": {
-      "activated": "True",
+      "activated": true,
       "content_name": [
         "2-Contenus/Csvmalakasa.csv"
       ]
@@ -1977,7 +1977,7 @@
       }
     ],
     "idc_import": {
-      "activated": "True",
+      "activated": true,
       "content_name": [
         "2-Contenus/CSVSICILE.csv"
       ]
@@ -1985,18 +1985,18 @@
   },
   "kb-bsfcampus-cmr": {
     "bsfcampus": {
-      "activated": "True",
+      "activated": true,
       "version": "100816"
     },
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
       ]
     },
     "idc_import": {
-      "activated": "False",
+      "activated": false,
       "content_name": [
         "2-Contenus/logiciellibre/app.csv",
         "2-Contenus/kb-bsfcampus/KB_Liste_contenus_bsf_campus.csv"
@@ -2059,14 +2059,14 @@
   },
   "kb-tza-ambassadeDeFrance": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
       ]
     },
     "idc_import": {
-      "activated": "False",
+      "activated": false,
       "content_name": [
         "2-Contenus/csvkbtanzaniev2.csv"
       ]
@@ -2208,7 +2208,7 @@
   },
   "idb-deu-dusseldorf": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -2243,7 +2243,7 @@
   },
   "idb-jor-zaatari": {
     "kalite": {
-      "activated": "False",
+      "activated": false,
       "version": "0.16.9",
       "language": [
         "en",
@@ -2345,7 +2345,7 @@
       }
     ],
     "idc_import": {
-      "activated": "False",
+      "activated": false,
       "content_name": [
         "2-Contenus/csvjordanienrczaatari.csv"
       ]
@@ -2353,7 +2353,7 @@
   },
   "idb-bsf-demoserver": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -2414,12 +2414,12 @@
       }
     ],
     "portal": {
-      "activated": "False"
+      "activated": false
     }
   },
   "idb-fra-vdp2": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -2488,7 +2488,7 @@
       }
     ],
     "idc_import": {
-      "activated": "False",
+      "activated": false,
       "content_name": [
         "2-Contenus/csvvdp2.csv"
       ]
@@ -2496,7 +2496,7 @@
   },
   "idb-jor-hostcommunity": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "en"
@@ -2601,7 +2601,7 @@
       }
     ],
     "idc_import": {
-      "activated": "False",
+      "activated": false,
       "content_name": [
         "2-Contenus/csvmafraq.csv "
       ]
@@ -2609,7 +2609,7 @@
   },
   "kb-bdi-unicef": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -2670,7 +2670,7 @@
       }
     ],
     "idc_import": {
-      "activated": "False",
+      "activated": false,
       "content_name": [
         "2-Contenus/csvburundiunicef.csv"
       ]
@@ -2678,7 +2678,7 @@
   },
   "idb-goethe": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "en"
@@ -2783,7 +2783,7 @@
       }
     ],
     "idc_import": {
-      "activated": "False",
+      "activated": false,
       "content_name": [
         "2-Contenus/csvmafraq.csv "
       ]
@@ -2791,7 +2791,7 @@
   },
   "idb-col-llavedelsaber": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "en",
@@ -2853,7 +2853,7 @@
       }
     ],
     "idc_import": {
-      "activated": "False",
+      "activated": false,
       "content_name": [
         "2-Contenus/csvcolombie.csv "
       ]
@@ -2862,7 +2862,7 @@
   },
   "kb-bdi-irc": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -2935,7 +2935,7 @@
       }
     ],
     "idc_import": {
-      "activated": "False",
+      "activated": false,
       "content_name": [
         "2-Contenus/csvircburundi.csv"
       ]
@@ -2943,7 +2943,7 @@
   },
   "idb-fra-acelem": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -2980,7 +2980,7 @@
       }
     ],
     "idc_import": {
-      "activated": "False",
+      "activated": false,
       "content_name": [
         "2-Contenus/csvmarseille.csv"
       ]
@@ -2988,7 +2988,7 @@
   },
   "idb-fra-marseilleville": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -3025,7 +3025,7 @@
       }
     ],
     "idc_import": {
-      "activated": "False",
+      "activated": false,
       "content_name": [
         "2-Contenus/csvmarseille.csv"
       ]
@@ -3083,7 +3083,7 @@
       }
     ],
     "idc_import": {
-      "activated": "False",
+      "activated": false,
       "content_name": [
         "2-Contenus/csvgiz_corrected.csv"
       ]
@@ -3091,7 +3091,7 @@
   },
   "idb-fra-illeetvilaine": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -3124,7 +3124,7 @@
       }
     ],
     "idc_import": {
-      "activated": "False",
+      "activated": false,
       "content_name": [
         "2-Contenus/csvilleetvilaine.csv"
       ]
@@ -3132,11 +3132,11 @@
   },
   "kb-fra-commbook": {
     "bsfcampus": {
-      "activated": "True",
+      "activated": true,
       "version": "080916"
     },
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr",
@@ -3166,12 +3166,12 @@
       }
     ],
     "portal": {
-      "activated": "True"
+      "activated": true
     }
   },
   "kb-bsf-scaleway": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -3184,11 +3184,11 @@
       }
     ],
     "syncthing": {
-      "activated": "True",
+      "activated": true,
       "syncthing_master_id_device": ""
     },
     "modoboa": {
-        "activated": "True",
+        "activated": true,
         "mx_domain": "mail.ideas-box.cc",
         "tinc_relay_mail_server": "192.168.10.254"
     },
@@ -3198,12 +3198,12 @@
         "master_server" : "ruminant"
     },
     "portal": {
-      "activated": "False"
+      "activated": false
     }
   },
   "idb-bsf-vagrant": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -3216,16 +3216,16 @@
       }
     ],
     "syncthing": {
-      "activated": "True",
+      "activated": true,
       "syncthing_master_id_device": ""
     },
     "portal": {
-      "activated": "False"
+      "activated": false
     }
   },
   "idb-grc-ioannina": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "en"
@@ -3322,18 +3322,18 @@
       }
     ],
     "idc_import": {
-      "activated": "False",
+      "activated": false,
       "content_name": [
         "2-Contenus/csvtdh1.csv"
       ]
     },
     "portal": {
-      "activated": "False"
+      "activated": false
     }
   },
   "kb-grc-ioannina": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "en"
@@ -3402,19 +3402,19 @@
       }
     ],
     "idc_import": {
-      "activated": "False",
+      "activated": false,
       "content_name": [
         "2-Contenus/csvtdh1.csv"
       ]
     },
     "portal": {
-      "activated": "False"
+      "activated": false
     },
     "kiwix_version": "1.0"
   },
   "kb-grc-konitsa": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "en"
@@ -3463,30 +3463,30 @@
       }
     ],
     "idc_import": {
-      "activated": "True",
+      "activated": true,
       "content_name": [
         "2-Contenus/csvkonitsa.csv"
       ]
     },
     "portal": {
-      "activated": "True"
+      "activated": true
     },
     "kiwix_version": "1.0"
   },
   "kb-cod-mooc": {
     "bsfcampus": {
-      "activated": "False",
+      "activated": false,
       "version": "141116"
     },
     "kalite": {
-      "activated": "False",
+      "activated": false,
       "version": "0.16.9",
       "language": [
         "fr"
       ]
     },
     "idc_import": {
-      "activated": "False",
+      "activated": false,
       "content_name": [
         "2-Contenus/contenus_bukavu/0_csvkbrdc.csv"
       ]
@@ -3556,7 +3556,7 @@
   },
   "idb-rwa-mahama": {
     "kalite": {
-      "activated": "False",
+      "activated": false,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -3629,7 +3629,7 @@
       }
     ],
     "idc_import": {
-      "activated": "False",
+      "activated": false,
       "content_name": [
         "2-Contenus/csv_rwanda_hi_allcontents.csv"
       ]
@@ -3637,7 +3637,7 @@
   },
   "idb-jor-drcamman": {
     "kalite": {
-      "activated": "False",
+      "activated": false,
       "version": "0.16.9",
       "language": [
         "en"
@@ -3698,7 +3698,7 @@
       }
     ],
     "idc_import": {
-      "activated": "False",
+      "activated": false,
       "content_name": [
         "2-Contenus/csvdrc.csv"
       ]
@@ -3706,7 +3706,7 @@
   },
   "kb-fra-crfaix": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr",
@@ -3752,23 +3752,23 @@
       }
     ],
     "idc_import": {
-      "activated": "False",
+      "activated": false,
       "content_name": [
         "2-Contenus/kb_crf_1_cada_castiglione.csv"
       ]
     },
     "portal": {
-      "activated": "True"
+      "activated": true
     },
     "kiwix_version": "1.0"
   },
   "kb-cod-kinlab": {
     "bsfcampus": {
-      "activated": "True",
+      "activated": true,
       "version": "280217"
     },
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -3825,19 +3825,19 @@
       }
     ],
     "idc_import": {
-      "activated": "True",
+      "activated": true,
       "content_name": [
         "2-Contenus/csv_kinlab.csv"
       ]
     },
     "portal": {
-      "activated": "True"
+      "activated": true
     },
     "kiwix_version": "1.0"
   },
   "kb-cmr-ani": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -3870,7 +3870,7 @@
       }
     ],
     "idc_import": {
-      "activated": "False",
+      "activated": false,
       "content_name": [
         "2-Contenus/csvcamerounani.csv"
       ]
@@ -3878,7 +3878,7 @@
   },
   "kb-fra-ssp": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -4003,13 +4003,13 @@
       }
     ],
     "portal": {
-      "activated": "True"
+      "activated": true
     },
     "kiwix_version": "1.0"
   },
   "kb-bdi-tdh": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr",
@@ -4087,19 +4087,19 @@
       }
     ],
     "idc_import": {
-      "activated": "False",
+      "activated": false,
       "content_name": [
         "2-Contenus/csv_tdh_burundi.csv"
       ]
     },
     "portal": {
-      "activated": "True"
+      "activated": true
     },
     "kiwix_version": "1.0"
   },
   "idb-bdi-mutambara": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -4280,12 +4280,12 @@
       }
     ],
     "portal": {
-      "activated": "True"
+      "activated": true
     }
   },
   "idb-bdi-isare": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -4466,12 +4466,12 @@
       }
     ],
     "portal": {
-      "activated": "True"
+      "activated": true
     }
   },
   "kb-fra-croixrouge": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -4648,14 +4648,14 @@
       }
     ],
     "portal": {
-      "activated": "True"
+      "activated": true
     },
     "kiwix_version": "1.0",
-    "nas": "True"
+    "nas": true
   },
   "kb-usa-detroit": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "en"
@@ -4768,12 +4768,12 @@
       }
     ],
     "portal": {
-      "activated": "True"
+      "activated": true
     }
   },
   "kb-ecu-avanti": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "es"
@@ -4858,12 +4858,12 @@
       }
     ],
     "portal": {
-      "activated": "True"
+      "activated": true
     }
   },
   "idb-bsf-elkteam": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "en"
@@ -4906,7 +4906,7 @@
   },
   "kb-usa-bronx": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "en"
@@ -5019,12 +5019,12 @@
       }
     ],
     "portal": {
-      "activated": "True"
+      "activated": true
     }
   },
   "kb-rca-afpbangui": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -5121,12 +5121,12 @@
       }
     ],
     "portal": {
-      "activated": "True"
+      "activated": true
     }
   },
   "kb-rca-afpens": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -5223,12 +5223,12 @@
       }
     ],
     "portal": {
-      "activated": "True"
+      "activated": true
     }
   },
   "kb-rca-afpcpr": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -5325,12 +5325,12 @@
       }
     ],
     "portal": {
-      "activated": "True"
+      "activated": true
     }
   },
   "idb-fra-mmm": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -5499,12 +5499,12 @@
       }
     ],
     "portal": {
-      "activated": "True"
+      "activated": true
     }
   },
   "kb-rca-acfpebangui": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -5565,12 +5565,12 @@
       }
     ],
     "portal": {
-      "activated": "True"
+      "activated": true
     }
   },
   "kb-fra-ssphotels": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -5751,12 +5751,12 @@
       }
     ],
     "portal": {
-      "activated": "True"
+      "activated": true
     }
   },
   "kb-usa-legallibrary": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "en"
@@ -5977,12 +5977,12 @@
       }
     ],
     "portal": {
-      "activated": "True"
+      "activated": true
     }
   },
   "idb-bdi-giriyuja": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -6199,12 +6199,12 @@
       }
     ],
     "portal": {
-      "activated": "True"
+      "activated": true
     }
   },
   "kb-rca-buc": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -6277,12 +6277,12 @@
       }
     ],
     "portal": {
-      "activated": "True"
+      "activated": true
     }
   },
   "kb-rca-faseg": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -6351,12 +6351,12 @@
       }
     ],
     "portal": {
-      "activated": "True"
+      "activated": true
     }
   },
   "kb-rca-facss": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -6429,12 +6429,12 @@
       }
     ],
     "portal": {
-      "activated": "True"
+      "activated": true
     }
   },
   "idb-rdc-save-lusenda": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -6607,12 +6607,12 @@
       }
     ],
     "portal": {
-      "activated": "True"
+      "activated": true
     }
   },
   "idb-irq-oxfamhs": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "en"
@@ -6801,12 +6801,12 @@
       }
     ],
     "portal": {
-      "activated": "True"
+      "activated": true
     }
   },
   "idb-jor-cmamman": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "en"
@@ -6891,12 +6891,12 @@
       }
     ],
     "portal": {
-      "activated": "True"
+      "activated": true
     }
   },
   "idb-tan-save-kigoma": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -7053,31 +7053,31 @@
       }
     ],
     "portal": {
-      "activated": "True"
+      "activated": true
     }
   },
   "koombook": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
       ]
     },
     "idc_import": {
-      "activated": "False",
+      "activated": false,
       "content_name": [
         ""
       ]
     },
     "portal": {
-      "activated": "True"
+      "activated": true
     },
-    "samba": "True"
+    "samba": true
   },
   "kb-bsf-itjordan": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -7090,19 +7090,19 @@
       }
     ],
     "idc_import": {
-      "activated": "False",
+      "activated": false,
       "content_name": [
         ""
       ]
     },
     "portal": {
-      "activated": "False"
+      "activated": false
     },
-    "samba": "False"
+    "samba": false
   },
   "idb-grc-communiterre": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "en"
@@ -7279,12 +7279,12 @@
       }
     ],
     "portal": {
-      "activated": "True"
+      "activated": true
     }
   },
   "kb-sen-kb78telemaquesow": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -7293,11 +7293,11 @@
     "package_management": [
     ],
     "syncthing": {
-      "activated": "True",
+      "activated": true,
       "syncthing_master_id_device": ""
     },
     "modoboa": {
-        "activated": "True",
+        "activated": true,
         "mx_domain": "mail.ideas-box.cc",
         "tinc_relay_mail_server": "192.168.10.254"
     },
@@ -7307,12 +7307,12 @@
         "master_server" : "ruminant"
     },
     "portal": {
-      "activated": "True"
+      "activated": true
     }
   },
   "kb-fra-crfsable": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "version": "0.16.9",
       "language": [
         "fr"
@@ -7497,7 +7497,7 @@
       }
     ],
     "portal": {
-      "activated": "True"
+      "activated": true
     }
   }
 }
