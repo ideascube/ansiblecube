@@ -3,8 +3,8 @@
   tags: ['master','update']
 
 - name: Get kiwix_version from device_list if exist
-  set_fact: kiwix_version="{{ ansible_local.device_list[generic_project_name].kiwix_version | default (omit)}}"
-  when: ansible_local.device_list[generic_project_name].kiwix_version  is defined
+  set_fact: kiwix_version="{{ ansible_local.generic_project_name.data.kiwix_version | default (omit)}}"
+  when: ansible_local.generic_project_name.data.kiwix_version  is defined
   tags: ['master','custom','update']
 
 - debug: msg="kiwix_version {{ kiwix_version }}"

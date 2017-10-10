@@ -15,8 +15,8 @@
     {% elif 'latest' in item.status %}grep -m 1 -w \"{{ item.name }}\" /var/ideascube/main/catalog/installed.yml || ideascube catalog install {{ item.name }} || ideascube catalog update {{ item.name }} && rm -f /var/cache/ideascube/catalog/packages/{{ item.name }}-*
     {% elif 'absent' in item.status %}grep -m 1 -w \"{{ item.name }}\" /var/ideascube/main/catalog/installed.yml && ideascube catalog remove {{ item.name }} ; echo
     {% else %}echo '[+] nothing to do'{% endif %}"
-  with_items: '{{ ansible_local.device_list[generic_project_name].package_management | default(omit) }}'
-  when: ansible_local.device_list[generic_project_name].package_management is defined
+  with_items: '{{ ansible_local.generic_project_name.data.package_management | default(omit) }}'
+  when: ansible_local.generic_project_name.data.package_management is defined
   register: ideascube_catalog_cmd
   tags: ['custom','update','package_management']
 

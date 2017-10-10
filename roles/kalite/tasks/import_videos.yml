@@ -23,13 +23,13 @@
     dest=/home/{{username}}/.kalite/content/ 
     recursive=yes
     compress=no
-  with_items: "{{ ansible_local.device_list[generic_project_name].kalite.language | default('fr')}}"
+  with_items: "{{ ansible_local.generic_project_name.data.kalite.language | default('fr')}}"
 
 - name: Install Kalite language pack
   become: yes
   become_user: ideascube
   command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py manage retrievecontentpack local {{ item }} /media/koombookDoctor/contentpacks/{{ item }}.zip
-  with_items: "{{ (ansible_local.device_list[generic_project_name].kalite | default (omit)).language | default(omit) }}"
+  with_items: "{{ (ansible_local.generic_project_name.data.kalite | default (omit)).language | default(omit) }}"
 
 - name: Unmount shared folder from a NFS Share
   command: umount /media/koombookDoctor
