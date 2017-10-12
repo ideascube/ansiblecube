@@ -22,6 +22,7 @@ ANSIBLE_BIN="/usr/local/bin/ansible-pull"
 ANSIBLECUBE_PATH="/var/lib/ansible/local"
 GIT_REPO_URL="https://github.com/ideascube/ansiblecube.git"
 BRANCH="oneUpdateFile"
+KINTO_URL="http://kinto.bsf-intranet.org/v1/buckets/projets_bsf/collections/kb-idb/records/"
 
 DISTRIBUTION_CODENAME=$(lsb_release -sc)
 
@@ -355,9 +356,9 @@ do
             NAME="ideascube_project_name=$2"
             FULL_NAME=`echo "$2" | sed 's/_/-/g'`
 
-            [[ -e /tmp/device_list.fact ]] || wget https://raw.githubusercontent.com/ideascube/ansiblecube/$BRANCH/roles/set_custom_fact/files/device_list.fact -O /tmp/device_list.fact > /dev/null 2>&1
+            [[ -e /etc/ansible/facts.d/$2.fact ]] || wget $KINTO_URL/$2 -O /etc/ansible/facts.d/$2.fact > /dev/null 2>&1
 
-            is_present=$(grep -w "$FULL_NAME" /tmp/device_list.fact)
+            is_present=$(grep -w "$FULL_NAME" /etc/ansible/facts.d/$2.fact)
 
             if [[ -z "$is_present" ]] && [ "$TAGS" != "--tags master" ]
             then
