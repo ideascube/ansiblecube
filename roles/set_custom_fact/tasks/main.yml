@@ -87,7 +87,7 @@
 
 - name: Download device definition from Kinto
   get_url:
-    url: http://{{ kinto_master }}/v1/buckets/{{ kinto_project }}/collections/{{ kinto_collection }}/records/{{ ansible_hostname }}
+    url: http://{{ kinto_master }}/v1/buckets/{{ kinto_project }}/collections/{{ kinto_collection }}/records/{{ generic_project_name }}
     dest: /etc/ansible/facts.d/project.fact
     force: yes
   tags: [ 'master', 'custom', 'rename', 'update','idc_import','package_management','kalite_import' ]
