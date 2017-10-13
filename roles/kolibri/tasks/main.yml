@@ -10,7 +10,7 @@
   become: yes
   become_user: ideascube
   pip: 
-    version={{ ansible_local.generic_project_name.data.kolibri.version }}
+    version={{ ansible_local.project.data.kolibri.version }}
     name=kolibri
     chdir=/home/ideascube/.kolibri
     virtualenv=/home/ideascube/.kolibri/env

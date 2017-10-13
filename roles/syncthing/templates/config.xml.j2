@@ -1,6 +1,6 @@
 <configuration version="20">
     <folder id="yxj6i-t46zn" label="Samba share" path="{{ samba_dir }}" type="readwrite" rescanIntervalS="60" ignorePerms="false" autoNormalize="true">
-        <device id="{{ ansible_local.generic_project_name.data.syncthing.syncthing_master_id_device }}" introducedBy=""></device>
+        <device id="{{ ansible_local.project.data.syncthing.syncthing_master_id_device }}" introducedBy=""></device>
         <device id="{{ device_id.stdout }}" introducedBy=""></device>
         <minDiskFree unit="%">1</minDiskFree>
         <versioning></versioning>
@@ -19,7 +19,7 @@
         <paused>false</paused>
         <weakHashThresholdPct>25</weakHashThresholdPct>
     </folder>
-    <device id="{{ ansible_local.generic_project_name.data.syncthing.syncthing_master_id_device }}" name="Master" compression="metadata" introducer="true" skipIntroductionRemovals="false" introducedBy="">
+    <device id="{{ ansible_local.project.data.syncthing.syncthing_master_id_device }}" name="Master" compression="metadata" introducer="true" skipIntroductionRemovals="false" introducedBy="">
         <address>dynamic</address>
         <paused>false</paused>
     </device>

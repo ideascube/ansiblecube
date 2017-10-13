@@ -19,7 +19,7 @@
     - package_management
 
     - role: captive_portal
-      when: ansible_local.generic_project_name.data.portal is defined
+      when: ansible_local.project.data.portal|bool == True
 
     - role: tinc-dynamic
       vpn_name: "testvpn"
@@ -28,57 +28,58 @@
       when: ansible_local.installed_software.management.managed_by_bsf|bool == True
 
     - role: tinc-dynamic
-      vpn_name: "{{ ansible_local.generic_project_name.data.vpn.name }}"
-      vpn_port: "{{ ansible_local.generic_project_name.data.vpn.port }}"
-      vpn_master_server: "{{ ansible_local.generic_project_name.data.vpn.master_server }}"
-      when: ansible_local.generic_project_name.data.vpn is defined
+      vpn_name: "{{ ansible_local.project.data.vpn.name }}"
+      vpn_port: "{{ ansible_local.project.data.vpn.port }}"
+      vpn_master_server: "{{ ansible_local.project.data.vpn.master_server }}"
+      when: ansible_local.project.data.vpn is defined
+        and ansible_local.project.data.vpn.activated|bool == True
 
     - role: mook
       mook_name: bsfcampus
-      mook_version: "{{ ansible_local.generic_project_name.data.bsfcampus.version }}"
-      when: ansible_local.generic_project_name.data.bsfcampus is defined
-        and ansible_local.generic_project_name.data.bsfcampus.activated|bool == True
+      mook_version: "{{ ansible_local.project.data.bsfcampus.version }}"
+      when: ansible_local.project.data.bsfcampus is defined
+        and ansible_local.project.data.bsfcampus.activated|bool == True
 
     - role: mook
       mook_name: koombookedu
-      mook_version: "{{ ansible_local.generic_project_name.data.koombookedu.version }}"
-      when: ansible_local.generic_project_name.data.koombookedu is defined
-        and ansible_local.generic_project_name.data.koombookedu.activated|bool == True
+      mook_version: "{{ ansible_local.project.data.koombookedu.version }}"
+      when: ansible_local.project.data.koombookedu is defined
+        and ansible_local.project.data.koombookedu.activated|bool == True
 
     - role: appinventor
-      when: ansible_local.generic_project_name.data.appinventor is defined
-        and ansible_local.generic_project_name.data.appinventor.activated|bool == True
+      when: ansible_local.project.data.appinventor is defined
+        and ansible_local.project.data.appinventor.activated|bool == True
       tags: ['custom']
 
     - role: kalite
-      when: ansible_local.generic_project_name.data.kalite is defined
-        and ansible_local.generic_project_name.data.kalite.activated|bool == True
+      when: ansible_local.project.data.kalite is defined
+        and ansible_local.project.data.kalite.activated|bool == True
 
     - role: kolibri
-      when: ansible_local.generic_project_name.data.kolibri is defined
-        and ansible_local.generic_project_name.data.kolibri.activated|bool == True
+      when: ansible_local.project.data.kolibri is defined
+        and ansible_local.project.data.kolibri.activated|bool == True
 
     - role: logs
       when: ansible_local.installed_software.management.managed_by_bsf|bool == True
       tags: ['master','update']
 
     - role: samba
-      when: ansible_local.generic_project_name.data.samba is defined
-        and ansible_local.generic_project_name.data.samba|bool == True
+      when: ansible_local.project.data.samba is defined
+        and ansible_local.project.data.samba|bool == True
       tags: ['custom','update']
 
     - role: syncthing
-      when: ansible_local.generic_project_name.data.syncthing is defined
+      when: ansible_local.project.data.syncthing is defined
       tags: ['custom','update','syncthing']
 
     - role: modoboa
-      when: ansible_local.generic_project_name.data.modoboa is defined
-        and ansible_local.generic_project_name.data.modoboa.activated|bool == True
+      when: ansible_local.project.data.modoboa is defined
+        and ansible_local.project.data.modoboa.activated|bool == True
       tags: ['custom','update','modoboa']
 
     - role: idc_import
-      when: ansible_local.generic_project_name.data.idc_import is defined
-        and ansible_local.generic_project_name.data.idc_import.activated|bool == True
+      when: ansible_local.project.data.idc_import is defined
+        and ansible_local.project.data.idc_import.activated|bool == True
         and cache_machine.state|default(omit) == "present"
       tags: ['update','idc_import']
 

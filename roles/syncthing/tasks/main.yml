@@ -5,8 +5,8 @@
   failed_when: "'FAILED' in syncthing_status.stderr"
 
 - include: enabled.yml
-  when: (ansible_local.generic_project_name.data.syncthing.activated | default(False)) |bool == True
+  when: (ansible_local.project.data.syncthing.activated | default(False)) |bool == True
 
 - include: disabled.yml
-  when: (ansible_local.generic_project_name.data.syncthing.activated | default(False)) |bool == False
+  when: (ansible_local.project.data.syncthing.activated | default(False)) |bool == False
     and syncthing_status.stdout == "active"

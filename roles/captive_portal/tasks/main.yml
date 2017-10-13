@@ -5,10 +5,10 @@
   tags: ['custom', 'update']
 
 - include: enabled.yml
-  when: (ansible_local.generic_project_name.data.portal.activated | default(False)) |bool == True
+  when: (ansible_local.project.data.portal.activated | default(False)) |bool == True
   tags: ['custom', 'update']
 
 - include: disabled.yml
-  when: (ansible_local.generic_project_name.data.portal.activated | default(False)) |bool == False
+  when: (ansible_local.project.data.portal.activated | default(False)) |bool == False
     and cap_on.stat.exists == True
   tags: ['custom', 'update']

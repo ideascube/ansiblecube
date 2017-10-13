@@ -27,7 +27,7 @@
 
 - name: Import data
   shell: ideascube import_medias /media/synology/{{ item }} > /var/log/ideascube_import.log 2>&1
-  with_items: '{{ (ansible_local.generic_project_name.data.idc_import | default (omit)).content_name | default (omit) }}'
+  with_items: '{{ (ansible_local.project.data.idc_import | default (omit)).content_name | default (omit) }}'
 
 - name: Check the disk usage
   shell: df -h /

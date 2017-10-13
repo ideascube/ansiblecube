@@ -88,7 +88,7 @@
 - name: Download device definition from Kinto
   get_url:
     url: http://{{ kinto_master }}/v1/buckets/{{ kinto_project }}/collections/{{ kinto_collection }}/records/{{ ansible_hostname }}
-    dest: /etc/ansible/facts.d/{{ ideascube_project_name }}.fact
+    dest: /etc/ansible/facts.d/project.fact
   tags: [ 'master', 'custom', 'rename', 'update','idc_import','package_management','kalite_import' ]
 
 - debug: msg="My name is {{ ansible_hostname }}"

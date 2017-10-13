@@ -1,8 +1,8 @@
 ---
 - include_vars: group_vars/{{ ansible_architecture }}.yml
 
-- set_fact: ideascube_branding="{{ ansible_local.generic_project_name.data.ideascube_branding }}"
-  when: ansible_local.generic_project_name.data.ideascube_branding is defined
+- set_fact: ideascube_branding="{{ ansible_local.project.data.ideascube_branding }}"
+  when: ansible_local.project.data.ideascube_branding is defined
 
 - debug: msg="Using branding {{ ideascube_branding }}"
 
