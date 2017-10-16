@@ -7524,6 +7524,58 @@
       {
         "name": "cest-pas-sorcier.fr",
         "status": "present"
+      },
+      {
+        "name": "biologie-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "contes-et-dessins-animes-fr",
+        "status": "present"
+      },
+      {
+        "name": "discriminations-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "ecoute-tes-emotions-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "ecriture-et-litterature-fr",
+        "status": "present"
+      },
+      {
+        "name": "evite-les-conflits-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "hygiene-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-filles-et-les-garcons-quelles-differences-fr",
+        "status": "present"
+      },
+      {
+        "name": "nature-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "prends-soin-de-toi-enfants-ado-fr",
+        "status": "present"
+      },
+      {
+        "name": "sports-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "droits-de-l-enfant-fr",
+        "status": "present"
+      },
+      {
+        "name": "kit-de-l-animateur-fr",
+        "status": "present"
       }
      ],
     "portal": {
@@ -7553,6 +7605,62 @@
       },
       {
         "name": "cest-pas-sorcier.fr",
+        "status": "present"
+      },
+      {
+        "name": "biologie-enfants-ados-fr",
+        "status": "present"
+      },      
+      { 
+        "name": "contes-et-dessins-animes-fr",
+        "status": "present"
+      },
+      { 
+        "name": "discriminations-enfants-ados-fr",
+        "status": "present"
+      },
+      { 
+        "name": "ecoute-tes-emotions-enfants-ados-fr",
+        "status": "present"
+      },
+      { 
+        "name": "ecriture-et-litterature-fr",
+        "status": "present"
+      },
+      { 
+        "name": "evite-les-conflits-enfants-ados-fr",
+        "status": "present"
+      },
+      { 
+        "name": "hygiene-enfants-ados-fr",
+        "status": "present"
+      },
+      { 
+        "name": "les-filles-et-les-garcons-quelles-differences-fr",
+        "status": "present"
+      },
+      { 
+        "name": "nature-enfants-ados-fr",
+        "status": "present"
+      },
+      { 
+        "name": "prends-soin-de-toi-enfants-ado-fr",
+        "status": "present"
+      },
+      { 
+        "name": "sports-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "droits-de-l-enfant-fr",
+        "status": "present"
+      },
+      {
+        "name": "kit-de-l-animateur-fr",
+        "status": "present"
+      },
+      {
+        "name": "sexualite-fr",
         "status": "present"
       }
      ],
