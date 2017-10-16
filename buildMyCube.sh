@@ -179,14 +179,14 @@ function 3rd_party_app()
         \"idc_import\": {
             \"activated\": \"$MEDIACENTER\",
             \"content_name\": ["\"$CSV_FILE_PATH\""]
-        }," > /etc/ansible/facts.d/device_list.fact
+        }," > /etc/ansible/facts.d/project.fact
 
     if [ $PACKAGES_MANAGEMENT == "True" ]; then
 
         echo -e "        \"package_management\":[{
                     \"name\": \"${PACKAGES_LIST[0]}\",
                     \"status\": \"present\"
-                " >> /etc/ansible/facts.d/device_list.fact
+                " >> /etc/ansible/facts.d/project.fact
 
         unset PACKAGES_LIST[0]
         for PACKAGE in ${PACKAGES_LIST[@]}; do
@@ -194,11 +194,11 @@ function 3rd_party_app()
                 {
                     \"name\": \"$PACKAGE\",
                     \"status\": \"present\"
-                " >> /etc/ansible/facts.d/device_list.fact
+                " >> /etc/ansible/facts.d/project.fact
         done
 
         echo -e "                }
-        ]," >> /etc/ansible/facts.d/device_list.fact
+        ]," >> /etc/ansible/facts.d/project.fact
 
     fi
 
@@ -206,7 +206,7 @@ function 3rd_party_app()
             \"activated\": \"True\"
         }
     }
-}" >> /etc/ansible/facts.d/device_list.fact
+}" >> /etc/ansible/facts.d/project.fact
 
         hostname $FULL_NAME
 }
@@ -223,8 +223,7 @@ function help()
 
         -n|--name       Name of your device. 
                         An Ideascube configuration template can be choosen from the links below :
-                            + https://github.com/ideascube/ansiblecube/blob/oneUpdateFile/roles/set_custom_fact/files/device_list.fact
-                            + https://github.com/ideascube/ideascube/tree/master/ideascube/conf
+			$KINTO_URL
                         Ex: -n kb_mooc_cog
 
     OPTIONS :
@@ -288,17 +287,17 @@ function go_manage()
 
 internet_check
 
-if [[ -e /etc/ansible/facts.d/device_list.fact ]]; then
+if [[ -e /etc/ansible/facts.d/project.fact ]]; then
     echo -n "[+] Local configuration file exist, would you like to delete it ? (y/n)" >&2
     read response
 
     case $response in
         [OoYy]*)
-            rm -f /etc/firstStart.csv /etc/ansible/facts.d/device_list.fact /tmp/device_list.fact /etc/ansible/facts.d/installed_software.fact
+            rm -f /etc/firstStart.csv /etc/ansible/facts.d/project.fact /tmp/project.fact /etc/ansible/facts.d/installed_software.fact
             touch /etc/ansible/facts.d/installed_software.fact
         ;;
         *)
-            cp /etc/ansible/facts.d/device_list.fact /tmp/device_list.fact
+            cp /etc/ansible/facts.d/project.fact /tmp/project.fact
         ;;
     esac
 fi
