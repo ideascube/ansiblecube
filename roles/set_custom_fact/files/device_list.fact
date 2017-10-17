@@ -7576,6 +7576,10 @@
       {
         "name": "kit-de-l-animateur-fr",
         "status": "present"
+      },
+      {
+        "name": "protege-la-planete-enfants-ados-fr",
+        "status": "present"
       }
      ],
     "portal": {
@@ -7661,6 +7665,10 @@
       },
       {
         "name": "sexualite-fr",
+        "status": "present"
+      },
+      {
+        "name": "protege-la-planete-enfants-ados-fr",
         "status": "present"
       }
      ],
