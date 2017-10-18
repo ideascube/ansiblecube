@@ -6888,6 +6888,98 @@
       {
         "name": "vikidia.en",
         "status": "present"
+      },
+      {
+        "name": "music-in-arabic-ar",
+        "status": "present"
+      },
+      {
+        "name": "abuse-and-harassment-ar",
+        "status": "present"
+      },
+      {
+        "name": "physics-ar",
+        "status": "present"
+      },
+      {
+        "name": "self-development-ar",
+        "status": "present"
+      },
+      {
+        "name": "sports-ar",
+        "status": "present"
+      },
+      {
+        "name": "fashion-and-beauty",
+        "status": "present"
+      },
+      {
+        "name": "motherhood-and-parenting-ar",
+        "status": "present"
+      },
+      {
+        "name": "mathematics-ar",
+        "status": "present"
+      },
+      {
+        "name": "let-s-speak-english-ar",
+        "status": "present"
+      },
+      {
+        "name": "health-and-diseases-ar",
+        "status": "present"
+      },
+      {
+        "name": "girl-talk-puberty-ar",
+        "status": "present"
+      },
+      {
+        "name": "let-s-be-clean-ar",
+        "status": "present"
+      },
+      {
+        "name": "nervous-system-ar",
+        "status": "present"
+      },
+      {
+        "name": "let-s-speak-arabic-ar",
+        "status": "present"
+      },
+      {
+        "name": "biology-ar",
+        "status": "present"
+      },
+      {
+        "name": "cartoons-ar",
+        "status": "present"
+      },
+      {
+        "name": "diy-handcrafts-ar",
+        "status": "present"
+      },
+      {
+        "name": "waqt-al-farah-ar",
+        "status": "present"
+      },
+      {
+        "name": "football-matches-ar",
+        "status": "present"
+      },
+      {
+        "name": "the-road-zaatari-magazine-ar",
+        "status": "present"
+      },
+      {
+        "name": "kids-magazine-ar",
+        "status": "present"
+      },
+      {
+        "name": "fitness-for-kids-ar",
+        "status": "present"
+      },
+      {
+        "name": "",
+        "status": "present"
       }
     ],
     "portal": {
