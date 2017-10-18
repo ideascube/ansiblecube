@@ -6888,6 +6888,280 @@
       {
         "name": "vikidia.en",
         "status": "present"
+      },
+      {
+        "name": "music-in-arabic-ar",
+        "status": "present"
+      },
+      {
+        "name": "abuse-and-harassment-ar",
+        "status": "present"
+      },
+      {
+        "name": "physics-ar",
+        "status": "present"
+      },
+      {
+        "name": "self-development-ar",
+        "status": "present"
+      },
+      {
+        "name": "sports-ar",
+        "status": "present"
+      },
+      {
+        "name": "fashion-and-beauty",
+        "status": "present"
+      },
+      {
+        "name": "motherhood-and-parenting-ar",
+        "status": "present"
+      },
+      {
+        "name": "mathematics-ar",
+        "status": "present"
+      },
+      {
+        "name": "let-s-speak-english-ar",
+        "status": "present"
+      },
+      {
+        "name": "health-and-diseases-ar",
+        "status": "present"
+      },
+      {
+        "name": "girl-talk-puberty-ar",
+        "status": "present"
+      },
+      {
+        "name": "let-s-be-clean-ar",
+        "status": "present"
+      },
+      {
+        "name": "nervous-system-ar",
+        "status": "present"
+      },
+      {
+        "name": "let-s-speak-arabic-ar",
+        "status": "present"
+      },
+      {
+        "name": "biology-ar",
+        "status": "present"
+      },
+      {
+        "name": "cartoons-ar",
+        "status": "present"
+      },
+      {
+        "name": "diy-handcrafts-ar",
+        "status": "present"
+      },
+      {
+        "name": "waqt-al-farah-ar",
+        "status": "present"
+      },
+      {
+        "name": "football-matches-ar",
+        "status": "present"
+      },
+      {
+        "name": "the-road-zaatari-magazine-ar",
+        "status": "present"
+      },
+      {
+        "name": "kids-magazine-ar",
+        "status": "present"
+      },
+      {
+        "name": "fitness-for-kids-ar",
+        "status": "present"
+      },
+      {
+        "name": "",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": "True"
+    }
+  },
+  "idb-lbn-icrcah": {
+    "kalite": {
+      "activated": "True",
+      "version": "0.16.9",
+      "language": [
+        "en"
+      ]
+    },
+    "package_management": [
+      {
+        "name": "wikipedia.en",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.ar",
+        "status": "present"
+      },
+      {
+        "name": "wiktionary.en",
+        "status": "present"
+      },
+      {
+        "name": "wikiversity.en",
+        "status": "present"
+      },
+      {
+        "name": "wikibooks.en",
+        "status": "present"
+      },
+      {
+        "name": "wikisource.en",
+        "status": "present"
+      },
+      {
+        "name": "tedentertainment.en",
+        "status": "present"
+      },
+      {
+        "name": "tedscience.en",
+        "status": "present"
+      },
+      {
+        "name": "tedtechnology.en",
+        "status": "present"
+      },
+      {
+        "name": "wiktionary.ar",
+        "status": "present"
+      },
+      {
+        "name": "wikiversity.ar",
+        "status": "present"
+      },
+      {
+        "name": "wikibooks.ar",
+        "status": "present"
+      },
+      {
+        "name": "wikisource.ar",
+        "status": "present"
+      },
+      {
+        "name": "wikiquote.ar",
+        "status": "present"
+      },
+      {
+        "name": "wikiquote.en",
+        "status": "present"
+      },
+      {
+        "name": "ted-ed.en",
+        "status": "present"
+      },
+      {
+        "name": "tedmed.en",
+        "status": "present"
+      },
+      {
+        "name": "crashcourse.en",
+        "status": "present"
+      },
+      {
+        "name": "vikidia.en",
+        "status": "present"
+      },
+      {
+        "name": "music-in-arabic-ar",
+        "status": "present"
+      },
+      {
+        "name": "abuse-and-harassment-ar",
+        "status": "present"
+      },
+      {
+        "name": "physics-ar",
+        "status": "present"
+      },
+      {
+        "name": "self-development-ar",
+        "status": "present"
+      },
+      {
+        "name": "sports-ar",
+        "status": "present"
+      },
+      {
+        "name": "fashion-and-beauty",
+        "status": "present"
+      },
+      {
+        "name": "motherhood-and-parenting-ar",
+        "status": "present"
+      },
+      {
+        "name": "mathematics-ar",
+        "status": "present"
+      },
+      {
+        "name": "let-s-speak-english-ar",
+        "status": "present"
+      },
+      {
+        "name": "health-and-diseases-ar",
+        "status": "present"
+      },
+      {
+        "name": "girl-talk-puberty-ar",
+        "status": "present"
+      },
+      {
+        "name": "let-s-be-clean-ar",
+        "status": "present"
+      },
+      {
+        "name": "nervous-system-ar",
+        "status": "present"
+      },
+      {
+        "name": "let-s-speak-arabic-ar",
+        "status": "present"
+      },
+      {
+        "name": "biology-ar",
+        "status": "present"
+      },
+      {
+        "name": "cartoons-ar",
+        "status": "present"
+      },
+      {
+        "name": "diy-handcrafts-ar",
+        "status": "present"
+      },
+      {
+        "name": "waqt-al-farah-ar",
+        "status": "present"
+      },
+      {
+        "name": "football-matches-ar",
+        "status": "present"
+      },
+      {
+        "name": "the-road-zaatari-magazine-ar",
+        "status": "present"
+      },
+      {
+        "name": "kids-magazine-ar",
+        "status": "present"
+      },
+      {
+        "name": "fitness-for-kids-ar",
+        "status": "present"
+      },
+      {
+        "name": "",
+        "status": "present"
       }
     ],
     "portal": {
