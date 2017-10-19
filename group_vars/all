@@ -22,7 +22,7 @@ git_branch: oneUpdateFile
 samba: False
 syncthing: False
 syncthing_master_id_device: ""
-kinto_master: kinto.bsf-intranet.org
+kinto_master: kinto.bsf-intranet.org:56562
 kinto_project: projets_bsf
 kinto_collection: kb-idb
 

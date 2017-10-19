@@ -22,7 +22,7 @@ ANSIBLE_BIN="/usr/local/bin/ansible-pull"
 ANSIBLECUBE_PATH="/var/lib/ansible/local"
 GIT_REPO_URL="https://github.com/ideascube/ansiblecube.git"
 BRANCH="oneUpdateFile"
-KINTO_URL="http://kinto.bsf-intranet.org/v1/buckets/projets_bsf/collections/kb-idb/records"
+KINTO_URL="http://kinto.bsf-intranet.org:56562/v1/buckets/projets_bsf/collections/kb-idb/records"
 
 DISTRIBUTION_CODENAME=$(lsb_release -sc)
 
