@@ -5638,7 +5638,7 @@
         "status": "present"
       },
       {
-        "name": "apprentissage-francais-fr",
+        "name": "apprenez-le-francais-fr",
         "status": "present"
       },
       {
@@ -5654,11 +5654,11 @@
         "status": "latest"
       },
       {
-        "name": "bien-etre-dev-perso-communication-fr",
+        "name": "comprendre-et-exprimer-ses-emotions-fr",
         "status": "present"
       },
       {
-        "name": "cinema-et-creation-video-fr",
+        "name": "initiez-vous-a-la-creation-video-fr",
         "status": "present"
       },
       {
