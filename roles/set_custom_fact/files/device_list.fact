@@ -3245,68 +3245,12 @@
         "status": "present"
       },
       {
-        "name": "wikipedia.ckb",
-        "status": "present"
-      },
-      {
         "name": "gutenberg.en",
-        "status": "present"
-      },
-      {
-        "name": "tedtechnology.en",
-        "status": "present"
-      },
-      {
-        "name": "tedscience.en",
-        "status": "present"
-      },
-      {
-        "name": "tedglobalissues.en",
-        "status": "present"
-      },
-      {
-        "name": "tedentertainment.en",
-        "status": "present"
-      },
-      {
-        "name": "teddesign.en",
-        "status": "present"
-      },
-      {
-        "name": "tedbusiness.en",
         "status": "present"
       },
       {
         "name": "mullah-piaz-digest.fa",
         "status": "present"
-      },
-      {
-        "name": "wikibooks.ar",
-        "status": "present"
-      },
-      {
-        "name": "wikibooks.en",
-        "status": "present"
-      },
-      {
-        "name": "wikibooks.fa",
-        "status": "present"
-      },
-      {
-        "name": "wikiquote.en",
-        "status": "present"
-      },
-      {
-        "name": "wikiquote.ar",
-        "status": "present"
-      },
-      {
-        "name": "wikiquote.fa",
-        "status": "present"
-      },
-      {
-        "name": "w2eu",
-        "status": "latest"
       },
       {
         "name": "athens.map",
@@ -3319,6 +3263,150 @@
       {
         "name": "help.unhcr.org",
         "status": "latest"
+      },
+      {
+        "name": "fictions-and-entertainment-in-arabic-ar",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-adults-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-teenagers-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-healthcare-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-human-rights-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-human-rights-for-children-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-sciences-en",
+        "status": "present"
+      },
+      {
+        "name": "greek-mythology-en",
+        "status": "present"
+      },
+      {
+        "name": "cartoons-en",
+        "status": "present"
+      },
+      {
+        "name": "abuse-and-harassment-ar",
+        "status": "present"
+      },
+      {
+        "name": "cartoons-and-tales-fa",
+        "status": "present"
+      },
+      {
+        "name": "refugees-rights-fa",
+        "status": "present"
+      },
+      {
+        "name": "about-drugs-and-addiction-fa",
+        "status": "present"
+      },
+      {
+        "name": "let-s-talk-about-sexuality-fa",
+        "status": "present"
+      },
+      {
+        "name": "fictions-for-adults-fa",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-psychology-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-sociology-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-economics-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-anthropology-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-business-studies-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-philosophy-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-geography-environmental-studies-en",
+        "status": "present"
+      },
+      {
+        "name": "poetry-ar",
+        "status": "present"
+      },
+      {
+        "name": "motherhood-and-parenting-ar",
+        "status": "present"
+      },
+      {
+        "name": "let-s-speak-english-ar",
+        "status": "present"
+      },
+      {
+        "name": "carpentry-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-guitar-en",
+        "status": "present"
+      },
+      {
+        "name": "drums-for-beginners-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-photography-en",
+        "status": "present"
+      },
+      {
+        "name": "vocabularies-en",
+        "status": "present"
+      },
+      {
+        "name": "cartoons-ar",
+        "status": "present"
+      },
+      {
+        "name": "learn-to-read-and-count-in-farsi-children",
+        "status": "present"
+      },
+      {
+        "name": "let-s-practise-sport-children-en",
+        "status": "present"
+      },
+      {
+        "name": "woodcrafts-for-kids-en",
+        "status": "present"
+      },
+      {
+        "name": "facilitator-kit-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-greek-el",
+        "status": "present"
       }
     ],
     "idc_import": {
@@ -3353,40 +3441,12 @@
         "status": "present"
       },
       {
-        "name": "wikipedia.ckb",
+        "name": "gutenberg.en",
         "status": "present"
       },
       {
         "name": "mullah-piaz-digest.fa",
         "status": "present"
-      },
-      {
-        "name": "wikibooks.ar",
-        "status": "present"
-      },
-      {
-        "name": "wikibooks.en",
-        "status": "present"
-      },
-      {
-        "name": "wikibooks.fa",
-        "status": "present"
-      },
-      {
-        "name": "wikiquote.en",
-        "status": "present"
-      },
-      {
-        "name": "wikiquote.ar",
-        "status": "present"
-      },
-      {
-        "name": "wikiquote.fa",
-        "status": "present"
-      },
-      {
-        "name": "w2eu",
-        "status": "latest"
       },
       {
         "name": "athens.map",
@@ -3399,6 +3459,150 @@
       {
         "name": "help.unhcr.org",
         "status": "latest"
+      },
+      {
+        "name": "fictions-and-entertainment-in-arabic-ar",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-adults-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-teenagers-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-healthcare-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-human-rights-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-human-rights-for-children-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-sciences-en",
+        "status": "present"
+      },
+      {
+        "name": "greek-mythology-en",
+        "status": "present"
+      },
+      {
+        "name": "cartoons-en",
+        "status": "present"
+      },
+      {
+        "name": "abuse-and-harassment-ar",
+        "status": "present"
+      },
+      {
+        "name": "cartoons-and-tales-fa",
+        "status": "present"
+      },
+      {
+        "name": "refugees-rights-fa",
+        "status": "present"
+      },
+      {
+        "name": "about-drugs-and-addiction-fa",
+        "status": "present"
+      },
+      {
+        "name": "let-s-talk-about-sexuality-fa",
+        "status": "present"
+      },
+      {
+        "name": "fictions-for-adults-fa",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-psychology-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-sociology-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-economics-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-anthropology-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-business-studies-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-philosophy-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-geography-environmental-studies-en",
+        "status": "present"
+      },
+      {
+        "name": "poetry-ar",
+        "status": "present"
+      },
+      {
+        "name": "motherhood-and-parenting-ar",
+        "status": "present"
+      },
+      {
+        "name": "let-s-speak-english-ar",
+        "status": "present"
+      },
+      {
+        "name": "carpentry-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-guitar-en",
+        "status": "present"
+      },
+      {
+        "name": "drums-for-beginners-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-photography-en",
+        "status": "present"
+      },
+      {
+        "name": "vocabularies-en",
+        "status": "present"
+      },
+      {
+        "name": "cartoons-ar",
+        "status": "present"
+      },
+      {
+        "name": "learn-to-read-and-count-in-farsi-children",
+        "status": "present"
+      },
+      {
+        "name": "let-s-practise-sport-children-en",
+        "status": "present"
+      },
+      {
+        "name": "woodcrafts-for-kids-en",
+        "status": "present"
+      },
+      {
+        "name": "facilitator-kit-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-greek-el",
+        "status": "present"
       }
     ],
     "idc_import": {
