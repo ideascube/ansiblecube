@@ -7090,7 +7090,7 @@
         "status": "present"
       },
       {
-        "name": "music-in-arabic-ar",
+        "name": "music-in-arabic",
         "status": "present"
       },
       {
@@ -7158,7 +7158,7 @@
         "status": "present"
       },
       {
-        "name": "waqt-al-farah-ar",
+        "name": "waqt-al-farah",
         "status": "present"
       },
       {
