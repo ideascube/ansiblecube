@@ -5935,7 +5935,7 @@
       },
       {
         "name": "experiences-de-femmes-fr",
-        "status": "present"
+        "status": "latest"
       },
       {
         "name": "fictions-divertissements-ar",
@@ -7180,6 +7180,14 @@
       {
         "name": "classical-music",
         "status": "present"
+      },
+      {
+        "name": "arabic-alphabet-ar",
+        "status": "present"
+      },
+      {
+        "name": "cooking-ar",
+        "status": "present"
       }
     ],
     "portal": {
@@ -8157,7 +8165,15 @@
         "status": "present"
       },
       {
-        "name": "sexualite-fr",
+        "name": "maladies-endemiques-en-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "creation-d-association-fr",
+        "status": "present"
+      },
+      {
+        "name": "prevention-et-sexualite-fr",
         "status": "present"
       },
       {
@@ -8266,6 +8282,10 @@
         "status": "present"
       },
       {
+        "name": "experiences-de-femmes-fr",
+        "status": "present"
+      },
+      {
         "name": "initiez-vous-a-la-photographie-fr",
         "status": "present"
       },
@@ -8306,7 +8326,15 @@
         "status": "present"
       },
       {
-        "name": "sexualite-fr",
+        "name": "maladies-endemiques-en-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "creation-d-association-fr",
+        "status": "present"
+      },
+      {
+        "name": "prevention-et-sexualite-fr",
         "status": "present"
       },
       {
