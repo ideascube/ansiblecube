@@ -25,6 +25,9 @@
     compress=no
   with_items: "{{ ansible_local.device_list[generic_project_name].kalite.language | default('fr')}}"
 
+- name: Set permission back to the user instead of root after importing the medias
+  file: path=/home/{{username}}/.kalite/content/ owner={{ username }} group={{ username }}  mode="u=rwX,go=rX" recurse=yes
+
 - name: Install Kalite language pack
   become: yes
   become_user: ideascube
@@ -33,6 +36,3 @@
 
 - name: Unmount shared folder from a NFS Share
   command: umount /media/koombookDoctor
-
-- name: Set permission back to the user instead of root after importing the medias
-  file: path=/home/{{username}}/.kalite/content/ owner={{ username }} group={{ username }}  mode="u=rwX,go=rX" recurse=yes
