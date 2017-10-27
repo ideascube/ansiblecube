@@ -17,12 +17,4 @@
     {% else %}echo '[+] nothing to do'{% endif %}"
   with_items: '{{ ansible_local.device_list[generic_project_name].package_management | default(omit) }}'
   when: ansible_local.device_list[generic_project_name].package_management is defined
-  register: ideascube_catalog_cmd
-  tags: ['custom','update','package_management']
-
-- set_fact:
-    pkg_list: "{{ ideascube_catalog_cmd.results | map(attribute='stdout') | list }}"
-  tags: ['custom','update','package_management']
-
-- debug: var=pkg_list
   tags: ['custom','update','package_management']
