@@ -47,3 +47,4 @@
 
 - name: Say Hi on the logs
   shell: wget http://report.bsf-intranet.org/device={{ansible_hostname}}/ansiblepull=IamOnOldMasterBranch
+  ignore_errors: yes
