@@ -5830,7 +5830,7 @@
         "status": "present"
       },
       {
-        "name": "musique-fr",
+        "name": "decouvrez-de-nouvelles-musiques-fr",
         "status": "present"
       },
       {
@@ -5838,7 +5838,7 @@
         "status": "present"
       },
       {
-        "name": "discriminations-fr",
+        "name": "combattons-les-discriminations-fr",
         "status": "present"
       },
       {
@@ -5846,11 +5846,11 @@
         "status": "present"
       },
       {
-        "name": "musique-ar",
+        "name": "musique-en-arabe-ar",
         "status": "present"
       },
       {
-        "name": "photographie-fr",
+        "name": "initiez-vous-a-la-photographie-fr",
         "status": "present"
       },
       {
@@ -5938,7 +5938,7 @@
         "status": "latest"
       },
       {
-        "name": "fictions-divertissements-ar",
+        "name": "fictions-and-entertainment-in-arabic-ar",
         "status": "present"
       },
       {
