@@ -8735,6 +8735,14 @@
         "status": "present"
       },
       {
+        "name": "ebooks-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "nutrition-fr",
+        "status": "present"
+      },
+      {
         "name": "arts-afrique-fr",
         "status": "present"
       },
