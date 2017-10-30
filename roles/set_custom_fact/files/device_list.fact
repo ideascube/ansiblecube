@@ -8688,6 +8688,18 @@
         "status": "present"
       },
       {
+        "name": "wikipedia.en",
+        "status": "absent"
+      },
+      {
+        "name": "gutenberg.en",
+        "status": "absent"
+      },
+      {
+        "name": "ted-ed.en",
+        "status": "absent"
+      },
+      {
         "name": "sports-enfants-ados-fr",
         "status": "present"
       },
