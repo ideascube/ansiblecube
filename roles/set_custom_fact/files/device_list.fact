@@ -8474,6 +8474,10 @@
         "status": "present"
       },
       {
+        "name": "histoire-occidentale-fr",
+        "status": "present"
+      },
+      {
         "name": "sports-enfants-ados-fr",
         "status": "present"
       },
