@@ -8260,7 +8260,19 @@
         "status": "present"
       },
       {
+        "name": "apprenez-le-code-informatique-fr",
+        "status": "present"
+      },
+      {
         "name": "protege-la-planete-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "hygiene-afrique-fr",
+        "status": "latest"
+      },
+      {
+        "name": "experiences-de-femmes-fr",
         "status": "present"
       },
       {
@@ -8303,6 +8315,10 @@
       {
         "name": "experiences-de-femmes-fr",
         "status": "present"
+      },
+      {
+        "name": "hygiene-afrique-fr",
+        "status": "latest"
       },
       {
         "name": "initiez-vous-a-la-photographie-fr",
@@ -8426,6 +8442,10 @@
       },
       {
         "name": "les-filles-et-les-garcons-quelles-differences-fr",
+        "status": "present"
+      },
+      {
+        "name": "sante-fr",
         "status": "present"
       },
       {
