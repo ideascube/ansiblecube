@@ -163,7 +163,7 @@
   ignore_errors: yes
 
 - name: Send to CAPTIVE_HTTP if destination *:80/tcp
-  command: iptables -t nat -A PREROUTING -p tcp -m tcp ! -s "{{ hotspot_ip }}" ! -d "{{ hotspot_ip }}" --dport 80 -j CAPTIVE_HTTP
+  command: /sbin/iptables -t nat -A PREROUTING -p tcp -m tcp ! -s "{{ hotspot_ip }}" ! -d "{{ hotspot_ip }}" --dport 80 -j CAPTIVE_HTTP
   tags: ['custom', 'update']
 
 - name: Send to CAPTIVE_HTTPS if destination *:443/tcp
