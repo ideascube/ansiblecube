@@ -7400,7 +7400,7 @@
     },
     "samba": "False"
   },
-  "kb-bsf-itgreece": {
+  "idb-bsf-dryruntest": {
     "kalite": {
       "activated": "False",
       "version": "0.16.9",
