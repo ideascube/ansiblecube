@@ -1,8 +1,10 @@
 ---
-- name: fake-hwclock conf for ARM system 
-  copy: content="FORCE=force" dest=/etc/default/fake-hwclock
-  tags:
-    - custom
+- name: Do not save fake-hwclock if time appear to be in the past
+  lineinfile: dest=/etc/default/fake-hwclock
+              regexp='FORCE='
+              line='#FORCE=force'
+              state=present
+  tags: ['custom','update']
 
 - name: Add armbian repository 
   apt_repository: repo='deb http://apt.armbian.com jessie main utils jessie-desktop' 

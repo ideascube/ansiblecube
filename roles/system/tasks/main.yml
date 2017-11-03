@@ -65,7 +65,6 @@
    - unzip
    - bash-completion
    - aptitude
-   - ntpdate
    - fake-hwclock
    - hdparm
    - ncurses-term
@@ -255,6 +254,18 @@
           owner=root group=root mode=0644
   tags:
     - master
+
+- name: Copy timesyncd.conf
+  copy: src=timesyncd.conf dest=/etc/systemd/timesyncd.conf
+  tags: ['custom','update']
+
+- name: Enable systemd-timesyncd
+  command: timedatectl set-ntp true
+  tags: ['custom','update']
+
+- name: Disable ntp service
+  service: enabled=no name=ntp
+  tags: ['custom', 'update']
 
 - name: Remove the existing localtime file
   file: path=/etc/localtime state=absent
