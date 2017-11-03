@@ -265,6 +265,8 @@
 
 - name: Disable ntp service
   service: enabled=no name=ntp
+  when: ansible_architecture == "armhf"
+   or ansible_architecture == "armv7l"
   tags: ['custom', 'update']
 
 - name: Remove the existing localtime file
