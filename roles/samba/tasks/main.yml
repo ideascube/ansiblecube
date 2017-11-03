@@ -11,7 +11,7 @@
     - "samba-common-bin"
 
 - name: Generate netbios name
-  shell: echo {{ansible_hostname}} | cut -d "-" -f3,4
+  shell: echo {{ansible_hostname}} | cut -d "-" -f3,4 | cut -c 1-15
   register: netbios_name
 
 - name: Configure Samba
