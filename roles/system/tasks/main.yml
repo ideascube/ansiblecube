@@ -65,7 +65,6 @@
    - unzip
    - bash-completion
    - aptitude
-   - ntpdate
    - fake-hwclock
    - hdparm
    - ncurses-term
