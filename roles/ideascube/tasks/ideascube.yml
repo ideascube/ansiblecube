@@ -35,7 +35,7 @@
 #### Install last ideascube package
 
 - name: Install ideascube
-  apt: name=ideascube force=yes update_cache=yes dpkg_options="force-confnew" state=latest
+  apt: name=ideascube=0.34.0 force=yes update_cache=yes dpkg_options="force-confnew" state=present
   register: has_been_installed
   tags: ['master', 'custom']
 
