@@ -1,6 +1,13 @@
 ---
 - include_vars: group_vars/{{ ansible_architecture }}.yml
 
+- name: Upgrade setuptools
+  pip: name=setuptools
+    state=latest
+    chdir=/srv/modoboa
+    virtualenv_command=/usr/bin/virtualenv
+    virtualenv=/srv/modoboa/env/
+
 - name: Clone modoboa repo
   git:
     repo: https://github.com/modoboa/modoboa-installer
