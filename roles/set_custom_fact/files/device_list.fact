@@ -3441,10 +3441,6 @@
         "status": "present"
       },
       {
-        "name": "gutenberg.en",
-        "status": "present"
-      },
-      {
         "name": "mullah-piaz-digest.fa",
         "status": "present"
       },
