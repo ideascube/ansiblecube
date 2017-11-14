@@ -1,0 +1,22 @@
+#!/bin/bash
+IF=$1
+STATUS=$2
+ANSIBLE_FOLDER=/var/lib/ansible/
+GIT_FOLDER=$ANSIBLE_FOLDER/local
+
+if [[ "$IF" == "eth0" || "$IF" == "wlan1" ]]
+then
+    case "$STATUS" in
+        up)
+            git --git-dir=$GIT_FOLDER/.git --work-tree=$GIT_FOLDER status > /dev/null 2>&1
+            if [[ $? -ne 0 ]]
+            then
+                rm -fr $GIT_FOLDER
+                git clone https://github.com/ideascube/ansiblecube.git $ANSIBLE_FOLDER
+		mv $ANSIBLE_FOLDER/ansiblecube $GIT_FOLDER
+            fi
+        ;;
+        *)
+        ;;
+    esac
+fi

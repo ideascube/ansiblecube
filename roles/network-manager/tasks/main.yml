@@ -15,6 +15,11 @@
     owner=root group=root mode=0755
   tags: ['custom', 'update']
 
+- name: Installing Git repository check script
+  template: src=git-check.j2 dest=/etc/NetworkManager/dispatcher.d/01git-check
+    owner=root group=root mode=0755
+  tags: ['custom', 'update']
+
 - name: Start KoomBook-doctor script 
   command: /etc/NetworkManager/dispatcher.d/02koombook-doctor eth0 up
   tags: 
