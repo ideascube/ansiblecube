@@ -658,15 +658,7 @@
     },
     "package_management": [
       {
-        "name": "vikidia.fr",
-        "status": "present"
-      },
-      {
-        "name": "gutenberg.fr",
-        "status": "present"
-      },
-      {
-        "name": "wikipedia.ar",
+        "name": "wikipedia.fr",
         "status": "present"
       },
       {
@@ -674,11 +666,11 @@
         "status": "present"
       },
       {
-        "name": "wikipedia.fa",
+        "name": "wikipedia.ar",
         "status": "present"
       },
       {
-        "name": "wikipedia.fr",
+        "name": "wikipedia.fa",
         "status": "present"
       },
       {
@@ -686,7 +678,19 @@
         "status": "present"
       },
       {
+        "name": "wiktionary.en",
+        "status": "present"
+      },
+      {
         "name": "wiktionary.ar",
+        "status": "present"
+      },
+      {
+        "name": "wiktionary.ar",
+        "status": "present"
+      },
+      {
+        "name": "wiktionary.fr",
         "status": "present"
       },
       {
@@ -694,27 +698,139 @@
         "status": "present"
       },
       {
+        "name": "wiktionary.ar",
+        "status": "present"
+      },
+      {
         "name": "wiktionary.fa",
         "status": "present"
       },
       {
-        "name": "wikibooks.fr",
+        "name": "gutenberg.mul",
         "status": "present"
       },
       {
-        "name": "wikibooks.en",
+        "name": "service-public.fr",
         "status": "present"
       },
       {
-        "name": "wikibooks.fa",
+        "name": "universcience-tv.fr",
         "status": "present"
       },
       {
-        "name": "wikibooks.ar",
+        "name": "tedxlausanne2013.fr",
         "status": "present"
       },
       {
-        "name": "mullah-piaz-digest.fa",
+        "name": "tedxlausanne2014.fr",
+        "status": "present"
+      },
+      {
+        "name": "les-fondamentaux.fr",
+        "status": "present"
+      },
+      {
+        "name": "decouvrez-differents-sports-fr",
+        "status": "present"
+      },
+      {
+        "name": "decouvrez-de-nouvelles-musiques-fr",
+        "status": "present"
+      },
+      {
+        "name": "decouvrez-ou-re-decouvrez-la-cuisine-de-differents-pays-fr",
+        "status": "present"
+      },
+      {
+        "name": "combattons-les-discriminations-fr",
+        "status": "present"
+      },
+      {
+        "name": "fictions-and-entertainment-in-arabic-ar",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-fr",
+        "status": "present"
+      },
+      {
+        "name": "montez-votre-projet-professionnel-fr",
+        "status": "present"
+      },
+      {
+        "name": "decouvrez-les-arts-plastiques-fr",
+        "status": "present"
+      },
+      {
+        "name": "initiez-vous-a-la-photographie-fr",
+        "status": "present"
+      },
+      {
+        "name": "renseignez-vous-sur-les-demarches-administratives-fr",
+        "status": "present"
+      },
+      {
+        "name": "comprendre-et-exprimer-ses-emotions-fr",
+        "status": "present"
+      },
+      {
+        "name": "initiez-vous-a-la-creation-video-fr",
+        "status": "present"
+      },
+      {
+        "name": "films-fr",
+        "status": "present"
+      },
+      {
+        "name": "hygiene-de-base-fr",
+        "status": "present"
+      },
+      {
+        "name": "connaitre-la-france-et-paris",
+        "status": "present"
+      },
+      {
+        "name": "arriver-en-france-et-connaitre-ses-droits-fr",
+        "status": "present"
+      },
+      {
+        "name": "kit-de-l-animateur-fr",
+        "status": "present"
+      },
+      {
+        "name": "fictions-for-adults-fa",
+        "status": "present"
+      },
+      {
+        "name": "vocabularies-en",
+        "status": "present"
+      },
+      {
+        "name": "les-filles-et-les-garcons-quelles-differences-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-a1-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-a2-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-alphabetisation-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-b1-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-b2-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-c1-c2-fr",
         "status": "present"
       }
     ]
