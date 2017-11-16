@@ -9305,5 +9305,66 @@
     "portal": {
       "activated": "True"
     }
-  }
+  },
+ "idb-fra-culturabordeaux": {
+    "kalite": {
+      "activated": "False",
+      "version": "0.16.9",
+      "language": [
+        "fr"
+      ]
+    },
+    "package_management": [
+      {
+        "name": "wikipedia.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikiversity.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikibooks.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikiquote.fr",
+        "status": "present"
+      },
+      {
+        "name": "cest-pas-sorcier.fr",
+        "status": "present"
+      },
+      {
+        "name": "dirtybiology.fr",
+        "status": "present"
+      },
+      {
+        "name": "e-penser.fr",
+        "status": "present"
+      },
+      {
+        "name": "gutenberg.fr",
+        "status": "present"
+      },
+      {
+        "name": "tedxlausanne2014.fr",
+        "status": "present"
+      },
+      {
+        "name": "tedxlausanne2013.fr",
+        "status": "present"
+      },
+      {
+        "name": "tedxlausanne2012.fr",
+        "status": "present"
+      },
+      {
+        "name": "universcience-tv.fr",
+        "status": "present"
+      }],
+      "portal": {
+      "activated": "True"
+      }
+    }
 }
