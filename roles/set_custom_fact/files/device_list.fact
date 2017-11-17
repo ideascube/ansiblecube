@@ -3339,6 +3339,23 @@
       "activated": "False"
     }
   },
+  "idb-bsf-kolibri": {
+    "kalite": {
+      "activated": "False"
+    },
+    "kolibri": {
+      "activated": "True"
+    },
+    "package_management": [
+      {
+        "name": "wikiquote.fa",
+        "status": "latest"
+      }
+    ],
+    "portal": {
+      "activated": "False"
+    }
+  },
   "idb-grc-ioannina": {
     "kalite": {
       "activated": "True",
