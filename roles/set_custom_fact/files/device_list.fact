@@ -3344,7 +3344,8 @@
       "activated": "False"
     },
     "kolibri": {
-      "activated": "True"
+      "activated": "True",
+      "version": "0.4.4"
     },
     "package_management": [
       {
