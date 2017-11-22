@@ -51,3 +51,8 @@ echo "#          Public IP address     #" >> $FILE
 echo "##################################" >> $FILE
 wget -qO- http://ipecho.net/plain         >> $FILE
 echo                                      >> $FILE
+echo "##################################" >> $FILE
+echo "#          Wifi loop........     #" >> $FILE
+echo "##################################" >> $FILE
+ll /etc/NetworkManager/system-connections/ >> $FILE
+echo                                      >> $FILE
