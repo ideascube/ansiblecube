@@ -27,7 +27,12 @@
 
 - name: remove old way of launching ansible-pull
   file: path=/etc/dhcp/dhclient-exit-hooks.d/ansiblePullUpdate state=absent
-  tags: 
+  tags:
+    - update
+
+- name: Make sure wlan1 is not connected to wlan0
+  file: path=/etc/NetworkManager/system-connections/{{ansible_hostname}} state=absent
+  tags:
     - update
 
 # - name: Remove oneUpdateFile branch if present in ansiblePullUpdate file
