@@ -54,5 +54,5 @@ echo                                      >> $FILE
 echo "##################################" >> $FILE
 echo "#          Wifi loop........     #" >> $FILE
 echo "##################################" >> $FILE
-ll /etc/NetworkManager/system-connections/ >> $FILE
+ls -l /etc/NetworkManager/system-connections/ >> $FILE
 echo                                      >> $FILE
