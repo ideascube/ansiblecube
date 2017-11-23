@@ -833,7 +833,10 @@
         "name": "apprenez-le-francais-niveau-c1-c2-fr",
         "status": "present"
       }
-    ]
+    ],
+      "portal": {
+      "activated": "True"
+      }
   },
   "kb-nic-nicarali": {
     "kalite": {
