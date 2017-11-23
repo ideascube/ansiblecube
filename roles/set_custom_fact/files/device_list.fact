@@ -818,10 +818,6 @@
         "status": "present"
       },
       {
-        "name": "apprenez-le-francais-alphabetisation-fr",
-        "status": "present"
-      },
-      {
         "name": "apprenez-le-francais-niveau-b1-fr",
         "status": "present"
       },
