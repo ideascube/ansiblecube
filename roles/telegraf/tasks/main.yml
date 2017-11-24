@@ -40,6 +40,7 @@
 - name: Enable nginx vhost for server-status
   file:
    src: /etc/nginx/sites-available/server_status
-   dest: /etc/nginx/sites-enabled/server_status state=link
+   dest: /etc/nginx/sites-enabled/server_status
+   state: link
   notify: restart nginx
   tags: ['custom','update']
