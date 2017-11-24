@@ -1,0 +1,8 @@
+---
+- name: restart nginx
+  service: name=nginx state=restarted
+  tags: ['custom', 'update']
+  
+- name: restart telegraf
+  service: name=telegraf state=restarted
+  tags: ['custom', 'update']
