@@ -1,0 +1,45 @@
+---
+- name: Check if telegraf is installed
+  command: dpkg-query -W telegraf
+  register: is_installed
+  failed_when: False
+  changed_when: is_installed.rc == 1 
+  tags: ['custom','update']
+
+- name: Download and install telegraf if needed for AMD64 platform
+  apt:
+    deb: "{{ filer_bsf }}/telegraf_1.4.4-1_amd64.deb"
+  when: ansible_architecture == 'amd64'
+    and is_installed.rc == 1
+  tags: ['custom','update']
+
+- name: Download and install telegraf if needed for ARM platform
+  apt:
+    deb: "{{ filer_bsf }}/telegraf_1.4.4-1_armhf.deb"
+  when: ansible_architecture == 'armv7l'
+    and is_installed.rc == 1
+  tags: ['custom','update']
+
+- name: Set telegraf conf file.
+  template: 
+    src: telegraf.j2
+    dest: /etc/telegraf/telegraf.conf 
+    owner: root
+    group: root
+    mode: 0644
+  notify: restart telegraf
+  tags: ['custom','update']
+
+- name: Enabling a special vhost allowing to get server status informations
+  copy:
+    src: nginx-vhost
+    dest: /etc/nginx/sites-available/server_status
+  notify: restart nginx
+  tags: ['custom','update']
+
+- name: Enable nginx vhost for server-status
+  file:
+   src: /etc/nginx/sites-available/server_status
+   dest: /etc/nginx/sites-enabled/server_status state=link
+  notify: restart nginx
+  tags: ['custom','update']
