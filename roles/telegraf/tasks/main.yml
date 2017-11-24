@@ -9,7 +9,7 @@
 - name: Download and install telegraf if needed for AMD64 platform
   apt:
     deb: "{{ filer_bsf }}/telegraf_1.4.4-1_amd64.deb"
-  when: ansible_architecture == 'amd64'
+  when: ansible_architecture == 'x86_64'
     and is_installed.rc == 1
   tags: ['custom','update']
 
