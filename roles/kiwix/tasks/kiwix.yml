@@ -97,22 +97,22 @@
   notify: restart kiwix
   tags: ['master','update']
 
-- name: check for wikipedia rc.d files
-  shell: ls /etc/rc5.d/S*wikipedia ; echo
-  register: file_exist
-  tags:
-    - update
-
-- name: parse rc.d files check output
-  stat: path={{file_exist.stdout}}
-  register: st
-  tags:
-    - update
-
-- include: dust-removal.yml
-  when: st.stat.exists == True
-  tags:
-    - update
+#- name: check for wikipedia rc.d files
+#  shell: ls /etc/rc5.d/S*wikipedia ; echo
+#  register: file_exist
+#  tags:
+#    - update
+#
+#- name: parse rc.d files check output
+#  stat: path={{file_exist.stdout}}
+#  register: st
+#  tags:
+#    - update
+#
+#- include: dust-removal.yml
+#  when: st.stat.exists == True
+#  tags:
+#    - update
 
 # - name: Checkout installed.yml file size 
 #   stat: path=/var/ideascube/main/catalog/installed.yml
