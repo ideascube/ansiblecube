@@ -1,0 +1,16 @@
+#
+# {{ ansible_managed }}
+#
+
+{{ bsf_log_folder }}/{{ ansible_hostname }}_telegraf-metrics.log {
+    weekly
+    rotate 52
+    compress
+    delaycompress
+    missingok
+    notifempty
+   # create 640 root adm
+    postrotate
+       /bin/systemctl reload telegraf > /dev/null
+    endscript
+}

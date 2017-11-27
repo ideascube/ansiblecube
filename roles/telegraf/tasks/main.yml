@@ -39,8 +39,17 @@
 
 - name: Enable nginx vhost for server-status
   file:
-   src: /etc/nginx/sites-available/server_status
-   dest: /etc/nginx/sites-enabled/server_status
-   state: link
+    src: /etc/nginx/sites-available/server_status
+    dest: /etc/nginx/sites-enabled/server_status
+    state: link
   notify: restart nginx
+  tags: ['custom','update']
+
+- name: Make sure logs are rotated
+  template:
+    src: telegraf-logrotate.j2
+    dest: /etc/logrotate.d/telegraf-metrics
+    owner: root
+    group: root
+    mode: 0644
   tags: ['custom','update']
