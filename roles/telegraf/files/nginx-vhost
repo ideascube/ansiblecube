@@ -1,6 +1,6 @@
 server {
   listen 127.0.0.1:1081;
-  server_name_;
+  server_name _;
   location /server_status {
     stub_status on;
     access_log  off;
