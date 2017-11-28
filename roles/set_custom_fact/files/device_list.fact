@@ -9602,7 +9602,7 @@
         "status": "present"
       },
       {
-        "name": "tedxlausanne2012.fr",
+        "name": "service-public.fr",
         "status": "present"
       },
       {
@@ -9618,7 +9618,7 @@
         "status": "present"
       },
       {
-        "name": "faites-le-tour-des-notions-de-citoyennete-et-politique-fr",
+        "name": "fictions-and-entertainment-in-arabic-ar",
         "status": "present"
       },
       {
@@ -9626,7 +9626,7 @@
         "status": "present"
       },
       {
-        "name": "relation-au-corps-fr",
+        "name": "apprenez-le-francais-fr",
         "status": "present"
       },
       {
@@ -9642,7 +9642,7 @@
         "status": "present"
       },
       {
-        "name": "apprenez-le-code-informatique-fr",
+        "name": "droits-de-l-enfant-fr",
         "status": "present"
       },
       {
@@ -9666,10 +9666,6 @@
         "status": "present"
       },
       {
-        "name": "audiobooks-et-fictions-sonores-fr",
-        "status": "present"
-      },
-      {
         "name": "films-fr",
         "status": "present"
       },
@@ -9678,15 +9674,15 @@
         "status": "present"
       },
       {
-        "name": "prevention-addictions-fr",
+        "name": "hygiene-enfants-ados-fr",
         "status": "present"
       },
       {
-        "name": "prevention-et-sexualite-fr",
+        "name": "sante-fr",
         "status": "present"
       },
       {
-        "name": "histoire-afrique-fr",
+        "name": "nature-enfants-ados-fr",
         "status": "present"
       },
       {
@@ -9698,15 +9694,15 @@
         "status": "present"
       },
       {
-        "name": "arts-afrique-fr",
+        "name": "connaitre-la-france-et-paris",
         "status": "present"
       },
       {
-        "name": "geographie-afrique-fr",
+        "name": "kit-de-l-animateur-fr",
         "status": "present"
       },
       {
-        "name": "creation-audio-fr",
+        "name": "fictions-for-adults-fa",
         "status": "present"
       },
       {
@@ -9722,7 +9718,11 @@
         "status": "present"
       },
       {
-        "name": "decouvrez-ou-redecouvrez-l-histoire-de-france-fr",
+        "name": "vocabularies-en",
+        "status": "present"
+      },
+      {
+        "name": "les-filles-et-les-garcons-quelles-differences-fr",
         "status": "present"
       },
       {
@@ -9750,7 +9750,11 @@
         "status": "present"
       },
       {
-        "name": "apprenez-le-francais-fos-fr",
+        "name": "apprends-le-francais-a1-enfants-adolescents",
+        "status": "present"
+      },
+      {
+        "name": "apprends-le-francais-a2-enfants-adolescents-fr",
         "status": "present"
       }],
       "portal": {
