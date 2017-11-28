@@ -2,6 +2,9 @@
 - name: Create BSF log directory
   file:
     path: "{{ bsf_log_folder }}"
+    owner: "{{ username }}"
+    group: adm
+    mode: 0775
     state: directory
 
 - name: Configure logrotate to handle our custom logs.

@@ -20,6 +20,13 @@
     and is_installed.rc == 1
   tags: ['custom','update']
 
+- name: Adds telegraf user to adm group for log writing purpose
+  user:
+    name: telegraf
+    groups: adm
+    append: yes
+  tags: ['custom','update']
+
 - name: Set telegraf conf file.
   template: 
     src: telegraf.j2
