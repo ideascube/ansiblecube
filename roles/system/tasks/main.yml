@@ -302,3 +302,13 @@
   notify: Update grub
   when: is_grub.stat.exists is defined and is_grub.stat.exists
   tags: ['master','custom']
+
+- name: Disable log2ram
+  service: name=log2ram enabled=no
+  tags:
+    - update
+
+- name: Remove log2ram configure
+  file: path=/etc/cron.daily/log2ram state=absent
+  tags:
+    - update
