@@ -62,6 +62,10 @@
       when: ansible_local.installed_software.management.managed_by_bsf|bool == True
       tags: ['master','update']
 
+    - role: telegraf
+      when: ansible_local.installed_software.management.managed_by_bsf|bool == True
+      tags: ['custom','update']
+
     - role: samba
       when: ansible_local.device_list[generic_project_name].samba is defined
         and ansible_local.device_list[generic_project_name].samba|bool == True
