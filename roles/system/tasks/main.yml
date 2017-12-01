@@ -17,14 +17,14 @@
   when: ansible_lsb.id == "Debian"
   tags: ['master','update']
 
-- name: Run apt-get update  
-  shell: apt-get update ; echo
-  register: result
+- name: Update APT cache, not more than once every 8 hours
+  apt: 
+    update_cache: yes 
+    cache_valid_time: 28800
   tags: ['master','custom','update']
 
 - name: Fix broken package
   shell: dpkg --configure -a
-  when: "'dpkg --configure -a' in result.stderr"
   tags: ['master','custom','update']
 
 - name: Remove unwanted packages before upgrading

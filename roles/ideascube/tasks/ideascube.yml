@@ -35,7 +35,7 @@
 #### Install last ideascube package
 
 - name: Install ideascube
-  apt: name=ideascube force=yes update_cache=yes dpkg_options="force-confnew" state=latest
+  apt: name=ideascube force=yes dpkg_options="force-confnew" state=latest
   register: has_been_installed
   tags: ['master', 'custom']
 
@@ -55,7 +55,7 @@
     shell: cp /var/ideascube/main/default.sqlite /var/ideascube/main/default.sqlite-{{ ideascube_installed }}-{{ ansible_date_time["date"] }}-{{ ansible_date_time["time"] }}
 
   - name: upgrade ideascube to the last version
-    apt: name=ideascube force=yes update_cache=yes dpkg_options="force-confnew" state=latest
+    apt: name=ideascube force=yes dpkg_options="force-confnew" state=latest
     register: is_upgraded
     notify: restart uwsgi
 
