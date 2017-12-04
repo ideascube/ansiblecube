@@ -4,3 +4,6 @@ Description=Delete ideascube staticfiles.json if empty
 [Service]
 Type=oneshot
 ExecStart=/usr/local/bin/remove_staticfiles_json.sh
+
+[Install]
+WantedBy=timers.target
