@@ -10,20 +10,24 @@
   apt_repository: repo='deb http://apt.armbian.com jessie main utils jessie-desktop' 
     state=present 
     filename='armbian'
+  when: ansible_kernel | version_compare('4.11.0', '<')
   tags:
     - update
 
 - name: Get kernel package version
   shell: dpkg-query -W linux-image-next-sunxi | awk '{print $2}' ; echo
   register: pkg_kernel_version
+  when: ansible_kernel | version_compare('4.11.0', '<')
   tags: ['custom', 'update']
 
 - name: Remove old firmware-ralink packages
   apt: name=firmware-ralink state=absent purge=yes
+  when: ansible_kernel | version_compare('4.11.0', '<')
   tags: ['master','custom']
 
 - name: Install new armbian-firmware
   apt: name=armbian-firmware state=latest
+  when: ansible_kernel | version_compare('4.11.0', '<')
   tags: ['master','custom']
 
 - name: Install last custom Kernel, Headers, DTB and U-Boot
@@ -34,11 +38,13 @@
    - linux-image-next-sunxi_5.23_armhf.deb
    - linux-u-boot-next-lime2_5.23_armhf.deb
   notify: Reboot device
-  when: pkg_kernel_version | version_compare('5.23', '<') 
+  when: pkg_kernel_version | version_compare('5.23', '<')
+    and ansible_kernel | version_compare('4.11.0', '<')
   tags: ['custom','update']
 
 - name: Add pinning for linux-u-boot-lime2-next package == DOT NOT UPGRADE THIS PACKAGE
   copy: src=u-boot.apt-pin dest=/etc/apt/preferences.d/u-boot
+  when: ansible_kernel | version_compare('4.11.0', '<')
   tags: ['custom','update']
 
 - name: Light LED at u-boot start
@@ -46,15 +52,20 @@
               regexp='^gpio'
               insertbefore=BOF
               line='gpio set PH20\nsetenv bootdelay 0\nsaveenv'
+  when: ansible_kernel | version_compare('4', '>')
+    and ansible_kernel | version_compare('4.11.0', '<')
   tags: ['custom','update']
 
 - name: Convert file from .cmd to .scr
   command: mkimage -C none -A arm -T script -d /boot/boot.cmd /boot/boot.scr
+  when: ansible_kernel | version_compare('4', '>')
+    and ansible_kernel | version_compare('4.11.0', '<')
   tags: ['custom','update']
 
 - name: Convert DTB file to DTS
   command: dtc -I dtb -O dts /boot/dtb/sun7i-a20-olinuxino-lime2.dtb -o /boot/dtb/sun7i-a20-olinuxino-lime2.dts
   when: ansible_kernel | version_compare('4', '>')
+    and ansible_kernel | version_compare('4.11.0', '<')
   tags: ['custom','update']
 
 - name: Change the PIN for the LED and Activate heartbeat mode
@@ -62,9 +73,23 @@
     regexp='gpios = <0x27 0x7 0x2 0x0>;' 
     replace='gpios = <0x27 0x7 0x14 0x0>;\n                        linux,default-trigger = "heartbeat";'
   when: ansible_kernel | version_compare('4', '>')
+    and ansible_kernel | version_compare('4.11.0', '<')
   tags: ['custom','update']
 
 - name: Convert DTS file to DTB
   command: dtc -I dts -O dtb /boot/dtb/sun7i-a20-olinuxino-lime2.dts -o /boot/dtb/sun7i-a20-olinuxino-lime2.dtb
   when: ansible_kernel | version_compare('4', '>')
+    and ansible_kernel | version_compare('4.11.0', '<')
   tags: ['custom','update']
+
+- name: Disable log2ram
+  service: name=log2ram enabled=no
+  when: ansible_kernel | version_compare('4.10.0', '>')
+  tags:
+    - update
+
+- name: Remove log2ram configure
+  file: path=/etc/cron.daily/log2ram state=absent
+  when: ansible_kernel | version_compare('4.10.0', '>')
+  tags:
+    - update
