@@ -21,8 +21,7 @@
     - update
 
 - name: Install specific version of django
-  pip: name=django
-    version=1.11.8
+  pip: name="django<2.0"
     chdir=/home/{{ username }}/.kalite
     virtualenv_command=/usr/bin/virtualenv
     virtualenv=/home/{{ username }}/.kalite/env
