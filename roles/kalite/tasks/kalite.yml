@@ -20,6 +20,13 @@
   tags:
     - update
 
+- name: Install specific version of django
+  pip: name="django<2.0"
+    chdir=/home/{{ username }}/.kalite
+    virtualenv_command=/usr/bin/virtualenv
+    virtualenv=/home/{{ username }}/.kalite/env
+  tags: ['custom']
+
 - name: Install Ka-lite
   pip: name=ka-lite
     version={{ ansible_local.device_list[generic_project_name].kalite.version }}
