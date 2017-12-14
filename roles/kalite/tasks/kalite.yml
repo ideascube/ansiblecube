@@ -25,7 +25,7 @@
     chdir=/home/{{ username }}/.kalite
     virtualenv_command=/usr/bin/virtualenv
     virtualenv=/home/{{ username }}/.kalite/env
-  tags: ['custom', 'update']
+  tags: ['custom']
 
 - name: Install Ka-lite
   pip: name=ka-lite
