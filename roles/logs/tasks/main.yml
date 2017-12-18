@@ -42,3 +42,6 @@
     job: "/usr/local/bin/idcstats.sh"
     state: present
 
+- name: copy APT User-Agent configuration
+  copy: src=apt-user-agent.conf dest=/etc/apt/apt.conf.d/99useragent mode=755
+
