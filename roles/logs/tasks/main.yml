@@ -48,7 +48,7 @@
 - name: Ensure Anacron will run on battery
   lineinfile: 
     dest: /etc/default/anacron
-    regexp: '^ANACRON_RUN_ON_BATTERY_POWER=no'
+    regexp: '^ANACRON_RUN_ON_BATTERY_POWER'
     line: 'ANACRON_RUN_ON_BATTERY_POWER=yes'
     state: present
 
