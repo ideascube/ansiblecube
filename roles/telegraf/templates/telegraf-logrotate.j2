@@ -3,8 +3,8 @@
 #
 
 {{ bsf_log_folder }}/{{ ansible_hostname }}_telegraf-metrics.log {
-    weekly
-    rotate 52
+    daily
+    rotate 180
     compress
     missingok
     notifempty
