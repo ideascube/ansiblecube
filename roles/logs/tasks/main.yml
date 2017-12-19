@@ -45,3 +45,10 @@
 - name: copy APT User-Agent configuration
   copy: src=apt-user-agent.conf dest=/etc/apt/apt.conf.d/99useragent mode=755
 
+- name: Ensure Anacron will run on battery
+  lineinfile: 
+    dest: /etc/default/anacron
+    regexp: '^ANACRON_RUN_ON_BATTERY_POWER=no'
+    line: 'ANACRON_RUN_ON_BATTERY_POWER=yes'
+    state: present
+
