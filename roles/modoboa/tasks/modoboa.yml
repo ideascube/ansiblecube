@@ -1,6 +1,10 @@
 ---
 - include_vars: group_vars/{{ ansible_architecture }}.yml
 
+- name: Create modoboa venv directory
+  file: path=/srv/modoboa/env
+    state=directory
+
 - name: Upgrade setuptools
   pip: name=setuptools
     state=latest
