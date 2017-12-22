@@ -4,6 +4,9 @@
 - name: Upgrade setuptools
   pip: name=setuptools
     state=latest
+    chdir=/srv/modoboa/
+    virtualenv_command=/usr/bin/virtualenv
+    virtualenv=/srv/modoboa/env
 
 - name: Clone modoboa repo
   git:
