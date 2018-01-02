@@ -1,6 +1,9 @@
 ---
 - include_vars: group_vars/{{ ansible_architecture }}.yml
 
+- name: Install linux headers
+  apt: deb=http://filer.bsf-intranet.org/linux-headers-next-sunxi_5.37_armhf.deb
+
 - name: Create modoboa venv directory
   file: path=/srv/modoboa/env
     state=directory
