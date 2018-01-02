@@ -86,6 +86,7 @@
    - apt-transport-https
    - iotop
    - htop
+   - anacron
   tags: ['master','custom','update']
 
 - name: Install avahi packages

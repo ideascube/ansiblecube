@@ -1,24 +1,35 @@
 ---
 - include_vars: group_vars/{{ ansible_architecture }}.yml
 
+- name: Create modoboa venv directory
+  file: path=/srv/modoboa/env
+    state=directory
+
 - name: Upgrade setuptools
   pip: name=setuptools
     state=latest
+    chdir=/srv/modoboa/
+    virtualenv_command=/usr/bin/virtualenv
+    virtualenv=/srv/modoboa/env
+  when: (ansible_local.installed_software.software.modoboa | default (omit)) is undefined
 
 - name: Clone modoboa repo
   git:
     repo: https://github.com/modoboa/modoboa-installer
     dest: /tmp/modoboa-installer
+  when: (ansible_local.installed_software.software.modoboa | default (omit)) is undefined
 
 - name: Copy modoboa installer configuration file
   template:
     src: installer.cfg.j2
     dest: /tmp/modoboa-installer/installer.cfg
+  when: (ansible_local.installed_software.software.modoboa | default (omit)) is undefined
 
 - name: Run modoboa script installer
   shell: yes | python /tmp/modoboa-installer/run.py --version={{modoboa_version}} {{ fqdn_mail }}
   args:
     chdir: /tmp/modoboa-installer/
+  when: (ansible_local.installed_software.software.modoboa | default (omit)) is undefined
 
 - name: Enable queue lifetime
   lineinfile:
