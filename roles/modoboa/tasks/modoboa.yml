@@ -16,6 +16,13 @@
     virtualenv=/srv/modoboa/env
   when: ansible_local.installed_software.software.modoboa is undefined
 
+- name: Fix folder owner after upgrading setuptools
+  file: path=/srv/modoboa/
+    state=directory
+    recurse=yes
+    owner=modoboa
+    group=modoboa
+
 - name: Clone modoboa repo
   git:
     repo: https://github.com/modoboa/modoboa-installer
