@@ -8,6 +8,9 @@
   file: path=/srv/modoboa/env
     state=directory
 
+- name: Create modoboa user
+  user: name=modoboa
+
 - name: Upgrade setuptools
   pip: name=setuptools
     state=latest
@@ -21,7 +24,6 @@
     state=directory
     recurse=yes
     owner=modoboa
-    group=modoboa
 
 - name: Clone modoboa repo
   git:
