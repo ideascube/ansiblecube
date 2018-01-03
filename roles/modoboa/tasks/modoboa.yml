@@ -10,6 +10,8 @@
 
 - name: Create modoboa user
   user: name=modoboa
+    home=/srv/modoboa
+    move_home=yes
 
 - name: Upgrade setuptools
   pip: name=setuptools
