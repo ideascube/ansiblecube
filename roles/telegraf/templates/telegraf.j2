@@ -26,7 +26,7 @@
   ignore_fs = ["tmpfs", "devtmpfs", "devfs"]
 [[inputs.diskio]]
 [[inputs.filestat]]
-  files = ["/var/log/**.log","{{ bsf_log_folder }}/{{ ansible_hostname }}_telegraf-metrics.log**"]
+  files = ["/var/log/syslog","/var/log/kern.log","{{ bsf_log_folder }}/{{ ansible_hostname }}_telegraf-metrics.log"]
   md5 = false
 [[inputs.mem]]
 [[inputs.nginx]]
