@@ -1,0 +1,19 @@
+#!/bin/bash
+
+nb_connex=$(iw dev wlan0 station dump | grep Station | wc -l 2>/dev/null)
+test $? -eq 0 || nb_connex=-1
+echo "nodes.koombook.$HOSTNAME.device.wlan0.nb_connections $nb_connex `date +%s`"
+
+{% if ideascube_project_name == "koombook" %}
+battery_charge=$(cat /sys/power/axp_pmu/battery/capacity 2>/dev/null)
+test $? -eq 0 || battery_charge=-1
+echo "nodes.koombook.$HOSTNAME.power.battery.capacity $battery_charge `date +%s`"
+
+board_temp=$(awk '{printf("%d",$1/1000)}' 2>/dev/null </etc/armbianmonitor/datasources/pmictemp)
+test $? -eq 0 || board_temp=-1
+echo "nodes.koombook.$HOSTNAME.system.mainboard.temperature $board_temp `date +%s`"
+
+hdd_temp=$(hddtemp -u C -nq /dev/sda 2>/dev/null)
+test $? -eq 0 || hdd_temp=-1
+echo "nodes.koombook.$HOSTNAME.device.sda.temperature $hdd_temp `date +%s`"
+{% endif %}
