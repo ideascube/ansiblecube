@@ -13,12 +13,15 @@
     home=/srv/modoboa
     move_home=yes
 
-- name: Upgrade setuptools
-  pip: name=setuptools
+- name: Upgrade pip package
+  pip: name={{item}}
     state=latest
     chdir=/srv/modoboa/
     virtualenv_command=/usr/bin/virtualenv
     virtualenv=/srv/modoboa/env
+  with_items: 
+    - setuptools
+    - enum34
   when: ansible_local.installed_software.software.modoboa is undefined
 
 - name: Fix folder owner after upgrading setuptools
