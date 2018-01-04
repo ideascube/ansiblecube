@@ -52,6 +52,15 @@
   notify: restart nginx
   tags: ['custom','update']
 
+- name: Install BSF-specific metric script
+  template:
+    src: bsf-specific-metrics.sh.j2
+    dest: /usr/local/bin/bsf-specific-metrics.sh
+    owner: root
+    group: root
+    mode: 0755
+  tags: ['custom','update']
+
 - name: Make sure logs are rotated
   template:
     src: telegraf-logrotate.j2
