@@ -34,3 +34,7 @@
   response_timeout = "5s"
 [[inputs.swap]]
 [[inputs.system]]
+[[inputs.exec]]
+  commands = ["/usr/bin/local/bsf-specific-metrics.sh"]
+  timeout = "5s"
+  data_format = "graphite"
