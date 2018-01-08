@@ -7822,6 +7822,7 @@
     "modoboa": {
         "activated": "True",
         "mx_domain": "mail.kb78-telemaquesow.fr",
+        "domain": "kb78-telemaquesow.fr",
         "tinc_relay_mail_server": "192.168.10.254"
     },
     "vpn": {
