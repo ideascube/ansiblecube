@@ -36,11 +36,25 @@
     dest: /tmp/modoboa-installer
   when: ansible_local.installed_software.software.modoboa is undefined
 
+- name: Check if installer.cfg file exist on the system
+  stat: path=/tmp/installer.cfg
+  register: installer_file
+  when: ansible_local.installed_software.software.modoboa is undefined
+
 - name: Copy modoboa installer configuration file
   template:
     src: installer.cfg.j2
     dest: /tmp/modoboa-installer/installer.cfg
   when: ansible_local.installed_software.software.modoboa is undefined
+    and installer_file.stat.exists == false
+
+- name: Copy modoboa installer configuration file from /tmp
+  copy:
+    src: /tmp/installer.cfg
+    dest: /tmp/modoboa-installer/installer.cfg
+    remote_src: yes
+  when: ansible_local.installed_software.software.modoboa is undefined
+    and installer_file.stat.exists == true
 
 - name: Run modoboa script installer
   shell: yes | python /tmp/modoboa-installer/run.py --version={{modoboa_version}} {{ fqdn_mail }}
