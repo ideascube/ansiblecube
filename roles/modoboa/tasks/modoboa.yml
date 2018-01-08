@@ -94,6 +94,6 @@
 - name: Create aliases
   lineinfile:
     dest: '/etc/aliases'
-    line: 'admin@{{ ansible_local.device_list[generic_project_name].modoboa.domain }}'
+    line: 'root: admin@{{ ansible_local.device_list[generic_project_name].modoboa.domain }}'
     regexp: 'root:'
   notify: generate aliases
