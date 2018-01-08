@@ -6,3 +6,6 @@
 
 - name: reload nginx
   service: name=nginx state=reloaded
+
+- name: generate aliases
+  command: newaliases
