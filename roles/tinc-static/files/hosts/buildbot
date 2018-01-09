@@ -1,5 +1,5 @@
 Address = buildbot.wan.bsf-intranet.org
-Subnet = 10.80.100.2/32
+Subnet = 10.80.100.251/32
 Port = 656
 
 -----BEGIN RSA PUBLIC KEY-----
