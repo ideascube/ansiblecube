@@ -24,8 +24,8 @@
   copy:
     src: "{{ item.src }}"
     dest: "/etc/systemd/system/{{ item.dest }}"
-    owner: root 
-    group: root 
+    owner: root
+    group: root
     mode: 0644
   with_items:
     - src: media-hdd.mount
@@ -36,7 +36,7 @@
 - name: Enable mounts
   systemd:
     enabled: yes
-    name: {{ item }}
+    name: "{{ item }}"
   with_items:
     - media-hdd
     - var-log
