@@ -1,0 +1,8 @@
+[Unit]
+Description=Disque dur externe du Koombook
+
+[Mount]
+What=/dev/sda1
+Where=/media/hdd
+Type=ext4
+Options=noatime,nofail
