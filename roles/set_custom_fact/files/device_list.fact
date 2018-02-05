@@ -9851,5 +9851,22 @@
       "portal": {
       "activated": "True"
       }
-    }
+    },
+  "kb-cog-rfi": {
+    "kalite": {
+      "activated": "False",
+      "version": "0.16.9",
+      "language": [
+        "fr"
+      ]
+    },
+    "package_management": [
+      {
+    }],
+    "portal": {
+    "activated": "True"
+    },
+    "ideascube_branding": "rfi",
+    "ideascube_package_name": "irfi"
+  }
 }
