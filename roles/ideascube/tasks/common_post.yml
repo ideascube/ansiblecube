@@ -1,0 +1,83 @@
+---
+- name: Ensure that Ideascube folder belong the ideascube user
+  command: chown -R {{ username }}:{{ username }} /var/ideascube/main/
+  tags: 
+    - update
+
+- name: Ensure that Ideascube cache folder belong the ideascube user
+  shell: chown -R {{ username }}:{{ username }} /var/cache/ideascube/
+  tags: 
+    - update
+
+- name: Set Ideascube name
+  become: yes
+  become_user: ideascube
+  command: ideascube config set server site-name {{ hostname }}
+  tags: ['master', 'custom']
+
+- name: Get ideascube version
+  shell: dpkg-query -W  ideascube  | awk '{print $2}' ; echo
+  register: ideascube_newversion
+  tags: ['master', 'custom', 'update']
+
+- debug: msg="ideascube {{ ideascube_newversion.stdout }} is now the current version."
+  tags: ['master', 'custom', 'update']
+
+- name: Update catalog 
+  become: yes
+  become_user: ideascube
+  command: ideascube catalog cache update
+  when: ideascube_installed | version_compare('0.13.0', '>') 
+    and ideascube_newversion.stdout | version_compare('0.15.0', '>=')
+    and is_upgraded.changed == True
+  tags:
+    - update
+
+  - name: Enable the Ideascube Nginx site
+  file: src=/etc/nginx/sites-available/ideascube dest=/etc/nginx/sites-enabled/ideascube state=link force=yes
+  notify: restart nginx
+  tags: ['master','update']
+
+- name: Enable the Ideascube uWSGI app
+  file: src=/etc/uwsgi/apps-available/ideascube.ini dest=/etc/uwsgi/apps-enabled/ideascube.ini state=link force=yes
+  notify: restart uwsgi
+  tags: ['master','update']
+
+- name: Add router_cache to plugin uwsgi list
+  lineinfile: dest=/etc/uwsgi/apps-available/ideascube.ini
+              regexp='^plugins'
+              line='plugins         = pam,python3,router_cache'
+              state=present
+  notify: restart uwsgi
+  tags:
+    - update
+
+- name: Create and set up a cache for uwsgi
+  blockinfile: block="{{ lookup('file', 'uwsgi-cache.ini') }}" dest="/etc/uwsgi/apps-available/ideascube.ini"
+  notify: restart uwsgi
+  tags:
+    - update
+
+- name: Copy ideascube_leftover_files.service systemd unit
+  copy: src=ideascube_leftover_files.service dest=/etc/systemd/system/ideascube_leftover_files.service
+  tags: ['master', 'custom', 'update']
+
+- name: Copy ideascube_leftover_files.timer systemd unit
+  copy: src=ideascube_leftover_files.timer dest=/etc/systemd/system/ideascube_leftover_files.timer
+  tags: ['master', 'custom', 'update']
+
+- name: Enable unit ideascube_leftover_files.timer
+  service: name=ideascube_leftover_files.timer enabled=yes
+  tags: ['master', 'custom', 'update']
+
+- name: Copy remove_staticfiles_json.sh
+  copy: src=remove_staticfiles_json.sh dest=/usr/local/bin/remove_staticfiles_json.sh mode=0755
+  tags: ['master', 'custom', 'update']
+
+- name: Copy remove_staticfiles_json.service
+  copy: src=remove_staticfiles_json.service dest=/etc/systemd/system/remove_staticfiles_json.service
+  tags: ['master', 'custom', 'update']
+
+- name: Enable unit remove_staticfiles_json.service
+  service: name=remove_staticfiles_json.service enabled=yes
+  tags: ['master', 'custom', 'update']

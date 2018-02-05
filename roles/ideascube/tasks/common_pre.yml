@@ -1,0 +1,48 @@
+---
+- include_vars: group_vars/{{ ansible_architecture }}.yml
+  tags: ['master', 'custom']
+
+- name: Configure the ideascube package repository
+  template: src=ideascube.list.j2 dest=/etc/apt/sources.list.d/ideascube.list owner=root group=root mode=644
+  tags: ['master', 'custom', 'update']
+
+- name: Get ideascube installed (versions.stdout_lines.0) et candidate (versions.stdout_lines.1) version
+  raw: LANG=C.UTF-8 apt-cache policy ideascube | awk ' $1~/Installed|Candidate|Installé|Candidat/ { print $2 }'
+  register: versions
+  tags:
+    - update
+
+- set_fact:
+    ideascube_installed="{{ versions.stdout_lines.0 }}"
+    ideascube_candidate="{{ versions.stdout_lines.1 }}"
+  tags:
+    - update
+
+- name: Install ideascube or rfi package
+  apt: name={{ideascube_package_name}} force=yes update_cache=yes dpkg_options="force-confnew" state=latest
+  register: has_been_installed
+  tags: ['master', 'custom']
+
+- name: Include task needed when using an external hard drive
+  include: ext_hdd.yml
+  when: ext_hdd
+
+- name: Run Ideascube migrations after the first installation
+  become: yes
+  become_user: ideascube
+  command: ideascube migrate
+  when: has_been_installed.changed == True
+  tags: ['master', 'custom']
+
+- block:
+  - name: Backup data before upgrading
+    shell: cp /var/ideascube/main/default.sqlite /var/ideascube/main/default.sqlite-{{ ideascube_installed }}-{{ ansible_date_time["date"] }}-{{ ansible_date_time["time"] }}
+
+  - name: upgrade ideascube to the last version
+    apt: name={{ideascube_package_name}} force=yes dpkg_options="force-confnew" state=latest
+    register: is_upgraded
+    notify: restart uwsgi
+
+  when: ideascube_upgrade_frozen == False
+  tags:
+    - update
