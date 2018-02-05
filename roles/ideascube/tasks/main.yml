@@ -4,7 +4,7 @@
 
 - include: common_pre.yml
 
-- include: {{ideascube_package_name}}.yml
+- include: "{{ideascube_package_name}}.yml"
 
 - include: common_post.yml
 
