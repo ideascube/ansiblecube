@@ -1,0 +1,8 @@
+---
+- name: Change IDEASCUBE_ID
+  lineinfile: dest=/etc/default/irfi
+              regexp='IDEASCUBE_ID='
+              line='IDEASCUBE_ID=kb-cog-rfi'
+              state=present
+  notify: restart uwsgi
+  tags: ['master', 'custom','rename','update']
