@@ -2,7 +2,11 @@
 - include: branding.yml
   tags: ['custom','update']
 
-- include: ideascube.yml
+- include: common_pre.yml
 
-- include: ../../../post_install.yml task=ideascube task_version="{{ ideascube_newversion.stdout }}"
+- include: {{ideascube_package_name}}.yml
+
+- include: common_post.yml
+
+- include: ../../../post_install.yml task={{ideascube_package_name}} task_version="{{ ideascube_newversion.stdout }}"
   tags: ['custom', 'update']
