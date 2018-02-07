@@ -9862,7 +9862,10 @@
     },
     "package_management": [
       {
-    }],
+        "name": "icd10.fr",
+        "status": "present"
+      }
+     ],
     "portal": {
     "activated": "True"
     },
