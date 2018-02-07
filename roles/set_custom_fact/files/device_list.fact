@@ -10192,6 +10192,10 @@
     },
     "package_management": [
       {
+        "name": "gutenberg.fr",
+        "status": "present"
+      },
+      {
         "name": "cest-pas-sorcier.fr",
         "status": "present"
       },
@@ -10280,7 +10284,19 @@
         "status": "present"
       }],
       "portal": {
-      "activated": "False"
+      "activated": "True"
+      }
+    },
+ "kb-usa-brainerd": {
+    "kalite": {
+      "activated": "False",
+      "version": "0.16.9",
+      "language": [
+        "fr"
+      ]
+    },
+    "portal": {
+      "activated": "True"
       }
     }
 }
