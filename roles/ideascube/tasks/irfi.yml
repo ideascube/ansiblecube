@@ -1,6 +1,6 @@
 ---
 - name: Change IDEASCUBE_ID
-  lineinfile: dest=/etc/default/irfi
+  lineinfile: dest=/etc/default/ideascube
               regexp='IDEASCUBE_ID='
               line='IDEASCUBE_ID=kb-cog-rfi'
               state=present
