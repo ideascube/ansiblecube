@@ -10298,5 +10298,25 @@
     "portal": {
       "activated": "True"
       }
-    }
+    },
+  "kb-cog-rfi": {
+    "kalite": {
+      "activated": "False",
+      "version": "0.16.9",
+      "language": [
+        "fr"
+      ]
+    },
+    "package_management": [
+      {
+        "name": "icd10.fr",
+        "status": "present"
+      }
+     ],
+    "portal": {
+    "activated": "True"
+    },
+    "ideascube_branding": "rfi",
+    "ideascube_package_name": "irfi"
+  }
 }
