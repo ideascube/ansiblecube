@@ -10295,6 +10295,60 @@
         "fr"
       ]
     },
+    "package_management": [
+      {
+        "name": "what-are-some-easy-diets-i-can-use-en",
+        "status": "present"
+      },
+      {
+        "name": "choosing-a-doctor-that-is-right-for-you-en",
+        "status": "present"
+      },
+      {
+        "name": "health-insurance-basics-en",
+        "status": "present"
+      },
+      {
+        "name": "how-does-drinking-affect-my-diet-en",
+        "status": "present"
+      },
+      {
+        "name": "i-m-worried-my-child-is-drinking-what-can-i-do-en",
+        "status": "present"
+      },
+      {
+        "name": "if-i-m-pregnant-how-do-drugs-and-alcohol-affect-me-en",
+        "status": "present"
+      },
+      {
+        "name": "how-does-alcohol-affect-my-body-en",
+        "status": "present"
+      },
+      {
+        "name": "what-does-addiction-look-like-en",
+        "status": "present"
+      },
+      {
+        "name": "how-do-i-control-my-weight-en",
+        "status": "present"
+      },
+      {
+        "name": "what-do-the-different-types-of-diabetes-mean-for-me-en",
+        "status": "present"
+      },
+      {
+        "name": "how-do-i-stay-healthy-with-diabetes-en",
+        "status": "present"
+      },
+      {
+        "name": "i-have-diabetes-how-should-i-take-care-of-myself-en",
+        "status": "present"
+      },
+      {
+        "name": "what-are-the-basics-of-diabetes-en",
+        "status": "present"
+      }
+     ],
     "portal": {
       "activated": "True"
       }
