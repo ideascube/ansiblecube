@@ -38,7 +38,7 @@
     src: "/etc/systemd/system/{{ item }}"
     dest: "/etc/systemd/system/basic.target.wants/{{ item }}"
     state: link
-  with_item:
+  with_items:
     - media-hdd.mount
     - var-log.mount
 
