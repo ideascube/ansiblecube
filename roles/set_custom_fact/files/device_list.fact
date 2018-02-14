@@ -10371,7 +10371,7 @@
     "activated": "True"
     },
     "ideascube_branding": "rfi",
-    "ideascube_package_name": "irfi"
+    "ideascube_package_name": "irfi",
     "external-antenna": "True"
   }
 }
