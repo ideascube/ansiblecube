@@ -51,7 +51,9 @@
   tags: ['custom', 'update']
 
 - name: Enabling systemd unit
-  service: enabled=yes name=external-antenna
+  service: 
+    enabled: yes
+    name: external-antenna
   tags: ['custom', 'update']
 
 # - name: Remove oneUpdateFile branch if present in ansiblePullUpdate file
