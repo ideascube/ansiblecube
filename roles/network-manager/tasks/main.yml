@@ -35,6 +35,25 @@
   tags:
     - update
 
+- name: Copy script to manage external antenna
+  copy:
+    src: add-IP-address-for-external-antenna.sh
+    dest: /usr/local/bin/add-IP-address-for-external-antenna.sh
+    owner: root
+    group: root
+    mode: 0755
+  tags: ['custom', 'update']
+
+- name: Copy systemd unit to launch external-antenna script
+  copy:
+    src: external-antenna.service
+    dest: /etc/systemd/system/external-antenna.service
+  tags: ['custom', 'update']
+
+- name: Enabling systemd unit
+  service: enabled=yes name=external-antenna
+  tags: ['custom', 'update']
+
 # - name: Remove oneUpdateFile branch if present in ansiblePullUpdate file
 #   replace: dest=/etc/NetworkManager/dispatcher.d/ansiblePullUpdate regexp='-C oneUpdateFile' replace='' backup=yes
 #   tags: 
