@@ -11,5 +11,10 @@ ETH0_STATUS=`nmcli -t -f GENERAL.STATE --mode tabular d show eth0 | cut -d " " -
 # get an IP address, we can asign one to the device then
 if [ $ETH0_STATUS -ne 100 ]
 then
-        ip address add 192.168.3.1/24 dev eth0
+	ip address add 192.168.3.1/24 dev eth0
+	sed -i '/interface/c\interface=wlan0,eth0' /etc/dnsmasq.conf
+	systemctl reload dnsmasq
+else
+	sed -i '/interface/c\interface=wlan0' /etc/dnsmasq.conf
+	systemctl reload dnsmasq
 fi
