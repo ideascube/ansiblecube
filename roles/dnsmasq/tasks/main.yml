@@ -8,15 +8,16 @@
     - master
 
 - name: Copy dnsmasq.conf file
-  template: src=dnsmasq.conf.j2 dest=/etc/dnsmasq.conf backup=yes
+  template: src=dnsmasq.conf.j2 dest=/etc/dnsmasq.conf
   tags: ['master', 'custom','rename']
 
-- name: Copy dnsmasq-spoof.conf file
-  template: src=dnsmasq-spoof.conf.j2 dest=/etc/dnsmasq-spoof.conf
-  tags: ['master', 'custom','rename','update']
+- name: Remove dnsmasq-spoof.conf file
+  file: path=/etc/dnsmasq-spoof.conf state=absent
+  tags:
+    - update
 
 - name: Create a new interfaces file
-  template: src=interfaces.j2 dest=/etc/network/interfaces backup=yes
+  template: src=interfaces.j2 dest=/etc/network/interfaces
   tags: ['master','rename']
 
 - name: restart dsnmasq
