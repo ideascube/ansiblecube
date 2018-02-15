@@ -3,6 +3,6 @@ fe00::0     ip6-localnet
 ff00::0     ip6-mcastprefix
 ff02::1     ip6-allnodes
 192.168.2.1 {{ ansible_local.installed_software.management.hostname }} {{ ansible_local.installed_software.management.hostname }} kiwix.{{ ansible_local.installed_software.management.hostname }} khanacademy.{{ ansible_local.installed_software.management.hostname }} sites.{{ ansible_local.installed_software.management.hostname }} bsfcampus.{{ ansible_local.installed_software.management.hostname }} koombookedu.{{ ansible_local.installed_software.management.hostname }} kolibri.{{ ansible_local.installed_software.management.hostname }} mail.{{ ansible_local.installed_software.management.hostname }}
-{% if ansible_local.device_list[generic_project_name].external-antenna %}
+{% if ansible_local.device_list[generic_project_name].external_antenna %}
 192.168.3.1 {{ ansible_local.installed_software.management.hostname }} {{ ansible_local.installed_software.management.hostname }} kiwix.{{ ansible_local.installed_software.management.hostname }} khanacademy.{{ ansible_local.installed_software.management.hostname }} sites.{{ ansible_local.installed_software.management.hostname }} bsfcampus.{{ ansible_local.installed_software.management.hostname }} koombookedu.{{ ansible_local.installed_software.management.hostname }} kolibri.{{ ansible_local.installed_software.management.hostname }} mail.{{ ansible_local.installed_software.management.hostname }}
 {% endif %}
