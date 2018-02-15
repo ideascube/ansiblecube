@@ -98,6 +98,7 @@
 
 - name: Disable systemd service clean-up.service
   service: enabled=no name=clean-up
+  ignore_errors: yes
   tags:
     - update
 
