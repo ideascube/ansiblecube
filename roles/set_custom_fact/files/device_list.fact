@@ -10372,6 +10372,6 @@
     },
     "ideascube_branding": "rfi",
     "ideascube_package_name": "irfi",
-    "external-antenna": "True"
+    "external_antenna": "True"
   }
 }
