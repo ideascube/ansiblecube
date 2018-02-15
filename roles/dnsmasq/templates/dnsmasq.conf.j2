@@ -1,5 +1,8 @@
 interface={{hotspot_interface}}
 dhcp-range=192.168.2.100,192.168.2.240,255.255.255.0,12h
+{% if ansible_local.device_list[generic_project_name].external_antenna %}
+dhcp-range=192.168.3.100,192.168.3.240,255.255.255.0,12h
+{% endif %}
 
 address=/{{ hostname }}/{{ hotspot_ip }}
 address=/{{ idc_uniq_device_name }}/{{ hotspot_ip }}
