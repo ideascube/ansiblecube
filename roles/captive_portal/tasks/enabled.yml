@@ -47,15 +47,6 @@
   notify: restart nginx
   tags: ['custom', 'update']
 
-- name: Start dnsmasq-spoof.conf file by default - forcing short TTL
-  lineinfile: 
-    dest: /etc/default/dnsmasq
-    regexp: 'DNSMASQ_OPTS='
-    line: 'DNSMASQ_OPTS="--conf-file=/etc/dnsmasq.conf --local-ttl=600"'
-    state: present
-  notify: restart dnsmasq
-  tags: ['custom', 'update'] 
-              
 - name: Create /etc/nginx/ssl folder
   file:
     path: /etc/nginx/ssl
@@ -105,31 +96,32 @@
   notify: restart uwsgi
   tags: ['custom', 'update']
 
-- name: Copy Systemd script to set /etc/default/dnsmasq default options
-  copy:
-    src: clean-up.service
-    dest: /etc/systemd/system/clean-up.service
-  tags: ['custom', 'update']
+- name: Disable systemd service clean-up.service
+  service: enabled=no name=clean-up
+  ignore_errors: yes
+  tags:
+    - update
 
-- name: Enabling systemd service clean-up.service
-  service: enabled=yes name=clean-up
-  tags: ['custom', 'update']
+- name: Remove systemd clean-up script
+  file:
+    path: /etc/systemd/system/clean-up.service
+    state: absent
+  tags:
+    - update
 
-- name: Copy shell script that actually does the job
-  copy:
-    src: clean-up-dnsmasq.sh
-    dest: /usr/local/bin/clean-up-dnsmasq.sh
-    owner: root
-    group: root
-    mode: 755
-  tags: ['custom', 'update']
+- name: Remove shell script clean-up-dnsmasq
+  file:
+    path: /usr/local/bin/clean-up-dnsmasq.sh
+    state: absent
+  tags:
+    - update
 
-- name: Copy dnsmasq script for NetworkManager
-  template:
-    src: dnsmasq.j2
-    dest: /etc/NetworkManager/dispatcher.d/03dnsmasq
-    mode: 0755
-  tags: ['custom', 'update']
+- name: Remove dnsmasq script for NetworkManager
+  file:
+    path: /etc/NetworkManager/dispatcher.d/03dnsmasq
+    state: absent
+  tags:
+    - update
 
 - name: Copy clear_iptables.sh to /usr/bin/local
   copy:
