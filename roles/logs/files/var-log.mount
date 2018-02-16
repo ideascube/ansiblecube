@@ -7,3 +7,6 @@ What=/media/hdd/bsf/log
 Where=/var/log
 Type=ext4
 Options=bind
+
+[Install]
+WantedBy=timers.target

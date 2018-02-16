@@ -6,3 +6,6 @@ What=/dev/sda1
 Where=/media/hdd
 Type=ext4
 Options=noatime,nofail
+
+[Install]
+WantedBy=timers.target
