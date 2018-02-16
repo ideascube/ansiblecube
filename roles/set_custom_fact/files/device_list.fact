@@ -10317,6 +10317,41 @@
       "activated": "True"
       }
     },
+ "idb-ita-palermo": {
+    "kalite": {
+      "activated": "False",
+      "version": "0.16.9",
+      "language": [
+        "fr",
+        "en"
+      ]
+    },
+    "package_management": [
+      {
+        "name": "wikipedia.en",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.it",
+        "status": "present"
+      },
+      {
+        "name": "cest-pas-sorcier.fr",
+        "status": "present"
+      },
+      {
+        "name": "ted-ed.en",
+        "status": "present"
+      }
+     ],
+    "portal": {
+      "activated": "True"
+      }
+    },
   "kb-cod-rfi": {
     "kalite": {
       "activated": "False",
