@@ -11,8 +11,10 @@ If you own an Olimex Lime 2 or Raspberry Pi 2\/3, the best is to give AnsibleCub
 > `sudo parted /dev/sda mklabel msdos mkpart primary ext4 0% 100% -s`
 > `sudo mkfs.ext4 /dev/sda1`
 
-* You can use the [latest image]](http://filer.bsf-intranet.org/KoomBook_DIY_5.37_Lime2_Debian_jessie_next_4.14.8.7z)) built by Libraries Without Borders for Olimex Lime2 board
-OR 
+* You can use the [latest image](http://filer.bsf-intranet.org/KoomBook_DIY_5.37_Lime2_Debian_jessie_next_4.14.8.7z)) built by Libraries Without Borders for Olimex Lime2 board
+
+OR
+
 * Download an [Armbian image](http://www.armbian.com/olimex-lime-2/) \(Choose "Vanilla" / "Jessie"\) for Olimex or a [Raspbian image](https://www.raspberrypi.org/downloads/raspbian/) for Raspberry Pi.
 
 * Unzip image and burn it on an **micro** SD Card \(class 10!\)
