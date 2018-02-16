@@ -10,7 +10,7 @@
     - name: nginx
       owner: root
       group: adm
-    - name: uwsgi
+    - name: uwsgi/app
       owner: ideascube
       group: ideascube
     - name: samba
