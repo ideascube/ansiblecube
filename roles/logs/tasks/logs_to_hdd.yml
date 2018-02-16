@@ -52,6 +52,6 @@
 
 - name: Removing mount from fstab
   lineinfile:
-    path: /etc/fstab
+    dest: /etc/fstab
     regexp: "^/dev/sda1"
     state: absent
