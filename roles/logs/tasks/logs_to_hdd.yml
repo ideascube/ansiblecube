@@ -47,8 +47,8 @@
     enabled: yes
     name: "{{ item }}"
   with_items:
-    - media-hdd
-    - var-log
+    - media-hdd.mount
+    - var-log.mount
 
 - name: Removing mount from fstab
   lineinfile:
