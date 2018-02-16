@@ -60,7 +60,7 @@
 
     - role: telegraf
       when: ansible_local.installed_software.management.managed_by_bsf|bool == True
-      tags: ['custom','update']
+      tags: ['master','custom','update']
 
     - role: logs
       when: ansible_local.installed_software.management.managed_by_bsf|bool == True
