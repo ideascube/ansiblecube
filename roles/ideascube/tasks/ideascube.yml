@@ -7,7 +7,7 @@
   tags: ['master', 'custom', 'update']
 
 - name: Get ideascube installed (versions.stdout_lines.0) et candidate (versions.stdout_lines.1) version
-  raw: LANG=C.UTF-8 apt-cache policy ideascube | awk ' $1~/Installed|Candidate|Installé|Candidat/ { print $2 }'
+  raw: LANG=C.UTF-8 apt-cache policy {{ideascube_package_name}} | awk ' $1~/Installed|Candidate|Installé|Candidat/ { print $2 }'
   register: versions
   tags:
     - update
@@ -35,7 +35,7 @@
 #### Install last ideascube package
 
 - name: Install ideascube
-  apt: name=ideascube force=yes update_cache=yes dpkg_options="force-confnew" state=latest
+  apt: name={{ideascube_package_name}} force=yes update_cache=yes dpkg_options="force-confnew" state=latest
   register: has_been_installed
   tags: ['master', 'custom']
 
@@ -55,7 +55,7 @@
     shell: cp /var/ideascube/main/default.sqlite /var/ideascube/main/default.sqlite-{{ ideascube_installed }}-{{ ansible_date_time["date"] }}-{{ ansible_date_time["time"] }}
 
   - name: upgrade ideascube to the last version
-    apt: name=ideascube force=yes dpkg_options="force-confnew" state=latest
+    apt: name={{ideascube_package_name}} force=yes dpkg_options="force-confnew" state=latest
     register: is_upgraded
     notify: restart uwsgi
 
@@ -74,7 +74,7 @@
 
 # Add settings and conf
 - name: Check if configuration file exist for Ideascube
-  stat: path=/opt/venvs/ideascube/lib/python3.4/site-packages/ideascube/conf/{{ generic_project_name |replace("-", "_") }}.py
+  stat: path=/opt/venvs/{{ideascube_package_name}}/lib/python3.4/site-packages/ideascube/conf/{{ generic_project_name |replace("-", "_") }}.py
   register: conf_file
   tags: ['custom','rename','update']
 
@@ -125,7 +125,7 @@
   tags: ['master', 'custom']
 
 - name: Get ideascube version
-  shell: dpkg-query -W  ideascube  | awk '{print $2}' ; echo
+  shell: dpkg-query -W  {{ideascube_package_name}}  | awk '{print $2}' ; echo
   register: ideascube_newversion
   tags: ['master', 'custom', 'update']
 
