@@ -2,6 +2,10 @@
 - include_vars: group_vars/{{ ansible_architecture }}.yml
   tags: ['master', 'custom']
 
+- name: Set ideascube_package_name if defined in device_list
+  set_fact: ideascube_package_name="{{ansible_local.device_list[generic_project_name].ideascube_package_name | default (omit) }}"
+  when: ansible_local.device_list[generic_project_name].ideascube_package_name is defined
+
 - name: Configure the ideascube package repository
   template: src=ideascube.list.j2 dest=/etc/apt/sources.list.d/ideascube.list owner=root group=root mode=644
   tags: ['master', 'custom', 'update']
