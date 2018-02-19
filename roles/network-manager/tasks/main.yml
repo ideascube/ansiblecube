@@ -42,21 +42,21 @@
     owner: root
     group: root
     mode: 0755
-  when: ansible_local.device_list[generic_project_name].external_antenna|bool == True
+  when: ansible_local.device_list[generic_project_name].external_antenna| default (False) |bool == True
   tags: ['custom', 'update']
 
 - name: Copy systemd unit to launch external-antenna script
   copy:
     src: external-antenna.service
     dest: /etc/systemd/system/external-antenna.service
-  when: ansible_local.device_list[generic_project_name].external_antenna|bool == True
+  when: ansible_local.device_list[generic_project_name].external_antenna| default (False) |bool == True
   tags: ['custom', 'update']
 
 - name: Enabling systemd unit
   service: 
     enabled: yes
     name: external-antenna
-  when: ansible_local.device_list[generic_project_name].external_antenna|bool == True
+  when: ansible_local.device_list[generic_project_name].external_antenna| default (False) |bool == True
   tags: ['custom', 'update']
 
 # - name: Remove oneUpdateFile branch if present in ansiblePullUpdate file
