@@ -163,11 +163,17 @@
   ignore_errors: yes
 
 - name: Send to CAPTIVE_HTTP if destination *:80/tcp
-  command: /sbin/iptables -t nat -A PREROUTING -p tcp -m tcp ! -s "{{ hotspot_ip }}" ! -d "{{ hotspot_ip }}" --dport 80 -j CAPTIVE_HTTP
+  command: /sbin/iptables -t nat -A PREROUTING -p tcp -m tcp ! -s "{{ item }}" ! -d "{{ item }}" --dport 80 -j CAPTIVE_HTTP
+  with_items:
+    - "{{external_hotspot_ip}}"
+    - "{{ hotspot_ip }}"
   tags: ['custom', 'update']
 
 - name: Send to CAPTIVE_HTTPS if destination *:443/tcp
-  command: iptables -t nat -A PREROUTING -p tcp -m tcp ! -s "{{ hotspot_ip }}" ! -d "{{ hotspot_ip }}" --dport 443 -j CAPTIVE_HTTPS
+  command: iptables -t nat -A PREROUTING -p tcp -m tcp ! -s "{{ item }}" ! -d "{{ item }}" --dport 443 -j CAPTIVE_HTTPS
+  with_items:
+    - "{{external_hotspot_ip}}"
+    - "{{ hotspot_ip }}"
   tags: ['custom', 'update']
 
 - name: From CAPTIVE_HTTP, send to CAPTIVE_PASSLIST
@@ -192,8 +198,11 @@
     chain: CAPTIVE_HTTP
     protocol: tcp
     jump: DNAT
-    to_destination: "{{ hotspot_ip }}:82"
+    to_destination: "{{ item }}:82"
     comment: Redirect HTTP traffic to server port 82
+  with_items:
+    - "{{external_hotspot_ip}}"
+    - "{{ hotspot_ip }}"
   tags: ['custom', 'update']
 
 - name: DNAT HTTPS to hotspot_ip:83
@@ -202,8 +211,11 @@
     chain: CAPTIVE_HTTPS
     protocol: tcp
     jump: DNAT
-    to_destination: "{{ hotspot_ip }}:83"
+    to_destination: "{{ item }}:83"
     comment: Redirect HTTPS traffic to server port 83
+  with_items:
+    - "{{external_hotspot_ip}}"
+    - "{{ hotspot_ip }}"
   tags: ['custom', 'update']
 
 - name: Last CAPTIVE_PASSLIST rules RETURN to calling chain
