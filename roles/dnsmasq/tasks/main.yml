@@ -24,7 +24,7 @@
   with_items:
     - /etc/dnsmasq.conf
     - /etc/dnsmasq-spoof.conf
-  when:  ansible_local.device_list[generic_project_name].external_antenna == True
+  when: ansible_local.device_list[generic_project_name].external_antenna| default (False) |bool == True
   tags: ['custom','rename','update']
 
 - name: Add external antenna ip address for name resolution in dnsmasq conf file
@@ -33,7 +33,7 @@
     insertafter: "address"
     line: "address=/{{ hostname }}/{{ external_hotspot_ip }}\naddress=/{{ idc_uniq_device_name }}/{{ external_hotspot_ip }}"
     state: present
-  when:  ansible_local.device_list[generic_project_name].external_antenna == True
+  when: ansible_local.device_list[generic_project_name].external_antenna| default (False) |bool == True
   tags: ['custom','rename','update']
 
 - name: Add external antenna ip address for name resolution in dnsmasq conf file
@@ -42,7 +42,7 @@
     insertafter: "address"
     line: "address=/#/{{ external_hotspot_ip }}"
     state: present
-  when:  ansible_local.device_list[generic_project_name].external_antenna == True
+  when: ansible_local.device_list[generic_project_name].external_antenna| default (False) |bool == True
   tags: ['custom','rename','update']
 
 - name: Create a new interfaces file
