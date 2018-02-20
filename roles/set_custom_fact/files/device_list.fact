@@ -10350,6 +10350,170 @@
       {
         "name": "ted-ed.en",
         "status": "present"
+      },
+      {
+        "name": "decouvrez-les-arts-plastiques-fr",
+        "status": "present"
+      },
+      {
+        "name": "initiez-vous-a-la-photographie-fr",
+        "status": "present"
+      },
+      {
+        "name": "prevention-et-sexualite-fr",
+        "status": "present"
+      },
+      {
+        "name": "discriminations-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "creation-audio-fr",
+        "status": "present"
+      },
+      {
+        "name": "sports-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "ecriture-et-litterature-fr",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-teenagers-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-human-rights-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-human-rights-for-children-en",
+        "status": "present"
+      },
+      {
+        "name": "cartoons-en",
+        "status": "present"
+      },
+      {
+        "name": "nutrition-fr",
+        "status": "present"
+      },
+      {
+        "name": "experiences-de-femmes-fr",
+        "status": "present"
+      },
+      {
+        "name": "kit-de-l-animateur-fr",
+        "status": "present"
+      },
+      {
+        "name": "make-you-own-radio-en",
+        "status": "present"
+      },
+      {
+        "name": "facilitator-kit-en",
+        "status": "present"
+      },
+      {
+        "name": "handcraft-origami-en",
+        "status": "present"
+      },
+      {
+        "name": "ecoute-tes-emotions-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "the-road-zaatari-magazine-ar",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-a1-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-a2-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-b1-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-b2-fr",
+        "status": "present"
+      },
+      {
+        "name": "moyens-de-contraception-fr",
+        "status": "present"
+      },
+      {
+        "name": "filles-garcons-quelle-place-pour-qui-fr",
+        "status": "present"
+      },
+      {
+        "name": "film-adavision-fr",
+        "status": "present"
+      },
+      {
+        "name": "ascolta-un-po-di-musica-italiana-it",
+        "status": "present"
+      },
+      {
+        "name": "impara-le-basi-in-italiano-it",
+        "status": "present"
+      },
+      {
+        "name": "informati-su-quale-sono-i-tuoi-diritti-in-italia-it",
+        "status": "present"
+      },
+      {
+        "name": "diventa-un-scrittore-it",
+        "status": "present"
+      },
+      {
+        "name": "come-trovare-un-lavoro-in-italia-it",
+        "status": "present"
+      },
+      {
+        "name": "combatti-le-discriminazioni-it",
+        "status": "present"
+      },
+      {
+        "name": "pratica-un-po-di-sport-it",
+        "status": "present"
+      },
+      {
+        "name": "scopri-la-base-della-cultura-italiana-it",
+        "status": "present"
+      },
+      {
+        "name": "familiarizzati-col-disegno-it",
+        "status": "present"
+      },
+      {
+        "name": "iniziati-al-cinema-e-alla-realizzazione-di-video-it",
+        "status": "present"
+      },
+      {
+        "name": "scopri-la-storia-del-europa-e-dell-italia-it",
+        "status": "present"
+      },
+      {
+        "name": "parti-a-la-scoperta-del-arte-italiana-it",
+        "status": "present"
+      },
+      {
+        "name": "scopri-i-secreti-della-cucina-italiana-it",
+        "status": "present"
+      },
+      {
+        "name": "allenati-al-codice-stradale-it",
+        "status": "present"
+      },
+      {
+        "name": "informati-su-alcune-malattie-it",
+        "status": "present"
       }
      ],
     "portal": {
