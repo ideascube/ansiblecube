@@ -9,11 +9,41 @@
 
 - name: Copy dnsmasq.conf file
   template: src=dnsmasq.conf.j2 dest=/etc/dnsmasq.conf backup=yes
-  tags: ['master', 'custom','rename']
+  tags: ['master','custom','rename','update']
 
 - name: Copy dnsmasq-spoof.conf file
   template: src=dnsmasq-spoof.conf.j2 dest=/etc/dnsmasq-spoof.conf
-  tags: ['master', 'custom','rename','update']
+  tags: ['master','custom','rename','update']
+
+- name: Add external antenna ip address in dnsmasq configuration file
+  lineinfile:
+    dest: "{{ item }}"
+    insertafter: "interface"
+    line: "dhcp-range=192.168.3.100,192.168.3.240,255.255.255.0,12h"
+    state: present
+  with_items:
+    - /etc/dnsmasq.conf
+    - /etc/dnsmasq-spoof.conf
+  when:  ansible_local.device_list[generic_project_name].external_antenna == True
+  tags: ['custom','rename','update']
+
+- name: Add external antenna ip address for name resolution in dnsmasq conf file
+  lineinfile:
+    dest: /etc/dnsmasq.conf
+    insertafter: "address"
+    line: "address=/{{ hostname }}/{{ external_hotspot_ip }}\naddress=/{{ idc_uniq_device_name }}/{{ external_hotspot_ip }}"
+    state: present
+  when:  ansible_local.device_list[generic_project_name].external_antenna == True
+  tags: ['custom','rename','update']
+
+- name: Add external antenna ip address for name resolution in dnsmasq conf file
+  lineinfile:
+    dest: /etc/dnsmasq-spoof.conf
+    insertafter: "address"
+    line: "address=/#/{{ external_hotspot_ip }}"
+    state: present
+  when:  ansible_local.device_list[generic_project_name].external_antenna == True
+  tags: ['custom','rename','update']
 
 - name: Create a new interfaces file
   template: src=interfaces.j2 dest=/etc/network/interfaces backup=yes
