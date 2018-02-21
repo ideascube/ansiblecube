@@ -12,9 +12,11 @@ ETH0_STATUS=`nmcli -t -f GENERAL.STATE --mode tabular d show eth0 | cut -d " " -
 if [ $ETH0_STATUS -ne 100 ]
 then
 	ip address add 192.168.3.1/24 dev eth0
+	sed -i '/interface/c\interface=wlan0,eth0' /etc/dnsmasq-spoof.conf
 	sed -i '/interface/c\interface=wlan0,eth0' /etc/dnsmasq.conf
 	systemctl restart dnsmasq
 else
+	sed -i '/interface/c\interface=wlan0' /etc/dnsmasq-spoof.conf
 	sed -i '/interface/c\interface=wlan0' /etc/dnsmasq.conf
 	systemctl restart dnsmasq
 fi
