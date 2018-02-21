@@ -31,7 +31,7 @@
   lineinfile:
     dest: /etc/dnsmasq.conf
     insertafter: "address"
-    line: "address=/{{ hostname }}/{{ external_hotspot_ip }}\naddress=/{{ idc_uniq_device_name }}/{{ external_hotspot_ip }}"
+    line: "address=/{{ hostname }}/{{ external_hotspot_ip }}\naddress=/{{ ansible_hostname }}/{{ external_hotspot_ip }}"
     state: present
   when: ansible_local.device_list[generic_project_name].external_antenna| default (False) |bool == True
   tags: ['custom','rename','update']
