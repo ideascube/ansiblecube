@@ -5,14 +5,16 @@
 # The purpose of this script is to automate the configuration of a brand new
 # assembled KoomBook.
 # It will detect the main external HDD /dev/sda and create a new partition on ext4 format.
-# Mount the newly partition and move the ideascube data folder to the external HDD. 
+# Mount the newly partition and move the ideascube data folder to the external HDD.
 # The last operation will give a new name to the device
+
+export LANG=en_US.UTF-8
 
 koombook_name="koombook"-$RANDOM
 device_hostname=$(hostname)
 
 function die() {
-        wget --quiet http://report.bsf-intranet.org/device=$device_hostname/KoomBookFirstInit=fail/msg="$@" > /dev/null 2>&1
+        #wget http://report.bsf-intranet.org/device=$device_hostname/KoomBookFirstInit=fail/msg="$@" > /dev/null 2>&1
         echo $@ >> /var/log/koombookInit.log
         exit 1
 }
@@ -20,19 +22,16 @@ function die() {
 if [[ -b /dev/sda && ! -b /dev/sda1 ]]; then
 
     # Resize fs on sd card
-    /bin/bash /etc/init.d/resize2fs start || die "Resize fs on SD card failed"
+    /bin/bash /etc/init.d/resize2fs start || die "Resize fs on SD card failed"
 
     # TO ENABLE ONLY ON PURPOSE : Format SSD, in case of any issue, report it !
     parted /dev/sda mklabel msdos mkpart primary ext4 0% 100% -s || die "Paritioning issue"
-    mkfs.ext4 /dev/sda1 || die "/dev/sda1 can not be formated"
+    mkfs.ext4 -F /dev/sda1 || die "/dev/sda1 can not be formated"
 
     mkdir -p /media/hdd/ || die "Can not create /media/hdd/"
 
-    # mount partition
-    mount /dev/sda1 /media/hdd/ || die "Unable to mount partition"
-
-    # Write to fstab
-    echo "/dev/sda1 /media/hdd/ ext4 noatime,nofail 0 0" >> /etc/fstab
+    # mount external HDD
+    systemctl start media-hdd.mount
 
     # Move ideascube files to the external HDD
     mv /var/cache/ideascube /media/hdd/ideascube_cache || die "Can not move /var/cache/ideascube"
@@ -42,6 +41,15 @@ if [[ -b /dev/sda && ! -b /dev/sda1 ]]; then
 
     # Set permissions back to ideascube user
     chown -R ideascube:ideascube /media/hdd/
+
+    # Enable LOG2HDD
+    sed -i /sda1/d /etc/fstab
+    mkdir -p /media/hdd/bsf/log
+    mkdir -p /etc/systemd/system/basic.target.wants
+    ln -s /etc/systemd/system/var-log.mount /etc/systemd/system/basic.target.wants/
+    ln -s /etc/systemd/system/media-hdd.mount /etc/systemd/system/basic.target.wants/
+    systemctl enable var-log.mount
+    systemctl enable media-hdd.mount
 
     # Make sure udev rules are deleted for wifi usb dongle
     rm -f /etc/udev/rules.d/70-persistent-net.rules
@@ -57,7 +65,7 @@ if [[ -b /dev/sda && ! -b /dev/sda1 ]]; then
         timeZone="Europe/Paris"
     fi
 
-    # Disable script 
+    # Disable script
     chmod -x $0
 
     # Start builMyCube
@@ -65,10 +73,13 @@ if [[ -b /dev/sda && ! -b /dev/sda1 ]]; then
 
     wget http://report.bsf-intranet.org/device=$device_hostname/KoomBookFirstInit=Success
 
+    # Synchronise last log on HDD for next reboot
+    rsync -avz /var/log/ /media/hdd/bsf/log
+
     reboot
 
 # If partition /dev/sda1 exist, something might went wrong on the last setup.
-# We assume the KoomBook is not in production yet, so we delete /dev/sda1 and 
+# We assume the KoomBook is not in production yet, so we delete /dev/sda1 and
 # reboot. The script will fall in first test case and a new partition will be created
 else
         # Umount external hard drive
