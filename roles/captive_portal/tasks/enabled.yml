@@ -163,18 +163,23 @@
   ignore_errors: yes
 
 - name: Send to CAPTIVE_HTTP if destination *:80/tcp
-  command: /sbin/iptables -t nat -A PREROUTING -p tcp -m tcp ! -s "{{ item }}" ! -d "{{ item }}" --dport 80 -j CAPTIVE_HTTP
+  command: /sbin/iptables -t nat -A PREROUTING -p tcp -m tcp ! -d "{{ item.dst }}" --dports 80 -m iprange --src-range {{ item.src }} -j CAPTIVE_HTTP
   with_items:
-    - "{{ hotspot_ip }}"
-    - "{{external_hotspot_ip}}"
+    - src: "{{ hotspot_ip }}"
+      dst: "{{ hotspot_source_range }}"
+    - src: "{{ external_hotspot_ip }}"
+      dst: "{{ external_hotspot_source_range }}"
   tags: ['custom', 'update']
 
 - name: Send to CAPTIVE_HTTPS if destination *:443/tcp
-  command: iptables -t nat -A PREROUTING -p tcp -m tcp ! -s "{{ item }}" ! -d "{{ item }}" --dport 443 -j CAPTIVE_HTTPS
+  command: /sbin/iptables -t nat -A PREROUTING -p tcp -m tcp ! -d "{{ item.dst }}" --dports 443 -m iprange --src-range {{ item.src }} -j CAPTIVE_HTTPS
   with_items:
-    - "{{ hotspot_ip }}"
-    - "{{external_hotspot_ip}}"
+    - src: "{{ hotspot_ip }}"
+      dst: "{{ hotspot_source_range }}"
+    - src: "{{ external_hotspot_ip }}"
+      dst: "{{ external_hotspot_source_range }}"
   tags: ['custom', 'update']
+
 
 - name: From CAPTIVE_HTTP, send to CAPTIVE_PASSLIST
   iptables:
