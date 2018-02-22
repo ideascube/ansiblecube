@@ -163,7 +163,7 @@
   ignore_errors: yes
 
 - name: Send to CAPTIVE_HTTP if destination *:80/tcp
-  command: /sbin/iptables -t nat -A PREROUTING -p tcp -m tcp ! -d "{{ item.dst }}" --dports 80 -m iprange --src-range {{ item.src }} -j CAPTIVE_HTTP
+  command: /sbin/iptables -t nat -A PREROUTING -p tcp -m tcp ! -d "{{ item.dst }}" --dport 80 -m iprange --src-range {{ item.src }} -j CAPTIVE_HTTP
   with_items:
     - src: "{{ hotspot_ip }}"
       dst: "{{ hotspot_source_range }}"
@@ -172,7 +172,7 @@
   tags: ['custom', 'update']
 
 - name: Send to CAPTIVE_HTTPS if destination *:443/tcp
-  command: /sbin/iptables -t nat -A PREROUTING -p tcp -m tcp ! -d "{{ item.dst }}" --dports 443 -m iprange --src-range {{ item.src }} -j CAPTIVE_HTTPS
+  command: /sbin/iptables -t nat -A PREROUTING -p tcp -m tcp ! -d "{{ item.dst }}" --dport 443 -m iprange --src-range {{ item.src }} -j CAPTIVE_HTTPS
   with_items:
     - src: "{{ hotspot_ip }}"
       dst: "{{ hotspot_source_range }}"
