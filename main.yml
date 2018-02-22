@@ -91,7 +91,3 @@
       when: ansible_architecture == 'armv7l' and ansible_lsb.id == 'Debian'
       ignore_errors: yes
       tags: [ 'master', 'custom', 'update','idc_import','package_management','kalite_import' ]
-
-    - name: Reboot device if hdd mount has changed
-      command: reboot
-      when: reboot_needed.stat.exists == True

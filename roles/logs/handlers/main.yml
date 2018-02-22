@@ -12,4 +12,8 @@
     src: /var/log/
     dest:  /media/hdd/bsf/log/
     compress: no
-  register: reboot_needed
+  notify:
+    - Reboot device
+
+- name: Reboot device
+  command: reboot
