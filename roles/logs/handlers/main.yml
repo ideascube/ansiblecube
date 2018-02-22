@@ -12,3 +12,4 @@
     src: /var/log/
     dest:  /media/hdd/bsf/log/
     compress: no
+  register: reboot_needed
