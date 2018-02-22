@@ -163,9 +163,7 @@
   ignore_errors: yes
 
 - name: Purge all chains
-  iptables:
-    table: nat
-    flush: "{{item}}"
+  command: /sbin/iptables -t nat -F "{{item}}"
   with_items:
     - PREROUTING
     - CAPTIVE_HTTPS
