@@ -1,5 +1,5 @@
 [Unit]
-Description=Disque dur externe du Koombook
+Description=External KoomBook hard drive
 
 [Mount]
 What=/dev/sda1
