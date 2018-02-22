@@ -58,13 +58,12 @@
       when: ansible_local.device_list[generic_project_name].kolibri is defined
         and ansible_local.device_list[generic_project_name].kolibri.activated|bool == True
 
-    - role: logs
-      when: ansible_local.installed_software.management.managed_by_bsf|bool == True
-      tags: ['master','update']
-
     - role: telegraf
       when: ansible_local.installed_software.management.managed_by_bsf|bool == True
-      tags: ['custom','update']
+      tags: ['master','custom','update']
+
+    - role: logs
+      when: ansible_local.installed_software.management.managed_by_bsf|bool == True
 
     - role: samba
       when: ansible_local.device_list[generic_project_name].samba is defined
