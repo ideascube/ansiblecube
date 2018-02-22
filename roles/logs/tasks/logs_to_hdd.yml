@@ -49,9 +49,5 @@
   with_items:
     - media-hdd.mount
     - var-log.mount
-
-- name: Removing mount from fstab
-  lineinfile:
-    dest: /etc/fstab
-    regexp: "^/dev/sda1"
-    state: absent
+  notify:
+  - Removing mount from fstab

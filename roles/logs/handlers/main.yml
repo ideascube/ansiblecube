@@ -1,0 +1,14 @@
+---
+- name: Removing mount from fstab
+  lineinfile:
+    dest: /etc/fstab
+    regexp: "^/dev/sda1"
+    state: absent
+  notify:
+  - Synchronize logs to external HDD
+
+- name: Synchronize logs to external HDD
+  synchronize: 
+    src: /var/log/
+    dest:  /media/hdd/bsf/log/
+    compress: no
