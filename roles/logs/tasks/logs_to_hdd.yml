@@ -33,15 +33,6 @@
     - src: var-log.mount
       dest: var-log.mount
 
-- name: Linking mounts to early starters folder
-  file:
-    src: "/etc/systemd/system/{{ item }}"
-    dest: "/etc/systemd/system/basic.target.wants/{{ item }}"
-    state: link
-  with_items:
-    - media-hdd.mount
-    - var-log.mount
-
 - name: Enable mounts
   systemd:
     enabled: yes

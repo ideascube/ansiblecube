@@ -8,4 +8,4 @@ Type=ext4
 Options=noatime,nofail
 
 [Install]
-WantedBy=timers.target
+WantedBy=basic.target

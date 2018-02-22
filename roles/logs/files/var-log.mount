@@ -9,4 +9,4 @@ Type=ext4
 Options=bind
 
 [Install]
-WantedBy=timers.target
+WantedBy=basic.target
