@@ -62,9 +62,6 @@
       when: ansible_local.installed_software.management.managed_by_bsf|bool == True
       tags: ['custom','update']
 
-    - role: logs
-      when: ansible_local.installed_software.management.managed_by_bsf|bool == True
-
     - role: samba
       when: ansible_local.device_list[generic_project_name].samba is defined
         and ansible_local.device_list[generic_project_name].samba|bool == True
@@ -84,6 +81,9 @@
         and ansible_local.device_list[generic_project_name].idc_import.activated|bool == True
         and cache_machine.state|default(omit) == "present"
       tags: ['update','idc_import']
+
+    - role: logs
+      when: ansible_local.installed_software.management.managed_by_bsf|bool == True
 
   post_tasks:
     - name: Heartbeat mode on KoomBook LED, update is over !!!
