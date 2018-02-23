@@ -1,5 +1,5 @@
 [Unit]
-Description=Montage répertoire de log
+Description=Mount log folder
 After=media-hdd.mount
 
 [Mount]
