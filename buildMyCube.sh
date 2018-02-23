@@ -311,7 +311,6 @@ do
             case $2 in
                 "rename")
                     LOCK_ACTION=1
-                    MANAGEMENT=""
                     CONFIGURE=""
                 ;;
 
