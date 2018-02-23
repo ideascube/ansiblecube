@@ -23,7 +23,7 @@
     group: ideascube
     mode: 0755
   notify: restart uwsgi
-  tags: ['custom', 'update']
+  tags: ['custom', 'update','rename']
 
 - name: Add nginx specific configuration file
   copy:
@@ -89,7 +89,7 @@
   template:
     src: redirect.j2
     dest: /etc/nginx/sites-enabled/redirect
-  tags: ['custom', 'update']
+  tags: ['custom', 'update','rename']
 
 - name: Add UWSGI specific configuration file
   copy:
