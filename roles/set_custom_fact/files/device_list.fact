@@ -10737,5 +10737,198 @@
    "portal": {
      "activated": "True"
     }
+  },
+  "kb-jor-drcazraqc": {
+    "kalite": {
+      "activated": "False",
+      "language": [
+        "ar"
+      ]
+    },
+    "package_management": [
+      {
+        "name": "fictions-and-entertainment-in-arabic-ar",
+        "status": "present"
+      },
+      {
+        "name": "music-in-arabic-ar",
+        "status": "present"
+      },
+      {
+        "name": "abuse-and-harassment-gbv-ar",
+        "status": "present"
+      },
+      {
+        "name": "poetry-ar",
+        "status": "present"
+      },
+      {
+        "name": "physics-ar",
+        "status": "present"
+      },
+      {
+        "name": "self-development-ar",
+        "status": "present"
+      },
+      {
+        "name": "sports-ar",
+        "status": "present"
+      },
+      {
+        "name": "fashion-and-beauty-ar",
+        "status": "present"
+      },
+      {
+        "name": "motherhood-and-parenting-ar",
+        "status": "present"
+      },
+      {
+        "name": "mathematics-ar",
+        "status": "present"
+      },
+      {
+        "name": "let-s-speak-english-ar",
+        "status": "present"
+      },
+      {
+        "name": "health-and-diseases-ar",
+        "status": "present"
+      },
+      {
+        "name": "girl-talk-puberty-ar",
+        "status": "present"
+      },
+      {
+        "name": "let-s-be-clean-ar",
+        "status": "present"
+      },
+      {
+        "name": "let-s-speak-arabic-ar",
+        "status": "present"
+      },
+      {
+        "name": "biology-ar",
+        "status": "present"
+      },
+      {
+        "name": "learn-guitar-en",
+        "status": "present"
+      },
+      {
+        "name": "drums-for-beginners-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-photography-en",
+        "status": "present"
+      },
+      {
+        "name": "cartoons-ar",
+        "status": "present"
+      },
+      {
+        "name": "let-s-practise-sport-children-en",
+        "status": "present"
+      },
+      {
+        "name": "arabic-alphabet-ar",
+        "status": "present"
+      },
+      {
+        "name": "diy-handcrafts-and-arts-ar",
+        "status": "present"
+      },
+      {
+        "name": "drawing-colouring-en",
+        "status": "present"
+      },
+      {
+        "name": "handcraft-origami-en",
+        "status": "present"
+      },
+      {
+        "name": "waqt-al-farah-ar",
+        "status": "present"
+      },
+      {
+        "name": "cooking-ar",
+        "status": "present"
+      },
+      {
+        "name": "football-matches-en",
+        "status": "present"
+      },
+      {
+        "name": "english-for-adults-ar",
+        "status": "present"
+      },
+      {
+        "name": "the-road-zaatari-magazine-ar",
+        "status": "present"
+      },
+      {
+        "name": "kids-magazine-ar",
+        "status": "present"
+      },
+      {
+        "name": "fitness-for-kids-ar",
+        "status": "present"
+      },
+      {
+        "name": "classical-music-en",
+        "status": "present"
+      },
+      {
+        "name": "some-science-fun-with-salam-ar",
+        "status": "present"
+      },
+      {
+        "name": "let-s-talk-about-sexuality-ar-ar",
+        "status": "present"
+      },
+      {
+        "name": "tales-for-kids-ar",
+        "status": "present"
+      },
+      {
+        "name": "business-management-ar",
+        "status": "present"
+      },
+      {
+        "name": "chemistry-ar",
+        "status": "present"
+      },
+      {
+        "name": "child-protection-ar",
+        "status": "present"
+      },
+      {
+        "name": "economy-ar",
+        "status": "present"
+      },
+      {
+        "name": "novels-for-youth-ar",
+        "status": "present"
+      },
+      {
+        "name": "technology-ar",
+        "status": "present"
+      },
+      {
+        "name": "journalism-ar",
+        "status": "present"
+      },
+      {
+        "name": "women-empowerment-ar",
+        "status": "present"
+      },
+      {
+        "name": "sociology-ar",
+        "status": "present"
+      }
+    ],
+   "portal": {
+     "activated": "True"
+    }
   }
 }
