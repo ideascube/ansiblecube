@@ -1,0 +1,44 @@
+---
+- name: Create probably missing log folders on external HDD
+  file:
+    path: "{{ bsf_log_folder }}/log/{{ item.name }}"
+    owner: "{{ item.owner }}"
+    group: "{{ item.group }}"
+    mode: 0775
+    state: directory
+  with_items:
+    - name: nginx
+      owner: root
+      group: adm
+    - name: uwsgi/app
+      owner: ideascube
+      group: ideascube
+    - name: samba
+      owner: root
+      group: adm
+    - name: telegraf
+      owner: telegraf
+      group: telegraf
+
+- name: Copy mount units to systemd folder
+  copy:
+    src: "{{ item.src }}"
+    dest: "/etc/systemd/system/{{ item.dest }}"
+    owner: root
+    group: root
+    mode: 0644
+  with_items:
+    - src: media-hdd.mount
+      dest: media-hdd.mount
+    - src: var-log.mount
+      dest: var-log.mount
+
+- name: Enable mounts
+  systemd:
+    enabled: yes
+    name: "{{ item }}"
+  with_items:
+    - media-hdd.mount
+    - var-log.mount
+  notify:
+  - Removing mount from fstab

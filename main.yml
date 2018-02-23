@@ -58,10 +58,6 @@
       when: ansible_local.device_list[generic_project_name].kolibri is defined
         and ansible_local.device_list[generic_project_name].kolibri.activated|bool == True
 
-    - role: logs
-      when: ansible_local.installed_software.management.managed_by_bsf|bool == True
-      tags: ['master','update']
-
     - role: telegraf
       when: ansible_local.installed_software.management.managed_by_bsf|bool == True
       tags: ['custom','update']
@@ -85,6 +81,9 @@
         and ansible_local.device_list[generic_project_name].idc_import.activated|bool == True
         and cache_machine.state|default(omit) == "present"
       tags: ['update','idc_import']
+
+    - role: logs
+      when: ansible_local.installed_software.management.managed_by_bsf|bool == True
 
   post_tasks:
     - name: Heartbeat mode on KoomBook LED, update is over !!!
