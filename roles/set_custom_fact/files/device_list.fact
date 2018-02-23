@@ -10323,7 +10323,7 @@
     },
  "idb-ita-palermo": {
     "kalite": {
-      "activated": "False",
+      "activated": "True",
       "version": "0.16.9",
       "language": [
         "fr",
@@ -10513,6 +10513,10 @@
       },
       {
         "name": "informati-su-alcune-malattie-it",
+        "status": "present"
+      },
+      {
+        "name": "films-pour-enfants-fr",
         "status": "present"
       }
      ],
