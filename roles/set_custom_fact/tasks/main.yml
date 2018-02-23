@@ -40,7 +40,7 @@
 - name: Check if the device has already a name defined
   stat: path=/etc/firstStart.csv
   register: firststart
-  tags: ['master', 'custom']
+  tags: ['master', 'custom', 'rename']
 
 - block:
 
