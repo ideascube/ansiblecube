@@ -18,5 +18,7 @@ then
 else
 	sed -i '/interface/c\interface=wlan0' /etc/dnsmasq-spoof.conf
 	sed -i '/interface/c\interface=wlan0' /etc/dnsmasq.conf
+	sed -i '/192.168.3.1/d' /etc/dnsmasq-spoof.conf
+	sed -i '/192.168.3.1/d' /etc/dnsmasq.conf
 	systemctl restart dnsmasq
 fi
