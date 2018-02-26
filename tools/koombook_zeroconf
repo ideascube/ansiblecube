@@ -72,7 +72,7 @@ if [[ -b /dev/sda && ! -b /dev/sda1 ]]; then
 # reboot. The script will fall in first test case and a new partition will be created
 else
         # Umount external hard drive
-        umount /media/hdd
+        umount -A -l /dev/sda1
 
         # Delete parition
         parted -s /dev/sda rm 1 || die "Can not delete parition /dev/sda1"
