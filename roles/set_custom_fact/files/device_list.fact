@@ -10604,7 +10604,7 @@
       {
         "name": "twentyfourhoursinanewsroom",
         "status": "present"
-      },
+      }
      ],
     "portal": {
     "activated": "True"
