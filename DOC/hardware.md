@@ -1,11 +1,11 @@
 # Set up your hardware
 
-## Case 1: Single Board Computer (SBC)
+## ARM processor : Single Board Computer (SBC)
 
 ### Olimex Lime2
-We fully support Olimex Lime2 SBC
+We fully support Olimex Lime2 SBC. KoomBook image is based on [Armbian](https://www.armbian.com/) distribution.
 
-1. Download the [latest image](http://filer.bsf-intranet.org/KoomBook_DIY_5.37_Lime2_Debian_jessie_next_4.14.8.7z)) built by Libraries Without Borders for Olimex Lime2 board
+1. Download the [latest image](http://filer.bsf-intranet.org/KoomBook_DIY_5.41_Lime2_Debian_jessie_next_4.14.21.7z) built by Libraries Without Borders for Olimex Lime2 board
 
 Login infos : `root` / `1234`
 
@@ -23,15 +23,18 @@ Login infos : `pi` / `raspberry`
 
 ### Unzip & Burn
 
-* Use a **micro** SD Card \(class 10!\)
+* Use a [good and reliable](https://docs.armbian.com/User-Guide_Getting-Started/#how-to-prepare-a-sd-card) micro SD Card \(class 10!\)
 * Download [Etcher](https://etcher.io/), select image and destination, click **Flash!**
 
-### Launch !
+### Boot the board !
 
-* Insert the micro SD card in your device
+* Connect the board to good a power source (5v/2A)
+* Connect an Ethernet cable (make sure the green and orange led stays off)
+* Insert the micro SD card in the slot
+* Push 2s the power switch to start the board (the board won't start by itself once connected to a power source)
 * Login through SSH to : ssh root@koombook.local / `root / 1234`
   
-## Case 2: AMD64 processor
+## AMD64 processor
 
 * Download the [latest Debian jessie](http://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-8.5.0-amd64-lxde-desktop.iso), with or without graphical interface.
 
