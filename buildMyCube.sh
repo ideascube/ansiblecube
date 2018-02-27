@@ -9,6 +9,7 @@ CONFIGURE="own_config_file=False"
 TAGS="--tags master,custom"
 LOCK_ACTION=0
 SEND_REPORT=0
+CHK_CONFIG=1
 KALITE=False
 KALITE_LANG=""
 MEDIACENTER=False
@@ -36,6 +37,24 @@ DISTRIBUTION_CODENAME=$(lsb_release -sc)
 }
 
 # functions
+function check_device_configuration()
+{
+    if [[ -e /etc/ansible/facts.d/device_list.fact ]]; then
+    echo -n "[+] Your device hostname has been already defined, would you like to erase it ? (y/n)" >&2
+    read response
+
+    case $response in
+        [OoYy]*)
+            rm -f /etc/firstStart.csv /etc/ansible/facts.d/device_list.fact /tmp/device_list.fact /etc/ansible/facts.d/installed_software.fact
+            touch /etc/ansible/facts.d/installed_software.fact
+        ;;
+        *)
+            cp /etc/ansible/facts.d/device_list.fact /tmp/device_list.fact
+        ;;
+    esac
+    fi
+}
+
 function internet_check()
 {
     echo -n "[+] Check Internet connection... "
@@ -282,25 +301,9 @@ function go_manage()
 }
 
 # main
-
 [ $# -ne 0 ] || help
 
 internet_check
-
-if [[ -e /etc/ansible/facts.d/device_list.fact ]]; then
-    echo -n "[+] Local configuration file exist, would you like to delete it ? (y/n)" >&2
-    read response
-
-    case $response in
-        [OoYy]*)
-            rm -f /etc/firstStart.csv /etc/ansible/facts.d/device_list.fact /tmp/device_list.fact /etc/ansible/facts.d/installed_software.fact
-            touch /etc/ansible/facts.d/installed_software.fact
-        ;;
-        *)
-            cp /etc/ansible/facts.d/device_list.fact /tmp/device_list.fact
-        ;;
-    esac
-fi
 
 # Get argument from command line
 while [[ $# -gt 0 ]]
@@ -311,11 +314,13 @@ do
             case $2 in
                 "rename")
                     LOCK_ACTION=1
+                    CHK_CONFIG=0
                     CONFIGURE=""
                 ;;
 
                 "update"|"package_management"|"idc_import"|"kalite_import")
                     LOCK_ACTION=1
+                    CHK_CONFIG=0
                     MANAGEMENT=""
                     START=1
                     TIMEZONE=""
@@ -408,7 +413,10 @@ done
 if [[ -x /usr/bin/ideascube && "$LOCK_ACTION" = "0" ]]
 then
     TAGS="--tags custom"
+    CHK_CONFIG=1
 fi
+
+[ "$CHK_CONFIG" = "1" ] && check_device_configuration
 
 [ "$MANAGEMENT" == managed_by_bsf=True ] && go_manage
 
