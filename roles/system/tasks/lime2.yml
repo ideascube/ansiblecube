@@ -93,3 +93,8 @@
   when: ansible_kernel | version_compare('4.10.0', '>')
   tags:
     - update
+
+- name: Copy showKoombookLed.sh script
+  copy: src=showKoombookLed.sh dest=/usr/local/bin/showKoombookLed.sh mode=0755
+  tags:
+    - custom
