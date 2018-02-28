@@ -10604,6 +10604,166 @@
       {
         "name": "twentyfourhoursinanewsroom",
         "status": "present"
+      },
+      {
+        "name": "decouvrez-de-nouvelles-musiques-fr",
+        "status": "present"
+      },
+      {
+        "name": "decouvrez-ou-re-decouvrez-la-cuisine-de-differents-pays-fr",
+        "status": "present"
+      },
+      {
+        "name": "combattons-les-discriminations-fr",
+        "status": "present"
+      },
+      {
+        "name": "innovation-en-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "economie-fr",
+        "status": "present"
+      },
+      {
+        "name": "prevention-et-sexualite-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "arts-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "geographie-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "discriminations-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "creation-audio-fr",
+        "status": "present"
+      },
+      {
+        "name": "sante-fr",
+        "status": "present"
+      },
+      {
+        "name": "ecriture-et-litterature-fr",
+        "status": "present"
+      },
+      {
+        "name": "nature-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "women-in-african-history-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-journalism-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-human-rights-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-human-rights-for-children-en",
+        "status": "present"
+      },
+      {
+        "name": "experiences-de-femmes-fr",
+        "status": "present"
+      },
+      {
+        "name": "economie-et-developpement-durable-fr",
+        "status": "present"
+      },
+      {
+        "name": "economie-et-mondialisation-fr",
+        "status": "present"
+      },
+      {
+        "name": "utilisez-internet-en-toute-securite-fr",
+        "status": "present"
+      },
+      {
+        "name": "protege-la-planete-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "comment-faire-face-a-la-violence-et-aux-conflits-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "decouvrir-et-pratiquer-la-riziculture-fr",
+        "status": "present"
+      },
+      {
+        "name": "violences-faites-aux-femmes-fr",
+        "status": "present"
+      },
+      {
+        "name": "dessins-animes-pour-enfants-sw",
+        "status": "present"
+      },
+      {
+        "name": "l-afrique-en-marche-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "7-milliards-de-voisins-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "danse-des-mots-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "priorite-sante-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "c-est-pas-du-vent-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "le-talisman-brise-sw-rfi-sw",
+        "status": "present"
+      },
+      {
+        "name": "memoire-d-un-continent-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "si-loin-si-proche-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "eco-d-ici-eco-d-ailleurs-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "la-marche-du-monde-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "musiques-du-monde-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "documents-methodologiques-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "le-talisman-brise-ln-rfi-ln",
+        "status": "present"
       }
      ],
     "portal": {
