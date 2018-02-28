@@ -11102,5 +11102,72 @@
    "portal": {
      "activated": "True"
     }
+  },
+  "kb-sen-b2cFamille": {
+    "kalite": {
+      "activated": "True",
+      "language": [
+        "fr"
+      ]
+    },
+    "package_management": [
+      {
+        "name": "wikipedia.fr",
+        "status": "present"
+      },
+      {
+        "name": "gutenberg.fr",
+        "status": "present"
+      }
+    ],
+   "portal": {
+     "activated": "True"
+    }
+  },
+  "kb-sen-b2cEtudiant": {
+    "kalite": {
+      "activated": "False",
+      "language": [
+        "ar"
+      ]
+    },
+    "package_management": [
+      {
+        "name": "wikipedia.fr",
+        "status": "present"
+      },
+      {
+        "name": "gutenberg.fr",
+        "status": "present"
+      },
+      {
+        "name": "tedxgeneva2014.fr",
+        "status": "present"
+      },
+      {
+        "name": "tedxlausanne2014.fr",
+        "status": "present"
+      }
+    ],
+   "portal": {
+     "activated": "True"
+    }
+  },
+  "kb-sen-b2cArtisant": {
+    "kalite": {
+      "activated": "False",
+      "language": [
+        "ar"
+      ]
+    },
+    "package_management": [
+      {
+        "name": "wikipedia.fr",
+        "status": "present"
+      }
+    ],
+   "portal": {
+     "activated": "True"
+    }
   }
 }
