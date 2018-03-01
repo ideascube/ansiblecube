@@ -11266,6 +11266,7 @@
   "kb-sen-b2cFamille": {
     "kalite": {
       "activated": "True",
+      "version": "0.16.9",
       "language": [
         "fr"
       ]
