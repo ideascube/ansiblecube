@@ -11263,7 +11263,7 @@
      "activated": "True"
     }
   },
-  "kb-sen-b2cFamille": {
+  "kb-sen-b2cfamille": {
     "kalite": {
       "activated": "True",
       "version": "0.16.9",
@@ -11381,7 +11381,7 @@
      "activated": "True"
     }
   },
-  "kb-sen-b2cEtudiant1": {
+  "kb-sen-b2cetudiant1": {
     "kalite": {
       "activated": "False",
       "language": [
@@ -11450,7 +11450,7 @@
      "activated": "True"
     }
   },
-  "kb-sen-b2cEtudiant2": {
+  "kb-sen-b2cetudiant2": {
     "kalite": {
       "activated": "False",
       "language": [
@@ -11507,7 +11507,7 @@
      "activated": "True"
     }
   },
-  "kb-sen-b2cArtisan1": {
+  "kb-sen-b2cartisan1": {
     "kalite": {
       "activated": "False",
       "language": [
