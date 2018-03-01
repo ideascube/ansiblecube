@@ -11535,6 +11535,26 @@
       {
         "name": "wikipedia.fr",
         "status": "present"
+      },
+      {
+        "name": "eclairage-et-raccordements-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "introduction-a-l-electricite-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "preparer-son-chantier-electrique-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "le-tableau-electrique-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "installer-et-entretenir-des-panneaux-solaires-sikana-fr",
+        "status": "present"
       }
     ],
    "portal": {
