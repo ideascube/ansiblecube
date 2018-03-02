@@ -10776,6 +10776,7 @@
   "kb-jor-drcsouth": {
     "kalite": {
       "activated": "True",
+      "version": "0.16.9",
       "language": [
         "ar",
         "en"
@@ -11021,7 +11022,8 @@
   },
   "kb-jor-drcazraqc": {
     "kalite": {
-      "activated": "False",
+      "activated": "True",
+      "version": "0.16.9",
       "language": [
         "ar",
         "en"
