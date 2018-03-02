@@ -10775,9 +10775,10 @@
   },
   "kb-jor-drcsouth": {
     "kalite": {
-      "activated": "False",
+      "activated": "True",
       "language": [
-        "ar"
+        "ar",
+        "en"
       ]
     },
     "package_management": [
@@ -11022,7 +11023,8 @@
     "kalite": {
       "activated": "False",
       "language": [
-        "ar"
+        "ar",
+        "en"
       ]
     },
     "package_management": [
