@@ -37,6 +37,11 @@
     and ansible_local.installed_software.management.own_config_file|bool == False
   tags: ['custom', 'rename', 'update','idc_import','package_management','kalite_import' ]
 
+- name: Remove existing device name (firstStart.csv)
+  stat: path=/etc/firstStart.csv state=absent
+  tags:
+    - rename
+
 - name: Check if the device has already a name defined
   stat: path=/etc/firstStart.csv
   register: firststart
