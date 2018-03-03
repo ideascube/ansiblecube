@@ -26,6 +26,9 @@ BRANCH="oneUpdateFile"
 
 DISTRIBUTION_CODENAME=$(lsb_release -sc)
 
+apt-get update --quiet --quiet
+apt-get install --quiet --quiet -y iputils-ping wget lsb-release
+
 [ $EUID -eq 0 ] || {
     echo "Error: you have to be root to run this script." >&2
     exit 1
