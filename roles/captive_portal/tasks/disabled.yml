@@ -2,14 +2,32 @@
 - name: Cleaning captive portal specific rules
   command: "{{item}}"   
   with_items:
-    - /sbin/iptables -t nat -D PREROUTING -p tcp -m tcp ! -s "{{ hotspot_ip }}" ! -d "{{ hotspot_ip }}" --dport 80 -j CAPTIVE_HTTP
-    - /sbin/iptables -t nat -D PREROUTING -p tcp -m tcp ! -s "{{ hotspot_ip }}" ! -d "{{ hotspot_ip }}" --dport 443 -j CAPTIVE_HTTPS
     - /sbin/iptables -t nat -F CAPTIVE_HTTP
     - /sbin/iptables -t nat -F CAPTIVE_HTTPS
     - /sbin/iptables -t nat -F CAPTIVE_PASSLIST
     - /sbin/iptables -t nat -X CAPTIVE_HTTP
     - /sbin/iptables -t nat -X CAPTIVE_HTTPS
     - /sbin/iptables -t nat -X CAPTIVE_PASSLIST
+  tags: ['custom', 'update']
+  ignore_errors: yes
+
+- name: Cleaning captive portal PREROUTING rules
+  command: /sbin/iptables -t nat -D PREROUTING -p tcp -m tcp ! -d "{{ item.dst }}" --dport 80 -m iprange --src-range {{ item.src }} -j CAPTIVE_HTTP
+  with_items:
+    - dst: "{{ hotspot_ip }}"
+      src: "{{ hotspot_source_range }}"
+    - dst: "{{ external_hotspot_ip }}"
+      src: "{{ external_hotspot_source_range }}"
+  tags: ['custom', 'update']
+  ignore_errors: yes
+
+- name: Cleaning captive portal PREROUTING rules
+  command: /sbin/iptables -t nat -D PREROUTING -p tcp -m tcp ! -d "{{ item.dst }}" --dport 443 -m iprange --src-range {{ item.src }} -j CAPTIVE_HTTPS
+  with_items:
+    - dst: "{{ hotspot_ip }}"
+      src: "{{ hotspot_source_range }}"
+    - dst: "{{ external_hotspot_ip }}"
+      src: "{{ external_hotspot_source_range }}"
   tags: ['custom', 'update']
   ignore_errors: yes
 
