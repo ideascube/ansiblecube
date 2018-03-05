@@ -10,7 +10,7 @@ if [[ "$IF" == eth* || "$IF" == "wlan1" ]] && [ -z "$PROC"  ]
 then
     case "$STATUS" in
         up)
-			/usr/local/bin/ansible-pull {% if ansible_default_ipv4.gateway != bsf_gateway %}-o{% endif %} -s 120 -C {{ git_branch }} -d /var/lib/ansible/local -i hosts -U https://github.com/ideascube/ansiblecube.git main.yml --tags "update" >> /var/log/ansible-pull.log 2>&1
+			/usr/local/bin/ansible-pull {% if ansible_default_ipv4.gateway | default(omit) != bsf_gateway %}-o{% endif %} -s 120 -C {{ git_branch }} -d /var/lib/ansible/local -i hosts -U https://github.com/ideascube/ansiblecube.git main.yml --tags "update" >> /var/log/ansible-pull.log 2>&1
         ;;
         *)
             exit 0;
