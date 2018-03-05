@@ -26,9 +26,6 @@ BRANCH="oneUpdateFile"
 
 DISTRIBUTION_CODENAME=$(lsb_release -sc)
 
-apt-get update --quiet --quiet
-apt-get install --quiet --quiet -y iputils-ping wget lsb-release apt-utils dialog
-
 [ $EUID -eq 0 ] || {
     echo "Error: you have to be root to run this script." >&2
     exit 1
@@ -307,6 +304,9 @@ function go_manage()
 [ $# -ne 0 ] || help
 
 internet_check
+
+apt-get update --quiet --quiet
+apt-get install --quiet --quiet -y iputils-ping wget lsb-release apt-utils dialog
 
 # Get argument from command line
 while [[ $# -gt 0 ]]
