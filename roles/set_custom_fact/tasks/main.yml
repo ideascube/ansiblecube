@@ -38,7 +38,7 @@
   tags: ['custom', 'rename', 'update','idc_import','package_management','kalite_import' ]
 
 - name: Remove existing device name (firstStart.csv)
-  stat: path=/etc/firstStart.csv state=absent
+  file: path=/etc/firstStart.csv state=absent
   tags:
     - rename
 
