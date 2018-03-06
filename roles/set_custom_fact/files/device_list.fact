@@ -10528,7 +10528,22 @@
       "activated": "True"
       }
     },
-  "kb-cod-rfi": {
+  "kb-cod-rfimobile": {
+    "kalite": {
+      "activated": "False",
+      "version": "0.16.9",
+      "language": [
+        "fr"
+      ]
+    },
+    "portal": {
+    "activated": "True"
+    },
+    "ideascube_branding": "rfi",
+    "ideascube_package_name": "irfi",
+    "external_antenna": "True"
+  },
+  "kb-cod-rfifixe": {
     "kalite": {
       "activated": "True",
       "version": "0.16.9",
