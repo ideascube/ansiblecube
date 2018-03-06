@@ -11603,5 +11603,38 @@
    "portal": {
      "activated": "True"
     }
+  },
+  "kb-col-colsubsidio": {
+    "kalite": {
+      "activated": "True",
+      "language": [
+        "es"
+      ]
+    },
+    "package_management": [
+      {
+        "name": "wikipedia.es",
+        "status": "present"
+      },
+      {
+        "name": "wiktionary.es",
+        "status": "present"
+      },
+      {
+        "name": "wikibooks.es",
+        "status": "present"
+      },
+      {
+        "name": "wikiquote.es",
+        "status": "present"
+      },
+      {
+        "name": "gutenberg.es",
+        "status": "present"
+      }
+    ],
+   "portal": {
+     "activated": "True"
+    }
   }
 }
