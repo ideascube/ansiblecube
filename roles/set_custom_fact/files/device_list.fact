@@ -11607,6 +11607,7 @@
   "kb-col-colsubsidio": {
     "kalite": {
       "activated": "True",
+      "version": "0.16.9",
       "language": [
         "es"
       ]
