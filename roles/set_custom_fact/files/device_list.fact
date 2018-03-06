@@ -11631,6 +11631,30 @@
       {
         "name": "gutenberg.es",
         "status": "present"
+      },
+      {
+        "name": "creatividad-colsubsidio-es",
+        "status": "present"
+      },
+      {
+        "name": "educacion-colsubsidio-es",
+        "status": "present"
+      },
+      {
+        "name": "esparcimiento-colsubsidio-es",
+        "status": "present"
+      },
+      {
+        "name": "culture-colsubsidio-es",
+        "status": "present"
+      },
+      {
+        "name": "informacion-y-sensibilizacion-colsubsidio-es",
+        "status": "present"
+      },
+      {
+        "name": "formacion-profesional-colsubsidio-es",
+        "status": "present"
       }
     ],
    "portal": {
