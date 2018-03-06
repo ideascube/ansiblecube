@@ -29,7 +29,7 @@
 
 - name: Install Ka-lite
   pip: name=ka-lite
-    version={{ ansible_local.device_list[generic_project_name].kalite.version }}
+    version={{ ansible_local.device_list[generic_project_name].kalite.version | default ('0.16.9') }}
     chdir=/home/{{ username }}/.kalite
     virtualenv_command=/usr/bin/virtualenv
     virtualenv=/home/{{ username }}/.kalite/env
