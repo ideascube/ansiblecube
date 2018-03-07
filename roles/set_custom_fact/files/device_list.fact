@@ -11659,5 +11659,63 @@
    "portal": {
      "activated": "True"
     }
+  },
+  "idb-col-colsubsidio": {
+    "kalite": {
+      "activated": "True",
+      "version": "0.16.9",
+      "language": [
+        "es"
+      ]
+    },
+    "package_management": [
+      {
+        "name": "wikipedia.es",
+        "status": "present"
+      },
+      {
+        "name": "wiktionary.es",
+        "status": "present"
+      },
+      {
+        "name": "wikibooks.es",
+        "status": "present"
+      },
+      {
+        "name": "wikiquote.es",
+        "status": "present"
+      },
+      {
+        "name": "gutenberg.es",
+        "status": "present"
+      },
+      {
+        "name": "creatividad-colsubsidio-es",
+        "status": "present"
+      },
+      {
+        "name": "educacion-colsubsidio-es",
+        "status": "present"
+      },
+      {
+        "name": "esparcimiento-colsubsidio-es",
+        "status": "present"
+      },
+      {
+        "name": "culture-colsubsidio-es",
+        "status": "present"
+      },
+      {
+        "name": "informacion-y-sensibilizacion-colsubsidio-es",
+        "status": "present"
+      },
+      {
+        "name": "formacion-profesional-colsubsidio-es",
+        "status": "present"
+      }
+    ],
+   "portal": {
+     "activated": "True"
+    }
   }
 }
