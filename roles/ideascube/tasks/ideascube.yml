@@ -116,7 +116,7 @@
 - name: Add DOMAIN to set ideascube domain name
   lineinfile: dest=/etc/default/ideascube
               regexp='DOMAIN='
-              line='DOMAIN={{ ansible_hostname }}'
+              line='DOMAIN={{ hostname }}'
               state=present
   notify: restart uwsgi
   tags: ['custom','rename','update']
