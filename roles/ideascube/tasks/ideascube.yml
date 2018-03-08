@@ -113,6 +113,14 @@
   notify: restart uwsgi
   tags: ['custom','rename','update']
 
+- name: Add DOMAIN to set ideascube domain name
+  lineinfile: dest=/etc/default/ideascube
+              regexp='DOMAIN='
+              line='DOMAIN={{ ansible_hostname }}'
+              state=present
+  notify: restart uwsgi
+  tags: ['custom','rename','update']
+
 - name: Ensure that Ideascube folder belong the ideascube user
   command: chown -R {{ username }}:{{ username }} /var/ideascube/main/
   tags: 
