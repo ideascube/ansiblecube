@@ -11658,7 +11658,8 @@
     ],
    "portal": {
      "activated": "True"
-    }
+    },
+   "ideascube_branding" : "colsubsidio"
   },
   "idb-col-colsubsidio": {
     "kalite": {
@@ -11716,6 +11717,7 @@
     ],
    "portal": {
      "activated": "True"
-    }
+    },
+   "ideascube_branding" : "colsubsidio"
   }
 }
