@@ -830,9 +830,9 @@
         "status": "present"
       }
     ],
-      "portal": {
+    "portal": {
       "activated": "True"
-      }
+    }
   },
   "kb-nic-nicarali": {
     "kalite": {
@@ -3303,12 +3303,12 @@
       "syncthing_master_id_device": ""
     },
     "modoboa": {
-        "activated": "False"
+      "activated": "False"
     },
     "vpn": {
-        "name": "email",
-        "port": "658",
-        "master_server" : "ruminant"
+      "name": "email",
+      "port": "658",
+      "master_server": "ruminant"
     },
     "portal": {
       "activated": "False"
@@ -7540,47 +7540,47 @@
         "name": "wikipedia.en",
         "status": "present"
       },
-            {
+      {
         "name": "fictions-and-entertainment-in-arabic-ar",
         "status": "present"
       },
-            {
+      {
         "name": "learn-english-adults-en",
         "status": "present"
       },
-            {
+      {
         "name": "learn-english-teenagers-en",
         "status": "present"
       },
-            {
+      {
         "name": "introduction-to-healthcare-en",
         "status": "present"
       },
-            {
+      {
         "name": "introduction-to-human-rights-en",
         "status": "present"
       },
-            {
+      {
         "name": "introduction-to-human-rights-for-children-en",
         "status": "present"
       },
-            {
+      {
         "name": "introduction-to-sciences-en",
         "status": "present"
       },
-            {
+      {
         "name": "greek-mythology-en",
         "status": "present"
       },
-            {
+      {
         "name": "cartoons-en",
         "status": "present"
       },
-            {
+      {
         "name": "abuse-and-harassment-ar",
         "status": "present"
       },
-            {
+      {
         "name": "cartoons-and-tales-fa",
         "status": "present"
       },
@@ -7820,15 +7820,15 @@
       "syncthing_master_id_device": "JN6XXQV-SMS3M37-B2KHJGW-QL2XLAZ-NQOCS5I-I2P442U-EHMBIN7-7O76RQC"
     },
     "modoboa": {
-        "activated": "True",
-        "mx_domain": "mail.kb78-telemaquesow.fr",
-        "domain": "kb78-telemaquesow.fr",
-        "tinc_relay_mail_server": "192.168.10.254"
+      "activated": "True",
+      "mx_domain": "mail.kb78-telemaquesow.fr",
+      "domain": "kb78-telemaquesow.fr",
+      "tinc_relay_mail_server": "192.168.10.254"
     },
     "vpn": {
-        "name": "email",
-        "port": "658",
-        "master_server" : "ruminant"
+      "name": "email",
+      "port": "658",
+      "master_server": "ruminant"
     },
     "portal": {
       "activated": "True"
@@ -8105,12 +8105,12 @@
         "name": "protege-la-planete-enfants-ados-fr",
         "status": "present"
       }
-     ],
+    ],
     "portal": {
       "activated": "True"
     }
   },
- "kb-bdi-unicefplay": {
+  "kb-bdi-unicefplay": {
     "kalite": {
       "activated": "True",
       "version": "0.16.9",
@@ -8138,44 +8138,44 @@
       {
         "name": "biologie-enfants-ados-fr",
         "status": "present"
-      },      
-      { 
+      },
+      {
         "name": "contes-et-dessins-animes-fr",
         "status": "present"
       },
-      { 
+      {
         "name": "discriminations-enfants-ados-fr",
         "status": "present"
       },
-      { 
+      {
         "name": "ecoute-tes-emotions-enfants-ados-fr",
         "status": "present"
       },
-      { 
+      {
         "name": "ecriture-et-litterature-fr",
         "status": "present"
       },
-      { 
+      {
         "name": "evite-les-conflits-enfants-ados-fr",
         "status": "present"
       },
-      { 
+      {
         "name": "hygiene-enfants-ados-fr",
         "status": "present"
       },
-      { 
+      {
         "name": "les-filles-et-les-garcons-quelles-differences-fr",
         "status": "present"
       },
-      { 
+      {
         "name": "nature-enfants-ados-fr",
         "status": "present"
       },
-      { 
+      {
         "name": "prends-soin-de-toi-enfants-ado-fr",
         "status": "present"
       },
-      { 
+      {
         "name": "sports-enfants-ados-fr",
         "status": "present"
       },
@@ -8195,12 +8195,12 @@
         "name": "protege-la-planete-enfants-ados-fr",
         "status": "present"
       }
-     ],
+    ],
     "portal": {
       "activated": "True"
     }
   },
- "idb-lbn-icrcah": {
+  "idb-lbn-icrcah": {
     "kalite": {
       "activated": "False"
     },
@@ -8276,7 +8276,7 @@
       {
         "name": "fashion-and-beauty-ar",
         "status": "present"
-      }, 
+      },
       {
         "name": "motherhood-and-parenting-ar",
         "status": "present"
@@ -8289,16 +8289,19 @@
         "name": "nervous-system-ar",
         "status": "present"
       },
-      { 
+      {
         "name": "health-and-diseases-ar",
         "status": "present"
-      },  {
+      },
+      {
         "name": "girl-talk-puberty-ar",
         "status": "present"
-      },  {
+      },
+      {
         "name": "let-s-be-clean-ar",
         "status": "present"
-      },  {
+      },
+      {
         "name": "cartoons-ar",
         "status": "present"
       },
@@ -8313,7 +8316,7 @@
       {
         "name": "football-matches-ar",
         "status": "present"
-      },  
+      },
       {
         "name": "the-road-zaatari-magazine-ar",
         "status": "present"
@@ -8337,13 +8340,13 @@
       {
         "name": "let-s-speak-english-ar",
         "status": "present"
-      }],
+      }
+    ],
     "portal": {
       "activated": "True"
     }
-
   },
- "kb-bdi-fvsamadeecofo": {
+  "kb-bdi-fvsamadeecofo": {
     "kalite": {
       "activated": "True",
       "version": "0.16.9",
@@ -8491,12 +8494,13 @@
       {
         "name": "les-fondamentaux.fr",
         "status": "present"
-      }],
+      }
+    ],
     "portal": {
       "activated": "True"
     }
   },
- "kb-bdi-amadesolidarite": {
+  "kb-bdi-amadesolidarite": {
     "kalite": {
       "activated": "True",
       "version": "0.16.9",
@@ -8660,12 +8664,13 @@
       {
         "name": "les-fondamentaux.fr",
         "status": "present"
-      }],
+      }
+    ],
     "portal": {
       "activated": "True"
     }
   },
- "kb-mrt-faf": {
+  "kb-mrt-faf": {
     "kalite": {
       "activated": "True",
       "version": "0.16.9",
@@ -8909,12 +8914,13 @@
       {
         "name": "apprenez-le-francais-niveau-c1-c2-fr",
         "status": "present"
-      }],
+      }
+    ],
     "portal": {
       "activated": "True"
     }
   },
- "kb-mdg-faf": {
+  "kb-mdg-faf": {
     "kalite": {
       "activated": "True",
       "version": "0.16.9",
@@ -9090,12 +9096,13 @@
       {
         "name": "apprenez-le-francais-niveau-c1-c2-fr",
         "status": "present"
-      }],
+      }
+    ],
     "portal": {
       "activated": "True"
     }
   },
- "kb-tza-ambfrance": {
+  "kb-tza-ambfrance": {
     "kalite": {
       "activated": "True",
       "version": "0.16.9",
@@ -9235,13 +9242,13 @@
       {
         "name": "apprenez-le-francais-niveau-b1-fr",
         "status": "present"
-      }],
-
+      }
+    ],
     "portal": {
       "activated": "True"
     }
   },
- "idb-fra-culturabordeaux": {
+  "idb-fra-culturabordeaux": {
     "kalite": {
       "activated": "False",
       "version": "0.16.9",
@@ -9441,12 +9448,13 @@
       {
         "name": "apprenez-le-francais-fos-fr",
         "status": "present"
-      }],
-      "portal": {
-      "activated": "True"
       }
-    },
- "idb-fra-cnpboulogne": {
+    ],
+    "portal": {
+      "activated": "True"
+    }
+  },
+  "idb-fra-cnpboulogne": {
     "kalite": {
       "activated": "True",
       "version": "0.16.9",
@@ -9618,12 +9626,13 @@
       {
         "name": "utilisez-internet-en-toute-securite-fr",
         "status": "present"
-      }],
-      "portal": {
-      "activated": "True"
       }
-    },
- "idb-fra-aurorenanterre": {
+    ],
+    "portal": {
+      "activated": "True"
+    }
+  },
+  "idb-fra-aurorenanterre": {
     "kalite": {
       "activated": "True",
       "version": "0.16.9",
@@ -9851,12 +9860,13 @@
       {
         "name": "apprends-le-francais-a2-enfants-adolescents-fr",
         "status": "present"
-      }],
-      "portal": {
-      "activated": "True"
       }
-    },
- "idb-bdi-oidebmonaco": {
+    ],
+    "portal": {
+      "activated": "True"
+    }
+  },
+  "idb-bdi-oidebmonaco": {
     "kalite": {
       "activated": "True",
       "version": "0.16.9",
@@ -10016,12 +10026,13 @@
       {
         "name": "audiobooks-et-fictions-sonores-fr",
         "status": "present"
-      }],
-      "portal": {
-      "activated": "True"
       }
-    },
- "idb-fra-rambouillet": {
+    ],
+    "portal": {
+      "activated": "True"
+    }
+  },
+  "idb-fra-rambouillet": {
     "kalite": {
       "activated": "True",
       "version": "0.16.9",
@@ -10076,7 +10087,7 @@
       },
       {
         "name": "apprenez-le-code-informatique-fr",
-       "status": "present"
+        "status": "present"
       },
       {
         "name": "decouvrez-les-arts-plastiques-fr",
@@ -10149,12 +10160,13 @@
       {
         "name": "comprendre-l-autisme-fr",
         "status": "present"
-      }],
-      "portal": {
-      "activated": "True"
       }
-    },
- "kb-bsf-btc": {
+    ],
+    "portal": {
+      "activated": "True"
+    }
+  },
+  "kb-bsf-btc": {
     "kalite": {
       "activated": "True",
       "version": "0.16.9",
@@ -10254,12 +10266,13 @@
       {
         "name": "utilisez-internet-en-toute-securite-fr",
         "status": "present"
-      }],
-      "portal": {
-      "activated": "True"
       }
-    },
- "kb-usa-brainerd": {
+    ],
+    "portal": {
+      "activated": "True"
+    }
+  },
+  "kb-usa-brainerd": {
     "kalite": {
       "activated": "False",
       "version": "0.16.9",
@@ -10320,12 +10333,12 @@
         "name": "what-are-the-basics-of-diabetes-en",
         "status": "present"
       }
-     ],
+    ],
     "portal": {
       "activated": "True"
-      }
-    },
- "idb-ita-palermo": {
+    }
+  },
+  "idb-ita-palermo": {
     "kalite": {
       "activated": "True",
       "version": "0.16.9",
@@ -10527,11 +10540,11 @@
         "name": "gutenberg.mul",
         "status": "present"
       }
-     ],
+    ],
     "portal": {
       "activated": "True"
-      }
-    },
+    }
+  },
   "kb-cod-rfimobile": {
     "kalite": {
       "activated": "False",
@@ -10541,7 +10554,7 @@
       ]
     },
     "portal": {
-    "activated": "True"
+      "activated": "True"
     },
     "ideascube_branding": "rfi",
     "ideascube_package_name": "irfi",
@@ -10784,9 +10797,9 @@
         "name": "le-talisman-brise-ln-rfi-ln",
         "status": "present"
       }
-     ],
+    ],
     "portal": {
-    "activated": "True"
+      "activated": "True"
     },
     "ideascube_branding": "rfi",
     "ideascube_package_name": "irfi",
@@ -11034,8 +11047,8 @@
         "status": "present"
       }
     ],
-   "portal": {
-     "activated": "True"
+    "portal": {
+      "activated": "True"
     }
   },
   "kb-jor-drcazraqc": {
@@ -11280,8 +11293,8 @@
         "status": "present"
       }
     ],
-   "portal": {
-     "activated": "True"
+    "portal": {
+      "activated": "True"
     }
   },
   "kb-sen-b2cfamille": {
@@ -11398,8 +11411,8 @@
         "status": "present"
       }
     ],
-   "portal": {
-     "activated": "True"
+    "portal": {
+      "activated": "True"
     }
   },
   "kb-sen-b2cetudiant1": {
@@ -11467,8 +11480,8 @@
         "status": "present"
       }
     ],
-   "portal": {
-     "activated": "True"
+    "portal": {
+      "activated": "True"
     }
   },
   "kb-sen-b2cetudiant2": {
@@ -11524,8 +11537,8 @@
         "status": "present"
       }
     ],
-   "portal": {
-     "activated": "True"
+    "portal": {
+      "activated": "True"
     }
   },
   "kb-sen-b2cartisan1": {
@@ -11561,8 +11574,8 @@
         "status": "present"
       }
     ],
-   "portal": {
-     "activated": "True"
+    "portal": {
+      "activated": "True"
     }
   },
   "kb-sen-b2cartisan2": {
@@ -11598,8 +11611,8 @@
         "status": "present"
       }
     ],
-   "portal": {
-     "activated": "True"
+    "portal": {
+      "activated": "True"
     }
   },
   "kb-col-colsubsidio": {
@@ -11656,10 +11669,10 @@
         "status": "present"
       }
     ],
-   "portal": {
-     "activated": "True"
+    "portal": {
+      "activated": "True"
     },
-   "ideascube_branding" : "colsubsidio"
+    "ideascube_branding": "colsubsidio"
   },
   "idb-col-colsubsidio": {
     "kalite": {
@@ -11715,9 +11728,9 @@
         "status": "present"
       }
     ],
-   "portal": {
-     "activated": "True"
+    "portal": {
+      "activated": "True"
     },
-   "ideascube_branding" : "colsubsidio"
+    "ideascube_branding": "colsubsidio"
   }
 }
