@@ -137,6 +137,13 @@
   command: ideascube config set server site-name {{ ansible_local.installed_software.management.hostname }}
   tags: ['master', 'custom']
 
+- name: Set ideascube language for irfi
+  become: yes
+  become_user: ideascube
+  command: ideascube config set content local-languages "['fr', 'kg', 'kn', 'lua', 'sw']"
+  when: ansible_local.device_list[generic_project_name].ideascube_package_name | default (omit) == "irfi"
+  tags: ['custom', 'update']
+
 - name: Get ideascube version
   shell: dpkg-query -W  {{ideascube_package_name}}  | awk '{print $2}' ; echo
   register: ideascube_newversion
