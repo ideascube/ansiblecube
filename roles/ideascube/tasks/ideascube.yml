@@ -113,6 +113,14 @@
   notify: restart uwsgi
   tags: ['custom','rename','update']
 
+- name: Add DOMAIN to set ideascube domain name
+  lineinfile: dest=/etc/default/ideascube
+              regexp='DOMAIN='
+              line='DOMAIN={{ ansible_local.installed_software.management.hostname }}'
+              state=present
+  notify: restart uwsgi
+  tags: ['custom','rename','update']
+
 - name: Ensure that Ideascube folder belong the ideascube user
   command: chown -R {{ username }}:{{ username }} /var/ideascube/main/
   tags: 
@@ -126,7 +134,7 @@
 - name: Set Ideascube name
   become: yes
   become_user: ideascube
-  command: ideascube config set server site-name {{ hostname }}
+  command: ideascube config set server site-name {{ ansible_local.installed_software.management.hostname }}
   tags: ['master', 'custom']
 
 - name: Get ideascube version
@@ -165,6 +173,11 @@
   notify: restart uwsgi
   tags:
     - update
+
+- name: Set hostname in nginx vhost
+  command: sed -i '/server_name/c\server_name {{ ansible_local.installed_software.management.hostname }};' /etc/nginx/sites-available/ideascube
+  notify: restart uwsgi
+  tags: ['custom','rename','update']
 
 - name: Create and set up a cache for uwsgi
   blockinfile: block="{{ lookup('file', 'uwsgi-cache.ini') }}" dest="/etc/uwsgi/apps-available/ideascube.ini"
