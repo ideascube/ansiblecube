@@ -116,7 +116,7 @@
 - name: Add DOMAIN to set ideascube domain name
   lineinfile: dest=/etc/default/ideascube
               regexp='DOMAIN='
-              line='DOMAIN={{ hostname }}'
+              line='DOMAIN={{ ansible_local.installed_software.management.hostname }}'
               state=present
   notify: restart uwsgi
   tags: ['custom','rename','update']
@@ -134,7 +134,7 @@
 - name: Set Ideascube name
   become: yes
   become_user: ideascube
-  command: ideascube config set server site-name {{ hostname }}
+  command: ideascube config set server site-name {{ ansible_local.installed_software.management.hostname }}
   tags: ['master', 'custom']
 
 - name: Get ideascube version
@@ -175,7 +175,7 @@
     - update
 
 - name: Set hostname in nginx vhost
-  command: sed -i '/server_name/c\server_name {{ hostname }};' /etc/nginx/sites-available/ideascube
+  command: sed -i '/server_name/c\server_name {{ ansible_local.installed_software.management.hostname }};' /etc/nginx/sites-available/ideascube
   notify: restart uwsgi
   tags: ['custom','rename','update']
 
