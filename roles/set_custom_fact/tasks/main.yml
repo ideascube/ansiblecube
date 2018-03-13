@@ -159,7 +159,7 @@
 - name: Send this file over the central_server
   raw: cat /etc/firstStart.csv | ssh {{ central_server }} "cat >> ./ansible/UUID/firstStart.csv"
   when: managed_by_bsf|bool and firststart.stat.exists == False or firststart is undefined
-  tags: ['custom','rename','no_internet']
+  tags: ['custom','rename','requires_internet']
 
 - name: If /etc/firstStart.csv exist then hostname is already defined
   set_fact: idc_uniq_device_name="{{ ansible_hostname }}"
