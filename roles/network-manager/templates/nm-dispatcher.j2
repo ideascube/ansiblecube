@@ -34,7 +34,7 @@ then
 
     case $status in
         *"failed=1"*)
-            flash_led
+            flash_led &
             $WGET http://report.bsf-intranet.org/device=$device_hostname/ansiblepull=fail/msg="$description" > /dev/null 2>&1
         ;;
         *"failed=0"*)
@@ -42,7 +42,7 @@ then
             $WGET http://report.bsf-intranet.org/device=$device_hostname/ansiblepull=success > /dev/null 2>&1
         ;;
         *"Local modifications exist in repository"*)
-            flash_led
+            flash_led &
             $WGET http://report.bsf-intranet.org/device=$device_hostname/ansiblepull=modificationExist > /dev/null 2>&1
         ;;
         *)
