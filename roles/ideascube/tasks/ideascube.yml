@@ -181,8 +181,13 @@
   tags:
     - update
 
-- name: Set hostname in nginx vhost
-  command: sed -i '/server_name/c\server_name {{ ansible_local.installed_software.management.hostname }};' /etc/nginx/sites-available/ideascube
+- name: Set hostname in nginx vhost for ideascube
+  command: sed -i '/server_name ideasbox.lan/c\server_name {{ ansible_local.installed_software.management.hostname }};' /etc/nginx/sites-available/ideascube
+  notify: restart uwsgi
+  tags: ['custom','rename','update']
+
+- name: Set hostname in nginx vhost for static sites
+  command: sed -i '/server_name sites.ideasbox.lan/c\server_name sites.{{ ansible_local.installed_software.management.hostname }};' /etc/nginx/sites-available/ideascube
   notify: restart uwsgi
   tags: ['custom','rename','update']
 
