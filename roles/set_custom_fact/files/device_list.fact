@@ -11731,13 +11731,36 @@
     "portal": {
       "activated": "True"
     },
-    "ideascube_branding": "colsubsidio"  },
+    "ideascube_branding": "colsubsidio"
+  },
   "kb-col-cucuta": {
     "kalite": {
       "activated": "True",
       "version": "0.16.9",
       "language": [
         "es"
+      ]
+    },
+    "package_management": [
+      {
+        "name": "placeholder",
+        "status": "absent"
+      },
+      {
+        "name": "placeholder",
+        "status": "absent"
+      }
+    ],
+    "portal": {
+      "activated": "True"
+    }
+  },
+  "idb-jor-bsfhea": {
+    "kalite": {
+      "activated": "True",
+      "version": "0.16.9",
+      "language": [
+        "en"
       ]
     },
     "package_management": [
