@@ -10743,7 +10743,7 @@
       },
       {
         "name": "dessins-animes-pour-enfants-sw",
-        "status": "present"
+        "status": "latest"
       },
       {
         "name": "l-afrique-en-marche-rfi-fr",
