@@ -11743,6 +11743,26 @@
     },
     "package_management": [
       {
+        "name": "wikipedia.es",
+        "status": "present"
+      },
+      {
+        "name": "wiktionary.es",
+        "status": "present"
+      },
+      {
+        "name": "wikibooks.es",
+        "status": "present"
+      },
+      {
+        "name": "wikiquote.es",
+        "status": "present"
+      },
+      {
+        "name": "gutenberg.es",
+        "status": "present"
+      },
+      {
         "name": "creation-sikana-es",
         "status": "present"
       },
