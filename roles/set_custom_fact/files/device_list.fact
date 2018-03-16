@@ -3338,16 +3338,20 @@
   },
   "idb-bsf-kolibri": {
     "kalite": {
-      "activated": "False"
+      "activated": "True",
+      "version": "0.16.9",
+      "language": [
+        "en"
+      ]
     },
     "kolibri": {
       "activated": "True",
-      "version": "0.4.4"
+      "version": "0.7.2"
     },
     "package_management": [
       {
-        "name": "wikiquote.fa",
-        "status": "latest"
+        "name": "no_packages",
+        "status": "absent"
       }
     ],
     "portal": {
