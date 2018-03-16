@@ -10639,107 +10639,107 @@
       },
       {
         "name": "decouvrez-de-nouvelles-musiques-fr",
-        "status": "reinstall"
+        "status": "present"
       },
       {
         "name": "decouvrez-ou-re-decouvrez-la-cuisine-de-differents-pays-fr",
-        "status": "reinstall"
+        "status": "present"
       },
       {
         "name": "combattons-les-discriminations-fr",
-        "status": "reinstall"
+        "status": "present"
       },
       {
         "name": "innovation-en-afrique-fr",
-        "status": "reinstall"
+        "status": "present"
       },
       {
         "name": "economie-fr",
-        "status": "reinstall"
+        "status": "present"
       },
       {
         "name": "prevention-et-sexualite-fr",
-        "status": "reinstall"
+        "status": "present"
       },
       {
         "name": "histoire-afrique-fr",
-        "status": "reinstall"
+        "status": "present"
       },
       {
         "name": "arts-afrique-fr",
-        "status": "reinstall"
+        "status": "present"
       },
       {
         "name": "geographie-afrique-fr",
-        "status": "reinstall"
+        "status": "present"
       },
       {
         "name": "discriminations-enfants-ados-fr",
-        "status": "reinstall"
+        "status": "present"
       },
       {
         "name": "creation-audio-fr",
-        "status": "reinstall"
+        "status": "present"
       },
       {
         "name": "sante-fr",
-        "status": "reinstall"
+        "status": "present"
       },
       {
         "name": "ecriture-et-litterature-fr",
-        "status": "reinstall"
+        "status": "present"
       },
       {
         "name": "nature-enfants-ados-fr",
-        "status": "reinstall"
+        "status": "present"
       },
       {
         "name": "women-in-african-history-en",
-        "status": "reinstall"
+        "status": "present"
       },
       {
         "name": "introduction-to-journalism-en",
-        "status": "reinstall"
+        "status": "present"
       },
       {
         "name": "introduction-to-human-rights-en",
-        "status": "reinstall"
+        "status": "present"
       },
       {
         "name": "introduction-to-human-rights-for-children-en",
-        "status": "reinstall"
+        "status": "present"
       },
       {
         "name": "experiences-de-femmes-fr",
-        "status": "reinstall"
+        "status": "present"
       },
       {
         "name": "economie-et-developpement-durable-fr",
-        "status": "reinstall"
+        "status": "present"
       },
       {
         "name": "economie-et-mondialisation-fr",
-        "status": "reinstall"
+        "status": "present"
       },
       {
         "name": "utilisez-internet-en-toute-securite-fr",
-        "status": "reinstall"
+        "status": "present"
       },
       {
         "name": "protege-la-planete-enfants-ados-fr",
-        "status": "reinstall"
+        "status": "present"
       },
       {
         "name": "comment-faire-face-a-la-violence-et-aux-conflits-enfants-ados-fr",
-        "status": "reinstall"
+        "status": "present"
       },
       {
         "name": "decouvrir-et-pratiquer-la-riziculture-fr",
-        "status": "reinstall"
+        "status": "present"
       },
       {
         "name": "violences-faites-aux-femmes-fr",
-        "status": "reinstall"
+        "status": "present"
       },
       {
         "name": "dessins-animes-pour-enfants-sw",
@@ -10747,55 +10747,55 @@
       },
       {
         "name": "l-afrique-en-marche-rfi-fr",
-        "status": "reinstall"
+        "status": "present"
       },
       {
         "name": "7-milliards-de-voisins-rfi-fr",
-        "status": "reinstall"
+        "status": "present"
       },
       {
         "name": "danse-des-mots-rfi-fr",
-        "status": "reinstall"
+        "status": "present"
       },
       {
         "name": "priorite-sante-rfi-fr",
-        "status": "reinstall"
+        "status": "present"
       },
       {
         "name": "c-est-pas-du-vent-rfi-fr",
-        "status": "reinstall"
+        "status": "present"
       },
       {
         "name": "le-talisman-brise-sw-rfi-sw",
-        "status": "reinstall"
+        "status": "present"
       },
       {
         "name": "memoire-d-un-continent-rfi-fr",
-        "status": "reinstall"
+        "status": "present"
       },
       {
         "name": "si-loin-si-proche-rfi-fr",
-        "status": "reinstall"
+        "status": "present"
       },
       {
         "name": "eco-d-ici-eco-d-ailleurs-rfi-fr",
-        "status": "reinstall"
+        "status": "present"
       },
       {
         "name": "la-marche-du-monde-rfi-fr",
-        "status": "reinstall"
+        "status": "present"
       },
       {
         "name": "musiques-du-monde-rfi-fr",
-        "status": "reinstall"
+        "status": "present"
       },
       {
         "name": "documents-methodologiques-rfi-fr",
-        "status": "reinstall"
+        "status": "present"
       },
       {
         "name": "le-talisman-brise-ln-rfi-ln",
-        "status": "reinstall"
+        "status": "present"
       }
     ],
     "portal": {
