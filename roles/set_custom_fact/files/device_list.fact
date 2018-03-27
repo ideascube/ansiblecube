@@ -5928,11 +5928,11 @@
       },
       {
         "name": "monter-son-projet-professionnel-fr",
-        "status": "present"
+        "status": "latest"
       },
       {
         "name": "economie-fr",
-        "status": "present"
+        "status": "latest"
       },
       {
         "name": "sociologie-du-travail-fr",
@@ -5948,7 +5948,7 @@
       },
       {
         "name": "innovation-en-afrique-fr",
-        "status": "present"
+        "status": "latest"
       },
       {
         "name": "administration-gestion-comptabilite-fr",
@@ -5960,7 +5960,7 @@
       },
       {
         "name": "creation-d-entreprise-fr",
-        "status": "present"
+        "status": "latest"
       }
     ],
     "portal": {
