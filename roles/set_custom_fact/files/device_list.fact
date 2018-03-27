@@ -3137,6 +3137,30 @@
       {
         "name": "dirtybiology.fr",
         "status": "present"
+      },
+      {
+        "name": "musique-libres-de-droit-en",
+        "status": "present"
+      },
+      {
+        "name": "ebook-enfants-libres-de-droit-fr",
+        "status": "present"
+      },
+      {
+        "name": "kit-de-l-animateur-libres-de-droit-fr",
+        "status": "present"
+      },
+      {
+        "name": "fiche-creativite-libres-de-droit-fr",
+        "status": "present"
+      },
+      {
+        "name": "fichiers-audio-libres-de-droit-fr",
+        "status": "present"
+      },
+      {
+        "name": "films-et-videos-libres-de-droit-fr",
+        "status": "present"
       }
     ],
     "idc_import": {
