@@ -8314,100 +8314,236 @@
         "status": "present"
       },
       {
-        "name": "let-s-speak-arabic-ar",
-        "status": "present"
-      },
-      {
-        "name": "abuse-and-harassment-ar",
-        "status": "present"
-      },
-      {
-        "name": "biology-ar",
-        "status": "present"
+        "name": "fictions-and-entertainment-in-arabic-ar",
+        "status": "latest"
       },
       {
         "name": "music-in-arabic",
-        "status": "present"
+        "status": "absent"
+      },
+      {
+        "name": "music-in-arabic-ar",
+        "status": "latest"
+      },
+      {
+        "name": "introduction-to-healthcare-en",
+        "status": "latest"
+      },
+      {
+        "name": "introduction-to-sciences-en",
+        "status": "latest"
+      },
+      {
+        "name": "non-violent-communication-en",
+        "status": "latest"
+      },
+      {
+        "name": "abuse-and-harassment-gbv-ar",
+        "status": "absent"
+      },
+      {
+        "name": "abuse-and-harassment-ar",
+        "status": "latest"
+      },
+      {
+        "name": "poetry-ar",
+        "status": "latest"
       },
       {
         "name": "physics-ar",
-        "status": "present"
+        "status": "latest"
       },
       {
         "name": "self-development-ar",
-        "status": "present"
+        "status": "latest"
       },
       {
         "name": "sports-ar",
-        "status": "present"
+        "status": "latest"
       },
       {
         "name": "fashion-and-beauty-ar",
-        "status": "present"
+        "status": "latest"
       },
       {
         "name": "motherhood-and-parenting-ar",
-        "status": "present"
+        "status": "latest"
       },
       {
         "name": "mathematics-ar",
-        "status": "present"
+        "status": "latest"
       },
       {
         "name": "nervous-system-ar",
         "status": "present"
       },
       {
+        "name": "let-s-speak-english-ar",
+        "status": "latest"
+      },
+      {
         "name": "health-and-diseases-ar",
-        "status": "present"
+        "status": "latest"
       },
       {
         "name": "girl-talk-puberty-ar",
-        "status": "present"
+        "status": "latest"
       },
       {
         "name": "let-s-be-clean-ar",
-        "status": "present"
+        "status": "latest"
+      },
+      {
+        "name": "let-s-speak-arabic-ar",
+        "status": "latest"
+      },
+      {
+        "name": "biology-ar",
+        "status": "latest"
+      },
+      {
+        "name": "learn-guitar-en",
+        "status": "latest"
+      },
+      {
+        "name": "drums-for-beginners-en",
+        "status": "latest"
+      },
+      {
+        "name": "learn-photography-en",
+        "status": "latest"
       },
       {
         "name": "cartoons-ar",
-        "status": "present"
+        "status": "latest"
+      },
+      {
+        "name": "let-s-practise-sport-children-en",
+        "status": "latest"
       },
       {
         "name": "arabic-alphabet-ar",
-        "status": "present"
-      },
-      {
-        "name": "cooking-ar",
-        "status": "present"
-      },
-      {
-        "name": "football-matches-ar",
-        "status": "present"
-      },
-      {
-        "name": "the-road-zaatari-magazine-ar",
-        "status": "present"
+        "status": "latest"
       },
       {
         "name": "diy-handcrafts-ar",
-        "status": "present"
+        "status": "absent"
+      },
+      {
+        "name": "diy-handcrafts-and-arts-ar",
+        "status": "latest"
+      },
+      {
+        "name": "learn-to-know-and-manage-your-feelings-en",
+        "status": "latest"
+      },
+      {
+        "name": "drawing-colouring-en",
+        "status": "latest"
+      },
+      {
+        "name": "handcraft-origami-en",
+        "status": "latest"
+      },
+      {
+        "name": "agriculture-gardening-en",
+        "status": "latest"
+      },
+      {
+        "name": "fight-against-discriminations-and-live-together-en",
+        "status": "latest"
       },
       {
         "name": "waqt-al-farah",
-        "status": "present"
+        "status": "absent"
       },
       {
-        "name": "fitness-for-kids-ar",
-        "status": "present"
+        "name": "waqt-al-farah-ar",
+        "status": "latest"
       },
       {
         "name": "kids-magazine-ar",
         "status": "present"
       },
       {
-        "name": "let-s-speak-english-ar",
+        "name": "cooking-ar",
+        "status": "latest"
+      },
+      {
+        "name": "football-matches-en",
+        "status": "latest"
+      },
+      {
+        "name": "football-matches-ar",
         "status": "present"
+      },
+      {
+        "name": "english-for-adults-ar",
+        "status": "latest"
+      },
+      {
+        "name": "the-road-zaatari-magazine-ar",
+        "status": "latest"
+      },
+      {
+        "name": "fitness-for-kids-ar",
+        "status": "latest"
+      },
+      {
+        "name": "classical-music-en",
+        "status": "latest"
+      },
+      {
+        "name": "some-science-fun-with-salam-ar",
+        "status": "latest"
+      },
+      {
+        "name": "let-s-talk-about-sexuality-ar-ar",
+        "status": "latest"
+      },
+      {
+        "name": "how-do-i-stay-healthy-with-diabetes-en",
+        "status": "latest"
+      },
+      {
+        "name": "tales-for-kids-ar",
+        "status": "latest"
+      },
+      {
+        "name": "business-management-ar",
+        "status": "latest"
+      },
+      {
+        "name": "chemistry-ar",
+        "status": "latest"
+      },
+      {
+        "name": "child-protection-ar",
+        "status": "latest"
+      },
+      {
+        "name": "economy-ar",
+        "status": "latest"
+      },
+      {
+        "name": "novels-for-youth-ar",
+        "status": "latest"
+      },
+      {
+        "name": "technology-ar",
+        "status": "latest"
+      },
+      {
+        "name": "journalism-ar",
+        "status": "latest"
+      },
+      {
+        "name": "women-empowerment-ar",
+        "status": "latest"
+      },
+      {
+        "name": "sociology-ar",
+        "status": "latest"
       }
     ],
     "portal": {
