@@ -5383,32 +5383,56 @@
         "status": "present"
       },
       {
+        "name": "decouvrez-de-nouvelles-musiques-fr",
+        "status": "latest"
+      },
+      {
         "name": "musique-fr",
-        "status": "present"
+        "status": "absent"
       },
       {
         "name": "apprentissage-francais-fr",
         "status": "present"
       },
       {
+        "name": "apprenez-le-code-informatique-fr",
+        "status": "latest"
+      },
+      {
+        "name": "decouvrez-les-arts-plastiques-fr",
+        "status": "latest"
+      },
+      {
         "name": "arts-plastiques-fr",
-        "status": "present"
+        "status": "absent"
+      },
+      {
+        "name": "initiez-vous-a-la-photographie-fr",
+        "status": "latest"
       },
       {
         "name": "photographie-fr",
-        "status": "present"
+        "status": "absent"
       },
       {
         "name": "films-fr",
         "status": "present"
       },
       {
+        "name": "initiez-vous-a-la-creation-video-fr",
+        "status": "latest"
+      },
+      {
         "name": "cinema-et-creation-video-fr",
-        "status": "present"
+        "status": "absent"
+      },
+      {
+        "name": "innovation-en-afrique-fr",
+        "status": "latest"
       },
       {
         "name": "audiobooks-et-fictions-sonores-fr",
-        "status": "present"
+        "status": "latest"
       },
       {
         "name": "histoire-afrique-fr",
@@ -5416,43 +5440,83 @@
       },
       {
         "name": "contes-et-dessins-animes-fr",
-        "status": "present"
+        "status": "latest"
+      },
+      {
+        "name": "discriminations-enfants-ados-fr",
+        "status": "latest"
+      },
+      {
+        "name": "discriminations-enfants-fr",
+        "status": "absent"
+      },
+      {
+        "name": "creation-audio-fr",
+        "status": "latest"
+      },
+      {
+        "name": "ebooks-enfants-fr",
+        "status": "latest"
+      },
+      {
+        "name": "ecriture-et-litterature-fr",
+        "status": "latest"
+      },
+      {
+        "name": "biologie-adolescents-fr",
+        "status": "latest"
       },
       {
         "name": "arts-afrique-fr",
         "status": "present"
       },
       {
+        "name": "nature-enfants-ados-fr",
+        "status": "latest"
+      },
+      {
+        "name": "nature-fr",
+        "status": "absent"
+      },
+      {
         "name": "geographie-afrique-fr",
         "status": "present"
       },
       {
-        "name": "discriminations-enfants-fr",
-        "status": "present"
-      },
-      {
-        "name": "creation-audio-fr",
-        "status": "present"
-      },
-      {
-        "name": "ebooks-enfants-fr",
-        "status": "present"
-      },
-      {
-        "name": "ecriture-et-litterature-fr",
-        "status": "present"
-      },
-      {
-        "name": "biologie-adolescents-fr",
-        "status": "present"
-      },
-      {
-        "name": "nature-fr",
-        "status": "present"
-      },
-      {
         "name": "biologie-enfants-fr",
-        "status": "present"
+        "status": "latest"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-a1-fr",
+        "status": "latest"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-a2-fr",
+        "status": "latest"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-b1-fr",
+        "status": "latest"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-b2-fr",
+        "status": "latest"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-c1-c2-fr",
+        "status": "latest"
+      },
+      {
+        "name": "apprenez-le-francais-fos-fr",
+        "status": "latest"
+      },
+      {
+        "name": "musique-libres-de-droit-en",
+        "status": "latest"
+      },
+      {
+        "name": "films-et-videos-libres-de-droit-fr",
+        "status": "latest"
       }
     ],
     "portal": {
