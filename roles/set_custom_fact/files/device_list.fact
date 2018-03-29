@@ -3161,6 +3161,10 @@
       {
         "name": "films-et-videos-libres-de-droit-fr",
         "status": "present"
+      },
+      {
+        "name": "films-pour-enfants-fr",
+        "status": "present"
       }
     ],
     "idc_import": {
