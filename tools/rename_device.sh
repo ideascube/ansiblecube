@@ -13,7 +13,7 @@ if [[ -b /dev/sda && -b /dev/sda1 ]]; then
 	chmod -x $0
 
 	cd /var/lib/ansible/local
-	/usr/local/bin/ansible-playbook main.yml --extra-vars "ideascube_project_name=kb_cod_rfi" --tags rename --skip-tags requires_internet > /var/log/ansible-pull.log 2>&1
+	/usr/local/bin/ansible-playbook main.yml --extra-vars "ideascube_project_name=kb_cod_rfimobile" --tags rename --skip-tags requires_internet
 
 else
 	while :
