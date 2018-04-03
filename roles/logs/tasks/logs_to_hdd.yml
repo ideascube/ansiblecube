@@ -34,9 +34,7 @@
       dest: var-log.mount
 
 - name: Enable mounts
-  systemd:
-    enabled: yes
-    name: "{{ item }}"
+  command: systemctl enable "{{ item }}"
   with_items:
     - media-hdd.mount
     - var-log.mount
