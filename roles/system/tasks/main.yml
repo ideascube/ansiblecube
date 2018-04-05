@@ -302,3 +302,8 @@
   notify: Update grub
   when: is_grub.stat.exists is defined and is_grub.stat.exists
   tags: ['master','custom']
+
+- name: Upgrade ansible to version 2.2.0
+  pip: name=ansible version=2.2.0
+  tags:
+    - update
