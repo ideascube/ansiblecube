@@ -5419,10 +5419,6 @@
         "status": "absent"
       },
       {
-        "name": "apprentissage-francais-fr",
-        "status": "present"
-      },
-      {
         "name": "apprenez-le-code-informatique-fr",
         "status": "latest"
       },
