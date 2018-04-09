@@ -9856,6 +9856,34 @@
         "status": "present"
       },
       {
+        "name": "choisirsacontraception.fr",
+        "status": "present"
+      },
+      {
+        "name": "ivg.net",
+        "status": "present"
+      },
+      {
+        "name": "onsexprime.fr",
+        "status": "present"
+      },
+      {
+        "name": "planning-familial.org",
+        "status": "present"
+      },
+      {
+        "name": "etsicamarrivait.fr",
+        "status": "present"
+      },
+      {
+        "name": "droguesinfoservice.fr",
+        "status": "present"
+      },
+      {
+        "name": "sida-info-service.org",
+        "status": "present"
+      },
+      {
         "name": "utilisez-internet-en-toute-securite-fr",
         "status": "present"
       }
