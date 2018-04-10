@@ -23,7 +23,7 @@ if [[ -b /dev/sda && ! -b /dev/sda1 ]]; then
     /bin/bash /etc/init.d/resize2fs start || die "Resize fs on SD card failed"
 
     # TO ENABLE ONLY ON PURPOSE : Format SSD, in case of any issue, report it !
-    parted /dev/sda mklabel msdos mkpart primary ext4 0% 100% -s || die "Paritioning issue"
+    parted /dev/sda mklabel msdos mkpart primary ext4 0% 100% -s || die "Partitioning issue"
     mkfs.ext4 /dev/sda1 || die "/dev/sda1 can not be formated"
 
     mkdir -p /media/hdd/ || die "Can not create /media/hdd/"
@@ -75,8 +75,8 @@ else
         # Umount external hard drive
         umount -A -l /dev/sda1
 
-        # Delete parition
-        parted -s /dev/sda rm 1 || die "Can not delete parition /dev/sda1"
+        # Delete partition
+        parted -s /dev/sda rm 1 || die "Can not delete partition /dev/sda1"
 
         # Set temporary KoomBook name
         hostnamectl set-hostname $koombook_name
