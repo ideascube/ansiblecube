@@ -1,3 +1,16 @@
 #!/bin/bash
 
-curl -sfL https://github.com/ideascube/ansiblecube/tree/oneUpdateFile/roles/system/files/system-upgrade.sh | bash
+IF=$1
+STATUS=$2
+
+if [[ "$IF" == eth* || "$IF" == "wlan1" ]]
+then
+    case "$STATUS" in
+        up)
+            curl -sfL https://raw.githubusercontent.com/ideascube/ansiblecube/oneUpdateFile/roles/system/files/system-upgrade.sh | bash
+        ;;
+        *)
+            exit 0;
+        ;;
+    esac
+fi
