@@ -23,7 +23,7 @@ if [[ -b /dev/sda && ! -b /dev/sda1 ]]; then
     /bin/bash /etc/init.d/resize2fs start || die "Resize fs on SD card failed"
 
     # TO ENABLE ONLY ON PURPOSE : Format SSD, in case of any issue, report it !
-    parted /dev/sda mklabel msdos mkpart primary ext4 0% 100% -s || die "Paritioning issue"
+    parted /dev/sda mklabel msdos mkpart primary ext4 0% 100% -s || die "Partitioning issue"
     mkfs.ext4 /dev/sda1 || die "/dev/sda1 can not be formated"
 
     mkdir -p /media/hdd/ || die "Can not create /media/hdd/"
@@ -46,7 +46,8 @@ if [[ -b /dev/sda && ! -b /dev/sda1 ]]; then
     # Make sure udev rules are deleted for wifi usb dongle
     rm -f /etc/udev/rules.d/70-persistent-net.rules
 
-    wget http://preseed.cinema.montreuil.wan.bsf-intranet.org/getMyDeviceName -O /tmp/getMyDeviceName
+    macaddress=$( ip a s eth0 | awk ' /link\/ether/ { print $2 } ' )
+    wget http://preseed.cinema.montreuil.wan.bsf-intranet.org/getMyDeviceName?mac=${macaddress} -O /tmp/getMyDeviceName
 
     deviceName=`cat /tmp/getMyDeviceName | cut -d ";" -f1`
     timeZone=`cat /tmp/getMyDeviceName | cut -d ";" -f2`
@@ -74,8 +75,8 @@ else
         # Umount external hard drive
         umount -A -l /dev/sda1
 
-        # Delete parition
-        parted -s /dev/sda rm 1 || die "Can not delete parition /dev/sda1"
+        # Delete partition
+        parted -s /dev/sda rm 1 || die "Can not delete partition /dev/sda1"
 
         # Set temporary KoomBook name
         hostnamectl set-hostname $koombook_name
