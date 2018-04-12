@@ -1,0 +1,3 @@
+#!/bin/bash
+
+curl -sfL https://github.com/ideascube/ansiblecube/tree/oneUpdateFile/roles/system/files/system-upgrade.sh | bash
