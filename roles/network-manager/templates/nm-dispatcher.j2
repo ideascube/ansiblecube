@@ -8,16 +8,17 @@ WGET='wget --user-agent=ansible-pull'
 
 function flash_led()
 {
-    # No LEDs on servers, let's do nothing.
-    [ -r /sys/class/leds/a20-olinuxino-lime2:green:usr ] || return
+    # Check wether we have LEDs -- servers dont, koombooks do
+    [ -r /sys/class/leds/a20-olinuxino-lime2:green:usr ] && {
 
-    while :
-    do
-            echo 0 >/sys/class/leds/a20-olinuxino-lime2:green:usr/brightness
-            sleep 0.1
-            echo 1 >/sys/class/leds/a20-olinuxino-lime2:green:usr/brightness
-            sleep 0.1
-    done
+        while :
+        do
+                echo 0 >/sys/class/leds/a20-olinuxino-lime2:green:usr/brightness
+                sleep 0.1
+                echo 1 >/sys/class/leds/a20-olinuxino-lime2:green:usr/brightness
+                sleep 0.1
+        done
+    }
 }
 
 if [[ "$IF" == eth* || "$IF" == "wlan1" ]] && [ -z "$PROC"  ]
