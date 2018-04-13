@@ -8,6 +8,9 @@ WGET='wget --user-agent=ansible-pull'
 
 function flash_led()
 {
+    # No LEDs on servers, let's do nothing.
+    [ -r /sys/class/leds/a20-olinuxino-lime2:green:usr ] || return
+
     while :
     do
             echo 0 >/sys/class/leds/a20-olinuxino-lime2:green:usr/brightness
