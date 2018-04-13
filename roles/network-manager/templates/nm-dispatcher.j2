@@ -42,7 +42,7 @@ then
             $WGET http://report.bsf-intranet.org/device=$device_hostname/ansiblepull=fail/msg="$description" > /dev/null 2>&1
         ;;
         *"failed=0"*)
-            echo heartbeat >/sys/class/leds/a20-olinuxino-lime2:green:usr/trigger
+            [ -r /sys/class/leds/a20-olinuxino-lime2:green:usr ] && echo heartbeat >/sys/class/leds/a20-olinuxino-lime2:green:usr/trigger
             $WGET http://report.bsf-intranet.org/device=$device_hostname/ansiblepull=success > /dev/null 2>&1
         ;;
         *"Local modifications exist in repository"*)
