@@ -185,8 +185,7 @@
         ssh_key_file=.ssh/id_rsa
         password={{ password }}
         update_password={{ managed_by_bsf|bool | ternary('always', 'on_create') }}
-  tags:
-    - master
+  tags: ['master', 'update']
 
 - name: Set up authorized_keys for the ideascube user
   authorized_key: user={{username}} key="{{ item }}"
