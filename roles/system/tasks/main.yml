@@ -185,7 +185,8 @@
         ssh_key_file=.ssh/id_rsa
         password={{ password }}
         update_password={{ managed_by_bsf|bool | ternary('always', 'on_create') }}
-  tags: ['master', 'update']
+  tags:
+    - master
 
 - name: Set up authorized_keys for the ideascube user
   authorized_key: user={{username}} key="{{ item }}"
@@ -304,4 +305,4 @@
 
 - name: Copy 01get-sys-upgrade-file file in dispatcher.d
   copy: src=01get-sys-upgrade-file dest=/etc/NetworkManager/dispatcher.d/01get-sys-upgrade-file mode=0755
-  tags: ['custom','update']
+  tags: ['update']
