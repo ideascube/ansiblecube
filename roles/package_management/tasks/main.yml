@@ -1,21 +1,26 @@
 ---
-- include_vars: group_vars/{{ ansible_architecture }}.yml
-  tags: ['custom', 'update','package_management']
+- name: Check if iSCSI host is accessible
+  wait_for: host={{ bsf_iscsi_host }} port=3260 timeout=3
+  register: host_accessible
+  failed_when: False
 
-- name: Update ideascube catalog cache before downloading
-  become: yes
-  become_user: ideascube
-  shell: ideascube catalog cache update
-  tags: ['custom', 'update','package_management']
+- name: iSCSI detected / Trying to mount target
+  block:
+    - apt: name=open-iscsi update_cache=yes cache_valid_time=3600
+    - open_iscsi: portal={{ bsf_iscsi_host }} login=yes discover=yes target='iqn.2018-04.com.synology:bsf-montreuil.Deploy-1'
+    - file: path=/mnt/pkg_source state=directory owner={{ ideascube }} mode=0755
+    - mount: src=/dev/sdb1 dest=/mnt/pkg fstype=ext4 state=present
+    - stat: path=/mnt/pkg_source/{{ generic_project_name }}
+      register: stat_result
+  when: host_accessible.state is defined and host_accessible.state == "started"
 
-- name: Install, upgrade or remove a package present in device_list.fact
-  become: yes
-  become_user: ideascube
-  shell: "{% if 'present' in item.status %}ideascube catalog install {{ item.name }}
-    {% elif 'latest' in item.status %}ideascube catalog update {{ item.name }}
-    {% elif 'absent' in item.status %}ideascube catalog remove {{ item.name }}
-    {% elif 'reinstall' in item.status %}ideascube catalog reinstall {{ item.name }}
-    {% else %}echo '[+] nothing to do'{% endif %}"
-  with_items: '{{ ansible_local.device_list[generic_project_name].package_management | default(omit) }}'
-  when: ansible_local.device_list[generic_project_name].package_management is defined
-  tags: ['custom','update','package_management']
+- include: builded_install.yml
+  when: host_accessible.state is defined
+    and host_accessible.state == "started"
+    and stat_result.stat.exists == True
+    and stat_result.stat.isdir == True
+
+- include: regular_install.yml
+  when: host_accessible.state is not defined
+    or stat_result.stat.exists == False
+    or stat_result.stat.isdir == False

@@ -1,0 +1,18 @@
+---
+- name: Remove Ideascube folder.
+  file:
+    path: /var/ideascube
+    state: absent
+
+- name: Remove Ideascube cache folder.
+  file:
+    path: /var/cache/ideascube
+    state: absent
+
+- name: Copy ideascube data from iSCSI source.
+  command: cp -a /mnt/pkg_source/{{ generic_project_name }}/{{ item.src}} {{ item.dst }}
+  with_items:
+    - src: "var/ideascube"
+      dst: "/var/" 
+    - src: "var/cache/ideascube"
+      dst: "/var/cache/"
