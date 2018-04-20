@@ -1,18 +1,26 @@
 ---
-- name: Remove Ideascube folder.
-  file:
-    path: /var/ideascube
-    state: absent
+- name: Removing Ideascube folders and copying new data on Ideasbook.
+  block:
+    - file: path=/var/ideascube state=absent
+    - file: path=/var/cache/ideascube state=absent
+    - command: rsync -a /mnt/pkg_source/{{ generic_project_name }}/{{ item.src}} {{ item.dst }}
+      with_items:
+        - src: "var/ideascube"
+          dst: "/var/"
+        - src: "var/cache/ideascube"
+          dst: "/var/cache/"
+  when: not ext_hdd
+  tags: ['custom', 'package_management']
 
-- name: Remove Ideascube cache folder.
-  file:
-    path: /var/cache/ideascube
-    state: absent
-
-- name: Copy ideascube data from iSCSI source.
-  command: cp -a /mnt/pkg_source/{{ generic_project_name }}/{{ item.src}} {{ item.dst }}
-  with_items:
-    - src: "var/ideascube"
-      dst: "/var/" 
-    - src: "var/cache/ideascube"
-      dst: "/var/cache/"
+- name: Removing Ideascube folders and copying new data on Koombook.
+  block:
+    - file: path=/media/hdd/ideascube state=absent
+    - file: path=/media/hdd/ideascube_cache state=absent
+    - command: rsync -a /mnt/pkg_source/{{ generic_project_name }}/{{ item.src}} {{ item.dst }}
+      with_items:
+        - src: "var/ideascube/"
+          dst: "/media/hdd/ideascube"
+        - src: "var/cache/ideascube/"
+          dst: "/media/hdd/ideascube_cache"
+  when: ext_hdd
+  tags: ['custom', 'package_management']
