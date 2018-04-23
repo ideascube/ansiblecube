@@ -9,7 +9,7 @@
     - debug: msg="iSCSI detected / Trying to mount target"
     - apt: name=open-iscsi update_cache=yes cache_valid_time=86400
     - open_iscsi: portal={{ bsf_iscsi_host }} login=yes discover=yes target='iqn.2018-04.com.synology:bsf-montreuil.Deploy-1'
-    - file: path=/mnt/pkg_source state=directory owner={{ ideascube }} mode=0755
+    - file: path=/mnt/pkg_source state=directory owner={{ username }} mode=0755
     - mount: src=/dev/sdb1 dest=/mnt/pkg fstype=ext4 state=present
     - stat: path=/mnt/pkg_source/{{ generic_project_name }}
       register: stat_result
