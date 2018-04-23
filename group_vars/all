@@ -18,6 +18,7 @@ timezone: "Europe/Paris"
 koombookDoctor: "koombook-doctor.local"
 bsf_gateway: "10.10.9.1"
 bsf_iscsi_host: 10.10.9.10
+iscsi_host_accessible: False
 kiwix_version: "1.0"
 mongodb_version: "2.4.10"
 own_config_file: False
