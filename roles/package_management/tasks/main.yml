@@ -1,7 +1,7 @@
----
+--
 - name: Check if iSCSI host is accessible
   wait_for: host={{ bsf_iscsi_host }} port=3260 timeout=3
-  register: host_accessible
+  register: iscsi_host_accessible
   failed_when: False
   tags: ['custom', 'package_management']
 
@@ -13,17 +13,17 @@
     - mount: src=/dev/sdb1 dest=/mnt/pkg fstype=ext4 state=present
     - stat: path=/mnt/pkg_source/{{ generic_project_name }}
       register: stat_result
-  when: host_accessible.state is defined and host_accessible.state == "started"
+  when: iscsi_host_accessible.state is defined and iscsi_host_accessible.state == "started"
   tags: ['custom', 'package_management']
 
 - include: builded_install.yml
-  when: host_accessible.state is defined
-    and host_accessible.state == "started"
+  when: iscsi_host_accessible.state is defined
+    and iscsi_host_accessible.state == "started"
     and stat_result.stat.exists == True
     and stat_result.stat.isdir == True
   tags: ['custom', 'package_management']
 
 - include: regular_install.yml
-  when: host_accessible.state is not defined
+  when: iscsi_host_accessible.state is not defined
     or stat_result is not defined
   tags: ['custom', 'update','package_management']
