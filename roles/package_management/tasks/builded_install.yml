@@ -1,6 +1,6 @@
 ---
-- name: Removing Ideascube folders and copying new data on Ideasbook.
-  block:
+- block:
+    - debug: msg="Removing Ideascube folders and copying new data on Ideasbook."
     - file: path=/var/ideascube state=absent
     - file: path=/var/cache/ideascube state=absent
     - command: rsync -a /mnt/pkg_source/{{ generic_project_name }}/{{ item.src}} {{ item.dst }}
@@ -12,8 +12,8 @@
   when: not ext_hdd
   tags: ['custom', 'package_management']
 
-- name: Removing Ideascube folders and copying new data on Koombook.
-  block:
+- block:
+    - debug: msg="Removing Ideascube folders and copying new data on Koombook."
     - file: path=/media/hdd/ideascube state=absent
     - file: path=/media/hdd/ideascube_cache state=absent
     - command: rsync -a /mnt/pkg_source/{{ generic_project_name }}/{{ item.src}} {{ item.dst }}
