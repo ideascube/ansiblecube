@@ -1,4 +1,4 @@
---
+---
 - name: Check if iSCSI host is accessible
   wait_for: host={{ bsf_iscsi_host }} port=3260 timeout=3
   register: iscsi_host_accessible
