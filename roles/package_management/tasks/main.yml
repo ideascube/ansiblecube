@@ -5,10 +5,14 @@
   failed_when: False
   tags: ['custom', 'package_management']
 
+# We are avoiding iscsi discovery feature, as it may try to connect to a non-routable interface, and thus providing the "default" config file.
+
 - block:
     - debug: msg="iSCSI detected / Trying to mount target"
     - apt: name=open-iscsi update_cache=yes cache_valid_time=86400
-    - open_iscsi: portal={{ bsf_iscsi_host }} login=yes target='iqn.2018-04.com.synology:bsf-montreuil.Deploy-1'
+    - file: path="/etc/iscsi/nodes/{{ iscsi_target }}/10.10.9.10,3260,1" state=directory mode=0600
+    - copy: src=default dest="/etc/iscsi/nodes/{{ iscsi_target }}/10.10.9.10,3260,1" mode=0600
+    - open_iscsi: portal={{ bsf_iscsi_host }} login=yes target={{ iscsi_target }}
     - file: path=/mnt/pkg_source state=directory owner={{ username }} mode=0755
     - mount: src=/dev/sdb1 name=/mnt/pkg fstype=ext4 state=present
     - stat: path=/mnt/pkg_source/{{ generic_project_name }}
@@ -23,7 +27,10 @@
     and stat_result.stat.isdir == True
   tags: ['custom', 'package_management']
 
+# when iscsi_host_accessible.state is not defined means we are outside office
+# when stat_result.stat.exists == False means we are in office but no data is available for our device to deploy.
+
 - include: regular_install.yml
   when: iscsi_host_accessible.state is not defined
-    or stat_result is not defined
+    or stat_result.stat.exists == False
   tags: ['custom', 'update','package_management']
