@@ -12407,6 +12407,14 @@
         "status": "present"
       },
       {
+        "name": "apprends-le-francais-a1-enfants-adolescents-fr",
+        "status": "present"
+      },
+      {
+        "name": "arriver-en-france-et-connaitre-ses-droits-fr",
+        "status": "present"
+      },
+      {
         "name": "economie-et-developpement-durable-fr",
         "status": "present"
       },
@@ -12423,7 +12431,39 @@
         "status": "present"
       },
       {
+        "name": "ecoute-tes-emotions-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "protege-la-planete-fr",
+        "status": "present"
+      },
+      {
         "name": "les-filles-et-les-garcons-quelles-differences-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-a1-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-a2-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprends-le-francais-a2-enfants-adolescents-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-b1-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-b2-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-c1-c2-fr",
         "status": "present"
       },
       {
@@ -12432,6 +12472,10 @@
       },
       {
         "name": "risques-numeriques-fr",
+        "status": "present"
+      },
+      {
+        "name": "filles-garcons-quelle-place-pour-qui-fr",
         "status": "present"
       },
       {
