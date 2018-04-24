@@ -439,7 +439,7 @@ if [[ "$START" = "1" ]]; then
     echo -e "[+] Command line stored in /var/lib/ansible/ansible-pull-cmd-line.sh"
     echo -e "[+] Launch ansiblepull with following arguments: \n$ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars \"$MANAGEMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE $WIFIPWD $GIT_BRANCH\" $TAGS"
 
-    $ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars "$MANAGEMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE $WIFIPWD $GIT_BRANCH" $TAGS > /var/log/ansible-pull.log 2>&1
+    $ANSIBLE_BIN -C $BRANCH -d $ANSIBLECUBE_PATH -i hosts -U $GIT_REPO_URL main.yml --extra-vars "$MANAGEMENT $NAME $TIMEZONE $HOST_NAME $CONFIGURE $WIFIPWD $GIT_BRANCH" $TAGS >> /var/log/ansible-pull.log 2>&1
 
     if [[ "$SEND_REPORT" = "1" ]]; then
         echo "[+] Send ansible-pull report"
