@@ -9,7 +9,7 @@
 
 device_hostname=`echo $(hostname) |sed 's/-/_/g'  | cut -d "_" -f1,2,3`
 
-if [[ -b /dev/sda && -b /dev/sda1 ]]; then
+if [[ -f /media/hdd/ideascube/main/default.sqlite ]]; then
 	chmod -x $0
 
 	cd /var/lib/ansible/local
