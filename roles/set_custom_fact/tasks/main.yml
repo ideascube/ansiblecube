@@ -152,7 +152,7 @@
   tags: [ 'master', 'custom', 'rename', 'update','idc_import','package_management','kalite_import' ]
 
 - name: Write all the variables in /etc/firstStart.csv
-  copy: content="id,{{ ansible_date_time["date"] }},{{ ansible_date_time["time"] }},{{ idc_uniq_device_name }},{{ ansible_machine_id }},{{ ansible_default_ipv4["macaddress"] }},{{ ansible_default_ipv4["address"] }}\n" dest=/etc/firstStart.csv
+  copy: content="id,{{ ansible_date_time["date"] }},{{ ansible_date_time["time"] }},{{ idc_uniq_device_name }},{{ ansible_machine_id }},{{ ansible_default_ipv4["macaddress"]  | default (omit) }},{{ ansible_default_ipv4["address"] | default (omit) }}\n" dest=/etc/firstStart.csv
   when: firststart.stat.exists == False or firststart is undefined
   tags: ['custom','rename']
 
