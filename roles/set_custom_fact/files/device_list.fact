@@ -12024,47 +12024,47 @@
       },
       {
         "name": "creation-sikana-es",
-        "status": "present"
+        "status": "latest"
       },
       {
         "name": "cultura-sikana-es",
-        "status": "present"
+        "status": "latest"
       },
       {
         "name": "formacion-profesional-sikana-es",
-        "status": "present"
+        "status": "latest"
       },
       {
         "name": "informacion-sikana-es",
-        "status": "present"
+        "status": "latest"
       },
       {
         "name": "educacion-ebook-es",
-        "status": "present"
+        "status": "latest"
       },
       {
         "name": "cultura-ebook-es",
-        "status": "present"
+        "status": "latest"
       },
       {
         "name": "informacion-ebook-es",
-        "status": "present"
+        "status": "latest"
       },
       {
         "name": "creatividad-cucuta-video-es",
-        "status": "present"
+        "status": "latest"
       },
       {
         "name": "cultura-general-cucuta-video-es",
-        "status": "present"
+        "status": "latest"
       },
       {
         "name": "informacion-cucuta-video-es",
-        "status": "present"
+        "status": "latest"
       },
       {
         "name": "educacion-cucuta-video-es",
-        "status": "present"
+        "status": "latest"
       }
     ],
     "portal": {
