@@ -9,6 +9,10 @@
           dst: "/var/"
         - src: "var/cache/ideascube"
           dst: "/var/cache/"
+    - command: chown -R {{ username }}: {{ item }}
+      with_items:
+        - "/var/ideascube"
+        - "/var/cache/ideascube"
   when: not ext_hdd
   tags: ['custom', 'package_management']
 
@@ -22,5 +26,9 @@
           dst: "/media/hdd/ideascube"
         - src: "var/cache/ideascube/"
           dst: "/media/hdd/ideascube_cache"
+    - command: chown -R {{ username }}: {{ item }}
+      with_items:
+        - "/var/ideascube"
+        - "/var/cache/ideascube"
   when: ext_hdd
   tags: ['custom', 'package_management']
