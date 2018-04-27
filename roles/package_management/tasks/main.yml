@@ -10,7 +10,7 @@
     - apt: name=open-iscsi update_cache=yes cache_valid_time=86400
     - open_iscsi: portal={{ bsf_iscsi_host }} discover=yes login=yes target={{ iscsi_target }}
     - file: path=/mnt/pkg_source state=directory owner={{ username }} mode=0755
-    - mount: src=/dev/sdb1 name=/mnt/pkg_source fstype=ext4 state=present
+    - mount: src=/dev/sdb1 name=/mnt/pkg_source fstype=ext4 state=mounted
     - stat: path=/mnt/pkg_source/{{ generic_project_name }}
       register: stat_result
   when: iscsi_host_accessible.state is defined and iscsi_host_accessible.state == "started"
