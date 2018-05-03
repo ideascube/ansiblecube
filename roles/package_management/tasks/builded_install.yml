@@ -9,7 +9,7 @@
           dst: "/var/"
         - src: "var/cache/ideascube"
           dst: "/var/cache/"
-    - command: chown -R {{ username }}: {{ item }}
+    - command: "chown -R {{ username }}: {{ item }}"
       with_items:
         - "/var/ideascube"
         - "/var/cache/ideascube"
@@ -26,7 +26,7 @@
           dst: "/media/hdd/ideascube"
         - src: "var/cache/ideascube/"
           dst: "/media/hdd/ideascube_cache"
-    - command: chown -R {{ username }}: {{ item }}
+    - command: "chown -R {{ username }}: {{ item }}"
       with_items:
         - "/var/ideascube"
         - "/var/cache/ideascube"
