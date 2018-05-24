@@ -32,7 +32,7 @@ So far ansiblecube has been tested only on a ARM Olimex Lime2 A20, Debian Jessie
 
 ### What does Ansible do?
 
-This playbook installs :
+**This playbook installs :**
 
 * [ideascube software](http://github.com/ideascube/ideascube/). It can be installed simply with the [apt tool from Debian](http://repos.ideascube.org/debian/jessie). However, ansiblecube will take care of all the small tweaks to make it work.
 
@@ -46,7 +46,7 @@ This playbook installs :
 
 * Synchronise Kalite videos
 
-It will setup :
+**It will setup :**
 
 * dnsmasq \(to resolv local domain\)
 
