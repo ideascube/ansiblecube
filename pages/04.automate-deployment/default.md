@@ -1,4 +1,6 @@
-# How to automate deployment
+---
+title: 'Automate deployment'
+---
 
 You may have to duplicate on several servers the same configuration.
 
