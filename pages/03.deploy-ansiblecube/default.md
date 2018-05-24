@@ -1,4 +1,6 @@
-# Prepare the deployment!
+---
+title: 'Deploy AnsibleCube with BuildMyCube'
+---
 
 ## Download buildMyCube.sh
 
