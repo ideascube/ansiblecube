@@ -1,0 +1,4 @@
+localhost ansible_connection=local
+
+[SystemPushInstall]
+10.10.8.25

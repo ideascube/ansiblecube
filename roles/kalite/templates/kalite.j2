@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# Author: Foundation for Learning Equality
+#
+# /etc/init.d/kalite
+
+### BEGIN INIT INFO
+# Provides:          kalite
+# Required-Start:    $local_fs $remote_fs $network $syslog $named
+# Required-Stop:
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: ka-lite daemon, a local Khan Academy content server
+### END INIT INFO
+
+set -e
+
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+
+. /lib/lsb/init-functions
+
+case "$1" in
+  start)
+    # run ka-lite as another user, the one who generated this file
+    su ideascube -s /bin/bash -c "rm -f /home/ideascube/.kalite/kalite_startup.lock"
+    su ideascube -s /bin/bash -c "/home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py start"
+    ;;
+  stop)
+    su ideascube -s /bin/bash -c "/home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py stop"
+    ;;
+  restart)
+    su ideascube -s /bin/bash -c "/home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py stop"
+    su ideascube -s /bin/bash -c "/home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py start"
+    ;;
+  *)
+    log_success_msg "Usage: /etc/init.d/kalite {start|stop|restart}"
+    exit 1
+esac

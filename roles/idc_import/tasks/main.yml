@@ -1,0 +1,43 @@
+---
+- include_vars: group_vars/{{ ansible_architecture }}.yml
+
+- name: Open all outgoing connection to allow NFS
+  command: iptables -t filter -I OUTPUT -j ACCEPT
+
+- name: Install cifs-utils
+  apt: name=cifs-utils state=present
+
+- name: Create a working dir for NFS shared
+  file: path=/media/synology/ state=directory
+
+- name: Mount CIFS Share
+  mount:
+    name: /media/synology
+    src: //{{koombookDoctor}}/content
+    fstype: cifs
+    opts: guest
+    state: mounted
+
+- name: Check the disk usage
+  shell: df -h /
+  register: df
+  changed_when: False
+- name: Disk Usage on /
+  debug: var=df.stdout_lines
+
+- name: Import data
+  shell: ideascube import_medias /media/synology/{{ item }} > /var/log/ideascube_import.log 2>&1
+  with_items: '{{ (ansible_local.device_list[generic_project_name].idc_import | default (omit)).content_name | default (omit) }}'
+
+- name: Check the disk usage
+  shell: df -h /
+  register: df
+  changed_when: False
+- name: Disk Usage on /
+  debug: var=df.stdout_lines
+
+- name: Unmount shared folder from a NFS Share
+  command: umount /media/synology
+
+- name: Set permission back to the user instead of root after importing the medias
+  file: path=/var/ideascube/ owner={{ username }} group={{ username }}  mode=0755 recurse=yes

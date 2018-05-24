@@ -1,0 +1,56 @@
+#!/bin/bash
+
+IF=$1
+STATUS=$2
+PROC=`pgrep ansible-pull`
+
+WGET='wget --user-agent=ansible-pull'
+
+function flash_led()
+{
+    # Check wether we have LEDs -- servers dont, koombooks do
+    [ -r /sys/class/leds/a20-olinuxino-lime2:green:usr ] && {
+
+        while :
+        do
+                echo 0 >/sys/class/leds/a20-olinuxino-lime2:green:usr/brightness
+                sleep 0.1
+                echo 1 >/sys/class/leds/a20-olinuxino-lime2:green:usr/brightness
+                sleep 0.1
+        done
+    }
+}
+
+if [[ "$IF" == eth* || "$IF" == "wlan1" ]] && [ -z "$PROC"  ]
+then
+    case "$STATUS" in
+        up)
+			/usr/local/bin/ansible-pull {% if ansible_default_ipv4.gateway | default(omit) != bsf_gateway %}-o{% endif %} -s 120 -C {{ git_branch }} -d /var/lib/ansible/local -i hosts -U https://github.com/ideascube/ansiblecube.git main.yml --tags "update"
+        ;;
+        *)
+            exit 0;
+        ;;
+    esac
+
+    status=$(tail -3 /var/log/ansible-pull.log)
+    description=$(grep TASK /var/log/ansible-pull.log | sed -n '$p' | cut -d "[" -f 2 | sed 's/*//g' | sed 's/ /_/g')
+    device_hostname=$(hostname)
+
+    case $status in
+        *"failed=1"*)
+            flash_led &
+            $WGET http://report.bsf-intranet.org/device=$device_hostname/ansiblepull=fail/msg="$description" > /dev/null 2>&1
+        ;;
+        *"failed=0"*)
+            [ -r /sys/class/leds/a20-olinuxino-lime2:green:usr ] && echo heartbeat >/sys/class/leds/a20-olinuxino-lime2:green:usr/trigger
+            $WGET http://report.bsf-intranet.org/device=$device_hostname/ansiblepull=success > /dev/null 2>&1
+        ;;
+        *"Local modifications exist in repository"*)
+            flash_led &
+            $WGET http://report.bsf-intranet.org/device=$device_hostname/ansiblepull=modificationExist > /dev/null 2>&1
+        ;;
+        *)
+            exit 0;
+        ;;
+    esac
+fi

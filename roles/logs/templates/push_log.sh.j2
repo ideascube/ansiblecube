@@ -1,0 +1,20 @@
+#!/bin/bash
+IF=$1
+STATUS=$2
+PROC=`pgrep rsync`
+
+if [[ "$IF" == "eth0" || "$IF" == "wlan1" ]] && [ -z "$PROC"  ]
+then
+    case "$STATUS" in
+        up)
+            /home/ideascube/hdw_info.sh
+            dpkg -l > /var/log/apt/dpkg.list
+            pip freeze > /var/log/pip.freeze
+            iptables-save > /var/log/iptables.rules
+            sqlite3 /var/ideascube/main/default.sqlite "select id,title from mediacenter_document" | awk -F'|' '{print "\""$1"\": " $2}' > {{ bsf_log_folder }}/{{ ansible_hostname }}_ideascube_doc_mapping.yaml
+            rsync -azP /var/log/nginx/* /var/log/kern.log /var/log/messages /var/log/syslog* /var/log/ansible-pull.log /tmp/hdw_info.txt /var/log/ansible-pull.log* /var/log/apt/dpkg.list* /var/log/pip.freeze* /var/log/iptables.rules /var/log/uwsgi {{ bsf_log_folder }} {{ central_server }}:/ansible/logs/{{ ansible_hostname }}/
+        ;;
+        *)
+        ;;
+    esac
+fi

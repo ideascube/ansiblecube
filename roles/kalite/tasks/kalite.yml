@@ -1,0 +1,138 @@
+---
+- include_vars: group_vars/{{ ansible_architecture }}.yml
+  tags: ['custom', 'update']
+
+- name: Ensure kalite is stopped if service exist
+  service: name=kalite state=stopped
+  ignore_errors: yes
+  tags:
+    - custom
+
+- name: Create a working dir Kalite
+  file: path=/home/{{ username }}/.kalite state=directory
+  tags:
+    - custom
+
+- name: Uninstall previous Ka-lite version
+  pip: name=ka-lite
+    state=absent
+  when: ansible_local.installed_software.software.kalite | default (omit) | version_compare('0.16.9', '<')
+  tags:
+    - update
+
+- name: Install specific version of django
+  pip: name="django<2.0"
+    chdir=/home/{{ username }}/.kalite
+    virtualenv_command=/usr/bin/virtualenv
+    virtualenv=/home/{{ username }}/.kalite/env
+  tags: ['custom']
+
+- name: Install Ka-lite
+  pip: name=ka-lite
+    version={{ ansible_local.device_list[generic_project_name].kalite.version | default ('0.16.9') }}
+    chdir=/home/{{ username }}/.kalite
+    virtualenv_command=/usr/bin/virtualenv
+    virtualenv=/home/{{ username }}/.kalite/env
+  register: kalite_installation 
+  tags: ['custom', 'update']
+
+- name: Give rights to ideascube 
+  command: chown -R {{ username }}:{{ username }} /home/{{ username }}/.kalite
+  tags: ['custom', 'update']
+
+- name: Create a user admin for kalite
+  become: yes
+  become_user: ideascube
+  command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py manage setup --username=admin --password=admin --noinput
+  tags:
+    - custom
+
+- name: Include task needed when using an external hard drive
+  include: ext_hdd.yml
+  when: ext_hdd
+  tags:
+    - custom
+
+- name: Copy nginx vhost
+  template: src=kalite.vhost.j2 dest=/etc/nginx/sites-available/kalite
+  tags:
+    - custom
+
+- name: Nginx enable Virtual host
+  file: src=/etc/nginx/sites-available/kalite dest=/etc/nginx/sites-enabled/kalite state=link
+  notify: restart nginx
+  tags:
+    - custom
+
+- name: Remove old sysvinit startup script
+  file: path=/etc/init.d/kalite state=absent
+  tags:
+    - update
+
+- name: Setup startup file
+  copy: src=kalite.service dest=/etc/systemd/system/kalite.service
+  tags: ['custom', 'update']
+
+- name: Enable service kalite
+  service: name=kalite enabled=yes
+  tags: ['custom', 'update']
+
+- name: Generate a zone for kalite
+  become: yes
+  become_user: ideascube
+  command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py manage generate_zone
+  ignore_errors: yes
+  tags:
+    - custom
+
+- name: Import Kalite videos if we are at BSF
+  include: import_videos.yml
+  when: cache_machine.state|default(omit) == "present"
+  tags: ['custom', 'kalite_import']
+
+- name: Run kalite manage setup after upgrade
+  become: yes
+  become_user: ideascube
+  command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py manage setup --noinput
+  when: kalite_installation.changed == True
+  tags:
+    - update
+
+- name: Download Kalite language pack
+  become: yes
+  become_user: ideascube
+  command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py manage retrievecontentpack download {{ item }}
+  with_items: "{{ (ansible_local.device_list[generic_project_name].kalite | default (omit)).language | default(omit) }}"
+  when: kalite_installation.changed == True and cache_machine.state|default(omit) != "present"
+  tags: ['custom', 'update']
+
+- name: Start Kalite
+  service: name=kalite state=started
+  tags:
+    - custom
+
+- name: Restart Kalite
+  service: name=kalite state=restarted
+  when: kalite_installation.changed == True
+  tags:
+    - update
+
+- name: Perfom a video scan on the device
+  become: yes
+  become_user: ideascube
+  command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py manage videoscan
+  async: 1800
+  poll: 0
+  when: kalite_installation.changed == True
+  tags: ['custom', 'update']
+
+- name: Get ka-lite version
+  shell: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py --version ; echo
+  register: kalite_newversion
+  tags: ['custom', 'update']
+
+- set_fact: kalite_version="{{ kalite_newversion.stdout }}"
+  tags: ['custom', 'update']
+
+- debug: msg="kalite {{ kalite_version }} is now the current version."
+  tags: ['custom', 'update']

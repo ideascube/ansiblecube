@@ -1,0 +1,40 @@
+---
+#Network
+hotspot_ip: 192.168.2.1
+hotspot_source_range : 192.168.2.2-192.168.2.254
+external_hotspot_ip: 192.168.3.1
+external_hotspot_source_range: 192.168.3.2-192.168.3.254
+hotspot_interface: wlan0
+lan_interface: eth0
+client_interface: wlan1
+
+#System
+username: ideascube
+password: $6$YcJS1HjRAv/$1bUosoPalzHEvfpx71UhnG6vCeckTGbA5U1i6UpA8X21Jrv7fYRPyNrq/YWuiBp3xQWd5kRRhrKKPHcbTkkfQ/
+repo_url: https://github.com/ideascube/ansiblecube.git
+central_server: ansible@tincmaster.wan.bsf-intranet.org
+filer_bsf: http://filer.bsf-intranet.org
+timezone: "Europe/Paris"
+koombookDoctor: "koombook-doctor.local"
+bsf_gateway: "10.10.9.1"
+kiwix_version: "1.0"
+mongodb_version: "2.4.10"
+own_config_file: False
+ideascube_upgrade_frozen: False
+git_branch: oneUpdateFile
+samba: False
+syncthing: False
+syncthing_master_id_device: ""
+
+#Apps path
+mook_path: /home/{{ username }}
+samba_dir: /home/{{username}}/samba_share
+zim_path: /var/ideascube/kiwix
+
+#Domaine name
+kalite_server_name: khanacademy.{{hostname}}
+kolibri_server_name: kolibri.{{hostname}}
+appinventor_server_name: appinventor.{{hostname}}
+
+#Preprod vars
+crashbook_dns_domain: "cloud.online.net"

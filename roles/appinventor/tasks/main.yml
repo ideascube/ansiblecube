@@ -1,0 +1,4 @@
+---
+- include: appinventor.yml
+
+- include: ../../../post_install.yml task=appinventor task_version="{{ version }}"

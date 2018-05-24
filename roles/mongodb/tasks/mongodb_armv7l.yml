@@ -1,0 +1,56 @@
+- name: download mongo package
+  get_url: url={{filer_bsf}}/mongo.zip dest=/home/mongo.zip timeout=30
+  tags:
+    - custom
+
+- name: Copy and unzip mongodb armhf version archive
+  unarchive: src=/home/mongo.zip dest=/opt/ copy=no
+  tags:
+    - custom
+
+- name: Create a mongod symlink in PATH
+  file: src=/opt/mongo/bin/mongod dest=/usr/bin/mongod state=link
+  tags:
+    - custom
+
+- name: Add mongodb user
+  user: name=mongodb group=nogroup shell=/etc/false createhome=no
+  tags:
+    - custom
+
+- name: Create log directory
+  file: path=/var/log/mongodb/ state=directory mode=0755 owner=mongodb group=nogroup recurse=yes
+  tags: [custom,update]
+
+- name: Create data directory
+  file: path=/media/hdd/mongodb state=directory mode=0755 owner=mongodb group=nogroup recurse=yes
+  tags: [custom,update]
+
+- name: Copy mongodb repair script
+  copy: src=mongo_repair.sh dest=/opt/mongo/mongo_repair.sh mode=755
+  tags: [custom,update]
+
+- name: Copy logrotate file for mongodb
+  copy: src=mongo_logrotate dest=/etc/logrotate.d/mongo mode=755
+  tags: [custom,update]
+
+- name: Setup startup file
+  copy: src=mongodb.service dest=/etc/systemd/system/mongodb.service owner=root group=root
+  tags: [custom,update]
+
+- name: Delete sysvinit file
+  file: path=/etc/init.d/mongodb state=absent
+  tags:
+    - update
+
+- name: Create a mongodb service override unit directory
+  file: path=/etc/systemd/system/mongodb.service.d state=directory owner=root group=root
+  tags: [custom,update]
+
+- name: Drop in a unit file so uwsgi starts after mongodb
+  copy: src=before-uwsgi.conf dest=/etc/systemd/system/mongodb.service.d/before-uwsgi.conf owner=root group=root
+  tags: [custom,update]
+
+- name: Enable service mongodb
+  service: name=mongodb enabled=yes
+  tags: [custom,update]

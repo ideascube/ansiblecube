@@ -1,0 +1,38 @@
+---
+- include_vars: group_vars/{{ ansible_architecture }}.yml
+
+- name: Open all outgoing connection to allow NFS, dirty but working ! 
+  command: iptables -t filter -I OUTPUT -j ACCEPT
+
+- name: Install nfs-common
+  apt: name=cifs-utils state=present
+
+- name: Create a working dir for NFS shared
+  file: path=/media/koombookDoctor/ state=directory
+
+- name: Mount CIFS Share
+  mount:
+    name: /media/koombookDoctor
+    src: //{{koombookDoctor}}/kalite
+    fstype: cifs
+    opts: guest
+    state: mounted
+
+- name: Copy kalite videos
+  synchronize: src=/media/koombookDoctor/{{ item }}/ 
+    dest=/home/{{username}}/.kalite/content/ 
+    recursive=yes
+    compress=no
+  with_items: "{{ ansible_local.device_list[generic_project_name].kalite.language | default('fr')}}"
+
+- name: Set permission back to the user instead of root after importing the medias
+  file: path=/home/{{username}}/.kalite/content/ owner={{ username }} group={{ username }}  mode="u=rwX,go=rX" recurse=yes
+
+- name: Install Kalite language pack
+  become: yes
+  become_user: ideascube
+  command: /home/ideascube/.kalite/env/bin/python2 /home/ideascube/.kalite/env/share/kalite/kalitectl.py manage retrievecontentpack local {{ item }} /media/koombookDoctor/contentpacks/{{ item }}.zip
+  with_items: "{{ (ansible_local.device_list[generic_project_name].kalite | default (omit)).language | default(omit) }}"
+
+- name: Unmount shared folder from a NFS Share
+  command: umount /media/koombookDoctor

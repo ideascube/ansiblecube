@@ -1,0 +1,8 @@
+Name = {{ tinc_localhost_name }}
+AddressFamily = ipv4
+Interface = {{vpn_name}}
+
+BindToAddress = * {{ vpn_port }}
+Mode = switch
+
+ConnectTo = {{ vpn_master_server }}

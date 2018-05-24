@@ -1,0 +1,7 @@
+---
+- name: restart syncthing
+  service: name=syncthing state=restarted
+  notify: reload systemd
+
+- name: reload systemd
+  shell: systemctl daemon-reload

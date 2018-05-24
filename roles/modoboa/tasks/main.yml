@@ -1,0 +1,23 @@
+---
+- include: modoboa.yml
+  when: ansible_local.installed_software.software.modoboa is undefined
+
+- name: Enable default server for SSL
+  lineinfile:
+    dest: '/etc/nginx/sites-enabled/mail.{{ fqdn_mail }}.conf'
+    line: 'listen 443 ssl default_server;'
+    regexp: 'listen 443'
+  when: ansible_local.device_list[generic_project_name].portal is undefined
+    or (ansible_local.device_list[generic_project_name].portal.activated | default(omit)) |bool == False
+  notify: reload nginx
+
+- name: Disable default server for SSL
+  lineinfile:
+    dest: '/etc/nginx/sites-enabled/mail.{{ fqdn_mail }}.conf'
+    line: 'listen 443 ssl;'
+    regexp: 'listen 443'
+  when: ansible_local.device_list[generic_project_name].portal is defined
+    and ansible_local.device_list[generic_project_name].portal.activated|bool == True
+  notify: reload nginx
+
+- include: ../../../post_install.yml task=modoboa task_version="{{modoboa_version}}"

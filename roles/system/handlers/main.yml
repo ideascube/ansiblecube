@@ -1,0 +1,10 @@
+---
+
+- name: update timezone
+  command: dpkg-reconfigure --frontend noninteractive tzdata
+
+- name: Update grub
+  command: update-grub
+
+- name: Reboot device
+  command: reboot

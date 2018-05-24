@@ -1,0 +1,127 @@
+---
+- include_vars: group_vars/{{ ansible_architecture }}.yml
+  tags: ['master','update']
+
+- name: Get kiwix_version from device_list if exist
+  set_fact: kiwix_version="{{ ansible_local.device_list[generic_project_name].kiwix_version | default (omit)}}"
+  when: ansible_local.device_list[generic_project_name].kiwix_version  is defined
+  tags: ['master','custom','update']
+
+- debug: msg="kiwix_version {{ kiwix_version }}"
+  tags: ['master','custom','update']
+
+- name: Stop kiwix-serve if needed
+  service: name=kiwix-server state=stopped
+  when: kiwix_version > ansible_local.installed_software.software.kiwix | default ('0.9')
+    or kiwix_version < ansible_local.installed_software.software.kiwix | default ('0.9')
+  tags: ['update']
+
+- name: Copying kiwix binaries x86_64 architecture
+  get_url: url={{filer_bsf}}/kiwix-serve-x86_64.v{{ kiwix_version }} dest=/usr/local/bin/kiwix-serve mode=755 timeout=30 backup=yes force=yes
+    checksum="md5:717d8ffda5cabee56afbaa0d9cbcbe75"
+  when: (ansible_architecture == 'x86_64' or ansible_architecture == 'i386')
+  tags: ['master','custom','update']
+
+- name: Copying kiwix binaries v1.0 for armhf architecture
+  get_url: url={{filer_bsf}}/kiwix-serve-armhf.v{{ kiwix_version }} dest=/usr/local/bin/kiwix-serve mode=755 timeout=30 backup=yes force=yes
+    checksum="md5:65f9e6ceeac16c1910a3ef9fae35646e"
+  when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and kiwix_version == "1.0"
+  tags: ['master','custom','update']
+
+- name: Copying kiwix binaries v0.9 for armhf architecture
+  get_url: url={{filer_bsf}}/kiwix-serve-armhf.v{{ kiwix_version }} dest=/usr/local/bin/kiwix-serve mode=755 timeout=30 backup=yes force=yes
+    checksum="md5:e0ebaad429daf2825d4d316600198b43"
+  when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and kiwix_version == "0.9"
+  tags: ['master','custom','update']
+
+- name: Create a kiwix directory in ideascube folder
+  file: path={{zim_path}}/ owner={{username}} group={{username}} state=directory
+  tags:
+    - master
+
+- name: Setup startup file
+  template: src=kiwix-server.service.j2 dest=/etc/systemd/system/kiwix-server.service
+  tags: ['master','update']
+
+- name: Remove nginx configuration otherwise, if hostname var change it won't be overrided
+  file: path=/etc/nginx/sites-available/kiwix state=absent
+  tags:
+    - custom
+
+- name: Copy nginx vhost
+  template: src=nginx.vhost.j2 dest=/etc/nginx/sites-available/kiwix
+  tags: ['master','custom','update']
+
+- name: Ensure that Ideascube cache folder belong to ideascube user 
+  file: path=/var/cache/ideascube/catalog/ 
+    owner={{ username }} group={{ username }} state=directory recurse=yes
+  tags: 
+    - update
+
+- name: Remove old OSMybon quick fix
+  become: yes
+  become_user: ideascube
+  command: ideascube catalog remotes remove OSMybon
+  tags: ['master','custom','update']
+  ignore_errors: yes
+
+- name: Install catalogs
+  become: yes
+  become_user: ideascube
+  command: ideascube catalog remotes add "{{ item.name }}" "{{ item.description }}" "{{ item.url }}"
+  with_items:
+  - name: "Kiwix"
+    description: "Kiwix ZIM content"
+    url: http://catalog.ideascube.org/kiwix.yml
+  - name: "StaticSites"
+    description: "Static sites"
+    url: http://catalog.ideascube.org/static-sites.yml
+  - name: "OSMybon"
+    description: "Experimental OSM catalog"
+    url: http://catalog.ideascube.org/osmaps.yml
+  - name: "Omeka"
+    description: "Omeka packages"
+    url: http://catalog.ideascube.org/omeka.yml
+  - name: "bibliotecamovil"
+    description: "Spanish packages"
+    url: http://catalog.ideascube.org/bibliotecamovil.yml
+  tags: ['master','custom','update']
+
+- name: Nginx enable Virtual host
+  file: src=/etc/nginx/sites-available/kiwix dest=/etc/nginx/sites-enabled/kiwix state=link
+  notify: restart nginx
+  tags: ['master','update']
+
+- name: Enable service kiwix
+  service: name=kiwix-server enabled=yes
+  notify: restart kiwix
+  tags: ['master','update']
+
+#- name: check for wikipedia rc.d files
+#  shell: ls /etc/rc5.d/S*wikipedia ; echo
+#  register: file_exist
+#  tags:
+#    - update
+#
+#- name: parse rc.d files check output
+#  stat: path={{file_exist.stdout}}
+#  register: st
+#  tags:
+#    - update
+#
+#- include: dust-removal.yml
+#  when: st.stat.exists == True
+#  tags:
+#    - update
+
+# - name: Checkout installed.yml file size 
+#   stat: path=/var/ideascube/main/catalog/installed.yml
+#   register: installed_zim
+#   tags:
+#     - update
+
+# - include: update_catalog.yml
+#   when: installed_zim.stat.size is undefined
+#     or installed_zim.stat.size < 5
+#   tags:
+#     - update

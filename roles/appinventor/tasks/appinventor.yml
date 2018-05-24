@@ -1,0 +1,27 @@
+---
+  - name: Install JDK package
+    apt: name=openjdk-7-jdk state=latest
+
+  - name: unarchive App Inventor
+    unarchive: src={{filer_bsf}}/AppInventorOffline_07Sept2015.zip dest=/home/{{username}}/ copy=no
+
+  - name: Change permissions
+    file: path=/home/{{username}}/Ai2LiveComplete/startBuildServer.sh owner=www-data group=www-data mode=0755
+
+  - name: Change permissions
+    file: path=/home/{{username}}/Ai2LiveComplete/startAIServer.sh owner=www-data group=www-data mode=0755
+
+  - name: Setup startup file
+    template: src=appinventor.j2 dest=/etc/init.d/appinventor owner=root group=root mode=755
+
+  - name: Copy nginx vhost
+    template: src=vhost.j2 dest=/etc/nginx/sites-available/appinventor
+    register: vhost
+
+  - name: Nginx enable Virtual host
+    file: src=/etc/nginx/sites-available/appinventor dest=/etc/nginx/sites-enabled/appinventor state=link
+    when: vhost.changed
+    notify: restart nginx
+
+  - name: Enable service AppInventor
+    service: name=appinventor enabled=yes

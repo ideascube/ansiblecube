@@ -1,0 +1,54 @@
+---
+- include_vars: group_vars/{{ ansible_architecture }}.yml
+
+- name: Install Samba packages
+  apt:
+    name: "{{ item }}"
+    state: "latest"
+  with_items:
+    - "samba"
+    - "samba-common"
+    - "samba-common-bin"
+
+- name: Generate netbios name
+  shell: echo {{ansible_hostname}} | cut -d "-" -f3,4 | cut -c 1-15
+  register: netbios_name
+
+- name: Configure Samba
+  template:
+    src: "smb.conf.j2"
+    dest: "/etc/samba/smb.conf"
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  notify: [ "Check samba config" ]
+
+- name: Create samba directory for device w/o external HDD
+  file:
+    path: "{{ samba_dir }}"
+    state: "directory"
+    owner: "ideascube"
+    group: "ideascube"
+    mode: "0777"
+  when: ext_hdd == False
+
+- name: Create samba directory on external HDD
+  file:
+    path: "/media/hdd/samba_share"
+    state: "directory"
+    owner: "ideascube"
+    group: "ideascube"
+    mode: "0777"
+  when: ext_hdd
+
+- name: Symlink {{samba_dir}} to external HDD
+  file:
+    src: /media/hdd/samba_share
+    dest: "{{samba_dir}}"
+    state: link
+  when: ext_hdd
+
+- name: Register Samba service
+  service:
+    name: samba-ad-dc
+    enabled: yes

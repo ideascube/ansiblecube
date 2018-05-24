@@ -1,0 +1,13 @@
+---
+- ini_file: dest=/etc/ansible/facts.d/installed_software.fact
+            section=software
+            option={{ task }}
+            value={{ task_version }}
+
+- name: reload ansible_local
+  setup: filter=ansible_local
+
+- name: Push file to central_server
+  shell: echo "{{ ansible_date_time["date"] }},{{ ansible_date_time["time"] }},{{ ansible_hostname }},{{ task }},{{ task_version }}" | ssh {{ central_server }} "cat >> ./ansible/installed_software/sofware_list.csv"
+  when: ansible_local.installed_software.management.managed_by_bsf|default(False)|bool == True
+  ignore_errors: yes

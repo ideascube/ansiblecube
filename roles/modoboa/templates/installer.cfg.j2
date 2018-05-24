@@ -1,0 +1,94 @@
+[general]
+hostname = mail.%(domain)s
+
+[certificate]
+generate = true
+type = self-signed
+
+[letsencrypt]
+email = admin@example.com
+
+[database]
+engine = postgres
+host = 127.0.0.1
+install = true
+
+[postgres]
+user = postgres
+password = 
+
+[mysql]
+user = root
+password = Iz84lM91VWk1WMvI
+charset = utf8
+collation = utf8_general_ci
+
+[modoboa]
+user = modoboa
+home_dir = /srv/modoboa
+venv_path = %(home_dir)s/env
+instance_path = %(home_dir)s/instance
+timezone = {{ timezone }}
+dbname = modoboa
+dbuser = modoboa
+dbpassword = vyY2ZAHTB76c
+extensions = modoboa-pdfcredentials modoboa-postfix-autoreply modoboa-webmail modoboa-contacts
+devmode = false
+
+[automx]
+enabled = false
+user = automx
+config_dir = /etc
+home_dir = /srv/automx
+venv_path = %(home_dir)s/env
+instance_path = %(home_dir)s/instance
+
+[amavis]
+enabled = false
+user = amavis
+max_servers = 1
+dbname = amavis
+dbuser = amavis
+dbpassword = rFHRdffaDenMZ5dV
+
+[clamav]
+enabled = false
+user = clamav
+
+[dovecot]
+enabled = true
+config_dir = /etc/dovecot
+user = vmail
+home_dir = /srv/vmail
+mailboxes_owner = vmail
+extra_protocols = 
+postmaster_address = postmaster@%(domain)s
+
+[nginx]
+enabled = true
+config_dir = /etc/nginx
+
+[razor]
+enabled = false
+config_dir = /etc/razor
+
+[postfix]
+enabled = true
+config_dir = /etc/postfix
+message_size_limit = 11534336
+
+[postwhite]
+enabled = true
+config_dir = /etc
+
+[spamassassin]
+enabled = false
+config_dir = /etc/mail/spamassassin
+dbname = spamassassin
+dbuser = spamassassin
+dbpassword = GHV7u3kCAo5yaoC3
+
+[uwsgi]
+enabled = true
+config_dir = /etc/uwsgi
+nb_processes = 2

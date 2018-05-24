@@ -1,0 +1,9 @@
+---
+#Network
+hostname: koombook.lan
+hotspot_name: koombook
+ideascube_project_name: koombook
+ideascube_branding: koombook
+managed_by_bsf: True
+old_kiwix_path: /media/hdd
+bsf_log_folder: /media/hdd/bsf

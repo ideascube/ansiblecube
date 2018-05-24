@@ -1,0 +1,65 @@
+---
+- name: Install Network-Manager
+  apt: name=network-manager state=latest
+  notify: restart dnsmasq
+  tags: 
+    - master
+
+- name: Create entry to clone/pull git repository
+  template: src=nm-dispatcher.j2 dest=/etc/NetworkManager/dispatcher.d/ansiblePullUpdate
+    owner=root group=root mode=0755
+  tags: ['custom', 'update','rename']
+
+- name: Create entry to ping the KoomBook-doctor
+  template: src=02koombook-doctor.j2 dest=/etc/NetworkManager/dispatcher.d/02koombook-doctor
+    owner=root group=root mode=0755
+  tags: ['custom', 'update']
+
+- name: Start KoomBook-doctor script 
+  command: /etc/NetworkManager/dispatcher.d/02koombook-doctor eth0 up
+  tags: 
+    - custom
+
+- name: Add a cron entry to execute ansible-pull
+  cron: name="Execute ansible-pull automatically" minute="0" hour="0" day="1" 
+    job="/etc/NetworkManager/dispatcher.d/ansiblePullUpdate eth0 up"
+  tags: ['custom', 'update']
+
+- name: remove old way of launching ansible-pull
+  file: path=/etc/dhcp/dhclient-exit-hooks.d/ansiblePullUpdate state=absent
+  tags:
+    - update
+
+- name: Make sure wlan1 is not connected to wlan0
+  file: path=/etc/NetworkManager/system-connections/{{ansible_hostname}} state=absent
+  tags:
+    - update
+
+- name: Copy script to manage external antenna
+  copy:
+    src: add-IP-address-for-external-antenna.sh
+    dest: /usr/local/bin/add-IP-address-for-external-antenna.sh
+    owner: root
+    group: root
+    mode: 0755
+  when: ansible_local.device_list[generic_project_name].external_antenna| default (False) |bool == True
+  tags: ['custom', 'update']
+
+- name: Copy systemd unit to launch external-antenna script
+  copy:
+    src: external-antenna.service
+    dest: /etc/systemd/system/external-antenna.service
+  when: ansible_local.device_list[generic_project_name].external_antenna| default (False) |bool == True
+  tags: ['custom', 'update']
+
+- name: Enabling systemd unit
+  service: 
+    enabled: yes
+    name: external-antenna
+  when: ansible_local.device_list[generic_project_name].external_antenna| default (False) |bool == True
+  tags: ['custom', 'update']
+
+# - name: Remove oneUpdateFile branch if present in ansiblePullUpdate file
+#   replace: dest=/etc/NetworkManager/dispatcher.d/ansiblePullUpdate regexp='-C oneUpdateFile' replace='' backup=yes
+#   tags: 
+#     - update

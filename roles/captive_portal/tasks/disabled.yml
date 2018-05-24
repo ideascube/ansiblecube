@@ -1,0 +1,74 @@
+--- 
+- name: Cleaning captive portal specific rules
+  command: "{{item}}"   
+  with_items:
+    - /sbin/iptables -t nat -F CAPTIVE_HTTP
+    - /sbin/iptables -t nat -F CAPTIVE_HTTPS
+    - /sbin/iptables -t nat -F CAPTIVE_PASSLIST
+    - /sbin/iptables -t nat -X CAPTIVE_HTTP
+    - /sbin/iptables -t nat -X CAPTIVE_HTTPS
+    - /sbin/iptables -t nat -X CAPTIVE_PASSLIST
+  tags: ['custom', 'update']
+  ignore_errors: yes
+
+- name: Cleaning captive portal PREROUTING rules
+  command: /sbin/iptables -t nat -D PREROUTING -p tcp -m tcp ! -d "{{ item.dst }}" --dport 80 -m iprange --src-range {{ item.src }} -j CAPTIVE_HTTP
+  with_items:
+    - dst: "{{ hotspot_ip }}"
+      src: "{{ hotspot_source_range }}"
+    - dst: "{{ external_hotspot_ip }}"
+      src: "{{ external_hotspot_source_range }}"
+  tags: ['custom', 'update']
+  ignore_errors: yes
+
+- name: Cleaning captive portal PREROUTING rules
+  command: /sbin/iptables -t nat -D PREROUTING -p tcp -m tcp ! -d "{{ item.dst }}" --dport 443 -m iprange --src-range {{ item.src }} -j CAPTIVE_HTTPS
+  with_items:
+    - dst: "{{ hotspot_ip }}"
+      src: "{{ hotspot_source_range }}"
+    - dst: "{{ external_hotspot_ip }}"
+      src: "{{ external_hotspot_source_range }}"
+  tags: ['custom', 'update']
+  ignore_errors: yes
+
+- name: Overwrite /etc/iptables.rules to include new rules set
+  shell: /sbin/iptables-save > /etc/iptables.rules
+  tags: ['custom', 'update']
+
+- name: Disabling systemd service clean-up.service
+  service: enabled=no name=clean-up
+  tags: ['custom', 'update']
+
+- name: Remove cron entry to clean iptables rules
+  cron:
+    name: "Clear dead connections from CAPTIVE_PASSLIST"
+    minute: "*/5"
+    job: "/usr/local/bin/clean_iptables.sh"
+    state: absent
+  tags: ['custom', 'update']
+
+- name: Setting default dnsmasq config file
+  lineinfile: 
+    dest: /etc/default/dnsmasq
+    regexp: '^DNSMASQ_OPTS='
+    line: 'DNSMASQ_OPTS="--conf-file=/etc/dnsmasq.conf"'
+  notify: restart dnsmasq
+
+- name: Remove unneeded files
+  file: name={{item}} state=absent
+  with_items:
+    - /var/www/captiveportal/cap.py
+    - /var/www/captiveportal
+    - /etc/nginx/sites-enabled/captiveportal
+    - /etc/nginx/sites-available/captiveportal
+    - /etc/nginx/sites-enabled/redirect
+    - /etc/nginx/sites-available/redirect
+    - /etc/uwsgi/apps-enabled/captive.ini
+    - /etc/uwsgi/apps-available/captive.ini
+    - /etc/systemd/system/clean-up.service
+    - /usr/local/bin/clean-up-dnsmasq.sh
+    - /etc/NetworkManager/dispatcher.d/03dnsmasq
+    - /usr/local/bin/clean_iptables.sh
+  notify: 
+    - restart nginx
+    - restart uwsgi

@@ -1,0 +1,97 @@
+---
+- name: Ensure that Ideascube folder belong the ideascube user 
+  file: path=/media/hdd/ideascube/ owner={{ username }} group={{ username }} recurse=yes state=directory
+  tags: 
+    - update
+    
+- name: Verify if ideascube folder does exist on system file
+  stat: path=/var/ideascube
+  register: p
+  tags: ['custom', 'update']
+
+- name: Remove existing folder on external hard drive
+  file: path=/media/hdd/ideascube state=absent
+  when: p.stat.isdir is defined and p.stat.isdir
+  tags:
+    - custom
+  
+- name: Move ideascube folder to the hard drive
+  command: mv /var/ideascube /media/hdd/
+  when: p.stat.isdir is defined and p.stat.isdir
+  tags:
+    - custom
+
+- name: Backup old ideascube var dir
+  command: mv -f /var/ideascube/ /var/old_ideascube
+  when: p.stat.isdir is defined and p.stat.isdir
+  tags:
+    - update
+
+- name: Check if ideascube folder contain old folder "storage"
+  stat: path=/media/hdd/ideascube/storage
+  register: p_storage
+  tags:
+    - update
+
+- name: Move content from storage folder to ideascube folder
+  shell: rsync -av /media/hdd/ideascube/storage/* /media/hdd/ideascube/
+  when: p_storage.stat.isdir is defined and p_storage.stat.isdir
+  tags:
+    - update
+
+- name: Remove old folder storage
+  file: path=/media/hdd/ideascube/storage/ state=absent
+  when: p_storage.stat.isdir is defined and p_storage.stat.isdir
+  tags:
+    - update
+
+- name: Symlink the ideascube folder from hard drive to sd card
+  file: src=/media/hdd/ideascube dest=/var/ideascube state=link
+  when: p.stat.isdir is defined and p.stat.isdir
+  tags: ['custom', 'update']
+
+- name: Copy uwsgi_params to the new ideascube folder
+  command: cp /etc/nginx/uwsgi_params /media/hdd/ideascube/
+  when: p.stat.isdir is defined and p.stat.isdir
+  tags:
+    - update
+
+- name: Ensure the folder is removed
+  file: path=/var/cache/ideascube state=absent
+  tags:
+    - custom
+
+- name: Create ideascube cache folder on hard drive
+  file: path=/media/hdd/ideascube_cache state=directory owner={{ username }} group={{ username }} mode=755
+  tags:
+    - custom
+
+- name: Create a simlink for ideascube catalog
+  file: src=/media/hdd/ideascube_cache dest=/var/cache/ideascube state=link
+  tags:
+    - custom
+
+- name: Stat on ideascube cache folder
+  stat: path=/var/cache/ideascube
+  register: p_cache
+  tags:
+    - update
+
+- name: Create ideascube cache folder on hard drive
+  file: path=/media/hdd/ideascube_cache state=directory owner=ideascube group=ideascube mode=755
+  when: p_cache.stat.islnk is not defined
+  tags:
+    - update
+
+- name: Ensure the folder is removed
+  file: path=/var/cache/ideascube state=absent
+  when: p_cache.stat.islnk is not defined
+  tags:
+    - update
+
+- name: Create a simlink for ideascube catalog
+  file: src=/media/hdd/ideascube_cache dest=/var/cache/ideascube state=link
+  when: p_cache.stat.islnk is not defined
+  tags:
+    - update
+  

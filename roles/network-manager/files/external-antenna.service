@@ -1,0 +1,10 @@
+[Unit]
+Description=Detect and add IP address to use external antenna
+After=network.target 
+ 
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/add-IP-address-for-external-antenna.sh
+
+[Install]
+WantedBy=timers.target

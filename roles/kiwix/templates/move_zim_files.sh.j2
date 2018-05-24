@@ -1,0 +1,97 @@
+#!/bin/bash
+
+OLD_PATH={{old_kiwix_path}}
+NEW_PATH={{zim_path}}
+
+cd $OLD_PATH
+mkdir -p $NEW_PATH/data/{content,index,library}
+mkdir -p /var/ideascube/main/catalog/
+
+echo "[+] Update database files first..."
+/usr/bin/updatedb
+
+for i in $(locate -ir '^.*zima*$'); do
+
+        zim_full_path=$i
+        zim_name=`echo $(basename $i) | sed 's/zimaa/zim/'`
+
+        if [[ "$zim_name" == *"ted"* ]] ; then
+                zim_name=`echo $zim_name | sed 's/-//'`
+        fi
+
+        full_path_index_folder=$(locate -b "$zim_name".idx)
+        zim_new_name=$(echo $zim_name | cut -d "_" -f1-2 | sed 's/_/./')
+        zim_new_name_ext="$zim_new_name".zim
+        zim_new_name_WithDate=$zim_new_name-0000-00-00
+
+        echo "[+] Work on: $zim_new_name" 
+        echo -e "\t[--] zim_full_path: $zim_full_path"
+        echo -e "\t[--] zim_name: $zim_name"
+        echo -e "\t[--] zim_new_name: $zim_new_name"
+
+        if [ -n "$full_path_index_folder" ] ; then
+                index_folder=$(basename $full_path_index_folder)
+                echo -e "\t[--] full_path_index_folder: $full_path_index_folder"
+                echo -e "\t[--] index_folder: $index_folder"
+        fi
+
+        echo -e "\t\t[***] Store name in list.txt"
+        echo "$zim_new_name" >> $OLD_PATH/list.txt
+
+        echo -e "\t\t[***] Create tmp data folder"
+        mkdir -p $OLD_PATH/packages/$zim_new_name_WithDate/data/{content,index,library}
+
+
+        is_several_files=`echo "$zim_full_path" | grep zimaa`
+
+        if [ -n "$is_several_files" ]; then
+
+                echo -e "\t\t[***] We have several zim file, moving them all..."
+
+                for file in ${zim_full_path%?}*
+                do
+                        mv ${file} $NEW_PATH/data/content/$(echo ${file##*/} | sed 's/_/./g' | awk -F "." '{print $1"."$2"."$NF}')
+                done
+
+        else
+                echo -e "\t\t[***] Moving one zim file..."
+
+                mv $i $NEW_PATH/data/content/$zim_new_name_ext
+        fi
+
+        if [ -n "$full_path_index_folder" ]; then
+
+                echo -e "\t\t[***] Index folder detected, monving folder to the right path"
+
+                mv "$full_path_index_folder" $NEW_PATH/data/index/"$zim_new_name_ext".idx
+
+                cd $NEW_PATH
+
+                echo -e "\t\t[***] Generate new library.xml with index"
+                /usr/local/bin/kiwix-manage $OLD_PATH/packages/$zim_new_name_WithDate/data/library/"$zim_new_name_ext".xml add data/content/$zim_new_name_ext -i=data/index/"$zim_new_name_ext".idx
+        else
+                cd $NEW_PATH
+
+                echo -e "\t\t[***] Generate new library.xml without index"
+                /usr/local/bin/kiwix-manage $OLD_PATH/packages/$zim_new_name_WithDate/data/library/"$zim_new_name_ext".xml add data/content/$zim_new_name_ext
+        fi
+
+        cd $OLD_PATH/packages/$zim_new_name_WithDate/
+
+        echo -e "\t\t[***] Compress the data"
+        zip -r "$zim_new_name_WithDate" data
+
+        echo -e "\t\t[***] Move zip file"
+
+        mv "$zim_new_name_WithDate" /var/cache/ideascube/catalog/packages/$zim_new_name_WithDate
+        cd $OLD_PATH
+
+        echo -e "\t\t[***] END....\n\n"
+
+        zim_name=
+        full_path_index_folder=
+        zim_new_name=
+        zim_new_name_WithDate=
+done
+
+rm -rf $OLD_PATH/packages

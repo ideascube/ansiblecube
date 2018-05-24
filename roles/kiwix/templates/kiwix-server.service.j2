@@ -1,0 +1,12 @@
+[Unit]
+Description=Kiwix server
+
+[Service]
+User=ideascube
+Group=ideascube
+ExecStart=/usr/local/bin/kiwix-serve --library --port=8002 {{ zim_path }}/library.xml
+Restart=always
+KillSignal=SIGQUIT
+
+[Install]
+WantedBy=multi-user.target

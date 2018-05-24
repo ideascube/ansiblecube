@@ -1,0 +1,5 @@
+server {
+    listen  80;
+    server_name www.{{ mook_name }}.{{ hostname }} {{ mook_name }}.{{ hostname }};
+    root {{ mook_path }}/{{ mook_name }}/front/;
+}

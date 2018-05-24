@@ -1,0 +1,73 @@
+---
+- name: Get startup file list
+  shell: grep kiwix-serve /etc/init.d/* | cut -d "/" -f4 | cut -d ":" -f1
+  register: startup_file_list 
+
+- debug: msg="{{ startup_file_list }}"
+
+- name: Stop running kiwix service
+  command: /etc/init.d/{{ item }} stop
+  with_items: "{{ startup_file_list.stdout_lines | default(omit) }}"
+
+- name: Disable init file for kiwix project
+  command: update-rc.d {{ item }} disable
+  with_items: "{{ startup_file_list.stdout_lines | default(omit) }}"
+
+- name: Delete init file for kiwix project
+  command: rm /etc/init.d/{{ item }}
+  with_items: "{{ startup_file_list.stdout_lines | default(omit) }}"
+
+- name: Remove symlink
+  command: update-rc.d {{ item }} remove
+  with_items: "{{ startup_file_list.stdout_lines | default(omit) }}"
+
+- name: Disable Nginx virtual host for kiwix project
+  file: path=/etc/nginx/sites-enabled/{{ item }} state=absent
+  with_items: "{{ startup_file_list.stdout_lines | default(omit) }}"
+
+- name: Download catalog file 
+  get_url: url=http://www.daitauha.fr/static/kiwix.yml
+    dest="{{old_kiwix_path}}/kiwix.yml"
+    timeout=30
+
+- name: Copying kiwix manage to create library.xml
+  get_url: url={{filer_bsf}}/kiwix-manage-{{ ansible_architecture }} 
+    dest=/usr/local/bin/kiwix-manage mode=755 timeout=30
+
+- name: copy update sha256sum script
+  copy: src=update_sha256sum.py dest={{old_kiwix_path}}/update_sha256sum.py
+
+- name: Copy create_zim_archive.sh file
+  template: src=move_zim_files.sh.j2 dest={{old_kiwix_path}}/move_zim_files.sh mode=0755
+
+- name: Create an archive from available zim
+  command: "{{old_kiwix_path}}/move_zim_files.sh > /var/log/move_zim_files.log 2>&1"
+
+- name: Update sha256sum
+  command: /usr/bin/python update_sha256sum.py /var/cache/ideascube/catalog/packages/ chdir={{old_kiwix_path}}
+
+- name: Give rights to ideascube on Kiwix folder
+  file: path=/var/ideascube/kiwix/ state=directory
+    owner={{ username }} group={{ username }} recurse=yes
+
+- name: Move catalog.yml to the final path 
+  become: yes
+  become_user: ideascube
+  command: mv "{{old_kiwix_path}}/catalog.yml" /var/cache/ideascube/catalog/
+
+- name: Get the content of list.txt
+  command: cat "{{old_kiwix_path}}/list.txt"
+  register: zim_list
+
+- name: Give rights to ideascube on cache folder
+  file: path=/var/cache/ideascube/ state=directory
+    owner={{ username }} group={{ username }} recurse=yes
+
+- name: Install zim file with ideascube catalog 
+  become: yes
+  become_user: ideascube
+  shell: ideascube catalog install {{item}} && sleep 5 chdir={{old_kiwix_path}}
+  with_items: "{{ zim_list.stdout_lines | default(omit) }}"
+
+- name: Remove empty folder 
+  shell: find {{ old_kiwix_path }} -type d -empty -delete

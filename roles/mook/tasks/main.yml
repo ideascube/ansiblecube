@@ -1,0 +1,54 @@
+---
+- include_vars: group_vars/{{ ansible_architecture }}.yml
+  tags: ['custom','update','rename']
+
+# Set variables
+
+- name: Set mook_name var from local fact when renaming the device try with BSF Campus
+  set_fact: mook_name="bsfcampus"
+  when: ansible_local.installed_software.software.bsfcampus is defined
+  tags: 
+    - rename
+
+- name: Set mook_name var from local fact when renaming the device try with KoomBook EDU
+  set_fact: mook_name="koombookedu"
+  when: ansible_local.installed_software.software.koombookedu is defined
+  tags: 
+    - rename
+
+- name: Set mook project name to have the right URL
+  set_fact: url_project_name="bsf-campus"
+  when: mook_name == 'bsfcampus'
+  tags: ['custom','update']
+
+- name: Set mook project name to have the right URL
+  set_fact: url_project_name="koombook-edu"
+  when: mook_name == 'koombookedu'
+  tags: ['custom','update']
+
+- name: Set the central server variable for BSF Campus
+  set_fact: central_server_host="http://api.bsfcampus.org/"
+  when: mook_name == 'bsfcampus'
+  tags: ['custom','update','rename']
+
+- name: Set the central server variable for KoomBook EDU
+  set_fact: central_server_host="http://koombookedu.api.bibliosansfrontieres.org/"
+  when: mook_name == 'koombookedu'
+  tags: ['custom','update','rename']
+
+# Call those roles if this is the first install
+
+- name: Configure git to avoid git clone error
+  become: True
+  become_user: ideascube
+  command: git config --global http.postBuffer 524288000
+  tags: ['custom','update','rename']
+
+- include: back_end.yml
+
+- include: front_end.yml
+
+- include: system.yml
+
+- include: ../../../post_install.yml task={{mook_name}} task_version="{{ mook_version }}"
+  tags: ['custom','update','rename']

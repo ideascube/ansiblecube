@@ -1,0 +1,5 @@
+---  
+- include: kiwix.yml
+
+- include: ../../../post_install.yml task=kiwix task_version="{{ kiwix_version }}"
+  tags: ['custom', 'update']

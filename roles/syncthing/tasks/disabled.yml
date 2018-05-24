@@ -1,0 +1,17 @@
+---
+- name: Disable unit syncthing-resume.service
+  service:
+    name: syncthing-resume.service
+    enabled: no
+
+- name: Disable unit syncthing.service
+  service:
+    name: syncthing.service
+    enabled: no
+
+- name: Stop syncthing
+  service: name=syncthing state=stopped
+  notify: reload systemd
+
+- name: reload systemd
+  shell: systemctl daemon-reload

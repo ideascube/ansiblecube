@@ -1,0 +1,38 @@
+---
+- name: Install mongodb from repository
+  apt: name=mongodb state=latest
+  tags:
+    - custom
+
+#- name: Copy mongodb repair script
+#  copy: src=mongo_repair.sh dest=/opt/mongo/mongo_repair.sh mode=755
+
+#- name: Setup startup file
+#  copy: src=mongodb.service dest=/etc/systemd/system/mongodb.service owner=root group=root
+
+- name: Create a mongodb service override unit directory
+  file: path=/etc/systemd/system/mongodb.service.d state=directory owner=root group=root
+  tags: [custom,update]
+
+- name: Drop in a unit file so uwsgi starts after mongodb
+  copy: src=before-uwsgi.conf dest=/etc/systemd/system/mongodb.service.d/before-uwsgi.conf owner=root group=root
+  tags: [custom,update]
+
+- name: Enable service mongodb
+  service: name=mongodb enabled=yes
+  tags:
+    - custom
+
+- name: Copy logrotate file for mongodb
+  copy: src=mongo_logrotate dest=/etc/logrotate.d/mongo mode=755
+  tags: [custom,update]
+
+- name: Get mongodb version
+  shell: dpkg-query -W  mongodb  | awk '{print $2}' | sed 's/1://' ; echo
+  register: mongodb_ver
+  tags: 
+    - custom
+
+- set_fact: mongodb_version="{{ mongodb_ver.stdout }}"
+  tags: 
+    - custom

@@ -1,0 +1,34 @@
+#!/bin/bash
+
+ZIM_PATH={{zim_path}}
+
+apt-get install -y zip
+
+cd $ZIM_PATH
+mkdir -p $ZIM_PATH/packages/
+mkdir -p /var/cache/ideascube/catalog/packages
+
+find ./ -type f -regextype posix-extended -regex "^.*zim$|^.*zima{2}" -print0 | while IFS= read -r -d $'\0' i; do
+
+        zim_file=`echo $i | cut -d "/" -f4`
+
+        echo "[+] Create fake archive for $i"
+
+        new_name=`echo $zim_file | sed -E 's/.zim|.zimaa//'`
+        nameWithDate=$new_name-0000-00-00
+
+        echo "$new_name" >> $ZIM_PATH/list.txt
+
+        mkdir -p $ZIM_PATH/packages/$nameWithDate/data/{content,index,library}
+
+        # Fake zim file
+        touch $ZIM_PATH/packages/$nameWithDate/data/content/$new_name
+
+        cd $ZIM_PATH/packages/$nameWithDate/
+        zip -r "$new_name-0000-00-00" data
+
+        mv "$new_name-0000-00-00" /var/cache/ideascube/catalog/packages/$new_name-0000-00-00
+        cd $ZIM_PATH
+done
+
+rm -rf $ZIM_PATH/packages

@@ -1,0 +1,43 @@
+---
+- include_vars: group_vars/{{ ansible_architecture }}.yml
+
+- set_fact: ideascube_branding="{{ ansible_local.device_list[generic_project_name].ideascube_branding }}"
+  when: ansible_local.device_list[generic_project_name].ideascube_branding is defined
+
+- debug: msg="Using branding {{ ideascube_branding }}"
+
+- name: Ensure the branding directory exists
+  file: path=/usr/share/ideascube/static/branding
+    state=directory
+    owner=root
+    group=root
+    mode=0755
+
+- name: Install header-logo branding resources
+  get_url: url={{ filer_bsf }}/branding/{{ ideascube_branding }}/header-logo.png 
+    dest=/usr/share/ideascube/static/branding/header-logo.png
+    owner=ideascube
+    group=ideascube
+    mode=0644
+    force=yes
+    timeout=30
+
+- name: Install favicon branding resources
+  get_url: url={{ filer_bsf }}/branding/{{ ideascube_branding }}/favicon.png 
+    dest=/usr/share/ideascube/static/branding/favicon.png
+    owner=ideascube
+    group=ideascube
+    mode=0644
+    force=yes
+    timeout=30
+  ignore_errors: yes
+
+- name: Install style.css branding resources
+  get_url: url={{ filer_bsf }}/branding/{{ ideascube_branding }}/style.css
+    dest=/usr/share/ideascube/static/branding/style.css
+    owner=ideascube
+    group=ideascube
+    mode=0644
+    force=yes
+    timeout=30
+  ignore_errors: yes

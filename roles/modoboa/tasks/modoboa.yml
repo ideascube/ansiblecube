@@ -1,0 +1,99 @@
+---
+- include_vars: group_vars/{{ ansible_architecture }}.yml
+
+- name: Install linux headers
+  apt: deb=http://filer.bsf-intranet.org/linux-headers-next-sunxi_5.37_armhf.deb
+
+- name: Create modoboa venv directory
+  file: path=/srv/modoboa/env
+    state=directory
+
+- name: Create modoboa user
+  user: name=modoboa
+    home=/srv/modoboa
+    move_home=yes
+
+- name: Upgrade pip package
+  pip: name={{item}}
+    state=latest
+    chdir=/srv/modoboa/
+    virtualenv_command=/usr/bin/virtualenv
+    virtualenv=/srv/modoboa/env
+  with_items: 
+    - setuptools
+    - enum34
+  when: ansible_local.installed_software.software.modoboa is undefined
+
+- name: Fix folder owner after upgrading setuptools
+  file: path=/srv/modoboa/
+    state=directory
+    recurse=yes
+    owner=modoboa
+
+- name: Clone modoboa repo
+  git:
+    repo: https://github.com/modoboa/modoboa-installer
+    dest: /tmp/modoboa-installer
+  when: ansible_local.installed_software.software.modoboa is undefined
+
+- name: Check if installer.cfg file exist on the system
+  stat: path=/tmp/installer.cfg
+  register: installer_file
+  when: ansible_local.installed_software.software.modoboa is undefined
+
+- name: Copy modoboa installer configuration file
+  template:
+    src: installer.cfg.j2
+    dest: /tmp/modoboa-installer/installer.cfg
+  when: ansible_local.installed_software.software.modoboa is undefined
+    and installer_file.stat.exists == false
+
+- name: Copy modoboa installer configuration file from /tmp
+  copy:
+    src: /tmp/installer.cfg
+    dest: /tmp/modoboa-installer/installer.cfg
+    remote_src: yes
+  when: ansible_local.installed_software.software.modoboa is undefined
+    and installer_file.stat.exists == true
+
+- name: Run modoboa script installer
+  shell: yes | python /tmp/modoboa-installer/run.py --version={{modoboa_version}} {{ fqdn_mail }}
+  args:
+    chdir: /tmp/modoboa-installer/
+  when: ansible_local.installed_software.software.modoboa is undefined
+
+- name: Enable queue lifetime
+  lineinfile:
+    dest: '/etc/postfix/main.cf'
+    line: 'maximal_queue_lifetime = 30d'
+    regexp: 'maximal_queue_lifetime'
+  notify: restart postfix
+
+- name: Enable relayhost
+  lineinfile:
+    dest: '/etc/postfix/main.cf'
+    line: 'relayhost = {{ ansible_local.device_list[generic_project_name].modoboa.tinc_relay_mail_server }}'
+    regexp: 'relayhost'
+  notify: restart postfix
+
+- name: Change myhostname with mx_domain var
+  lineinfile:
+    dest: '/etc/postfix/main.cf'
+    line: 'myhostname = {{ ansible_local.device_list[generic_project_name].modoboa.mx_domain }}'
+    regexp: 'myhostname ='
+  notify: restart postfix
+
+- name: Flush postfix queue when target devices gets up
+  lineinfile:
+    dest: '/etc/tinc/email/host-up'
+    line: 'sleep 10 && postqueue -f'
+    regexp: 'sleep'
+    create: yes
+  notify: reload tinc
+
+- name: Create aliases
+  lineinfile:
+    dest: '/etc/aliases'
+    line: 'root: admin@{{ ansible_local.device_list[generic_project_name].modoboa.domain }}'
+    regexp: 'root:'
+  notify: generate aliases
