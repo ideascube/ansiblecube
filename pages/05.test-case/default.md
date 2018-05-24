@@ -1,4 +1,6 @@
-# Tests
+---
+title: 'Some test case'
+---
 
 The repo is plugged in [Travis CI](https://travis-ci.org/ideascube/ansiblecube).
 
