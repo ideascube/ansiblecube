@@ -1,4 +1,6 @@
-# Set up your hardware
+---
+title: 'Setup your hardware'
+---
 
 ## ARM processor : Single Board Computer (SBC)
 
