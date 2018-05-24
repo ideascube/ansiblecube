@@ -1,0 +1,15 @@
+#!/bin/bash
+ 
+IF=$1
+STATUS=$2
+ 
+if [ "$IF" == "eth0" ]
+then
+    case "$2" in
+        up)
+			mii-tool -F 100baseTx-FD eth0
+        ;;
+        *)
+        ;;
+    esac
+fi

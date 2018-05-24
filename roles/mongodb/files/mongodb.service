@@ -1,0 +1,12 @@
+[Unit]
+Description=High-performance, schema-free document-oriented database
+After=syslog.target network.target
+ 
+[Service]
+User=mongodb
+ExecStartPre=/opt/mongo/mongo_repair.sh
+ExecStart=/usr/bin/mongod --dbpath=/media/hdd/mongodb --logpath=/var/log/mongodb/mongodb.log --logappend
+ExecStop=/usr/bin/mongod --dbpath=/media/hdd/mongodb --shutdown
+ 
+[Install]
+WantedBy=multi-user.target

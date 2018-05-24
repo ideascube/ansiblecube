@@ -1,0 +1,134 @@
+---
+- name: Stop running kiwix service
+  command: /etc/init.d/{{ item }} stop
+  with_items:
+  - wikipedia
+  - wikisource
+  - vikidia
+  - gutenberg
+  - cpassorcier
+  - ted
+  - ubuntudoc
+
+- name: Disable init file for kiwix project
+  command: update-rc.d {{ item }} disable
+  with_items:
+  - wikipedia
+  - wikisource
+  - vikidia
+  - gutenberg
+  - cpassorcier
+  - ted
+  - ubuntudoc
+
+- name: Remove init file
+  command: rm /etc/init.d/{{ item }}
+  with_items:
+  - wikipedia
+  - wikisource
+  - vikidia
+  - gutenberg
+  - cpassorcier
+  - ted
+  - ubuntudoc
+
+- name: Remove symlink
+  command: update-rc.d {{ item }} remove
+  with_items:
+  - wikipedia
+  - wikisource
+  - vikidia
+  - gutenberg
+  - cpassorcier
+  - ted
+  - ubuntudoc
+
+- name: Disable Nginx virtual host for kiwix project
+  file: path=/etc/nginx/sites-enabled/{{ item }} state=absent
+  with_items:
+  - wikipedia
+  - wikisource
+  - vikidia
+  - gutenberg
+  - cpassorcier
+  - ted
+  - ubuntudoc
+
+- name: create Kiwix directory 
+  file: path={{zim_path}}/data/content/ state=directory
+
+- name: Move ZIM files in Kiwix directory 
+  command: mv /media/hdd/{{ item.path }}/{{ item.file }} {{zim_path}}/data/content/
+  with_items:
+  - { path: 'cest-pas-sorcier', file: 'cest-pas-sorcier_fr_all_2015-07.zim' }
+  - { path: 'Gutenberg', file: 'gutenberg_en_all_10_2014.zim' }
+  - { path: 'Gutenberg', file: 'gutenberg_fr_all_10_2014.zim' }
+  - { path: 'TEDvideos', file: 'tedxgeneva-2014_fr_all_2015-03.zim' }
+  - { path: 'TEDvideos', file: 'tedxlausanne-2012_fr_all_2015-03.zim' }
+  - { path: 'TEDvideos', file: 'tedxlausanne-2013_fr_all_2015-03.zim' }
+  - { path: 'TEDvideos', file: 'tedxlausanne-2014_fr_all_2015-03.zim' }
+  - { path: 'TEDvideos', file: 'tedxlausannechange-2013_fr_all_2015-03.zim' }
+  - { path: '', file: 'ubuntudoc_fr_2009-01.zim' }
+  - { path: 'vikipedia', file: 'vikidia_fr_all_2015-10.zim' }
+  - { path: 'wikipedia', file: 'wikipedia_en_all_2015-05.zim' }
+  - { path: 'wikipedia', file: 'wikipedia_fr_all_2015-10.zim' }
+  - { path: 'wikipedia', file: 'wikipedia_ln_all_2015-09.zim' }
+  - { path: 'wikipedia', file: 'wikipedia_wo_all_2015-09.zim' }
+  - { path: 'wikisource', file: 'wikisource_en_all_2015-10.zim' }
+  - { path: 'wikisource', file: 'wikisource_fr_all_2015-10.zim' }
+
+- name: Rename ZIM files in Kiwix directory 
+  command: mv {{zim_path}}/data/content/{{ item.old }} {{zim_path}}/data/content/{{ item.new }}
+  with_items:
+  - { new: 'cest-pas-sorcier.fr.zim', old: 'cest-pas-sorcier_fr_all_2015-07.zim' }
+  - { new: 'gutenberg.en.zim', old: 'gutenberg_en_all_10_2014.zim' }
+  - { new: 'gutenberg.fr.zim', old: 'gutenberg_fr_all_10_2014.zim' }
+  - { new: 'tedxgeneva2014.fr.zim', old: 'tedxgeneva-2014_fr_all_2015-03.zim' }
+  - { new: 'tedxlausanne2012.fr.zim', old: 'tedxlausanne-2012_fr_all_2015-03.zim' }
+  - { new: 'tedxlausanne2013.fr.zim', old: 'tedxlausanne-2013_fr_all_2015-03.zim' }
+  - { new: 'tedxlausanne2014.fr.zim', old: 'tedxlausanne-2014_fr_all_2015-03.zim' }
+  - { new: 'tedxlausannechange2013.fr.zim', old: 'tedxlausannechange-2013_fr_all_2015-03.zim' }
+  - { new: 'ubuntudoc.fr.zim', old: 'ubuntudoc_fr_2009-01.zim' }
+  - { new: 'vikidia.fr.zim', old: 'vikidia_fr_all_2015-10.zim' }
+  - { new: 'wikipedia.en.zim', old: 'wikipedia_en_all_2015-05.zim' }
+  - { new: 'wikipedia.fr.zim', old: 'wikipedia_fr_all_2015-10.zim' }
+  - { new: 'wikipedia.ln.zim', old: 'wikipedia_ln_all_2015-09.zim' }
+  - { new: 'wikipedia.wo.zim', old: 'wikipedia_wo_all_2015-09.zim' }
+  - { new: 'wikisource.en.zim', old: 'wikisource_en_all_2015-10.zim' }
+  - { new: 'wikisource.fr.zim', old: 'wikisource_fr_all_2015-10.zim' }
+
+- name: Copying kiwix manage to create library.xml
+  get_url: url={{filer_bsf}}/kiwix-manage-{{ ansible_architecture }} dest=/usr/local/bin/kiwix-manage mode=755 timeout=20
+
+- name: Generate library.xml from ZIM file
+  command: /usr/local/bin/kiwix-manage {{zim_path}}/library.xml add {{zim_path}}/data/content/{{ item }}
+  with_items:
+  - cest-pas-sorcier.fr.zim
+  - gutenberg.en.zim
+  - gutenberg.fr.zim
+  - tedxgeneva2014.fr.zim
+  - tedxlausanne2012.fr.zim
+  - tedxlausanne2013.fr.zim
+  - tedxlausanne2014.fr.zim
+  - tedxlausannechange2013.fr.zim
+  - ubuntudoc.fr.zim
+  - vikidia.fr.zim
+  - wikipedia.en.zim
+  - wikipedia.fr.zim
+  - wikipedia.ln.zim
+  - wikipedia.wo.zim
+  - wikisource.en.zim
+  - wikisource.fr.zim
+
+- name: Remove old folder
+  file: path=/media/hdd/{{ item }} state=absent
+  with_items:
+  - cest-pas-sorcier
+  - Gutenberg
+  - TEDvideos
+  - ubuntudoc_fr_2009-01.zim
+  - vikipedia
+  - wikipedia
+  - wikisource
+  - kiwix_library
+  - universcience-tv_fr_all_2015-03.zim

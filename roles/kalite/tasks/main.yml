@@ -1,0 +1,59 @@
+---
+- include_vars: group_vars/{{ ansible_architecture }}.yml
+
+- stat: path=/var/lib/ansible/kalite-{{version}}.csv
+  register: kalite
+
+- name: Install kalite
+  pip: name=ka-lite version={{version}}
+  when: kalite.stat.exists == False
+
+- name: Initialize ka-lite
+  become: yes
+  become_user: ideascube
+  command: kalite start
+  when: kalite.stat.exists == False
+
+- stat: path=/dev/sda1
+  register: dev_sda
+
+- name: Remove existing content
+  file: path=/home/{{username}}/.kalite/content state=absent
+  when: kalite.stat.exists == False and (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and dev_sda.stat.exists == True
+
+- file: src=/media/hdd/khanVideos/content/ 
+    dest=/home/{{username}}/.kalite/content state=link force=yes
+  when: kalite.stat.exists == False and (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and dev_sda.stat.exists == True
+
+- name: Fix rights
+  file: path=/media/hdd/khanVideos/content/ state=directory 
+    owner={{ username }} group={{ username }} recurse=yes
+  when: kalite.stat.exists == False and (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and dev_sda.stat.exists == True
+
+- name: Copy nginx vhost
+  template: src=kalite.vhost.j2 dest=/etc/nginx/sites-available/kalite
+  when: kalite.stat.exists == False
+
+- name: Nginx enable Virtual host
+  file: src=/etc/nginx/sites-available/kalite dest=/etc/nginx/sites-enabled/kalite state=link
+  notify: restart nginx
+  when: kalite.stat.exists == False
+
+- name: Setup startup file
+  template: src=kalite.j2 dest=/etc/init.d/kalite owner=root group=root mode="u+x"
+  when: kalite.stat.exists == False
+
+- name: Enable service kalite
+  service: name=kalite enabled=yes
+  when: kalite.stat.exists == False
+
+- name: Download Kalite language pack
+  become: yes
+  become_user: ideascube
+  command: kalite manage retrievecontentpack download {{item}}
+  with_flattened: "{{lang}}"
+  when: kalite.stat.exists == False
+
+- tasks:
+  include: ../../../post_tasks.yml task=kalite version={{version}}
+  when: kalite.stat.exists == False

@@ -1,0 +1,12 @@
+---
+    - name: Create scripts directory
+      file: path=/root/scripts state=directory mode=0755
+
+    - name: Copy monitoring script
+      copy: src=eZServerMonitor.sh dest=/root/scripts/ owner=root group=root mode=755
+
+    - name: Create cron task
+      cron: name="lunch eZServerMonitor script" minute="*/5" job="cd /root/scripts/ && ./eZServerMonitor.sh -a"
+
+    - name: Create CSV header
+      shell: cd /root/scripts/ && ./eZServerMonitor.sh -h

@@ -1,0 +1,161 @@
+---
+- include_vars: group_vars/{{ ansible_architecture }}.yml
+
+- stat: path=/var/lib/ansible/ideascube-{{ version }}.csv
+  register: st
+
+- name: Remove uwsgi installed using pip (bug #17)
+  pip: name=uwsgi state=absent
+  when: st.stat.exists == False
+
+- name: Move uwsgi_params to the new storage folder
+  command: mv -f /var/ideascube/uwsgi_params /media/hdd/ideascube/storage
+  when: st.stat.exists == False and use_hdd|bool
+  ignore_errors: yes
+
+- name: Backup old ideascube var dir
+  command: mv -f /var/ideascube/ /var/old_ideascube
+  when: st.stat.exists == False and use_hdd|bool
+  ignore_errors: yes
+
+- name: Create a simlink to the HDD for the KoomBook
+  file: src=/media/hdd/ideascube/storage dest=/var/ideascube state=link owner={{ username }} group={{ username }}
+  when: st.stat.exists == False and use_hdd|bool
+
+- name: Install uwsgi
+  apt: name={{ item }} state=present
+  with_items:
+  - uwsgi
+  - uwsgi-plugin-python3
+  when: st.stat.exists == False
+
+- name: Configure the ideascube package repository
+  template: src=ideascube.list.j2 dest=/etc/apt/sources.list.d/ideascube.list owner=root group=root mode=644
+  when: st.stat.exists == False
+
+      #
+      # UGLY HACK
+      # The ideascube package is not signed (yet)
+      # so we install dependencies first, then allow unauthenticated packages,
+      # install ideascube, revert the security hole.
+
+- name: Install ideascube dependencies
+  apt: name=python3-minimal state=present
+  when: st.stat.exists == False
+
+- name: Allow unauthenticated packages
+  lineinfile: dest=/etc/apt/apt.conf.d/9999IDEASCUBEISABADBADBOY line='APT::Get::AllowUnauthenticated "true";' create=yes
+  when: st.stat.exists == False
+
+- name: Install the ideascube package
+  apt: name=ideascube={{ version }} state=present update_cache=yes force=yes
+  when: st.stat.exists == False
+
+- name: Remove the unauthenticated hack
+  file: path=/etc/apt/apt.conf.d/9999IDEASCUBEISABADBADBOY state=absent
+  when: st.stat.exists == False
+
+- name: Remove linsting on 443 because the port is alredy used by sslh
+  lineinfile: dest=/etc/nginx/sites-available/ideascube regexp='443' state=absent
+  notify: restart nginx
+  when: st.stat.exists == False
+  ignore_errors: yes
+
+- name: Copy startup script
+  copy: src=hostapd dest=/etc/systemd/system/hostapd.service owner=root group=root mode=664
+  when: st.stat.exists == False
+
+- name: remove old sysvinit startup file 
+  file: path=/etc/init.d/hostapd state=absent
+  when: st.stat.exists == False
+
+- name: Enable service hostapd
+  service: name=hostapd enabled=yes
+  when: st.stat.exists == False
+
+- name: Restart hostapd
+  service: name=hostapd state=restarted
+  when: st.stat.exists == False
+
+- name: Create a new interfaces file
+  template: src=interfaces.j2 dest=/etc/network/interfaces backup=yes
+  when: st.stat.exists == False
+
+- name: Setup startup file for uwsgi
+  copy: src=uwsgi.service dest=/etc/systemd/system/uwsgi.service owner=root group=root mode=644
+  when: st.stat.exists == False
+
+- name: Enable service uwsgi
+  service: name=uwsgi enabled=yes
+  when: st.stat.exists == False
+
+- name: Update dnsmasq.conf file
+  template: src=dnsmasq.conf.j2 dest=/etc/dnsmasq.conf backup=yes
+  when: st.stat.exists == False
+
+- name: Update hosts file
+  template: src=hosts.j2 dest=/etc/hosts owner=root group=root mode=755 backup=yes
+  when: st.stat.exists == False
+
+- name: Install Network-Manager
+  apt: name=network-manager state=latest
+  when: st.stat.exists == False
+
+- name: Lookup for the ideascube_id
+  shell: cat /etc/default/ideascube | grep IDEASCUBE_ID | awk -F "=" '{print $2}'; echo
+  register: ideascubeID
+  when: st.stat.exists == False
+
+- name: ideascube_id must contain _ instead of - in the name 
+  set_fact: ideascube_id={{ ideascubeID.stdout |replace("-", "_") }}
+  when: st.stat.exists == False
+
+- name: Force ethernet interface to run at 100Mbits
+  copy: src=mii-tool dest=/etc/NetworkManager/dispatcher.d/mii-tool owner=root group=root mode=755
+  when: st.stat.exists == False and ansible_architecture == "armv7l"
+
+- name: Create entry to clone/pull git repository
+  template: src=nm-dispatcher.j2 dest=/etc/NetworkManager/dispatcher.d/ansiblePullUpdate
+    owner=root group=root mode=0755
+
+- name: remove old way of lunching ansible-pull
+  file: path=/etc/dhcp/dhclient-exit-hooks.d/ansiblePullUpdate state=absent
+  when: st.stat.exists == False
+
+- name: Copy NEW iptables rules file
+  copy: src=iptables.rules dest=/etc/iptables.rules owner=root group=root mode=755 backup=yes
+  when: st.stat.exists == False
+
+
+# Fix for the last Ideascube version
+
+- stat: path=/var/lib/ansible/ideascube-{{ version }}.csv
+  register: st_ideascube
+
+- name: Create ideascube cache folder on hard drive
+  file: path=/media/hdd/ideascube_cache state=directory owner=ideascube group=ideascube mode=755
+  when: st_ideascube.stat.exists == False and use_hdd|bool
+
+- name: Ensure the folder is removed
+  file: path=/var/cache/ideascube state=absent
+  when: st_ideascube.stat.exists == False and use_hdd|bool
+
+- name: Create a simlink for ideascube catalog
+  file: src=/media/hdd/ideascube_cache dest=/var/cache/ideascube state=link
+  when: st_ideascube.stat.exists == False and use_hdd|bool
+
+- name: Install the ideascube package
+  apt: name=ideascube={{ version }} state=present update_cache=yes force=yes
+  when: st_ideascube.stat.exists == False
+
+- name: Populate {{version}} if empty
+  shell: dpkg-query -W  ideascube  | awk '{print $2}' ; echo
+  register: ideascube_newversion
+
+- set_fact: idc_version="{{ ideascube_newversion.stdout }}"
+
+- debug: msg="ideascube {{ idc_version }} is now the current version."
+
+- tasks:
+  include: ../../../post_tasks.yml task=ideascube version={{ idc_version }}
+  when: st.stat.exists == False

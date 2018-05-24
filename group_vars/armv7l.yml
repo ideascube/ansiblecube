@@ -1,0 +1,16 @@
+---
+#Network
+hostname: koombook.lan
+hotspot_name: koombook
+wpa_pass: KBcampus
+old_kiwix_path: /media/hdd
+
+use_hdd: True
+sync_log: True
+
+#Hardware battery for Olimex Lime2
+battery_capacity: 7800
+charging_current: 750
+power_on_button_delay: 500
+power_off_button_delay: 8000
+enable_power_button_power_off: 1

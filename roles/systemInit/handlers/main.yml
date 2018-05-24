@@ -1,0 +1,6 @@
+---
+    - name: update sslh
+      command: service sslh restart
+      
+    - name: update timezone
+      command: dpkg-reconfigure --frontend noninteractive tzdata

@@ -1,0 +1,165 @@
+---
+- include_vars: group_vars/{{ ansible_architecture }}.yml
+
+- name: Set mook project name to have the right URL
+  set_fact: url_project_name="bsf-campus"
+  when: mook_name == 'bsfcampus'
+
+- name: Set mook project name to have the right URL
+  set_fact: url_project_name="koombook-edu"
+  when: mook_name == 'koombookedu'
+
+- name: Set the central server variable for BSF Campus
+  set_fact: central_server_host="http://api.bsfcampus.org/"
+  when: mook_name == 'bsfcampus'
+
+- name: Set the central server variable for KoomBook EDU
+  set_fact: central_server_host="http://mook-api.bibliosansfrontieres.fr/"
+  when: mook_name == 'koombookedu'
+
+####
+# BACK END CONFIGURATION
+####
+- name: Clone mook api
+  become_user: ideascube
+  git: repo=ssh://git@altssh.bitbucket.org:443/bsfcampus/mook-bsf-api.git dest={{ mook_path }}/{{ mook_name }}/api accept_hostkey=yes depth=1
+  register: mook
+
+- name: Install specific packages
+  apt: name={{ item }} state=latest
+  with_items:
+    - python-pip
+    - python-dev
+    - python-pkg-resources
+    - unzip
+    - libffi6
+    - libffi-dev
+    - uwsgi-plugin-python
+  when: st.stat.exists == False
+  when: mook.changed
+
+- name: Install virtualenv
+  pip: name=virtualenv
+  when: mook.changed
+
+- name: Update setuptools
+  pip: name=setuptools extra_args="-U"
+  when: mook.changed
+
+- stat: path=/dev/sda1
+  register: dev_sda
+
+- name: Create a static dir if we are using an external hard drive
+  file: path=/media/hdd/{{ mook_name }}/static/tmp state=directory mode=0755 owner={{ username }} group={{ username }}
+  when: mook.changed and (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and dev_sda.stat.exists == True
+
+- name: Create simlink if we are using an external hard drive
+  file: src=/media/hdd/{{ mook_name }}/static dest={{ mook_path }}/{{ mook_name }}/static state=link
+  when: mook.changed and (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and dev_sda.stat.exists == True
+
+- name: Create static dir
+  file: path={{ mook_path }}/{{ mook_name }}/static/tmp state=directory owner={{username}} group={{username}} mode=0775
+  when: mook.changed and dev_sda.stat.exists == False
+
+- name: Install python requierment
+  pip: requirements=requirements.txt chdir={{ mook_path }}/{{ mook_name }}/api virtualenv_command=/usr/local/bin/virtualenv virtualenv={{ mook_path }}/{{ mook_name }}/api/env
+  when: mook.changed
+
+- name: Copy settings_local config files
+  template: src=settings_local.py.j2 dest={{ mook_path }}/{{ mook_name }}/api/settings_local.py
+  when: mook.changed
+
+- name: Retrieve KoomBook info 
+  set_fact: koombookName="{{ lookup('csvfile', 'id file=/etc/firstStart.csv delimiter=, col=3') }}" uuid="{{ lookup('csvfile', 'id file=/etc/firstStart.csv delimiter=, col=4') }}"
+  when: mook.changed
+  
+- name: add conf for KoomBook
+  lineinfile: dest={{ mook_path }}/{{ mook_name }}/api/settings_local.py regexp='' insertafter=EOF line='    CENTRAL_SERVER_KEY = \"{{koombookName}}\" \n    CENTRAL_SERVER_SECRET = \"{{uuid}}\"' owner={{username}} group={{username}} mode=755
+  when: mook.changed
+  
+- name: Setup startup file for uwsgi
+  copy: src=settings_central.py dest={{ mook_path }}/{{ mook_name }}/api owner={{username}} group={{username}} mode=755
+  when: mook.changed
+
+####
+# Systemd startup script
+####
+
+- name: Copy template for systemd mook-sync
+  template: src=mook-sync.service.j2 dest=/etc/systemd/system/mook-sync-{{ mook_name }}.service
+  when: mook.changed
+
+- name: Enable service 
+  service: name=mook-sync-{{ mook_name }}.service enabled=yes
+  when: mook.changed
+
+####
+# FRONT END CONFIGURATION
+####
+- name: Clone mook front
+  become_user: ideascube
+  git: repo=ssh://git@altssh.bitbucket.org:443/bsfcampus/{{url_project_name}}.git dest={{ mook_path }}/{{ mook_name }}/front accept_hostkey=yes depth=1
+  register: mookFront
+
+- name: download vendor package
+  get_url: url={{filer_bsf}}/vendor.zip dest=/tmp/vendor.zip
+  when: mookFront.changed
+
+- name: unarchive the vendor package
+  become_user: ideascube
+  unarchive: src=/tmp/vendor.zip dest={{ mook_path }}/{{ mook_name }}/front copy=no
+  when: mookFront.changed
+
+- name: Copy config.js config files
+  become_user: ideascube
+  template: src=config.js.j2 dest={{ mook_path }}/{{ mook_name }}/front/config.js
+  when: mookFront.changed
+
+- name: Fix rights
+  file: path={{ mook_path }}/{{ mook_name }} state=directory owner={{ username }} group={{ username }} recurse=yes
+  when: mookFront.changed
+
+####
+# NGINX CONFIGURATION
+####
+
+- name: Copy vhost
+  template: src=vhost.j2 dest=/etc/nginx/sites-available/{{ mook_name }}
+  register: vhost
+  when: mook.changed
+
+- name: Copy api vhost
+  template: src=vhost-api.j2 dest=/etc/nginx/sites-available/{{ mook_name }}-api
+  when: mook.changed
+  register: vhost
+
+- name: bsf campus enable Virtual host
+  file: src=/etc/nginx/sites-available/{{ mook_name }} dest=/etc/nginx/sites-enabled/{{ mook_name }} state=link
+  when: vhost.changed and mook.changed
+
+- name: bsf campus api enable Virtual host
+  file: src=/etc/nginx/sites-available/{{ mook_name }}-api dest=/etc/nginx/sites-enabled/{{ mook_name }}-api state=link
+  when: vhost.changed and mook.changed
+  notify: restart nginx
+
+####
+# UWSGI CONFIGURATION
+####
+
+- name: Copy uwsgi config files
+  template: src=uwsgi-api.ini.j2 dest={{ mook_path }}/{{ mook_name }}/api/uwsgi-api.ini
+  when: mook.changed
+
+- name: Symbolic link for wsgi ini file
+  file: src={{ mook_path }}/{{ mook_name }}/api/uwsgi-api.ini dest=/etc/uwsgi/apps-enabled/uwsgi-{{ mook_name }}-api.ini state=link
+  notify: restart uwsgi
+  when: mook.changed
+
+- name: restart mook-sync service
+  service: name=mook-sync-{{ mook_name }} state=restarted
+  when: mook.changed
+
+- tasks:
+  include: ../../../post_tasks.yml task=mook-{{ mook_name }} version=1
+  when: mook.changed or mookFront.changed
+  

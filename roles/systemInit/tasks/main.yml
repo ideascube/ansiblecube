@@ -1,0 +1,197 @@
+---
+- include_vars: group_vars/{{ ansible_architecture }}.yml
+
+- name: Force ARM device to switch to 100Mbits (Olimex Lime2 Issue)
+  command: mii-tool -F 100baseTx-FD eth0
+  when: ansible_architecture == "armv7l"
+
+- name: Set date and time 
+  set_fact: date="{{ ansible_date_time["date"]}}" time="{{ ansible_date_time["time"]}}"
+
+- name: Set an ideascubeName and generate an UUID
+  set_fact: ideascubeName="{{ ideascube_id }}_{{ 1000 | random }}" 
+    UUID="{{ ansible_default_ipv4["macaddress"] | hash('md5') }}"
+
+- name: A way to get the public IP of the device
+  shell: wget -qO- http://ipecho.net/plain ; echo
+  register: public_ip
+
+- name: Make sure central_server fingerprint is known
+  shell: ssh-keyscan -H {{ central_server }} > /etc/ssh/ssh_known_hosts
+
+- name: Write all the variables in /etc/firstStart.csv 
+  copy: content=id,{{ date }},{{ time }},{{ ideascubeName }},{{ UUID }},{{ ansible_default_ipv4["macaddress"] }},{{ ansible_default_ipv4["address"] }},{{ public_ip.stdout }}\n dest=/etc/firstStart.csv
+
+- name: Send this file over the central_server 
+  raw: cat /etc/firstStart.csv | ssh -p 443 {{ central_server_user }}@{{ central_server }} "cat >> ./ansible/UUID/firstStart.csv"
+  when: sync_log|bool
+
+- name: Update packages list
+  apt: update_cache=yes cache_valid_time=3600
+
+- name: Remove unwanted packages before upgrading
+  apt: name={{ item }} state=absent purge=yes
+  with_items:
+   - apache2
+   - apache2-mpm-worker
+   - apache2-utils
+   - apache2.2-bin
+   - apache2.2-common
+   - btrfs-tools
+   - figlet
+   - toilet
+   - bluez
+   - fping
+   - stress
+   - iperf
+   - iotop
+   - lirc
+   - apt-listchanges
+
+- name: Install all requiered package
+  apt: name={{ item }} state=latest
+  with_items:
+   - python-pip
+   - python-dev
+   - python-setuptools
+   - git
+   - sudo
+   - lsb-release
+   - vim
+   - locate
+   - git
+   - unzip
+   - bash-completion
+   - aptitude
+   - ntpdate
+   - fake-hwclock
+   - hdparm
+   - ncurses-term
+   - screen
+   - sunxi-tools
+   - tree
+   - elinks
+   - iftop
+   - tmux
+   - mtr-tiny
+   - libwww-perl
+   - httpie
+
+- name: List services to restart (1/2)
+  shell: checkrestart | grep ^service | awk '{print $2}'
+  register: services
+  changed_when: False
+
+- name: Install ansible
+  pip: name=ansible version=1.9.4
+
+- name: Upgrade packages
+  apt: upgrade=safe
+
+- name: Adding name to the hosts file
+  lineinfile: dest=/etc/hosts regexp='^{{ hotspotip }}' insertafter='{{ hotspotip }}' 
+    line='{{ hotspotip }} {{ ideascubeName |replace("_", "-") }}.lan {{ hostname }} {{ mook_front_server_name }}' 
+    owner=root group=root mode=0644
+
+- name: An hostname can not have _ so we are switching to -, python can not have - so using _ sometime too
+  command: hostnamectl set-hostname {{ ideascubeName |replace("_", "-") }}
+
+- name: Create an ideascube user on the system
+  user: name={{ username }}
+        shell=/bin/bash
+        groups="sudo,www-data"
+        home="/home/{{ username }}"
+        generate_ssh_key=yes
+        ssh_key_bits=2048
+        ssh_key_file=.ssh/id_rsa
+        password={{ password }}
+
+- name: Add locale fr_FR
+  locale_gen: name=fr_FR.UTF-8 state=present
+
+- name: Add locale en_US
+  locale_gen: name=en_US.UTF-8 state=present
+
+- name: Add locale en_GB
+  locale_gen: name=en_GB.UTF-8 state=present
+
+- name: Copy a blank rc.local
+  copy: src=rc.local dest=/etc/rc.local owner=root group=root mode=0644 backup=yes
+
+- name: Copy .bashrc for root
+  copy: src=bashrc dest=/root/.bashrc owner=root
+
+- name: Copy the global vimrc file
+  copy: src=vimrc.local dest=/etc/vim/vimrc.local owner=root mode=0644
+
+- name: Copy .bashrc for new username
+  copy: src=bashrc dest=/home/{{ username }}/.bashrc owner={{ username }}
+
+- name: Add hdparm to save energy
+  lineinfile: dest=/etc/hdparm.conf
+              regexp=''
+              insertafter=EOF
+              line='/dev/sda {
+                      spindown_time = 280
+              }'
+  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
+
+- name: fake-hwclock conf for ARM system 
+  copy: content="FORCE=force" dest=/etc/default/fake-hwclock
+  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
+
+- name: Copy visudo file for ideascube user
+  template: src=visudo.j2 dest=/etc/sudoers.d/shutdown 
+    owner=root group=root mode=0440 validate="/usr/sbin/visudo -cf %s"
+
+- name: Ensure the HDD mountpoint exists
+  file: path=/media/hdd state=directory
+  when: ansible_architecture == "armhf" or ansible_architecture == "armv7l"
+
+- stat: path=/dev/sda1
+  register: dev_sda
+
+- name: Mount /dev/sda1
+  mount: name=/media/hdd/ src=/dev/sda1 fstype=ext4 state=mounted opts=noatime,nofail
+  when: dev_sda.stat.exists == True and (ansible_architecture == "armhf" or ansible_architecture == "armv7l")
+  ignore_errors: yes
+
+- name: Mount /dev/sda
+  mount: name=/media/hdd/ src=/dev/sda fstype=ext4 state=mounted opts=noatime,nofail
+  when: dev_sda.stat.exists == False and (ansible_architecture == "armhf" or ansible_architecture == "armv7l")
+  ignore_errors: yes
+
+- name: Create local directory to work from
+  file: path=/var/lib/ansible/local state=directory owner=root group=root mode=0751
+
+- name: Create ansible hosts directory to work from
+  file: path=/etc/ansible/ state=directory owner=root group=root mode=0751
+
+- name: Copy ansible inventory file to client
+  copy: src=hosts dest=/etc/ansible/hosts
+          owner=root group=root mode=0644
+
+- name: Remove the existing localtime file
+  file: path=/etc/localtime state=absent
+
+- name: Set a new localtime file corresponding to the timezone
+  file: src=/usr/share/zoneinfo/{{ timezone }} dest=/etc/localtime state=link force=yes
+
+- name: Set timezone variables
+  copy: content={{ timezone }} dest=/etc/timezone owner=root group=root mode=0644 backup=yes
+  notify: update timezone
+
+- name: Test if a fex file exist, if yes, the device is an Olimex
+  stat: path=/boot/bin/lime2.fex
+  register: fex_file
+
+- include: lime2.yml
+  when: fex_file.stat.exists == True
+
+- name: Check for Realtek Wireless Network Adapter
+  shell: "lspci | grep -F 'Network controller: Realtek Semiconductor'"
+  ignore_errors: yes
+  register: lspci_realtek
+
+- include: realtek.yml
+  when: lspci_realtek.stdout != ""

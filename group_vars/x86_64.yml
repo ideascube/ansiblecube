@@ -1,0 +1,9 @@
+---
+#Network
+hostname: ideasbox.lan
+hotspot_name: ideasbox
+wpa_pass: idb258456
+old_kiwix_path: /usr/local/share/kiwix/data/
+
+use_hdd: False
+sync_log: True

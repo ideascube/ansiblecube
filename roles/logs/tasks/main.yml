@@ -1,0 +1,59 @@
+---
+- include_vars: group_vars/{{ ansible_architecture }}.yml
+
+- name: Make sure central_server fingerprint is known - tincmaster.bsf-intranet.org
+  known_hosts:
+    path: /etc/ssh/ssh_known_hosts
+    name: tincmaster.bsf-intranet.org
+    key: "{{ item }}"
+  with_items:
+    - "|1|k6Bn9V3K3wHyOuyohORNL0enyo4=|aGQKUHHUmu/W4VA4QzYYZxNf5/o= ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3ZSPUHn2fbrLu/2z6Px54z7PFObdejHbyC8HGawDIoDiZ47Rjh0P5CRrsfTWgpabZW3RJ0YtcY5NSilbZ1D8KmiQH3EFl/fDrRsk8yDpo8rF27iT4locj10/KZp9i2FqCAswnjw37CNdATBdTbHjB319/hIGJGPGcXVPz7Cx4oHKPtL4MfDxTKlNbUALAyUfLCGLXcYeQj750/iCilA+zO0hWVGeP/s6R5tg0/IC4Ru2sP6Xqi4kox1GmS6ZmqBgNr2oZlwGGWx//xo/KscePkscAiBvcs9NDP5b5ZsKx5jRo0U8jzU4N4tRVU21mYFSPY54DcKmSeNrSILX1EUt5"
+    - "|1|5wQ8K91rb0buUNSHR2r/c3FQNlw=|5sL6MKifgddaBiCCoEe1lsGjr8k= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBGIi+qKYc46Og0VhD0cCc8jh/dGGoKOOr6Ojo0nWnwo08V7rliEK/FJQ2Lbq6N1CoLowLPEjMuHsN7x6JZO8MKE="
+
+- name: Make sure central_server fingerprint is known - tincmaster.wan.bsf-intranet.org
+  known_hosts:
+    path: /etc/ssh/ssh_known_hosts
+    name: tincmaster.wan.bsf-intranet.org
+    key: "{{ item }}"
+  with_items:
+    - "|1|MuTRgcW3AO0XWXGSx9cCtZOdL9E=|DwuyWCX0AZ6tbwQKz49hXC/L9lk= ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3ZSPUHn2fbrLu/2z6Px54z7PFObdejHbyC8HGawDIoDiZ47Rjh0P5CRrsfTWgpabZW3RJ0YtcY5NSilbZ1D8KmiQH3EFl/fDrRsk8yDpo8rF27iT4locj10/KZp9i2FqCAswnjw37CNdATBdTbHjB319/hIGJGPGcXVPz7Cx4oHKPtL4MfDxTKlNbUALAyUfLCGLXcYeQj750/iCilA+zO0hWVGeP/s6R5tg0/IC4Ru2sP6Xqi4kox1GmS6ZmqBgNr2oZlwGGWx//xo/KscePkscAiBvcs9NDP5b5ZsKx5jRo0U8jzU4N4tRVU21mYFSPY54DcKmSeNrSILX1EUt5"
+    - "|1|4ClcyCUukXaLaq1TMNKpTQfjdaE=|7gVoAGo/hG6AD703TsW5zK4toOQ= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBGIi+qKYc46Og0VhD0cCc8jh/dGGoKOOr6Ojo0nWnwo08V7rliEK/FJQ2Lbq6N1CoLowLPEjMuHsN7x6JZO8MKE="
+
+- name: Configure logrotate to handle our custom logs.
+  template: src={{ item.src }} dest=/etc/logrotate.d/{{ item.dest }} owner=root group=root mode=0644
+  with_items:
+    - src: 000-dateext-for-all.j2
+      dest: 000-dateext-for-all
+    - src: ansible-pull.logrotate.j2
+      dest: ansible-pull
+    - src: dpkg-list.logrotate.j2
+      dest: dpkg-list
+    - src: pip-freeze.logrotate.j2
+      dest: pip-freeze
+
+- name: copy hdw info script
+  copy: src=hdw_info.sh dest=/home/ideascube/hdw_info.sh mode=755
+
+- name: copy test_zim_migration.sh script
+  template: src=test_zim_migration.sh.j2 dest=/home/ideascube/test_zim_migration.sh mode=755
+
+- name: Copy push_log.sh
+  template: src=push_log.sh.j2 dest=/etc/dhcp/dhclient-exit-hooks.d/push_log mode=755
+
+- name: fix rights on ansible-pull.log
+  file: path=/var/log/ansible-pull.log mode=0644 group=adm
+
+- name: copy idcstats script
+  copy: src=idcstats.sh dest=/usr/local/bin/idcstats.sh mode=755
+
+- name: Add a cron entry to run the idcstats script
+  cron:
+    name: "Run idcstats"
+    hour: "*/6"
+    minute: "5"
+    job: "/usr/local/bin/idcstats.sh"
+    state: present
+
+- name: Say Hi on the logs
+  shell: wget http://report.bsf-intranet.org/device={{ansible_hostname}}/ansiblepull=IamOnOldMasterBranch
+  ignore_errors: yes

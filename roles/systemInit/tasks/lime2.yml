@@ -1,0 +1,13 @@
+- name: Copy fex.file
+  template: src=lime2.fex.j2 dest=/boot/bin/lime2.fex
+
+- name: Build binary from fex
+  shell: sunxi-fexc lime2.fex > lime2.bin chdir=/boot/bin/
+
+- name: Copy patch U-Boot package
+  get_url: url={{filer_bsf}}/linux-u-boot-lime2_4.3_armhf.deb 
+    dest=/tmp/linuxUboot.deb owner=root group=root mode=755
+
+- name: install patch U-Boot package
+  apt:  deb=/tmp/linuxUboot.deb
+  

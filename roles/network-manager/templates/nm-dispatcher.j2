@@ -1,0 +1,35 @@
+#!/bin/bash
+
+IF=$1
+STATUS=$2
+PROC=`pgrep ansible-pull`
+
+if [[ "$IF" == eth* || "$IF" == "wlan1" ]] && [ -z "$PROC"  ]
+then
+    case "$STATUS" in
+        up)
+            {% if ansible_architecture == "armv7l" %}echo default-on >/sys/class/leds/a20-olinuxino-lime2:green:usr/trigger{% endif %}
+
+            /usr/local/bin/ansible-pull -o -s 120 -C oneUpdateFile -d /var/lib/ansible/local -i hosts -U https://github.com/ideascube/ansiblecube.git main.yml --tags "update" >> /var/log/ansible-pull.log 2>&1
+            {% if ansible_architecture == "armv7l" %}echo heartbeat >/sys/class/leds/a20-olinuxino-lime2:green:usr/trigger{% endif %}
+            
+        ;;
+        *)
+        ;;
+    esac
+
+    status=$(tail -3 /var/log/ansible-pull.log)
+    device_hostname=$(hostname)
+
+    case $status in
+        *"failed=1"*)
+            wget http://report.bsf-intranet.org/device=$device_hostname/ansiblepull=fail > /dev/null 2>&1
+        ;;
+        *"failed=0"*)
+            wget http://report.bsf-intranet.org/device=$device_hostname/ansiblepull=success > /dev/null 2>&1
+        ;;
+        *"Local modifications exist in repository"*)
+            wget http://report.bsf-intranet.org/device=$device_hostname/ansiblepull=modificationExist > /dev/null 2>&1
+        ;;
+    esac
+fi

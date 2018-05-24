@@ -1,0 +1,24 @@
+---
+# Ansible playbook for Queensland, Australia
+
+- hosts: localhost
+
+  roles:
+    - logs
+    - tinc-static
+
+    #- role: kalite
+    #  version: "0.15.0"
+    #  lang: ["en"]
+
+    #- kiwix
+
+    #- role: zim_install
+    #  zim_name: "wikipedia.en wiktionary.en wikiversity.en wikibooks.en wikisource.en gutenberg.en tedbusiness.en teddesign.en tedentertainment.en tedglobalissues.en tedscience.en tedtechnology.en vikidia.en"
+
+
+
+#  post_tasks:
+#    - name: Job done, let's shutdown now.
+#      command: shutdown -h now
+#      when: ideascube_version.stdout == ""

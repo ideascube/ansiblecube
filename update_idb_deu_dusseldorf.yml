@@ -1,0 +1,18 @@
+---
+- hosts: localhost
+
+  roles:
+    # Enable or disable to suit your needs
+
+    # This role automatically send logs to central server each time the device gets an Internet connection 
+    - logs
+    - tinc-static
+    # - role: kalite
+    #  version: "0.15.0"
+    #  lang: "['en','ar','de']"
+
+    #- role: zim_install
+    #  zim_name: "wikipedia.en wikipedia.ar wikipedia.fa wikipedia.de gutenberg.de"
+
+    # - role: idc_import
+    #  content_name: "dusseldorf.csv"

@@ -1,0 +1,34 @@
+---
+#Network
+hotspotip: 192.168.2.1
+hotspot_interface: wlan0
+lan_interface: eth0
+client_interface: wlan1
+dnsmasq_resolver_1: 8.8.8.8
+dnsmasq_resolver_2: 8.8.4.4
+
+#System
+username: ideascube
+password: $6$YcJS1HjRAv/$1bUosoPalzHEvfpx71UhnG6vCeckTGbA5U1i6UpA8X21Jrv7fYRPyNrq/YWuiBp3xQWd5kRRhrKKPHcbTkkfQ/
+repo_url: https://github.com/ideascube/ansiblecube.git
+central_server: tincmaster.wan.bsf-intranet.org
+central_server_user: ansible
+filer_bsf: http://filer.bsf-intranet.org
+timezone: "Europe/Paris"
+zim_path: /var/ideascube/kiwix
+sync_log: "{{ send_to_central_server }}"
+synology: "synology.montreuil.wan.bsf-intranet.org"
+
+#Apps path
+mook_path: /home/{{ username }}
+mook_name: "bsfcampus"
+
+#Domaine name
+kalite_server_name: khanacademy.{{hostname}}
+mook_api_server_name: api.{{ mook_name }}.{{ hostname }}
+mook_front_server_name: "{{ mook_name }}.{{ hostname }}"
+appinventor_server_name: appinventor.{{hostname}}
+
+#Deprecated but needed var
+send_to_central_server: True
+sync_log: True

@@ -1,0 +1,9 @@
+interface={{hotspot_interface}}
+except-interface={{lan_interface}}
+dhcp-range=192.168.2.100,192.168.2.240,255.255.255.0,12h
+
+address=/{{ hostname }}/{{ hotspotip }}
+address=/{{ ideascubeName }}/{{ hotspotip }}
+server={{ dnsmasq_resolver_1 }}
+server={{ dnsmasq_resolver_2 }}
+no-hosts

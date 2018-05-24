@@ -1,0 +1,12 @@
+---
+- include_vars: group_vars/{{ ansible_architecture }}.yml
+
+- name: Make sure we use the latest version of Kiwix catalogs
+  become: yes
+  become_user: ideascube
+  command: ideascube catalog cache update
+
+- name: Download and install ZIM content from Kiwix catalogs
+  become: yes
+  become_user: ideascube
+  command: ideascube catalog install {{ zim_name }}

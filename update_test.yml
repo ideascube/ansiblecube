@@ -1,0 +1,33 @@
+---
+# Ansible playbook for any devices, use only for test. 
+# /etc/NetworkManager/dispatcher.d/ansiblePullUpdate has to be modify to match this playbook : update_test.yml
+
+#It will be always localhost
+- hosts: SystemPushInstall
+
+  roles:
+    # Has to be always enable
+    # - logs
+    
+    - moodle
+    # - role: ideascube
+    #   version: "0.7.0-1"
+
+    # - role: kiwix
+    #   kiwixProject: wikipedia
+    #   portProject: 8002
+    #   lang: ['en','fr']
+
+    #Uncomment to lunch an update
+  #   - role: upgradeIdc0.7.0
+  #     version: "0.7.0-1"
+  #     mook_name: "koombookedu"
+
+  #   - mongodb
+  #   - role: mook
+  #     mook_name: koombookedu
+
+  # post_tasks:    
+  #   - name: Job done, let's shutdown now.
+  #     command: reboot
+  #     when: ideascube_version.stdout < "{{ version }}"

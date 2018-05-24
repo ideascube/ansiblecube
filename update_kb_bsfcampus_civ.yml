@@ -1,0 +1,25 @@
+---
+# Ansible playbook for BSF Campus Côte d'Ivoire
+
+#It will be always localhost
+- hosts: localhost
+
+  roles:
+    # # Can be enable/disable on demand but affect all devices
+
+    - role: upgradeIdc
+      version: "0.11.3"
+
+    - role: updateMook
+      mook_name: "bsfcampus"
+      version: "010916"
+    
+    - tinc-static
+
+    - kiwix
+
+
+    # Start. has to be always enable 
+    - logs
+    # Stop. has to be always enable
+    

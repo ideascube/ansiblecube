@@ -1,0 +1,46 @@
+---
+- include_vars: group_vars/{{ ansible_architecture }}.yml
+
+- shell: ls /etc/rc5.d/S*wikipedia ; echo
+  register: file_exist
+
+- stat: path={{file_exist.stdout}}
+  register: st
+
+- include: dust-removal-x86_64.yml
+  when: st.stat.exists == True and ansible_architecture == 'x86_64'
+
+- include: dust-removal-armv7l.yml
+  when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l' and st.stat.exists == True
+
+- name: Copying kiwix binaries
+  get_url: url={{filer_bsf}}/kiwix-serve-{{ ansible_architecture }} dest=/usr/local/bin/kiwix-serve mode=755 timeout=20
+
+- name: Create a kiwix directory in ideascube folder
+  file: path={{zim_path}}/ owner={{username}} group={{username}} state=directory
+
+- name: Setup startup file
+  template: src=kiwix-server.service.j2 dest=/etc/systemd/system/kiwix-server.service
+
+- name: Install Kiwix catalogs
+  become: yes
+  become_user: ideascube
+  command: ideascube catalog remotes add "{{ item.name }}" "{{ item.description }}" "{{ item.url }}"
+  with_items:
+  - name: "Kiwix"
+    description: "Kiwix ZIM content"
+    url: http://catalog.ideascube.org/kiwix.yml
+  - name: "OSMybon"
+    description: "Experimental OSM Maps catalog"
+    url: http://catalog.yohanboniface.me/catalog.yml
+
+- name: Copy nginx vhost
+  template: src=nginx.vhost.j2 dest=/etc/nginx/sites-available/kiwix
+
+- name: Nginx enable Virtual host
+  file: src=/etc/nginx/sites-available/kiwix dest=/etc/nginx/sites-enabled/kiwix state=link
+  notify: restart nginx
+
+- name: Enable service kiwix
+  service: name=kiwix-server enabled=yes
+  notify: restart kiwix
