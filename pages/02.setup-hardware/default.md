@@ -54,15 +54,14 @@ We support Raspbery Pi 2/3 but we don't provide a pre-made image, you'll have to
    3. passeword : `raspberry`
 
 > > > >>  Enable SSH to connect to the Rapsberry Pi remotly
-> > > >>  1. [Use this guide](https://www.raspberrypi.org/documentation/remote-access/ssh/) if you are direclty connected to the Raspi
-> > > >>  2. Or drop an empty `ssh` file on `/boot/` on your micro SD card
+
+1. [Use this guide](https://www.raspberrypi.org/documentation/remote-access/ssh/) if you are direclty connected to the Raspi
+2. Or drop an empty `ssh` file on `/boot/` on your micro SD card
 
 ## AMD64 processor
 
 * Download the [latest Debian jessie](http://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-8.5.0-amd64-lxde-desktop.iso), with or without graphical interface.
-
 * Set up your server as you would do for any server you own.
-
 * When asked, create a root user and an ideascube user.
 
 Note: you could also use [preseedcube](https://github.com/ideascube/preseedcube) to automate this Debian installation.
