@@ -48,6 +48,8 @@ The easiest way to configure a device is to use a standard configuration without
 
 `./buildMyCube.sh -n koombook -m false`
 
+>>>>> You can follow the installation with `tail -f /var/log/ansible-pull.log`
+
 #### Configuration file
 
 At Libraries Without Borders we use two important files:
@@ -86,7 +88,7 @@ Thoses files helps us to automate deployment. If you would like to use one of ou
 
                 Ex: -t Africa/Dakar
 
- -b|--branch    Set Github branch you'd like to use
+ -b|--branch    Set Github branch you would like to use
 
                 Default : oneUpdateFile
 
@@ -143,65 +145,52 @@ Thoses files helps us to automate deployment. If you would like to use one of ou
 ### Arguments one by one
 
 ### --name
-
 This is the only mandatory argument. It will be used to set your server name, wifi hotspot name, dns name, ideascube name.
 
 If the latter matches with one found in the [AnsibleCube device configuration file](https://github.com/ideascube/ansiblecube/blob/oneUpdateFile/roles/set_custom_fact/files/device_list.fact) the configuration template will be used. Otherwise a dialog box will pop up to ask you some questions about 3rd party softwares \(Khan Academy, Zim files\) you would like to install and configure.
 
 ### --timezone
-
 By default the timezone is `Europe/Paris`. This option is useful if your headquarter is somewhere else. Timezone can be found on [Wikipedia](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 
 ### --branch
-
 This is meant for testing only. In most case you won't have to use this argument.
 
 ### --managment
-
 By default this argument is set to `True`, meaning that the device installed will be managed remotely by Libraries Whitout Borders. If your device is used for a personal project, set this argument to `False`.
 
 ### --hostname
-
 By default, the hostname will be taken from `--name` argument. If you want to have a specific name and a specific hostame, set this variable. Don't forget to add **`.lan`**.
 
 ### --wifi-pwd
-
 Override the default wifi hotspot password with the given one
 
 ### --action
-
 By default this argument is not needed, the default value will be `master,custom`.
 
 * **master**
-
 This argument matches an AnsibleCube tag. It means that this argument will match specific action. For instance, this argument is usefull to build a minimal configuration \(like a master image for easy duplicating\). Only Ideascube and Kiwix server will be installed and configured. If you are using an ARM CPU you will get to the homepage by typing `http://koombook.lan`. Using `http://ideasbox.lan` for an AMD64 processor.
 
 This is great to give a try, but not enough for a long term use.
 
 * **custom**
-
 This "tag" will match more actions within AnsibleCube, like configuration of your hotspot name, dns name matching the `--name`. It will also install and configure 3rd party applications.
 
 * **rename**
-
 This action can be used in case you have fully installed a device \(master and custom action\) and you are not happy with the device name, then use the rename tag to change it. Examples following.
 
 > > > > **WARNING** This action can't be used if the **master** and **custom** action have not been executed.
 
 * **update**
-
 This action will keep your device up to date every time the device gets an Internet connection. This is done automatically. However you can use it manually with this script.
 
 > > > > **WARNING** This action can't be used if the **master** and **custom** action have not been executed.
 
 * **zim\_install**
-
 This will trigger the task of downloading and installing Zim files from Internet. Be carefull, you will need a fast Internet connection as the ZIM files are pretty heavy \(from 200Mo to 60Go\).
 
 >>>> **WARNING**  This action can't be used if the **master** and **custom** action have not been executed.
 
 * **idc\_import**
-
 This will trigger the task of massively importing content within the Ideascube media-center.
 
 Before importing, you will need to build a csv file and gather all you medias in one folder. The best is to ask for help on \#ideascube on irc.freenode.org.
@@ -209,7 +198,6 @@ Before importing, you will need to build a csv file and gather all you medias in
 >>>> **WARNING** This action can't be used if the **master** and **custom** action have not been executed.
 
 * **kalite\_import**
-
 For faster installation and configuration, we have been mirroring all the kalite videos. Unfortunaltery, this mirror cannot be used if you are standing outside of Libraries Without Borders office. You will have to download manually the videos from the Kalite web interface.
 
 >>>> **WARNING** This action can't be used if the **master** and **custom** action have not been executed.
@@ -218,31 +206,31 @@ For faster installation and configuration, we have been mirroring all the kalite
 
 ### Examples
 
-##### Create a master based on kb\_bdi\_irc Ideascube template
+**Create a master based on kb\_bdi\_irc Ideascube template**
 
 `./buildMyCube.sh -n kb_bdi_irc -a master`
 
-##### Create a master based on kb\_bdi\_irc Ideascube template with specific hostname
+**Create a master based on kb\_bdi\_irc Ideascube template with specific hostname**
 
 `./buildMyCube.sh -n kb_bdi_irc -a master -h box.lan`
 
-##### Full install with personal configuration and without management
+**Full install with personal configuration and without management**
 
 `./buildMyCube.sh -n my_box -t Africa/Dakar -m false`
 
-##### Full install with personal configuration, without management and custom hostname
+**Full install with personal configuration, without management and custom hostname**
 
 `./buildMyCube.sh -n my_box -t Africa/Dakar -m false -h foo.lan`
 
-##### Rename a device
+**Rename a device**
 
 `./buildMyCube.sh -n kb_bdi_irc -t Europe/Paris -a rename`
 
-##### Update manually the device
+**Update manually the device**
 
 `./buildMyCube.sh -a update`
 
-> You can follow the installation with `tail -f /var/log/ansible-pull.log`
+>>>>> You can follow the installation with `tail -f /var/log/ansible-pull.log`
 
 ## Connect to your device
 
