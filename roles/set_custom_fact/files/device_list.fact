@@ -9846,65 +9846,11 @@
   },
   "kb-jor-drcsouth": {
     "kalite": {
-      "activated": "True",
-      "language": [
-        "en"
-      ],
+      "activated": "False",
+      "language": [],
       "version": "0.16.9"
     },
     "package_management": [
-      {
-        "name": "wikisource.en",
-        "status": "present"
-      },
-      {
-        "name": "wikipedia.ar",
-        "status": "present"
-      },
-      {
-        "name": "wiktionary.ar",
-        "status": "present"
-      },
-      {
-        "name": "wikiversity.ar",
-        "status": "present"
-      },
-      {
-        "name": "wikibooks.ar",
-        "status": "present"
-      },
-      {
-        "name": "wikisource.ar",
-        "status": "present"
-      },
-      {
-        "name": "wikiquote.ar",
-        "status": "present"
-      },
-      {
-        "name": "vikidia.en",
-        "status": "present"
-      },
-      {
-        "name": "tedscience.en",
-        "status": "present"
-      },
-      {
-        "name": "tedtechnology.en",
-        "status": "present"
-      },
-      {
-        "name": "ted-ed.en",
-        "status": "present"
-      },
-      {
-        "name": "tedmed.en",
-        "status": "present"
-      },
-      {
-        "name": "crashcourse.en",
-        "status": "present"
-      },
       {
         "name": "fictions-and-entertainment-in-arabic-ar",
         "status": "present"
@@ -10083,6 +10029,38 @@
       },
       {
         "name": "sociology-ar",
+        "status": "present"
+      },
+      {
+        "name": "fozi-mozi-ar",
+        "status": "present"
+      },
+      {
+        "name": "dpc-awareness-and-protection-ar",
+        "status": "present"
+      },
+      {
+        "name": "fozi-mozi-diy-handcrafts-ar",
+        "status": "present"
+      },
+      {
+        "name": "adam-wa-mishmish-ar",
+        "status": "present"
+      },
+      {
+        "name": "space-science-ar",
+        "status": "present"
+      },
+      {
+        "name": "computer-and-it-ar",
+        "status": "present"
+      },
+      {
+        "name": "carpentry-ar",
+        "status": "present"
+      },
+      {
+        "name": "photography-ar",
         "status": "present"
       }
     ],
