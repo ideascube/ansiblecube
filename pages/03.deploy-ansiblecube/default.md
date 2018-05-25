@@ -8,19 +8,19 @@ Your device is now ready to be configured with AnsibleCube, let's do it !
 
 ### Through SSH
 
-* `ssh ideascube@device_ip_address`
+* `ssh root@koombook.local` or `ssh pi@raspberrypi.local`
 
-  * **Armbian:** `root / 1234`
+  * **Armbian password ** `1234`
 
-  * **Raspberry:** `pi` / `raspberry`
+  * **Raspberry password ** `raspberry`
 
-* Download the bash script: `wget https://github.com/ideascube/ansiblecube/raw/oneUpdateFile/buildMyCube.sh`
+* Download `buildMyCube.sh` script : `wget https://github.com/ideascube/ansiblecube/raw/oneUpdateFile/buildMyCube.sh`
 
-* Modify rights: `chmod +x buildMyCube.sh`
+* Add execution rights: `chmod +x buildMyCube.sh`
 
 ### From your device
 
-* Plug a keyboard on your device
+* Plug a keyboard on your device and an HDMI screen
 
 * Connect to the device with
 
@@ -30,17 +30,25 @@ Your device is now ready to be configured with AnsibleCube, let's do it !
 
 * If needed, type this command to change the mapping of your keyboard: `loadkeys fr`
 
-* Download the bash script: `wget https://github.com/ideascube/ansiblecube/raw/oneUpdateFile/buildMyCube.sh`
+* Download `buildMyCube.sh` script : `wget https://github.com/ideascube/ansiblecube/raw/oneUpdateFile/buildMyCube.sh`
 
-* Modify rights: `chmod +x buildMyCube.sh`
+* Add execution rights : `chmod +x buildMyCube.sh`
 
-**WARNING**: If you are running this command behind a firewall, be sure the NTP protocol is allowed for outgoing connections. If not, manually set the date on your system: `date -s 20160513`
+> > > > > **WARNING**: If you are running this command behind a firewall, be sure the NTP protocol is allowed for outgoing connections. If not, manually set the date on your system: `date -s 20160513`
 
 ## Execute buildMyCube.sh
 
-buildMyCube is a wrapper around the ansible-pull command line tool.
+**buildMyCube** is a wrapper around the ansible-pull command line tool. You can [read the code](https://github.com/ideascube/ansiblecube/raw/oneUpdateFile/buildMyCube.sh) if you want to understand what is doing this script.
 
 ansible-pull needs some parameters to run **AnsibleCube** correctly. This script will build the right command line for you.
+
+#### Give a first shoot !
+
+The easiest way to configure a device is to use a standard configuration without content but with all the KoomBook tools.
+
+`./buildMyCube.sh -n koombook -m false`
+
+#### Configuration file
 
 At Libraries Without Borders we use two important files:
 
@@ -52,7 +60,7 @@ Thoses files helps us to automate deployment. If you would like to use one of ou
 
 ### Script help
 
-```
+```bash
 
 ⇒ sudo ./buildMyCube.sh
 
@@ -132,7 +140,7 @@ Thoses files helps us to automate deployment. If you would like to use one of ou
 
 ```
 
-## Arguments one by one
+### Arguments one by one
 
 ### --name
 
@@ -164,57 +172,47 @@ Override the default wifi hotspot password with the given one
 
 By default this argument is not needed, the default value will be `master,custom`.
 
-* master
+* **master**
 
 This argument matches an AnsibleCube tag. It means that this argument will match specific action. For instance, this argument is usefull to build a minimal configuration \(like a master image for easy duplicating\). Only Ideascube and Kiwix server will be installed and configured. If you are using an ARM CPU you will get to the homepage by typing `http://koombook.lan`. Using `http://ideasbox.lan` for an AMD64 processor.
 
 This is great to give a try, but not enough for a long term use.
 
-* custom
+* **custom**
 
 This "tag" will match more actions within AnsibleCube, like configuration of your hotspot name, dns name matching the `--name`. It will also install and configure 3rd party applications.
 
-* rename
+* **rename**
 
 This action can be used in case you have fully installed a device \(master and custom action\) and you are not happy with the device name, then use the rename tag to change it. Examples following.
 
-> **WARNING**
+> > > > **WARNING** This action can't be used if the **master** and **custom** action have not been executed.
 
-> This action can't be used if the **master** and **custom** action have not been executed.
-
-* update
+* **update**
 
 This action will keep your device up to date every time the device gets an Internet connection. This is done automatically. However you can use it manually with this script.
 
-> **WARNING**
+> > > > **WARNING** This action can't be used if the **master** and **custom** action have not been executed.
 
-> This action can't be used if the **master** and **custom** action have not been executed.
-
-* zim\_install
+* **zim\_install**
 
 This will trigger the task of downloading and installing Zim files from Internet. Be carefull, you will need a fast Internet connection as the ZIM files are pretty heavy \(from 200Mo to 60Go\).
 
-> **WARNING**
+>>>> **WARNING**  This action can't be used if the **master** and **custom** action have not been executed.
 
-> This action can't be used if the **master** and **custom** action have not been executed.
-
-* idc\_import
+* **idc\_import**
 
 This will trigger the task of massively importing content within the Ideascube media-center.
 
 Before importing, you will need to build a csv file and gather all you medias in one folder. The best is to ask for help on \#ideascube on irc.freenode.org.
 
-> **WARNING**
+>>>> **WARNING** This action can't be used if the **master** and **custom** action have not been executed.
 
-> This action can't be used if the **master** and **custom** action have not been executed.
-
-* kalite\_import
+* **kalite\_import**
 
 For faster installation and configuration, we have been mirroring all the kalite videos. Unfortunaltery, this mirror cannot be used if you are standing outside of Libraries Without Borders office. You will have to download manually the videos from the Kalite web interface.
 
-> **WARNING**
-
-> This action can't be used if the **master** and **custom** action have not been executed.
+>>>> **WARNING** This action can't be used if the **master** and **custom** action have not been executed.
 
 ## Launch the deployment
 
@@ -248,7 +246,7 @@ For faster installation and configuration, we have been mirroring all the kalite
 
 ## Connect to your device
 
-Once `buildMyCube.sh` is done installing, reboot your newly configured device and look for an new wifi hotspot on your laptop.
+Once `buildMyCube.sh` is done, reboot your newly configured device and look for an new wifi hotspot on your laptop.
 
 ## Keep your system up to date!
 

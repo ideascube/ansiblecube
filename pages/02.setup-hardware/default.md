@@ -49,7 +49,7 @@ We support Raspbery Pi 2/3 but we don't provide a pre-made image, you'll have to
 2. Connect an Ethernet cable
 3. Insert the micro SD card in the slot
 4. Login through SSH with 
-   1. `ssh pi@raspberry.local`
+   1. `ssh pi@raspberrypi.local`
    2. login : `pi`
    3. passeword : `raspberry`
 
