@@ -42,6 +42,7 @@ We support Raspbery Pi 2/3 but we don't provide a pre-made image, you'll have to
    1. `ssh root@koombook.local`
    2. login : `root` 
    3. passeword : `123`
+
 #### Raspberry Pi
 
 1. Connect the board to good a power source (5v/2A)
@@ -52,9 +53,9 @@ We support Raspbery Pi 2/3 but we don't provide a pre-made image, you'll have to
    2. login : `pi`
    3. passeword : `raspberry`
 
-> > > > Enable SSH to connect to the Rapsberry Pi remotly
-1. [Use this guide](https://www.raspberrypi.org/documentation/remote-access/ssh/) if you are direclty connected to the Raspi
-2. Or drop an empty `ssh` file on `/boot/` on your micro SD card
+> > > >>  Enable SSH to connect to the Rapsberry Pi remotly
+> > > >>  1. [Use this guide](https://www.raspberrypi.org/documentation/remote-access/ssh/) if you are direclty connected to the Raspi
+> > > >>  2. Or drop an empty `ssh` file on `/boot/` on your micro SD card
 
 ## AMD64 processor
 
