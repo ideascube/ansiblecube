@@ -10,19 +10,20 @@ title: 'Setup your hardware'
 
 We fully support Olimex Lime2 SBC. KoomBook image is based on [Armbian](https://www.armbian.com/) distribution.
 
-> > > > Download the [latest image](http://filer.bsf-intranet.org/KoomBook_DIY_5.41_Lime2_Debian_jessie_next_4.14.21.7z) built by Libraries Without Borders for Olimex Lime2 board
+* Download the [latest image](http://filer.bsf-intranet.org/KoomBook_DIY_5.41_Lime2_Debian_jessie_next_4.14.21.7z) built by Libraries Without Borders for Olimex Lime2 board
 
 #### Raspberry Pi 2/3
 We support Raspbery Pi 2/3 but we don't provide a pre-made image, you'll have to use our build script
 
-> > > >  Download a fresh [Raspbian image](https://www.raspberrypi.org/downloads/raspbian/)
+* Download a fresh [Raspbian image](https://www.raspberrypi.org/downloads/raspbian/)
 
 #### External hard drive
->>>> AnsibleCube is able to mount an external hard drive to store large amount of data. The hard drive has to be connected from first boot and accessible here `/dev/sda1`. This block device will be mounted and used to store the data.
 
->>>> Olimex boards are designed to host a SATA controller, you can directly connect a SATA hard drive to the board.
+>>>>> AnsibleCube is able to mount an external hard drive to store large amount of data. The hard drive has to be connected from first boot and accessible here `/dev/sda1`. This block device will be mounted and used to store the data.
 
->>>>> **WATCH OUT : The external hard drive will be automatically FORMATTED without any notice**
+>>>>> Olimex boards are designed to host a SATA controller, you can directly connect a SATA hard drive to the board.
+
+>>>> **WATCH OUT : The external hard drive will be automatically FORMATTED without any notice**
 
 ### Unzip & Burn
 
