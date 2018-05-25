@@ -34,7 +34,7 @@ Your device is now ready to be configured with AnsibleCube, let's do it !
 
 * Add execution rights : `chmod +x buildMyCube.sh`
 
-> > > > > **WARNING**: If you are running this command behind a firewall, be sure the NTP protocol is allowed for outgoing connections. If not, manually set the date on your system: `date -s 20160513`
+> > > >  **WARNING**: If you are running this command behind a firewall, be sure the NTP protocol is allowed for outgoing connections. If not, manually set the date on your system: `date -s 20160513`
 
 ## Execute buildMyCube.sh
 
