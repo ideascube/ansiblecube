@@ -4,24 +4,25 @@ title: 'Setup your hardware'
 
 ## ARM processor : Single Board Computer (SBC)
 
-### Olimex Lime2
+### Get the OS
+
+#### Olimex Lime2
+
 We fully support Olimex Lime2 SBC. KoomBook image is based on [Armbian](https://www.armbian.com/) distribution.
 
-1. Download the [latest image](http://filer.bsf-intranet.org/KoomBook_DIY_5.41_Lime2_Debian_jessie_next_4.14.21.7z) built by Libraries Without Borders for Olimex Lime2 board
+> > > > Download the [latest image](http://filer.bsf-intranet.org/KoomBook_DIY_5.41_Lime2_Debian_jessie_next_4.14.21.7z) built by Libraries Without Borders for Olimex Lime2 board
 
-Login infos : `root` / `1234`
-
-### Raspberry Pi 2\/3
+#### Raspberry Pi 2/3
 We support Raspbery Pi 2/3 but we don't provide a pre-made image, you'll have to use our build script
 
-1. Download a fresh [Raspbian image](https://www.raspberrypi.org/downloads/raspbian/) and enable SSH
+> > > >  Download a fresh [Raspbian image](https://www.raspberrypi.org/downloads/raspbian/)
 
-Login infos : `pi` / `raspberry`
+#### External hard drive
+>>>> AnsibleCube is able to mount an external hard drive to store large amount of data. The hard drive has to be connected from first boot and accessible here `/dev/sda1`. This block device will be mounted and used to store the data.
 
-### External hard drive
-> AnsibleCube is able to mount an external hard drive to store large amount of data. The hard drive has to be connected from first boot and accessible here `/dev/sda1`. This block device will be mounted and used to store the data.
-> Olimex boards are designed to host a SATA controller, you can directly connect a SATA hard drive to the board.
-> **WATCH OUT : The external hard drive will be automatically FORMATTED without any notice**
+>>>> Olimex boards are designed to host a SATA controller, you can directly connect a SATA hard drive to the board.
+
+>>>>> **WATCH OUT : The external hard drive will be automatically FORMATTED without any notice**
 
 ### Unzip & Burn
 
@@ -30,12 +31,30 @@ Login infos : `pi` / `raspberry`
 
 ### Boot the board !
 
-* Connect the board to good a power source (5v/2A)
-* Connect an Ethernet cable (make sure the green and orange led stays off)
-* Insert the micro SD card in the slot
-* Push 2s the power switch to start the board (the board won't start by itself once connected to a power source)
-* Login through SSH to : ssh root@koombook.local / `root / 1234`
-  
+#### Olimex
+
+1. Connect the board to good a power source (5v/2A)
+2. Connect an Ethernet cable (make sure the green and orange led stays off)
+3. Insert the micro SD card in the slot
+4. Push 2s the power switch to start the board (the board won't start by itself once connected to a power source)
+5. Login through SSH with 
+   1. `ssh root@koombook.local`
+   2. login : `root` 
+   3. passeword : `123`
+#### Raspberry Pi
+
+1. Connect the board to good a power source (5v/2A)
+2. Connect an Ethernet cable
+3. Insert the micro SD card in the slot
+4. Login through SSH with 
+   1. `ssh pi@raspberry.local`
+   2. login : `pi`
+   3. passeword : `raspberry`
+
+> > > > Enable SSH to connect to the Rapsberry Pi remotly
+1. [Use this guide](https://www.raspberrypi.org/documentation/remote-access/ssh/) if you are direclty connected to the Raspi
+2. Or drop an empty `ssh` file on `/boot/` on your micro SD card
+
 ## AMD64 processor
 
 * Download the [latest Debian jessie](http://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-8.5.0-amd64-lxde-desktop.iso), with or without graphical interface.
