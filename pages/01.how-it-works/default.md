@@ -2,7 +2,7 @@
 title: 'Learn how AnsibleCube works'
 ---
 
-_AnsibleCube aim to automatically deploy the [Ideascube plateform](http://github.com/ideascube/ideascube/) and download several types of content \(ZIM files, Khan Academy videos, Ideascube packages\)._
+_AnsibleCube is a set of instructions ([source code](https://github.com/ideascube/ansiblecube/tree/oneUpdateFile)), it aim to automatically deploy the [Ideascube plateform](http://github.com/ideascube/ideascube/) and download several types of content \([Kiwix content](http://www.kiwix.org/), [Khan Academy videos](https://fr.khanacademy.org/), [Library Without Border currated content](http://catalog.ideascube.org/omeka.yml.html)\)._
 
 ## How ansible works
 
