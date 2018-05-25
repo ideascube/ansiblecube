@@ -33,31 +33,17 @@ So far ansiblecube has been tested only on a ARM Olimex Lime2 A20, Debian Jessie
 ### What does Ansible do?
 
 **This playbook installs :**
-
 * [ideascube software](http://github.com/ideascube/ideascube/). It can be installed simply with the [apt tool from Debian](http://repos.ideascube.org/debian/jessie). However, ansiblecube will take care of all the small tweaks to make it work.
-
 * Kiwix-server to load ZIM files
-
 * Kalite \(Khan Academy Mooc plateform\)
-
 * BSF Campus Mooc plateform
-
 * Import data in Ideascube media-center
-
 * Synchronise Kalite videos
 
 **It will setup :**
-
 * dnsmasq \(to resolv local domain\)
-
 * hostapd \(to setup the local wifi hotspot\)
-
 * nginx \(to serve http content\)
-
 * uwsgi \(to manage python scripts\)
-
 * Network-Manager
-
 * All system tweaks
-
-
