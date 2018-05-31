@@ -54,8 +54,11 @@ if [[ -b /dev/sda && ! -b /dev/sda1 ]]; then
 
     wget -O /tmp/get_amqp_output.sh http://gogs/outils-interne/temps_modernes_v1/raw/master/get_amqp_output.sh
     wget -O /tmp/read_from_amqp.sh http://gogs/outils-interne/temps_modernes_v1/raw/master/read_from_amqp_koombook.sh
+    wget -O /tmp/send_to_log_queue.sh http://gogs/outils-interne/temps_modernes_v1/raw/master/send_to_log_queue.sh
+
     chmod +x /tmp/get_amqp_output.sh
     chmod +x /tmp/read_from_amqp.sh
+    chmod +x /tmp/send_to_log_queue.sh
 
     output=$(/tmp/read_from_amqp.sh)
 
@@ -63,8 +66,16 @@ if [[ -b /dev/sda && ! -b /dev/sda1 ]]; then
     timeZone=$(echo output | jq '.timezone')
 
     # Start builMyCube
+    now=$(TZ="Europe/Paris" date +"%F %T,%3N")
+    inet_addr=$(ip a s eth0 | awk '/inet /  {print $2}')
+    macaddress=$( ip a s eth0 | awk ' /link\/ether/ { print $2 } ' )
+
+    /tmp/send_to_log_queue.sh "$now - INFO - Starting deployment of $deviceName on $inet_addr / $macaddress"
 
     /var/lib/ansible/local/buildMyCube.sh -n "$deviceName" -t "$timeZone"
+
+    now=$(TZ="Europe/Paris" date +"%F %T,%3N")
+    /tmp/send_to_log_queue.sh "$now - INFO - Finished deployment of $deviceName on $inet_addr / $macaddress"
 
     wget http://report.bsf-intranet.org/device=$device_hostname/KoomBookFirstInit=Success
 
