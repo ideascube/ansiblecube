@@ -53,7 +53,7 @@ if [[ -b /dev/sda && ! -b /dev/sda1 ]]; then
     apt-get -y install jq amqp-tools
 
     wget -O /tmp/get_amqp_output.sh http://gogs/outils-interne/temps_modernes_v1/raw/master/get_amqp_output.sh
-    wget -O /tmp/read_from_amqp.sh http://gogs/outils-interne/temps_modernes_v1/raw/master/read_from_amqp.sh
+    wget -O /tmp/read_from_amqp.sh http://gogs/outils-interne/temps_modernes_v1/raw/master/read_from_amqp_koombook.sh
     chmod +x /tmp/get_amqp_output.sh
     chmod +x /tmp/read_from_amqp.sh
 
