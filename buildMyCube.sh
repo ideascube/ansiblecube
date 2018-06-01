@@ -254,6 +254,8 @@ function help()
         -b|--branch     Set Github branch you'd like to use 
                         Default: oneUpdateFile
 
+        -q|--quiet      Run in non-interactive mode
+
         -m|--management  Install BSF tools, set to false if not from BSF
                         Default: true
                         Ex: -m true|false
@@ -403,6 +405,11 @@ do
         -b|--branch)
             BRANCH=$2
             GIT_BRANCH="git_branch=$2"
+        shift
+        ;;
+
+        -q|--quiet)
+            CHK_CONFIG=0
         shift
         ;;
 
