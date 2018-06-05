@@ -10,6 +10,7 @@ TAGS="--tags master,custom"
 LOCK_ACTION=0
 SEND_REPORT=0
 CHK_CONFIG=1
+ERASE_CONFIG=0
 KALITE=False
 KALITE_LANG=""
 MEDIACENTER=False
@@ -54,6 +55,13 @@ function check_device_configuration()
     esac
     fi
 }
+
+function erase_configuration()
+{
+    rm -f /etc/firstStart.csv /etc/ansible/facts.d/device_list.fact /tmp/device_list.fact /etc/ansible/facts.d/installed_software.fact 2> /dev/null
+    touch /etc/ansible/facts.d/installed_software.fact 2> /dev/null
+}
+
 
 function internet_check()
 {
@@ -410,6 +418,8 @@ do
 
         -q|--quiet)
             CHK_CONFIG=0
+            ERASE_CONFIG=1
+            LOCK_ACTION=1
         shift
         ;;
 
@@ -427,6 +437,7 @@ then
 fi
 
 [ "$CHK_CONFIG" = "1" ] && check_device_configuration
+[ "$ERASE_CONFIG" = "1" ] && erase_configuration
 
 [ "$MANAGEMENT" == managed_by_bsf=True ] && go_manage
 
