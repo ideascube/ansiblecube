@@ -51,4 +51,4 @@
 
 - name: restart dsnmasq
   service: name=dnsmasq state=restarted
-  tags: ['custom','rename']
+  tags: ['master', 'custom','rename']
