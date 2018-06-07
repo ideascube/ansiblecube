@@ -105,7 +105,7 @@ Thoses files helps us automate deployment. If you would like to use one of our t
                 Ex: -h my_hostname.lan
 
 
--w|--wifi-pwd   Override the default AP wifi password
+-w|--wifi-pwd   Override the default AP WiFi password
                 Ex: -w 12ET4690
 
  -a|--action    Type of action : master / custom / rename / update / package_management / idc_import / kalite_import
@@ -116,7 +116,7 @@ Thoses files helps us automate deployment. If you would like to use one of our t
 
      - master: Install IdeasCube and Kiwix server with strict minimal configuration Nginx, Network-manager, Hostapd, DnsMasq, Iptables rules
 
-     - custom-: This action will use the -n and -t parameter to configure your device. It will also install and configure third party application such as Kalite, Media-center content, Zim files
+     - custom-: This action will use the -n and -t parameter to configure your device. It will also install and configure third party applications such as Kalite, Media-center content, Zim files
 
      - rename: Rename a device (-n and -t parameter can be redefined) 
      
@@ -152,7 +152,7 @@ This is the only mandatory argument. It will be used to set your server name, Wi
 If the latter matches with one found in the [AnsibleCube device configuration file](https://github.com/ideascube/ansiblecube/blob/oneUpdateFile/roles/set_custom_fact/files/device_list.fact) the configuration template will be used. Otherwise, a dialog box will pop up to ask you some questions about 3rd party software \(Khan Academy, Zim files\) you would like to install and configure.
 
 ### --timezone
-By default, the timezone is `Europe/Paris`. This option is useful if your headquarters are somewhere else. Timezone can be found on [Wikipedia](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
+By default, the timezone is `Europe/Paris`. This option is useful if your headquarters are somewhere else. Timezones can be found on [Wikipedia](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 
 ### --branch
 This is meant for testing only. In most cases, you won't have to use this argument.
@@ -170,7 +170,7 @@ Override the default WiFi hotspot password with a new one
 By default, this argument is not needed. The default value will be `master,custom`.
 
 * **master**
-This argument matches an AnsibleCube tag. It means that this argument will match specific actions. For instance, this argument is useful to build a minimal configuration \(like a master image for easy duplicating\). Only the Ideascube and Kiwix servers will be installed and configured. If you are using an ARM CPU you will get to the homepage by typing `http://koombook.lan`. Use `http://ideasbox.lan` for an AMD64 processor.
+This argument matches an AnsibleCube tag. It means that this argument will match specific actions. For instance, this argument is useful to build a minimal configuration \(like a master image for easy duplicating\). Only the IdeasCube and Kiwix servers will be installed and configured. If you are using an ARM CPU you will get to the homepage by typing `http://koombook.lan`. Use `http://ideasbox.lan` for an AMD64 processor.
 
 This is great to try, but is not enough for long term use.
 
@@ -178,7 +178,7 @@ This is great to try, but is not enough for long term use.
 This "tag" will match more actions within AnsibleCube, like configuration of your hotspot name, dns name matching the `--name`. It will also install and configure 3rd party applications.
 
 * **rename**
-This action can be used in case you have fully installed a device \(master and custom action\) and you are not happy with the device name. Use the rename tag to change it. Examples following.
+This action can be used in case you have fully installed a device \(master and custom action\) and you are not happy with the device name. Use the rename tag to change it. See examples below.
 
 > > > > **WARNING** This action can't be used if the **master** and **custom** action have not been executed.
 
