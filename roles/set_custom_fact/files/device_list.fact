@@ -3020,7 +3020,7 @@
   },
   "idb-fra-poleactioneducamiens": {
     "kalite": {
-      "activated": "True",
+      "activated": true,
       "language": [
         "fr"
       ],
@@ -3056,7 +3056,7 @@
         "status": "present"
       },
       {
-        "name": "decouvrez-les-arts-plastiques-fr",
+        "name": "arts-plastiques-fr",
         "status": "present"
       },
       {
@@ -3096,7 +3096,7 @@
         "status": "present"
       },
       {
-        "name": "combattons-les-discriminations-fr",
+        "name": "discriminations-enfants-ados-fr",
         "status": "present"
       },
       {
@@ -3112,7 +3112,7 @@
         "status": "present"
       },
       {
-        "name": "je-cuisine-sain-fr",
+        "name": "je-mange-bien-fr",
         "status": "present"
       },
       {
@@ -3181,6 +3181,70 @@
       },
       {
         "name": "wikipedia.fr",
+        "status": "present"
+      },
+      {
+        "name": "world.map",
+        "status": "present"
+      },
+      {
+        "name": "vikidia.fr",
+        "status": "present"
+      },
+      {
+        "name": "universcience-tv.fr",
+        "status": "present"
+      },
+      {
+        "name": "gutenberg.fr",
+        "status": "present"
+      },
+      {
+        "name": "cest-pas-sorcier.fr",
+        "status": "present"
+      },
+      {
+        "name": "e-penser.fr",
+        "status": "present"
+      },
+      {
+        "name": "wiktionary.fr",
+        "status": "present"
+      },
+      {
+        "name": "biologie-tout-compris.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikisource.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikiquote.fr",
+        "status": "present"
+      },
+      {
+        "name": "tedxlausanne2012.fr",
+        "status": "present"
+      },
+      {
+        "name": "tedxlausanne2013.fr",
+        "status": "present"
+      },
+      {
+        "name": "dirtybiology.fr",
+        "status": "present"
+      },
+      {
+        "name": "tedxlausanne2014.fr",
+        "status": "present"
+      },
+      {
+        "name": "les-fondamentaux.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikibooks.fr",
         "status": "present"
       }
     ],
