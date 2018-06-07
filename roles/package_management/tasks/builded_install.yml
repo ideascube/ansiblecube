@@ -3,7 +3,9 @@
     - debug: msg="Removing Ideascube folders and copying new data on Ideasbook."
     - file: path=/var/ideascube state=absent
     - file: path=/var/cache/ideascube state=absent
-    - command: rsync -a /mnt/pkg_source/{{ generic_project_name }}/{{ item.src}} {{ item.dst }}
+    - file: path=/media/{{ generic_project_name }} state=directory owner={{ username }} mode=0755
+    - mount: src=/mnt/pkg_source/{{ generic_project_name }}.img dest=/media/{{ generic_project_name }} fstype=ext4 state=mounted
+    - command: rsync -a /media/{{ generic_project_name }}/{{ item.src}} {{ item.dst }}
       with_items:
         - src: "var/ideascube"
           dst: "/var/"
@@ -20,7 +22,9 @@
     - debug: msg="Removing Ideascube folders and copying new data on Koombook."
     - file: path=/media/hdd/ideascube state=absent
     - file: path=/media/hdd/ideascube_cache state=absent
-    - command: rsync -a /mnt/pkg_source/{{ generic_project_name }}/{{ item.src}} {{ item.dst }}
+    - file: path=/media/{{ generic_project_name }} state=directory owner={{ username }} mode=0755
+    - mount: src=/mnt/pkg_source/{{ generic_project_name }}.img dest=/media/{{ generic_project_name }} fstype=ext4 state=mounted
+    - command: rsync -a /media/{{ generic_project_name }}/{{ item.src}} {{ item.dst }}
       with_items:
         - src: "var/ideascube/"
           dst: "/media/hdd/ideascube"
