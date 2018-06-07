@@ -1,5 +1,5 @@
 ---
-title: 'Some test case'
+title: 'Some Tests'
 ---
 
 The repo is plugged in [Travis CI](https://travis-ci.org/ideascube/ansiblecube).
