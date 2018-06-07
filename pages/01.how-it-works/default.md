@@ -2,7 +2,7 @@
 title: 'About AnsibleCube'
 ---
 
-_AnsibleCube is a set of instructions ([source code](https://github.com/ideascube/ansiblecube/tree/oneUpdateFile)), that automatically deploys the [Ideascube platform](http://github.com/ideascube/ideascube/) and downloads several types of content \([Kiwix content](http://www.kiwix.org/), [Khan Academy videos](https://fr.khanacademy.org/), [Library Without Borders curated content](http://catalog.ideascube.org/omeka.yml.html)\)._
+_AnsibleCube is a set of instructions ([source code](https://github.com/ideascube/ansiblecube/tree/oneUpdateFile)), that automatically deploys the [IdeasCube platform](http://github.com/ideascube/ideascube/) and downloads several types of content \([Kiwix content](http://www.kiwix.org/), [Khan Academy videos](https://fr.khanacademy.org/), [Library Without Borders curated content](http://catalog.ideascube.org/omeka.yml.html)\)._
 
 ## How Ansible Works
 
