@@ -1,20 +1,20 @@
 ---
-title: 'Automate deployment'
+title: 'Automated Deployment'
 ---
 
-You may have to duplicate on several servers the same configuration.
+You may have to duplicate the same configuration on several servers.
 
-By default AnsibleCube gives a specific name to the device, if you simply clone this device, all your devices will have the same name which can be annoying.
+By default, AnsibleCube gives a specific name to each device. If you simply clone a device, all your devices will have the same name, which can be annoying.
 
-The workaround is to rename each cloned device. To do so, you can login on each device and run:
+To avoid this, you can rename each cloned device. To do so, you can login on each device and run:
 
     ./buildMyCube.sh -n idb_col_llavedelsaber -a rename -h bibliotecamovil.lan
 
-If you got more than 4 devices to rename, it can be a bit tiring to proceed this way.
+However, if you have more than 4 devices to rename, it can be a bit tiring to proceed this way.
 
-**The following tip allows you to run automatically the rename script on device boot!**
+**The following tip allows you to automatically run the rename script on device boot!**
 
-* Login in your master device
+* Login to your master device
 * Delete ansiblePullUpdate and add the rename script:
 ```
     sudo rm -f /etc/NetworkManager/dispatcher.d/ansiblePullUpdate
@@ -24,7 +24,7 @@ The ansiblePullUpdate file will be automatically recreated during the rename ope
 
 * Add this script in the rename file:
 
-**WARNING** Don't forget to modify the **buidMyCube.sh arguments** to match your needs.
+>>>>>>**WARNING** Don't forget to modify the **buidMyCube.sh arguments** to match your needs.
 
     #!/bin/bash
     
