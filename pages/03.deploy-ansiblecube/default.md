@@ -26,7 +26,7 @@ Your device is now ready to be configured with AnsibleCube. Let's do it !
 
   * **Armbian:** `root / 1234`
 
-  * **Raspberry:** `pi` / `raspberry`
+  * **Raspberry:** `pi / raspberry`
 
 * If needed, use this command to change the mapping of your keyboard: `loadkeys fr`
 
