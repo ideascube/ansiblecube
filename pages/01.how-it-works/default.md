@@ -20,7 +20,7 @@ Our network architecture is based on:
 
 * A GitHub repo which holds all the recipes
 
-* A Filer which holds all the heavy files to allow fast synchronization of the GitRepo
+* A Filer which holds all the large files to allow fast synchronization of the GitRepo
 
 * A Data Server where content from the IdeasCube Box can be automatically pushed towards the server
 
