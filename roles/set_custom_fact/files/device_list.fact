@@ -1015,8 +1015,16 @@
     },
     "package_management": [
       {
+        "name": "risques-numeriques-fr",
+        "status": "present"
+      },
+      {
         "name": "wikiquote.fa",
         "status": "latest"
+      },
+      {
+        "name": "risques-auditifs-fr",
+        "status": "absent"
       }
     ],
     "portal": {
