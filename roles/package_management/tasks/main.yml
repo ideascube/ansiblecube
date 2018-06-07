@@ -10,8 +10,8 @@
     - apt: name=nfs-common update_cache=yes cache_valid_time=86400
     - file: path=/mnt/pkg_source state=directory owner={{ username }} mode=0755
     - mount: src={{ bsf_nfs_host }}:{{ bsf_nfs_target_folder }} name=/mnt/pkg_source fstype=nfs state=mounted
-    - stat: path=/mnt/pkg_source/{{ generic_project_name }}.img
-      register: stat_result
+    - find: path=/mnt/pkg_source/ patterns="{{ generic_project_name }}.img"
+      register: find_result
   rescue:
     - debug: msg="Error caught mounting NFS share."
   when: bsf_nfs_host_accessible.state is defined and bsf_nfs_host_accessible.state == "started"
@@ -20,14 +20,13 @@
 - include: builded_install.yml
   when: bsf_nfs_host_accessible.state is defined
     and bsf_nfs_host_accessible.state == "started"
-    and stat_result.stat.exists == True
-    and stat_result.stat.isreg == True
+    and find_result.matched == 1
   tags: ['custom', 'package_management']
 
 # when bsf_nfs_host_accessible.state is not defined means we are outside office
-# when stat_result.stat.exists == False means we are in office but no data is available for our device to deploy.
+# when find_result.matched != 1 (should be 0) means we are in office but no data is available for our device to deploy.
 
 - include: regular_install.yml
   when: bsf_nfs_host_accessible.state is not defined
-    or stat_result.stat.exists == False
+    or find_result.matched != 1
   tags: ['custom', 'update','package_management']
