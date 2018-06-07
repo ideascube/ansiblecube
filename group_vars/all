@@ -17,9 +17,9 @@ filer_bsf: http://filer.bsf-intranet.org
 timezone: "Europe/Paris"
 koombookDoctor: "koombook-doctor.local"
 bsf_gateway: "10.10.9.1"
-bsf_iscsi_host: 10.10.9.23
-bsf_iscsi_host_accessible: False
-bsf_iscsi_target: iqn.2018-04.kawax:Deploy
+bsf_nfs_host: 10.10.9.23
+bsf_nfs_host_accessible: False
+bsf_nfs_target_folder: /srv/preprod_images
 kiwix_version: "1.0"
 mongodb_version: "2.4.10"
 own_config_file: False
