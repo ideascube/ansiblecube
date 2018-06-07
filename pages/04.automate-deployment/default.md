@@ -24,7 +24,7 @@ The ansiblePullUpdate file will be automatically recreated during the rename ope
 
 * Add this script in the rename file:
 
->>>>**WARNING** Don't forget to modify the **buidMyCube.sh arguments** to match your needs.
+>>>>>>Don't forget to modify the **buidMyCube.sh arguments** to match your needs.
 
     #!/bin/bash
     
