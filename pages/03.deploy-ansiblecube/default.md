@@ -50,7 +50,7 @@ The easiest way to configure a device is to use a standard configuration without
 
 >>>>> You can follow the installation with `tail -f /var/log/ansible-pull.log`
 
-#### Configuration file
+#### Configuration File
 
 At Libraries Without Borders we use two important files:
 
