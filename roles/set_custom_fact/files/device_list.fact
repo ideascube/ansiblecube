@@ -2844,6 +2844,280 @@
       }
     ]
   },
+  "idb-fra-metmaulnoye": {
+    "kalite": {
+      "activated": true,
+      "language": [
+        "fr"
+      ],
+      "version": "0.16.9"
+    },
+    "package_management": [
+      {
+        "name": "decouvrez-differents-sports-fr",
+        "status": "present"
+      },
+      {
+        "name": "musique-fr",
+        "status": "present"
+      },
+      {
+        "name": "citoyennete-et-politique-fr",
+        "status": "present"
+      },
+      {
+        "name": "decouvrez-ou-re-decouvrez-la-cuisine-de-differents-pays-fr",
+        "status": "present"
+      },
+      {
+        "name": "combattons-les-discriminations-fr",
+        "status": "present"
+      },
+      {
+        "name": "montez-votre-projet-professionnel-fr",
+        "status": "present"
+      },
+      {
+        "name": "arts-plastiques-fr",
+        "status": "present"
+      },
+      {
+        "name": "initiez-vous-a-la-photographie-fr",
+        "status": "present"
+      },
+      {
+        "name": "renseignez-vous-sur-les-demarches-administratives-fr",
+        "status": "present"
+      },
+      {
+        "name": "comprendre-et-exprimer-ses-emotions-fr",
+        "status": "present"
+      },
+      {
+        "name": "initiez-vous-a-la-creation-video-fr",
+        "status": "present"
+      },
+      {
+        "name": "audiobooks-et-fictions-sonores-fr",
+        "status": "present"
+      },
+      {
+        "name": "hygiene-de-base-fr",
+        "status": "present"
+      },
+      {
+        "name": "prevention-addictions-fr",
+        "status": "present"
+      },
+      {
+        "name": "creation-audio-fr",
+        "status": "present"
+      },
+      {
+        "name": "sante-les-bases-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprends-le-francais-a1-enfants-adolescents-fr",
+        "status": "present"
+      },
+      {
+        "name": "kit-de-l-animateur-fr",
+        "status": "present"
+      },
+      {
+        "name": "decouvrez-ou-redecouvrez-l-histoire-de-france-fr",
+        "status": "present"
+      },
+      {
+        "name": "parentalite-fr",
+        "status": "present"
+      },
+      {
+        "name": "ecoute-tes-emotions-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "prends-soin-de-toi-enfants-ado-fr",
+        "status": "present"
+      },
+      {
+        "name": "protegeons-la-planete-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-filles-et-les-garcons-quelles-differences-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprends-le-francais-a2-enfants-adolescents-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-alphabetisation-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-b1-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-b2-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-c1-c2-fr",
+        "status": "present"
+      },
+      {
+        "name": "comprendre-l-autisme-fr",
+        "status": "present"
+      },
+      {
+        "name": "moyens-de-contraception-fr",
+        "status": "present"
+      },
+      {
+        "name": "troubles-alimentaires-fr",
+        "status": "present"
+      },
+      {
+        "name": "alcool-drogues-fr",
+        "status": "present"
+      },
+      {
+        "name": "risques-numeriques-fr",
+        "status": "present"
+      },
+      {
+        "name": "harcelement-ado-fr",
+        "status": "present"
+      },
+      {
+        "name": "harcelement-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "premiere-fois-ado-adultes-fr",
+        "status": "present"
+      },
+      {
+        "name": "grossesse-a-l-adolescence-fr",
+        "status": "present"
+      },
+      {
+        "name": "la-sante-enfants-ado-fr",
+        "status": "present"
+      },
+      {
+        "name": "sommeil-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "anatomie-feminine-fr",
+        "status": "present"
+      },
+      {
+        "name": "vih-sida-fr",
+        "status": "present"
+      },
+      {
+        "name": "filles-garcons-quelle-place-pour-qui-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-le-yoga-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "fiches-d-activites-sante-fr",
+        "status": "present"
+      },
+      {
+        "name": "fiches-d-activites-play-international-fr",
+        "status": "present"
+      },
+      {
+        "name": "diy-travaux-manuels-fr",
+        "status": "present"
+      },
+      {
+        "name": "tricot-fr",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.fr",
+        "status": "present"
+      },
+      {
+        "name": "world.map",
+        "status": "present"
+      },
+      {
+        "name": "vikidia.fr",
+        "status": "present"
+      },
+      {
+        "name": "universcience-tv.fr",
+        "status": "present"
+      },
+      {
+        "name": "gutenberg.fr",
+        "status": "present"
+      },
+      {
+        "name": "cest-pas-sorcier.fr",
+        "status": "present"
+      },
+      {
+        "name": "e-penser.fr",
+        "status": "present"
+      },
+      {
+        "name": "wiktionary.fr",
+        "status": "present"
+      },
+      {
+        "name": "biologie-tout-compris.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikisource.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikiquote.fr",
+        "status": "present"
+      },
+      {
+        "name": "tedxlausanne2012.fr",
+        "status": "present"
+      },
+      {
+        "name": "tedxlausanne2013.fr",
+        "status": "present"
+      },
+      {
+        "name": "dirtybiology.fr",
+        "status": "present"
+      },
+      {
+        "name": "tedxlausanne2014.fr",
+        "status": "present"
+      },
+      {
+        "name": "les-fondamentaux.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikibooks.fr",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": "True"
+    }
+  },
   "idb-fra-mmm": {
     "kalite": {
       "activated": "True",
