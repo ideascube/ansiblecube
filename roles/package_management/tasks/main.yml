@@ -23,6 +23,10 @@
     and find_result.matched == 1
   tags: ['custom', 'package_management']
 
+- name: Unmount NFS folder.
+  mount: src={{ bsf_nfs_host }}:{{ bsf_nfs_target_folder }} name=/mnt/pkg_source state=absent
+  tags: ['custom', 'package_management']
+
 # when bsf_nfs_host_accessible.state is not defined means we are outside office
 # when find_result.matched != 1 (should be 0) means we are in office but no data is available for our device to deploy.
 

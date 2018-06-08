@@ -36,3 +36,10 @@
         - "/var/cache/ideascube"
   when: ext_hdd
   tags: ['custom', 'package_management']
+
+- name: Unmount source image.
+  mount:
+    src: /mnt/pkg_source/{{ generic_project_name }}.img
+    name: /media/{{ generic_project_name }}
+    state: absent
+  tags: ['custom', 'package_management']
