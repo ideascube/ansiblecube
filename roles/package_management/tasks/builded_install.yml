@@ -8,33 +8,13 @@
     - command: rsync -a /media/{{ generic_project_name }}/{{ item.src}} {{ item.dst }}
       with_items:
         - src: "var/ideascube"
-          dst: "/var/"
+          dst: "{{ ideascube_folder }}"
         - src: "var/cache/ideascube"
-          dst: "/var/cache/"
+          dst: "{{ ideascube_cache_folder }}"
     - command: "chown -R {{ username }}: {{ item }}"
       with_items:
         - "/var/ideascube"
         - "/var/cache/ideascube"
-  when: not ext_hdd
-  tags: ['custom', 'package_management']
-
-- block:
-    - debug: msg="Removing Ideascube folders and copying new data on Koombook."
-    - file: path=/media/hdd/ideascube state=absent
-    - file: path=/media/hdd/ideascube_cache state=absent
-    - file: path=/media/{{ generic_project_name }} state=directory owner={{ username }} mode=0755
-    - mount: src=/mnt/pkg_source/{{ generic_project_name }}.img dest=/media/{{ generic_project_name }} fstype=ext4 state=mounted
-    - command: rsync -a /media/{{ generic_project_name }}/{{ item.src}} {{ item.dst }}
-      with_items:
-        - src: "var/ideascube/"
-          dst: "/media/hdd/ideascube"
-        - src: "var/cache/ideascube/"
-          dst: "/media/hdd/ideascube_cache"
-    - command: "chown -R {{ username }}: {{ item }}"
-      with_items:
-        - "/var/ideascube"
-        - "/var/cache/ideascube"
-  when: ext_hdd
   tags: ['custom', 'package_management']
 
 - name: Unmount source image.
