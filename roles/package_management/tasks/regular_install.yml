@@ -1,7 +1,4 @@
 ---
-- include_vars: group_vars/{{ ansible_architecture }}.yml
-  tags: ['custom', 'update','package_management']
-
 - name: Update ideascube catalog cache before downloading
   become: yes
   become_user: ideascube

@@ -1,4 +1,7 @@
 ---
+- include_vars: group_vars/{{ ansible_architecture }}.yml
+  tags: ['custom', 'update','package_management']
+
 - name: Check if NFS host is accessible
   wait_for: host={{ bsf_nfs_host }} port=2049 timeout=3
   register: bsf_nfs_host_accessible
