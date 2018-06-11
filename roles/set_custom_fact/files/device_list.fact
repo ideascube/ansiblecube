@@ -3144,6 +3144,10 @@
       {
         "name": "wikibooks.fr",
         "status": "present"
+      },
+      {
+        "name": "world.map",
+        "status": "present"
       }
     ],
     "portal": {
