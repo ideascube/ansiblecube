@@ -6,3 +6,5 @@ ideascube_project_name: koombook
 ideascube_branding: koombook
 old_kiwix_path: /media/hdd
 bsf_log_folder: /media/hdd/bsf
+ideascube_folder: /media/hdd/ideascube
+ideascube_cache_folder: /media/hdd/ideascube_cache
