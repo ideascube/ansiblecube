@@ -124,13 +124,13 @@ function clone_ansiblecube()
 function generate_rsa_key()
 {
     echo -n "[+] Generating public/private rsa key pair... "
-    echo -e "\n\n\n" | ssh-keygen -t rsa -f /root/.ssh/id_rsa -b 4096 -C "it@bibliosansfrontieres.org $FULL_NAME" -N "" > /dev/null 2>&1
+    echo -e "\n\n\n" | ssh-keygen -t rsa -f $SSH_KEY -b 4096 -C "it@bibliosansfrontieres.org $FULL_NAME" -N "" > /dev/null 2>&1
     echo 'Done.'
     while true; do
-     ssh -o BatchMode=yes "ansible@tincmaster.wan.bsf-intranet.org" true
+     ssh -i $SSH_KEY -o BatchMode=yes "ansible@tincmaster.wan.bsf-intranet.org" true
      if [[ $? -ne 0 ]]; then
       echo "[+] Please enter password to copy SSH public key"
-      ssh-copy-id -o StrictHostKeyChecking=no ansible@tincmaster.wan.bsf-intranet.org
+      ssh-copy-id -i $SSH_KEY -o StrictHostKeyChecking=no ansible@tincmaster.wan.bsf-intranet.org
      else
       break
      fi
