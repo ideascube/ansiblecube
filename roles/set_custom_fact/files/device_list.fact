@@ -940,6 +940,90 @@
       "activated": "False"
     }
   },
+  "idb-bsf-demowins": {
+    "kalite": {
+      "activated": "False",
+      "language": [],
+      "version": "0.16.9"
+    },
+    "package_management": [
+      {
+        "name": "introduction-to-healthcare-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-human-rights-for-children-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-sciences-en",
+        "status": "present"
+      },
+      {
+        "name": "greek-mythology-en",
+        "status": "present"
+      },
+      {
+        "name": "cartoons-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-photography-en",
+        "status": "present"
+      },
+      {
+        "name": "let-s-practise-sport-children-en",
+        "status": "present"
+      },
+      {
+        "name": "make-you-own-radio-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-to-know-and-manage-your-feelings-en",
+        "status": "present"
+      },
+      {
+        "name": "health-and-hygiene-en",
+        "status": "present"
+      },
+      {
+        "name": "women-s-experiences-en",
+        "status": "present"
+      },
+      {
+        "name": "women-s-rights-en",
+        "status": "present"
+      },
+      {
+        "name": "when-should-i-go-to-the-emergency-room-en",
+        "status": "present"
+      },
+      {
+        "name": "yoga-for-therapy-en",
+        "status": "present"
+      },
+      {
+        "name": "preparing-for-major-disasters-and-natural-catastrophes-en",
+        "status": "present"
+      },
+      {
+        "name": "being-prepared-in-case-of-a-major-disaster-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-how-to-save-a-life-first-aid-basics-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-first-aid-techniques-en",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": "True"
+    }
+  },
   "idb-bsf-elkteam": {
     "kalite": {
       "activated": "True",
