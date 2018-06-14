@@ -51,6 +51,7 @@ if [[ -b /dev/sda && ! -b /dev/sda1 ]]; then
 
     # Get autodeploy script and run it.
     wget -q https://raw.githubusercontent.com/ideascube/ansiblecube/TM-autodeploy/tools/start_buildmycube.sh -O /tmp/start_buildmycube.sh
+    chmod +x /tmp/start_buildmycube.sh
     /tmp/start_buildmycube.sh koombook
 
     reboot
