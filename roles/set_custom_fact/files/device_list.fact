@@ -1024,49 +1024,6 @@
       "activated": "True"
     }
   },
-  "idb-bsf-elkteam": {
-    "kalite": {
-      "activated": "True",
-      "language": [
-        "en"
-      ],
-      "version": "0.16.9"
-    },
-    "package_management": [
-      {
-        "name": "vikidia.en",
-        "status": "present"
-      },
-      {
-        "name": "wikipedia.wo",
-        "status": "present"
-      },
-      {
-        "name": "wiktionary.ti",
-        "status": "present"
-      },
-      {
-        "name": "tedxlausannechange2013.fr",
-        "status": "present"
-      },
-      {
-        "name": "manual-ideascube-all",
-        "status": "present"
-      },
-      {
-        "name": "prevention-addictions-fr",
-        "status": "present"
-      },
-      {
-        "name": "icarito.es",
-        "status": "present"
-      },
-      {
-        "name": "wiktionary.ti",
-        "status": "present"
-      }
-    ]
-  },
   "idb-bsf-kolibri": {
     "kalite": {
       "activated": "True",
@@ -1097,19 +1054,7 @@
     },
     "package_management": [
       {
-        "name": "patron-pour-coudre-une-jupe-a-volants-fille-fr",
-        "status": "present"
-      },
-      {
-        "name": "patrons-pour-coudre-des-vetements-pour-enfants-fr",
-        "status": "present"
-      },
-      {
-        "name": "patrons-pour-coudre-des-vetements-pour-femmes-fr",
-        "status": "present"
-      },
-      {
-        "name": "patrons-pour-coudre-un-top-sorbetto-femmes-fr",
+        "name": "choisirsacontraception.fr",
         "status": "present"
       },
       {
@@ -1118,12 +1063,12 @@
       }
     ],
     "portal": {
-      "activated": "True"
+      "activated": "False"
     }
   },
   "idb-bsf-vagrant": {
     "kalite": {
-      "activated": "False",
+      "activated": "True",
       "language": [
         "fr"
       ],
