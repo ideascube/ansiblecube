@@ -2,20 +2,38 @@
 - include_vars: group_vars/{{ ansible_architecture }}.yml
   tags: ['custom', 'update','package_management']
 
-- name: Update ideascube catalog cache before downloading
-  become: yes
-  become_user: ideascube
-  shell: ideascube catalog cache update
-  tags: ['custom', 'update','package_management']
+- name: Check if NFS host is accessible
+  wait_for: host={{ bsf_nfs_host }} port=2049 timeout=3
+  register: bsf_nfs_host_accessible
+  failed_when: False
+  tags: ['custom', 'package_management']
 
-- name: Install, upgrade or remove a package present in device_list.fact
-  become: yes
-  become_user: ideascube
-  shell: "{% if 'present' in item.status %}ideascube catalog install {{ item.name }}
-    {% elif 'latest' in item.status %}ideascube catalog update {{ item.name }}
-    {% elif 'absent' in item.status %}ideascube catalog remove {{ item.name }}
-    {% elif 'reinstall' in item.status %}ideascube catalog reinstall {{ item.name }}
-    {% else %}echo '[+] nothing to do'{% endif %}"
-  with_items: '{{ ansible_local.device_list[generic_project_name].package_management | default(omit) }}'
-  when: ansible_local.device_list[generic_project_name].package_management is defined
-  tags: ['custom','update','package_management']
+- block:
+    - debug: msg="NFS detected / Trying to mount target"
+    - apt: name=nfs-common update_cache=yes cache_valid_time=86400
+    - file: path=/mnt/pkg_source state=directory owner={{ username }} mode=0755
+    - mount: src={{ bsf_nfs_host }}:{{ bsf_nfs_target_folder }} name=/mnt/pkg_source fstype=nfs state=mounted
+    - find: path=/mnt/pkg_source/ patterns="{{ generic_project_name }}.img"
+      register: find_result
+  rescue:
+    - debug: msg="Error caught mounting NFS share."
+  when: bsf_nfs_host_accessible.state is defined and bsf_nfs_host_accessible.state == "started"
+  tags: ['custom', 'package_management']
+
+- include: builded_install.yml
+  when: bsf_nfs_host_accessible.state is defined
+    and bsf_nfs_host_accessible.state == "started"
+    and find_result.matched == 1
+  tags: ['custom', 'package_management']
+
+- name: Unmount NFS folder.
+  mount: src={{ bsf_nfs_host }}:{{ bsf_nfs_target_folder }} name=/mnt/pkg_source state=absent
+  tags: ['custom', 'package_management']
+
+# when bsf_nfs_host_accessible.state is not defined means we are outside office
+# when find_result.matched != 1 (should be 0) means we are in office but no data is available for our device to deploy.
+
+- include: regular_install.yml
+  when: bsf_nfs_host_accessible.state is not defined
+    or find_result.matched != 1
+  tags: ['custom', 'update','package_management']

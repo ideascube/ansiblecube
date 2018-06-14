@@ -17,6 +17,9 @@ filer_bsf: http://filer.bsf-intranet.org
 timezone: "Europe/Paris"
 koombookDoctor: "koombook-doctor.local"
 bsf_gateway: "10.10.9.1"
+bsf_nfs_host: 10.10.9.23
+bsf_nfs_host_accessible: False
+bsf_nfs_target_folder: /srv/preprod_images
 kiwix_version: "1.0"
 mongodb_version: "2.4.10"
 own_config_file: False
@@ -31,7 +34,7 @@ mook_path: /home/{{ username }}
 samba_dir: /home/{{username}}/samba_share
 zim_path: /var/ideascube/kiwix
 
-#Domaine name
+#Domain name
 kalite_server_name: khanacademy.{{hostname}}
 kolibri_server_name: kolibri.{{hostname}}
 appinventor_server_name: appinventor.{{hostname}}

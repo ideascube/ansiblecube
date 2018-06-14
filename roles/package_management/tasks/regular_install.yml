@@ -1,0 +1,18 @@
+---
+- name: Update ideascube catalog cache before downloading
+  become: yes
+  become_user: ideascube
+  shell: ideascube catalog cache update
+  tags: ['custom', 'update','package_management']
+
+- name: Install, upgrade or remove a package present in device_list.fact
+  become: yes
+  become_user: ideascube
+  shell: "{% if 'present' in item.status %}ideascube catalog install {{ item.name }}
+    {% elif 'latest' in item.status %}ideascube catalog update {{ item.name }}
+    {% elif 'absent' in item.status %}ideascube catalog remove {{ item.name }}
+    {% elif 'reinstall' in item.status %}ideascube catalog reinstall {{ item.name }}
+    {% else %}echo '[+] nothing to do'{% endif %}"
+  with_items: '{{ ansible_local.device_list[generic_project_name].package_management | default(omit) }}'
+  when: ansible_local.device_list[generic_project_name].package_management is defined
+  tags: ['custom','update','package_management']

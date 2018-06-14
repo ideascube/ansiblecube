@@ -1,0 +1,25 @@
+---
+- block:
+    - debug: msg="Removing Ideascube folders and copying new data on Ideasbook."
+    - file: path=/var/ideascube state=absent
+    - file: path=/var/cache/ideascube state=absent
+    - file: path=/media/{{ generic_project_name }} state=directory owner={{ username }} mode=0755
+    - mount: src=/mnt/pkg_source/{{ generic_project_name }}.img name=/media/{{ generic_project_name }} fstype=ext4 state=mounted
+    - command: rsync -a /media/{{ generic_project_name }}/{{ item.src}}/ {{ item.dst }}
+      with_items:
+        - src: "var/ideascube"
+          dst: "{{ ideascube_folder }}"
+        - src: "var/cache/ideascube"
+          dst: "{{ ideascube_cache_folder }}"
+    - command: "chown -R {{ username }}: {{ item }}"
+      with_items:
+        - "/var/ideascube"
+        - "/var/cache/ideascube"
+  tags: ['custom', 'package_management']
+
+- name: Unmount source image.
+  mount:
+    src: /mnt/pkg_source/{{ generic_project_name }}.img
+    name: /media/{{ generic_project_name }}
+    state: absent
+  tags: ['custom', 'package_management']

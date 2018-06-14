@@ -7,3 +7,5 @@ ideascube_branding: ideasbox
 managed_by_bsf: True
 old_kiwix_path: /usr/local/share/kiwix/data
 bsf_log_folder: /var/log/bsf
+ideascube_folder: /var/ideascube
+ideascube_cache_folder: /var/cache/ideascube

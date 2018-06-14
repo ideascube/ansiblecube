@@ -87,6 +87,7 @@
    - iotop
    - htop
    - anacron
+   - rsync
   tags: ['master','custom','update']
 
 - name: Install avahi packages
