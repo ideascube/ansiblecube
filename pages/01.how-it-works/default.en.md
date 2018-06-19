@@ -35,7 +35,7 @@ So far, AnsibleCube has only been tested with ARM Olimex Lime2 A20, Debian Jessi
 **This playbook installs:**
 * [IdeasCube software](http://github.com/ideascube/ideascube/). It can be installed simply with the [APT tool from Debian](http://repos.ideascube.org/debian/jessie). AnsibleCube will take care of all the small tweaks to make it work.
 * Kiwix-server to load ZIM files
-* Kalite \(Khan Academy Mooc plateform\)
+* Kalite \(Khan Academy Mooc platform\)
 * BSF Campus Mooc platform
 * Import data in IdeasCube media-center
 * Synchronise Kalite videos
