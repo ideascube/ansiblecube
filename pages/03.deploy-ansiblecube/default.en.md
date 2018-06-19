@@ -188,7 +188,7 @@ This action will keep your device up to date every time the device gets an Inter
 > > > > **WARNING** This action can't be used if the **master** and **custom** action have not been executed.
 
 * **zim\_install**
-This will trigger the task of downloading and installing Zim files from internet. Be careful, you will need a fast internet connection as the ZIM files are pretty large \(from 200Mo to 60Go\).
+This will trigger the task of downloading and installing Zim files from internet. Be careful, you will need a fast internet connection as the ZIM files are pretty large \(from 200 MB to 60 GB\).
 
 >>>> **WARNING**  This action can't be used if the **master** and **custom** action have not been executed.
 
