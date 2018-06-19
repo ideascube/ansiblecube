@@ -34,7 +34,7 @@ We support Raspbery Pi 2/3 but we don't provide a pre-made image.  You'll have t
 
 #### Olimex
 
-1. Connect the board to a power source (5v/2A)
+1. Connect the board to a power source (5 V / 2 A)
 2. Connect an Ethernet cable (make sure the green and orange LED light stays off)
 3. Insert the micro SD card in the slot
 4. Push the power switch twice to start the board (the board won't start by itself once connected to a power source)
