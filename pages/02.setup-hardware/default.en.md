@@ -45,7 +45,7 @@ We support Raspbery Pi 2/3 but we don't provide a pre-made image.  You'll have t
 
 #### Raspberry Pi
 
-1. Connect the board to a power source (5v/2A)
+1. Connect the board to a power source (5 V / 2 A)
 2. Connect an Ethernet cable
 3. Insert the micro SD card in the slot
 4. Login through SSH with 
