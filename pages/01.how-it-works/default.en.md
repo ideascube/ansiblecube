@@ -26,7 +26,7 @@ Our network architecture is based on:
 
 #### Supported Platforms
 
-So far, AnsibleCube has only been tested ARM Olimex Lime2 A20, Debian Jessie, Kernel 3.4/4.8 and AMD64 server. It should work on any Jessie distribution, and probably on Ubuntu and Raspberry Pi.
+So far, AnsibleCube has only been tested with ARM Olimex Lime2 A20, Debian Jessie, Kernel 3.4/4.8 and AMD64 servers. It should work on any Jessie distribution, and probably on Ubuntu and Raspberry Pi.
 
 ## Deployment
 
