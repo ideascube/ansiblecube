@@ -248,6 +248,6 @@ Example of `ansiblePullUpdate` file : `/usr/local/bin/ansible-pull -s 120 -d /va
 
 The file `roles/set_custom_fact/files/device_list.fact` knows what actions need to be done on the device.
 
-If the latter have `actived: True`, the action will be executed each time the device connects to the internet.
+If the action has `actived: True`, the action will be executed each time the device connects to the internet.
 
 
