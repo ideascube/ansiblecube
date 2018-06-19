@@ -41,8 +41,8 @@ So far, AnsibleCube has only been tested with ARM Olimex Lime2 A20, Debian Jessi
 * Synchronise Kalite videos
 
 **It will setup :**
-* dnsmasq \(to resolv local domain\)
-* hostapd \(to setup the local wifi hotspot\)
+* dnsmasq \(to resolve local domain\)
+* hostapd \(to setup the local WiFi hotspot\)
 * nginx \(to serve http content\)
 * uwsgi \(to manage python scripts\)
 * Network-Manager
