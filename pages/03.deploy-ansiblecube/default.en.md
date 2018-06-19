@@ -4,7 +4,7 @@ title: 'Configure AnsibleCube with BuildMyCube'
 
 ## Download BuildMyCube.sh
 
-Your device is now ready to be configured with AnsibleCube. Let's do it !
+Your device is now ready to be configured with AnsibleCube. Let's do it!
 
 ### Through SSH
 
