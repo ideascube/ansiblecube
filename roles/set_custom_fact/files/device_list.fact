@@ -7986,6 +7986,240 @@
       "activated": "True"
     }
   },
+  "kb-bsf-demoenabel": {
+    "kalite": {
+      "activated": true,
+      "language": [
+        "fr"
+      ],
+      "version": "0.16.9"
+    },
+    "package_management": [
+      {
+        "name": "decouvrez-ou-re-decouvrez-la-cuisine-de-differents-pays-fr",
+        "status": "present"
+      },
+      {
+        "name": "montez-votre-projet-professionnel-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-code-informatique-fr",
+        "status": "present"
+      },
+      {
+        "name": "initiez-vous-a-la-photographie-fr",
+        "status": "present"
+      },
+      {
+        "name": "initiez-vous-a-la-creation-video-fr",
+        "status": "present"
+      },
+      {
+        "name": "management-fr",
+        "status": "present"
+      },
+      {
+        "name": "marketing-fr",
+        "status": "present"
+      },
+      {
+        "name": "administration-gestion-comptabilite-fr",
+        "status": "present"
+      },
+      {
+        "name": "innovation-en-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "creation-d-entreprise-fr",
+        "status": "present"
+      },
+      {
+        "name": "economie-fr",
+        "status": "present"
+      },
+      {
+        "name": "jardinage-et-agriculture-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "geographie-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "creation-audio-fr",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-adults-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-teenagers-en",
+        "status": "present"
+      },
+      {
+        "name": "apprends-le-francais-a1-enfants-adolescents-fr",
+        "status": "present"
+      },
+      {
+        "name": "utilisez-internet-en-toute-securite-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-a1-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-a2-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprends-le-francais-a2-enfants-adolescents-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-alphabetisation-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-b1-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-b2-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-c1-c2-fr",
+        "status": "present"
+      },
+      {
+        "name": "le-talisman-brise-sw-rfi-sw",
+        "status": "present"
+      },
+      {
+        "name": "eclairage-et-raccordements-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "introduction-a-l-electricite-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "preparer-son-chantier-electrique-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "le-tableau-electrique-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "installer-et-entretenir-des-panneaux-solaires-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "patron-pour-coudre-une-jupe-a-volants-fille-fr",
+        "status": "present"
+      },
+      {
+        "name": "patrons-pour-coudre-des-vetements-pour-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "patrons-pour-coudre-des-vetements-pour-femmes-fr",
+        "status": "present"
+      },
+      {
+        "name": "patrons-pour-coudre-un-top-sorbetto-femmes-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-utiliser-des-patrons-fr",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.fr",
+        "status": "present"
+      },
+      {
+        "name": "world.map",
+        "status": "present"
+      },
+      {
+        "name": "gutenberg.fr",
+        "status": "present"
+      },
+      {
+        "name": "cest-pas-sorcier.fr",
+        "status": "present"
+      },
+      {
+        "name": "e-penser.fr",
+        "status": "present"
+      },
+      {
+        "name": "wiktionary.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikiquote.fr",
+        "status": "present"
+      },
+      {
+        "name": "tedxlausanne2012.fr",
+        "status": "present"
+      },
+      {
+        "name": "tedxlausanne2013.fr",
+        "status": "present"
+      },
+      {
+        "name": "dirtybiology.fr",
+        "status": "present"
+      },
+      {
+        "name": "tedxlausanne2014.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikibooks.fr",
+        "status": "present"
+      },
+      {
+        "name": "burundi.map",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.en",
+        "status": "present"
+      },
+      {
+        "name": "ubuntudoc.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.sw",
+        "status": "present"
+      },
+      {
+        "name": "gutenberg.en",
+        "status": "present"
+      },
+      {
+        "name": "tedxlausannechange2013.fr",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": "True"
+    }
+  },
   "kb-bsf-itjordan": {
     "idc_import": {
       "activated": "False",
