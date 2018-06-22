@@ -1034,7 +1034,7 @@
     },
     "kolibri": {
       "activated": "True",
-      "version": "0.7.2"
+      "version": "0.9.2"
     },
     "package_management": [
       {
