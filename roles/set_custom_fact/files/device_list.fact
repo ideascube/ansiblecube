@@ -8068,6 +8068,10 @@
         "status": "present"
       },
       {
+        "name": "ou-sont-les-femmes-fr",
+        "status": "present"
+      },
+      {
         "name": "utilisez-internet-en-toute-securite-fr",
         "status": "present"
       },
@@ -8141,6 +8145,10 @@
       },
       {
         "name": "apprendre-a-utiliser-des-patrons-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-bases-de-l-informatique-fr",
         "status": "present"
       },
       {
