@@ -49,6 +49,10 @@
   template: src=interfaces.j2 dest=/etc/network/interfaces
   tags: ['master','rename']
 
+- name: Fixing dnsmasq bug (see https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=860064)
+  file: path=/usr/share/dns/root.ds state=absent
+  tags: ['master','custom','rename']
+
 - name: restart dsnmasq
   service: name=dnsmasq state=restarted
   tags: ['master', 'custom','rename']
