@@ -1054,43 +1054,23 @@
     },
     "package_management": [
       {
-        "name": "patron-pour-coudre-une-jupe-a-volants-fille-fr",
+        "name": "eclairage-et-raccordements-sikana-fr",
         "status": "present"
       },
       {
-        "name": "patrons-pour-coudre-des-vetements-pour-enfants-fr",
+        "name": "introduction-a-l-electricite-sikana-fr",
         "status": "present"
       },
       {
-        "name": "patrons-pour-coudre-des-vetements-pour-femmes-fr",
+        "name": "preparer-son-chantier-electrique-sikana-fr",
         "status": "present"
       },
       {
-        "name": "patrons-pour-coudre-un-top-sorbetto-femmes-fr",
+        "name": "le-tableau-electrique-sikana-fr",
         "status": "present"
       },
       {
-        "name": "apprendre-a-utiliser-des-patrons-fr",
-        "status": "present"
-      },
-      {
-        "name": "patron-pour-coudre-une-jupe-a-volants-fille-fr",
-        "status": "present"
-      },
-      {
-        "name": "patrons-pour-coudre-des-vetements-pour-enfants-fr",
-        "status": "present"
-      },
-      {
-        "name": "patrons-pour-coudre-des-vetements-pour-femmes-fr",
-        "status": "present"
-      },
-      {
-        "name": "patrons-pour-coudre-un-top-sorbetto-femmes-fr",
-        "status": "present"
-      },
-      {
-        "name": "apprendre-a-utiliser-des-patrons-fr",
+        "name": "installer-et-entretenir-des-panneaux-solaires-sikana-fr",
         "status": "present"
       }
     ],
