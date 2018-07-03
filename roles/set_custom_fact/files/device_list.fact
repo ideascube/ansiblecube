@@ -7086,6 +7086,58 @@
       "activated": "True"
     }
   },
+  "kb-bdi-enabelgitega": {
+    "kalite": {
+      "activated": false,
+      "language": [],
+      "version": "0.16.9"
+    },
+    "package_management": [
+      {
+        "name": "patron-pour-coudre-une-jupe-a-volants-fille-fr",
+        "status": "present"
+      },
+      {
+        "name": "patrons-pour-coudre-des-vetements-pour-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "patrons-pour-coudre-des-vetements-pour-femmes-fr",
+        "status": "present"
+      },
+      {
+        "name": "patrons-pour-coudre-un-top-sorbetto-femmes-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-utiliser-des-patrons-fr",
+        "status": "present"
+      },
+      {
+        "name": "patron-pour-coudre-une-jupe-a-volants-fille-fr",
+        "status": "present"
+      },
+      {
+        "name": "patrons-pour-coudre-des-vetements-pour-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "patrons-pour-coudre-des-vetements-pour-femmes-fr",
+        "status": "present"
+      },
+      {
+        "name": "patrons-pour-coudre-un-top-sorbetto-femmes-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-utiliser-des-patrons-fr",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "kb-bdi-fvsamadeecofo": {
     "kalite": {
       "activated": "True",
