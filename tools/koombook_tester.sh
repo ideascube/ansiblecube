@@ -29,6 +29,9 @@ if [ -e /root/rebooted ]; then
         die "Ethernet data rate too low"
     fi
 
+    # Get disk space
+    disk_size=`fdisk -l /dev/sda -s`
+
     # Test if wlan1 can connect to wlan0
     nmcli device wifi connect KoomBookTester_$unixDate ifname wlan1 || die "Error while connecting to AP"
 
@@ -36,7 +39,7 @@ if [ -e /root/rebooted ]; then
     rm -f /root/rebooted
 
     # Report state: KoomBook OK
-    wget http://report.bsf-intranet.org/device="KoomBookTester_$unixDate"/msg="OK!"
+    wget http://report.bsf-intranet.org/device="KoomBookTester_$unixDate"/msg="OK!"/diskSize="$disk_size"
 
     # Delete Udev rules
     rm -f /etc/udev/rules.d/70-persistent-net.rules
