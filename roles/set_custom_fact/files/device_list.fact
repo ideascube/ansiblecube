@@ -1056,23 +1056,23 @@
     },
     "package_management": [
       {
-        "name": "eclairage-et-raccordements-sikana-fr",
+        "name": "patron-pour-coudre-une-jupe-a-volants-fille-fr",
         "status": "present"
       },
       {
-        "name": "introduction-a-l-electricite-sikana-fr",
+        "name": "patrons-pour-coudre-des-vetements-pour-enfants-fr",
         "status": "present"
       },
       {
-        "name": "preparer-son-chantier-electrique-sikana-fr",
+        "name": "patrons-pour-coudre-des-vetements-pour-femmes-fr",
         "status": "present"
       },
       {
-        "name": "le-tableau-electrique-sikana-fr",
+        "name": "patrons-pour-coudre-un-top-sorbetto-femmes-fr",
         "status": "present"
       },
       {
-        "name": "installer-et-entretenir-des-panneaux-solaires-sikana-fr",
+        "name": "apprendre-a-utiliser-des-patrons-fr",
         "status": "present"
       }
     ],
