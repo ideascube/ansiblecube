@@ -8151,7 +8151,7 @@
       }
     ],
     "portal": {
-      "activated": "True"
+      "activated": true
     }
   },
   "kb-bdi-enabelgitega": {
