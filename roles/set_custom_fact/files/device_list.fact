@@ -1048,7 +1048,7 @@
   },
   "idb-bsf-tempsmodernes": {
     "kalite": {
-      "activated": true,
+      "activated": false,
       "language": [
         "fr"
       ],
@@ -1056,11 +1056,23 @@
     },
     "package_management": [
       {
-        "name": "test-pkg2-fr",
+        "name": "eclairage-et-raccordements-sikana-fr",
         "status": "present"
       },
       {
-        "name": "wikiquote.fr",
+        "name": "introduction-a-l-electricite-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "preparer-son-chantier-electrique-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "le-tableau-electrique-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "installer-et-entretenir-des-panneaux-solaires-sikana-fr",
         "status": "present"
       }
     ],
