@@ -12311,6 +12311,40 @@
       "port": "658"
     }
   },
+  "kb-bsf-tempsmodernes": {
+    "kalite": {
+      "activated": false,
+      "language": [
+        "fr"
+      ],
+      "version": "0.16.9"
+    },
+    "package_management": [
+      {
+        "name": "patron-pour-coudre-une-jupe-a-volants-fille-fr",
+        "status": "present"
+      },
+      {
+        "name": "patrons-pour-coudre-des-vetements-pour-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "patrons-pour-coudre-des-vetements-pour-femmes-fr",
+        "status": "present"
+      },
+      {
+        "name": "patrons-pour-coudre-un-top-sorbetto-femmes-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-utiliser-des-patrons-fr",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "kb-bsfcampus-civ": {
     "bsfcampus": {
       "activated": "True",
