@@ -3786,6 +3786,19 @@
       }
     ]
   },
+  "idb-fra-vdntdf": {
+    "kalite": {
+      "activated": false,
+      "language": [
+        "fr"
+      ],
+      "version": "0.16.9"
+    },
+    "package_management": [],
+    "portal": {
+      "activated": true
+    }
+  },
   "idb-fra-vdp2": {
     "idc_import": {
       "activated": "False",
