@@ -17891,6 +17891,38 @@
       }
     ]
   },
+  "idb-fra-vdntdf": {
+    "kalite": {
+      "activated": false,
+      "language": [],
+      "version": "0.16.9"
+    },
+    "package_management": [
+      {
+        "name": "culture-numerique-fr",
+        "status": "present"
+      },
+      {
+        "name": "s-informer-sur-internet-fr",
+        "status": "present"
+      },
+      {
+        "name": "programmation-et-bidouille-fr",
+        "status": "present"
+      },
+      {
+        "name": "l-inclusion-numerique-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-metiers-du-numerique-fr",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "koombook": {
     "idc_import": {
       "activated": "False",
