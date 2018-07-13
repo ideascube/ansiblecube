@@ -2,6 +2,7 @@
 #Network
 hostname: ideasbox.lan
 hotspot_name: ideasbox
+hotspot_maxclients: 30
 ideascube_project_name: ideasbox
 ideascube_branding: ideasbox
 managed_by_bsf: True
