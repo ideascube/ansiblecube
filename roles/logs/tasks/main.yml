@@ -19,6 +19,8 @@
       dest: dpkg-list
     - src: pip-freeze.logrotate.j2
       dest: pip-freeze
+    - src: hwd-info.logrotate.j2
+      dest: hwd-info
   tags: ['custom','update']
 
 - name: copy hdw info script

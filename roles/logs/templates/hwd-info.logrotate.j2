@@ -1,0 +1,13 @@
+#
+# {{ ansible_managed }}
+#
+
+{{ bsf_log_folder }}/hwd_info.txt {
+    weekly
+    rotate 7
+    compress
+    delaycompress
+    missingok
+    notifempty
+    create 640 root adm
+}
