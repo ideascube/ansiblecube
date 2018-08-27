@@ -1,11 +1,13 @@
 #!/bin/bash
 FILE="/tmp/hdw_info.txt"
-[ -d /media/hdd/bsfcampus ] && {
+if [ -d /media/hdd/bsfcampus ] ; then
     echo "##################################" > $FILE
     echo "#          BSF Campus            #" >> $FILE
     echo "##################################" >> $FILE
     du -s /media/hdd/bsfcampus >> $FILE
-}
+else
+    echo > $FILE
+fi
 echo "##################################" >> $FILE
 echo "#          lscpu                 #" >> $FILE
 echo "##################################" >> $FILE
