@@ -1,5 +1,5 @@
 #!/bin/bash
-FILE="/tmp/hdw_info.txt"
+FILE="{{ bsf_log_folder }}/hdw_info.txt"
 if [ -d /media/hdd/bsfcampus ] ; then
     echo "##################################" > $FILE
     echo "#          BSF Campus            #" >> $FILE

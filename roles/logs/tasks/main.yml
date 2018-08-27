@@ -22,7 +22,7 @@
   tags: ['custom','update']
 
 - name: copy hdw info script
-  copy: src=hdw_info.sh dest=/home/ideascube/hdw_info.sh mode=755
+  template: src=hdw_info.sh dest=/home/ideascube/hdw_info.sh mode=755
   tags: ['custom','update']
 
 - name: Copy push_log.sh
