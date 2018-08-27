@@ -23,8 +23,12 @@
       dest: hwd-info
   tags: ['custom','update']
 
+- name: remove hdw info script from its previous location
+  file: path=/home/ideascube/hdw_info.sh state=absent
+  tags: ['update']
+
 - name: copy hdw info script
-  template: src=hdw_info.sh dest=/home/ideascube/hdw_info.sh mode=755
+  template: src=hdw_info.sh dest=/usr/local/bin/hdw_info.sh mode=755
   tags: ['custom','update']
 
 - name: Copy push_log.sh

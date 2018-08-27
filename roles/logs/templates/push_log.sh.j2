@@ -7,7 +7,7 @@ if [[ "$IF" == "eth0" || "$IF" == "wlan1" ]] && [ -z "$PROC"  ]
 then
     case "$STATUS" in
         up)
-            /home/ideascube/hdw_info.sh
+            usr/local/bin/hdw_info.sh
             dpkg -l > /var/log/apt/dpkg.list
             pip freeze > /var/log/pip.freeze
             iptables-save > /var/log/iptables.rules
