@@ -13235,13 +13235,15 @@
   },
   "kb-ecu-avanti": {
     "kalite": {
-      "activated": false,
-      "language": [],
+      "activated": "True",
+      "language": [
+        "es"
+      ],
       "version": "0.16.9"
     },
     "package_management": [
       {
-        "name": "ecuador-es",
+        "name": "gutenberg.es",
         "status": "present"
       },
       {
@@ -13249,12 +13251,80 @@
         "status": "present"
       },
       {
-        "name": "gutenberg.es",
+        "name": "vikidia.es",
+        "status": "present"
+      },
+      {
+        "name": "tedbusiness.en",
+        "status": "present"
+      },
+      {
+        "name": "teddesign.en",
+        "status": "present"
+      },
+      {
+        "name": "tedentertainment.en",
+        "status": "present"
+      },
+      {
+        "name": "tedglobalissues.en",
+        "status": "present"
+      },
+      {
+        "name": "tedscience.en",
+        "status": "present"
+      },
+      {
+        "name": "tedtechnology.en",
+        "status": "present"
+      },
+      {
+        "name": "ted-ed.en",
+        "status": "present"
+      },
+      {
+        "name": "tedmed.en",
+        "status": "present"
+      },
+      {
+        "name": "cinescuela.es",
+        "status": "present"
+      },
+      {
+        "name": "artes.es",
+        "status": "present"
+      },
+      {
+        "name": "geografia.es",
+        "status": "present"
+      },
+      {
+        "name": "literatura.es",
+        "status": "present"
+      },
+      {
+        "name": "ciencias-naturales.es",
+        "status": "present"
+      },
+      {
+        "name": "cocina-infantil.es",
+        "status": "present"
+      },
+      {
+        "name": "literatura-infantil.es",
+        "status": "present"
+      },
+      {
+        "name": "literatura-juvenil.es",
+        "status": "present"
+      },
+      {
+        "name": "ecuador-es",
         "status": "present"
       }
     ],
     "portal": {
-      "activated": true
+      "activated": "True"
     }
   },
   "kb-esp-avanti": {
@@ -17468,38 +17538,6 @@
       "activated": "True"
     }
   },
-  "kb-usa-demolwb": {
-    "idc_import": {
-      "activated": "False",
-      "content_name": [
-        "13-NICARALI/CSV-Nicarali.csv"
-      ]
-    },
-    "kalite": {
-      "activated": "True",
-      "language": [
-        "es"
-      ],
-      "version": "0.16.9"
-    },
-    "package_management": [
-      {
-        "name": "wikipedia.es",
-        "status": "present"
-      },
-      {
-        "name": "gutenberg.es",
-        "status": "present"
-      },
-      {
-        "name": "ecuador-es",
-        "status": "present"
-      }
-    ],
-    "portal": {
-      "activated": "True"
-    }
-  },
   "kb-usa-detroit": {
     "kalite": {
       "activated": "True",
@@ -17914,6 +17952,34 @@
       }
     ]
   },
+  "kb-usa-demolwb": {
+    "kalite": {
+      "activated": "True",
+      "version": "0.16.9",
+      "language": ["es"]
+    },
+    "package_management": [
+      {
+        "name": "wikipedia.es",
+        "status": "present"
+      },
+      {
+        "name": "gutenberg.es",
+        "status": "present"
+      },
+      {
+        "name": "ecuador-es",
+        "status": "present"
+      }
+    ],
+    "idc_import": {
+      "activated": "False",
+      "content_name": ["13-NICARALI/CSV-Nicarali.csv"]
+    },
+    "portal": {
+      "activated": "True"
+    }
+},
   "koombook": {
     "idc_import": {
       "activated": "False",
