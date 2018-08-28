@@ -1054,203 +1054,23 @@
     },
     "package_management": [
       {
-        "name": "decouvrez-differents-sports-fr",
+        "name": "patron-pour-coudre-une-jupe-a-volants-fille-fr",
         "status": "present"
       },
       {
-        "name": "musique-fr",
+        "name": "patrons-pour-coudre-des-vetements-pour-enfants-fr",
         "status": "present"
       },
       {
-        "name": "citoyennete-et-politique-fr",
+        "name": "patrons-pour-coudre-des-vetements-pour-femmes-fr",
         "status": "present"
       },
       {
-        "name": "decouvrez-ou-re-decouvrez-la-cuisine-de-differents-pays-fr",
+        "name": "patrons-pour-coudre-un-top-sorbetto-femmes-fr",
         "status": "present"
       },
       {
-        "name": "connaitre-et-aimer-son-corps-fr",
-        "status": "present"
-      },
-      {
-        "name": "combattons-les-discriminations-fr",
-        "status": "present"
-      },
-      {
-        "name": "montez-votre-projet-professionnel-fr",
-        "status": "present"
-      },
-      {
-        "name": "apprenez-le-code-informatique-fr",
-        "status": "present"
-      },
-      {
-        "name": "arts-plastiques-fr",
-        "status": "present"
-      },
-      {
-        "name": "initiez-vous-a-la-photographie-fr",
-        "status": "present"
-      },
-      {
-        "name": "renseignez-vous-sur-les-demarches-administratives-fr",
-        "status": "present"
-      },
-      {
-        "name": "comprendre-et-exprimer-ses-emotions-fr",
-        "status": "present"
-      },
-      {
-        "name": "initiez-vous-a-la-creation-video-fr",
-        "status": "present"
-      },
-      {
-        "name": "audiobooks-et-fictions-sonores-fr",
-        "status": "present"
-      },
-      {
-        "name": "jardinage-et-agriculture-fr",
-        "status": "present"
-      },
-      {
-        "name": "droits-de-l-enfant-fr",
-        "status": "present"
-      },
-      {
-        "name": "discriminations-enfants-ados-fr",
-        "status": "present"
-      },
-      {
-        "name": "creation-audio-fr",
-        "status": "present"
-      },
-      {
-        "name": "sports-enfants-ados-fr",
-        "status": "present"
-      },
-      {
-        "name": "nature-enfants-ados-fr",
-        "status": "present"
-      },
-      {
-        "name": "connaitre-la-france-et-paris-fr",
-        "status": "present"
-      },
-      {
-        "name": "apprends-le-francais-a1-enfants-adolescents-fr",
-        "status": "present"
-      },
-      {
-        "name": "experiences-de-femmes-fr",
-        "status": "present"
-      },
-      {
-        "name": "arriver-en-france-et-connaitre-ses-droits-fr",
-        "status": "present"
-      },
-      {
-        "name": "kit-de-l-animateur-fr",
-        "status": "present"
-      },
-      {
-        "name": "utilisez-internet-en-toute-securite-fr",
-        "status": "present"
-      },
-      {
-        "name": "decouvrez-ou-redecouvrez-l-histoire-de-france-fr",
-        "status": "present"
-      },
-      {
-        "name": "ecoute-tes-emotions-enfants-ados-fr",
-        "status": "present"
-      },
-      {
-        "name": "prends-soin-de-toi-enfants-ado-fr",
-        "status": "present"
-      },
-      {
-        "name": "protege-la-planete-enfants-ados-fr",
-        "status": "present"
-      },
-      {
-        "name": "les-filles-et-les-garcons-quelles-differences-fr",
-        "status": "present"
-      },
-      {
-        "name": "apprenez-le-francais-niveau-a1-fr",
-        "status": "present"
-      },
-      {
-        "name": "apprenez-le-francais-niveau-a2-fr",
-        "status": "present"
-      },
-      {
-        "name": "apprends-le-francais-a2-enfants-adolescents-fr",
-        "status": "present"
-      },
-      {
-        "name": "apprenez-le-francais-alphabetisation-fr",
-        "status": "present"
-      },
-      {
-        "name": "apprenez-le-francais-niveau-b1-fr",
-        "status": "present"
-      },
-      {
-        "name": "apprenez-le-francais-niveau-b2-fr",
-        "status": "present"
-      },
-      {
-        "name": "apprenez-le-francais-niveau-c1-c2-fr",
-        "status": "present"
-      },
-      {
-        "name": "comprendre-l-autisme-fr",
-        "status": "present"
-      },
-      {
-        "name": "risques-auditifs-fr",
-        "status": "present"
-      },
-      {
-        "name": "alcool-drogues-fr",
-        "status": "present"
-      },
-      {
-        "name": "risques-numeriques-fr",
-        "status": "present"
-      },
-      {
-        "name": "harcelement-ado-fr",
-        "status": "present"
-      },
-      {
-        "name": "harcelement-enfants-fr",
-        "status": "present"
-      },
-      {
-        "name": "decouvrez-le-street-art-fr",
-        "status": "present"
-      },
-      {
-        "name": "musique-libre-de-droit-en",
-        "status": "present"
-      },
-      {
-        "name": "films-et-videos-libres-de-droit-fr",
-        "status": "present"
-      },
-      {
-        "name": "apprendre-le-yoga-sikana-fr",
-        "status": "present"
-      },
-      {
-        "name": "numerique-et-bidouille-informatique-fr",
-        "status": "present"
-      },
-      {
-        "name": "tutoriels-pour-utiliser-des-logiciels-et-des-applications-fr",
+        "name": "apprendre-a-utiliser-des-patrons-fr",
         "status": "present"
       }
     ],
