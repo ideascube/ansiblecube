@@ -11701,10 +11701,6 @@
         "status": "present"
       },
       {
-        "name": "world.map",
-        "status": "present"
-      },
-      {
         "name": "sida-info-service.org",
         "status": "present"
       },
