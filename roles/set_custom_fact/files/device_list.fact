@@ -4503,6 +4503,262 @@
       "activated": "False"
     }
   },
+  "idb-grc-jrsathens": {
+    "kalite": {
+      "activated": true,
+      "language": [
+        "ar",
+        "en",
+        "fr"
+      ],
+      "version": "0.16.9"
+    },
+    "package_management": [
+      {
+        "name": "fictions-and-entertainment-in-arabic-ar",
+        "status": "present"
+      },
+      {
+        "name": "music-in-arabic-ar",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-adults-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-teenagers-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-healthcare-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-human-rights-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-sciences-en",
+        "status": "present"
+      },
+      {
+        "name": "non-violent-communication-en",
+        "status": "present"
+      },
+      {
+        "name": "greek-mythology-en",
+        "status": "present"
+      },
+      {
+        "name": "cartoons-en",
+        "status": "present"
+      },
+      {
+        "name": "kit-de-l-animateur-fr",
+        "status": "present"
+      },
+      {
+        "name": "abuse-and-harassment-gbv-ar",
+        "status": "present"
+      },
+      {
+        "name": "cartoons-and-tales-fa",
+        "status": "present"
+      },
+      {
+        "name": "refugees-rights-fa",
+        "status": "present"
+      },
+      {
+        "name": "about-drugs-and-addiction-fa",
+        "status": "present"
+      },
+      {
+        "name": "let-s-talk-about-sexuality-fa",
+        "status": "present"
+      },
+      {
+        "name": "fictions-for-adults-fa",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-psychology-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-sociology-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-economics-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-anthropology-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-business-studies-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-philosophy-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-geography-environmental-studies-en",
+        "status": "present"
+      },
+      {
+        "name": "poetry-ar",
+        "status": "present"
+      },
+      {
+        "name": "physics-ar",
+        "status": "present"
+      },
+      {
+        "name": "self-development-ar",
+        "status": "present"
+      },
+      {
+        "name": "sports-ar",
+        "status": "present"
+      },
+      {
+        "name": "mathematics-ar",
+        "status": "present"
+      },
+      {
+        "name": "let-s-speak-english-ar",
+        "status": "present"
+      },
+      {
+        "name": "nervous-system-ar",
+        "status": "present"
+      },
+      {
+        "name": "biology-ar",
+        "status": "present"
+      },
+      {
+        "name": "carpentry-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-guitar-en",
+        "status": "present"
+      },
+      {
+        "name": "drums-for-beginners-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-photography-en",
+        "status": "present"
+      },
+      {
+        "name": "vocabularies-en",
+        "status": "present"
+      },
+      {
+        "name": "cartoons-ar",
+        "status": "present"
+      },
+      {
+        "name": "learn-to-read-and-count-in-farsi-children-fa",
+        "status": "present"
+      },
+      {
+        "name": "let-s-practise-sport-children-en",
+        "status": "present"
+      },
+      {
+        "name": "make-you-own-radio-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-biology-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-to-know-and-manage-your-feelings-en",
+        "status": "present"
+      },
+      {
+        "name": "facilitator-kit-en",
+        "status": "present"
+      },
+      {
+        "name": "drawing-colouring-en",
+        "status": "present"
+      },
+      {
+        "name": "yoga-en",
+        "status": "present"
+      },
+      {
+        "name": "handcraft-origami-en",
+        "status": "present"
+      },
+      {
+        "name": "agriculture-gardening-en",
+        "status": "present"
+      },
+      {
+        "name": "fight-against-discriminations-and-live-together-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-greek-fa",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.ar",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.el",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.fa",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.it",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.de",
+        "status": "present"
+      },
+      {
+        "name": "gutenberg.de",
+        "status": "present"
+      },
+      {
+        "name": "gutenberg.en",
+        "status": "present"
+      },
+      {
+        "name": "tedmed.en",
+        "status": "present"
+      },
+      {
+        "name": "vikidia.en",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idb-grc-malakasa": {
     "idc_import": {
       "activated": "True",
