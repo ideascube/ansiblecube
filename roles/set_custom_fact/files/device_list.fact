@@ -4715,6 +4715,190 @@
         "status": "present"
       },
       {
+        "name": "introduction-to-geography-en",
+        "status": "present"
+      },
+      {
+        "name": "german-for-arabic-and-persian-speakers-de",
+        "status": "present"
+      },
+      {
+        "name": "cooking-ar",
+        "status": "present"
+      },
+      {
+        "name": "football-matches-en",
+        "status": "present"
+      },
+      {
+        "name": "english-for-adults-ar",
+        "status": "present"
+      },
+      {
+        "name": "some-science-fun-with-salam-ar",
+        "status": "present"
+      },
+      {
+        "name": "fiches-creativite-libre-de-droit-fr",
+        "status": "present"
+      },
+      {
+        "name": "how-do-i-control-my-weight-en",
+        "status": "present"
+      },
+      {
+        "name": "business-management-ar",
+        "status": "present"
+      },
+      {
+        "name": "chemistry-ar",
+        "status": "present"
+      },
+      {
+        "name": "economy-ar",
+        "status": "present"
+      },
+      {
+        "name": "technology-ar",
+        "status": "present"
+      },
+      {
+        "name": "journalism-ar",
+        "status": "present"
+      },
+      {
+        "name": "space-science-ar",
+        "status": "present"
+      },
+      {
+        "name": "computer-and-it-ar",
+        "status": "present"
+      },
+      {
+        "name": "carpentry-ar",
+        "status": "present"
+      },
+      {
+        "name": "photography-ar",
+        "status": "present"
+      },
+      {
+        "name": "yoga-for-therapy-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-first-aid-techniques-en",
+        "status": "present"
+      },
+      {
+        "name": "tutorials-for-using-programs-en",
+        "status": "present"
+      },
+      {
+        "name": "food-security-en",
+        "status": "present"
+      },
+      {
+        "name": "public-speaking-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-greek-english-support-en",
+        "status": "present"
+      },
+      {
+        "name": "food-and-cooking-en",
+        "status": "present"
+      },
+      {
+        "name": "entertainment-music-el-el",
+        "status": "present"
+      },
+      {
+        "name": "entertainment-music-en-en",
+        "status": "present"
+      },
+      {
+        "name": "creation-el-el",
+        "status": "present"
+      },
+      {
+        "name": "learning-languages-greek-el-el",
+        "status": "present"
+      },
+      {
+        "name": "self-improvement-el-el",
+        "status": "present"
+      },
+      {
+        "name": "food-culture-el-el",
+        "status": "present"
+      },
+      {
+        "name": "refugees-and-migrants-el-el",
+        "status": "present"
+      },
+      {
+        "name": "self-and-social-awareness-el-el",
+        "status": "present"
+      },
+      {
+        "name": "culture-and-mentality-el-el",
+        "status": "present"
+      },
+      {
+        "name": "maths-el-el",
+        "status": "present"
+      },
+      {
+        "name": "technology-and-sciences-el-el",
+        "status": "present"
+      },
+      {
+        "name": "learning-languages-french-el-el",
+        "status": "present"
+      },
+      {
+        "name": "learning-languages-english-el-el",
+        "status": "present"
+      },
+      {
+        "name": "apply-for-a-job-el-el",
+        "status": "present"
+      },
+      {
+        "name": "self-development-managing-a-budget-en-en",
+        "status": "present"
+      },
+      {
+        "name": "refugees-and-migrants-en-en",
+        "status": "present"
+      },
+      {
+        "name": "art-en-en",
+        "status": "present"
+      },
+      {
+        "name": "self-development-managing-a-budget-el-el",
+        "status": "present"
+      },
+      {
+        "name": "entertainment-fiction-el-el",
+        "status": "present"
+      },
+      {
+        "name": "self-development-how-to-drive-el-el",
+        "status": "present"
+      },
+      {
+        "name": "self-development-computers-en-urd-ur",
+        "status": "present"
+      },
+      {
+        "name": "apply-for-a-job-en-urd-ur",
+        "status": "present"
+      },
+      {
         "name": "wikipedia.ar",
         "status": "present"
       },
