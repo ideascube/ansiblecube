@@ -3415,6 +3415,70 @@
       {
         "name": "apprendre-le-yoga-sikana-fr",
         "status": "present"
+      },
+      {
+        "name": "twentyfourhoursinanewsroom",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.en",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.ar",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.fa",
+        "status": "present"
+      },
+      {
+        "name": "wikiquote.fa",
+        "status": "present"
+      },
+      {
+        "name": "wikiquote.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikiquote.en",
+        "status": "present"
+      },
+      {
+        "name": "wikiquote.ar",
+        "status": "present"
+      },
+      {
+        "name": "wiktionary.en",
+        "status": "present"
+      },
+      {
+        "name": "wiktionary.fr",
+        "status": "present"
+      },
+      {
+        "name": "wiktionary.fa",
+        "status": "present"
+      },
+      {
+        "name": "wiktionary.ar",
+        "status": "present"
+      },
+      {
+        "name": "tedxlausanne2014.fr",
+        "status": "present"
+      },
+      {
+        "name": "gutenberg.fr",
+        "status": "present"
+      },
+      {
+        "name": "service-public.fr",
+        "status": "present"
       }
     ],
     "portal": {
