@@ -19,8 +19,8 @@
       dest: dpkg-list
     - src: pip-freeze.logrotate.j2
       dest: pip-freeze
-    - src: hwd-info.logrotate.j2
-      dest: hwd-info
+    - src: hdw-info.logrotate.j2
+      dest: hdw-info
   tags: ['custom','update']
 
 - name: remove hdw info script from its previous location
