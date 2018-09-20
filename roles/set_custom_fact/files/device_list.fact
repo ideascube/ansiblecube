@@ -8630,11 +8630,15 @@
         "status": "present"
       },
       {
-        "name": "wikibooks.fr",
+        "name": "fabriquer-des-meubles-avec-des-palettes-sikana-fr",
         "status": "present"
       },
       {
         "name": "tedxlausannechange2013.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikibooks.fr",
         "status": "present"
       },
       {
@@ -8654,39 +8658,7 @@
         "status": "present"
       },
       {
-        "name": "e-penser.fr",
-        "status": "present"
-      },
-      {
-        "name": "tedxlausanne2013.fr",
-        "status": "present"
-      },
-      {
-        "name": "tedxlausanne2012.fr",
-        "status": "present"
-      },
-      {
-        "name": "cest-pas-sorcier.fr",
-        "status": "present"
-      },
-      {
-        "name": "wikiquote.fr",
-        "status": "present"
-      },
-      {
-        "name": "ubuntudoc.fr",
-        "status": "present"
-      },
-      {
-        "name": "wiktionary.fr",
-        "status": "present"
-      },
-      {
-        "name": "wikipedia.fr",
-        "status": "present"
-      },
-      {
-        "name": "wikipedia.en",
+        "name": "burundi.map",
         "status": "present"
       },
       {
@@ -8694,7 +8666,39 @@
         "status": "present"
       },
       {
-        "name": "burundi.map",
+        "name": "wikipedia.fr",
+        "status": "present"
+      },
+      {
+        "name": "e-penser.fr",
+        "status": "present"
+      },
+      {
+        "name": "wiktionary.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.en",
+        "status": "present"
+      },
+      {
+        "name": "ubuntudoc.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikiquote.fr",
+        "status": "present"
+      },
+      {
+        "name": "cest-pas-sorcier.fr",
+        "status": "present"
+      },
+      {
+        "name": "tedxlausanne2012.fr",
+        "status": "present"
+      },
+      {
+        "name": "tedxlausanne2013.fr",
         "status": "present"
       }
     ],
