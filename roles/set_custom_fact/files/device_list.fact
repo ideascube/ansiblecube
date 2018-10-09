@@ -1815,6 +1815,19 @@
       }
     ]
   },
+  "idb-fra-canopecayenne": {
+    "kalite": {
+      "activated": true,
+      "language": [
+        "fr"
+      ],
+      "version": "0.16.9"
+    },
+    "package_management": [],
+    "portal": {
+      "activated": true
+    }
+  },
   "idb-fra-cnpboulogne": {
     "kalite": {
       "activated": "True",
