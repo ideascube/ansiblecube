@@ -15,7 +15,7 @@ We fully support Olimex Lime2 SBC. KoomBook image is based on [Armbian](https://
 #### Raspberry Pi 2/3
 We support Raspbery Pi 2/3 but we don't provide a pre-made image.  You'll have to use our build script
 
-* Download a new [Raspbian image](https://www.raspberrypi.org/downloads/raspbian/)
+* Download a new [Raspbian Jessie image](https://downloads.raspberrypi.org/raspbian/images/raspbian-2017-07-05/2017-07-05-raspbian-jessie.zip)
 
 #### External Hard Drive
 
