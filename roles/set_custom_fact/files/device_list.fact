@@ -5695,10 +5695,6 @@
         "status": "present"
       },
       {
-        "name": "tedmed.en",
-        "status": "present"
-      },
-      {
         "name": "vikidia.en",
         "status": "present"
       }
