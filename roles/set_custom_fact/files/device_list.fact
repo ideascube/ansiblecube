@@ -1825,7 +1825,7 @@
     },
     "package_management": [],
     "portal": {
-      "activated": true
+      "activated": false
     }
   },
   "idb-fra-canoperhonealpes": {
