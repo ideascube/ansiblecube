@@ -4266,7 +4266,7 @@
       }
     ],
     "portal": {
-      "activated": true
+      "activated": false
     }
   },
   "idb-fra-sarcelles": {
