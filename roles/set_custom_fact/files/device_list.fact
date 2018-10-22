@@ -6560,7 +6560,7 @@
       }
     ],
     "portal": {
-      "activated": true
+      "activated": false
     }
   },
   "idb-jor-bsfhea": {
