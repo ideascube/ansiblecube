@@ -6381,26 +6381,187 @@
   },
   "idb-jor-azraq": {
     "kalite": {
-      "activated": "True",
-      "language": [
-        "fr"
-      ],
+      "activated": false,
+      "language": [],
       "version": "0.16.9"
     },
     "package_management": [
       {
-        "name": "gutenberg.fr",
+        "name": "fictions-and-entertainment-in-arabic-ar",
         "status": "present"
       },
       {
-        "name": "vikidia.fr",
+        "name": "music-in-arabic-ar",
         "status": "present"
       },
       {
-        "name": "wikipedia.fr",
+        "name": "abuse-and-harassment-gbv-ar",
+        "status": "present"
+      },
+      {
+        "name": "poetry-ar",
+        "status": "present"
+      },
+      {
+        "name": "physics-ar",
+        "status": "present"
+      },
+      {
+        "name": "self-development-ar",
+        "status": "present"
+      },
+      {
+        "name": "sports-ar",
+        "status": "present"
+      },
+      {
+        "name": "fashion-and-beauty-ar",
+        "status": "present"
+      },
+      {
+        "name": "motherhood-and-parenting-ar",
+        "status": "present"
+      },
+      {
+        "name": "mathematics-ar",
+        "status": "present"
+      },
+      {
+        "name": "philosophy-of-language-ar",
+        "status": "present"
+      },
+      {
+        "name": "let-s-speak-english-ar",
+        "status": "present"
+      },
+      {
+        "name": "health-and-diseases-ar",
+        "status": "present"
+      },
+      {
+        "name": "girl-talk-puberty-ar",
+        "status": "present"
+      },
+      {
+        "name": "let-s-be-clean-ar",
+        "status": "present"
+      },
+      {
+        "name": "nervous-system-ar",
+        "status": "present"
+      },
+      {
+        "name": "let-s-speak-arabic-ar",
+        "status": "present"
+      },
+      {
+        "name": "diy-handcrafts-and-arts-ar",
+        "status": "present"
+      },
+      {
+        "name": "waqt-al-farah-ar",
+        "status": "present"
+      },
+      {
+        "name": "cooking-ar",
+        "status": "present"
+      },
+      {
+        "name": "english-for-adults-ar",
+        "status": "present"
+      },
+      {
+        "name": "the-road-zaatari-magazine-ar",
+        "status": "present"
+      },
+      {
+        "name": "fitness-for-kids-ar",
+        "status": "present"
+      },
+      {
+        "name": "some-science-fun-with-salam-ar",
+        "status": "present"
+      },
+      {
+        "name": "let-s-talk-about-sexuality-ar-ar",
+        "status": "present"
+      },
+      {
+        "name": "tales-for-kids-ar",
+        "status": "present"
+      },
+      {
+        "name": "entrepreneurship-business-management-ar",
+        "status": "present"
+      },
+      {
+        "name": "chemistry-ar",
+        "status": "present"
+      },
+      {
+        "name": "child-protection-ar",
+        "status": "present"
+      },
+      {
+        "name": "economy-ar",
+        "status": "present"
+      },
+      {
+        "name": "novels-for-youth-ar",
+        "status": "present"
+      },
+      {
+        "name": "technology-ar",
+        "status": "present"
+      },
+      {
+        "name": "journalism-ar",
+        "status": "present"
+      },
+      {
+        "name": "women-empowerment-ar",
+        "status": "present"
+      },
+      {
+        "name": "sociology-ar",
+        "status": "present"
+      },
+      {
+        "name": "fozi-mozi-ar",
+        "status": "present"
+      },
+      {
+        "name": "dpc-awareness-and-protection-ar",
+        "status": "present"
+      },
+      {
+        "name": "fozi-mozi-diy-handcrafts-ar",
+        "status": "present"
+      },
+      {
+        "name": "adam-wa-mishmish-ar",
+        "status": "present"
+      },
+      {
+        "name": "space-science-ar",
+        "status": "present"
+      },
+      {
+        "name": "computer-and-it-ar",
+        "status": "present"
+      },
+      {
+        "name": "carpentry-ar",
+        "status": "present"
+      },
+      {
+        "name": "photography-ar",
         "status": "present"
       }
-    ]
+    ],
+    "portal": {
+      "activated": true
+    }
   },
   "idb-jor-bsfhea": {
     "kalite": {
