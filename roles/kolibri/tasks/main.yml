@@ -54,3 +54,8 @@
   tags:
     - custom
 
+- name: Import Kalite videos if we are at BSF
+  include: import_content.yml
+  when: cache_machine.state|default(omit) == "present"
+  tags: 
+    - custom

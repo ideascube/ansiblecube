@@ -1,0 +1,23 @@
+---
+- name: Install cifs-utils
+  apt: name=cifs-utils state=present
+
+- name: Create a working dir for CIFS share
+  file: path=/media/koombookDoctor/ state=directory
+
+- name: Mount CIFS Share
+  mount:
+    name: /media/koombookDoctor
+    src: //{{koombookDoctor}}/kolibri
+    fstype: cifs
+    opts: guest
+    state: mounted
+
+- name: Import channels and content
+  become: yes
+  become_user: "{{ username }}"
+  notify: restart kolibri
+  shell: >
+    {{ kolibri_bin }} manage importchannel disk {{ language[item] }} /media/koombookDoctor/khan/{{ item }}/
+    && {{ kolibri_bin }} manage importcontent disk {{ language[item] }} /media/koombookDoctor/khan/{{ item }}/
+  with_items: "{{ ansible_local.device_list[generic_project_name].kolibri.language | default('fr')}}"

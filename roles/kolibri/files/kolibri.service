@@ -4,14 +4,14 @@ Description=Kolibri server
 [Service]
 User=ideascube
 Group=ideascube
+WorkingDirectory=/home/ideascube
+RemainAfterExit=yes
+Type=oneshot
 ExecStart=/home/ideascube/.kolibri/env/bin/python2 /home/ideascube/.kolibri/env/bin/kolibri start
 ExecStop=/home/ideascube/.kolibri/env/bin/python2 /home/ideascube/.kolibri/env/bin/kolibri stop
-Restart=always
 TimeoutStopSec=60
 PIDFile=/var/run/kolibri.pid
 KillSignal=SIGINT
-Restart=on-failure
-RestartSec=5
 
 [Install]
 WantedBy=multi-user.target
