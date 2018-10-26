@@ -6,3 +6,7 @@
 - name: restart nginx
   service: name=nginx state=restarted
   tags: ['custom', 'update']
+
+- name: restart kolibri
+  service: name=kolibri state=restarted
+  tags: ['custom', 'update']
