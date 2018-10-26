@@ -14,7 +14,7 @@
     state: mounted
 
 - name: Import channels and content
-  become: yes²
+  become: yes
   become_user: "{{ username }}"
   notify: restart kolibri
   shell: >
