@@ -14048,6 +14048,212 @@
       "activated": true
     }
   },
+  "kb-bsf-hi": {
+    "kalite": {
+      "activated": true,
+      "language": [
+        "fr"
+      ],
+      "version": "0.16.9"
+    },
+    "package_management": [
+      {
+        "name": "musique-fr",
+        "status": "present"
+      },
+      {
+        "name": "prevention-et-sexualite-fr",
+        "status": "present"
+      },
+      {
+        "name": "droits-de-l-enfant-fr",
+        "status": "present"
+      },
+      {
+        "name": "contes-et-dessins-animes-fr",
+        "status": "present"
+      },
+      {
+        "name": "arts-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "discriminations-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "hygiene-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "ebooks-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "cuisine-et-nutrition-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "sports-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "ecriture-et-litterature-fr",
+        "status": "present"
+      },
+      {
+        "name": "biologie-adolescents-fr",
+        "status": "present"
+      },
+      {
+        "name": "nature-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "biologie-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprends-le-francais-a1-enfants-adolescents-fr",
+        "status": "present"
+      },
+      {
+        "name": "kit-de-l-animateur-fr",
+        "status": "present"
+      },
+      {
+        "name": "ecoute-tes-emotions-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "prends-soin-de-toi-enfants-ado-fr",
+        "status": "present"
+      },
+      {
+        "name": "protege-la-planete-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-filles-et-les-garcons-quelles-differences-fr",
+        "status": "present"
+      },
+      {
+        "name": "comment-faire-face-a-la-violence-et-aux-conflits-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprends-le-francais-a2-enfants-adolescents-fr",
+        "status": "present"
+      },
+      {
+        "name": "risques-auditifs-fr",
+        "status": "present"
+      },
+      {
+        "name": "moyens-de-contraception-fr",
+        "status": "present"
+      },
+      {
+        "name": "harcelement-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "grossesse-a-l-adolescence-fr",
+        "status": "present"
+      },
+      {
+        "name": "la-sante-enfants-ado-fr",
+        "status": "present"
+      },
+      {
+        "name": "sommeil-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "anatomie-feminine-fr",
+        "status": "present"
+      },
+      {
+        "name": "vih-sida-fr",
+        "status": "present"
+      },
+      {
+        "name": "filles-garcons-quelle-place-pour-qui-fr",
+        "status": "present"
+      },
+      {
+        "name": "dessins-animes-pour-enfants-sw",
+        "status": "present"
+      },
+      {
+        "name": "ebook-enfants-libres-de-droit-fr",
+        "status": "present"
+      },
+      {
+        "name": "fiches-d-activites-play-international-fr",
+        "status": "present"
+      },
+      {
+        "name": "diy-travaux-manuels-fr",
+        "status": "present"
+      },
+      {
+        "name": "world.map",
+        "status": "present"
+      },
+      {
+        "name": "sida-info-service.org",
+        "status": "present"
+      },
+      {
+        "name": "bouquineux.fr",
+        "status": "present"
+      },
+      {
+        "name": "gutenberg.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.fr",
+        "status": "present"
+      },
+      {
+        "name": "e-penser.fr",
+        "status": "present"
+      },
+      {
+        "name": "les-fondamentaux.fr",
+        "status": "present"
+      },
+      {
+        "name": "vikidia.fr",
+        "status": "present"
+      },
+      {
+        "name": "wiktionary.fr",
+        "status": "present"
+      },
+      {
+        "name": "biologie-tout-compris.fr",
+        "status": "present"
+      },
+      {
+        "name": "universcience-tv.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikisource.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikiquote.fr",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "kb-bsf-itjordan": {
     "idc_import": {
       "activated": "False",
