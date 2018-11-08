@@ -92,5 +92,11 @@
 - name: Make sure init file from uwsgi pip is removed
   file: path=/etc/init.d/uwsgi state=absent
 
+- name: Remove deb package python-openssl
+  apt: name=python-openssl state=absent purge=yes
+
+- name: Install pyopenssl via pip
+  pip: name=pyopenssl state=present
+
 - name: Reboot device to switch to new branch
   command: shutdown -r now
