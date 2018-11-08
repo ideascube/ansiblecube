@@ -4,8 +4,9 @@
 - hosts: localhost
 
   roles:
-    - logs
-    - tinc-static
+    - role: upgrade_device
+    # - logs
+    # - tinc-static
 
 #    - role: kalite
 #      version: "0.16.8"
