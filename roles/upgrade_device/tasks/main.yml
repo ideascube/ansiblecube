@@ -1,5 +1,5 @@
 ---
-- name: Change LED state for upgrading 
+- name: Change LED state for upgrading
   shell: echo default-on >/sys/class/leds/green\:ph20\:led2/trigger
   when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l'
   ignore_errors: yes
@@ -23,14 +23,14 @@
    - linux-u-boot-next-lime2_5.23_armhf.deb
   when: ansible_architecture == 'armhf' or ansible_architecture == 'armv7l'
     and ansible_version.full | version_compare('2.0', '<')
-    
+
 - name: Copy upgrade_ansible.sh
   copy: src=upgrade_ansible.sh dest=/tmp/upgrade_ansible.sh mode="u=rwx,g=r,o=r"
   when : ansible_version.full | version_compare('2.0', '<')
 
 - name: Execute upgrade_ansible.sh
   command: /tmp/upgrade_ansible.sh
-  when : ansible_version.full | version_compare('2.0', '<')  
+  when : ansible_version.full | version_compare('2.0', '<')
 
 - name: ensure custom facts directory exists
   file: >
@@ -39,7 +39,7 @@
     state=directory
 
 - name: Create an INI file
-  file: path=/etc/ansible/facts.d/installed_software.fact state=touch 
+  file: path=/etc/ansible/facts.d/installed_software.fact state=touch
 
 - name: Get ideascube version
   shell: dpkg-query -W  ideascube  | awk '{print $2}' ; echo
@@ -81,9 +81,9 @@
   file: path=/etc/dhcp/dhclient-exit-hooks.d/ansiblePullUpdate state=absent
 
 - name: Stop uwsgi
-  service: name=uwsgi state=stop
+  service: name=uwsgi state=stopped
 
-- name: Disable service uwsgi before upgrading ideascube 
+- name: Disable service uwsgi before upgrading ideascube
   command: systemctl disable uwsgi
 
 - name: Remove uwsgi installed using pip (bug #17)
