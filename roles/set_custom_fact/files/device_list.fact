@@ -1026,14 +1026,13 @@
   },
   "idb-bsf-kolibri": {
     "kalite": {
-      "activated": "False",
-      "language": [
-        "en"
-      ],
-      "version": "0.16.9"
+      "activated": "False"
     },
     "kolibri": {
       "activated": "True",
+      "language": [
+        "sw"
+      ],
       "version": "0.10.3"
     },
     "package_management": [
@@ -14599,11 +14598,14 @@
   },
   "kb-bsf-scaleway": {
     "kalite": {
+      "activated": "False"
+    },
+    "kolibri": {
       "activated": "True",
       "language": [
-        "fr"
+        "sw"
       ],
-      "version": "0.16.9"
+      "version": "0.10.3"
     },
     "modoboa": {
       "activated": "False"
