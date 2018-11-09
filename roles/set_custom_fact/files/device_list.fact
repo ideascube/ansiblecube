@@ -1053,127 +1053,23 @@
     },
     "package_management": [
       {
-        "name": "fictions-and-entertainment-in-arabic-ar",
+        "name": "patron-pour-coudre-une-jupe-a-volants-fille-fr",
         "status": "present"
       },
       {
-        "name": "music-in-arabic-ar",
+        "name": "patrons-pour-coudre-des-vetements-pour-enfants-fr",
         "status": "present"
       },
       {
-        "name": "abuse-and-harassment-gbv-ar",
+        "name": "patrons-pour-coudre-des-vetements-pour-femmes-fr",
         "status": "present"
       },
       {
-        "name": "physics-ar",
+        "name": "patrons-pour-coudre-un-top-sorbetto-femmes-fr",
         "status": "present"
       },
       {
-        "name": "self-development-ar",
-        "status": "present"
-      },
-      {
-        "name": "sports-ar",
-        "status": "present"
-      },
-      {
-        "name": "fashion-and-beauty-ar",
-        "status": "present"
-      },
-      {
-        "name": "mathematics-ar",
-        "status": "present"
-      },
-      {
-        "name": "let-s-speak-english-ar",
-        "status": "present"
-      },
-      {
-        "name": "girl-talk-puberty-ar",
-        "status": "present"
-      },
-      {
-        "name": "let-s-be-clean-ar",
-        "status": "present"
-      },
-      {
-        "name": "let-s-speak-arabic-ar",
-        "status": "present"
-      },
-      {
-        "name": "biology-ar",
-        "status": "present"
-      },
-      {
-        "name": "cartoons-ar",
-        "status": "present"
-      },
-      {
-        "name": "arabic-alphabet-ar",
-        "status": "present"
-      },
-      {
-        "name": "diy-handcrafts-and-arts-ar",
-        "status": "present"
-      },
-      {
-        "name": "waqt-al-farah-ar",
-        "status": "present"
-      },
-      {
-        "name": "the-road-zaatari-magazine-ar",
-        "status": "present"
-      },
-      {
-        "name": "fitness-for-kids-ar",
-        "status": "present"
-      },
-      {
-        "name": "classical-music-en",
-        "status": "present"
-      },
-      {
-        "name": "tales-for-kids-ar",
-        "status": "present"
-      },
-      {
-        "name": "child-protection-ar",
-        "status": "present"
-      },
-      {
-        "name": "novels-for-youth-ar",
-        "status": "present"
-      },
-      {
-        "name": "fozi-mozi-ar",
-        "status": "present"
-      },
-      {
-        "name": "dpc-awareness-and-protection-ar",
-        "status": "present"
-      },
-      {
-        "name": "fozi-mozi-diy-handcrafts-ar",
-        "status": "present"
-      },
-      {
-        "name": "adam-wa-mishmish-ar",
-        "status": "present"
-      },
-      {
-        "name": "space-science-ar",
-        "status": "present"
-      },
-      {
-        "name": "computer-and-it-ar",
-        "status": "present"
-      },
-      {
-        "name": "talented-thinker-club-en",
-        "status": "present"
-      },
-      {
-        "name": "ballet-picks-ar",
+        "name": "apprendre-a-utiliser-des-patrons-fr",
         "status": "present"
       }
     ],
