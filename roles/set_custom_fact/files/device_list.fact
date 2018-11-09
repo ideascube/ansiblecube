@@ -1046,12 +1046,12 @@
     }
   },
   "idb-bsf-tempsmodernes": {
-    "kalite": {
+    "kolibri": {
       "activated": true,
       "language": [
         "en"
       ],
-      "version": "0.16.9"
+      "version": "0.10.3"
     },
     "package_management": [
       {
