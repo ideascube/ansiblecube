@@ -3,4 +3,5 @@ language:
   fr: 878ec2e6f88c5c268b1be6f202833cd4
   en: 1ceff53605e55bef987d88e0908658c5
   sw: ec164fee25ee526296e68f7c10b1e169
+  es: c1f2b7e6ac9f56a2bb44fa7a48b66dce
 kolibri_bin: /home/ideascube/.kolibri/env/bin/python2 /home/ideascube/.kolibri/env/bin/kolibri
