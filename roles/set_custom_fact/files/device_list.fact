@@ -18355,6 +18355,180 @@
       "activated": "True"
     }
   },
+  "kb-npl-christinalee": {
+    "kolibri": {
+      "activated": true,
+      "language": [
+        "en"
+      ],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "learn-english-adults-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-teenagers-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-journalism-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-healthcare-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-human-rights-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-human-rights-for-children-en",
+        "status": "present"
+      },
+      {
+        "name": "astronomy-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-sciences-en",
+        "status": "present"
+      },
+      {
+        "name": "non-violent-communication-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-ecology-en",
+        "status": "present"
+      },
+      {
+        "name": "greek-mythology-en",
+        "status": "present"
+      },
+      {
+        "name": "cartoons-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-the-history-of-the-world-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-photography-en",
+        "status": "present"
+      },
+      {
+        "name": "let-s-practise-sport-children-en",
+        "status": "present"
+      },
+      {
+        "name": "woodcrafts-for-kids-en",
+        "status": "present"
+      },
+      {
+        "name": "make-you-own-radio-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-biology-en",
+        "status": "present"
+      },
+      {
+        "name": "health-and-hygiene-en",
+        "status": "present"
+      },
+      {
+        "name": "drawing-colouring-en",
+        "status": "present"
+      },
+      {
+        "name": "yoga-en",
+        "status": "present"
+      },
+      {
+        "name": "handcraft-origami-en",
+        "status": "present"
+      },
+      {
+        "name": "women-s-experiences-en",
+        "status": "present"
+      },
+      {
+        "name": "women-s-rights-en",
+        "status": "present"
+      },
+      {
+        "name": "yoga-for-therapy-en",
+        "status": "present"
+      },
+      {
+        "name": "preparing-for-major-disasters-and-natural-catastrophes-en",
+        "status": "present"
+      },
+      {
+        "name": "being-prepared-in-case-of-a-major-disaster-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-first-aid-techniques-en",
+        "status": "present"
+      },
+      {
+        "name": "public-speaking-en",
+        "status": "present"
+      },
+      {
+        "name": "silent-movies-en",
+        "status": "present"
+      },
+      {
+        "name": "silent-animated-movies-en",
+        "status": "present"
+      },
+      {
+        "name": "discovering-ballet-en",
+        "status": "present"
+      },
+      {
+        "name": "diy-cardboard-creativity-en",
+        "status": "present"
+      },
+      {
+        "name": "1-timilai-school-jana-man-pardaina-ra-en",
+        "status": "present"
+      },
+      {
+        "name": "2-timi-lai-school-xodera-kam-garna-man-lagxa-en",
+        "status": "present"
+      },
+      {
+        "name": "3-kt-haru-lai-hamro-gau-bata-tada-lagyo-bane-k-hunxa-en",
+        "status": "present"
+      },
+      {
+        "name": "4-timro-sathi-haru-ra-family-lai-manab-bechbikhan-huna-bata-kasari-samrachan-garna-sakinxa-en",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.en",
+        "status": "present"
+      },
+      {
+        "name": "gutenberg.en",
+        "status": "present"
+      },
+      {
+        "name": "tedscience.en",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "kb-rca-acfpebangui": {
     "kalite": {
       "activated": "True",
