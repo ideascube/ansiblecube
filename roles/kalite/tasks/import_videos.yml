@@ -1,7 +1,7 @@
 ---
 - include_vars: group_vars/{{ ansible_architecture }}.yml
 
-- name: Open all outgoing connection to allow NFS, dirty but working ! 
+- name: Open all outgoing connection to allow NFS, dirty but working !
   command: iptables -t filter -I OUTPUT -j ACCEPT
 
 - name: Install nfs-common
@@ -19,11 +19,11 @@
     state: mounted
 
 - name: Copy kalite videos
-  synchronize: src=/media/koombookDoctor/{{ item }}/ 
-    dest=/home/{{username}}/.kalite/content/ 
+  synchronize: src=/media/koombookDoctor/{{ item }}/
+    dest=/home/{{username}}/.kalite/content/
     recursive=yes
     compress=no
-  with_items: "{{ ansible_local.device_list[generic_project_name].kalite.language | default('fr')}}"
+  with_items: "{{ (ansible_local.device_list[generic_project_name].kalite | default (omit)).language | default('fr')}}"
 
 - name: Set permission back to the user instead of root after importing the medias
   file: path=/home/{{username}}/.kalite/content/ owner={{ username }} group={{ username }}  mode="u=rwX,go=rX" recurse=yes
