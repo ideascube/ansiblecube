@@ -6,9 +6,9 @@
               state=present
   tags: ['custom','update']
 
-- name: Add armbian repository 
-  apt_repository: repo='deb http://apt.armbian.com jessie main utils jessie-desktop' 
-    state=present 
+- name: Add armbian repository
+  apt_repository: repo='deb http://apt.armbian.com jessie main utils jessie-desktop'
+    state=present
     filename='armbian'
   when: ansible_kernel | version_compare('4.11.0', '<')
   tags:
@@ -70,7 +70,7 @@
 
 - name: Change the PIN for the LED and Activate heartbeat mode
   replace: dest=/boot/dtb/sun7i-a20-olinuxino-lime2.dts
-    regexp='gpios = <0x27 0x7 0x2 0x0>;' 
+    regexp='gpios = <0x27 0x7 0x2 0x0>;'
     replace='gpios = <0x27 0x7 0x14 0x0>;\n                        linux,default-trigger = "heartbeat";'
   when: ansible_kernel | version_compare('4', '>')
     and ansible_kernel | version_compare('4.11.0', '<')
@@ -85,6 +85,7 @@
 - name: Disable log2ram
   service: name=log2ram enabled=no
   when: ansible_kernel | version_compare('4.10.0', '>')
+  ignore_errors: yes
   tags:
     - update
 
