@@ -18,8 +18,14 @@
 
 - name: Copying kiwix binaries x86_64 architecture
   get_url: url={{filer_bsf}}/kiwix-serve-x86_64.v{{ kiwix_version }} dest=/usr/local/bin/kiwix-serve mode=755 timeout=30 backup=yes force=yes
-    checksum="md5:717d8ffda5cabee56afbaa0d9cbcbe75"
+    checksum="md5:53dd8f81a2bc55b08f2362804dded18c"
   when: (ansible_architecture == 'x86_64' or ansible_architecture == 'i386')
+  tags: ['master','custom','update']
+
+- name: Copying kiwix binaries v2.0 for armhf architecture
+  get_url: url={{filer_bsf}}/kiwix-serve-armhf.v{{ kiwix_version }} dest=/usr/local/bin/kiwix-serve mode=755 timeout=30 backup=yes force=yes
+    checksum="md5:92bbe9346ad9a61de8b8cc27e6b22185"
+  when: (ansible_architecture == "armhf" or ansible_architecture == "armv7l") and kiwix_version == "2.0"
   tags: ['master','custom','update']
 
 - name: Copying kiwix binaries v1.0 for armhf architecture
@@ -52,10 +58,10 @@
   template: src=nginx.vhost.j2 dest=/etc/nginx/sites-available/kiwix
   tags: ['master','custom','update']
 
-- name: Ensure that Ideascube cache folder belong to ideascube user 
-  file: path=/var/cache/ideascube/catalog/ 
+- name: Ensure that Ideascube cache folder belong to ideascube user
+  file: path=/var/cache/ideascube/catalog/
     owner={{ username }} group={{ username }} state=directory recurse=yes
-  tags: 
+  tags:
     - update
 
 - name: Remove old OSMybon quick fix
@@ -114,7 +120,7 @@
 #  tags:
 #    - update
 
-# - name: Checkout installed.yml file size 
+# - name: Checkout installed.yml file size
 #   stat: path=/var/ideascube/main/catalog/installed.yml
 #   register: installed_zim
 #   tags:
