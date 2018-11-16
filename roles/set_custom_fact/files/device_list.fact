@@ -15336,6 +15336,42 @@
       }
     ]
   },
+  "kb-cod-crech": {
+    "kolibri": {
+      "activated": false,
+      "language": [],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "tedxlausanne2012.fr",
+        "status": "present"
+      },
+      {
+        "name": "tedxlausanne2013.fr",
+        "status": "present"
+      },
+      {
+        "name": "tedxlausanne2014.fr",
+        "status": "present"
+      },
+      {
+        "name": "tedxgeneva2014.fr",
+        "status": "present"
+      },
+      {
+        "name": "gutenberg.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.fr",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "kb-cod-enakinshasa": {
     "kolibri": {
       "activated": false,
