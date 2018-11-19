@@ -15339,7 +15339,7 @@
   "kb-cod-crech": {
     "kolibri": {
       "activated": true,
-      "language": [],
+      "language": [ "fr" ],
       "version": "0.10.3"
     },
     "package_management": [
@@ -15483,7 +15483,7 @@
   "kb-cod-enakinshasa": {
     "kolibri": {
       "activated": true,
-      "language": [],
+      "language": [ "fr" ],
       "version": "0.10.3"
     },
     "package_management": [
@@ -15595,7 +15595,7 @@
   "kb-cod-ifgoma": {
     "kolibri": {
       "activated": true,
-      "language": [],
+      "language": [ "fr" ],
       "version": "0.10.3"
     },
     "package_management": [
@@ -15707,7 +15707,7 @@
   "kb-cod-ifkinshasa": {
     "kolibri": {
       "activated": true,
-      "language": [],
+      "language": [ "fr" ],
       "version": "0.10.3"
     },
     "package_management": [
@@ -15819,7 +15819,7 @@
   "kb-cod-iflubumbashi": {
     "kolibri": {
       "activated": true,
-      "language": [],
+      "language": [ "fr" ],
       "version": "0.10.3"
     },
     "package_management": [
@@ -15931,7 +15931,7 @@
   "kb-cod-incubateurgoma": {
     "kolibri": {
       "activated": true,
-      "language": [],
+      "language": [ "fr" ],
       "version": "0.10.3"
     },
     "package_management": [
