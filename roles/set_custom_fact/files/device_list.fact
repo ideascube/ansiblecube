@@ -15706,7 +15706,7 @@
   },
   "kb-cod-ifkinshasa": {
     "kolibri": {
-      "activated": false,
+      "activated": true,
       "language": [],
       "version": "0.10.3"
     },
