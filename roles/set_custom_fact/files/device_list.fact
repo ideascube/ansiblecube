@@ -15756,7 +15756,27 @@
     },
     "package_management": [
       {
+        "name": "montez-votre-projet-professionnel-fr",
+        "status": "present"
+      },
+      {
         "name": "apprenez-le-code-informatique-fr",
+        "status": "present"
+      },
+      {
+        "name": "sociologie-du-travail-fr",
+        "status": "present"
+      },
+      {
+        "name": "bien-etre-et-communication-au-travail-fr",
+        "status": "present"
+      },
+      {
+        "name": "management-fr",
+        "status": "present"
+      },
+      {
+        "name": "marketing-fr",
         "status": "present"
       },
       {
@@ -15780,11 +15800,19 @@
         "status": "present"
       },
       {
+        "name": "l-afrique-en-marche-rfi-fr",
+        "status": "present"
+      },
+      {
         "name": "numerique-et-bidouille-informatique-fr",
         "status": "present"
       },
       {
         "name": "tutoriels-pour-utiliser-des-logiciels-et-des-applications-fr",
+        "status": "present"
+      },
+      {
+        "name": "diy-travaux-manuels-fr",
         "status": "present"
       },
       {
@@ -15805,6 +15833,26 @@
       },
       {
         "name": "pratiques-et-usages-du-numerique-fr",
+        "status": "present"
+      },
+      {
+        "name": "python-3-des-fondamentaux-aux-concepts-avances-du-langage-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-programmer-en-java-fr",
+        "status": "present"
+      },
+      {
+        "name": "introduction-au-do-it-youself-fr",
+        "status": "present"
+      },
+      {
+        "name": "internet-les-autres-et-moi-les-bons-usages-fr",
+        "status": "present"
+      },
+      {
+        "name": "monter-un-laboratoire-d-innovation-publique-fr",
         "status": "present"
       },
       {
