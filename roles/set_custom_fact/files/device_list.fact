@@ -15400,6 +15400,78 @@
         "status": "present"
       },
       {
+        "name": "sociologie-du-travail-fr",
+        "status": "present"
+      },
+      {
+        "name": "bien-etre-et-communication-au-travail-fr",
+        "status": "present"
+      },
+      {
+        "name": "management-fr",
+        "status": "present"
+      },
+      {
+        "name": "marketing-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "geographie-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "l-afrique-en-marche-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "7-milliards-de-voisins-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "danse-des-mots-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "c-est-pas-du-vent-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "memoire-d-un-continent-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "si-loin-si-proche-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "eco-d-ici-eco-d-ailleurs-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "denis-mukwege-fr",
+        "status": "present"
+      },
+      {
+        "name": "litterature-francophone-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-de-la-republique-democratique-du-congo-fr",
+        "status": "present"
+      },
+      {
+        "name": "internet-les-autres-et-moi-les-bons-usages-fr",
+        "status": "present"
+      },
+      {
+        "name": "monter-un-laboratoire-d-innovation-publique-fr",
+        "status": "present"
+      },
+      {
         "name": "wikipedia.fr",
         "status": "present"
       },
