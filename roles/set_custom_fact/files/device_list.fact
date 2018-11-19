@@ -15338,7 +15338,7 @@
   },
   "kb-cod-crech": {
     "kolibri": {
-      "activated": false,
+      "activated": true,
       "language": [],
       "version": "0.10.3"
     },
@@ -15482,7 +15482,7 @@
   },
   "kb-cod-enakinshasa": {
     "kolibri": {
-      "activated": false,
+      "activated": true,
       "language": [],
       "version": "0.10.3"
     },
@@ -15594,7 +15594,7 @@
   },
   "kb-cod-ifgoma": {
     "kolibri": {
-      "activated": false,
+      "activated": true,
       "language": [],
       "version": "0.10.3"
     },
@@ -15818,7 +15818,7 @@
   },
   "kb-cod-iflubumbashi": {
     "kolibri": {
-      "activated": false,
+      "activated": true,
       "language": [],
       "version": "0.10.3"
     },
@@ -15930,7 +15930,7 @@
   },
   "kb-cod-incubateurgoma": {
     "kolibri": {
-      "activated": false,
+      "activated": true,
       "language": [],
       "version": "0.10.3"
     },
