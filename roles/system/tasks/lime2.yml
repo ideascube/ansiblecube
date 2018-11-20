@@ -82,16 +82,27 @@
     and ansible_kernel | version_compare('4.11.0', '<')
   tags: ['custom','update']
 
+- name: Verify if log2ram is enabled
+  stat: path=/lib/systemd/system/log2ram.service
+  register: log2ram
+  tags:
+    - update
+
 - name: Disable log2ram
   service: name=log2ram enabled=no
-  when: ansible_kernel | version_compare('4.10.0', '>')
-  ignore_errors: yes
+  when: log2ram.stat.exists
   tags:
     - update
 
 - name: Remove log2ram configure
   file: path=/etc/cron.daily/log2ram state=absent
-  when: ansible_kernel | version_compare('4.10.0', '>')
+  when: log2ram.stat.exists
+  tags:
+    - update
+
+- name: Remove log2ram default file
+  file: path=/etc/default/log2ram state=absent
+  when: log2ram.stat.exists
   tags:
     - update
 
