@@ -1047,107 +1047,29 @@
   },
   "idb-bsf-tempsmodernes": {
     "kolibri": {
-      "activated": true,
-      "language": [
-        "en"
-      ],
+      "activated": false,
+      "language": [],
       "version": "0.10.3"
     },
     "package_management": [
       {
-        "name": "arts-plastiques-fr",
+        "name": "patron-pour-coudre-une-jupe-a-volants-fille-fr",
         "status": "present"
       },
       {
-        "name": "learn-english-adults-en",
+        "name": "patrons-pour-coudre-des-vetements-pour-enfants-fr",
         "status": "present"
       },
       {
-        "name": "learn-english-teenagers-en",
+        "name": "patrons-pour-coudre-des-vetements-pour-femmes-fr",
         "status": "present"
       },
       {
-        "name": "greek-mythology-en",
+        "name": "patrons-pour-coudre-un-top-sorbetto-femmes-fr",
         "status": "present"
       },
       {
-        "name": "cartoons-en",
-        "status": "present"
-      },
-      {
-        "name": "introduction-to-philosophy-en",
-        "status": "present"
-      },
-      {
-        "name": "revolutionary-women-en",
-        "status": "present"
-      },
-      {
-        "name": "learn-guitar-en",
-        "status": "present"
-      },
-      {
-        "name": "drums-for-beginners-en",
-        "status": "present"
-      },
-      {
-        "name": "learn-photography-en",
-        "status": "present"
-      },
-      {
-        "name": "let-s-practise-sport-children-en",
-        "status": "present"
-      },
-      {
-        "name": "woodcrafts-for-kids-en",
-        "status": "present"
-      },
-      {
-        "name": "make-you-own-radio-en",
-        "status": "present"
-      },
-      {
-        "name": "learn-to-know-and-manage-your-feelings-en",
-        "status": "present"
-      },
-      {
-        "name": "yoga-en",
-        "status": "present"
-      },
-      {
-        "name": "instrumental-music-en",
-        "status": "present"
-      },
-      {
-        "name": "silent-movies-en",
-        "status": "present"
-      },
-      {
-        "name": "silent-animated-movies-en",
-        "status": "present"
-      },
-      {
-        "name": "discovering-ballet-en",
-        "status": "present"
-      },
-      {
-        "name": "diy-cardboard-creativity-en",
-        "status": "present"
-      },
-      {
-        "name": "wikipedia.en",
-        "status": "present"
-      },
-      {
-        "name": "wikibooks.en",
-        "status": "present"
-      },
-      {
-        "name": "gutenberg.en",
-        "status": "present"
-      },
-      {
-        "name": "vikidia.en",
+        "name": "apprendre-a-utiliser-des-patrons-fr",
         "status": "present"
       }
     ],
@@ -15339,7 +15261,9 @@
   "kb-cod-crech": {
     "kolibri": {
       "activated": true,
-      "language": [ "fr" ],
+      "language": [
+        "fr"
+      ],
       "version": "0.10.3"
     },
     "package_management": [
@@ -15483,7 +15407,9 @@
   "kb-cod-enakinshasa": {
     "kolibri": {
       "activated": true,
-      "language": [ "fr" ],
+      "language": [
+        "fr"
+      ],
       "version": "0.10.3"
     },
     "package_management": [
@@ -15595,7 +15521,9 @@
   "kb-cod-ifgoma": {
     "kolibri": {
       "activated": true,
-      "language": [ "fr" ],
+      "language": [
+        "fr"
+      ],
       "version": "0.10.3"
     },
     "package_management": [
@@ -15707,7 +15635,9 @@
   "kb-cod-ifkinshasa": {
     "kolibri": {
       "activated": true,
-      "language": [ "fr" ],
+      "language": [
+        "fr"
+      ],
       "version": "0.10.3"
     },
     "package_management": [
@@ -15819,7 +15749,9 @@
   "kb-cod-iflubumbashi": {
     "kolibri": {
       "activated": true,
-      "language": [ "fr" ],
+      "language": [
+        "fr"
+      ],
       "version": "0.10.3"
     },
     "package_management": [
@@ -15931,7 +15863,9 @@
   "kb-cod-incubateurgoma": {
     "kolibri": {
       "activated": true,
-      "language": [ "fr" ],
+      "language": [
+        "fr"
+      ],
       "version": "0.10.3"
     },
     "package_management": [
