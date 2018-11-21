@@ -8873,6 +8873,17 @@
       "activated": "True"
     }
   },
+  "kb-bdg-local": {
+    "kolibri": {
+      "activated": false,
+      "language": [],
+      "version": "0.10.3"
+    },
+    "package_management": [],
+    "portal": {
+      "activated": true
+    }
+  },
   "kb-bdg-rohingya": {
     "kolibri": {
       "activated": false,
