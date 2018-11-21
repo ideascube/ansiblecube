@@ -21465,12 +21465,12 @@
         ""
       ]
     },
-    "kalite": {
+    "kolibri": {
       "activated": "True",
       "language": [
-        "fr"
+        "sw"
       ],
-      "version": "0.16.9"
+      "version": "0.10.3"
     },
     "portal": {
       "activated": "True"
