@@ -14770,6 +14770,10 @@
       {
         "name": "wikibooks.el",
         "status": "present"
+      },
+      {
+        "name": "about-drugs-and-addiction-fa",
+        "status": "present"
       }
     ],
     "portal": {
