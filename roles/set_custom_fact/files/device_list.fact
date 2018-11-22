@@ -14766,6 +14766,10 @@
       {
         "name": "wikiquote.fa",
         "status": "latest"
+      },
+      {
+        "name": "wikibooks.el",
+        "status": "present"
       }
     ],
     "portal": {
