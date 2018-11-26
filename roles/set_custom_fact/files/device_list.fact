@@ -9427,6 +9427,26 @@
         "status": "present"
       },
       {
+        "name": "gender-based-violence-rohingya-rhg",
+        "status": "present"
+      },
+      {
+        "name": "geography-rohingya-rhg",
+        "status": "present"
+      },
+      {
+        "name": "health-promotion-rohingya-rhg",
+        "status": "present"
+      },
+      {
+        "name": "music-rohingya-rhg",
+        "status": "present"
+      },
+      {
+        "name": "news-rohingya-rhg",
+        "status": "present"
+      },
+      {
         "name": "wikipedia.en",
         "status": "present"
       },
