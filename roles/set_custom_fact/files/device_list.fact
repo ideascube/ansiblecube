@@ -4743,235 +4743,235 @@
     "package_management": [
       {
         "name": "decouvrez-differents-sports-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "musique-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "citoyennete-et-politique-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "decouvrez-ou-re-decouvrez-la-cuisine-de-differents-pays-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "connaitre-et-aimer-son-corps-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "combattons-les-discriminations-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "apprenez-le-code-informatique-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "arts-plastiques-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "initiez-vous-a-la-photographie-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "comprendre-et-exprimer-ses-emotions-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "initiez-vous-a-la-creation-video-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "hygiene-de-base-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "prevention-addictions-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "prevention-et-sexualite-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "droits-de-l-enfant-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "discriminations-enfants-ados-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "sante-les-bases-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "cuisine-et-nutrition-enfants-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "nutrition-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "experiences-de-femmes-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "kit-de-l-animateur-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "utilisez-internet-en-toute-securite-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "parentalite-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "ecoute-tes-emotions-enfants-ados-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "prends-soin-de-toi-enfants-ado-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "protege-la-planete-enfants-ados-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "les-filles-et-les-garcons-quelles-differences-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "comprendre-l-autisme-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "violences-faites-aux-femmes-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "moyens-de-contraception-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "troubles-alimentaires-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "alcool-drogues-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "risques-numeriques-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "harcelement-ado-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "harcelement-enfants-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "premiere-fois-ado-adultes-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "grossesse-a-l-adolescence-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "la-sante-enfants-ado-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "sommeil-enfants-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "nutrition-enfants-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "anatomie-feminine-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "vih-sida-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "filles-garcons-quelle-place-pour-qui-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "decouvrez-le-street-art-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "musique-libre-de-droit-en",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "films-et-videos-libres-de-droit-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "fiches-d-activites-sante-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "diy-travaux-manuels-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "les-bases-de-l-informatique-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "diy-basiques-sikana-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "culture-numerique-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "s-informer-sur-internet-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "programmation-et-bidouille-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "l-inclusion-numerique-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "introduction-aux-droits-de-l-homme-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "il-etait-une-fois-notre-terre-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "ecologie-developpement-durable-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "pratiques-et-usages-du-numerique-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "wikipedia.fr",
@@ -5011,7 +5011,7 @@
       },
       {
         "name": "films-pour-enfants-fr",
-        "status": "present"
+        "status": "reinstall"
       },
       {
         "name": "planning-familial.org",
