@@ -7715,10 +7715,10 @@
     }
   },
   "idb-jor-drcamman": {
-    "kalite": {
+    "kolibri": {
       "activated": false,
       "language": [],
-      "version": "0.16.9"
+      "version": "0.10.3"
     },
     "package_management": [
       {
@@ -7826,7 +7826,7 @@
         "status": "present"
       },
       {
-        "name": "classical-music-en",
+        "name": "classical-music-ar",
         "status": "present"
       },
       {
@@ -7859,6 +7859,10 @@
       },
       {
         "name": "novels-for-youth-ar",
+        "status": "present"
+      },
+      {
+        "name": "technology-ar",
         "status": "present"
       },
       {
@@ -7906,11 +7910,35 @@
         "status": "present"
       },
       {
-        "name": "talented-thinker-club-en",
+        "name": "silent-movies-en",
+        "status": "present"
+      },
+      {
+        "name": "silent-animated-movies-en",
+        "status": "present"
+      },
+      {
+        "name": "talented-thinker-club-ar",
         "status": "present"
       },
       {
         "name": "ballet-picks-ar",
+        "status": "present"
+      },
+      {
+        "name": "simple-musical-instruments-ar",
+        "status": "present"
+      },
+      {
+        "name": "health-and-nutrition-ar",
+        "status": "present"
+      },
+      {
+        "name": "animals-documentaries-ar",
+        "status": "present"
+      },
+      {
+        "name": "family-and-life-coaching-ar",
         "status": "present"
       }
     ],
