@@ -7279,78 +7279,12 @@
     }
   },
   "idb-jor-bsfhea": {
-    "kalite": {
-      "activated": "True",
-      "language": [
-        "en"
-      ],
-      "version": "0.16.9"
+    "kolibri": {
+      "activated": false,
+      "language": [],
+      "version": "0.10.3"
     },
     "package_management": [
-      {
-        "name": "wikipedia.en",
-        "status": "present"
-      },
-      {
-        "name": "wiktionary.en",
-        "status": "present"
-      },
-      {
-        "name": "wikiversity.en",
-        "status": "present"
-      },
-      {
-        "name": "tedentertainment.en",
-        "status": "present"
-      },
-      {
-        "name": "tedscience.en",
-        "status": "present"
-      },
-      {
-        "name": "wikipedia.ar",
-        "status": "present"
-      },
-      {
-        "name": "wiktionary.ar",
-        "status": "present"
-      },
-      {
-        "name": "wikiversity.ar",
-        "status": "present"
-      },
-      {
-        "name": "wikibooks.ar",
-        "status": "present"
-      },
-      {
-        "name": "wikisource.ar",
-        "status": "present"
-      },
-      {
-        "name": "wikiquote.ar",
-        "status": "present"
-      },
-      {
-        "name": "wikiquote.en",
-        "status": "present"
-      },
-      {
-        "name": "ted-ed.en",
-        "status": "present"
-      },
-      {
-        "name": "tedmed.en",
-        "status": "present"
-      },
-      {
-        "name": "crashcourse.en",
-        "status": "present"
-      },
-      {
-        "name": "vikidia.en",
-        "status": "present"
-      },
       {
         "name": "fictions-and-entertainment-in-arabic-ar",
         "status": "present"
@@ -7456,6 +7390,10 @@
         "status": "present"
       },
       {
+        "name": "introduction-to-geography-en",
+        "status": "present"
+      },
+      {
         "name": "waqt-al-farah-ar",
         "status": "present"
       },
@@ -7468,6 +7406,10 @@
         "status": "present"
       },
       {
+        "name": "english-for-adults-ar",
+        "status": "present"
+      },
+      {
         "name": "the-road-zaatari-magazine-ar",
         "status": "present"
       },
@@ -7476,7 +7418,15 @@
         "status": "present"
       },
       {
+        "name": "classical-music-ar",
+        "status": "present"
+      },
+      {
         "name": "some-science-fun-with-salam-ar",
+        "status": "present"
+      },
+      {
+        "name": "let-s-talk-about-sexuality-ar-ar",
         "status": "present"
       },
       {
@@ -7484,7 +7434,7 @@
         "status": "present"
       },
       {
-        "name": "business-management-ar",
+        "name": "entrepreneurship-business-management-ar",
         "status": "present"
       },
       {
@@ -7518,10 +7468,74 @@
       {
         "name": "sociology-ar",
         "status": "present"
+      },
+      {
+        "name": "fozi-mozi-ar",
+        "status": "present"
+      },
+      {
+        "name": "dpc-awareness-and-protection-ar",
+        "status": "present"
+      },
+      {
+        "name": "fozi-mozi-diy-handcrafts-ar",
+        "status": "present"
+      },
+      {
+        "name": "adam-wa-mishmish-ar",
+        "status": "present"
+      },
+      {
+        "name": "space-science-ar",
+        "status": "present"
+      },
+      {
+        "name": "computer-and-it-ar",
+        "status": "present"
+      },
+      {
+        "name": "carpentry-ar",
+        "status": "present"
+      },
+      {
+        "name": "photography-ar",
+        "status": "present"
+      },
+      {
+        "name": "silent-movies-en",
+        "status": "present"
+      },
+      {
+        "name": "silent-animated-movies-en",
+        "status": "present"
+      },
+      {
+        "name": "talented-thinker-club-ar",
+        "status": "present"
+      },
+      {
+        "name": "ballet-picks-ar",
+        "status": "present"
+      },
+      {
+        "name": "simple-musical-instruments-ar",
+        "status": "present"
+      },
+      {
+        "name": "health-and-nutrition-ar",
+        "status": "present"
+      },
+      {
+        "name": "animals-documentaries-ar",
+        "status": "present"
+      },
+      {
+        "name": "family-and-life-coaching-ar",
+        "status": "present"
       }
     ],
     "portal": {
-      "activated": "True"
+      "activated": true
     }
   },
   "idb-jor-cmamman": {
