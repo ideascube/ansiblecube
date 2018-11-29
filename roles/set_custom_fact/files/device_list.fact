@@ -7940,6 +7940,58 @@
       {
         "name": "family-and-life-coaching-ar",
         "status": "present"
+      },
+      {
+        "name": "gutenberg.en",
+        "status": "present"
+      },
+      {
+        "name": "tedbusiness.en",
+        "status": "present"
+      },
+      {
+        "name": "teddesign.en",
+        "status": "present"
+      },
+      {
+        "name": "tedentertainment.en",
+        "status": "present"
+      },
+      {
+        "name": "tedglobalissues.en",
+        "status": "present"
+      },
+      {
+        "name": "tedscience.en",
+        "status": "present"
+      },
+      {
+        "name": "tedtechnology.en",
+        "status": "present"
+      },
+      {
+        "name": "wikibooks.ar",
+        "status": "present"
+      },
+      {
+        "name": "wikibooks.en",
+        "status": "present"
+      },
+      {
+        "name": "wikiquote.ar",
+        "status": "present"
+      },
+      {
+        "name": "wikiquote.en",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.en",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.ar",
+        "status": "present"
       }
     ],
     "portal": {
