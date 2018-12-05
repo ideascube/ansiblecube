@@ -1,4 +1,491 @@
 {
+  " kb-sen-rfathilogne": {
+    "kolibri": {
+      "activated": true,
+      "language": [
+        "fr",
+        "en"
+      ],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "decouvrez-differents-sports-fr",
+        "status": "present"
+      },
+      {
+        "name": "musique-fr",
+        "status": "present"
+      },
+      {
+        "name": "decouvrez-ou-re-decouvrez-la-cuisine-de-differents-pays-fr",
+        "status": "present"
+      },
+      {
+        "name": "connaitre-et-aimer-son-corps-fr",
+        "status": "present"
+      },
+      {
+        "name": "combattons-les-discriminations-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-code-informatique-fr",
+        "status": "present"
+      },
+      {
+        "name": "initiez-vous-a-la-photographie-fr",
+        "status": "present"
+      },
+      {
+        "name": "comprendre-et-exprimer-ses-emotions-fr",
+        "status": "present"
+      },
+      {
+        "name": "initiez-vous-a-la-creation-video-fr",
+        "status": "present"
+      },
+      {
+        "name": "management-fr",
+        "status": "present"
+      },
+      {
+        "name": "marketing-fr",
+        "status": "present"
+      },
+      {
+        "name": "administration-gestion-comptabilite-fr",
+        "status": "present"
+      },
+      {
+        "name": "innovation-en-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "creation-d-entreprise-fr",
+        "status": "present"
+      },
+      {
+        "name": "economie-fr",
+        "status": "present"
+      },
+      {
+        "name": "audiobooks-et-fictions-sonores-fr",
+        "status": "present"
+      },
+      {
+        "name": "prevention-addictions-fr",
+        "status": "present"
+      },
+      {
+        "name": "prevention-et-sexualite-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "droits-de-l-enfant-fr",
+        "status": "present"
+      },
+      {
+        "name": "contes-et-dessins-animes-fr",
+        "status": "present"
+      },
+      {
+        "name": "arts-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "geographie-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "discriminations-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "creation-audio-fr",
+        "status": "present"
+      },
+      {
+        "name": "hygiene-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "ebooks-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "sante-les-bases-fr",
+        "status": "present"
+      },
+      {
+        "name": "cuisine-et-nutrition-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "sports-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "hygiene-af-fr",
+        "status": "present"
+      },
+      {
+        "name": "ecriture-et-litterature-fr",
+        "status": "present"
+      },
+      {
+        "name": "biologie-adolescents-fr",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-adults-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-teenagers-en",
+        "status": "present"
+      },
+      {
+        "name": "biologie-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-human-rights-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-human-rights-for-children-en",
+        "status": "present"
+      },
+      {
+        "name": "non-violent-communication-en",
+        "status": "present"
+      },
+      {
+        "name": "cartoons-en",
+        "status": "present"
+      },
+      {
+        "name": "experiences-de-femmes-fr",
+        "status": "present"
+      },
+      {
+        "name": "l-oeil-et-la-vision-fr",
+        "status": "present"
+      },
+      {
+        "name": "genetique-et-epigenetique-fr",
+        "status": "present"
+      },
+      {
+        "name": "introduction-aux-sciences-cognitives-et-aux-neurosciences-fr",
+        "status": "present"
+      },
+      {
+        "name": "introduction-a-la-biologie-et-a-la-chimie-fr",
+        "status": "present"
+      },
+      {
+        "name": "microbiologie-et-prevention-sante-fr",
+        "status": "present"
+      },
+      {
+        "name": "kit-de-l-animateur-fr",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-geography-environmental-studies-en",
+        "status": "present"
+      },
+      {
+        "name": "health-and-hygiene-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-geography-en",
+        "status": "present"
+      },
+      {
+        "name": "ecoute-tes-emotions-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "prends-soin-de-toi-enfants-ado-fr",
+        "status": "present"
+      },
+      {
+        "name": "protege-la-planete-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-filles-et-les-garcons-quelles-differences-fr",
+        "status": "present"
+      },
+      {
+        "name": "comment-faire-face-a-la-violence-et-aux-conflits-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-a1-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-a2-fr",
+        "status": "present"
+      },
+      {
+        "name": "maladies-endemiques-en-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-alphabetisation-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-b1-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-b2-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-c1-c2-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-fos-fr",
+        "status": "present"
+      },
+      {
+        "name": "creation-d-association-fr",
+        "status": "present"
+      },
+      {
+        "name": "women-s-experiences-en",
+        "status": "present"
+      },
+      {
+        "name": "violences-faites-aux-femmes-fr",
+        "status": "present"
+      },
+      {
+        "name": "risques-auditifs-fr",
+        "status": "present"
+      },
+      {
+        "name": "moyens-de-contraception-fr",
+        "status": "present"
+      },
+      {
+        "name": "premiers-secours-enfants-adolescents-fr",
+        "status": "present"
+      },
+      {
+        "name": "alcool-drogues-fr",
+        "status": "present"
+      },
+      {
+        "name": "harcelement-ado-fr",
+        "status": "present"
+      },
+      {
+        "name": "harcelement-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "la-sante-enfants-ado-fr",
+        "status": "present"
+      },
+      {
+        "name": "sommeil-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "nutrition-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "anatomie-feminine-fr",
+        "status": "present"
+      },
+      {
+        "name": "vih-sida-fr",
+        "status": "present"
+      },
+      {
+        "name": "filles-garcons-quelle-place-pour-qui-fr",
+        "status": "present"
+      },
+      {
+        "name": "fiches-d-activites-sante-fr",
+        "status": "present"
+      },
+      {
+        "name": "fiches-d-activites-play-international-fr",
+        "status": "present"
+      },
+      {
+        "name": "numerique-et-bidouille-informatique-fr",
+        "status": "present"
+      },
+      {
+        "name": "tutoriels-pour-utiliser-des-logiciels-et-des-applications-fr",
+        "status": "present"
+      },
+      {
+        "name": "diy-travaux-manuels-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-bases-de-l-informatique-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-cuisiner-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "culture-numerique-fr",
+        "status": "present"
+      },
+      {
+        "name": "s-informer-sur-internet-fr",
+        "status": "present"
+      },
+      {
+        "name": "programmation-et-bidouille-fr",
+        "status": "present"
+      },
+      {
+        "name": "l-inclusion-numerique-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-metiers-du-numerique-fr",
+        "status": "present"
+      },
+      {
+        "name": "introduction-aux-droits-de-l-homme-fr",
+        "status": "present"
+      },
+      {
+        "name": "il-etait-une-fois-notre-terre-fr",
+        "status": "present"
+      },
+      {
+        "name": "ecologie-developpement-durable-fr",
+        "status": "present"
+      },
+      {
+        "name": "food-security-en",
+        "status": "present"
+      },
+      {
+        "name": "public-speaking-en",
+        "status": "present"
+      },
+      {
+        "name": "food-and-cooking-en",
+        "status": "present"
+      },
+      {
+        "name": "pratiques-et-usages-du-numerique-fr",
+        "status": "present"
+      },
+      {
+        "name": "decouvrir-l-archeologie-fr",
+        "status": "present"
+      },
+      {
+        "name": "decouvrir-l-archeologie-adultes-fr",
+        "status": "present"
+      },
+      {
+        "name": "contes-senegal-fr",
+        "status": "present"
+      },
+      {
+        "name": "silent-animated-movies-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-a-la-physique-fr",
+        "status": "present"
+      },
+      {
+        "name": "litterature-francophone-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-afrique-de-l-ouest-fr",
+        "status": "present"
+      },
+      {
+        "name": "sciences-politiques-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "contenus-en-pulaar-ff",
+        "status": "present"
+      },
+      {
+        "name": "arts-africa-en",
+        "status": "present"
+      },
+      {
+        "name": "political-sciences-africa-en",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.en",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.wo",
+        "status": "present"
+      },
+      {
+        "name": "cest-pas-sorcier.fr",
+        "status": "present"
+      },
+      {
+        "name": "dirtybiology.fr",
+        "status": "present"
+      },
+      {
+        "name": "les-fondamentaux.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikiversity.fr",
+        "status": "present"
+      },
+      {
+        "name": "vikidia.fr",
+        "status": "present"
+      },
+      {
+        "name": "vikidia.en",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idb-aus-queensland": {
     "kalite": {
       "activated": "True",
