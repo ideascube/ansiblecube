@@ -19405,106 +19405,264 @@
     }
   },
   "kb-jor-tdhazraqejc": {
-    "idc_import": {
-      "activated": "False",
-      "content_name": [
-        "2-Contenus/CSVKBJORDANIE.csv"
-      ]
-    },
-    "kalite": {
-      "activated": "False",
-      "language": [
-        "en",
-        "ar"
-      ],
-      "version": "0.16.9"
+    "kolibri": {
+      "activated": false,
+      "language": [],
+      "version": "0.10.3"
     },
     "package_management": [
       {
-        "name": "bil-tunisia.ar",
+        "name": "fictions-and-entertainment-in-arabic-ar",
         "status": "present"
       },
       {
-        "name": "wikiversity.ar",
+        "name": "music-in-arabic-ar",
         "status": "present"
       },
       {
-        "name": "wikiversity.en",
+        "name": "cartoons-en",
         "status": "present"
       },
       {
-        "name": "wikibooks.en",
+        "name": "abuse-and-harassment-gbv-ar",
         "status": "present"
       },
       {
-        "name": "wikibooks.ar",
+        "name": "poetry-ar",
         "status": "present"
       },
       {
-        "name": "wikiquote.en",
+        "name": "physics-ar",
         "status": "present"
       },
       {
-        "name": "wikiquote.ar",
+        "name": "self-development-ar",
         "status": "present"
       },
       {
-        "name": "tedtechnology.en",
+        "name": "sports-ar",
         "status": "present"
       },
       {
-        "name": "tedscience.en",
+        "name": "fashion-and-beauty-ar",
         "status": "present"
       },
       {
-        "name": "tedglobalissues.en",
+        "name": "motherhood-and-parenting-ar",
         "status": "present"
       },
       {
-        "name": "tedentertainment.en",
+        "name": "mathematics-ar",
         "status": "present"
       },
       {
-        "name": "teddesign.en",
+        "name": "philosophy-of-language-ar",
         "status": "present"
       },
       {
-        "name": "tedbusiness.en",
+        "name": "let-s-speak-english-ar",
         "status": "present"
       },
       {
-        "name": "gutenberg.en",
+        "name": "health-and-diseases-ar",
         "status": "present"
       },
       {
-        "name": "vikidia.en",
+        "name": "girl-talk-puberty-ar",
         "status": "present"
       },
       {
-        "name": "wikisource.en",
+        "name": "let-s-be-clean-ar",
         "status": "present"
       },
       {
-        "name": "wikisource.ar",
+        "name": "nervous-system-ar",
         "status": "present"
       },
       {
-        "name": "wiktionary.ar",
+        "name": "let-s-speak-arabic-ar",
         "status": "present"
       },
       {
-        "name": "wiktionary.en",
+        "name": "biology-ar",
         "status": "present"
       },
       {
-        "name": "wikipedia.en",
+        "name": "learn-guitar-en",
         "status": "present"
       },
       {
-        "name": "wikipedia.ar",
+        "name": "cartoons-ar",
+        "status": "present"
+      },
+      {
+        "name": "arabic-alphabet-ar",
+        "status": "present"
+      },
+      {
+        "name": "diy-handcrafts-and-arts-ar",
+        "status": "present"
+      },
+      {
+        "name": "facilitator-kit-en",
+        "status": "present"
+      },
+      {
+        "name": "drawing-colouring-en",
+        "status": "present"
+      },
+      {
+        "name": "yoga-en",
+        "status": "present"
+      },
+      {
+        "name": "agriculture-gardening-en",
+        "status": "present"
+      },
+      {
+        "name": "waqt-al-farah-ar",
+        "status": "present"
+      },
+      {
+        "name": "cooking-ar",
+        "status": "present"
+      },
+      {
+        "name": "football-matches-en",
+        "status": "present"
+      },
+      {
+        "name": "english-for-adults-ar",
+        "status": "present"
+      },
+      {
+        "name": "the-road-zaatari-magazine-ar",
+        "status": "present"
+      },
+      {
+        "name": "kids-magazine-ar",
+        "status": "present"
+      },
+      {
+        "name": "fitness-for-kids-ar",
+        "status": "present"
+      },
+      {
+        "name": "classical-music-ar",
+        "status": "present"
+      },
+      {
+        "name": "some-science-fun-with-salam-ar",
+        "status": "present"
+      },
+      {
+        "name": "let-s-talk-about-sexuality-ar-ar",
+        "status": "present"
+      },
+      {
+        "name": "tales-for-kids-ar",
+        "status": "present"
+      },
+      {
+        "name": "entrepreneurship-business-management-ar",
+        "status": "present"
+      },
+      {
+        "name": "chemistry-ar",
+        "status": "present"
+      },
+      {
+        "name": "child-protection-ar",
+        "status": "present"
+      },
+      {
+        "name": "economy-ar",
+        "status": "present"
+      },
+      {
+        "name": "novels-for-youth-ar",
+        "status": "present"
+      },
+      {
+        "name": "technology-ar",
+        "status": "present"
+      },
+      {
+        "name": "journalism-ar",
+        "status": "present"
+      },
+      {
+        "name": "women-empowerment-ar",
+        "status": "present"
+      },
+      {
+        "name": "fozi-mozi-ar",
+        "status": "present"
+      },
+      {
+        "name": "dpc-awareness-and-protection-ar",
+        "status": "present"
+      },
+      {
+        "name": "fozi-mozi-diy-handcrafts-ar",
+        "status": "present"
+      },
+      {
+        "name": "adam-wa-mishmish-ar",
+        "status": "present"
+      },
+      {
+        "name": "space-science-ar",
+        "status": "present"
+      },
+      {
+        "name": "computer-and-it-ar",
+        "status": "present"
+      },
+      {
+        "name": "carpentry-ar",
+        "status": "present"
+      },
+      {
+        "name": "photography-ar",
+        "status": "present"
+      },
+      {
+        "name": "silent-movies-en",
+        "status": "present"
+      },
+      {
+        "name": "silent-animated-movies-en",
+        "status": "present"
+      },
+      {
+        "name": "talented-thinker-club-ar",
+        "status": "present"
+      },
+      {
+        "name": "ballet-picks-ar",
+        "status": "present"
+      },
+      {
+        "name": "simple-musical-instruments-ar",
+        "status": "present"
+      },
+      {
+        "name": "health-and-nutrition-ar",
+        "status": "present"
+      },
+      {
+        "name": "animals-documentaries-ar",
+        "status": "present"
+      },
+      {
+        "name": "family-and-life-coaching-ar",
         "status": "present"
       }
-    ]
+    ],
+    "portal": {
+      "activated": true
+    }
   },
   "kb-mdg-faf": {
     "kalite": {
