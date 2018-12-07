@@ -875,12 +875,12 @@
     }
   },
   "idb-bsf-demoserver": {
-    "kalite": {
+    "kolibri": {
       "activated": "True",
       "language": [
         "fr"
       ],
-      "version": "0.16.9"
+      "version": "0.10.3"
     },
     "package_management": [
       {
