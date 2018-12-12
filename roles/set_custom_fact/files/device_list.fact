@@ -7294,6 +7294,10 @@
         "status": "present"
       },
       {
+        "name": "cartoons-en",
+        "status": "present"
+      },
+      {
         "name": "abuse-and-harassment-gbv-ar",
         "status": "present"
       },
@@ -7379,6 +7383,10 @@
       },
       {
         "name": "drawing-colouring-en",
+        "status": "present"
+      },
+      {
+        "name": "yoga-en",
         "status": "present"
       },
       {
