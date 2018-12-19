@@ -9804,7 +9804,7 @@
         "status": "present"
       },
       {
-        "name": "make-you-own-radio-en",
+        "name": "make-your-own-radio-en",
         "status": "present"
       },
       {
@@ -9840,7 +9840,7 @@
         "status": "present"
       },
       {
-        "name": "geography-rohingya-rhg",
+        "name": "life-saving-rohingya-rhg",
         "status": "present"
       },
       {
@@ -9848,11 +9848,63 @@
         "status": "present"
       },
       {
-        "name": "music-and-dance-rohingya-rhg",
+        "name": "community-harmony-rohingya-rhg",
         "status": "present"
       },
       {
         "name": "news-rohingya-rhg",
+        "status": "present"
+      },
+      {
+        "name": "cultural-blender-burmese-mm",
+        "status": "present"
+      },
+      {
+        "name": "wash-promotion-rohingya-rhg",
+        "status": "present"
+      },
+      {
+        "name": "cultural-blender-rohingya-rhg",
+        "status": "present"
+      },
+      {
+        "name": "cultural-blender-asia-ctg",
+        "status": "present"
+      },
+      {
+        "name": "ecology-rohingya-rhg",
+        "status": "present"
+      },
+      {
+        "name": "cultural-blender-bangla-bn",
+        "status": "present"
+      },
+      {
+        "name": "community-harmony-multilanguages-en",
+        "status": "present"
+      },
+      {
+        "name": "cultural-blender-multi-languages-en",
+        "status": "present"
+      },
+      {
+        "name": "young-and-old-multilanguage-en",
+        "status": "present"
+      },
+      {
+        "name": "ecology-multi-languages-en",
+        "status": "present"
+      },
+      {
+        "name": "history-multi-language-en",
+        "status": "present"
+      },
+      {
+        "name": "discovering-multilanguage-en",
+        "status": "present"
+      },
+      {
+        "name": "creativity-multi-languages-en",
         "status": "present"
       },
       {
