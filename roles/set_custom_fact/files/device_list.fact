@@ -9686,7 +9686,7 @@
         "status": "present"
       },
       {
-        "name": "make-you-own-radio-en",
+        "name": "make-your-own-radio-en",
         "status": "present"
       },
       {
@@ -9718,11 +9718,59 @@
         "status": "present"
       },
       {
-        "name": "music-burmese-mm",
+        "name": "cultural-blender-asia-ctg",
         "status": "present"
       },
       {
-        "name": "cartoons-burmese-mm",
+        "name": "cultural-blender-bangla-bn",
+        "status": "present"
+      },
+      {
+        "name": "community-harmony-multilanguages-en",
+        "status": "present"
+      },
+      {
+        "name": "cultural-blender-multi-languages-en",
+        "status": "present"
+      },
+      {
+        "name": "young-and-old-multilanguage-en",
+        "status": "present"
+      },
+      {
+        "name": "young-and-old-bangla-bn",
+        "status": "present"
+      },
+      {
+        "name": "community-harmony-bangla-bn",
+        "status": "present"
+      },
+      {
+        "name": "creativity-bangla-bn",
+        "status": "present"
+      },
+      {
+        "name": "wash-promotion-bangla-en",
+        "status": "present"
+      },
+      {
+        "name": "life-saving-bangla-bn",
+        "status": "present"
+      },
+      {
+        "name": "ecology-multi-languages-en",
+        "status": "present"
+      },
+      {
+        "name": "history-multi-language-en",
+        "status": "present"
+      },
+      {
+        "name": "discovering-multilanguage-en",
+        "status": "present"
+      },
+      {
+        "name": "creativity-multi-languages-en",
         "status": "present"
       },
       {
