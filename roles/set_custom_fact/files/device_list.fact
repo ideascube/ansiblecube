@@ -20345,100 +20345,58 @@
     }
   },
   "kb-mdg-faf": {
-    "kalite": {
-      "activated": "True",
-      "language": [
-        "fr"
-      ],
-      "version": "0.16.9"
+    "kolibri": {
+      "activated": false,
+      "language": [],
+      "version": "0.10.3"
     },
     "package_management": [
       {
-        "name": "wikipedia.fr",
+        "name": "musique-fr",
         "status": "present"
       },
       {
-        "name": "wikipedia.mg",
+        "name": "decouvrez-ou-re-decouvrez-la-cuisine-de-differents-pays-fr",
         "status": "present"
       },
       {
-        "name": "gutenberg.fr",
+        "name": "montez-votre-projet-professionnel-fr",
         "status": "present"
       },
       {
-        "name": "les-fondamentaux.fr",
+        "name": "apprenez-le-code-informatique-fr",
         "status": "present"
       },
       {
-        "name": "wikipedia.en",
-        "status": "absent"
-      },
-      {
-        "name": "gutenberg.en",
-        "status": "absent"
-      },
-      {
-        "name": "ted-ed.en",
-        "status": "absent"
-      },
-      {
-        "name": "histoire-occidentale-fr",
+        "name": "arts-plastiques-fr",
         "status": "present"
       },
       {
-        "name": "sports-enfants-ados-fr",
+        "name": "initiez-vous-a-la-photographie-fr",
         "status": "present"
       },
       {
-        "name": "ecriture-et-litterature-fr",
+        "name": "management-fr",
         "status": "present"
       },
       {
-        "name": "apprends-le-francais-a1-enfants-adolescents",
+        "name": "marketing-fr",
         "status": "present"
       },
       {
-        "name": "kit-de-l-animateur-fr",
+        "name": "administration-gestion-comptabilite-fr",
         "status": "present"
       },
       {
-        "name": "ebooks-enfants-fr",
+        "name": "innovation-en-afrique-fr",
         "status": "present"
       },
       {
-        "name": "nutrition-fr",
+        "name": "creation-d-entreprise-fr",
         "status": "present"
       },
       {
-        "name": "arts-afrique-fr",
-        "status": "present"
-      },
-      {
-        "name": "utilisez-internet-en-toute-securite-fr",
-        "status": "present"
-      },
-      {
-        "name": "decouvrir-et-pratiquer-la-riziculture-fr",
-        "status": "present"
-      },
-      {
-        "name": "apprenez-le-francais-niveau-a1-fr",
-        "status": "present"
-      },
-      {
-        "name": "apprenez-le-francais-niveau-a2-fr",
-        "status": "present"
-      },
-      {
-        "name": "apprenez-le-francais-niveau-b1-fr",
-        "status": "present"
-      },
-      {
-        "name": "apprenez-le-francais-niveau-b2-fr",
-        "status": "present"
-      },
-      {
-        "name": "apprends-le-francais-a2-enfants-adolescents-fr",
+        "name": "economie-fr",
         "status": "present"
       },
       {
@@ -20462,7 +20420,15 @@
         "status": "present"
       },
       {
+        "name": "arts-afrique-fr",
+        "status": "present"
+      },
+      {
         "name": "geographie-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "ebooks-enfants-fr",
         "status": "present"
       },
       {
@@ -20470,60 +20436,64 @@
         "status": "present"
       },
       {
-        "name": "economie-fr",
+        "name": "sports-enfants-ados-fr",
         "status": "present"
       },
       {
-        "name": "creation-d-entreprise-fr",
+        "name": "ecriture-et-litterature-fr",
         "status": "present"
       },
       {
-        "name": "innovation-en-afrique-fr",
+        "name": "nutrition-fr",
         "status": "present"
       },
       {
-        "name": "administration-gestion-comptabilite-fr",
+        "name": "apprends-le-francais-a1-enfants-adolescents-fr",
         "status": "present"
       },
       {
-        "name": "marketing-fr",
+        "name": "kit-de-l-animateur-fr",
         "status": "present"
       },
       {
-        "name": "management-fr",
+        "name": "utilisez-internet-en-toute-securite-fr",
         "status": "present"
       },
       {
-        "name": "initiez-vous-a-la-photographie-fr",
+        "name": "decouvrir-et-pratiquer-la-riziculture-fr",
         "status": "present"
       },
       {
-        "name": "decouvrez-les-arts-plastiques-fr",
+        "name": "apprenez-le-francais-niveau-a1-fr",
         "status": "present"
       },
       {
-        "name": "apprenez-le-code-informatique-fr",
+        "name": "apprenez-le-francais-niveau-a2-fr",
         "status": "present"
       },
       {
-        "name": "montez-votre-projet-professionnel-fr",
+        "name": "apprends-le-francais-a2-enfants-adolescents-fr",
         "status": "present"
       },
       {
-        "name": "decouvrez-ou-re-decouvrez-la-cuisine-de-differents-pays",
+        "name": "apprenez-le-francais-niveau-b1-fr",
         "status": "present"
       },
       {
-        "name": "decouvrez-de-nouvelles-musiques-fr",
+        "name": "apprenez-le-francais-niveau-b2-fr",
         "status": "present"
       },
       {
         "name": "apprenez-le-francais-niveau-c1-c2-fr",
         "status": "present"
+      },
+      {
+        "name": "histoire-occidentale-fr",
+        "status": "present"
       }
     ],
     "portal": {
-      "activated": "True"
+      "activated": true
     }
   },
   "kb-mooc-cog": {
