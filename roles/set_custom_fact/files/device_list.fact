@@ -1385,6 +1385,10 @@
     },
     "package_management": [
       {
+        "name": "patron-pour-coudre-une-jupe-a-volants-fille-fr",
+        "status": "present"
+      },
+      {
         "name": "patrons-pour-coudre-des-vetements-pour-enfants-fr",
         "status": "present"
       },
