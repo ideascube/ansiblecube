@@ -1206,6 +1206,180 @@
       "activated": "True"
     }
   },
+  "idb-bgd-rohingya": {
+    "kolibri": {
+      "activated": true,
+      "language": [
+        "en"
+      ],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "arts-plastiques-fr",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-adults-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-teenagers-en",
+        "status": "present"
+      },
+      {
+        "name": "greek-mythology-en",
+        "status": "present"
+      },
+      {
+        "name": "cartoons-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-philosophy-en",
+        "status": "present"
+      },
+      {
+        "name": "revolutionary-women-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-guitar-en",
+        "status": "present"
+      },
+      {
+        "name": "drums-for-beginners-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-photography-en",
+        "status": "present"
+      },
+      {
+        "name": "let-s-practise-sport-children-en",
+        "status": "present"
+      },
+      {
+        "name": "woodcrafts-for-kids-en",
+        "status": "present"
+      },
+      {
+        "name": "make-your-own-radio-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-to-know-and-manage-your-feelings-en",
+        "status": "present"
+      },
+      {
+        "name": "yoga-en",
+        "status": "present"
+      },
+      {
+        "name": "instrumental-music-en",
+        "status": "present"
+      },
+      {
+        "name": "silent-movies-en",
+        "status": "present"
+      },
+      {
+        "name": "cultural-blender-europe-en",
+        "status": "present"
+      },
+      {
+        "name": "protection-rohingya-rhg",
+        "status": "present"
+      },
+      {
+        "name": "life-saving-rohingya-rhg",
+        "status": "present"
+      },
+      {
+        "name": "health-promotion-rohingya-rhg",
+        "status": "present"
+      },
+      {
+        "name": "community-harmony-rohingya-rhg",
+        "status": "present"
+      },
+      {
+        "name": "news-rohingya-rhg",
+        "status": "present"
+      },
+      {
+        "name": "cultural-blender-burmese-mm",
+        "status": "present"
+      },
+      {
+        "name": "wash-promotion-rohingya-rhg",
+        "status": "present"
+      },
+      {
+        "name": "cultural-blender-rohingya-rhg",
+        "status": "present"
+      },
+      {
+        "name": "cultural-blender-asia-ctg",
+        "status": "present"
+      },
+      {
+        "name": "ecology-rohingya-rhg",
+        "status": "present"
+      },
+      {
+        "name": "cultural-blender-bangla-bn",
+        "status": "present"
+      },
+      {
+        "name": "community-harmony-multilanguages-en",
+        "status": "present"
+      },
+      {
+        "name": "cultural-blender-multi-languages-en",
+        "status": "present"
+      },
+      {
+        "name": "young-and-old-multilanguage-en",
+        "status": "present"
+      },
+      {
+        "name": "ecology-multi-languages-en",
+        "status": "present"
+      },
+      {
+        "name": "history-multi-language-en",
+        "status": "present"
+      },
+      {
+        "name": "discovering-multilanguage-en",
+        "status": "present"
+      },
+      {
+        "name": "creativity-multi-languages-en",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.en",
+        "status": "present"
+      },
+      {
+        "name": "wikibooks.en",
+        "status": "present"
+      },
+      {
+        "name": "gutenberg.en",
+        "status": "present"
+      },
+      {
+        "name": "vikidia.en",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idb-bsf-demoserver": {
     "kolibri": {
       "activated": "True",
