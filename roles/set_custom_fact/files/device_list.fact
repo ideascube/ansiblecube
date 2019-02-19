@@ -1828,6 +1828,41 @@
       "activated": true
     }
   },
+  "idb-bsf-tempsmodernes2": {
+    "kolibri": {
+      "activated": true,
+      "language": [
+        "fr",
+        "en"
+      ],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "patron-pour-coudre-une-jupe-a-volants-fille-fr",
+        "status": "present"
+      },
+      {
+        "name": "patrons-pour-coudre-des-vetements-pour-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "patrons-pour-coudre-des-vetements-pour-femmes-fr",
+        "status": "present"
+      },
+      {
+        "name": "patrons-pour-coudre-un-top-sorbetto-femmes-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-utiliser-des-patrons-fr",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idb-bsf-vagrant": {
     "kalite": {
       "activated": false,
