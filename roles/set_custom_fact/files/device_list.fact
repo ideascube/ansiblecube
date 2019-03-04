@@ -10620,6 +10620,90 @@
       "activated": "True"
     }
   },
+  "idc-fra-fsagan": {
+    "kolibri": {
+      "activated": false,
+      "language": [],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "apprenez-le-francais-fr",
+        "status": "present"
+      },
+      {
+        "name": "renseignez-vous-sur-les-demarches-administratives-fr",
+        "status": "present"
+      },
+      {
+        "name": "learning-french-en",
+        "status": "present"
+      },
+      {
+        "name": "connaitre-la-france-et-paris-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprends-le-francais-a1-enfants-adolescents-fr",
+        "status": "present"
+      },
+      {
+        "name": "arriver-en-france-et-connaitre-ses-droits-fr",
+        "status": "present"
+      },
+      {
+        "name": "decouvrez-ou-redecouvrez-l-histoire-de-france-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-a1-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-a2-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprends-le-francais-a2-enfants-adolescents-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-alphabetisation-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-b1-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-b2-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-fos-fr",
+        "status": "present"
+      },
+      {
+        "name": "l-afrique-en-marche-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-bases-de-l-informatique-fr",
+        "status": "present"
+      },
+      {
+        "name": "silent-movies-en",
+        "status": "present"
+      },
+      {
+        "name": "silent-animated-movies-en",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "kb-bdg-local": {
     "kolibri": {
       "activated": true,
