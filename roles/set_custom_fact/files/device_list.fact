@@ -1795,11 +1795,8 @@
   },
   "idb-bsf-tempsmodernes": {
     "kolibri": {
-      "activated": true,
-      "language": [
-        "fr",
-        "en"
-      ],
+      "activated": false,
+      "language": [],
       "version": "0.10.3"
     },
     "package_management": [
