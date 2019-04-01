@@ -11554,6 +11554,420 @@
       "activated": true
     }
   },
+  "idc-sxm-demo": {
+    "kolibri": {
+      "activated": true,
+      "language": [
+        "fr"
+      ],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "sport-fr",
+        "status": "present"
+      },
+      {
+        "name": "musique-fr",
+        "status": "present"
+      },
+      {
+        "name": "citoyennete-et-politique-fr",
+        "status": "present"
+      },
+      {
+        "name": "decouvrez-ou-re-decouvrez-la-cuisine-de-differents-pays-fr",
+        "status": "present"
+      },
+      {
+        "name": "connaitre-et-aimer-son-corps-fr",
+        "status": "present"
+      },
+      {
+        "name": "combattons-les-discriminations-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-fr",
+        "status": "present"
+      },
+      {
+        "name": "montez-votre-projet-professionnel-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-code-informatique-fr",
+        "status": "present"
+      },
+      {
+        "name": "arts-plastiques-fr",
+        "status": "present"
+      },
+      {
+        "name": "initiez-vous-a-la-photographie-fr",
+        "status": "present"
+      },
+      {
+        "name": "renseignez-vous-sur-les-demarches-administratives-fr",
+        "status": "present"
+      },
+      {
+        "name": "comprendre-et-exprimer-ses-emotions-fr",
+        "status": "present"
+      },
+      {
+        "name": "initiez-vous-a-la-creation-video-fr",
+        "status": "present"
+      },
+      {
+        "name": "creation-d-entreprise-fr",
+        "status": "present"
+      },
+      {
+        "name": "audiobooks-et-fictions-sonores-fr",
+        "status": "present"
+      },
+      {
+        "name": "hygiene-de-base-fr",
+        "status": "present"
+      },
+      {
+        "name": "prevention-addictions-fr",
+        "status": "present"
+      },
+      {
+        "name": "prevention-et-sexualite-fr",
+        "status": "present"
+      },
+      {
+        "name": "droits-de-l-enfant-fr",
+        "status": "present"
+      },
+      {
+        "name": "contes-et-dessins-animes-fr",
+        "status": "present"
+      },
+      {
+        "name": "discriminations-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "creation-audio-fr",
+        "status": "present"
+      },
+      {
+        "name": "hygiene-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "cuisine-et-nutrition-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "sports-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "biologie-adolescents-fr",
+        "status": "present"
+      },
+      {
+        "name": "nature-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-adults-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-teenagers-en",
+        "status": "present"
+      },
+      {
+        "name": "biologie-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "learning-french-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-the-history-of-the-world-en",
+        "status": "present"
+      },
+      {
+        "name": "nutrition-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprends-le-francais-a1-enfants-adolescents-fr",
+        "status": "present"
+      },
+      {
+        "name": "experiences-de-femmes-fr",
+        "status": "present"
+      },
+      {
+        "name": "economie-et-developpement-durable-fr",
+        "status": "present"
+      },
+      {
+        "name": "microbiologie-et-prevention-sante-fr",
+        "status": "present"
+      },
+      {
+        "name": "kit-de-l-animateur-fr",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-psychology-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-sociology-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-anthropology-en",
+        "status": "present"
+      },
+      {
+        "name": "utilisez-internet-en-toute-securite-fr",
+        "status": "present"
+      },
+      {
+        "name": "parentalite-fr",
+        "status": "present"
+      },
+      {
+        "name": "learn-photography-en",
+        "status": "present"
+      },
+      {
+        "name": "yoga-en",
+        "status": "present"
+      },
+      {
+        "name": "ecoute-tes-emotions-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "prends-soin-de-toi-enfants-ado-fr",
+        "status": "present"
+      },
+      {
+        "name": "protegeons-la-planete-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-a1-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-a2-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprends-le-francais-a2-enfants-adolescents-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-alphabetisation-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-b1-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-b2-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-c1-c2-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-occidentale-fr",
+        "status": "present"
+      },
+      {
+        "name": "violences-faites-aux-femmes-fr",
+        "status": "present"
+      },
+      {
+        "name": "moyens-de-contraception-fr",
+        "status": "present"
+      },
+      {
+        "name": "premiers-secours-enfants-adolescents-fr",
+        "status": "present"
+      },
+      {
+        "name": "troubles-alimentaires-fr",
+        "status": "present"
+      },
+      {
+        "name": "alcool-drogues-fr",
+        "status": "present"
+      },
+      {
+        "name": "risques-numeriques-fr",
+        "status": "present"
+      },
+      {
+        "name": "harcelement-ado-fr",
+        "status": "present"
+      },
+      {
+        "name": "harcelement-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "premiere-fois-ado-adultes-fr",
+        "status": "present"
+      },
+      {
+        "name": "la-sante-enfants-ado-fr",
+        "status": "present"
+      },
+      {
+        "name": "sommeil-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "nutrition-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "vih-sida-fr",
+        "status": "present"
+      },
+      {
+        "name": "filles-garcons-quelle-place-pour-qui-fr",
+        "status": "present"
+      },
+      {
+        "name": "decouvrez-le-street-art-fr",
+        "status": "present"
+      },
+      {
+        "name": "ebook-enfants-libres-de-droit-fr",
+        "status": "present"
+      },
+      {
+        "name": "kit-de-l-animateur-libre-de-droit-fr",
+        "status": "present"
+      },
+      {
+        "name": "fiches-creativite-libre-de-droit-fr",
+        "status": "present"
+      },
+      {
+        "name": "films-et-videos-libres-de-droit-fr",
+        "status": "present"
+      },
+      {
+        "name": "tutoriels-pour-utiliser-des-logiciels-et-des-applications-fr",
+        "status": "present"
+      },
+      {
+        "name": "educacion-arte-es",
+        "status": "present"
+      },
+      {
+        "name": "diy-travaux-manuels-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-bases-de-l-informatique-fr",
+        "status": "present"
+      },
+      {
+        "name": "pedagogie-enabel-fr",
+        "status": "present"
+      },
+      {
+        "name": "culture-numerique-fr",
+        "status": "present"
+      },
+      {
+        "name": "s-informer-sur-internet-fr",
+        "status": "present"
+      },
+      {
+        "name": "programmation-et-bidouille-fr",
+        "status": "present"
+      },
+      {
+        "name": "l-inclusion-numerique-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-metiers-du-numerique-fr",
+        "status": "present"
+      },
+      {
+        "name": "ecologie-fr",
+        "status": "present"
+      },
+      {
+        "name": "il-etait-une-fois-notre-terre-fr",
+        "status": "present"
+      },
+      {
+        "name": "ecologie-developpement-durable-a-trier-fr",
+        "status": "present"
+      },
+      {
+        "name": "pratiques-et-usages-du-numerique-fr",
+        "status": "present"
+      },
+      {
+        "name": "decouvrir-l-archeologie-fr",
+        "status": "present"
+      },
+      {
+        "name": "internet-les-autres-et-moi-les-bons-usages-fr",
+        "status": "present"
+      },
+      {
+        "name": "cultura-historia-y-geografia-es",
+        "status": "present"
+      },
+      {
+        "name": "informacion-y-sensibilizacion-medioambiente-es",
+        "status": "present"
+      },
+      {
+        "name": "educacion-idioma-espanol-es",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.fr",
+        "status": "present"
+      },
+      {
+        "name": "tedglobalissues.en",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.es",
+        "status": "present"
+      },
+      {
+        "name": "gutenberg.fr",
+        "status": "present"
+      },
+      {
+        "name": "tedentertainment.en",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "kb-bdg-local": {
     "kolibri": {
       "activated": true,
