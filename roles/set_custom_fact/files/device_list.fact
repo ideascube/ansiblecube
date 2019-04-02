@@ -2094,11 +2094,7 @@
         "status": "present"
       },
       {
-        "name": "formacion-profesional-sikana-es",
-        "status": "present"
-      },
-      {
-        "name": "informacion-sikana-es",
+        "name": "informacion-sikana-salud-es",
         "status": "present"
       },
       {
@@ -2166,10 +2162,6 @@
         "status": "present"
       },
       {
-        "name": "educacion-arte-es",
-        "status": "present"
-      },
-      {
         "name": "historia-america-latina-es",
         "status": "present"
       },
@@ -2202,7 +2194,7 @@
         "status": "present"
       },
       {
-        "name": "cultura-historia-de-america-latina-es",
+        "name": "cultura-historia-y-geografia-es",
         "status": "present"
       },
       {
@@ -2286,10 +2278,6 @@
         "status": "present"
       },
       {
-        "name": "informacion-y-sensibilizacion-biodiversidad-es",
-        "status": "present"
-      },
-      {
         "name": "informacion-y-sensibilizacion-democracia-y-derechos-es",
         "status": "present"
       },
@@ -2306,7 +2294,7 @@
         "status": "present"
       },
       {
-        "name": "creatividad-cucuta-dibujar-es",
+        "name": "creatividad-dibujar-es",
         "status": "present"
       },
       {
@@ -2322,15 +2310,15 @@
         "status": "present"
       },
       {
-        "name": "creatividad-cucuta-manualidades-es",
+        "name": "creatividad-manualidades-es",
         "status": "present"
       },
       {
-        "name": "cultura-cucuta-cine-es",
+        "name": "cultura-cine-es",
         "status": "present"
       },
       {
-        "name": "informacion-y-sensibilizacion-cucuta-ninos-es",
+        "name": "informacion-y-sensibilizacion-ninos-es",
         "status": "present"
       },
       {
