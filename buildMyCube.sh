@@ -84,10 +84,10 @@ deb http://deb.debian.org/debian/ jessie main contrib non-free
 deb http://security.debian.org/ jessie/updates main contrib non-free
 
 # jessie-updates, previously known as 'volatile'
-deb http://deb.debian.org/debian/ jessie-updates main contrib non-free
+#deb http://deb.debian.org/debian/ jessie-updates main contrib non-free
 
 # jessie-backports, previously on backports.debian.org
-deb http://deb.debian.org/debian/ jessie-backports main contrib non-free
+#deb http://deb.debian.org/debian/ jessie-backports main contrib non-free
 EOF
     fi
 }
