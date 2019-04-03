@@ -24180,6 +24180,54 @@
       "activated": "True"
     }
   },
+  "kb-rca-buc2": {
+    "kolibri": {
+      "activated": false,
+      "language": [],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "comprendre-et-exprimer-ses-emotions-fr",
+        "status": "present"
+      },
+      {
+        "name": "sociologie-du-travail-fr",
+        "status": "present"
+      },
+      {
+        "name": "innovation-en-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "ecriture-et-litterature-fr",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-adults-en",
+        "status": "present"
+      },
+      {
+        "name": "experiences-de-femmes-fr",
+        "status": "present"
+      },
+      {
+        "name": "economie-et-mondialisation-fr",
+        "status": "present"
+      },
+      {
+        "name": "introduction-aux-sciences-cognitives-et-aux-neurosciences-fr",
+        "status": "present"
+      },
+      {
+        "name": "microbiologie-et-prevention-sante-fr",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "kb-rca-facss": {
     "kalite": {
       "activated": "True",
