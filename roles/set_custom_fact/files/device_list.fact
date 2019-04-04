@@ -11956,6 +11956,10 @@
         "status": "present"
       },
       {
+        "name": "decouvrez-ou-redecouvrez-l-histoire-de-france-fr",
+        "status": "present"
+      },
+      {
         "name": "parentalite-fr",
         "status": "present"
       },
@@ -12181,6 +12185,50 @@
       },
       {
         "name": "tedentertainment.en",
+        "status": "present"
+      },
+      {
+        "name": "universcience-tv.fr",
+        "status": "present"
+      },
+      {
+        "name": "tedscience.en",
+        "status": "present"
+      },
+      {
+        "name": "vikidia.fr",
+        "status": "present"
+      },
+      {
+        "name": "cest-pas-sorcier.fr",
+        "status": "present"
+      },
+      {
+        "name": "dirtybiology.fr",
+        "status": "present"
+      },
+      {
+        "name": "world.map",
+        "status": "present"
+      },
+      {
+        "name": "onsexprime.fr",
+        "status": "present"
+      },
+      {
+        "name": "planning-familial.org",
+        "status": "present"
+      },
+      {
+        "name": "droguesinfoservice.fr",
+        "status": "present"
+      },
+      {
+        "name": "e-penser.fr",
+        "status": "present"
+      },
+      {
+        "name": "les-fondamentaux.fr",
         "status": "present"
       }
     ],
