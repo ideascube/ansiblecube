@@ -1819,6 +1819,10 @@
       {
         "name": "apprendre-a-utiliser-des-patrons-fr",
         "status": "present"
+      },
+      {
+        "name": "wikipedia.fr",
+        "status": "present"
       }
     ],
     "portal": {
