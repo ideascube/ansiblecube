@@ -1866,71 +1866,29 @@
   },
   "idb-bsf-vagrant": {
     "kolibri": {
-      "activated": true,
-      "language": [
-        "fr"
-      ],
+      "activated": false,
+      "language": [],
       "version": "0.10.3"
     },
     "package_management": [
       {
-        "name": "citoyennete-et-politique-fr",
+        "name": "patron-pour-coudre-une-jupe-a-volants-fille-fr",
         "status": "present"
       },
       {
-        "name": "combattons-les-discriminations-fr",
+        "name": "patrons-pour-coudre-des-vetements-pour-enfants-fr",
         "status": "present"
       },
       {
-        "name": "innovation-en-afrique-fr",
+        "name": "patrons-pour-coudre-des-vetements-pour-femmes-fr",
         "status": "present"
       },
       {
-        "name": "droits-de-l-enfant-fr",
+        "name": "patrons-pour-coudre-un-top-sorbetto-femmes-fr",
         "status": "present"
       },
       {
-        "name": "economie-et-developpement-durable-fr",
-        "status": "present"
-      },
-      {
-        "name": "introduction-a-la-biologie-et-a-la-chimie-fr",
-        "status": "present"
-      },
-      {
-        "name": "apprenez-le-francais-niveau-a1-fr",
-        "status": "present"
-      },
-      {
-        "name": "apprenez-le-francais-niveau-a2-fr",
-        "status": "present"
-      },
-      {
-        "name": "decouvrez-le-street-art-fr",
-        "status": "present"
-      },
-      {
-        "name": "priorite-sante-rfi-fr",
-        "status": "present"
-      },
-      {
-        "name": "apprendre-le-yoga-sikana-fr",
-        "status": "present"
-      },
-      {
-        "name": "s-informer-sur-internet-fr",
-        "status": "present"
-      },
-      {
-        "name": "il-etait-une-fois-notre-terre-fr",
-        "status": "present"
-      },
-      {
-        "name": "pratiques-et-usages-du-numerique-fr",
-        "status": "present"
-      },
-      {
-        "name": "introduction-a-la-physique-fr",
+        "name": "apprendre-a-utiliser-des-patrons-fr",
         "status": "present"
       },
       {
