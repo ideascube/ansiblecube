@@ -10800,6 +10800,18 @@
         "status": "present"
       },
       {
+        "name": "documentaires-handicap-international-fr",
+        "status": "present"
+      },
+      {
+        "name": "audiobooks-from-radio-book-rwanda-en",
+        "status": "present"
+      },
+      {
+        "name": "audiobooks-from-radio-book-rwanda-rw-rw",
+        "status": "present"
+      },
+      {
         "name": "wikipedia.en",
         "status": "present"
       },
@@ -10820,15 +10832,7 @@
         "status": "present"
       },
       {
-        "name": "audacity-manual.en",
-        "status": "present"
-      },
-      {
         "name": "crashcourse.en",
-        "status": "present"
-      },
-      {
-        "name": "tedmed.en",
         "status": "present"
       },
       {
@@ -10848,7 +10852,7 @@
         "status": "present"
       },
       {
-        "name": "gutenberg.en",
+        "name": "films-pour-enfants.fr",
         "status": "present"
       }
     ],
