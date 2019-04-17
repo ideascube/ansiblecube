@@ -10981,10 +10981,6 @@
         "status": "present"
       },
       {
-        "name": "tedscience.en",
-        "status": "present"
-      },
-      {
         "name": "cest-pas-sorcier.fr",
         "status": "present"
       },
