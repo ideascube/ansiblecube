@@ -20232,15 +20232,7 @@
         "status": "present"
       },
       {
-        "name": "initiez-vous-a-la-photographie-fr",
-        "status": "present"
-      },
-      {
         "name": "comprendre-et-exprimer-ses-emotions-fr",
-        "status": "present"
-      },
-      {
-        "name": "initiez-vous-a-la-creation-video-fr",
         "status": "present"
       },
       {
@@ -20273,10 +20265,6 @@
       },
       {
         "name": "discriminations-enfants-ados-fr",
-        "status": "present"
-      },
-      {
-        "name": "creation-audio-fr",
         "status": "present"
       },
       {
