@@ -18461,6 +18461,18 @@
     },
     "package_management": [
       {
+        "name": "initiez-vous-a-la-creation-video-fr",
+        "status": "absent"
+      },
+      {
+        "name": "creation-audio-fr",
+        "status": "absent"
+      },
+      {
+        "name": "initiez-vous-a-la-photographie-fr",
+        "status": "absent"
+      },
+      {
         "name": "sport-fr",
         "status": "present"
       },
@@ -20216,6 +20228,18 @@
     },
     "package_management": [
       {
+        "name": "initiez-vous-a-la-creation-video-fr",
+        "status": "absent"
+      },
+      {
+        "name": "creation-audio-fr",
+        "status": "absent"
+      },
+      {
+        "name": "initiez-vous-a-la-photographie-fr",
+        "status": "absent"
+      },
+      {
         "name": "sport-fr",
         "status": "present"
       },
@@ -21703,6 +21727,18 @@
       "version": "0.10.3"
     },
     "package_management": [
+      {
+        "name": "initiez-vous-a-la-creation-video-fr",
+        "status": "absent"
+      },
+      {
+        "name": "creation-audio-fr",
+        "status": "absent"
+      },
+      {
+        "name": "initiez-vous-a-la-photographie-fr",
+        "status": "absent"
+      },
       {
         "name": "sport-fr",
         "status": "present"
@@ -27683,6 +27719,18 @@
     },
     "package_management": [
       {
+        "name": "initiez-vous-a-la-creation-video-fr",
+        "status": "absent"
+      },
+      {
+        "name": "creation-audio-fr",
+        "status": "absent"
+      },
+      {
+        "name": "initiez-vous-a-la-photographie-fr",
+        "status": "absent"
+      },
+      {
         "name": "sport-fr",
         "status": "present"
       },
@@ -28032,6 +28080,18 @@
       "version": "0.10.3"
     },
     "package_management": [
+      {
+        "name": "initiez-vous-a-la-creation-video-fr",
+        "status": "absent"
+      },
+      {
+        "name": "creation-audio-fr",
+        "status": "absent"
+      },
+      {
+        "name": "initiez-vous-a-la-photographie-fr",
+        "status": "absent"
+      },
       {
         "name": "sport-fr",
         "status": "present"
