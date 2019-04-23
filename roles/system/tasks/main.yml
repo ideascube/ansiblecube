@@ -85,7 +85,6 @@
    - curl
    - apt-transport-https
    - iotop
-   - htop
    - anacron
    - rsync
   tags: ['master','custom','update']
