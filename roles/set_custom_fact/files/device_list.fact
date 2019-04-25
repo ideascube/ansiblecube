@@ -2004,6 +2004,24 @@
       "activated": "True"
     }
   },
+  "idb-bsf-itintro": {
+    "kolibri": {
+      "activated": true,
+      "language": [
+        "en"
+      ],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "tutorials-for-using-programs-en",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idb-bsf-kolibri": {
     "kalite": {
       "activated": "False"
