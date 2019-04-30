@@ -12569,6 +12569,409 @@
       "activated": true
     }
   },
+  "idc-plateforme-citoyenne-belgique-bruxelles": {
+    "kolibri": {
+      "activated": true,
+      "language": [
+        "en",
+        "fr"
+      ],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "sport-fr",
+        "status": "present"
+      },
+      {
+        "name": "musique-fr",
+        "status": "present"
+      },
+      {
+        "name": "citoyennete-et-politique-fr",
+        "status": "present"
+      },
+      {
+        "name": "decouvrez-ou-re-decouvrez-la-cuisine-de-differents-pays-fr",
+        "status": "present"
+      },
+      {
+        "name": "combattons-les-discriminations-fr",
+        "status": "present"
+      },
+      {
+        "name": "fictions-and-entertainment-in-arabic-ar",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-fr",
+        "status": "present"
+      },
+      {
+        "name": "montez-votre-projet-professionnel-fr",
+        "status": "present"
+      },
+      {
+        "name": "music-in-arabic-ar",
+        "status": "present"
+      },
+      {
+        "name": "arts-plastiques-fr",
+        "status": "present"
+      },
+      {
+        "name": "renseignez-vous-sur-les-demarches-administratives-fr",
+        "status": "present"
+      },
+      {
+        "name": "comprendre-et-exprimer-ses-emotions-fr",
+        "status": "present"
+      },
+      {
+        "name": "audiobooks-et-fictions-sonores-fr",
+        "status": "present"
+      },
+      {
+        "name": "films-fr",
+        "status": "present"
+      },
+      {
+        "name": "droits-de-l-enfant-fr",
+        "status": "present"
+      },
+      {
+        "name": "contes-et-dessins-animes-fr",
+        "status": "present"
+      },
+      {
+        "name": "discriminations-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "ebooks-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "cuisine-et-nutrition-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "sports-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "ecriture-et-litterature-fr",
+        "status": "present"
+      },
+      {
+        "name": "biologie-adolescents-fr",
+        "status": "present"
+      },
+      {
+        "name": "nature-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-adults-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-teenagers-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-human-rights-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-human-rights-for-children-en",
+        "status": "present"
+      },
+      {
+        "name": "non-violent-communication-en",
+        "status": "present"
+      },
+      {
+        "name": "learning-french-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-the-history-of-the-world-en",
+        "status": "present"
+      },
+      {
+        "name": "connaitre-la-france-et-paris-fr",
+        "status": "present"
+      },
+      {
+        "name": "kit-de-l-animateur-fr",
+        "status": "present"
+      },
+      {
+        "name": "fictions-for-adults-fa",
+        "status": "present"
+      },
+      {
+        "name": "self-development-ar",
+        "status": "present"
+      },
+      {
+        "name": "mathematics-ar",
+        "status": "present"
+      },
+      {
+        "name": "let-s-speak-english-ar",
+        "status": "present"
+      },
+      {
+        "name": "utilisez-internet-en-toute-securite-fr",
+        "status": "present"
+      },
+      {
+        "name": "decouvrez-ou-redecouvrez-l-histoire-de-france-fr",
+        "status": "present"
+      },
+      {
+        "name": "parentalite-fr",
+        "status": "present"
+      },
+      {
+        "name": "learn-guitar-en",
+        "status": "present"
+      },
+      {
+        "name": "vocabularies-en",
+        "status": "present"
+      },
+      {
+        "name": "cartoons-ar",
+        "status": "present"
+      },
+      {
+        "name": "arabic-alphabet-ar",
+        "status": "present"
+      },
+      {
+        "name": "learn-to-know-and-manage-your-feelings-en",
+        "status": "present"
+      },
+      {
+        "name": "handcraft-origami-en",
+        "status": "present"
+      },
+      {
+        "name": "football-matches-en",
+        "status": "present"
+      },
+      {
+        "name": "ecoute-tes-emotions-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "prends-soin-de-toi-enfants-ado-fr",
+        "status": "present"
+      },
+      {
+        "name": "protegeons-la-planete-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-filles-et-les-garcons-quelles-differences-fr",
+        "status": "present"
+      },
+      {
+        "name": "english-for-adults-ar",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-a1-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-a2-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprends-le-francais-a2-enfants-adolescents-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-alphabetisation-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-b1-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-b2-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-c1-c2-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-occidentale-fr",
+        "status": "present"
+      },
+      {
+        "name": "premiers-secours-enfants-adolescents-fr",
+        "status": "present"
+      },
+      {
+        "name": "decouvrez-le-street-art-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-le-yoga-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "computer-and-it-ar",
+        "status": "present"
+      },
+      {
+        "name": "diy-travaux-manuels-fr",
+        "status": "present"
+      },
+      {
+        "name": "yoga-for-therapy-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-first-aid-techniques-en",
+        "status": "present"
+      },
+      {
+        "name": "les-bases-de-l-informatique-fr",
+        "status": "present"
+      },
+      {
+        "name": "s-informer-sur-internet-fr",
+        "status": "present"
+      },
+      {
+        "name": "introduction-aux-droits-de-l-homme-fr",
+        "status": "present"
+      },
+      {
+        "name": "il-etait-une-fois-notre-terre-fr",
+        "status": "present"
+      },
+      {
+        "name": "public-speaking-en",
+        "status": "present"
+      },
+      {
+        "name": "decouvrir-l-archeologie-fr",
+        "status": "present"
+      },
+      {
+        "name": "cultural-blender-europe-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-a-la-physique-fr",
+        "status": "present"
+      },
+      {
+        "name": "litterature-francophone-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "how-to-improve-your-english-skills-en",
+        "status": "present"
+      },
+      {
+        "name": "how-to-write-in-a-professional-context-en",
+        "status": "present"
+      },
+      {
+        "name": "learning-to-read-and-write-level-1-en",
+        "status": "present"
+      },
+      {
+        "name": "learning-to-read-and-write-level-2-en",
+        "status": "present"
+      },
+      {
+        "name": "reading-and-writing-games-en",
+        "status": "present"
+      },
+      {
+        "name": "histoire-de-l-immigration-en-france-fr",
+        "status": "present"
+      },
+      {
+        "name": "l-importance-des-langues-maternelles-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-enfants-apprennent-le-francais-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoires-illustrees-fr",
+        "status": "present"
+      },
+      {
+        "name": "introduction-aux-mathematiques-fr",
+        "status": "present"
+      },
+      {
+        "name": "langue-des-signes-fr",
+        "status": "present"
+      },
+      {
+        "name": "tedentertainment.en",
+        "status": "present"
+      },
+      {
+        "name": "ted-ed.en",
+        "status": "present"
+      },
+      {
+        "name": "tedxlausanne2014.fr",
+        "status": "present"
+      },
+      {
+        "name": "tedxgeneva2014.fr",
+        "status": "present"
+      },
+      {
+        "name": "cest-pas-sorcier.fr",
+        "status": "present"
+      },
+      {
+        "name": "les-fondamentaux.fr",
+        "status": "present"
+      },
+      {
+        "name": "dirtybiology.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.en",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.ar",
+        "status": "present"
+      },
+      {
+        "name": "world.map",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-sen-airliq": {
     "kolibri": {
       "activated": false,
