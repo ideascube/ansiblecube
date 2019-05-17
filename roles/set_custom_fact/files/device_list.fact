@@ -13077,6 +13077,344 @@
       }
     ]
   },
+  "idb-sxm-2019": {
+    "kolibri": {
+      "activated": true,
+      "language": [
+        "fr"
+      ],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "sport-fr",
+        "status": "present"
+      },
+      {
+        "name": "musique-fr",
+        "status": "present"
+      },
+      {
+        "name": "decouvrez-ou-re-decouvrez-la-cuisine-de-differents-pays-fr",
+        "status": "present"
+      },
+      {
+        "name": "combattons-les-discriminations-fr",
+        "status": "present"
+      },
+      {
+        "name": "comprendre-et-exprimer-ses-emotions-fr",
+        "status": "present"
+      },
+      {
+        "name": "initiez-vous-a-la-creation-video-fr",
+        "status": "present"
+      },
+      {
+        "name": "audiobooks-et-fictions-sonores-fr",
+        "status": "present"
+      },
+      {
+        "name": "contes-et-dessins-animes-fr",
+        "status": "present"
+      },
+      {
+        "name": "nature-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-adults-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-teenagers-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-human-rights-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-ecology-en",
+        "status": "present"
+      },
+      {
+        "name": "cartoons-en",
+        "status": "present"
+      },
+      {
+        "name": "apprends-le-francais-a1-enfants-adolescents-fr",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-geography-environmental-studies-en",
+        "status": "present"
+      },
+      {
+        "name": "carpentry-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-to-know-and-manage-your-feelings-en",
+        "status": "present"
+      },
+      {
+        "name": "facilitator-kit-en",
+        "status": "present"
+      },
+      {
+        "name": "fight-against-discriminations-and-live-together-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-geography-en",
+        "status": "present"
+      },
+      {
+        "name": "ecoute-tes-emotions-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "prends-soin-de-toi-enfants-ado-fr",
+        "status": "present"
+      },
+      {
+        "name": "protegeons-la-planete-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-a1-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-a2-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprends-le-francais-a2-enfants-adolescents-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-alphabetisation-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-b1-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-b2-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-c1-c2-fr",
+        "status": "present"
+      },
+      {
+        "name": "la-sante-enfants-ado-fr",
+        "status": "present"
+      },
+      {
+        "name": "sommeil-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "nutrition-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "filles-garcons-quelle-place-pour-qui-fr",
+        "status": "present"
+      },
+      {
+        "name": "ebook-enfants-libres-de-droit-fr",
+        "status": "present"
+      },
+      {
+        "name": "fiches-creativite-libre-de-droit-fr",
+        "status": "present"
+      },
+      {
+        "name": "films-et-videos-libres-de-droit-fr",
+        "status": "present"
+      },
+      {
+        "name": "what-are-some-easy-diets-i-can-use-en",
+        "status": "present"
+      },
+      {
+        "name": "i-m-worried-my-child-is-drinking-what-can-i-do-en",
+        "status": "present"
+      },
+      {
+        "name": "if-i-m-pregnant-how-do-drugs-and-alcohol-affect-me-en",
+        "status": "present"
+      },
+      {
+        "name": "what-does-addiction-look-like-en",
+        "status": "present"
+      },
+      {
+        "name": "creatividad-colsubsidio-es",
+        "status": "present"
+      },
+      {
+        "name": "educacion-matematicas-para-ninos-es",
+        "status": "present"
+      },
+      {
+        "name": "educacion-ingles-es",
+        "status": "present"
+      },
+      {
+        "name": "yoga-for-therapy-en",
+        "status": "present"
+      },
+      {
+        "name": "preparing-for-major-disasters-and-natural-catastrophes-en",
+        "status": "present"
+      },
+      {
+        "name": "being-prepared-in-case-of-a-major-disaster-en",
+        "status": "present"
+      },
+      {
+        "name": "pedagogie-enabel-fr",
+        "status": "present"
+      },
+      {
+        "name": "food-and-cooking-en",
+        "status": "present"
+      },
+      {
+        "name": "women-empowerment-en",
+        "status": "present"
+      },
+      {
+        "name": "how-to-write-in-a-professional-context-en",
+        "status": "present"
+      },
+      {
+        "name": "learning-to-read-and-write-level-1-en",
+        "status": "present"
+      },
+      {
+        "name": "learning-to-read-and-write-level-2-en",
+        "status": "present"
+      },
+      {
+        "name": "reading-and-writing-games-en",
+        "status": "present"
+      },
+      {
+        "name": "young-and-old-multilanguage-en",
+        "status": "present"
+      },
+      {
+        "name": "ecology-multi-languages-en",
+        "status": "present"
+      },
+      {
+        "name": "creativity-multi-languages-en",
+        "status": "present"
+      },
+      {
+        "name": "cultura-cuentos-y-dibujos-animados-es",
+        "status": "present"
+      },
+      {
+        "name": "educacion-contar-leer-y-conocer-es",
+        "status": "present"
+      },
+      {
+        "name": "cultura-literatura-universal-es",
+        "status": "present"
+      },
+      {
+        "name": "cultura-cuentos-audios-para-ninos-es",
+        "status": "present"
+      },
+      {
+        "name": "l-importance-des-langues-maternelles-fr",
+        "status": "present"
+      },
+      {
+        "name": "do-it-yourself-multi-languages-en",
+        "status": "present"
+      },
+      {
+        "name": "do-it-yourself-mulitlanguage-en",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.en",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.es",
+        "status": "present"
+      },
+      {
+        "name": "vikidia.fr",
+        "status": "present"
+      },
+      {
+        "name": "vikidia.en",
+        "status": "present"
+      },
+      {
+        "name": "cest-pas-sorcier.fr",
+        "status": "present"
+      },
+      {
+        "name": "universcience-tv.fr",
+        "status": "present"
+      },
+      {
+        "name": "tedscience.en",
+        "status": "present"
+      },
+      {
+        "name": "ted-ed.en",
+        "status": "present"
+      },
+      {
+        "name": "tedentertainment.en",
+        "status": "present"
+      },
+      {
+        "name": "les-fondamentaux.fr",
+        "status": "present"
+      },
+      {
+        "name": "films-pour-enfants.fr",
+        "status": "present"
+      },
+      {
+        "name": "world.map",
+        "status": "present"
+      },
+      {
+        "name": "gutenberg.fr",
+        "status": "present"
+      },
+      {
+        "name": "gutenberg.en",
+        "status": "present"
+      },
+      {
+        "name": "gutenberg.es",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idb-tan-save-kigoma": {
     "kalite": {
       "activated": "True",
