@@ -8550,14 +8550,6 @@
         "status": "present"
       },
       {
-        "name": "learn-guitar-en",
-        "status": "present"
-      },
-      {
-        "name": "drums-for-beginners-en",
-        "status": "present"
-      },
-      {
         "name": "learn-photography-en",
         "status": "present"
       },
@@ -8614,10 +8606,6 @@
         "status": "present"
       },
       {
-        "name": "football-matches-en",
-        "status": "present"
-      },
-      {
         "name": "women-s-experiences-en",
         "status": "present"
       },
@@ -8654,19 +8642,11 @@
         "status": "present"
       },
       {
-        "name": "what-are-the-basics-of-diabetes-en",
-        "status": "present"
-      },
-      {
         "name": "yoga-for-therapy-en",
         "status": "present"
       },
       {
         "name": "preparing-for-major-disasters-and-natural-catastrophes-en",
-        "status": "present"
-      },
-      {
-        "name": "being-prepared-in-case-of-a-major-disaster-en",
         "status": "present"
       },
       {
@@ -8683,10 +8663,6 @@
       },
       {
         "name": "public-speaking-en",
-        "status": "present"
-      },
-      {
-        "name": "food-and-cooking-en",
         "status": "present"
       },
       {
@@ -8750,11 +8726,23 @@
         "status": "present"
       },
       {
+        "name": "community-harmony-english-en",
+        "status": "present"
+      },
+      {
+        "name": "wash-promotion-english-en",
+        "status": "present"
+      },
+      {
         "name": "life-skills-english-en",
         "status": "present"
       },
       {
         "name": "pedagogical-support-english-en",
+        "status": "present"
+      },
+      {
+        "name": "health-promotion-multilanguage-en",
         "status": "present"
       },
       {
