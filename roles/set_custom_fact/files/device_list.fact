@@ -3970,6 +3970,344 @@
       }
     ]
   },
+  "idb-col-sav": {
+    "kolibri": {
+      "activated": true,
+      "language": [
+        "es"
+      ],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "musique-fr",
+        "status": "present"
+      },
+      {
+        "name": "musique-libre-de-droit-en",
+        "status": "present"
+      },
+      {
+        "name": "entretenimiento-esparcimiento-es",
+        "status": "present"
+      },
+      {
+        "name": "creatividad-creacion-sikana-es",
+        "status": "present"
+      },
+      {
+        "name": "informacion-sikana-salud-es",
+        "status": "present"
+      },
+      {
+        "name": "cultura-ebook-es",
+        "status": "present"
+      },
+      {
+        "name": "informacion-ebook-es",
+        "status": "present"
+      },
+      {
+        "name": "creatividad-aprender-a-dibujar-con-lapiz-es",
+        "status": "present"
+      },
+      {
+        "name": "creatividad-e-inovacion-empresarial-es",
+        "status": "present"
+      },
+      {
+        "name": "creatividad-creacion-de-videos-es",
+        "status": "present"
+      },
+      {
+        "name": "creatividad-fotografia-es",
+        "status": "present"
+      },
+      {
+        "name": "educacion-matematicas-para-ninos-es",
+        "status": "present"
+      },
+      {
+        "name": "educacion-matematicas-avanzadas-es",
+        "status": "present"
+      },
+      {
+        "name": "educacion-ecologia-y-educacion-medioambiental-es",
+        "status": "present"
+      },
+      {
+        "name": "educacion-civica-es",
+        "status": "present"
+      },
+      {
+        "name": "educacion-ciudadania-es",
+        "status": "present"
+      },
+      {
+        "name": "educacion-derechos-humanos-es",
+        "status": "present"
+      },
+      {
+        "name": "educacion-historia-y-grandes-civilizaciones-es",
+        "status": "present"
+      },
+      {
+        "name": "educacion-universo-es",
+        "status": "present"
+      },
+      {
+        "name": "educacion-historia-es",
+        "status": "present"
+      },
+      {
+        "name": "educacion-ingles-es",
+        "status": "present"
+      },
+      {
+        "name": "historia-america-latina-es",
+        "status": "present"
+      },
+      {
+        "name": "cultura-economia-es",
+        "status": "present"
+      },
+      {
+        "name": "cultura-generos-literarios-es",
+        "status": "present"
+      },
+      {
+        "name": "instrumental-music-en",
+        "status": "present"
+      },
+      {
+        "name": "cultura-cocina-es",
+        "status": "present"
+      },
+      {
+        "name": "cultura-economia-y-negocios-es",
+        "status": "present"
+      },
+      {
+        "name": "cultura-historia-del-cine-es",
+        "status": "present"
+      },
+      {
+        "name": "cultura-historia-del-arte-es",
+        "status": "present"
+      },
+      {
+        "name": "cultura-historia-y-geografia-es",
+        "status": "present"
+      },
+      {
+        "name": "cultura-cuentos-y-dibujos-animados-es",
+        "status": "present"
+      },
+      {
+        "name": "educacion-contar-leer-y-conocer-es",
+        "status": "present"
+      },
+      {
+        "name": "cultura-poesia-nicaragua-es",
+        "status": "present"
+      },
+      {
+        "name": "informacion-y-sensibilizacion-sexualidad-es",
+        "status": "present"
+      },
+      {
+        "name": "informacion-y-sensibilizacion-salud-es",
+        "status": "present"
+      },
+      {
+        "name": "informacion-y-sensibilizacion-informatica-es",
+        "status": "present"
+      },
+      {
+        "name": "formacion-profesional-costura-es",
+        "status": "present"
+      },
+      {
+        "name": "formacion-profesional-diy-es",
+        "status": "present"
+      },
+      {
+        "name": "formacion-profesional-emprendimiento-es",
+        "status": "present"
+      },
+      {
+        "name": "formacion-profesional-bibliotecario-mediador-cultural-es",
+        "status": "present"
+      },
+      {
+        "name": "informacion-y-sensibilizacion-medioambiente-es",
+        "status": "present"
+      },
+      {
+        "name": "informacion-y-sensibilizacion-educacion-ambiental-es",
+        "status": "present"
+      },
+      {
+        "name": "formacion-profesional-emprendimiento-y-desarrollo-personal-es",
+        "status": "present"
+      },
+      {
+        "name": "informacion-y-sensibilizacion-ciudadania-convivencia-es",
+        "status": "present"
+      },
+      {
+        "name": "informacion-y-sensibilizacion-animales-es",
+        "status": "present"
+      },
+      {
+        "name": "educacion-matematicas-es",
+        "status": "present"
+      },
+      {
+        "name": "educacion-idiomas-ingles-es",
+        "status": "present"
+      },
+      {
+        "name": "informacion-y-sensibilizacion-drogas-es",
+        "status": "present"
+      },
+      {
+        "name": "educacion-ciencias-naturales-fisica-es",
+        "status": "present"
+      },
+      {
+        "name": "educacion-idioma-espanol-es",
+        "status": "present"
+      },
+      {
+        "name": "informacion-y-sensibilizacion-democracia-y-derechos-es",
+        "status": "present"
+      },
+      {
+        "name": "cultura-arte-dibujar-es",
+        "status": "present"
+      },
+      {
+        "name": "cultura-arte-origami-es",
+        "status": "present"
+      },
+      {
+        "name": "creatividad-cucuta-creaciones-videos-y-fotos-es",
+        "status": "present"
+      },
+      {
+        "name": "creatividad-dibujar-es",
+        "status": "present"
+      },
+      {
+        "name": "educacion-conflicto-y-convivencia-es",
+        "status": "present"
+      },
+      {
+        "name": "educacion-consumo-es",
+        "status": "present"
+      },
+      {
+        "name": "informacion-y-sensibilizacion-interculturalidad-es",
+        "status": "present"
+      },
+      {
+        "name": "creatividad-manualidades-es",
+        "status": "present"
+      },
+      {
+        "name": "cultura-cine-es",
+        "status": "present"
+      },
+      {
+        "name": "informacion-y-sensibilizacion-ninos-es",
+        "status": "present"
+      },
+      {
+        "name": "cultura-musica-es",
+        "status": "present"
+      },
+      {
+        "name": "educacion-cucuta-idiomas-ingles-es",
+        "status": "present"
+      },
+      {
+        "name": "cultura-literatura-universal-es",
+        "status": "present"
+      },
+      {
+        "name": "cultura-cuentos-audios-para-ninos-es",
+        "status": "present"
+      },
+      {
+        "name": "colombia.map",
+        "status": "present"
+      },
+      {
+        "name": "world.map",
+        "status": "present"
+      },
+      {
+        "name": "impresiones-de-un-viaje.es",
+        "status": "present"
+      },
+      {
+        "name": "icarito.es",
+        "status": "present"
+      },
+      {
+        "name": "maguare.es",
+        "status": "present"
+      },
+      {
+        "name": "hecho-de-paz.es",
+        "status": "present"
+      },
+      {
+        "name": "sabelotodo.es",
+        "status": "present"
+      },
+      {
+        "name": "cinescuela.es",
+        "status": "present"
+      },
+      {
+        "name": "films-pour-enfants.fr",
+        "status": "present"
+      },
+      {
+        "name": "wiktionary.es",
+        "status": "present"
+      },
+      {
+        "name": "wikiquote.es",
+        "status": "present"
+      },
+      {
+        "name": "wikisource.es",
+        "status": "present"
+      },
+      {
+        "name": "vikidia.es",
+        "status": "present"
+      },
+      {
+        "name": "wikibooks.es",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.es",
+        "status": "present"
+      },
+      {
+        "name": "gutenberg.es",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idb-col-savearauca": {
     "kolibri": {
       "activated": true,
