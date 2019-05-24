@@ -15194,6 +15194,100 @@
       "activated": true
     }
   },
+  "idc-fra-tim": {
+    "kolibri": {
+      "activated": true,
+      "language": [
+        "fr"
+      ],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "apprenez-le-francais-fr",
+        "status": "present"
+      },
+      {
+        "name": "montez-votre-projet-professionnel-fr",
+        "status": "present"
+      },
+      {
+        "name": "audiobooks-et-fictions-sonores-fr",
+        "status": "present"
+      },
+      {
+        "name": "films-fr",
+        "status": "present"
+      },
+      {
+        "name": "ecriture-et-litterature-fr",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-teenagers-en",
+        "status": "present"
+      },
+      {
+        "name": "greek-mythology-en",
+        "status": "present"
+      },
+      {
+        "name": "connaitre-la-france-et-paris-fr",
+        "status": "present"
+      },
+      {
+        "name": "arriver-en-france-et-connaitre-ses-droits-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-a1-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-a2-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-b1-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-b2-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-c1-c2-fr",
+        "status": "present"
+      },
+      {
+        "name": "silent-animated-movies-en",
+        "status": "present"
+      },
+      {
+        "name": "gutenberg.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.fr",
+        "status": "present"
+      },
+      {
+        "name": "universcience-tv.fr",
+        "status": "present"
+      },
+      {
+        "name": "cest-pas-sorcier.fr",
+        "status": "present"
+      },
+      {
+        "name": "ted-ed.en",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-plateforme-citoyenne-belgique-bruxelles": {
     "kolibri": {
       "activated": true,
