@@ -15288,6 +15288,112 @@
       "activated": true
     }
   },
+  "idc-mex-dem": {
+    "kolibri": {
+      "activated": true,
+      "language": [
+        "es"
+      ],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "sport-fr",
+        "status": "present"
+      },
+      {
+        "name": "creatividad-creacion-sikana-es",
+        "status": "present"
+      },
+      {
+        "name": "educacion-matematicas-para-ninos-es",
+        "status": "present"
+      },
+      {
+        "name": "educacion-civica-es",
+        "status": "present"
+      },
+      {
+        "name": "educacion-historia-y-grandes-civilizaciones-es",
+        "status": "present"
+      },
+      {
+        "name": "educacion-universo-es",
+        "status": "present"
+      },
+      {
+        "name": "historia-america-latina-es",
+        "status": "present"
+      },
+      {
+        "name": "cultura-cocina-es",
+        "status": "present"
+      },
+      {
+        "name": "cultura-historia-del-cine-es",
+        "status": "present"
+      },
+      {
+        "name": "cultura-historia-del-arte-es",
+        "status": "present"
+      },
+      {
+        "name": "cultura-cuentos-y-dibujos-animados-es",
+        "status": "present"
+      },
+      {
+        "name": "educacion-contar-leer-y-conocer-es",
+        "status": "present"
+      },
+      {
+        "name": "formacion-profesional-costura-es",
+        "status": "present"
+      },
+      {
+        "name": "educacion-idiomas-ingles-es",
+        "status": "present"
+      },
+      {
+        "name": "informacion-y-sensibilizacion-drogas-es",
+        "status": "present"
+      },
+      {
+        "name": "creatividad-dibujar-es",
+        "status": "present"
+      },
+      {
+        "name": "creatividad-manualidades-es",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.es",
+        "status": "present"
+      },
+      {
+        "name": "gutenberg.es",
+        "status": "present"
+      },
+      {
+        "name": "sabelotodo.es",
+        "status": "present"
+      },
+      {
+        "name": "hecho-de-paz.es",
+        "status": "present"
+      },
+      {
+        "name": "cinescuela.es",
+        "status": "present"
+      },
+      {
+        "name": "wiktionary.es",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-plateforme-citoyenne-belgique-bruxelles": {
     "kolibri": {
       "activated": true,
