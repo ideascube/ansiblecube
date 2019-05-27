@@ -15298,10 +15298,6 @@
     },
     "package_management": [
       {
-        "name": "sport-fr",
-        "status": "present"
-      },
-      {
         "name": "creatividad-creacion-sikana-es",
         "status": "present"
       },
@@ -15375,10 +15371,6 @@
       },
       {
         "name": "sabelotodo.es",
-        "status": "present"
-      },
-      {
-        "name": "hecho-de-paz.es",
         "status": "present"
       },
       {
