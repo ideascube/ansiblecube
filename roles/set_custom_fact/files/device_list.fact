@@ -3388,6 +3388,50 @@
       "activated": true
     }
   },
+  "idb-bsf-comm": {
+    "kolibri": {
+      "activated": false,
+      "language": [],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "citoyennete-et-politique-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-code-informatique-fr",
+        "status": "present"
+      },
+      {
+        "name": "initiez-vous-a-la-photographie-fr",
+        "status": "present"
+      },
+      {
+        "name": "initiez-vous-a-la-creation-video-fr",
+        "status": "present"
+      },
+      {
+        "name": "creation-audio-fr",
+        "status": "present"
+      },
+      {
+        "name": "numerique-et-bidouille-informatique-fr",
+        "status": "present"
+      },
+      {
+        "name": "culture-numerique-fr",
+        "status": "present"
+      },
+      {
+        "name": "presentation-des-actions-de-bibliotheques-sans-frontieres-fr",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idb-bsf-demoserver": {
     "kolibri": {
       "activated": "True",
