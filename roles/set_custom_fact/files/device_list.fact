@@ -15308,6 +15308,68 @@
       "activated": true
     }
   },
+  "idc-bsf-tmtest": {
+    "kolibri": {
+      "activated": true,
+      "language": [
+        "fr"
+      ],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "women-in-african-history-en",
+        "status": "present"
+      },
+      {
+        "name": "greek-mythology-en",
+        "status": "present"
+      },
+      {
+        "name": "se-preparer-a-une-catastrophe-fr",
+        "status": "present"
+      },
+      {
+        "name": "mathematics-ar",
+        "status": "present"
+      },
+      {
+        "name": "let-s-speak-english-ar",
+        "status": "present"
+      },
+      {
+        "name": "let-s-speak-arabic-ar",
+        "status": "present"
+      },
+      {
+        "name": "utilisez-internet-en-toute-securite-fr",
+        "status": "present"
+      },
+      {
+        "name": "s-informer-sur-internet-fr",
+        "status": "present"
+      },
+      {
+        "name": "silent-animated-movies-en",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.fr",
+        "status": "present"
+      },
+      {
+        "name": "ted-ed.en",
+        "status": "present"
+      },
+      {
+        "name": "service-public.fr",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-dem-fra": {
     "kolibri": {
       "activated": true,
