@@ -19023,6 +19023,228 @@
       "activated": true
     }
   },
+  "idc-sxm-prim2019": {
+    "kolibri": {
+      "activated": true,
+      "language": [
+        "fr"
+      ],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "citoyennete-et-politique-fr",
+        "status": "present"
+      },
+      {
+        "name": "arts-plastiques-fr",
+        "status": "present"
+      },
+      {
+        "name": "contes-et-dessins-animes-fr",
+        "status": "present"
+      },
+      {
+        "name": "discriminations-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "sports-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "nature-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-teenagers-en",
+        "status": "present"
+      },
+      {
+        "name": "biologie-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "greek-mythology-en",
+        "status": "present"
+      },
+      {
+        "name": "cartoons-en",
+        "status": "present"
+      },
+      {
+        "name": "apprends-le-francais-a1-enfants-adolescents-fr",
+        "status": "present"
+      },
+      {
+        "name": "utilisez-internet-en-toute-securite-fr",
+        "status": "present"
+      },
+      {
+        "name": "learn-to-know-and-manage-your-feelings-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-geography-en",
+        "status": "present"
+      },
+      {
+        "name": "ecoute-tes-emotions-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "prends-soin-de-toi-enfants-ado-fr",
+        "status": "present"
+      },
+      {
+        "name": "protegeons-la-planete-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprends-le-francais-a2-enfants-adolescents-fr",
+        "status": "present"
+      },
+      {
+        "name": "premiers-secours-enfants-adolescents-fr",
+        "status": "present"
+      },
+      {
+        "name": "harcelement-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "la-sante-enfants-ado-fr",
+        "status": "present"
+      },
+      {
+        "name": "sommeil-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "nutrition-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "ebook-enfants-libres-de-droit-fr",
+        "status": "present"
+      },
+      {
+        "name": "kit-de-l-animateur-libre-de-droit-fr",
+        "status": "present"
+      },
+      {
+        "name": "fiches-creativite-libre-de-droit-fr",
+        "status": "present"
+      },
+      {
+        "name": "films-et-videos-libres-de-droit-fr",
+        "status": "present"
+      },
+      {
+        "name": "creatividad-colsubsidio-es",
+        "status": "present"
+      },
+      {
+        "name": "tutoriels-pour-utiliser-des-logiciels-et-des-applications-fr",
+        "status": "present"
+      },
+      {
+        "name": "educacion-matematicas-para-ninos-es",
+        "status": "present"
+      },
+      {
+        "name": "educacion-universo-es",
+        "status": "present"
+      },
+      {
+        "name": "diy-travaux-manuels-fr",
+        "status": "present"
+      },
+      {
+        "name": "pedagogie-enabel-fr",
+        "status": "present"
+      },
+      {
+        "name": "s-informer-sur-internet-fr",
+        "status": "present"
+      },
+      {
+        "name": "young-and-old-multilanguage-en",
+        "status": "present"
+      },
+      {
+        "name": "ecology-multi-languages-en",
+        "status": "present"
+      },
+      {
+        "name": "cultura-cuentos-y-dibujos-animados-es",
+        "status": "present"
+      },
+      {
+        "name": "educacion-contar-leer-y-conocer-es",
+        "status": "present"
+      },
+      {
+        "name": "creatividad-manualidades-es",
+        "status": "present"
+      },
+      {
+        "name": "l-importance-des-langues-maternelles-fr",
+        "status": "present"
+      },
+      {
+        "name": "do-it-yourself-multi-languages-en",
+        "status": "present"
+      },
+      {
+        "name": "community-harmony-english-en",
+        "status": "present"
+      },
+      {
+        "name": "creativity-fruits-de-mer-art-creation-activities-en",
+        "status": "present"
+      },
+      {
+        "name": "cultures-fruits-de-mer-nature-en",
+        "status": "present"
+      },
+      {
+        "name": "cultures-fruits-de-mer-documentaries-en",
+        "status": "present"
+      },
+      {
+        "name": "cultures-saint-martin-photos-fr",
+        "status": "present"
+      },
+      {
+        "name": "vikidia.fr",
+        "status": "present"
+      },
+      {
+        "name": "vikidia.en",
+        "status": "present"
+      },
+      {
+        "name": "cest-pas-sorcier.fr",
+        "status": "present"
+      },
+      {
+        "name": "les-fondamentaux.fr",
+        "status": "present"
+      },
+      {
+        "name": "films-pour-enfants.fr",
+        "status": "present"
+      },
+      {
+        "name": "world.map",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-tim-fra": {
     "kolibri": {
       "activated": true,
