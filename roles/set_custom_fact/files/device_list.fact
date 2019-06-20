@@ -19581,8 +19581,10 @@
   },
   "idc-sxm-mater2019": {
     "kolibri": {
-      "activated": false,
-      "language": [],
+      "activated": true,
+      "language": [
+        "fr"
+      ],
       "version": "0.10.3"
     },
     "package_management": [
