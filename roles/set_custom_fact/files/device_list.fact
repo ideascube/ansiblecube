@@ -18977,10 +18977,6 @@
       {
         "name": "ted-ed.en",
         "status": "present"
-      },
-      {
-        "name": "world.map",
-        "status": "present"
       }
     ],
     "portal": {
