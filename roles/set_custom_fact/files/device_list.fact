@@ -20107,10 +20107,6 @@
       {
         "name": "films-pour-enfants.fr",
         "status": "present"
-      },
-      {
-        "name": "world.map",
-        "status": "present"
       }
     ],
     "portal": {
