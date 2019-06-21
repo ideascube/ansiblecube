@@ -14933,10 +14933,6 @@
         "status": "present"
       },
       {
-        "name": "world.map",
-        "status": "present"
-      },
-      {
         "name": "gutenberg.fr",
         "status": "present"
       },
