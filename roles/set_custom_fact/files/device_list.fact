@@ -19407,10 +19407,6 @@
         "status": "present"
       },
       {
-        "name": "world.map",
-        "status": "present"
-      },
-      {
         "name": "onsexprime.fr",
         "status": "present"
       },
