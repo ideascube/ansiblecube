@@ -18109,10 +18109,6 @@
         "status": "present"
       },
       {
-        "name": "world.map",
-        "status": "present"
-      },
-      {
         "name": "wikipedia.es",
         "status": "present"
       },
