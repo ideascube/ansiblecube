@@ -17699,11 +17699,19 @@
         "status": "present"
       },
       {
+        "name": "citoyennete-et-politique-fr",
+        "status": "present"
+      },
+      {
         "name": "connaitre-et-aimer-son-corps-fr",
         "status": "present"
       },
       {
         "name": "combattons-les-discriminations-fr",
+        "status": "present"
+      },
+      {
+        "name": "arts-plastiques-fr",
         "status": "present"
       },
       {
@@ -17787,6 +17795,10 @@
         "status": "present"
       },
       {
+        "name": "kit-de-l-animateur-libre-de-droit-fr",
+        "status": "present"
+      },
+      {
         "name": "fiches-creativite-libre-de-droit-fr",
         "status": "present"
       },
@@ -17795,7 +17807,15 @@
         "status": "present"
       },
       {
+        "name": "tutoriels-pour-utiliser-des-logiciels-et-des-applications-fr",
+        "status": "present"
+      },
+      {
         "name": "educacion-derechos-humanos-es",
+        "status": "present"
+      },
+      {
+        "name": "educacion-universo-es",
         "status": "present"
       },
       {
@@ -17803,11 +17823,51 @@
         "status": "present"
       },
       {
+        "name": "diy-travaux-manuels-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-bases-de-l-informatique-fr",
+        "status": "present"
+      },
+      {
         "name": "pedagogie-enabel-fr",
         "status": "present"
       },
       {
+        "name": "s-informer-sur-internet-fr",
+        "status": "present"
+      },
+      {
+        "name": "pratiques-et-usages-du-numerique-fr",
+        "status": "present"
+      },
+      {
+        "name": "ecology-multi-languages-en",
+        "status": "present"
+      },
+      {
         "name": "educacion-idioma-espanol-es",
+        "status": "present"
+      },
+      {
+        "name": "do-it-yourself-mulitlanguage-en",
+        "status": "present"
+      },
+      {
+        "name": "creativity-fruits-de-mer-art-creation-activities-en",
+        "status": "present"
+      },
+      {
+        "name": "cultures-fruits-de-mer-nature-en",
+        "status": "present"
+      },
+      {
+        "name": "cultures-fruits-de-mer-documentaries-en",
+        "status": "present"
+      },
+      {
+        "name": "cultures-saint-martin-photos-fr",
         "status": "present"
       },
       {
@@ -17839,10 +17899,6 @@
         "status": "present"
       },
       {
-        "name": "world.map",
-        "status": "present"
-      },
-      {
         "name": "wikipedia.es",
         "status": "present"
       },
@@ -17856,6 +17912,10 @@
       },
       {
         "name": "ted-ed.en",
+        "status": "present"
+      },
+      {
+        "name": "vikidia.fr",
         "status": "present"
       }
     ],
