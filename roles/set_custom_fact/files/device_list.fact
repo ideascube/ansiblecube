@@ -14645,10 +14645,6 @@
         "status": "present"
       },
       {
-        "name": "introduction-to-geography-environmental-studies-en",
-        "status": "present"
-      },
-      {
         "name": "utilisez-internet-en-toute-securite-fr",
         "status": "present"
       },
@@ -14741,15 +14737,7 @@
         "status": "present"
       },
       {
-        "name": "films-et-videos-libres-de-droit-fr",
-        "status": "present"
-      },
-      {
         "name": "what-are-some-easy-diets-i-can-use-en",
-        "status": "present"
-      },
-      {
-        "name": "i-m-worried-my-child-is-drinking-what-can-i-do-en",
         "status": "present"
       },
       {
@@ -14758,10 +14746,6 @@
       },
       {
         "name": "priorite-sante-rfi-fr",
-        "status": "present"
-      },
-      {
-        "name": "creatividad-colsubsidio-es",
         "status": "present"
       },
       {
@@ -14785,10 +14769,6 @@
         "status": "present"
       },
       {
-        "name": "yoga-for-therapy-en",
-        "status": "present"
-      },
-      {
         "name": "preparing-for-major-disasters-and-natural-catastrophes-en",
         "status": "present"
       },
@@ -14806,10 +14786,6 @@
       },
       {
         "name": "pratiques-et-usages-du-numerique-fr",
-        "status": "present"
-      },
-      {
-        "name": "women-empowerment-en",
         "status": "present"
       },
       {
@@ -14861,10 +14837,6 @@
         "status": "present"
       },
       {
-        "name": "do-it-yourself-multi-languages-en",
-        "status": "present"
-      },
-      {
         "name": "do-it-yourself-mulitlanguage-en",
         "status": "present"
       },
@@ -14909,27 +14881,11 @@
         "status": "present"
       },
       {
-        "name": "universcience-tv.fr",
-        "status": "present"
-      },
-      {
-        "name": "tedscience.en",
-        "status": "present"
-      },
-      {
-        "name": "ted-ed.en",
-        "status": "present"
-      },
-      {
         "name": "tedentertainment.en",
         "status": "present"
       },
       {
         "name": "les-fondamentaux.fr",
-        "status": "present"
-      },
-      {
-        "name": "films-pour-enfants.fr",
         "status": "present"
       },
       {
@@ -14942,6 +14898,14 @@
       },
       {
         "name": "gutenberg.es",
+        "status": "present"
+      },
+      {
+        "name": "onsexprime.fr",
+        "status": "present"
+      },
+      {
+        "name": "droguesinfoservice.fr",
         "status": "present"
       }
     ],
