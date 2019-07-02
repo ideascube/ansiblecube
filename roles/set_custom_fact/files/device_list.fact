@@ -3783,59 +3783,29 @@
   },
   "idb-bsf-tempsmodernes": {
     "kolibri": {
-      "activated": true,
-      "language": [
-        "fr"
-      ],
+      "activated": false,
+      "language": [],
       "version": "0.10.3"
     },
     "package_management": [
       {
-        "name": "women-in-african-history-en",
+        "name": "patron-pour-coudre-une-jupe-a-volants-fille-fr",
         "status": "present"
       },
       {
-        "name": "greek-mythology-en",
+        "name": "patrons-pour-coudre-des-vetements-pour-enfants-fr",
         "status": "present"
       },
       {
-        "name": "se-preparer-a-une-catastrophe-fr",
+        "name": "patrons-pour-coudre-des-vetements-pour-femmes-fr",
         "status": "present"
       },
       {
-        "name": "mathematics-ar",
+        "name": "patrons-pour-coudre-un-top-sorbetto-femmes-fr",
         "status": "present"
       },
       {
-        "name": "let-s-speak-english-ar",
-        "status": "present"
-      },
-      {
-        "name": "let-s-speak-arabic-ar",
-        "status": "present"
-      },
-      {
-        "name": "utilisez-internet-en-toute-securite-fr",
-        "status": "present"
-      },
-      {
-        "name": "s-informer-sur-internet-fr",
-        "status": "present"
-      },
-      {
-        "name": "silent-animated-movies-en",
-        "status": "present"
-      },
-      {
-        "name": "wikipedia.fr",
-        "status": "present"
-      },
-      {
-        "name": "ted-ed.en",
-        "status": "present"
-      },
-      {
-        "name": "service-public.fr",
+        "name": "apprendre-a-utiliser-des-patrons-fr",
         "status": "present"
       }
     ],
