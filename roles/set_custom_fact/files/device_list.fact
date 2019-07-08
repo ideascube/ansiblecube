@@ -9534,19 +9534,7 @@
         "status": "present"
       },
       {
-        "name": "wikipedia.en",
-        "status": "present"
-      },
-      {
-        "name": "tedscience.en",
-        "status": "present"
-      },
-      {
-        "name": "vikidia.en",
-        "status": "present"
-      },
-      {
-        "name": "twentyfourhoursinanewsroom",
+        "name": "tedtechnology.en",
         "status": "present"
       },
       {
@@ -9554,7 +9542,19 @@
         "status": "present"
       },
       {
-        "name": "tedtechnology.en",
+        "name": "twentyfourhoursinanewsroom",
+        "status": "present"
+      },
+      {
+        "name": "vikidia.en",
+        "status": "present"
+      },
+      {
+        "name": "tedscience.en",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.en",
         "status": "present"
       },
       {
