@@ -4698,6 +4698,94 @@
       "activated": true
     }
   },
+  "idb-crf-ban": {
+    "kolibri": {
+      "activated": false,
+      "language": [],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "prevention-addictions-fr",
+        "status": "present"
+      },
+      {
+        "name": "prevention-et-sexualite-fr",
+        "status": "present"
+      },
+      {
+        "name": "sante-les-bases-fr",
+        "status": "present"
+      },
+      {
+        "name": "cuisine-et-nutrition-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "nutrition-fr",
+        "status": "present"
+      },
+      {
+        "name": "microbiologie-et-prevention-sante-fr",
+        "status": "present"
+      },
+      {
+        "name": "sensibilisation-a-la-gestion-des-epidemies-fr",
+        "status": "present"
+      },
+      {
+        "name": "kit-de-l-animateur-fr",
+        "status": "present"
+      },
+      {
+        "name": "parentalite-fr",
+        "status": "present"
+      },
+      {
+        "name": "maladies-endemiques-en-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "comprendre-l-autisme-fr",
+        "status": "present"
+      },
+      {
+        "name": "premiers-secours-enfants-adolescents-fr",
+        "status": "present"
+      },
+      {
+        "name": "sommeil-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "nutrition-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "vih-sida-fr",
+        "status": "present"
+      },
+      {
+        "name": "priorite-sante-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "fiches-d-activites-sante-fr",
+        "status": "present"
+      },
+      {
+        "name": "documentaires-handicap-international-fr",
+        "status": "present"
+      },
+      {
+        "name": "sida-info-service.org",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idb-deu-dusseldorf": {
     "kalite": {
       "activated": "True",
