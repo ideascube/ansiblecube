@@ -2098,8 +2098,10 @@
   },
   "idb-bgd-coxlocal": {
     "kolibri": {
-      "activated": false,
-      "language": [],
+      "activated": true,
+      "language": [
+        "en"
+      ],
       "version": "0.10.3"
     },
     "package_management": [
@@ -2109,6 +2111,10 @@
       },
       {
         "name": "learn-english-teenagers-en",
+        "status": "present"
+      },
+      {
+        "name": "let-s-speak-arabic-ar",
         "status": "present"
       },
       {
@@ -2136,15 +2142,11 @@
         "status": "present"
       },
       {
-        "name": "ecology-multi-languages-en",
+        "name": "nature-multi-languages-en",
         "status": "present"
       },
       {
         "name": "history-multi-language-en",
-        "status": "present"
-      },
-      {
-        "name": "cultural-expression-rohingya-rhg",
         "status": "present"
       },
       {
@@ -2240,15 +2242,35 @@
         "status": "present"
       },
       {
-        "name": "do-it-yourself-mulitlanguage-en",
-        "status": "present"
-      },
-      {
         "name": "mathematic-bangla-bn",
         "status": "present"
       },
       {
         "name": "news-documentary-bangla-bn",
+        "status": "present"
+      },
+      {
+        "name": "do-it-yourself-multilanguage-en",
+        "status": "present"
+      },
+      {
+        "name": "digital-literacy-multilanguage-en",
+        "status": "present"
+      },
+      {
+        "name": "vikidia.en",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.en",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.bn",
+        "status": "present"
+      },
+      {
+        "name": "wikibooks.en",
         "status": "present"
       }
     ],
