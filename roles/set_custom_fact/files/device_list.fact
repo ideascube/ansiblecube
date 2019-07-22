@@ -2598,8 +2598,10 @@
   },
   "idb-bgd-rohcmp20": {
     "kolibri": {
-      "activated": false,
-      "language": [],
+      "activated": true,
+      "language": [
+        "en"
+      ],
       "version": "0.10.3"
     },
     "package_management": [
@@ -2609,6 +2611,10 @@
       },
       {
         "name": "learn-english-teenagers-en",
+        "status": "present"
+      },
+      {
+        "name": "let-s-speak-arabic-ar",
         "status": "present"
       },
       {
@@ -2644,7 +2650,7 @@
         "status": "present"
       },
       {
-        "name": "ecology-rohingya-rhg",
+        "name": "nature-rohingya-rhg",
         "status": "present"
       },
       {
@@ -2652,7 +2658,7 @@
         "status": "present"
       },
       {
-        "name": "ecology-multi-languages-en",
+        "name": "nature-multi-languages-en",
         "status": "present"
       },
       {
@@ -2665,10 +2671,6 @@
       },
       {
         "name": "do-it-yourself-multi-languages-en",
-        "status": "present"
-      },
-      {
-        "name": "cultural-expression-bangla-bn",
         "status": "present"
       },
       {
@@ -2748,7 +2750,91 @@
         "status": "present"
       },
       {
-        "name": "do-it-yourself-mulitlanguage-en",
+        "name": "community-harmony-burmese-mm",
+        "status": "present"
+      },
+      {
+        "name": "technical-support-burmese-mm",
+        "status": "present"
+      },
+      {
+        "name": "do-it-yourself-multilanguage-en",
+        "status": "present"
+      },
+      {
+        "name": "do-it-yourself-burmese-rhg",
+        "status": "present"
+      },
+      {
+        "name": "digital-literacy-multilanguage-en",
+        "status": "present"
+      },
+      {
+        "name": "digital-literacy-burmese-mm",
+        "status": "present"
+      },
+      {
+        "name": "wash-promotion-burmese-mm",
+        "status": "present"
+      },
+      {
+        "name": "science-burmese-mm",
+        "status": "present"
+      },
+      {
+        "name": "protection-burmese-mm",
+        "status": "present"
+      },
+      {
+        "name": "news-documentary-burmese-mm",
+        "status": "present"
+      },
+      {
+        "name": "maths-english-en",
+        "status": "present"
+      },
+      {
+        "name": "literacy-burmese-mm",
+        "status": "present"
+      },
+      {
+        "name": "life-skills-burmese-mm",
+        "status": "present"
+      },
+      {
+        "name": "health-promotion-burmese-mm",
+        "status": "present"
+      },
+      {
+        "name": "expression-creatively-burmese-mm",
+        "status": "present"
+      },
+      {
+        "name": "exploration-burmese-mm",
+        "status": "present"
+      },
+      {
+        "name": "ecology-burmese-mm",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.en",
+        "status": "present"
+      },
+      {
+        "name": "vikidia.en",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.ar",
+        "status": "present"
+      },
+      {
+        "name": "wikibooks.en",
+        "status": "present"
+      },
+      {
+        "name": "wikibooks.ar",
         "status": "present"
       }
     ],
