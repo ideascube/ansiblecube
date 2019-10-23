@@ -32,11 +32,6 @@ DISTRIBUTION_CODENAME=$(lsb_release -sc)
     exit 1
 }
 
-[ "$DISTRIBUTION_CODENAME" == jessie ] || {
-    echo "Error: AnsibleCube run exclusively on Debian Jessie" >&2
-    exit 1
-}
-
 # functions
 function check_device_configuration()
 {

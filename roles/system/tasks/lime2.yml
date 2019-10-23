@@ -49,6 +49,7 @@
 
 - name: Add pinning for linux-jessie-root-next-lime2
   copy: src=root-fs.apt-pin dest=/etc/apt/preferences.d/root-fs
+  when: ansible_kernel | version_compare('4.19.0', '<')
   tags: ['custom','update']
 
 - name: Light LED at u-boot start

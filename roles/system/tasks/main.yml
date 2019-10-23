@@ -12,10 +12,10 @@
           owner=root group=root mode=0644
   tags: ['custom','update','rename']
 
-- name: Drop a complete source.list
-  copy: src=source.list dest=/etc/apt/sources.list
-  when: ansible_lsb.id == "Debian"
-  tags: ['master','update']
+# - name: Drop a complete source.list
+#   copy: src=source.list dest=/etc/apt/sources.list
+#   when: ansible_lsb.id == "Debian"
+#   tags: ['master','update']
 
 - name: Update APT cache, not more than once every 8 hours
   apt: 
@@ -97,9 +97,9 @@
    - avahi-utils
   tags: ['custom','update']
 
-- name: Upgrade pip to the latest version
-  pip: name=pip version=9.0.1
-  tags: ['master', 'custom','update']
+# - name: Upgrade pip to the latest version
+#   pip: name=pip version=9.0.1
+#   tags: ['master', 'custom','update']
 
 - name: Check for Ralink Wireless Network Adapter
   shell: lsusb | grep -F "Ralink Technology" ; echo
