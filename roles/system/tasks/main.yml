@@ -302,6 +302,6 @@
   when: is_grub.stat.exists is defined and is_grub.stat.exists
   tags: ['master','custom']
 
-- name: Copy 01get-sys-upgrade-file file in dispatcher.d
-  copy: src=01get-sys-upgrade-file dest=/etc/NetworkManager/dispatcher.d/01get-sys-upgrade-file mode=0755
+- name: Copy 01get-sys-upgrade-file.j2 file in dispatcher.d
+  template: src=01get-sys-upgrade-file.j2 dest=/etc/NetworkManager/dispatcher.d/01get-sys-upgrade-file mode=0755
   tags: ['update']

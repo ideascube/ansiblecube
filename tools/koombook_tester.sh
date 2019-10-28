@@ -32,7 +32,7 @@ if [ -e /root/rebooted ]; then
     # Get disk space
     disk_size=`fdisk -l /dev/sda -s`
 
-    # Test if wlan1 can connect to wlan0
+    # Test if wlan1 can connect to WIFI AP
     nmcli device wifi connect KoomBookTester_$unixDate ifname wlan1 || die "Error while connecting to AP"
 
     # Restore KoomBook tester image

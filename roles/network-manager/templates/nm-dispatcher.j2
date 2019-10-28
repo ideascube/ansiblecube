@@ -21,7 +21,7 @@ function flash_led()
     }
 }
 
-if [[ "$IF" == eth* || "$IF" == "wlan1" ]] && [ -z "$PROC"  ]
+if [[ "$IF" == eth* || "$IF" == "{{ansible_interfaces[4]}}" ]] && [ -z "$PROC"  ]
 then
     case "$STATUS" in
         up)
