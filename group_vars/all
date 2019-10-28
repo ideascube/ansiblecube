@@ -22,7 +22,7 @@ kiwix_version: "2.0"
 mongodb_version: "2.4.10"
 own_config_file: False
 ideascube_upgrade_frozen: False
-git_branch: oneUpdateFile
+git_branch: oneUpdateFileBuster
 samba: False
 syncthing: False
 syncthing_master_id_device: ""

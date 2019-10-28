@@ -23,7 +23,7 @@ ANSIBLE_ETC="/etc/ansible/facts.d/"
 ANSIBLE_BIN="/usr/local/bin/ansible-pull"
 ANSIBLECUBE_PATH="/var/lib/ansible/local"
 GIT_REPO_URL="https://github.com/ideascube/ansiblecube.git"
-BRANCH="oneUpdateFile"
+BRANCH="oneUpdateFileBuster"
 
 DISTRIBUTION_CODENAME=$(lsb_release -sc)
 
@@ -69,28 +69,9 @@ function internet_check()
     echo "Done."
 }
 
-function update_sources_list()
-{
-    if [[ "Debian" == `lsb_release -is` ]]
-    then
-    cat <<EOF > /etc/apt/sources.list
-deb http://deb.debian.org/debian/ jessie main contrib non-free
-
-deb http://security.debian.org/ jessie/updates main contrib non-free
-
-# jessie-updates, previously known as 'volatile'
-#deb http://deb.debian.org/debian/ jessie-updates main contrib non-free
-
-# jessie-backports, previously on backports.debian.org
-#deb http://deb.debian.org/debian/ jessie-backports main contrib non-free
-EOF
-    fi
-}
-
 function install_ansible()
 {
     echo -n "[+] Updating APT cache... "
-    update_sources_list
     apt-get update --quiet --quiet
     echo 'Done.'
 
@@ -244,7 +225,7 @@ function help()
 
         -n|--name       Name of your device. 
                         An Ideascube configuration template can be choosen from the links below :
-                            + https://github.com/ideascube/ansiblecube/blob/oneUpdateFile/roles/set_custom_fact/files/device_list.fact
+                            + https://github.com/ideascube/ansiblecube/blob/oneUpdateFileBuster/roles/set_custom_fact/files/device_list.fact
                             + https://github.com/ideascube/ideascube/tree/master/ideascube/conf
                         Ex: -n kb_mooc_cog
 
@@ -255,7 +236,7 @@ function help()
                         Ex: -t Africa/Dakar
 
         -b|--branch     Set Github branch you'd like to use 
-                        Default: oneUpdateFile
+                        Default: oneUpdateFileBuster
 
         -q|--quiet      Run in non-interactive mode
 

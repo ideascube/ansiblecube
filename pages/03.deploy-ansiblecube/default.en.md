@@ -14,7 +14,7 @@ Your device is now ready to be configured with AnsibleCube. Let's do it!
 
   * **Raspberry Password ** `raspberry`
 
-* Download `buildMyCube.sh` script : `wget https://github.com/ideascube/ansiblecube/raw/oneUpdateFile/buildMyCube.sh`
+* Download `buildMyCube.sh` script : `wget https://github.com/ideascube/ansiblecube/raw/oneUpdateFileBuster/buildMyCube.sh`
 
 * Add execution rights: `chmod +x buildMyCube.sh`
 
@@ -30,7 +30,7 @@ Your device is now ready to be configured with AnsibleCube. Let's do it!
 
 * If needed, use this command to change the mapping of your keyboard: `loadkeys fr`
 
-* Download `buildMyCube.sh` script : `wget https://github.com/ideascube/ansiblecube/raw/oneUpdateFile/buildMyCube.sh`
+* Download `buildMyCube.sh` script : `wget https://github.com/ideascube/ansiblecube/raw/oneUpdateFileBuster/buildMyCube.sh`
 
 * Add execution rights: `chmod +x buildMyCube.sh`
 
@@ -38,7 +38,7 @@ Your device is now ready to be configured with AnsibleCube. Let's do it!
 
 ## Execute buildMyCube.sh
 
-**buildMyCube** is a wrapper around the ansible-pull command line tool. You can [read the code](https://github.com/ideascube/ansiblecube/raw/oneUpdateFile/buildMyCube.sh) if you want to understand what this scipt does.
+**buildMyCube** is a wrapper around the ansible-pull command line tool. You can [read the code](https://github.com/ideascube/ansiblecube/raw/oneUpdateFileBuster/buildMyCube.sh) if you want to understand what this scipt does.
 
 ansible-pull needs some parameters to run **AnsibleCube** correctly. This script will build the right command line for you.
 
@@ -56,7 +56,7 @@ At Libraries Without Borders we use two important files:
 
 1. [Ideascube configuration file](https://github.com/ideascube/ideascube/tree/master/ideascube/conf "Fichier de configuration Ideascube") on IdeasCube GitHub repository
 
-2. [Device configuration file](https://github.com/ideascube/ansiblecube/blob/oneUpdateFile/roles/set_custom_fact/files/device_list.fact) on AnsibleCube GitHub repository
+2. [Device configuration file](https://github.com/ideascube/ansiblecube/blob/oneUpdateFileBuster/roles/set_custom_fact/files/device_list.fact) on AnsibleCube GitHub repository
 
 Thoses files helps us automate deployment. If you would like to use one of our templates, go for it!  Look through those files, find the configuration you like, and pass the arguments to `buildMyCube.sh`. Otherwise, feel free to name your device how you want and the script will ask a few questions about the configuration you would like to have!
 
@@ -78,7 +78,7 @@ Thoses files helps us automate deployment. If you would like to use one of our t
 
            An IdeasCube configuration template can be chosen from the links below:
 
-             + https://github.com/ideascube/ansiblecube/blob/oneUpdateFile/roles/set_custom_fact/files/device_list.fact
+             + https://github.com/ideascube/ansiblecube/blob/oneUpdateFileBuster/roles/set_custom_fact/files/device_list.fact
 
              + https://github.com/ideascube/ideascube/tree/master/ideascube/conf Ex: -n kb_mooc_cog
 
@@ -90,7 +90,7 @@ Thoses files helps us automate deployment. If you would like to use one of our t
 
  -b|--branch    Set Github branch you would like to use
 
-                Default: oneUpdateFile
+                Default: oneUpdateFileBuster
 
  -m|--managment Install BSF tools, set to false if not from BSF
 
@@ -149,7 +149,7 @@ Some examples:
 ### --name
 This is the only mandatory argument. It will be used to set your server name, WiFi hotspot name, dns name, IdeasCube name.
 
-If the latter matches with one found in the [AnsibleCube device configuration file](https://github.com/ideascube/ansiblecube/blob/oneUpdateFile/roles/set_custom_fact/files/device_list.fact) the configuration template will be used. Otherwise, a dialog box will pop up to ask you some questions about 3rd party software \(Khan Academy, Zim files\) you would like to install and configure.
+If the latter matches with one found in the [AnsibleCube device configuration file](https://github.com/ideascube/ansiblecube/blob/oneUpdateFileBuster/roles/set_custom_fact/files/device_list.fact) the configuration template will be used. Otherwise, a dialog box will pop up to ask you some questions about 3rd party software \(Khan Academy, Zim files\) you would like to install and configure.
 
 ### --timezone
 By default, the timezone is `Europe/Paris`. This option is useful if your headquarters are somewhere else. Timezones can be found on [Wikipedia](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
@@ -244,7 +244,7 @@ Now you have an IdeasCube system that is ready to work. Great!
 
 Ansible will be executed in Pull mode. The following file will be called by Network-Manager every time a network interface goes up: `/etc/NetworkManager/dispatcher.d/ansiblePullUpdate`
 
-Example of `ansiblePullUpdate` file : `/usr/local/bin/ansible-pull -s 120 -d /var/lib/ansible/local -C oneUpdateFile -i hosts -U https://github.com/ideascube/ansiblecube.git main.yml --tags update`
+Example of `ansiblePullUpdate` file : `/usr/local/bin/ansible-pull -s 120 -d /var/lib/ansible/local -C oneUpdateFileBuster -i hosts -U https://github.com/ideascube/ansiblecube.git main.yml --tags update`
 
 The file `roles/set_custom_fact/files/device_list.fact` knows what actions need to be done on the device.
 

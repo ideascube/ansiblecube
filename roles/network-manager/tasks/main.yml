@@ -59,7 +59,7 @@
   when: ansible_local.device_list[generic_project_name].external_antenna| default (False) |bool == True
   tags: ['custom', 'update']
 
-# - name: Remove oneUpdateFile branch if present in ansiblePullUpdate file
-#   replace: dest=/etc/NetworkManager/dispatcher.d/ansiblePullUpdate regexp='-C oneUpdateFile' replace='' backup=yes
+# - name: Remove oneUpdateFileBuster branch if present in ansiblePullUpdate file
+#   replace: dest=/etc/NetworkManager/dispatcher.d/ansiblePullUpdate regexp='-C oneUpdateFileBuster' replace='' backup=yes
 #   tags: 
 #     - update

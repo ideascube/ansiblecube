@@ -5,7 +5,7 @@ sudo: false
 branches:
   only:
     - master
-    - oneUpdateFile
+    - oneUpdateFileBuster
 install:
 - pip install -r tests/requirements-dev.txt
 script:

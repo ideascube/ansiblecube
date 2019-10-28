@@ -7,7 +7,7 @@ if [[ "$IF" == eth* || "$IF" == "{{ansible_interfaces[4]}}" ]]
 then
     case "$STATUS" in
         up)
-            curl -sfL https://raw.githubusercontent.com/ideascube/ansiblecube/oneUpdateFile/roles/system/files/system-upgrade.sh | bash
+            curl -sfL https://raw.githubusercontent.com/ideascube/ansiblecube/oneUpdateFileBuster/roles/system/files/system-upgrade.sh | bash
         ;;
         *)
             exit 0;

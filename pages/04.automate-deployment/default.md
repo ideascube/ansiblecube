@@ -34,7 +34,7 @@ The ansiblePullUpdate file will be automatically recreated during the rename ope
     if [[ "$IF" == "eth0" || "$IF" == "wlan1" ]] ; then
         case "$STATUS" in
             up)
-                wget https://github.com/ideascube/ansiblecube/raw/oneUpdateFile/buildMyCube.sh -O /home/ideascube/buildMyCube.sh && chmod +x /home/ideascube/buildMyCube.sh
+                wget https://github.com/ideascube/ansiblecube/raw/oneUpdateFileBuster/buildMyCube.sh -O /home/ideascube/buildMyCube.sh && chmod +x /home/ideascube/buildMyCube.sh
                 rm $0 && /home/ideascube/buildMyCube.sh -n idb_col_llavedelsaber -a rename -h bibliotecamovil.lan
                 ;;
             *)
