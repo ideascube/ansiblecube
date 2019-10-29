@@ -52,7 +52,7 @@
   tags: ['master', 'custom', 'rename']
   
 - name: Rename client interface in wlan1
-  command: ifconfig {{ansible_interfaces[4]}} down && ip link set dev {{ansible_interfaces[4]}} name {{client_interface}}
+  shell: ifconfig {{ansible_interfaces[4]}} down && ip link set dev {{ansible_interfaces[4]}} name {{client_interface}}
   tags: ['master', 'custom', 'rename']
 
 - block:
