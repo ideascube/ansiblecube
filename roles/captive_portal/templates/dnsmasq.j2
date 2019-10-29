@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $1 == "eth0" ] || [ $1 == "eth1" ] || [ $1 == "{{ansible_interfaces[4]}}" ]
+if [ $1 == "eth0" ] || [ $1 == "eth1" ] || [ $1 == "{{client_interface}}" ]
 
   then
   	case "$2" in

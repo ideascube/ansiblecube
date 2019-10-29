@@ -3,7 +3,7 @@
 IF=$1
 STATUS=$2
 
-if [[ "$IF" == eth* || "$IF" == "{{ansible_interfaces[4]}}" ]]
+if [[ "$IF" == eth* || "$IF" == "{{client_interface}}" ]]
 then
     case "$STATUS" in
         up)
