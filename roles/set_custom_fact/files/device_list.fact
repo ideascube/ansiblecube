@@ -16095,6 +16095,10 @@
     },
     "package_management": [
       {
+        "name": "connaitre-et-aimer-son-corps-fr",
+        "status": "present"
+      },
+      {
         "name": "combattons-les-discriminations-fr",
         "status": "present"
       },
@@ -16107,11 +16111,31 @@
         "status": "present"
       },
       {
+        "name": "films-fr",
+        "status": "present"
+      },
+      {
+        "name": "jardinage-et-agriculture-fr",
+        "status": "present"
+      },
+      {
         "name": "hygiene-de-base-fr",
         "status": "present"
       },
       {
+        "name": "prevention-addictions-fr",
+        "status": "present"
+      },
+      {
+        "name": "prevention-et-sexualite-fr",
+        "status": "present"
+      },
+      {
         "name": "droits-de-l-enfant-fr",
+        "status": "present"
+      },
+      {
+        "name": "contes-et-dessins-animes-fr",
         "status": "present"
       },
       {
@@ -16155,6 +16179,10 @@
         "status": "present"
       },
       {
+        "name": "parentalite-fr",
+        "status": "present"
+      },
+      {
         "name": "ecoute-tes-emotions-enfants-ados-fr",
         "status": "present"
       },
@@ -16175,11 +16203,39 @@
         "status": "present"
       },
       {
+        "name": "moyens-de-contraception-fr",
+        "status": "present"
+      },
+      {
         "name": "la-sante-enfants-ado-fr",
         "status": "present"
       },
       {
         "name": "sommeil-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "nutrition-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "anatomie-feminine-fr",
+        "status": "present"
+      },
+      {
+        "name": "vih-sida-fr",
+        "status": "present"
+      },
+      {
+        "name": "dessins-animes-pour-enfants-en-swahili-sw",
+        "status": "present"
+      },
+      {
+        "name": "films-et-videos-libres-de-droit-fr",
+        "status": "present"
+      },
+      {
+        "name": "priorite-sante-rfi-fr",
         "status": "present"
       },
       {
@@ -16192,6 +16248,10 @@
       },
       {
         "name": "introduction-aux-droits-de-l-homme-fr",
+        "status": "present"
+      },
+      {
+        "name": "denis-mukwege-fr",
         "status": "present"
       },
       {
@@ -16216,6 +16276,22 @@
       },
       {
         "name": "wikipedia.sw",
+        "status": "present"
+      },
+      {
+        "name": "films-pour-enfants.fr",
+        "status": "present"
+      },
+      {
+        "name": "universcience-tv.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikiversity.fr",
+        "status": "present"
+      },
+      {
+        "name": "e-penser.fr",
         "status": "present"
       }
     ],
