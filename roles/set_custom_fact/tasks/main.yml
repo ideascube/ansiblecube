@@ -47,12 +47,12 @@
   register: firststart
   tags: ['master', 'custom', 'rename']
 
-- name: Rename hotspot interface in wlan0
-  shell: ifconfig {{ansible_interfaces[3]}} down && ip link set dev {{ansible_interfaces[3]}} name {{hotspot_interface}} && ifconfig {{hotspot_interface}} up
+- name: Set wifi interface name
+  set_fact: hotspot_interface="{{ansible_interfaces[3]}}"
   tags: ['master', 'custom', 'rename']
-
+  
 - name: Rename client interface in wlan1
-  shell: ifconfig {{ansible_interfaces[4]}} down && ip link set dev {{ansible_interfaces[4]}} name {{client_interface}} && ifconfig {{client_interface}} up
+  shell: ifconfig {{ansible_interfaces[4]}} down && ip link set dev {{ansible_interfaces[4]}} name {{client_interface}}
   tags: ['master', 'custom', 'rename']
 
 - block:
