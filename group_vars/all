@@ -6,7 +6,6 @@ hotspot_maxclients: 15
 external_hotspot_ip: 192.168.3.1
 external_hotspot_source_range: 192.168.3.2-192.168.3.254
 lan_interface: eth0
-client_interface: wlan1
 
 #System
 username: ideascube

@@ -49,11 +49,9 @@
 
 - name: Set wifi interface name
   set_fact: hotspot_interface="{{ansible_interfaces[3]}}"
+    client_interface="{{ansible_interfaces[4]}}"
   tags: ['master', 'custom', 'rename']
   
-- name: Rename client interface in wlan1
-  command: ifconfig {{ansible_interfaces[4]}} down && ip link set dev {{ansible_interfaces[4]}} name {{client_interface}}
-
 - block:
 
   - name: Generate a random number for the idc_uniq_device_name
