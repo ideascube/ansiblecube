@@ -19018,6 +19018,10 @@
         "status": "present"
       },
       {
+        "name": "apprenez-le-francais-fr",
+        "status": "present"
+      },
+      {
         "name": "arts-plastiques-fr",
         "status": "present"
       },
@@ -19098,7 +19102,15 @@
         "status": "present"
       },
       {
+        "name": "ecriture-et-litterature-fr",
+        "status": "present"
+      },
+      {
         "name": "nutrition-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprends-le-francais-a1-enfants-adolescents-fr",
         "status": "present"
       },
       {
@@ -19131,6 +19143,34 @@
       },
       {
         "name": "comment-faire-face-a-la-violence-et-aux-conflits-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-a1-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-a2-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprends-le-francais-a2-enfants-adolescents-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-alphabetisation-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-b1-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-b2-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-c1-c2-fr",
         "status": "present"
       },
       {
@@ -19186,6 +19226,18 @@
         "status": "present"
       },
       {
+        "name": "le-talisman-brise-sw-rfi-sw",
+        "status": "present"
+      },
+      {
+        "name": "eco-d-ici-eco-d-ailleurs-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "le-talisman-brise-ln-rfi-ln",
+        "status": "present"
+      },
+      {
         "name": "tutoriels-pour-utiliser-des-logiciels-et-des-applications-fr",
         "status": "present"
       },
@@ -19206,15 +19258,7 @@
         "status": "present"
       },
       {
-        "name": "geopolitique-afrique-fr",
-        "status": "present"
-      },
-      {
         "name": "litterature-francophone-afrique-fr",
-        "status": "present"
-      },
-      {
-        "name": "histoire-de-la-republique-democratique-du-congo-fr",
         "status": "present"
       },
       {
@@ -19226,7 +19270,7 @@
         "status": "present"
       },
       {
-        "name": "burundi.map",
+        "name": "les-enfants-apprennent-le-francais-fr",
         "status": "present"
       },
       {
