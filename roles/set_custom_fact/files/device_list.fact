@@ -3022,10 +3022,6 @@
         "status": "present"
       },
       {
-        "name": "cultural-blender-middle-east-ar",
-        "status": "present"
-      },
-      {
         "name": "cultural-expression-burmese-rhg",
         "status": "present"
       },
@@ -3035,6 +3031,10 @@
       },
       {
         "name": "cultural-expresion-middle-east-ar",
+        "status": "present"
+      },
+      {
+        "name": "cultural-blender-asia-hindi-hi",
         "status": "present"
       },
       {
@@ -3147,6 +3147,26 @@
       },
       {
         "name": "ecology-burmese-mm",
+        "status": "present"
+      },
+      {
+        "name": "psychological-support-english-rohingya-en",
+        "status": "present"
+      },
+      {
+        "name": "entertainment-theater-mime-en",
+        "status": "present"
+      },
+      {
+        "name": "music-and-music-lessons-en",
+        "status": "present"
+      },
+      {
+        "name": "yoga-burmese-english-en",
+        "status": "present"
+      },
+      {
+        "name": "sport-football-en",
         "status": "present"
       },
       {
