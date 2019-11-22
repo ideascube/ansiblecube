@@ -18604,327 +18604,41 @@
   },
   "idc-bsf-test": {
     "kolibri": {
-      "activated": true,
-      "language": [
-        "en"
-      ],
+      "activated": false,
+      "language": [],
       "version": "0.10.3"
     },
     "package_management": [
       {
-        "name": "learn-english-adults-en",
+        "name": "patron-pour-coudre-une-jupe-a-volants-fille-fr",
         "status": "present"
       },
       {
-        "name": "learn-english-teenagers-en",
+        "name": "patrons-pour-coudre-des-vetements-pour-enfants-fr",
         "status": "present"
       },
       {
-        "name": "women-in-african-history-en",
+        "name": "patrons-pour-coudre-des-vetements-pour-femmes-fr",
         "status": "present"
       },
       {
-        "name": "introduction-to-journalism-en",
+        "name": "patrons-pour-coudre-un-top-sorbetto-femmes-fr",
         "status": "present"
       },
       {
-        "name": "introduction-to-healthcare-en",
+        "name": "apprendre-a-utiliser-des-patrons-fr",
         "status": "present"
       },
       {
-        "name": "introduction-to-human-rights-en",
+        "name": "wiktionary.ti",
         "status": "present"
       },
       {
-        "name": "introduction-to-human-rights-for-children-en",
+        "name": "wiktionary.sw",
         "status": "present"
       },
       {
-        "name": "astronomy-en",
-        "status": "present"
-      },
-      {
-        "name": "introduction-to-sciences-en",
-        "status": "present"
-      },
-      {
-        "name": "non-violent-communication-en",
-        "status": "present"
-      },
-      {
-        "name": "introduction-to-ecology-en",
-        "status": "present"
-      },
-      {
-        "name": "greek-mythology-en",
-        "status": "present"
-      },
-      {
-        "name": "cartoons-en",
-        "status": "present"
-      },
-      {
-        "name": "introduction-to-the-history-of-the-world-en",
-        "status": "present"
-      },
-      {
-        "name": "introduction-to-3d-modelling-with-blender-en",
-        "status": "present"
-      },
-      {
-        "name": "introduction-to-psychology-en",
-        "status": "present"
-      },
-      {
-        "name": "introduction-to-sociology-en",
-        "status": "present"
-      },
-      {
-        "name": "introduction-to-economics-en",
-        "status": "present"
-      },
-      {
-        "name": "introduction-to-anthropology-en",
-        "status": "present"
-      },
-      {
-        "name": "introduction-to-business-studies-en",
-        "status": "present"
-      },
-      {
-        "name": "introduction-to-philosophy-en",
-        "status": "present"
-      },
-      {
-        "name": "introduction-to-geography-environmental-studies-en",
-        "status": "present"
-      },
-      {
-        "name": "revolutionary-women-en",
-        "status": "present"
-      },
-      {
-        "name": "learn-photography-en",
-        "status": "present"
-      },
-      {
-        "name": "let-s-practise-sport-children-en",
-        "status": "present"
-      },
-      {
-        "name": "woodcrafts-for-kids-en",
-        "status": "present"
-      },
-      {
-        "name": "make-your-own-radio-en",
-        "status": "present"
-      },
-      {
-        "name": "introduction-to-biology-en",
-        "status": "present"
-      },
-      {
-        "name": "learn-to-know-and-manage-your-feelings-en",
-        "status": "present"
-      },
-      {
-        "name": "facilitator-kit-en",
-        "status": "present"
-      },
-      {
-        "name": "health-and-hygiene-en",
-        "status": "present"
-      },
-      {
-        "name": "drawing-colouring-en",
-        "status": "present"
-      },
-      {
-        "name": "yoga-en",
-        "status": "present"
-      },
-      {
-        "name": "handcraft-origami-en",
-        "status": "present"
-      },
-      {
-        "name": "agriculture-gardening-en",
-        "status": "present"
-      },
-      {
-        "name": "fight-against-discriminations-and-live-together-en",
-        "status": "present"
-      },
-      {
-        "name": "introduction-to-geography-en",
-        "status": "present"
-      },
-      {
-        "name": "women-s-experiences-en",
-        "status": "present"
-      },
-      {
-        "name": "let-s-talk-about-sexuality-en-en",
-        "status": "present"
-      },
-      {
-        "name": "women-s-rights-en",
-        "status": "present"
-      },
-      {
-        "name": "musique-libre-de-droit-en",
-        "status": "present"
-      },
-      {
-        "name": "i-m-worried-my-child-is-drinking-what-can-i-do-en",
-        "status": "present"
-      },
-      {
-        "name": "if-i-m-pregnant-how-do-drugs-and-alcohol-affect-me-en",
-        "status": "present"
-      },
-      {
-        "name": "how-does-alcohol-affect-my-body-en",
-        "status": "present"
-      },
-      {
-        "name": "what-does-addiction-look-like-en",
-        "status": "present"
-      },
-      {
-        "name": "i-have-diabetes-how-should-i-take-care-of-myself-en",
-        "status": "present"
-      },
-      {
-        "name": "yoga-for-therapy-en",
-        "status": "present"
-      },
-      {
-        "name": "preparing-for-major-disasters-and-natural-catastrophes-en",
-        "status": "present"
-      },
-      {
-        "name": "learn-first-aid-techniques-en",
-        "status": "present"
-      },
-      {
-        "name": "tutorials-for-using-programs-en",
-        "status": "present"
-      },
-      {
-        "name": "food-security-en",
-        "status": "present"
-      },
-      {
-        "name": "public-speaking-en",
-        "status": "present"
-      },
-      {
-        "name": "silent-movies-en",
-        "status": "present"
-      },
-      {
-        "name": "silent-animated-movies-en",
-        "status": "present"
-      },
-      {
-        "name": "cultural-blender-europe-en",
-        "status": "present"
-      },
-      {
-        "name": "women-empowerment-en",
-        "status": "present"
-      },
-      {
-        "name": "history-africa-en",
-        "status": "present"
-      },
-      {
-        "name": "arts-africa-en",
-        "status": "present"
-      },
-      {
-        "name": "how-to-improve-your-english-skills-en",
-        "status": "present"
-      },
-      {
-        "name": "how-to-write-in-a-professional-context-en",
-        "status": "present"
-      },
-      {
-        "name": "learning-to-read-and-write-level-1-en",
-        "status": "present"
-      },
-      {
-        "name": "learning-to-read-and-write-level-2-en",
-        "status": "present"
-      },
-      {
-        "name": "reading-and-writing-games-en",
-        "status": "present"
-      },
-      {
-        "name": "citizenship-democracy-and-peace-en",
-        "status": "present"
-      },
-      {
-        "name": "creativity-multi-languages-en",
-        "status": "present"
-      },
-      {
-        "name": "do-it-yourself-multi-languages-en",
-        "status": "present"
-      },
-      {
-        "name": "cultural-blender-west-en",
-        "status": "present"
-      },
-      {
-        "name": "community-harmony-english-en",
-        "status": "present"
-      },
-      {
-        "name": "wash-promotion-english-en",
-        "status": "present"
-      },
-      {
-        "name": "life-skills-english-en",
-        "status": "present"
-      },
-      {
-        "name": "pedagogical-support-english-en",
-        "status": "present"
-      },
-      {
-        "name": "health-promotion-multilanguage-en",
-        "status": "present"
-      },
-      {
-        "name": "tedtechnology.en",
-        "status": "present"
-      },
-      {
-        "name": "crashcourse.en",
-        "status": "present"
-      },
-      {
-        "name": "twentyfourhoursinanewsroom",
-        "status": "present"
-      },
-      {
-        "name": "vikidia.en",
-        "status": "present"
-      },
-      {
-        "name": "tedscience.en",
-        "status": "present"
-      },
-      {
-        "name": "wikipedia.en",
-        "status": "present"
-      },
-      {
-        "name": "audacity-manual.en",
+        "name": "w2eu",
         "status": "present"
       }
     ],
