@@ -44960,11 +44960,13 @@
     }
   },
   "kb-mdg-faf": {
-    "kolibri": {
-      "activated": false,
-      "language": [],
-      "version": "0.10.3"
-    },
+    "kalite": {
+      "activated": "True",
+      "language": [
+        "fr"
+      ],
+      "version": "0.16.9"
+    }
     "package_management": [
       {
         "name": "musique-fr",
