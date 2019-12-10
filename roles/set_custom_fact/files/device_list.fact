@@ -19088,27 +19088,45 @@
   },
   "idc-bsf-test": {
     "kolibri": {
-      "activated": true,
-      "language": [
-        "en"
-      ],
+      "activated": false,
+      "language": [],
       "version": "0.10.3"
     },
     "package_management": [
       {
-        "name": "learn-english-adults-en",
+        "name": "decouvrez-ou-re-decouvrez-la-cuisine-de-differents-pays-fr",
         "status": "present"
       },
       {
-        "name": "learn-english-teenagers-en",
+        "name": "fictions-and-entertainment-in-arabic-ar",
         "status": "present"
       },
       {
-        "name": "women-in-african-history-en",
+        "name": "apprenez-le-francais-fr",
         "status": "present"
       },
       {
-        "name": "introduction-to-journalism-en",
+        "name": "montez-votre-projet-professionnel-fr",
+        "status": "present"
+      },
+      {
+        "name": "music-in-arabic-ar",
+        "status": "present"
+      },
+      {
+        "name": "renseignez-vous-sur-les-demarches-administratives-fr",
+        "status": "present"
+      },
+      {
+        "name": "films-fr",
+        "status": "present"
+      },
+      {
+        "name": "hygiene-de-base-fr",
+        "status": "present"
+      },
+      {
+        "name": "prevention-et-sexualite-fr",
         "status": "present"
       },
       {
@@ -19120,31 +19138,11 @@
         "status": "present"
       },
       {
-        "name": "introduction-to-human-rights-for-children-en",
-        "status": "present"
-      },
-      {
-        "name": "astronomy-en",
-        "status": "present"
-      },
-      {
-        "name": "introduction-to-sciences-en",
-        "status": "present"
-      },
-      {
-        "name": "non-violent-communication-en",
-        "status": "present"
-      },
-      {
-        "name": "introduction-to-ecology-en",
-        "status": "present"
-      },
-      {
-        "name": "greek-mythology-en",
-        "status": "present"
-      },
-      {
         "name": "cartoons-en",
+        "status": "present"
+      },
+      {
+        "name": "learning-french-en",
         "status": "present"
       },
       {
@@ -19152,71 +19150,39 @@
         "status": "present"
       },
       {
-        "name": "introduction-to-3d-modelling-with-blender-en",
+        "name": "nutrition-fr",
         "status": "present"
       },
       {
-        "name": "introduction-to-psychology-en",
+        "name": "connaitre-la-france-et-paris-fr",
         "status": "present"
       },
       {
-        "name": "introduction-to-sociology-en",
+        "name": "apprends-le-francais-a1-enfants-adolescents-fr",
         "status": "present"
       },
       {
-        "name": "introduction-to-economics-en",
+        "name": "arriver-en-france-et-connaitre-ses-droits-fr",
         "status": "present"
       },
       {
-        "name": "introduction-to-anthropology-en",
+        "name": "microbiologie-et-prevention-sante-fr",
         "status": "present"
       },
       {
-        "name": "introduction-to-business-studies-en",
+        "name": "how-do-i-find-an-honest-and-licensed-lawyer-en",
         "status": "present"
       },
       {
-        "name": "introduction-to-philosophy-en",
+        "name": "let-s-speak-english-ar",
         "status": "present"
       },
       {
-        "name": "introduction-to-geography-environmental-studies-en",
+        "name": "utilisez-internet-en-toute-securite-fr",
         "status": "present"
       },
       {
-        "name": "revolutionary-women-en",
-        "status": "present"
-      },
-      {
-        "name": "learn-photography-en",
-        "status": "present"
-      },
-      {
-        "name": "let-s-practise-sport-children-en",
-        "status": "present"
-      },
-      {
-        "name": "woodcrafts-for-kids-en",
-        "status": "present"
-      },
-      {
-        "name": "make-your-own-radio-en",
-        "status": "present"
-      },
-      {
-        "name": "introduction-to-biology-en",
-        "status": "present"
-      },
-      {
-        "name": "learn-to-know-and-manage-your-feelings-en",
-        "status": "present"
-      },
-      {
-        "name": "facilitator-kit-en",
-        "status": "present"
-      },
-      {
-        "name": "health-and-hygiene-en",
+        "name": "decouvrez-ou-redecouvrez-l-histoire-de-france-fr",
         "status": "present"
       },
       {
@@ -19224,27 +19190,43 @@
         "status": "present"
       },
       {
-        "name": "yoga-en",
-        "status": "present"
-      },
-      {
         "name": "handcraft-origami-en",
         "status": "present"
       },
       {
-        "name": "agriculture-gardening-en",
+        "name": "football-matches-en",
         "status": "present"
       },
       {
-        "name": "fight-against-discriminations-and-live-together-en",
+        "name": "english-for-adults-ar",
         "status": "present"
       },
       {
-        "name": "introduction-to-geography-en",
+        "name": "apprenez-le-francais-niveau-a1-fr",
         "status": "present"
       },
       {
-        "name": "women-s-experiences-en",
+        "name": "apprenez-le-francais-niveau-a2-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprends-le-francais-a2-enfants-adolescents-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-alphabetisation-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-b1-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-b2-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-fos-fr",
         "status": "present"
       },
       {
@@ -19252,39 +19234,27 @@
         "status": "present"
       },
       {
-        "name": "women-s-rights-en",
-        "status": "present"
-      },
-      {
         "name": "musique-libre-de-droit-en",
         "status": "present"
       },
       {
-        "name": "i-m-worried-my-child-is-drinking-what-can-i-do-en",
+        "name": "ebook-enfants-libres-de-droit-fr",
         "status": "present"
       },
       {
-        "name": "if-i-m-pregnant-how-do-drugs-and-alcohol-affect-me-en",
+        "name": "tales-for-kids-ar",
         "status": "present"
       },
       {
-        "name": "how-does-alcohol-affect-my-body-en",
+        "name": "novels-for-youth-ar",
         "status": "present"
       },
       {
-        "name": "what-does-addiction-look-like-en",
+        "name": "l-afrique-en-marche-rfi-fr",
         "status": "present"
       },
       {
-        "name": "i-have-diabetes-how-should-i-take-care-of-myself-en",
-        "status": "present"
-      },
-      {
-        "name": "yoga-for-therapy-en",
-        "status": "present"
-      },
-      {
-        "name": "preparing-for-major-disasters-and-natural-catastrophes-en",
+        "name": "computer-and-it-ar",
         "status": "present"
       },
       {
@@ -19292,15 +19262,15 @@
         "status": "present"
       },
       {
+        "name": "les-bases-de-l-informatique-fr",
+        "status": "present"
+      },
+      {
         "name": "tutorials-for-using-programs-en",
         "status": "present"
       },
       {
-        "name": "food-security-en",
-        "status": "present"
-      },
-      {
-        "name": "public-speaking-en",
+        "name": "contes-senegal-fr",
         "status": "present"
       },
       {
@@ -19316,103 +19286,35 @@
         "status": "present"
       },
       {
-        "name": "women-empowerment-en",
+        "name": "health-and-nutrition-ar",
         "status": "present"
       },
       {
-        "name": "history-africa-en",
+        "name": "animals-documentaries-ar",
         "status": "present"
       },
       {
-        "name": "arts-africa-en",
+        "name": "nature-multi-languages-en",
         "status": "present"
       },
       {
-        "name": "how-to-improve-your-english-skills-en",
+        "name": "qu-est-ce-que-ca-veut-dire-etre-francais-fr",
         "status": "present"
       },
       {
-        "name": "how-to-write-in-a-professional-context-en",
+        "name": "cultural-expression-bangla-bn",
         "status": "present"
       },
       {
-        "name": "learning-to-read-and-write-level-1-en",
+        "name": "learn-english-children-bn",
         "status": "present"
       },
       {
-        "name": "learning-to-read-and-write-level-2-en",
+        "name": "ressources-pour-les-fiches-activites-pour-le-projet-ministere-de-la-culture-2-fr",
         "status": "present"
       },
       {
-        "name": "reading-and-writing-games-en",
-        "status": "present"
-      },
-      {
-        "name": "citizenship-democracy-and-peace-en",
-        "status": "present"
-      },
-      {
-        "name": "creativity-multi-languages-en",
-        "status": "present"
-      },
-      {
-        "name": "do-it-yourself-multi-languages-en",
-        "status": "present"
-      },
-      {
-        "name": "cultural-blender-west-en",
-        "status": "present"
-      },
-      {
-        "name": "community-harmony-english-en",
-        "status": "present"
-      },
-      {
-        "name": "wash-promotion-english-en",
-        "status": "present"
-      },
-      {
-        "name": "life-skills-english-en",
-        "status": "present"
-      },
-      {
-        "name": "pedagogical-support-english-en",
-        "status": "present"
-      },
-      {
-        "name": "health-promotion-multilanguage-en",
-        "status": "present"
-      },
-      {
-        "name": "tedtechnology.en",
-        "status": "present"
-      },
-      {
-        "name": "crashcourse.en",
-        "status": "present"
-      },
-      {
-        "name": "twentyfourhoursinanewsroom",
-        "status": "present"
-      },
-      {
-        "name": "vikidia.en",
-        "status": "present"
-      },
-      {
-        "name": "tedscience.en",
-        "status": "present"
-      },
-      {
-        "name": "wikipedia.en",
-        "status": "present"
-      },
-      {
-        "name": "audacity-manual.en",
-        "status": "present"
-      },
-      {
-        "name": "gutenberg.en",
+        "name": "service-public.fr",
         "status": "present"
       }
     ],
