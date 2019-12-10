@@ -32158,6 +32158,10 @@
         "status": "present"
       },
       {
+        "name": "ebooks-enfants-fr",
+        "status": "present"
+      },
+      {
         "name": "sports-enfants-ados-fr",
         "status": "present"
       },
@@ -32278,11 +32282,15 @@
         "status": "present"
       },
       {
+        "name": "il-etait-une-fois-notre-terre-fr",
+        "status": "present"
+      },
+      {
         "name": "young-and-old-multilanguage-en",
         "status": "present"
       },
       {
-        "name": "ecology-multi-languages-en",
+        "name": "nature-multi-languages-en",
         "status": "present"
       },
       {
@@ -32303,6 +32311,14 @@
       },
       {
         "name": "do-it-yourself-multi-languages-en",
+        "status": "present"
+      },
+      {
+        "name": "histoires-illustrees-fr",
+        "status": "present"
+      },
+      {
+        "name": "introduction-aux-mathematiques-fr",
         "status": "present"
       },
       {
