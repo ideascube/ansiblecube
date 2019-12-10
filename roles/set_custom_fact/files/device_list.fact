@@ -17135,7 +17135,35 @@
         "status": "present"
       },
       {
-        "name": "hygiene-de-base-fr",
+        "name": "combattons-les-discriminations-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-fr",
+        "status": "present"
+      },
+      {
+        "name": "initiez-vous-a-la-photographie-fr",
+        "status": "present"
+      },
+      {
+        "name": "comprendre-et-exprimer-ses-emotions-fr",
+        "status": "present"
+      },
+      {
+        "name": "administration-gestion-comptabilite-fr",
+        "status": "present"
+      },
+      {
+        "name": "arts-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "discriminations-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "creation-audio-fr",
         "status": "present"
       },
       {
@@ -17151,11 +17179,51 @@
         "status": "present"
       },
       {
+        "name": "ecriture-et-litterature-fr",
+        "status": "present"
+      },
+      {
+        "name": "introduction-aux-sciences-cognitives-et-aux-neurosciences-fr",
+        "status": "present"
+      },
+      {
         "name": "microbiologie-et-prevention-sante-fr",
         "status": "present"
       },
       {
+        "name": "ecoute-tes-emotions-enfants-ados-fr",
+        "status": "present"
+      },
+      {
         "name": "comment-faire-face-a-la-violence-et-aux-conflits-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-a1-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-a2-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-alphabetisation-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-b1-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-b2-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-c1-c2-fr",
+        "status": "present"
+      },
+      {
+        "name": "creation-d-association-fr",
         "status": "present"
       },
       {
@@ -17195,6 +17263,10 @@
         "status": "present"
       },
       {
+        "name": "kit-de-l-animateur-libre-de-droit-fr",
+        "status": "present"
+      },
+      {
         "name": "priorite-sante-rfi-fr",
         "status": "present"
       },
@@ -17203,7 +17275,47 @@
         "status": "present"
       },
       {
+        "name": "les-bases-de-l-informatique-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-enabel-fr",
+        "status": "present"
+      },
+      {
+        "name": "litterature-francophone-afrique-fr",
+        "status": "present"
+      },
+      {
         "name": "sante-de-la-femme-fr",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.fr",
+        "status": "present"
+      },
+      {
+        "name": "wiktionary.fr",
+        "status": "present"
+      },
+      {
+        "name": "universcience-tv.fr",
+        "status": "present"
+      },
+      {
+        "name": "wiktionary.sw",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.rn",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.sw",
+        "status": "present"
+      },
+      {
+        "name": "cest-pas-sorcier.fr",
         "status": "present"
       }
     ],
