@@ -19364,6 +19364,30 @@
       "activated": true
     }
   },
+  "idc-bgd-hiteknaf": {
+    "kolibri": {
+      "activated": false,
+      "language": [],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "parents-clube-and-children-0-5-bn",
+        "status": "present"
+      },
+      {
+        "name": "children-s-club-6-12-bn",
+        "status": "present"
+      },
+      {
+        "name": "facilitators-bn",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-bsf-tempsmodernes": {
     "kolibri": {
       "activated": false,
