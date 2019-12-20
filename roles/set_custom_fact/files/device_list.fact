@@ -18483,25 +18483,15 @@
   },
   "idc-bdi-ssr-pbas": {
     "kolibri": {
-      "activated": false,
-      "language": [],
+      "activated": true,
+      "language": [
+        "sw"
+      ],
       "version": "0.10.3"
     },
     "package_management": [
       {
-        "name": "combattons-les-discriminations-fr",
-        "status": "present"
-      },
-      {
-        "name": "apprenez-le-francais-fr",
-        "status": "present"
-      },
-      {
         "name": "initiez-vous-a-la-photographie-fr",
-        "status": "present"
-      },
-      {
-        "name": "administration-gestion-comptabilite-fr",
         "status": "present"
       },
       {
@@ -18513,39 +18503,11 @@
         "status": "present"
       },
       {
-        "name": "discriminations-enfants-ados-fr",
-        "status": "present"
-      },
-      {
-        "name": "creation-audio-fr",
-        "status": "present"
-      },
-      {
-        "name": "biologie-enfants-fr",
-        "status": "present"
-      },
-      {
-        "name": "apprenez-le-francais-niveau-b2-fr",
-        "status": "present"
-      },
-      {
-        "name": "creation-d-association-fr",
-        "status": "present"
-      },
-      {
-        "name": "moyens-de-contraception-fr",
-        "status": "present"
-      },
-      {
         "name": "films-et-videos-libres-de-droit-fr",
         "status": "present"
       },
       {
         "name": "silent-animated-movies-en",
-        "status": "present"
-      },
-      {
-        "name": "les-violences-sexuelles-expliquees-aux-enfants-fr",
         "status": "present"
       },
       {
@@ -18593,7 +18555,7 @@
         "status": "present"
       },
       {
-        "name": "emissions-rfi-priorite-sante-fr",
+        "name": "emissions-rfi-priorite-sante-gl-fr",
         "status": "present"
       },
       {
@@ -18613,7 +18575,7 @@
         "status": "present"
       },
       {
-        "name": "securite-et-sante-apprendre-a-donner-les-premiers-secours-gl-fr",
+        "name": "apprendre-a-donner-les-premiers-secours-gl-fr",
         "status": "present"
       },
       {
@@ -18629,7 +18591,7 @@
         "status": "present"
       },
       {
-        "name": "la-planification-familiale-gutunganya-invyaro-gl-rn",
+        "name": "la-planification-familiale-gl-rn",
         "status": "present"
       },
       {
@@ -18661,7 +18623,7 @@
         "status": "present"
       },
       {
-        "name": "l-exploitation-de-l-homme-et-de-la-femme-kugira-uyundi-umuja-gl-rn",
+        "name": "l-exploitation-de-l-homme-et-de-la-femme-gl-rn",
         "status": "present"
       },
       {
@@ -18681,11 +18643,47 @@
         "status": "present"
       },
       {
-        "name": "bien-se-nourrir-enfants-gl-fr",
+        "name": "bien-se-nourrir-enfants-gufungura-neza-kubana-gl-fr",
         "status": "present"
       },
       {
         "name": "fiches-d-activites-autour-de-la-sante-animation-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "administration-gestion-comptabilite-gutunganya-ubutunzi-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-twige-igifaransa-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-b2-twige-igifaransa-uregero-rwa-b2-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "biologie-enfants-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "combattons-les-discriminations-adultes-turwanye-ikumira-abakuze-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "combattons-les-disciminations-enfants-ados-turwanye-ikumira-urwaruka-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "creation-audio-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "creation-d-association-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-violences-sexuelles-expliquees-aux-enfants-gl-fr",
         "status": "present"
       },
       {
@@ -18718,6 +18716,10 @@
       },
       {
         "name": "films-pour-enfants.fr",
+        "status": "present"
+      },
+      {
+        "name": "les-fondamentaux.fr",
         "status": "present"
       }
     ],
