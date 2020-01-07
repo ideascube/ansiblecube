@@ -18495,14 +18495,6 @@
         "status": "present"
       },
       {
-        "name": "histoire-afrique-fr",
-        "status": "present"
-      },
-      {
-        "name": "geographie-afrique-fr",
-        "status": "present"
-      },
-      {
         "name": "films-et-videos-libres-de-droit-fr",
         "status": "present"
       },
@@ -18687,6 +18679,14 @@
         "status": "present"
       },
       {
+        "name": "geographie-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-gl-fr",
+        "status": "present"
+      },
+      {
         "name": "wikipedia.fr",
         "status": "present"
       },
@@ -18708,10 +18708,6 @@
       },
       {
         "name": "wikipedia.sw",
-        "status": "present"
-      },
-      {
-        "name": "cest-pas-sorcier.fr",
         "status": "present"
       },
       {
