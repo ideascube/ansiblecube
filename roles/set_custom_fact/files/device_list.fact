@@ -27790,6 +27790,112 @@
       "activated": true
     }
   },
+  "idc-myt-croixrouge": {
+    "kolibri": {
+      "activated": true,
+      "language": [
+        "fr"
+      ],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "initiez-vous-a-la-photographie-fr",
+        "status": "present"
+      },
+      {
+        "name": "creation-audio-fr",
+        "status": "present"
+      },
+      {
+        "name": "violences-faites-aux-femmes-fr",
+        "status": "present"
+      },
+      {
+        "name": "silent-movies-en",
+        "status": "present"
+      },
+      {
+        "name": "silent-animated-movies-en",
+        "status": "present"
+      },
+      {
+        "name": "comprendre-les-migrations-fr",
+        "status": "present"
+      },
+      {
+        "name": "vie-quotidienne-a-mayotte-fr",
+        "status": "present"
+      },
+      {
+        "name": "rechauffement-climatique-fr",
+        "status": "present"
+      },
+      {
+        "name": "poesie-et-slam-en-shimaore-411",
+        "status": "present"
+      },
+      {
+        "name": "orientation-professionnelle-fr",
+        "status": "present"
+      },
+      {
+        "name": "nouveau-volcan-a-mayotte-fr",
+        "status": "present"
+      },
+      {
+        "name": "multilinguisme-a-mayotte-fr",
+        "status": "present"
+      },
+      {
+        "name": "migrations-a-mayotte-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-de-mayotte-et-des-comores-fr",
+        "status": "present"
+      },
+      {
+        "name": "rechauffement-climatique-explique-aux-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-violences-sexuelles-expliquees-aux-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "violences-sexuelles-sur-adultes-fr",
+        "status": "present"
+      },
+      {
+        "name": "puberte-fr",
+        "status": "present"
+      },
+      {
+        "name": "sante-de-la-femme-fr",
+        "status": "present"
+      },
+      {
+        "name": "emotions-fr",
+        "status": "present"
+      },
+      {
+        "name": "droit-introduction-fr",
+        "status": "present"
+      },
+      {
+        "name": "information-mayotte-repema-askip-fr",
+        "status": "present"
+      },
+      {
+        "name": "vikidia.fr",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-myt-demo": {
     "kolibri": {
       "activated": true,
