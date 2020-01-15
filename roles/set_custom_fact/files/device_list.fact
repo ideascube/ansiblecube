@@ -24916,6 +24916,110 @@
       "activated": true
     }
   },
+  "idc-fra-idc-com-us": {
+    "kolibri": {
+      "activated": false,
+      "language": [],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "droits-de-l-enfant-fr",
+        "status": "present"
+      },
+      {
+        "name": "ecriture-et-litterature-fr",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-human-rights-for-children-en",
+        "status": "present"
+      },
+      {
+        "name": "let-s-practise-sport-children-en",
+        "status": "present"
+      },
+      {
+        "name": "prends-soin-de-toi-enfants-ado-fr",
+        "status": "present"
+      },
+      {
+        "name": "comment-faire-face-a-la-violence-et-aux-conflits-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "dessins-animes-pour-enfants-en-swahili-sw",
+        "status": "present"
+      },
+      {
+        "name": "culture-numerique-fr",
+        "status": "present"
+      },
+      {
+        "name": "programmation-et-bidouille-fr",
+        "status": "present"
+      },
+      {
+        "name": "il-etait-une-fois-notre-terre-fr",
+        "status": "present"
+      },
+      {
+        "name": "contes-senegal-fr",
+        "status": "present"
+      },
+      {
+        "name": "silent-animated-movies-en",
+        "status": "present"
+      },
+      {
+        "name": "community-harmony-english-en",
+        "status": "present"
+      },
+      {
+        "name": "protection-bangla-bn",
+        "status": "present"
+      },
+      {
+        "name": "ecology-english-en",
+        "status": "present"
+      },
+      {
+        "name": "life-skills-english-en",
+        "status": "present"
+      },
+      {
+        "name": "do-it-yourself-bangla-bn",
+        "status": "present"
+      },
+      {
+        "name": "mathematic-bangla-bn",
+        "status": "present"
+      },
+      {
+        "name": "literacy-burmese-mm",
+        "status": "present"
+      },
+      {
+        "name": "life-skills-burmese-mm",
+        "status": "present"
+      },
+      {
+        "name": "life-saving-burmese-mm",
+        "status": "present"
+      },
+      {
+        "name": "health-promotion-burmese-mm",
+        "status": "present"
+      },
+      {
+        "name": "expression-creatively-burmese-mm",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-fra-idc-dem-gu": {
     "kolibri": {
       "activated": true,
