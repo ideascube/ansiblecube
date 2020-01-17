@@ -10268,23 +10268,7 @@
         "status": "present"
       },
       {
-        "name": "tedtechnology.en",
-        "status": "present"
-      },
-      {
-        "name": "crashcourse.en",
-        "status": "present"
-      },
-      {
-        "name": "twentyfourhoursinanewsroom",
-        "status": "present"
-      },
-      {
-        "name": "vikidia.en",
-        "status": "present"
-      },
-      {
-        "name": "tedscience.en",
+        "name": "ebooks-ghana-en",
         "status": "present"
       },
       {
@@ -10292,7 +10276,31 @@
         "status": "present"
       },
       {
+        "name": "tedscience.en",
+        "status": "present"
+      },
+      {
+        "name": "vikidia.en",
+        "status": "present"
+      },
+      {
+        "name": "twentyfourhoursinanewsroom",
+        "status": "present"
+      },
+      {
+        "name": "crashcourse.en",
+        "status": "present"
+      },
+      {
+        "name": "tedtechnology.en",
+        "status": "present"
+      },
+      {
         "name": "audacity-manual.en",
+        "status": "present"
+      },
+      {
+        "name": "gutenberg.en",
         "status": "present"
       }
     ],
