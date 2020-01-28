@@ -31028,19 +31028,15 @@
         "status": "present"
       },
       {
-        "name": "initiez-vous-a-la-creation-video-fr",
-        "status": "present"
-      },
-      {
-        "name": "audiobooks-et-fictions-sonores-fr",
-        "status": "present"
-      },
-      {
-        "name": "prevention-addictions-fr",
-        "status": "present"
-      },
-      {
         "name": "prevention-et-sexualite-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "geographie-afrique-fr",
         "status": "present"
       },
       {
@@ -31056,18 +31052,6 @@
         "status": "present"
       },
       {
-        "name": "introduction-to-human-rights-en",
-        "status": "present"
-      },
-      {
-        "name": "introduction-to-sciences-en",
-        "status": "present"
-      },
-      {
-        "name": "greek-mythology-en",
-        "status": "present"
-      },
-      {
         "name": "decouvrez-ou-redecouvrez-l-histoire-de-france-fr",
         "status": "present"
       },
@@ -31080,7 +31064,7 @@
         "status": "present"
       },
       {
-        "name": "apprenez-le-francais-niveau-a1-fr",
+        "name": "protegeons-la-planete-enfants-ados-fr",
         "status": "present"
       },
       {
@@ -31104,35 +31088,7 @@
         "status": "present"
       },
       {
-        "name": "filles-garcons-quelle-place-pour-qui-fr",
-        "status": "present"
-      },
-      {
-        "name": "kit-de-l-animateur-libre-de-droit-fr",
-        "status": "present"
-      },
-      {
-        "name": "fiches-creativite-libre-de-droit-fr",
-        "status": "present"
-      },
-      {
-        "name": "films-et-videos-libres-de-droit-fr",
-        "status": "present"
-      },
-      {
-        "name": "tutoriels-pour-utiliser-des-logiciels-et-des-applications-fr",
-        "status": "present"
-      },
-      {
-        "name": "educacion-derechos-humanos-es",
-        "status": "present"
-      },
-      {
         "name": "educacion-universo-es",
-        "status": "present"
-      },
-      {
-        "name": "cultura-generos-literarios-es",
         "status": "present"
       },
       {
@@ -31144,11 +31100,15 @@
         "status": "present"
       },
       {
+        "name": "apprendre-a-cuisiner-sikana-fr",
+        "status": "present"
+      },
+      {
         "name": "pedagogie-enabel-fr",
         "status": "present"
       },
       {
-        "name": "s-informer-sur-internet-fr",
+        "name": "il-etait-une-fois-notre-terre-fr",
         "status": "present"
       },
       {
@@ -31156,11 +31116,11 @@
         "status": "present"
       },
       {
-        "name": "educacion-idioma-espanol-es",
+        "name": "silent-movies-en",
         "status": "present"
       },
       {
-        "name": "do-it-yourself-mulitlanguage-en",
+        "name": "nature-multi-languages-en",
         "status": "present"
       },
       {
@@ -31180,19 +31140,43 @@
         "status": "present"
       },
       {
-        "name": "gutenberg.es",
+        "name": "rechauffement-climatique-fr",
+        "status": "present"
+      },
+      {
+        "name": "orientation-professionnelle-fr",
+        "status": "present"
+      },
+      {
+        "name": "emotions-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-de-l-art-fr",
+        "status": "present"
+      },
+      {
+        "name": "l-art-en-afrique-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "ecriture-et-litterature-francophone-en-afrique-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-de-l-ile-de-saint-martin-fr",
+        "status": "present"
+      },
+      {
+        "name": "alez-pou-make-kreyol-fr",
+        "status": "present"
+      },
+      {
+        "name": "cultures-revue-heritage-st-martin-fr",
         "status": "present"
       },
       {
         "name": "gutenberg.fr",
-        "status": "present"
-      },
-      {
-        "name": "gutenberg.en",
-        "status": "present"
-      },
-      {
-        "name": "wikipedia.en",
         "status": "present"
       },
       {
@@ -31204,23 +31188,11 @@
         "status": "present"
       },
       {
-        "name": "universcience-tv.fr",
-        "status": "present"
-      },
-      {
-        "name": "wikipedia.es",
-        "status": "present"
-      },
-      {
         "name": "onsexprime.fr",
         "status": "present"
       },
       {
         "name": "droguesinfoservice.fr",
-        "status": "present"
-      },
-      {
-        "name": "ted-ed.en",
         "status": "present"
       },
       {
