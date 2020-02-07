@@ -25940,18 +25940,6 @@
       {
         "name": "apprendre-a-utiliser-des-patrons-fr",
         "status": "present"
-      },
-      {
-        "name": "wiktionary.ti",
-        "status": "present"
-      },
-      {
-        "name": "wiktionary.sw",
-        "status": "present"
-      },
-      {
-        "name": "w2eu",
-        "status": "present"
       }
     ],
     "portal": {
