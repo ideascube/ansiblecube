@@ -24814,6 +24814,102 @@
       "activated": true
     }
   },
+  "idc-fra-demo_coa": {
+    "kolibri": {
+      "activated": false,
+      "language": [],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "combattons-les-discriminations-fr",
+        "status": "present"
+      },
+      {
+        "name": "montez-votre-projet-professionnel-fr",
+        "status": "present"
+      },
+      {
+        "name": "arts-plastiques-fr",
+        "status": "present"
+      },
+      {
+        "name": "audiobooks-et-fictions-sonores-fr",
+        "status": "present"
+      },
+      {
+        "name": "connaitre-la-france-et-paris-fr",
+        "status": "present"
+      },
+      {
+        "name": "poetry-ar",
+        "status": "present"
+      },
+      {
+        "name": "alcool-drogues-fr",
+        "status": "present"
+      },
+      {
+        "name": "films-et-videos-libres-de-droit-fr",
+        "status": "present"
+      },
+      {
+        "name": "musiques-du-monde-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "ecologie-fr",
+        "status": "present"
+      },
+      {
+        "name": "refugees-and-migrants-en-en",
+        "status": "present"
+      },
+      {
+        "name": "silent-movies-en",
+        "status": "present"
+      },
+      {
+        "name": "internet-les-autres-et-moi-les-bons-usages-fr",
+        "status": "present"
+      },
+      {
+        "name": "history-africa-en",
+        "status": "present"
+      },
+      {
+        "name": "presentation-des-actions-de-bibliotheques-sans-frontieres-france-fr",
+        "status": "present"
+      },
+      {
+        "name": "do-it-yourself-diy-en",
+        "status": "present"
+      },
+      {
+        "name": "art-contemporain-fr",
+        "status": "present"
+      },
+      {
+        "name": "cest-pas-sorcier.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.fr",
+        "status": "present"
+      },
+      {
+        "name": "e-penser.fr",
+        "status": "present"
+      },
+      {
+        "name": "service-public.fr",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-fra-fsagan": {
     "kolibri": {
       "activated": false,
