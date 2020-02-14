@@ -19071,8 +19071,11 @@
   },
   "idc-bdi-upshift": {
     "kolibri": {
-      "activated": false,
-      "language": [],
+      "activated": true,
+      "language": [
+        "sw",
+        "fr"
+      ],
       "version": "0.10.3"
     },
     "package_management": [
@@ -19082,14 +19085,6 @@
       },
       {
         "name": "musique-fr",
-        "status": "present"
-      },
-      {
-        "name": "connaitre-et-aimer-son-corps-fr",
-        "status": "present"
-      },
-      {
-        "name": "apprenez-le-francais-fr",
         "status": "present"
       },
       {
@@ -19113,15 +19108,7 @@
         "status": "present"
       },
       {
-        "name": "administration-gestion-comptabilite-fr",
-        "status": "present"
-      },
-      {
         "name": "innovation-en-afrique-fr",
-        "status": "present"
-      },
-      {
-        "name": "creation-d-entreprise-fr",
         "status": "present"
       },
       {
@@ -19141,43 +19128,7 @@
         "status": "present"
       },
       {
-        "name": "hygiene-de-base-fr",
-        "status": "present"
-      },
-      {
-        "name": "prevention-addictions-fr",
-        "status": "present"
-      },
-      {
-        "name": "prevention-et-sexualite-fr",
-        "status": "present"
-      },
-      {
         "name": "contes-et-dessins-animes-fr",
-        "status": "present"
-      },
-      {
-        "name": "arts-afrique-fr",
-        "status": "present"
-      },
-      {
-        "name": "geographie-afrique-fr",
-        "status": "present"
-      },
-      {
-        "name": "discriminations-enfants-ados-fr",
-        "status": "present"
-      },
-      {
-        "name": "creation-audio-fr",
-        "status": "present"
-      },
-      {
-        "name": "hygiene-enfants-ados-fr",
-        "status": "present"
-      },
-      {
-        "name": "sante-les-bases-fr",
         "status": "present"
       },
       {
@@ -19193,67 +19144,11 @@
         "status": "present"
       },
       {
-        "name": "parentalite-fr",
-        "status": "present"
-      },
-      {
-        "name": "les-filles-et-les-garcons-quelles-differences-fr",
-        "status": "present"
-      },
-      {
-        "name": "comment-faire-face-a-la-violence-et-aux-conflits-enfants-ados-fr",
-        "status": "present"
-      },
-      {
-        "name": "apprenez-le-francais-niveau-a1-fr",
-        "status": "present"
-      },
-      {
-        "name": "apprenez-le-francais-niveau-a2-fr",
-        "status": "present"
-      },
-      {
-        "name": "apprenez-le-francais-niveau-b1-fr",
-        "status": "present"
-      },
-      {
-        "name": "apprenez-le-francais-niveau-b2-fr",
-        "status": "present"
-      },
-      {
-        "name": "apprenez-le-francais-niveau-c1-c2-fr",
-        "status": "present"
-      },
-      {
-        "name": "violences-faites-aux-femmes-fr",
-        "status": "present"
-      },
-      {
         "name": "moyens-de-contraception-fr",
         "status": "present"
       },
       {
         "name": "premiers-secours-enfants-adolescents-fr",
-        "status": "present"
-      },
-      {
-        "name": "la-sante-enfants-ado-fr",
-        "status": "present"
-      },
-      {
-        "name": "sommeil-enfants-fr",
-        "status": "present"
-      },
-      {
-        "name": "nutrition-enfants-fr",
-        "status": "present"
-      },
-      {
-        "name": "anatomie-feminine-fr",
-        "status": "present"
-      },
-      {
-        "name": "vih-sida-fr",
         "status": "present"
       },
       {
@@ -19285,7 +19180,7 @@
         "status": "present"
       },
       {
-        "name": "litterature-francophone-afrique-fr",
+        "name": "silent-animated-movies-en",
         "status": "present"
       },
       {
@@ -19294,6 +19189,178 @@
       },
       {
         "name": "langue-des-signes-fr",
+        "status": "present"
+      },
+      {
+        "name": "competences-de-vie-courante-gl-rn",
+        "status": "present"
+      },
+      {
+        "name": "comprendre-et-exprimer-ses-emotions-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "feuilleton-ninde-rtnb-rn",
+        "status": "present"
+      },
+      {
+        "name": "le-monde-commence-par-moi-ihinduka-ry-inyifato-y-abantu-rihera-kuri-jewe-rn",
+        "status": "present"
+      },
+      {
+        "name": "prevenons-le-paludisme-turwanye-malariya-rn",
+        "status": "present"
+      },
+      {
+        "name": "conseils-pour-la-gestion-des-relations-amoureuses-gl-rn",
+        "status": "present"
+      },
+      {
+        "name": "les-filles-et-les-garcons-quelles-differences-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "emission-agashi-igikino-agashi-rn",
+        "status": "present"
+      },
+      {
+        "name": "le-dialogue-entre-parents-et-enfants-sur-la-ssr-ikiyago-hagati-yabavyeyi-n-urwaruka-gl-rn",
+        "status": "present"
+      },
+      {
+        "name": "connaitre-et-aimer-son-corps-kumenya-no-gukunda-umubiri-wawe-fr",
+        "status": "present"
+      },
+      {
+        "name": "emissions-rfi-priorite-sante-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "hygiene-de-base-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "le-harcelement-ihohoterwa-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-bases-de-l-informatique-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "connaitre-et-se-proteger-des-maladies-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-donner-les-premiers-secours-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "l-art-en-afrique-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "ecriture-et-litterature-francophone-en-afrique-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "la-sante-de-la-femme-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "la-sante-maternelle-amagara-yabavyeyi-gl-rn",
+        "status": "present"
+      },
+      {
+        "name": "l-entreprenariat-au-burundi-gutunganya-imigambi-muburundi-fr",
+        "status": "present"
+      },
+      {
+        "name": "la-sante-sexuelle-et-reproductive-des-adolescents-et-des-jeunes-gl-rn",
+        "status": "present"
+      },
+      {
+        "name": "vivre-avec-le-vih-sida-kubana-n-umugera-wa-sida-rn",
+        "status": "present"
+      },
+      {
+        "name": "se-prote-ger-du-vih-sida-et-des-ist-kwirinda-vih-sida-n-inrwara-zifatira-mubihimba-vyirondoka-rn",
+        "status": "present"
+      },
+      {
+        "name": "les-violences-base-es-sur-le-genre-pre-vention-et-prise-en-charge-amabi-afatiye-kugitsina-rn",
+        "status": "present"
+      },
+      {
+        "name": "prevenir-les-grossesses-non-desirees-et-les-grossesses-precoces-gl-rn",
+        "status": "present"
+      },
+      {
+        "name": "l-exploitation-de-l-homme-et-de-la-femme-gl-rn",
+        "status": "present"
+      },
+      {
+        "name": "la-sante-expliquee-aux-enfants-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-dangers-de-la-consommation-d-alcool-et-de-stupe-fiants-gl-rn",
+        "status": "present"
+      },
+      {
+        "name": "prevention-et-sexualite-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "une-histoire-un-recit-collectif-yaga-inkuru-duhabwa-na-yaga-rn",
+        "status": "present"
+      },
+      {
+        "name": "bien-se-nourrir-enfants-gufungura-neza-kubana-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "administration-gestion-comptabilite-gutunganya-ubutunzi-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-twige-igifaransa-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-b2-twige-igifaransa-uregero-rwa-b2-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "biologie-enfants-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "combattons-les-discriminations-adultes-turwanye-ikumira-abakuze-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "combattons-les-disciminations-enfants-ados-turwanye-ikumira-urwaruka-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "creation-audio-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "creation-d-association-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-violences-sexuelles-expliquees-aux-enfants-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "geographie-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-gl-fr",
         "status": "present"
       },
       {
@@ -19338,6 +19405,10 @@
       },
       {
         "name": "tedxgeneva2014.fr",
+        "status": "present"
+      },
+      {
+        "name": "films-pour-enfants.fr",
         "status": "present"
       }
     ],
