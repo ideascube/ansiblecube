@@ -19828,7 +19828,15 @@
         "status": "present"
       },
       {
-        "name": "wikipedia.en",
+        "name": "tedscience.en",
+        "status": "present"
+      },
+      {
+        "name": "tedtechnology.en",
+        "status": "present"
+      },
+      {
+        "name": "tedmed.en",
         "status": "present"
       }
     ],
