@@ -19815,6 +19815,190 @@
       "activated": true
     }
   },
+  "idc-bgd-caritasc4e": {
+    "kolibri": {
+      "activated": false,
+      "language": [],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "learn-english-adults-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-teenagers-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-economics-en",
+        "status": "present"
+      },
+      {
+        "name": "let-s-speak-arabic-ar",
+        "status": "present"
+      },
+      {
+        "name": "carpentry-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-guitar-en",
+        "status": "present"
+      },
+      {
+        "name": "arabic-alphabet-ar",
+        "status": "present"
+      },
+      {
+        "name": "carpentry-ar",
+        "status": "present"
+      },
+      {
+        "name": "natural-disaster-in-the-rohingya-refugee-camp-rhg",
+        "status": "present"
+      },
+      {
+        "name": "health-promotion-in-rohingya-language-rhg",
+        "status": "present"
+      },
+      {
+        "name": "life-in-the-rohingya-camp-rhg",
+        "status": "present"
+      },
+      {
+        "name": "documentary-in-rohingya-rhg",
+        "status": "present"
+      },
+      {
+        "name": "children-books-in-burmese-pdf-and-audio-books-mm",
+        "status": "present"
+      },
+      {
+        "name": "rohingya-songs-and-comedy-rhg",
+        "status": "present"
+      },
+      {
+        "name": "discover-the-culture-of-the-world-en",
+        "status": "present"
+      },
+      {
+        "name": "science-documentary-in-english-en",
+        "status": "present"
+      },
+      {
+        "name": "geography-discovery-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-children-bn",
+        "status": "present"
+      },
+      {
+        "name": "animals-environement-documentary-in-english-en",
+        "status": "present"
+      },
+      {
+        "name": "cartoons-in-burmese-rhg",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-with-the-rohingya-club-rhg",
+        "status": "present"
+      },
+      {
+        "name": "cartoons-in-hindi-hi",
+        "status": "present"
+      },
+      {
+        "name": "drawing-class-en",
+        "status": "present"
+      },
+      {
+        "name": "handicraft-mm",
+        "status": "present"
+      },
+      {
+        "name": "digital-literacy-lesson-in-english-en",
+        "status": "present"
+      },
+      {
+        "name": "digital-literacy-lessons-in-burmese-mm",
+        "status": "present"
+      },
+      {
+        "name": "health-promotion-for-mother-and-baby-mm",
+        "status": "present"
+      },
+      {
+        "name": "science-documentary-in-burmese-mm",
+        "status": "present"
+      },
+      {
+        "name": "protection-in-the-rohingya-refugee-camp-mm",
+        "status": "present"
+      },
+      {
+        "name": "learn-burmese-language-mm",
+        "status": "present"
+      },
+      {
+        "name": "leadership-empowerment-in-burmese-mm",
+        "status": "present"
+      },
+      {
+        "name": "health-promotion-in-burmese-mm",
+        "status": "present"
+      },
+      {
+        "name": "animals-environement-documentary-in-burmese-mm",
+        "status": "present"
+      },
+      {
+        "name": "agriculture-ecology-documentary-in-burmese-mm",
+        "status": "present"
+      },
+      {
+        "name": "sewing-embrodery-en",
+        "status": "present"
+      },
+      {
+        "name": "psychological-support-english-rohingya-en",
+        "status": "present"
+      },
+      {
+        "name": "entertainment-silent-movies-411",
+        "status": "present"
+      },
+      {
+        "name": "yoga-for-women-and-children-burmese-english-en",
+        "status": "present"
+      },
+      {
+        "name": "sport-football-en",
+        "status": "present"
+      },
+      {
+        "name": "theater-mime-lessons-en",
+        "status": "present"
+      },
+      {
+        "name": "classic-literature-in-english-en",
+        "status": "present"
+      },
+      {
+        "name": "beauty-parlor-411",
+        "status": "present"
+      },
+      {
+        "name": "learn-to-be-an-electrician-en",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-bgd-hiteknaf": {
     "kolibri": {
       "activated": false,
