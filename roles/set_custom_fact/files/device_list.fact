@@ -16603,6 +16603,172 @@
       "activated": true
     }
   },
+  "idc-atf-primsxm": {
+    "kolibri": {
+      "activated": true,
+      "language": [
+        "fr"
+      ],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "citoyennete-et-politique-fr",
+        "status": "present"
+      },
+      {
+        "name": "droits-de-l-enfant-fr",
+        "status": "present"
+      },
+      {
+        "name": "contes-et-dessins-animes-fr",
+        "status": "present"
+      },
+      {
+        "name": "discriminations-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "cuisine-et-nutrition-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "sports-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "cartoons-en",
+        "status": "present"
+      },
+      {
+        "name": "apprends-le-francais-a1-enfants-adolescents-fr",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-geography-en",
+        "status": "present"
+      },
+      {
+        "name": "ecoute-tes-emotions-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "prends-soin-de-toi-enfants-ado-fr",
+        "status": "present"
+      },
+      {
+        "name": "protegeons-la-planete-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprends-le-francais-a2-enfants-adolescents-fr",
+        "status": "present"
+      },
+      {
+        "name": "harcelement-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "la-sante-enfants-ado-fr",
+        "status": "present"
+      },
+      {
+        "name": "sommeil-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "ebook-enfants-libres-de-droit-fr",
+        "status": "present"
+      },
+      {
+        "name": "diy-travaux-manuels-fr",
+        "status": "present"
+      },
+      {
+        "name": "il-etait-une-fois-notre-terre-fr",
+        "status": "present"
+      },
+      {
+        "name": "nature-multi-languages-en",
+        "status": "present"
+      },
+      {
+        "name": "cultura-cuentos-y-dibujos-animados-es",
+        "status": "present"
+      },
+      {
+        "name": "educacion-contar-leer-y-conocer-es",
+        "status": "present"
+      },
+      {
+        "name": "l-importance-des-langues-maternelles-fr",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-children-bn",
+        "status": "present"
+      },
+      {
+        "name": "histoires-illustrees-fr",
+        "status": "present"
+      },
+      {
+        "name": "introduction-aux-mathematiques-fr",
+        "status": "present"
+      },
+      {
+        "name": "community-harmony-english-en",
+        "status": "present"
+      },
+      {
+        "name": "creativity-fruits-de-mer-art-creation-activities-en",
+        "status": "present"
+      },
+      {
+        "name": "cultures-saint-martin-photos-fr",
+        "status": "present"
+      },
+      {
+        "name": "rechauffement-climatique-explique-aux-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "comptines-fr",
+        "status": "present"
+      },
+      {
+        "name": "art-history-for-children-en",
+        "status": "present"
+      },
+      {
+        "name": "fauna-and-flora-of-saint-martin-en",
+        "status": "present"
+      },
+      {
+        "name": "utilisez-internet-en-toute-securite-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "vikidia.fr",
+        "status": "present"
+      },
+      {
+        "name": "cest-pas-sorcier.fr",
+        "status": "present"
+      },
+      {
+        "name": "les-fondamentaux.fr",
+        "status": "present"
+      },
+      {
+        "name": "films-pour-enfants.fr",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-bdi-ISV_SERUKA": {
     "kolibri": {
       "activated": false,
