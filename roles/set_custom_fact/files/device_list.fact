@@ -16345,6 +16345,264 @@
       "activated": true
     }
   },
+  "idc-atf-lycsxm": {
+    "kolibri": {
+      "activated": true,
+      "language": [
+        "fr"
+      ],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "citoyennete-et-politique-fr",
+        "status": "present"
+      },
+      {
+        "name": "connaitre-et-aimer-son-corps-fr",
+        "status": "present"
+      },
+      {
+        "name": "combattons-les-discriminations-fr",
+        "status": "present"
+      },
+      {
+        "name": "montez-votre-projet-professionnel-fr",
+        "status": "present"
+      },
+      {
+        "name": "arts-plastiques-fr",
+        "status": "present"
+      },
+      {
+        "name": "comprendre-et-exprimer-ses-emotions-fr",
+        "status": "present"
+      },
+      {
+        "name": "prevention-et-sexualite-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "geographie-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "nature-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-adults-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-teenagers-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-journalism-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-the-history-of-the-world-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-philosophy-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-geography-environmental-studies-en",
+        "status": "present"
+      },
+      {
+        "name": "decouvrez-ou-redecouvrez-l-histoire-de-france-fr",
+        "status": "present"
+      },
+      {
+        "name": "protegeons-la-planete-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-filles-et-les-garcons-quelles-differences-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-a2-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-b1-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-b2-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-c1-c2-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-occidentale-fr",
+        "status": "present"
+      },
+      {
+        "name": "premiere-fois-ado-adultes-fr",
+        "status": "present"
+      },
+      {
+        "name": "filles-garcons-quelle-place-pour-qui-fr",
+        "status": "present"
+      },
+      {
+        "name": "what-does-addiction-look-like-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-a-l-electricite-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "educacion-universo-es",
+        "status": "present"
+      },
+      {
+        "name": "diy-travaux-manuels-fr",
+        "status": "present"
+      },
+      {
+        "name": "being-prepared-in-case-of-a-major-disaster-en",
+        "status": "present"
+      },
+      {
+        "name": "les-bases-de-l-informatique-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-cuisiner-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "electricite-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-la-menuiserie-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "il-etait-une-fois-notre-terre-fr",
+        "status": "present"
+      },
+      {
+        "name": "pratiques-et-usages-du-numerique-fr",
+        "status": "present"
+      },
+      {
+        "name": "silent-movies-en",
+        "status": "present"
+      },
+      {
+        "name": "science-documentary-in-english-en",
+        "status": "present"
+      },
+      {
+        "name": "cultura-literatura-universal-es",
+        "status": "present"
+      },
+      {
+        "name": "sport-football-en",
+        "status": "present"
+      },
+      {
+        "name": "rechauffement-climatique-fr",
+        "status": "present"
+      },
+      {
+        "name": "orientation-professionnelle-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-de-l-art-fr",
+        "status": "present"
+      },
+      {
+        "name": "l-art-en-afrique-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "ecriture-et-litterature-francophone-en-afrique-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "alez-pou-make-kreyol-fr",
+        "status": "present"
+      },
+      {
+        "name": "fauna-and-flora-of-saint-martin-en",
+        "status": "present"
+      },
+      {
+        "name": "histoire-culture-et-patrimoine-de-saint-martin-fr",
+        "status": "present"
+      },
+      {
+        "name": "football-et-preparation-sportive-fr",
+        "status": "present"
+      },
+      {
+        "name": "gutenberg.es",
+        "status": "present"
+      },
+      {
+        "name": "gutenberg.fr",
+        "status": "present"
+      },
+      {
+        "name": "gutenberg.en",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.en",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.es",
+        "status": "present"
+      },
+      {
+        "name": "tedscience.en",
+        "status": "present"
+      },
+      {
+        "name": "onsexprime.fr",
+        "status": "present"
+      },
+      {
+        "name": "droguesinfoservice.fr",
+        "status": "present"
+      },
+      {
+        "name": "ted-ed.en",
+        "status": "present"
+      },
+      {
+        "name": "vikidia.fr",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-bdi-ISV_SERUKA": {
     "kolibri": {
       "activated": false,
