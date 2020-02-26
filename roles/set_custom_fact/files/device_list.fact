@@ -13915,6 +13915,244 @@
       }
     ]
   },
+  "idb-maf-sxm": {
+    "kolibri": {
+      "activated": true,
+      "language": [
+        "fr"
+      ],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "decouvrez-ou-re-decouvrez-la-cuisine-de-differents-pays-fr",
+        "status": "present"
+      },
+      {
+        "name": "montez-votre-projet-professionnel-fr",
+        "status": "present"
+      },
+      {
+        "name": "renseignez-vous-sur-les-demarches-administratives-fr",
+        "status": "present"
+      },
+      {
+        "name": "jardinage-et-agriculture-fr",
+        "status": "present"
+      },
+      {
+        "name": "droits-de-l-enfant-fr",
+        "status": "present"
+      },
+      {
+        "name": "contes-et-dessins-animes-fr",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-teenagers-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-human-rights-en",
+        "status": "present"
+      },
+      {
+        "name": "cartoons-en",
+        "status": "present"
+      },
+      {
+        "name": "experiences-de-femmes-fr",
+        "status": "present"
+      },
+      {
+        "name": "utilisez-internet-en-toute-securite-fr",
+        "status": "present"
+      },
+      {
+        "name": "carpentry-en",
+        "status": "present"
+      },
+      {
+        "name": "facilitator-kit-en",
+        "status": "present"
+      },
+      {
+        "name": "drawing-colouring-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-geography-en",
+        "status": "present"
+      },
+      {
+        "name": "ecoute-tes-emotions-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "prends-soin-de-toi-enfants-ado-fr",
+        "status": "present"
+      },
+      {
+        "name": "protegeons-la-planete-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-a1-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-b1-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-b2-fr",
+        "status": "present"
+      },
+      {
+        "name": "premiers-secours-enfants-adolescents-fr",
+        "status": "present"
+      },
+      {
+        "name": "la-sante-enfants-ado-fr",
+        "status": "present"
+      },
+      {
+        "name": "sommeil-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "filles-garcons-quelle-place-pour-qui-fr",
+        "status": "present"
+      },
+      {
+        "name": "ebook-enfants-libres-de-droit-fr",
+        "status": "present"
+      },
+      {
+        "name": "kit-de-l-animateur-libre-de-droit-fr",
+        "status": "present"
+      },
+      {
+        "name": "introduction-a-l-electricite-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "diy-travaux-manuels-fr",
+        "status": "present"
+      },
+      {
+        "name": "preparing-for-major-disasters-and-natural-catastrophes-en",
+        "status": "present"
+      },
+      {
+        "name": "being-prepared-in-case-of-a-major-disaster-en",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-cuisiner-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "il-etait-une-fois-notre-terre-fr",
+        "status": "present"
+      },
+      {
+        "name": "silent-movies-en",
+        "status": "present"
+      },
+      {
+        "name": "how-to-write-in-a-professional-context-en",
+        "status": "present"
+      },
+      {
+        "name": "reading-and-writing-games-en",
+        "status": "present"
+      },
+      {
+        "name": "nature-multi-languages-en",
+        "status": "present"
+      },
+      {
+        "name": "cultura-cuentos-y-dibujos-animados-es",
+        "status": "present"
+      },
+      {
+        "name": "l-importance-des-langues-maternelles-fr",
+        "status": "present"
+      },
+      {
+        "name": "creativity-fruits-de-mer-art-creation-activities-en",
+        "status": "present"
+      },
+      {
+        "name": "sport-football-en",
+        "status": "present"
+      },
+      {
+        "name": "orientation-professionnelle-fr",
+        "status": "present"
+      },
+      {
+        "name": "rechauffement-climatique-explique-aux-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "comptines-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-de-l-art-fr",
+        "status": "present"
+      },
+      {
+        "name": "alez-pou-make-kreyol-fr",
+        "status": "present"
+      },
+      {
+        "name": "fauna-and-flora-of-saint-martin-en",
+        "status": "present"
+      },
+      {
+        "name": "histoire-culture-et-patrimoine-de-saint-martin-fr",
+        "status": "present"
+      },
+      {
+        "name": "football-et-preparation-sportive-fr",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.en",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.fr",
+        "status": "present"
+      },
+      {
+        "name": "vikidia.fr",
+        "status": "present"
+      },
+      {
+        "name": "cest-pas-sorcier.fr",
+        "status": "present"
+      },
+      {
+        "name": "les-fondamentaux.fr",
+        "status": "present"
+      },
+      {
+        "name": "onsexprime.fr",
+        "status": "present"
+      },
+      {
+        "name": "droguesinfoservice.fr",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idb-rdc-save-lusenda": {
     "kalite": {
       "activated": "True",
