@@ -33599,10 +33599,6 @@
     },
     "package_management": [
       {
-        "name": "sport-fr",
-        "status": "present"
-      },
-      {
         "name": "citoyennete-et-politique-fr",
         "status": "present"
       },
@@ -33619,23 +33615,7 @@
         "status": "present"
       },
       {
-        "name": "arts-plastiques-fr",
-        "status": "present"
-      },
-      {
         "name": "comprendre-et-exprimer-ses-emotions-fr",
-        "status": "present"
-      },
-      {
-        "name": "initiez-vous-a-la-creation-video-fr",
-        "status": "present"
-      },
-      {
-        "name": "audiobooks-et-fictions-sonores-fr",
-        "status": "present"
-      },
-      {
-        "name": "prevention-addictions-fr",
         "status": "present"
       },
       {
@@ -33643,39 +33623,31 @@
         "status": "present"
       },
       {
+        "name": "histoire-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "geographie-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "nature-enfants-ados-fr",
+        "status": "present"
+      },
+      {
         "name": "learn-english-adults-en",
         "status": "present"
       },
       {
-        "name": "learn-english-teenagers-en",
-        "status": "present"
-      },
-      {
-        "name": "introduction-to-journalism-en",
-        "status": "present"
-      },
-      {
-        "name": "introduction-to-human-rights-en",
-        "status": "present"
-      },
-      {
-        "name": "introduction-to-sciences-en",
-        "status": "present"
-      },
-      {
-        "name": "introduction-to-the-history-of-the-world-en",
-        "status": "present"
-      },
-      {
-        "name": "introduction-to-philosophy-en",
-        "status": "present"
-      },
-      {
-        "name": "introduction-to-geography-environmental-studies-en",
+        "name": "experiences-de-femmes-fr",
         "status": "present"
       },
       {
         "name": "decouvrez-ou-redecouvrez-l-histoire-de-france-fr",
+        "status": "present"
+      },
+      {
+        "name": "protegeons-la-planete-enfants-ados-fr",
         "status": "present"
       },
       {
@@ -33691,15 +33663,7 @@
         "status": "present"
       },
       {
-        "name": "apprenez-le-francais-niveau-c1-c2-fr",
-        "status": "present"
-      },
-      {
         "name": "histoire-occidentale-fr",
-        "status": "present"
-      },
-      {
-        "name": "premiere-fois-ado-adultes-fr",
         "status": "present"
       },
       {
@@ -33707,35 +33671,11 @@
         "status": "present"
       },
       {
-        "name": "kit-de-l-animateur-libre-de-droit-fr",
-        "status": "present"
-      },
-      {
-        "name": "fiches-creativite-libre-de-droit-fr",
-        "status": "present"
-      },
-      {
-        "name": "films-et-videos-libres-de-droit-fr",
-        "status": "present"
-      },
-      {
         "name": "what-does-addiction-look-like-en",
         "status": "present"
       },
       {
-        "name": "tutoriels-pour-utiliser-des-logiciels-et-des-applications-fr",
-        "status": "present"
-      },
-      {
-        "name": "educacion-derechos-humanos-es",
-        "status": "present"
-      },
-      {
-        "name": "educacion-universo-es",
-        "status": "present"
-      },
-      {
-        "name": "cultura-generos-literarios-es",
+        "name": "introduction-a-l-electricite-sikana-fr",
         "status": "present"
       },
       {
@@ -33751,55 +33691,75 @@
         "status": "present"
       },
       {
-        "name": "pedagogie-enabel-fr",
+        "name": "apprendre-a-cuisiner-sikana-fr",
         "status": "present"
       },
       {
-        "name": "s-informer-sur-internet-fr",
+        "name": "electricite-sikana-fr",
         "status": "present"
       },
       {
-        "name": "pratiques-et-usages-du-numerique-fr",
+        "name": "apprendre-la-menuiserie-sikana-fr",
         "status": "present"
       },
       {
-        "name": "science-multilanguage-en",
+        "name": "il-etait-une-fois-notre-terre-fr",
         "status": "present"
       },
       {
-        "name": "educacion-idioma-espanol-es",
+        "name": "silent-movies-en",
         "status": "present"
       },
       {
-        "name": "cultura-literatura-universal-es",
+        "name": "qu-est-ce-que-ca-veut-dire-etre-francais-fr",
         "status": "present"
       },
       {
-        "name": "do-it-yourself-mulitlanguage-en",
+        "name": "sport-football-en",
         "status": "present"
       },
       {
-        "name": "cultures-fruits-de-mer-nature-en",
+        "name": "rechauffement-climatique-fr",
         "status": "present"
       },
       {
-        "name": "cultures-fruits-de-mer-documentaries-en",
+        "name": "orientation-professionnelle-fr",
         "status": "present"
       },
       {
-        "name": "cultures-saint-martin-photos-fr",
+        "name": "histoire-de-l-art-fr",
         "status": "present"
       },
       {
-        "name": "gutenberg.es",
+        "name": "l-art-en-afrique-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "ecriture-et-litterature-francophone-en-afrique-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "alez-pou-make-kreyol-fr",
+        "status": "present"
+      },
+      {
+        "name": "fauna-and-flora-of-saint-martin-en",
+        "status": "present"
+      },
+      {
+        "name": "histoire-culture-et-patrimoine-de-saint-martin-fr",
+        "status": "present"
+      },
+      {
+        "name": "football-et-preparation-sportive-fr",
+        "status": "present"
+      },
+      {
+        "name": "human-fr",
         "status": "present"
       },
       {
         "name": "gutenberg.fr",
-        "status": "present"
-      },
-      {
-        "name": "gutenberg.en",
         "status": "present"
       },
       {
@@ -33811,23 +33771,11 @@
         "status": "present"
       },
       {
-        "name": "wikipedia.es",
-        "status": "present"
-      },
-      {
-        "name": "tedscience.en",
-        "status": "present"
-      },
-      {
         "name": "onsexprime.fr",
         "status": "present"
       },
       {
         "name": "droguesinfoservice.fr",
-        "status": "present"
-      },
-      {
-        "name": "ted-ed.en",
         "status": "present"
       },
       {
