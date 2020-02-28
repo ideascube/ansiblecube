@@ -32425,27 +32425,7 @@
     },
     "package_management": [
       {
-        "name": "sport-fr",
-        "status": "present"
-      },
-      {
         "name": "citoyennete-et-politique-fr",
-        "status": "present"
-      },
-      {
-        "name": "connaitre-et-aimer-son-corps-fr",
-        "status": "present"
-      },
-      {
-        "name": "combattons-les-discriminations-fr",
-        "status": "present"
-      },
-      {
-        "name": "arts-plastiques-fr",
-        "status": "present"
-      },
-      {
-        "name": "prevention-et-sexualite-fr",
         "status": "present"
       },
       {
@@ -32453,11 +32433,15 @@
         "status": "present"
       },
       {
+        "name": "droits-de-l-enfant-fr",
+        "status": "present"
+      },
+      {
         "name": "geographie-afrique-fr",
         "status": "present"
       },
       {
-        "name": "biologie-adolescents-fr",
+        "name": "discriminations-enfants-ados-fr",
         "status": "present"
       },
       {
@@ -32469,6 +32453,10 @@
         "status": "present"
       },
       {
+        "name": "utilisez-internet-en-toute-securite-fr",
+        "status": "present"
+      },
+      {
         "name": "decouvrez-ou-redecouvrez-l-histoire-de-france-fr",
         "status": "present"
       },
@@ -32477,11 +32465,11 @@
         "status": "present"
       },
       {
-        "name": "fight-against-discriminations-and-live-together-en",
+        "name": "protegeons-la-planete-enfants-ados-fr",
         "status": "present"
       },
       {
-        "name": "protegeons-la-planete-enfants-ados-fr",
+        "name": "les-filles-et-les-garcons-quelles-differences-fr",
         "status": "present"
       },
       {
@@ -32497,15 +32485,7 @@
         "status": "present"
       },
       {
-        "name": "apprenez-le-francais-niveau-c1-c2-fr",
-        "status": "present"
-      },
-      {
         "name": "harcelement-ado-fr",
-        "status": "present"
-      },
-      {
-        "name": "educacion-universo-es",
         "status": "present"
       },
       {
@@ -32521,15 +32501,7 @@
         "status": "present"
       },
       {
-        "name": "pedagogie-enabel-fr",
-        "status": "present"
-      },
-      {
         "name": "il-etait-une-fois-notre-terre-fr",
-        "status": "present"
-      },
-      {
-        "name": "pratiques-et-usages-du-numerique-fr",
         "status": "present"
       },
       {
@@ -32541,19 +32513,15 @@
         "status": "present"
       },
       {
+        "name": "qu-est-ce-que-ca-veut-dire-etre-francais-fr",
+        "status": "present"
+      },
+      {
         "name": "creativity-fruits-de-mer-art-creation-activities-en",
         "status": "present"
       },
       {
-        "name": "cultures-fruits-de-mer-nature-en",
-        "status": "present"
-      },
-      {
-        "name": "cultures-fruits-de-mer-documentaries-en",
-        "status": "present"
-      },
-      {
-        "name": "cultures-saint-martin-photos-fr",
+        "name": "sport-football-en",
         "status": "present"
       },
       {
@@ -32581,15 +32549,23 @@
         "status": "present"
       },
       {
-        "name": "histoire-de-l-ile-de-saint-martin-fr",
-        "status": "present"
-      },
-      {
         "name": "alez-pou-make-kreyol-fr",
         "status": "present"
       },
       {
-        "name": "cultures-revue-heritage-st-martin-fr",
+        "name": "fauna-and-flora-of-saint-martin-en",
+        "status": "present"
+      },
+      {
+        "name": "histoire-culture-et-patrimoine-de-saint-martin-fr",
+        "status": "present"
+      },
+      {
+        "name": "football-et-preparation-sportive-fr",
+        "status": "present"
+      },
+      {
+        "name": "human-fr",
         "status": "present"
       },
       {
