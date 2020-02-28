@@ -33259,11 +33259,7 @@
     },
     "package_management": [
       {
-        "name": "citoyennete-et-politique-fr",
-        "status": "present"
-      },
-      {
-        "name": "arts-plastiques-fr",
+        "name": "droits-de-l-enfant-fr",
         "status": "present"
       },
       {
@@ -33275,23 +33271,11 @@
         "status": "present"
       },
       {
+        "name": "cuisine-et-nutrition-enfants-fr",
+        "status": "present"
+      },
+      {
         "name": "sports-enfants-ados-fr",
-        "status": "present"
-      },
-      {
-        "name": "nature-enfants-ados-fr",
-        "status": "present"
-      },
-      {
-        "name": "learn-english-teenagers-en",
-        "status": "present"
-      },
-      {
-        "name": "biologie-enfants-fr",
-        "status": "present"
-      },
-      {
-        "name": "greek-mythology-en",
         "status": "present"
       },
       {
@@ -33299,15 +33283,7 @@
         "status": "present"
       },
       {
-        "name": "utilisez-internet-en-toute-securite-fr",
-        "status": "present"
-      },
-      {
-        "name": "learn-to-know-and-manage-your-feelings-en",
-        "status": "present"
-      },
-      {
-        "name": "fight-against-discriminations-and-live-together-en",
+        "name": "apprends-le-francais-a1-enfants-adolescents-fr",
         "status": "present"
       },
       {
@@ -33331,10 +33307,6 @@
         "status": "present"
       },
       {
-        "name": "premiers-secours-enfants-adolescents-fr",
-        "status": "present"
-      },
-      {
         "name": "harcelement-enfants-fr",
         "status": "present"
       },
@@ -33347,39 +33319,7 @@
         "status": "present"
       },
       {
-        "name": "nutrition-enfants-fr",
-        "status": "present"
-      },
-      {
         "name": "ebook-enfants-libres-de-droit-fr",
-        "status": "present"
-      },
-      {
-        "name": "kit-de-l-animateur-libre-de-droit-fr",
-        "status": "present"
-      },
-      {
-        "name": "fiches-creativite-libre-de-droit-fr",
-        "status": "present"
-      },
-      {
-        "name": "films-et-videos-libres-de-droit-fr",
-        "status": "present"
-      },
-      {
-        "name": "creatividad-colsubsidio-es",
-        "status": "present"
-      },
-      {
-        "name": "tutoriels-pour-utiliser-des-logiciels-et-des-applications-fr",
-        "status": "present"
-      },
-      {
-        "name": "educacion-matematicas-para-ninos-es",
-        "status": "present"
-      },
-      {
-        "name": "educacion-universo-es",
         "status": "present"
       },
       {
@@ -33387,15 +33327,11 @@
         "status": "present"
       },
       {
-        "name": "pedagogie-enabel-fr",
+        "name": "il-etait-une-fois-notre-terre-fr",
         "status": "present"
       },
       {
-        "name": "s-informer-sur-internet-fr",
-        "status": "present"
-      },
-      {
-        "name": "ecology-multi-languages-en",
+        "name": "nature-multi-languages-en",
         "status": "present"
       },
       {
@@ -33407,15 +33343,19 @@
         "status": "present"
       },
       {
-        "name": "creatividad-manualidades-es",
-        "status": "present"
-      },
-      {
         "name": "l-importance-des-langues-maternelles-fr",
         "status": "present"
       },
       {
-        "name": "do-it-yourself-multi-languages-en",
+        "name": "learn-english-children-bn",
+        "status": "present"
+      },
+      {
+        "name": "histoires-illustrees-fr",
+        "status": "present"
+      },
+      {
+        "name": "introduction-aux-mathematiques-fr",
         "status": "present"
       },
       {
@@ -33427,23 +33367,35 @@
         "status": "present"
       },
       {
-        "name": "cultures-fruits-de-mer-nature-en",
-        "status": "present"
-      },
-      {
-        "name": "cultures-fruits-de-mer-documentaries-en",
-        "status": "present"
-      },
-      {
         "name": "cultures-saint-martin-photos-fr",
         "status": "present"
       },
       {
-        "name": "vikidia.fr",
+        "name": "rechauffement-climatique-explique-aux-enfants-fr",
         "status": "present"
       },
       {
-        "name": "vikidia.en",
+        "name": "comptines-fr",
+        "status": "present"
+      },
+      {
+        "name": "art-history-for-children-en",
+        "status": "present"
+      },
+      {
+        "name": "fauna-and-flora-of-saint-martin-en",
+        "status": "present"
+      },
+      {
+        "name": "utilisez-internet-en-toute-securite-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "citoyennete-et-politique-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "vikidia.fr",
         "status": "present"
       },
       {
@@ -33456,10 +33408,6 @@
       },
       {
         "name": "les-fondamentaux.fr",
-        "status": "present"
-      },
-      {
-        "name": "ted-ed.en",
         "status": "present"
       }
     ],
