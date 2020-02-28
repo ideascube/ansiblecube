@@ -34053,15 +34053,13 @@
   },
   "idc-sxm-mater2019": {
     "kolibri": {
-      "activated": true,
-      "language": [
-        "fr"
-      ],
+      "activated": false,
+      "language": [],
       "version": "0.10.3"
     },
     "package_management": [
       {
-        "name": "citoyennete-et-politique-fr",
+        "name": "droits-de-l-enfant-fr",
         "status": "present"
       },
       {
@@ -34081,31 +34079,11 @@
         "status": "present"
       },
       {
-        "name": "sports-enfants-ados-fr",
-        "status": "present"
-      },
-      {
-        "name": "learn-english-teenagers-en",
-        "status": "present"
-      },
-      {
-        "name": "biologie-enfants-fr",
-        "status": "present"
-      },
-      {
-        "name": "introduction-to-human-rights-for-children-en",
-        "status": "present"
-      },
-      {
         "name": "cartoons-en",
         "status": "present"
       },
       {
         "name": "apprends-le-francais-a1-enfants-adolescents-fr",
-        "status": "present"
-      },
-      {
-        "name": "utilisez-internet-en-toute-securite-fr",
         "status": "present"
       },
       {
@@ -34117,23 +34095,7 @@
         "status": "present"
       },
       {
-        "name": "protegeons-la-planete-enfants-ados-fr",
-        "status": "present"
-      },
-      {
-        "name": "premiers-secours-enfants-adolescents-fr",
-        "status": "present"
-      },
-      {
         "name": "la-sante-enfants-ado-fr",
-        "status": "present"
-      },
-      {
-        "name": "sommeil-enfants-fr",
-        "status": "present"
-      },
-      {
-        "name": "nutrition-enfants-fr",
         "status": "present"
       },
       {
@@ -34141,27 +34103,7 @@
         "status": "present"
       },
       {
-        "name": "kit-de-l-animateur-libre-de-droit-fr",
-        "status": "present"
-      },
-      {
-        "name": "tutoriels-pour-utiliser-des-logiciels-et-des-applications-fr",
-        "status": "present"
-      },
-      {
-        "name": "educacion-matematicas-para-ninos-es",
-        "status": "present"
-      },
-      {
         "name": "diy-travaux-manuels-fr",
-        "status": "present"
-      },
-      {
-        "name": "pedagogie-enabel-fr",
-        "status": "present"
-      },
-      {
-        "name": "young-and-old-multilanguage-en",
         "status": "present"
       },
       {
@@ -34177,7 +34119,15 @@
         "status": "present"
       },
       {
-        "name": "do-it-yourself-multi-languages-en",
+        "name": "learn-english-children-bn",
+        "status": "present"
+      },
+      {
+        "name": "histoires-illustrees-fr",
+        "status": "present"
+      },
+      {
+        "name": "introduction-aux-mathematiques-fr",
         "status": "present"
       },
       {
@@ -34189,15 +34139,15 @@
         "status": "present"
       },
       {
+        "name": "comptines-fr",
+        "status": "present"
+      },
+      {
         "name": "vikidia.fr",
         "status": "present"
       },
       {
         "name": "les-fondamentaux.fr",
-        "status": "present"
-      },
-      {
-        "name": "vikidia.en",
         "status": "present"
       },
       {
