@@ -26763,6 +26763,21 @@
       "activated": true
     }
   },
+  "idc-fra-khan": {
+    "kolibri": {
+      "activated": true,
+      "language": [
+        "sw",
+        "en",
+        "fr"
+      ],
+      "version": "0.10.3"
+    },
+    "package_management": [],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-fra-min": {
     "kolibri": {
       "activated": false,
