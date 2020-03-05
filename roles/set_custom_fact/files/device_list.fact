@@ -34450,6 +34450,130 @@
       "activated": true
     }
   },
+  "idc-tcd-djoumal": {
+    "kolibri": {
+      "activated": false,
+      "language": [],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "management-fr",
+        "status": "present"
+      },
+      {
+        "name": "marketing-fr",
+        "status": "present"
+      },
+      {
+        "name": "administration-gestion-comptabilite-fr",
+        "status": "present"
+      },
+      {
+        "name": "innovation-en-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "creation-d-entreprise-fr",
+        "status": "present"
+      },
+      {
+        "name": "economie-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "geographie-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "economie-et-mondialisation-fr",
+        "status": "present"
+      },
+      {
+        "name": "l-afrique-en-marche-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "memoire-d-un-continent-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "eco-d-ici-eco-d-ailleurs-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "la-marche-du-monde-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "introduction-aux-droits-de-l-homme-fr",
+        "status": "present"
+      },
+      {
+        "name": "geopolitique-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "monter-un-laboratoire-d-innovation-publique-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-afrique-de-l-ouest-fr",
+        "status": "present"
+      },
+      {
+        "name": "sciences-politiques-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "droit-introduction-fr",
+        "status": "present"
+      },
+      {
+        "name": "economie-rurale-en-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "cartographie-et-teledetection-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "agriculture-en-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "gutenberg.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikimooc.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.fr",
+        "status": "present"
+      },
+      {
+        "name": "tedxlausanne2014.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikibooks.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikiversity.fr",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-tcd-toukra": {
     "kolibri": {
       "activated": false,
