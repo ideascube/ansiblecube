@@ -34574,6 +34574,118 @@
       "activated": true
     }
   },
+  "idc-tcd-farcha": {
+    "kolibri": {
+      "activated": false,
+      "language": [],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "innovation-en-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "geographie-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "economie-et-developpement-durable-fr",
+        "status": "present"
+      },
+      {
+        "name": "genetique-et-epigenetique-fr",
+        "status": "present"
+      },
+      {
+        "name": "introduction-aux-sciences-cognitives-et-aux-neurosciences-fr",
+        "status": "present"
+      },
+      {
+        "name": "introduction-a-la-biologie-et-a-la-chimie-fr",
+        "status": "present"
+      },
+      {
+        "name": "microbiologie-et-prevention-sante-fr",
+        "status": "present"
+      },
+      {
+        "name": "l-afrique-en-marche-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "memoire-d-un-continent-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "la-marche-du-monde-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-programmer-en-java-fr",
+        "status": "present"
+      },
+      {
+        "name": "monter-un-laboratoire-d-innovation-publique-fr",
+        "status": "present"
+      },
+      {
+        "name": "rechauffement-climatique-fr",
+        "status": "present"
+      },
+      {
+        "name": "astrophotograhie-fr",
+        "status": "present"
+      },
+      {
+        "name": "genetique-des-populations-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "agriculture-en-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-energies-renouvelables-fr",
+        "status": "present"
+      },
+      {
+        "name": "modelisation-intelligence-artificielle-fr",
+        "status": "present"
+      },
+      {
+        "name": "gutenberg.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikimooc.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.fr",
+        "status": "present"
+      },
+      {
+        "name": "tedxlausanne2014.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikibooks.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikiversity.fr",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-tcd-toukra": {
     "kolibri": {
       "activated": false,
