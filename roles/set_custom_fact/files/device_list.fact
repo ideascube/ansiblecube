@@ -32448,6 +32448,10 @@
         "status": "present"
       },
       {
+        "name": "innovation-en-afrique-fr",
+        "status": "present"
+      },
+      {
         "name": "histoire-afrique-fr",
         "status": "present"
       },
