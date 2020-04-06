@@ -20009,7 +20009,8 @@
     "kolibri": {
       "activated": true,
       "language": [
-        "sw"
+        "sw",
+        "fr"
       ],
       "version": "0.10.3"
     },
@@ -20019,11 +20020,23 @@
         "status": "present"
       },
       {
+        "name": "moyens-de-contraception-fr",
+        "status": "present"
+      },
+      {
+        "name": "alcool-drogues-fr",
+        "status": "present"
+      },
+      {
         "name": "films-et-videos-libres-de-droit-fr",
         "status": "present"
       },
       {
-        "name": "silent-animated-movies-en",
+        "name": "denis-mukwege-fr",
+        "status": "present"
+      },
+      {
+        "name": "violences-sexuelles-sur-adultes-fr",
         "status": "present"
       },
       {
@@ -20036,10 +20049,6 @@
       },
       {
         "name": "feuilleton-ninde-rtnb-rn",
-        "status": "present"
-      },
-      {
-        "name": "guides-en-ssraj-pour-les-leaders-religieux-rn",
         "status": "present"
       },
       {
@@ -20211,6 +20220,10 @@
         "status": "present"
       },
       {
+        "name": "films-d-animation-muets-fr",
+        "status": "present"
+      },
+      {
         "name": "wikipedia.fr",
         "status": "present"
       },
@@ -20236,10 +20249,6 @@
       },
       {
         "name": "films-pour-enfants.fr",
-        "status": "present"
-      },
-      {
-        "name": "les-fondamentaux.fr",
         "status": "present"
       }
     ],
