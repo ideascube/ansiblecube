@@ -34842,11 +34842,39 @@
         "status": "present"
       },
       {
-        "name": "mooc-energies-renouvelables-fr",
+        "name": "modelisation-intelligence-artificielle-fr",
         "status": "present"
       },
       {
-        "name": "modelisation-intelligence-artificielle-fr",
+        "name": "mooc-pour-comprendre-la-transition-energetique-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-pour-comprendre-l-energie-solaire-associer-avec-942-a-949-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-pour-comprendre-l-energie-eolienne-associer-avec-942-a-949-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-pour-comprendre-l-energie-hydraulique-associer-avec-942-a-949-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-pour-comprendre-les-energies-marines-associer-avec-942-a-949-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-pour-comprendre-la-geothermie-associer-avec-942-a-949-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-pour-comprendre-la-biomass-associer-avec-942-a-949-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-pour-comprendre-le-mix-energetique-associer-avec-942-a-949-fr",
         "status": "present"
       },
       {
