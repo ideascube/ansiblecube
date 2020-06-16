@@ -34702,10 +34702,6 @@
         "status": "present"
       },
       {
-        "name": "introduction-aux-droits-de-l-homme-fr",
-        "status": "present"
-      },
-      {
         "name": "geopolitique-afrique-fr",
         "status": "present"
       },
@@ -34722,7 +34718,7 @@
         "status": "present"
       },
       {
-        "name": "droit-introduction-fr",
+        "name": "introduction-aux-droits-adolescent-fr",
         "status": "present"
       },
       {
@@ -34735,6 +34731,38 @@
       },
       {
         "name": "agriculture-en-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-les-fondements-des-droits-de-l-homme-associer-avec-901-a-908-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-droit-international-et-droit-compare-associer-avec-901-a-908-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-l-internationalisation-des-droits-de-l-homme-associer-avec-901-a-908-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-les-sources-des-droits-de-l-homme-associer-avec-901-a-908-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-la-typologie-des-droits-de-l-homme-associer-avec-901-a-908-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-les-obligations-decoulant-des-droits-de-l-homme-associer-avec-901-a-908-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-les-limites-des-droits-de-l-homme-associer-avec-901-a-908-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-les-mecanismes-de-mise-en-oeuvre-des-droits-de-l-homme-associer-avec-901-a-908-fr",
         "status": "present"
       },
       {
