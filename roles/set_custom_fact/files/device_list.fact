@@ -21533,6 +21533,180 @@
       "activated": true
     }
   },
+  "idc-bgd-coxlocal": {
+    "kolibri": {
+      "activated": true,
+      "language": [
+        "en"
+      ],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "learn-english-adults-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-teenagers-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-economics-en",
+        "status": "present"
+      },
+      {
+        "name": "let-s-speak-arabic-ar",
+        "status": "present"
+      },
+      {
+        "name": "carpentry-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-guitar-en",
+        "status": "present"
+      },
+      {
+        "name": "discover-the-culture-of-the-world-en",
+        "status": "present"
+      },
+      {
+        "name": "science-documentary-in-english-en",
+        "status": "present"
+      },
+      {
+        "name": "community-harmony-bangla-bn",
+        "status": "present"
+      },
+      {
+        "name": "creativity-bangla-bn",
+        "status": "present"
+      },
+      {
+        "name": "wash-promotion-bangla-en",
+        "status": "present"
+      },
+      {
+        "name": "life-saving-bangla-bn",
+        "status": "present"
+      },
+      {
+        "name": "geography-discovery-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-children-bn",
+        "status": "present"
+      },
+      {
+        "name": "animals-environement-documentary-in-english-en",
+        "status": "present"
+      },
+      {
+        "name": "protection-bangla-bn",
+        "status": "present"
+      },
+      {
+        "name": "from-our-community-bangla-bn",
+        "status": "present"
+      },
+      {
+        "name": "idb-team-in-bangaldesh-facilitation-help-mm",
+        "status": "present"
+      },
+      {
+        "name": "health-promotion-bangla-bn",
+        "status": "present"
+      },
+      {
+        "name": "ecology-bangla-bn",
+        "status": "present"
+      },
+      {
+        "name": "life-skills-bangla-bn",
+        "status": "present"
+      },
+      {
+        "name": "do-it-yourself-bangla-bn",
+        "status": "present"
+      },
+      {
+        "name": "news-documentary-bangla-bn",
+        "status": "present"
+      },
+      {
+        "name": "drawing-class-en",
+        "status": "present"
+      },
+      {
+        "name": "digital-literacy-lesson-in-english-en",
+        "status": "present"
+      },
+      {
+        "name": "sewing-embrodery-en",
+        "status": "present"
+      },
+      {
+        "name": "entertainment-silent-movies-411",
+        "status": "present"
+      },
+      {
+        "name": "sport-football-en",
+        "status": "present"
+      },
+      {
+        "name": "theater-mime-lessons-en",
+        "status": "present"
+      },
+      {
+        "name": "classic-literature-in-english-en",
+        "status": "present"
+      },
+      {
+        "name": "beauty-parlor-411",
+        "status": "present"
+      },
+      {
+        "name": "learn-to-be-an-electrician-en",
+        "status": "present"
+      },
+      {
+        "name": "covid-19-rohingya-rhg",
+        "status": "present"
+      },
+      {
+        "name": "covid-19-bangla-bn",
+        "status": "present"
+      },
+      {
+        "name": "covid-19-english-en",
+        "status": "present"
+      },
+      {
+        "name": "covid-19-burmese-mm",
+        "status": "present"
+      },
+      {
+        "name": "vikidia.en",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.en",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.bn",
+        "status": "present"
+      },
+      {
+        "name": "wikibooks.en",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-bgd-hiteknaf": {
     "kolibri": {
       "activated": false,
