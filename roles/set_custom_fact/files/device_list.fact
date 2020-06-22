@@ -3264,7 +3264,7 @@
         "status": "present"
       },
       {
-        "name": "music-and-music-lessons-en",
+        "name": "music-lessons-tabla-hamonium-mandoline-en",
         "status": "present"
       },
       {
@@ -3305,6 +3305,10 @@
       },
       {
         "name": "covid-19-burmese-mm",
+        "status": "present"
+      },
+      {
+        "name": "covid-19-rohingya-rhg",
         "status": "present"
       },
       {
