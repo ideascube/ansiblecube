@@ -2158,10 +2158,6 @@
         "status": "present"
       },
       {
-        "name": "cultural-expression-bangla-bn",
-        "status": "present"
-      },
-      {
         "name": "learn-english-children-bn",
         "status": "present"
       },
