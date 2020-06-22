@@ -3082,6 +3082,10 @@
         "status": "present"
       },
       {
+        "name": "covid-19-rohingya-rhg",
+        "status": "present"
+      },
+      {
         "name": "wikipedia.en",
         "status": "present"
       },
