@@ -2250,6 +2250,10 @@
         "status": "present"
       },
       {
+        "name": "covid-19-rohingya-rhg",
+        "status": "present"
+      },
+      {
         "name": "vikidia.en",
         "status": "present"
       },
