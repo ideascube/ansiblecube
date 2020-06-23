@@ -22867,6 +22867,126 @@
       "activated": true
     }
   },
+  "idc-bsf-toukra": {
+    "kolibri": {
+      "activated": false,
+      "language": [],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "innovation-en-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "economie-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "geographie-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "economie-et-mondialisation-fr",
+        "status": "present"
+      },
+      {
+        "name": "l-afrique-en-marche-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "memoire-d-un-continent-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "la-marche-du-monde-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "geopolitique-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "litterature-francophone-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-afrique-de-l-ouest-fr",
+        "status": "present"
+      },
+      {
+        "name": "sciences-politiques-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "comprendre-les-migrations-fr",
+        "status": "present"
+      },
+      {
+        "name": "l-importance-des-langues-maternelles-fr",
+        "status": "present"
+      },
+      {
+        "name": "economie-rurale-en-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "cartographie-et-teledetection-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "agriculture-en-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "geographie-urbaine-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "geographie-rural-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "l-art-en-afrique-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "ecriture-et-litterature-francophone-en-afrique-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "gutenberg.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikimooc.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikiversity.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikibooks.fr",
+        "status": "present"
+      },
+      {
+        "name": "tedxlausanne2014.fr",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-bur-isv": {
     "kolibri": {
       "activated": false,
