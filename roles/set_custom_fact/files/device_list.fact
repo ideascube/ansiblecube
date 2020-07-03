@@ -23017,6 +23017,80 @@
       "activated": true
     }
   },
+  "idc-bsf-dempaquet": {
+    "kolibri": {
+      "activated": true,
+      "language": [
+        "fr"
+      ],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "contes-et-dessins-animes-fr",
+        "status": "present"
+      },
+      {
+        "name": "entertainment-silent-movies-411",
+        "status": "present"
+      },
+      {
+        "name": "portraits-de-guyanais-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-animaux-de-la-guyane-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-de-la-guyane-fr",
+        "status": "present"
+      },
+      {
+        "name": "la-region-de-la-guyane-pays-voisins-et-amazonie-fr",
+        "status": "present"
+      },
+      {
+        "name": "la-guyane-aujourd-hui-fr",
+        "status": "present"
+      },
+      {
+        "name": "engagement-et-paix-les-grands-personnages-fr",
+        "status": "present"
+      },
+      {
+        "name": "creer-des-bandes-dessinees-fr",
+        "status": "present"
+      },
+      {
+        "name": "la-guyane-presentee-aux-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "le-carnaval-tradition-en-guyane-et-ailleurs-fr",
+        "status": "present"
+      },
+      {
+        "name": "l-esclavage-dans-les-caraibes-fr",
+        "status": "present"
+      },
+      {
+        "name": "figures-d-engagement-fr",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.fr",
+        "status": "present"
+      },
+      {
+        "name": "les-fondamentaux.fr",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-bsf-oliptest": {
     "kolibri": {
       "activated": false,
