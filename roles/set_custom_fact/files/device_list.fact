@@ -17355,6 +17355,268 @@
       "activated": true
     }
   },
+  "idc-aus-wilcannia": {
+    "kolibri": {
+      "activated": true,
+      "language": [
+        "en"
+      ],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "learn-english-teenagers-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-journalism-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-sciences-en",
+        "status": "present"
+      },
+      {
+        "name": "cartoons-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-the-history-of-the-world-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-geography-environmental-studies-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-guitar-en",
+        "status": "present"
+      },
+      {
+        "name": "drums-for-beginners-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-photography-en",
+        "status": "present"
+      },
+      {
+        "name": "let-s-practise-sport-children-en",
+        "status": "present"
+      },
+      {
+        "name": "make-your-own-radio-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-biology-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-to-know-and-manage-your-feelings-en",
+        "status": "present"
+      },
+      {
+        "name": "health-and-hygiene-en",
+        "status": "present"
+      },
+      {
+        "name": "drawing-colouring-en",
+        "status": "present"
+      },
+      {
+        "name": "musique-libre-de-droit-en",
+        "status": "present"
+      },
+      {
+        "name": "if-i-m-pregnant-how-do-drugs-and-alcohol-affect-me-en",
+        "status": "present"
+      },
+      {
+        "name": "what-are-the-basics-of-diabetes-en",
+        "status": "present"
+      },
+      {
+        "name": "yoga-for-therapy-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-first-aid-techniques-en",
+        "status": "present"
+      },
+      {
+        "name": "public-speaking-en",
+        "status": "present"
+      },
+      {
+        "name": "instrumental-music-en",
+        "status": "present"
+      },
+      {
+        "name": "silent-animated-movies-en",
+        "status": "present"
+      },
+      {
+        "name": "how-to-improve-your-english-skills-en",
+        "status": "present"
+      },
+      {
+        "name": "reading-and-writing-games-en",
+        "status": "present"
+      },
+      {
+        "name": "geography-discovery-en",
+        "status": "present"
+      },
+      {
+        "name": "creativity-multi-languages-en",
+        "status": "present"
+      },
+      {
+        "name": "do-it-yourself-multi-languages-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-children-bn",
+        "status": "present"
+      },
+      {
+        "name": "animals-environement-documentary-in-english-en",
+        "status": "present"
+      },
+      {
+        "name": "community-harmony-english-en",
+        "status": "present"
+      },
+      {
+        "name": "puberty-en",
+        "status": "present"
+      },
+      {
+        "name": "digital-literacy-lesson-in-english-en",
+        "status": "present"
+      },
+      {
+        "name": "mathematics-lesson-in-english-en",
+        "status": "present"
+      },
+      {
+        "name": "nursery-rhymes-en",
+        "status": "present"
+      },
+      {
+        "name": "cinema-film-editing-en",
+        "status": "present"
+      },
+      {
+        "name": "the-learning-station-en",
+        "status": "present"
+      },
+      {
+        "name": "art-history-for-children-en",
+        "status": "present"
+      },
+      {
+        "name": "contemporary-art-for-adults-en",
+        "status": "present"
+      },
+      {
+        "name": "art-history-for-adults-en",
+        "status": "present"
+      },
+      {
+        "name": "theater-mime-lessons-en",
+        "status": "present"
+      },
+      {
+        "name": "classic-literature-in-english-en",
+        "status": "present"
+      },
+      {
+        "name": "menstrual-hygiene-adults-en",
+        "status": "present"
+      },
+      {
+        "name": "let-s-talk-about-sexuality-adults-en",
+        "status": "present"
+      },
+      {
+        "name": "knowing-his-body-en",
+        "status": "present"
+      },
+      {
+        "name": "diseases-en",
+        "status": "present"
+      },
+      {
+        "name": "the-dangers-of-alcohol-and-drug-use-en",
+        "status": "present"
+      },
+      {
+        "name": "mooc-english-for-journalism-en",
+        "status": "present"
+      },
+      {
+        "name": "gimp-graphic-editor-en",
+        "status": "present"
+      },
+      {
+        "name": "sport-learning-rules-of-traditional-indigenous-games-en",
+        "status": "present"
+      },
+      {
+        "name": "learning-history-of-australia-en",
+        "status": "present"
+      },
+      {
+        "name": "learning-geography-of-australia-en",
+        "status": "present"
+      },
+      {
+        "name": "discovering-aboriginal-art-en",
+        "status": "present"
+      },
+      {
+        "name": "discovering-famous-people-of-aboriginal-origin-en",
+        "status": "present"
+      },
+      {
+        "name": "discovering-aboriginal-traditions-en",
+        "status": "present"
+      },
+      {
+        "name": "krita-graphics-editor-en",
+        "status": "present"
+      },
+      {
+        "name": "davinci-resolve-video-editor-en",
+        "status": "present"
+      },
+      {
+        "name": "vikidia.en",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.en",
+        "status": "present"
+      },
+      {
+        "name": "gutenberg.en",
+        "status": "present"
+      },
+      {
+        "name": "Audacity manual",
+        "status": "present"
+      },
+      {
+        "name": "twentyfourhoursinanewsroom",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-aut-wilcannia": {
     "kolibri": {
       "activated": true,
