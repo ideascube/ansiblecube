@@ -35956,7 +35956,7 @@
         "status": "present"
       },
       {
-        "name": "ecoute-tes-emotions-enfants-ados-fr",
+        "name": "recommendation-utiliser-les-paquets-936-et-700-a-la-place-fr",
         "status": "present"
       },
       {
@@ -35976,19 +35976,7 @@
         "status": "present"
       },
       {
-        "name": "la-sante-enfants-ado-fr",
-        "status": "present"
-      },
-      {
-        "name": "sommeil-enfants-fr",
-        "status": "present"
-      },
-      {
         "name": "ebook-enfants-libres-de-droit-fr",
-        "status": "present"
-      },
-      {
-        "name": "diy-travaux-manuels-fr",
         "status": "present"
       },
       {
@@ -36012,7 +36000,7 @@
         "status": "present"
       },
       {
-        "name": "learn-english-children-bn",
+        "name": "learn-english-children-en",
         "status": "present"
       },
       {
@@ -36040,6 +36028,10 @@
         "status": "present"
       },
       {
+        "name": "nursery-rhymes-en",
+        "status": "present"
+      },
+      {
         "name": "comptines-fr",
         "status": "present"
       },
@@ -36057,6 +36049,42 @@
       },
       {
         "name": "citoyennete-et-politique-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "la-sante-expliquee-aux-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "origami-pop-up-fr",
+        "status": "present"
+      },
+      {
+        "name": "ateliers-manuels-pour-les-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "engagement-et-paix-les-grands-personnages-fr",
+        "status": "present"
+      },
+      {
+        "name": "creer-des-bandes-dessinees-fr",
+        "status": "present"
+      },
+      {
+        "name": "le-carnaval-tradition-en-guyane-et-ailleurs-fr",
+        "status": "present"
+      },
+      {
+        "name": "l-esclavage-dans-les-caraibes-fr",
+        "status": "present"
+      },
+      {
+        "name": "portraits-et-autoportraits-fr",
+        "status": "present"
+      },
+      {
+        "name": "s-entrainer-aux-inferences-en-lecture-fr",
         "status": "present"
       },
       {
