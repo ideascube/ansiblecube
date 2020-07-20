@@ -24105,6 +24105,34 @@
       "activated": true
     }
   },
+  "idc-bsf-test-cate": {
+    "kolibri": {
+      "activated": false,
+      "language": [],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "contes-et-dessins-animes-fr",
+        "status": "present"
+      },
+      {
+        "name": "entertainment-silent-movies-411",
+        "status": "present"
+      },
+      {
+        "name": "portraits-de-guyanais-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-animaux-de-la-guyane-fr",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-bsf-test2": {
     "kolibri": {
       "activated": false,
