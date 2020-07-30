@@ -24241,6 +24241,34 @@
       "activated": true
     }
   },
+  "idc-bsf-testolip": {
+    "kolibri": {
+      "activated": false,
+      "language": [],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "connaitre-et-aimer-son-corps-fr",
+        "status": "present"
+      },
+      {
+        "name": "hygiene-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "digital-literacy-lessons-in-burmese-mm",
+        "status": "present"
+      },
+      {
+        "name": "category-fix-education-fr",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-bsf-tmtest": {
     "kolibri": {
       "activated": true,
