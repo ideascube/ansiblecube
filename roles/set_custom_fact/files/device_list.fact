@@ -24133,6 +24133,22 @@
       "activated": true
     }
   },
+  "idc-bsf-test-zim-": {
+    "kolibri": {
+      "activated": false,
+      "language": [],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "astrolabe.fr",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-bsf-test2": {
     "kolibri": {
       "activated": false,
