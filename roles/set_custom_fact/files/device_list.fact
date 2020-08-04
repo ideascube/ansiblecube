@@ -24392,14 +24392,82 @@
     "kolibri": {
       "activated": true,
       "language": [
-        "sw",
-        "fr"
+        "fr",
+        "sw"
       ],
       "version": "0.10.3"
     },
     "package_management": [
       {
+        "name": "montez-votre-projet-professionnel-fr",
+        "status": "present"
+      },
+      {
+        "name": "arts-plastiques-fr",
+        "status": "present"
+      },
+      {
         "name": "initiez-vous-a-la-photographie-fr",
+        "status": "present"
+      },
+      {
+        "name": "initiez-vous-a-la-creation-video-fr",
+        "status": "present"
+      },
+      {
+        "name": "management-fr",
+        "status": "present"
+      },
+      {
+        "name": "marketing-fr",
+        "status": "present"
+      },
+      {
+        "name": "innovation-en-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "creation-d-entreprise-fr",
+        "status": "present"
+      },
+      {
+        "name": "films-fr",
+        "status": "present"
+      },
+      {
+        "name": "jardinage-et-agriculture-fr",
+        "status": "present"
+      },
+      {
+        "name": "droits-de-l-enfant-fr",
+        "status": "present"
+      },
+      {
+        "name": "contes-et-dessins-animes-fr",
+        "status": "present"
+      },
+      {
+        "name": "comprendre-la-nature-qui-nous-entoure-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-adults-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-teenagers-en",
+        "status": "present"
+      },
+      {
+        "name": "experiences-de-femmes-fr",
+        "status": "present"
+      },
+      {
+        "name": "introduction-a-la-biologie-et-a-la-chimie-fr",
+        "status": "present"
+      },
+      {
+        "name": "protegeons-la-planete-enfants-ados-fr",
         "status": "present"
       },
       {
@@ -24407,11 +24475,71 @@
         "status": "present"
       },
       {
-        "name": "alcool-drogues-fr",
+        "name": "dessins-animes-pour-enfants-en-swahili-sw",
         "status": "present"
       },
       {
-        "name": "films-et-videos-libres-de-droit-fr",
+        "name": "l-afrique-en-marche-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "eco-d-ici-eco-d-ailleurs-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "introduction-a-l-electricite-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-utiliser-des-patrons-en-couture-fr",
+        "status": "present"
+      },
+      {
+        "name": "electricite-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "mecanique-automobile-enabel-fr",
+        "status": "present"
+      },
+      {
+        "name": "transformation-agro-alimentaire-fr",
+        "status": "present"
+      },
+      {
+        "name": "couture-fr",
+        "status": "present"
+      },
+      {
+        "name": "menuiserie-enabel-fr",
+        "status": "present"
+      },
+      {
+        "name": "soudure-fr",
+        "status": "present"
+      },
+      {
+        "name": "plomberie-fr",
+        "status": "present"
+      },
+      {
+        "name": "maconnerie-fr",
+        "status": "present"
+      },
+      {
+        "name": "agriculture-generale-fr",
+        "status": "present"
+      },
+      {
+        "name": "fabriquer-des-meubles-avec-des-palettes-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "culture-numerique-fr",
+        "status": "present"
+      },
+      {
+        "name": "s-informer-sur-internet-fr",
         "status": "present"
       },
       {
@@ -24419,7 +24547,15 @@
         "status": "present"
       },
       {
-        "name": "violences-sexuelles-sur-adultes-fr",
+        "name": "apprendre-a-programmer-en-java-fr",
+        "status": "present"
+      },
+      {
+        "name": "introduction-aux-mathematiques-fr",
+        "status": "present"
+      },
+      {
+        "name": "comprendre-le-rechauffement-climatique-fr",
         "status": "present"
       },
       {
@@ -24551,14 +24687,6 @@
         "status": "present"
       },
       {
-        "name": "bien-se-nourrir-enfants-paquet-redecoupe-voir-paquets-888-889-et-890-fr",
-        "status": "present"
-      },
-      {
-        "name": "fiches-d-activites-autour-de-la-sante-animation-gl-fr",
-        "status": "present"
-      },
-      {
         "name": "administration-gestion-comptabilite-gutunganya-ubutunzi-gl-fr",
         "status": "present"
       },
@@ -24607,15 +24735,103 @@
         "status": "present"
       },
       {
+        "name": "patrons-pour-coudre-des-vetements-pour-enfants-2-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-l-antiquite-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-moyen-age-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-epoque-moderne-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-epoque-contemporaine-revolution-fr-a-associe-avec-877-et-878-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-epoque-contemporaine-guerres-mondiales-a-associe-avec-876-et-878-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-epoque-contemporaine-general-a-associe-avec-876-et-877-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-cuisiner-les-desserts-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-cuisiner-plats-du-monde-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-cuisiner-les-legumes-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-cuisiner-les-basiques-recettes-et-techniques-fr",
+        "status": "present"
+      },
+      {
+        "name": "aphabetisation-la-methode-abc-fr",
+        "status": "present"
+      },
+      {
+        "name": "aphabetisation-la-methode-def-fr",
+        "status": "present"
+      },
+      {
+        "name": "aphabetisation-ressources-pedagogique-associer-avec-883-fr",
+        "status": "present"
+      },
+      {
+        "name": "decouverte-des-aliments-pour-les-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "decouverte-des-fruits-pour-les-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "decouverte-des-legumes-pour-les-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "recettes-de-cuisine-pour-les-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "origami-pop-up-fr",
+        "status": "present"
+      },
+      {
+        "name": "ateliers-manuels-pour-les-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "creer-des-bandes-dessinees-fr",
+        "status": "present"
+      },
+      {
+        "name": "pratiquer-la-communication-non-violente-fr",
+        "status": "present"
+      },
+      {
         "name": "alcool-drogues-ingaruka-mbi-zokunwa-inzoga-nibiyayuramutwe-rn",
         "status": "present"
       },
       {
-        "name": "wikipedia.fr",
+        "name": "engagement-et-paix-les-grands-personnages-new-fr",
         "status": "present"
       },
       {
-        "name": "wiktionary.fr",
+        "name": "tutoriels-de-coiffure-pour-differents-types-de-cheveux-fr",
         "status": "present"
       },
       {
@@ -24623,19 +24839,11 @@
         "status": "present"
       },
       {
-        "name": "wiktionary.sw",
+        "name": "dirtybiology.fr",
         "status": "present"
       },
       {
-        "name": "wikipedia.rn",
-        "status": "present"
-      },
-      {
-        "name": "wikipedia.sw",
-        "status": "present"
-      },
-      {
-        "name": "films-pour-enfants.fr",
+        "name": "wikipedia.fr",
         "status": "present"
       }
     ],
