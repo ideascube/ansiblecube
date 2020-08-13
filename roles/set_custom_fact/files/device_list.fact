@@ -24903,6 +24903,22 @@
       "activated": true
     }
   },
+  "idc-bsf-test-zip2": {
+    "kolibri": {
+      "activated": false,
+      "language": [],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "test-archive-zip-fr",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-bsf-test2": {
     "kolibri": {
       "activated": false,
