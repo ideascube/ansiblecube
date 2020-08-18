@@ -24857,7 +24857,32 @@
       "language": [],
       "version": "0.10.3"
     },
-    "package_management": [],
+    "package_management": [
+      {
+        "name": "astrolabe.fr",
+        "status": "present"
+      },
+      {
+        "name": "ubongo.fr",
+        "status": "present"
+      },
+      {
+        "name": "maths-et-tiques.fr",
+        "status": "present"
+      },
+      {
+        "name": "mondial-tissus.fr",
+        "status": "present"
+      },
+      {
+        "name": "micmaths.fr",
+        "status": "present"
+      },
+      {
+        "name": "nota-bene.fr",
+        "status": "present"
+      }
+    ],
     "portal": {
       "activated": true
     }
