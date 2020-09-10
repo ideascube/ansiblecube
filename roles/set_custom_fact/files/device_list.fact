@@ -21339,11 +21339,7 @@
         "status": "present"
       },
       {
-        "name": "moyens-de-contraception-fr",
-        "status": "present"
-      },
-      {
-        "name": "alcool-drogues-fr",
+        "name": "les-moyens-de-contraception-pour-moi-pour-nous-fr",
         "status": "present"
       },
       {
@@ -21352,10 +21348,6 @@
       },
       {
         "name": "denis-mukwege-fr",
-        "status": "present"
-      },
-      {
-        "name": "violences-sexuelles-sur-adultes-fr",
         "status": "present"
       },
       {
@@ -21408,10 +21400,6 @@
       },
       {
         "name": "le-harcelement-ihohoterwa-gl-fr",
-        "status": "present"
-      },
-      {
-        "name": "les-bases-de-l-informatique-gl-fr",
         "status": "present"
       },
       {
@@ -21475,10 +21463,6 @@
         "status": "present"
       },
       {
-        "name": "les-dangers-de-la-consommation-d-alcool-et-de-stupe-fiants-gl-rn",
-        "status": "present"
-      },
-      {
         "name": "prevention-et-sexualite-gl-fr",
         "status": "present"
       },
@@ -21487,7 +21471,7 @@
         "status": "present"
       },
       {
-        "name": "bien-se-nourrir-enfants-gufungura-neza-kubana-gl-fr",
+        "name": "bien-se-nourrir-enfants-paquet-redecoupe-voir-paquets-888-889-et-890-fr",
         "status": "present"
       },
       {
@@ -21540,6 +21524,14 @@
       },
       {
         "name": "films-d-animation-muets-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-dangers-de-l-alcool-et-des-drogues-ingaruka-mbi-zokunwa-inzoga-nibiyayuramutwe-rn",
+        "status": "present"
+      },
+      {
+        "name": "informatique-les-bases-pour-commencer-fr",
         "status": "present"
       },
       {
