@@ -23869,6 +23869,22 @@
       "activated": true
     }
   },
+  "idc-bsf-echap": {
+    "kolibri": {
+      "activated": false,
+      "language": [],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "dance-bangla-bn",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-bsf-kajoupshft": {
     "kolibri": {
       "activated": false,
