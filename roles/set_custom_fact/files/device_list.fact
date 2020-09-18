@@ -17639,10 +17639,6 @@
         "status": "present"
       },
       {
-        "name": "cartoons-en",
-        "status": "present"
-      },
-      {
         "name": "introduction-to-the-history-of-the-world-en",
         "status": "present"
       },
@@ -17679,11 +17675,11 @@
         "status": "present"
       },
       {
-        "name": "health-and-hygiene-en",
+        "name": "drawing-colouring-en",
         "status": "present"
       },
       {
-        "name": "drawing-colouring-en",
+        "name": "let-s-talk-about-sexuality-teenagers-en",
         "status": "present"
       },
       {
@@ -17739,7 +17735,7 @@
         "status": "present"
       },
       {
-        "name": "learn-english-children-bn",
+        "name": "learn-english-children-en",
         "status": "present"
       },
       {
@@ -17796,10 +17792,6 @@
       },
       {
         "name": "menstrual-hygiene-adults-en",
-        "status": "present"
-      },
-      {
-        "name": "let-s-talk-about-sexuality-adults-en",
         "status": "present"
       },
       {
@@ -17867,7 +17859,7 @@
         "status": "present"
       },
       {
-        "name": "Audacity manual",
+        "name": "audacity-manual.en",
         "status": "present"
       },
       {
