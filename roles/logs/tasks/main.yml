@@ -3,7 +3,7 @@
   file:
     path: "{{ bsf_log_folder }}"
     owner: "{{ username }}"
-    group: adm
+    group: root
     mode: 0775
     state: directory
   tags: ['custom','update']
