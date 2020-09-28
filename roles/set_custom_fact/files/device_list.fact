@@ -3968,6 +3968,22 @@
       "activated": true
     }
   },
+  "idb-bsf-coxbazar": {
+    "kolibri": {
+      "activated": false,
+      "language": [],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "how-to-write-in-a-professional-context-en",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idb-bsf-demoserver": {
     "kolibri": {
       "activated": "True",
