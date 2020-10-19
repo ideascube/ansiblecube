@@ -29861,6 +29861,10 @@
         "status": "present"
       },
       {
+        "name": "pisciculture-fr",
+        "status": "present"
+      },
+      {
         "name": "informatique-word-cours-niveau-2-operationnel-fr",
         "status": "present"
       },
@@ -29898,6 +29902,10 @@
       },
       {
         "name": "nota-bene.fr",
+        "status": "present"
+      },
+      {
+        "name": "bouquineux.fr",
         "status": "present"
       }
     ],
