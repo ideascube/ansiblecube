@@ -23385,6 +23385,248 @@
       "activated": true
     }
   },
+  "idc-bsf-enabeldemo": {
+    "kolibri": {
+      "activated": true,
+      "language": [
+        "fr"
+      ],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "apprendre-a-donner-les-premiers-secours-fr",
+        "status": "present"
+      },
+      {
+        "name": "hygiene-de-base-af-fr",
+        "status": "present"
+      },
+      {
+        "name": "menuiserie-tutoriels-videos-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "transformation-agro-alimentaire-en-afrique-reportages-fr",
+        "status": "present"
+      },
+      {
+        "name": "pedagogie-scolaire-fr",
+        "status": "present"
+      },
+      {
+        "name": "couture-fr",
+        "status": "present"
+      },
+      {
+        "name": "maconnerie-guides-et-tutoriels-videos-fr",
+        "status": "present"
+      },
+      {
+        "name": "ecologie-et-developpement-durable-fr",
+        "status": "present"
+      },
+      {
+        "name": "internet-les-autres-et-moi-les-bons-usages-fr",
+        "status": "present"
+      },
+      {
+        "name": "education-financiere-fr",
+        "status": "present"
+      },
+      {
+        "name": "sensibiliser-aux-violences-base-es-sur-le-genre-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-cuisiner-les-basiques-recettes-et-techniques-fr",
+        "status": "present"
+      },
+      {
+        "name": "pratiquer-la-communication-non-violente-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-effets-et-les-dangers-de-la-consommation-d-alcool-et-de-drogues-fr",
+        "status": "present"
+      },
+      {
+        "name": "engagement-et-paix-les-grands-personnages-new-fr",
+        "status": "present"
+      },
+      {
+        "name": "modules-video-formation-continue-des-enseignants-du-primaire-1ere-annee-fr",
+        "status": "present"
+      },
+      {
+        "name": "modules-video-formation-continue-des-enseignants-du-primaire-2eme-annee-fr",
+        "status": "present"
+      },
+      {
+        "name": "modules-video-formation-continue-des-enseignants-du-primaire-3eme-annee-fr",
+        "status": "present"
+      },
+      {
+        "name": "la-forge-blacksmithing-tutoriels-videos-en",
+        "status": "present"
+      },
+      {
+        "name": "jifunze-kiswahili-teach-yourself-kiswahili-e-books-sw",
+        "status": "present"
+      },
+      {
+        "name": "kitabu-watoto-children-s-books-sw",
+        "status": "present"
+      },
+      {
+        "name": "plomberie-tutoriels-videos-et-documentation-fr",
+        "status": "present"
+      },
+      {
+        "name": "focus-covid-l-essentiel-des-connaissances-fr",
+        "status": "present"
+      },
+      {
+        "name": "cps-et-bien-etre-supports-libres-fr",
+        "status": "present"
+      },
+      {
+        "name": "cps-et-bien-etre-outils-cles-en-main-fr",
+        "status": "present"
+      },
+      {
+        "name": "cps-et-bien-etre-fiches-activites-fr",
+        "status": "present"
+      },
+      {
+        "name": "cps-et-bien-etre-l-essentiel-des-connaissances-fr",
+        "status": "present"
+      },
+      {
+        "name": "agriculture-ressources-pedagogiques-pour-l-enseignant-rdc-fr",
+        "status": "present"
+      },
+      {
+        "name": "documents-reflexifs-sur-l-enseignement-et-l-education-en-rdc-fr",
+        "status": "present"
+      },
+      {
+        "name": "programmes-et-manuels-en-approche-par-competences-de-l-etfp-rdc-fr",
+        "status": "present"
+      },
+      {
+        "name": "programmes-nationaux-des-disciplines-des-filie-res-techniques-rdc-fr",
+        "status": "present"
+      },
+      {
+        "name": "outils-pe-dagogiques-du-formateur-rdc-fr",
+        "status": "present"
+      },
+      {
+        "name": "programmes-et-guides-nationaux-des-disciplines-scolaires-maternelle-et-primaire-rdc-fr",
+        "status": "present"
+      },
+      {
+        "name": "programmes-et-guides-nationaux-des-disciplines-scolaires-secondaire-rdc-fr",
+        "status": "present"
+      },
+      {
+        "name": "agribusiness-et-entreprenariat-en-afrique-reportages-fr",
+        "status": "present"
+      },
+      {
+        "name": "agriculture-cultiver-les-cereales-ble-mais-riz-sorgho-fr",
+        "status": "present"
+      },
+      {
+        "name": "agriculture-gestion-des-ravageurs-et-maladies-des-cultures-fr",
+        "status": "present"
+      },
+      {
+        "name": "agriculture-gestion-durable-des-terres-fr",
+        "status": "present"
+      },
+      {
+        "name": "agriculture-cultiver-les-fruits-et-les-graines-cafe-sesame-fr",
+        "status": "present"
+      },
+      {
+        "name": "agriculture-cultiver-les-legumes-et-legumineuses-fr",
+        "status": "present"
+      },
+      {
+        "name": "agriculture-cultiver-les-racines-et-les-tubercules-fr",
+        "status": "present"
+      },
+      {
+        "name": "conferences-autour-du-developpement-durable-et-de-l-ecologie-fr",
+        "status": "present"
+      },
+      {
+        "name": "couture-debutant-tutoriels-videos-et-guides-fr",
+        "status": "present"
+      },
+      {
+        "name": "couture-wax-tutoriels-video-patron-et-realisation-fr",
+        "status": "present"
+      },
+      {
+        "name": "cuisine-recettes-congolaises-en-lingala-tutoriels-videos-ln",
+        "status": "present"
+      },
+      {
+        "name": "agriculture-transformation-agro-alimentaire-fr",
+        "status": "present"
+      },
+      {
+        "name": "elevage-sante-animale-fr",
+        "status": "present"
+      },
+      {
+        "name": "elevage-elever-des-animaux-vaches-chevres-poulets-porcs-lapins-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-excel-cours-niveau-1-basique-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-excel-cours-niveau-2-operationnel-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-les-bases-pour-commencer-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-word-cours-niveau-1-basique-fr",
+        "status": "present"
+      },
+      {
+        "name": "mecanique-automobile-tutoriels-videos-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-word-cours-niveau-2-operationnel-fr",
+        "status": "present"
+      },
+      {
+        "name": "connaitre-et-se-proteger-des-maladies-courantes-et-endemiques-fr-fr",
+        "status": "present"
+      },
+      {
+        "name": "mondial-tissus.fr",
+        "status": "present"
+      },
+      {
+        "name": "biologie-tout-compris.fr",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-bsf-formation": {
     "kolibri": {
       "activated": false,
