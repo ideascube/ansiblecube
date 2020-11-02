@@ -40,7 +40,7 @@
   notify: Reboot device
   when: pkg_kernel_version | version_compare('5.23', '<')
     and ansible_kernel | version_compare('4.11.0', '<')
-  tags: ['custom','update']
+  tags: ['custom']
 
 - name: Add pinning for linux-u-boot-lime2-next package == DOT NOT UPGRADE THIS PACKAGE
   copy: src=u-boot.apt-pin dest=/etc/apt/preferences.d/u-boot

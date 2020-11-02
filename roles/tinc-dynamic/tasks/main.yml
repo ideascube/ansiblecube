@@ -58,7 +58,7 @@
   with_items:
   - tinc
   - rsync
-  tags: ['custom','update']
+  tags: ['custom']
 
 - name: ensure tinc vpn name directory exists
   file: >

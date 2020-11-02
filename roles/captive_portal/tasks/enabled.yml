@@ -4,7 +4,7 @@
   with_items:
     - conntrack
     - uwsgi-plugin-python
-  tags: ['custom', 'update']
+  tags: ['custom']
 
 - name: Create /var/www/captiveportal folder
   file:

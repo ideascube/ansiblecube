@@ -21,7 +21,7 @@
   apt: 
     update_cache: yes 
     cache_valid_time: 28800
-  tags: ['master','custom','update']
+  tags: ['master','custom']
 
 - name: Fix broken package
   shell: dpkg --configure -a
@@ -46,7 +46,7 @@
    - apt-listchanges
    - clipit
    - sslh
-  tags: ['master','update']
+  tags: ['master']
 
 - name: Install all required package
   apt: name={{ item }} state=latest
@@ -87,7 +87,7 @@
    - iotop
    - anacron
    - rsync
-  tags: ['master','custom','update']
+  tags: ['master','custom']
 
 - name: Install avahi packages
   apt: name={{ item }} state=latest
@@ -95,7 +95,7 @@
    - avahi-daemon
    - libnss-mdns
    - avahi-utils
-  tags: ['custom','update']
+  tags: ['custom']
 
 - name: Upgrade pip to the latest version
   pip: name=pip version=9.0.1
