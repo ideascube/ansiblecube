@@ -1,21 +1,21 @@
 language: python
 python:
-  - "2.7"
+- '2.7'
 sudo: false
 branches:
   only:
-    - master
-    - oneUpdateFile
+  - master
+  - oneUpdateFile
 install:
 - pip install -r tests/requirements-dev.txt
 script:
 - py.test
 notifications:
-    irc:
-        channels:
-            - "irc.freenode.net#ideascube"
-        on_success: change
-        on_failure: always
-    email: false
-    slack:
-      secure: VgJr9H3x+6S020TZergsk4M5Qb5cLg9jArNABLYVQeDgD66ng4UisrZaz7nFwyD6bXgm/58Tt+94ZDDHWKFAcEdEsoBnH9lT49vdFG81TgegUfNV0+NXcb2n9n6dKOdzMfCgs2cxLPsC8HgIZYSyqS4UjDUE2pH5Ihpo/ujCUUCP5Trk//G6uOZ66m6EKYltbXFN5HiHTDe/+jy90oLh1ADWdW7Ja7THTob2t8WZgzyfsyyzDF3APqRSaDRlaXZ87/gcvUEoNt3ce+tafizk1t6ZdQ3BMPEU1vVR9SPjjYj6vAp4AvXqORj0ack1o2lPSi/MOTPoCuM7DzfLYGs5ZRA6Fwnig22UzH9qe8ofI/hc9nXLVFp/SkvrSM8P704FJDHlSZ18tiD+vwmQJ0vihsY6Mp78FsX7dYM28a/1bFyAhtTJ3E6GlB9bsPdUO33yEaJ9bg6vezcZX3HlA+XmQR0GtWsv1zr+NqkPOB40sq+TPpQZ61KvmupHGEi0AKrObzGv8WY3SiQTm3kJfbf23rgQPOA1bOut7Z4ELmIj87SyYBZ5VgNxoj880OsPD11n5Ev5YhbPNNA5ya7ohgZhqK11A97x3ZGl9YTD+qvb3aYRj+0dQW+GR6GXmSTgzF9iUkNnHaCQm1j2wPNMA0dFps8iFPItJuqMQD/fDo7ZmlU=
+  irc:
+    channels:
+    - irc.freenode.net#ideascube
+    on_success: change
+    on_failure: always
+  email: false
+  slack:
+    secure: VgJr9H3x+6S020TZergsk4M5Qb5cLg9jArNABLYVQeDgD66ng4UisrZaz7nFwyD6bXgm/58Tt+94ZDDHWKFAcEdEsoBnH9lT49vdFG81TgegUfNV0+NXcb2n9n6dKOdzMfCgs2cxLPsC8HgIZYSyqS4UjDUE2pH5Ihpo/ujCUUCP5Trk//G6uOZ66m6EKYltbXFN5HiHTDe/+jy90oLh1ADWdW7Ja7THTob2t8WZgzyfsyyzDF3APqRSaDRlaXZ87/gcvUEoNt3ce+tafizk1t6ZdQ3BMPEU1vVR9SPjjYj6vAp4AvXqORj0ack1o2lPSi/MOTPoCuM7DzfLYGs5ZRA6Fwnig22UzH9qe8ofI/hc9nXLVFp/SkvrSM8P704FJDHlSZ18tiD+vwmQJ0vihsY6Mp78FsX7dYM28a/1bFyAhtTJ3E6GlB9bsPdUO33yEaJ9bg6vezcZX3HlA+XmQR0GtWsv1zr+NqkPOB40sq+TPpQZ61KvmupHGEi0AKrObzGv8WY3SiQTm3kJfbf23rgQPOA1bOut7Z4ELmIj87SyYBZ5VgNxoj880OsPD11n5Ev5YhbPNNA5ya7ohgZhqK11A97x3ZGl9YTD+qvb3aYRj+0dQW+GR6GXmSTgzF9iUkNnHaCQm1j2wPNMA0dFps8iFPItJuqMQD/fDo7ZmlU=
