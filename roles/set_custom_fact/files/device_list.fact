@@ -61367,12 +61367,12 @@
     }
   },
   "kb-mdg-faf": {
-    "kalite": {
-      "activated": "True",
+    "kolibri": {
+      "activated": true,
       "language": [
         "fr"
       ],
-      "version": "0.16.9"
+      "version": "0.10.3"
     },
     "package_management": [
       {
