@@ -61367,12 +61367,12 @@
     }
   },
   "kb-mdg-faf": {
-    "kalite": {
-      "activated": "True",
+    "kolibri": {
+      "activated": true,
       "language": [
         "fr"
       ],
-      "version": "0.16.9"
+      "version": "0.10.3"
     },
     "package_management": [
       {
@@ -61384,11 +61384,15 @@
         "status": "present"
       },
       {
-        "name": "montez-votre-projet-professionnel-fr",
+        "name": "connaitre-et-aimer-son-corps-fr",
         "status": "present"
       },
       {
-        "name": "apprenez-le-code-informatique-fr",
+        "name": "apprenez-le-francais-fr",
+        "status": "present"
+      },
+      {
+        "name": "montez-votre-projet-professionnel-fr",
         "status": "present"
       },
       {
@@ -61397,6 +61401,14 @@
       },
       {
         "name": "initiez-vous-a-la-photographie-fr",
+        "status": "present"
+      },
+      {
+        "name": "initiez-vous-a-la-creation-video-fr",
+        "status": "present"
+      },
+      {
+        "name": "bien-etre-et-communication-au-travail-fr",
         "status": "present"
       },
       {
@@ -61436,7 +61448,15 @@
         "status": "present"
       },
       {
+        "name": "prevention-et-sexualite-fr",
+        "status": "present"
+      },
+      {
         "name": "histoire-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "droits-de-l-enfant-fr",
         "status": "present"
       },
       {
@@ -61452,7 +61472,15 @@
         "status": "present"
       },
       {
+        "name": "hygiene-enfants-ados-fr",
+        "status": "present"
+      },
+      {
         "name": "ebooks-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-donner-les-premiers-secours-fr",
         "status": "present"
       },
       {
@@ -61464,15 +61492,51 @@
         "status": "present"
       },
       {
+        "name": "hygiene-de-base-af-fr",
+        "status": "present"
+      },
+      {
         "name": "ecriture-et-litterature-fr",
         "status": "present"
       },
       {
-        "name": "nutrition-fr",
+        "name": "biologie-adolescents-fr",
+        "status": "present"
+      },
+      {
+        "name": "comprendre-la-nature-qui-nous-entoure-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-adults-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-teenagers-en",
+        "status": "present"
+      },
+      {
+        "name": "biologie-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "nutrition-bien-se-nourrir-fr",
         "status": "present"
       },
       {
         "name": "apprends-le-francais-a1-enfants-adolescents-fr",
+        "status": "present"
+      },
+      {
+        "name": "experiences-de-femmes-fr",
+        "status": "present"
+      },
+      {
+        "name": "economie-et-developpement-durable-fr",
+        "status": "present"
+      },
+      {
+        "name": "economie-et-mondialisation-fr",
         "status": "present"
       },
       {
@@ -61481,6 +61545,14 @@
       },
       {
         "name": "utilisez-internet-en-toute-securite-fr",
+        "status": "present"
+      },
+      {
+        "name": "protegeons-la-planete-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-filles-et-les-garcons-quelles-differences-fr",
         "status": "present"
       },
       {
@@ -61512,7 +61584,411 @@
         "status": "present"
       },
       {
-        "name": "histoire-occidentale-fr",
+        "name": "creation-d-association-fr",
+        "status": "present"
+      },
+      {
+        "name": "premiers-secours-enfants-adolescents-fr",
+        "status": "present"
+      },
+      {
+        "name": "risques-numeriques-fr",
+        "status": "present"
+      },
+      {
+        "name": "musique-libre-de-droit-en",
+        "status": "present"
+      },
+      {
+        "name": "ebook-enfants-libres-de-droit-fr",
+        "status": "present"
+      },
+      {
+        "name": "fiches-creativite-libre-de-droit-fr",
+        "status": "present"
+      },
+      {
+        "name": "films-et-videos-libres-de-droit-fr",
+        "status": "present"
+      },
+      {
+        "name": "l-afrique-en-marche-emission-d-actualites-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "c-est-pas-du-vent-emission-sur-l-ecologie-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "memoire-d-un-continent-emission-sur-le-patrimoine-africain-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "si-loin-si-proche-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "eco-d-ici-eco-d-ailleurs-emission-d-economie-en-afrique-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "musiques-du-monde-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-tutoriels-pour-utiliser-des-logiciels-fr",
+        "status": "present"
+      },
+      {
+        "name": "transformation-agro-alimentaire-en-afrique-reportages-fr",
+        "status": "present"
+      },
+      {
+        "name": "pedagogie-scolaire-fr",
+        "status": "present"
+      },
+      {
+        "name": "couture-fr",
+        "status": "present"
+      },
+      {
+        "name": "s-informer-sur-internet-fr",
+        "status": "present"
+      },
+      {
+        "name": "programmation-et-bidouille-fr",
+        "status": "present"
+      },
+      {
+        "name": "ecologie-et-developpement-durable-fr",
+        "status": "present"
+      },
+      {
+        "name": "litterature-francophone-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "introduction-au-do-it-youself-fr",
+        "status": "present"
+      },
+      {
+        "name": "internet-les-autres-et-moi-les-bons-usages-fr",
+        "status": "present"
+      },
+      {
+        "name": "monter-un-laboratoire-d-innovation-publique-fr",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-children-en",
+        "status": "present"
+      },
+      {
+        "name": "comprendre-le-rechauffement-climatique-fr",
+        "status": "present"
+      },
+      {
+        "name": "orientation-professionnelle-fr",
+        "status": "present"
+      },
+      {
+        "name": "comptines-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-violences-sexuelles-expliquees-aux-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "economie-rurale-en-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "vivre-avec-le-vih-fr",
+        "status": "present"
+      },
+      {
+        "name": "classic-literature-in-english-en",
+        "status": "present"
+      },
+      {
+        "name": "films-d-animation-muets-fr",
+        "status": "present"
+      },
+      {
+        "name": "utilisez-internet-en-toute-securite-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "artisanat-et-recyclage-fr",
+        "status": "present"
+      },
+      {
+        "name": "la-sante-expliquee-aux-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "sensibiliser-aux-violences-base-es-sur-le-genre-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-generale-de-l-afrique-par-rfi-et-l-unesco-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-la-programmation-avec-java-script-a-associer-avec-473-fr",
+        "status": "present"
+      },
+      {
+        "name": "entrepreneuriat-numerique-mooc-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-l-antiquite-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-epoque-contemporaine-revolution-fr-a-associe-avec-877-et-878-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-epoque-contemporaine-guerres-mondiales-a-associe-avec-876-et-878-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-epoque-contemporaine-general-a-associe-avec-876-et-877-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-cuisiner-les-desserts-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-cuisiner-plats-du-monde-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-cuisiner-les-legumes-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-cuisiner-les-basiques-recettes-et-techniques-fr",
+        "status": "present"
+      },
+      {
+        "name": "aphabetisation-planches-d-ecriture-associer-avec-886-fr",
+        "status": "present"
+      },
+      {
+        "name": "aphabetisation-la-methode-abc-fr",
+        "status": "present"
+      },
+      {
+        "name": "aphabetisation-la-methode-def-fr",
+        "status": "present"
+      },
+      {
+        "name": "aphabetisation-ressources-pedagogique-associer-avec-883-fr",
+        "status": "present"
+      },
+      {
+        "name": "recettes-de-cuisine-pour-les-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "origami-pop-up-fr",
+        "status": "present"
+      },
+      {
+        "name": "ateliers-manuels-pour-les-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-les-fondements-des-droits-de-l-homme-fr",
+        "status": "present"
+      },
+      {
+        "name": "creer-des-bandes-dessinees-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-reconnaitre-a-comprendre-ses-emotions-associer-avec-936-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-gerer-ses-emotions-associer-avec-935-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-pour-comprendre-la-transition-energetique-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-pour-comprendre-l-energie-solaire-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-pour-comprendre-l-energie-eolienne-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-pour-comprendre-l-energie-hydraulique-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-pour-comprendre-les-energies-marines-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-pour-comprendre-la-geothermie-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-pour-comprendre-la-biomass-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-pour-comprendre-le-mix-energetique-fr",
+        "status": "present"
+      },
+      {
+        "name": "priorite-sante-focus-sur-les-femmes-et-la-maternite-associer-avec-969-fr",
+        "status": "present"
+      },
+      {
+        "name": "priorite-sante-sante-de-l-esprit-associer-avec-968-fr",
+        "status": "present"
+      },
+      {
+        "name": "priorite-sante-sante-du-corps-associer-avec-968-et-969-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-effets-et-les-dangers-de-la-consommation-d-alcool-et-de-drogues-fr",
+        "status": "present"
+      },
+      {
+        "name": "engagement-et-paix-les-grands-personnages-new-fr",
+        "status": "present"
+      },
+      {
+        "name": "cps-et-bien-etre-fiches-activites-fr",
+        "status": "present"
+      },
+      {
+        "name": "agribusiness-et-entreprenariat-en-afrique-reportages-fr",
+        "status": "present"
+      },
+      {
+        "name": "agriculture-cultiver-les-legumes-et-legumineuses-fr",
+        "status": "present"
+      },
+      {
+        "name": "conferences-autour-du-developpement-durable-et-de-l-ecologie-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-excel-cours-niveau-1-basique-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-excel-cours-niveau-2-operationnel-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-excel-cours-niveau-3-avance-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-excel-cours-niveau-4-expert-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-power-point-cours-niveau-basique-operationnel-et-avance-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-word-cours-niveau-1-basique-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-word-cours-niveau-3-avance-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-word-cours-niveau-4-expert-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-chroniques-ecologiques-du-professeur-feuillage-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-word-cours-niveau-2-operationnel-fr",
+        "status": "present"
+      },
+      {
+        "name": "le-harcelement-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "connaitre-et-se-proteger-des-maladies-courantes-et-endemiques-fr-fr",
+        "status": "present"
+      },
+      {
+        "name": "recherche-documentaire-fr",
+        "status": "present"
+      },
+      {
+        "name": "kit-d-animation-jeune-public-en-mediatheque-alliance-francaise-madagascar-fr",
+        "status": "present"
+      },
+      {
+        "name": "cartographie-et-geographie-de-madagascar-fr",
+        "status": "present"
+      },
+      {
+        "name": "magazine-vintsy-journal-malgache-d-orientation-ecologique-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-geo-fr",
+        "status": "present"
+      },
+      {
+        "name": "redaction-d-un-memoire-ou-d-un-rapport-de-stage-fr",
+        "status": "present"
+      },
+      {
+        "name": "destination-francophonie-fr",
+        "status": "present"
+      },
+      {
+        "name": "le-changement-climatique-explique-aux-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "comprendre-la-nature-qui-nous-entoure-fr",
+        "status": "present"
+      },
+      {
+        "name": "madagascar-et-environnement-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-de-madagascar-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprentissage-et-memoire-fr",
+        "status": "present"
+      },
+      {
+        "name": "gutenberg.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.fr",
         "status": "present"
       }
     ],
