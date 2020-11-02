@@ -61368,7 +61368,7 @@
   },
   "kb-mdg-faf": {
     "kalite": {
-      "activated": True,
+      "activated": "True",
       "language": [
         "fr"
       ],
