@@ -61367,8 +61367,8 @@
     }
   },
   "kb-mdg-faf": {
-    "kolibri": {
-      "activated": true,
+    "kalite": {
+      "activated": "True",
       "language": [
         "fr"
       ],
