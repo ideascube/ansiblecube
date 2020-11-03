@@ -61380,6 +61380,14 @@
         "status": "present"
       },
       {
+        "name": "nutrition-fr",
+        "status": "absent"
+      },
+      {
+        "name": "histoire-occidentale-fr",
+        "status": "absent"
+      },
+      {
         "name": "decouvrez-ou-re-decouvrez-la-cuisine-de-differents-pays-fr",
         "status": "present"
       },
@@ -62187,7 +62195,7 @@
       },
       {
         "name": "nutrition-fr",
-        "status": "present"
+        "status": "absent"
       },
       {
         "name": "creation-d-entreprise-fr",
