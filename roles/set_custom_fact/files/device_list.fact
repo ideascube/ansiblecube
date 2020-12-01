@@ -24875,6 +24875,30 @@
       "activated": true
     }
   },
+  "idc-bsf-recette": {
+    "kolibri": {
+      "activated": false,
+      "language": [],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "how-to-write-in-a-professional-context-en",
+        "status": "present"
+      },
+      {
+        "name": "mathematics-lesson-in-english-eng",
+        "status": "present"
+      },
+      {
+        "name": "test-quentin-verification-creation-paquet-ctg",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-bsf-ssr-pbas": {
     "kolibri": {
       "activated": true,
