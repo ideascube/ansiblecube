@@ -23279,6 +23279,208 @@
       "activated": true
     }
   },
+  "idc-bgd-rohcmp2e": {
+    "kolibri": {
+      "activated": true,
+      "language": [
+        "en"
+      ],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "learn-english-adults-eng",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-teenagers-eng",
+        "status": "present"
+      },
+      {
+        "name": "learn-guitar-eng",
+        "status": "present"
+      },
+      {
+        "name": "natural-disaster-in-the-rohingya-refugee-camp-rhg",
+        "status": "present"
+      },
+      {
+        "name": "health-promotion-in-rohingya-language-rhg",
+        "status": "present"
+      },
+      {
+        "name": "life-in-the-rohingya-camp-rhg",
+        "status": "present"
+      },
+      {
+        "name": "documentary-in-rohingya-rhg",
+        "status": "present"
+      },
+      {
+        "name": "children-books-in-burmese-pdf-and-audio-books-mya",
+        "status": "present"
+      },
+      {
+        "name": "discover-the-culture-of-the-world-eng",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-children-eng",
+        "status": "present"
+      },
+      {
+        "name": "animals-environement-documentary-in-english-eng",
+        "status": "present"
+      },
+      {
+        "name": "cartoons-in-burmese-rhg",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-with-the-rohingya-club-rhg",
+        "status": "present"
+      },
+      {
+        "name": "cartoons-in-hindi-hin",
+        "status": "present"
+      },
+      {
+        "name": "idb-team-in-bangaldesh-facilitation-help-ben",
+        "status": "present"
+      },
+      {
+        "name": "drawing-class-multilangue",
+        "status": "present"
+      },
+      {
+        "name": "handicraft-mya",
+        "status": "present"
+      },
+      {
+        "name": "digital-literacy-lesson-in-english-eng",
+        "status": "present"
+      },
+      {
+        "name": "digital-literacy-lessons-in-burmese-mya",
+        "status": "present"
+      },
+      {
+        "name": "health-promotion-for-mother-and-baby-mya",
+        "status": "present"
+      },
+      {
+        "name": "science-documentary-in-burmese-mya",
+        "status": "present"
+      },
+      {
+        "name": "protection-in-the-rohingya-refugee-camp-multilangue",
+        "status": "present"
+      },
+      {
+        "name": "mathematics-lesson-in-english-eng",
+        "status": "present"
+      },
+      {
+        "name": "learn-burmese-language-mya",
+        "status": "present"
+      },
+      {
+        "name": "leadership-empowerment-in-burmese-mya",
+        "status": "present"
+      },
+      {
+        "name": "health-promotion-in-burmese-mya",
+        "status": "present"
+      },
+      {
+        "name": "animals-environement-documentary-in-burmese-mya",
+        "status": "present"
+      },
+      {
+        "name": "agriculture-ecology-documentary-in-burmese-mya",
+        "status": "present"
+      },
+      {
+        "name": "sewing-embrodery-eng",
+        "status": "present"
+      },
+      {
+        "name": "psychological-support-english-rohingya-multilangue",
+        "status": "present"
+      },
+      {
+        "name": "entertainment-silent-movies-411",
+        "status": "present"
+      },
+      {
+        "name": "music-lessons-tabla-hamonium-mandoline-eng",
+        "status": "present"
+      },
+      {
+        "name": "yoga-for-women-and-children-burmese-english-multilangue",
+        "status": "present"
+      },
+      {
+        "name": "sport-football-eng",
+        "status": "present"
+      },
+      {
+        "name": "theater-mime-lessons-eng",
+        "status": "present"
+      },
+      {
+        "name": "classic-literature-in-english-eng",
+        "status": "present"
+      },
+      {
+        "name": "beauty-parlor-411",
+        "status": "present"
+      },
+      {
+        "name": "learn-to-be-an-electrician-eng",
+        "status": "present"
+      },
+      {
+        "name": "covid-19-english-eng",
+        "status": "present"
+      },
+      {
+        "name": "covid-19-burmese-mya",
+        "status": "present"
+      },
+      {
+        "name": "covid-19-rohingya-rhg",
+        "status": "present"
+      },
+      {
+        "name": "covid-19-english-bgd-eng",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.en",
+        "status": "present"
+      },
+      {
+        "name": "vikidia.en",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.ar",
+        "status": "present"
+      },
+      {
+        "name": "wikibooks.en",
+        "status": "present"
+      },
+      {
+        "name": "wikibooks.ar",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-bsf-coxbazar": {
     "kolibri": {
       "activated": false,
