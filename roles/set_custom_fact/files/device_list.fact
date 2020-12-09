@@ -25116,11 +25116,7 @@
         "status": "present"
       },
       {
-        "name": "moyens-de-contraception-fr",
-        "status": "present"
-      },
-      {
-        "name": "alcool-drogues-fr",
+        "name": "les-moyens-de-contraception-pour-moi-pour-nous-fr",
         "status": "present"
       },
       {
@@ -25129,10 +25125,6 @@
       },
       {
         "name": "denis-mukwege-fr",
-        "status": "present"
-      },
-      {
-        "name": "violences-sexuelles-sur-adultes-fr",
         "status": "present"
       },
       {
@@ -25188,11 +25180,7 @@
         "status": "present"
       },
       {
-        "name": "les-bases-de-l-informatique-gl-fr",
-        "status": "present"
-      },
-      {
-        "name": "connaitre-et-se-proteger-des-maladies-gl-fr",
+        "name": "connaitre-et-se-proteger-des-maladies-courantes-et-endemiques-gl-fr",
         "status": "present"
       },
       {
@@ -25252,10 +25240,6 @@
         "status": "present"
       },
       {
-        "name": "les-dangers-de-la-consommation-d-alcool-et-de-stupe-fiants-gl-rn",
-        "status": "present"
-      },
-      {
         "name": "prevention-et-sexualite-gl-fr",
         "status": "present"
       },
@@ -25272,7 +25256,7 @@
         "status": "present"
       },
       {
-        "name": "administration-gestion-comptabilite-gutunganya-ubutunzi-gl-fr",
+        "name": "administration-gestion-comptabilite-gutunganya-ubutunzi-gl-rn",
         "status": "present"
       },
       {
@@ -25320,7 +25304,11 @@
         "status": "present"
       },
       {
-        "name": "alcool-drogues-ingaruka-mbi-zokunwa-inzoga-nibiyayuramutwe-rn",
+        "name": "les-dangers-de-l-alcool-et-des-drogues-ingaruka-mbi-zokunwa-inzoga-nibiyayuramutwe-rn",
+        "status": "present"
+      },
+      {
+        "name": "informatique-les-bases-pour-commencer-fr",
         "status": "present"
       },
       {
