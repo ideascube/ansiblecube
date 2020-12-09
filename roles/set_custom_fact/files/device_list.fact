@@ -23571,6 +23571,686 @@
       "activated": true
     }
   },
+  "idc-bsf-drc": {
+    "kolibri": {
+      "activated": false,
+      "language": [],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "jardinage-et-agriculture-fr",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-adults-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-teenagers-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-healthcare-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-human-rights-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-children-s-rights-for-children-en",
+        "status": "present"
+      },
+      {
+        "name": "non-violent-communication-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-the-history-of-the-world-en",
+        "status": "present"
+      },
+      {
+        "name": "experiences-de-femmes-fr",
+        "status": "present"
+      },
+      {
+        "name": "kit-de-l-animateur-fr",
+        "status": "present"
+      },
+      {
+        "name": "what-visas-are-available-for-people-who-do-not-have-any-legal-papers-in-the-united-states-en",
+        "status": "present"
+      },
+      {
+        "name": "are-you-afraid-of-returning-to-your-home-country-what-is-asylum-and-how-do-you-apply-en",
+        "status": "present"
+      },
+      {
+        "name": "i-do-not-feel-safe-around-my-partner-or-my-parents-what-can-i-do-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-psychology-en",
+        "status": "present"
+      },
+      {
+        "name": "utilisez-internet-en-toute-securite-fr",
+        "status": "present"
+      },
+      {
+        "name": "learn-photography-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-to-know-and-manage-your-feelings-en",
+        "status": "present"
+      },
+      {
+        "name": "facilitator-kit-en",
+        "status": "present"
+      },
+      {
+        "name": "health-and-hygiene-en",
+        "status": "present"
+      },
+      {
+        "name": "drawing-colouring-en",
+        "status": "present"
+      },
+      {
+        "name": "yoga-en",
+        "status": "present"
+      },
+      {
+        "name": "handcraft-origami-en",
+        "status": "present"
+      },
+      {
+        "name": "fight-against-discriminations-and-live-together-en",
+        "status": "present"
+      },
+      {
+        "name": "bien-etre-comment-me-sentir-mieux-fr",
+        "status": "present"
+      },
+      {
+        "name": "women-s-experiences-en",
+        "status": "present"
+      },
+      {
+        "name": "let-s-talk-about-sexuality-teenagers-en",
+        "status": "present"
+      },
+      {
+        "name": "women-s-rights-en",
+        "status": "present"
+      },
+      {
+        "name": "les-moyens-de-contraception-pour-moi-pour-nous-fr",
+        "status": "present"
+      },
+      {
+        "name": "animated-movies-for-kids-in-swahili-ubongo-kids-sw",
+        "status": "present"
+      },
+      {
+        "name": "films-et-videos-libres-de-droit-fr",
+        "status": "present"
+      },
+      {
+        "name": "i-m-worried-my-child-is-drinking-what-can-i-do-en",
+        "status": "present"
+      },
+      {
+        "name": "if-i-m-pregnant-how-do-drugs-and-alcohol-affect-me-en",
+        "status": "present"
+      },
+      {
+        "name": "how-does-alcohol-affect-my-body-en",
+        "status": "present"
+      },
+      {
+        "name": "what-does-addiction-look-like-en",
+        "status": "present"
+      },
+      {
+        "name": "le-talisman-brise-sw-rfi-sw",
+        "status": "present"
+      },
+      {
+        "name": "musiques-du-monde-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "introduction-a-l-electricite-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "fiches-d-activites-play-international-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-tutoriels-pour-utiliser-des-logiciels-fr",
+        "status": "present"
+      },
+      {
+        "name": "yoga-for-therapy-en",
+        "status": "present"
+      },
+      {
+        "name": "preparing-for-major-disasters-and-natural-catastrophes-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-first-aid-techniques-en",
+        "status": "present"
+      },
+      {
+        "name": "electricite-les-bases-de-l-electricite-fr",
+        "status": "present"
+      },
+      {
+        "name": "menuiserie-tutoriels-videos-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "transformation-agro-alimentaire-en-afrique-reportages-fr",
+        "status": "present"
+      },
+      {
+        "name": "couture-fr",
+        "status": "present"
+      },
+      {
+        "name": "menuiserie-manuels-et-documents-fr",
+        "status": "present"
+      },
+      {
+        "name": "maconnerie-guides-et-tutoriels-videos-fr",
+        "status": "present"
+      },
+      {
+        "name": "s-informer-sur-internet-fr",
+        "status": "present"
+      },
+      {
+        "name": "self-development-managing-a-budget-en-en",
+        "status": "present"
+      },
+      {
+        "name": "refugees-and-migrants-en-en",
+        "status": "present"
+      },
+      {
+        "name": "denis-mukwege-fr",
+        "status": "present"
+      },
+      {
+        "name": "internet-les-autres-et-moi-les-bons-usages-fr",
+        "status": "present"
+      },
+      {
+        "name": "women-and-girls-empowerment-en",
+        "status": "present"
+      },
+      {
+        "name": "history-africa-en",
+        "status": "present"
+      },
+      {
+        "name": "discover-the-culture-of-the-world-en",
+        "status": "present"
+      },
+      {
+        "name": "citizenship-democracy-and-peace-en",
+        "status": "present"
+      },
+      {
+        "name": "science-documentary-in-english-en",
+        "status": "present"
+      },
+      {
+        "name": "geography-discovery-en",
+        "status": "present"
+      },
+      {
+        "name": "creativity-multi-languages-en",
+        "status": "present"
+      },
+      {
+        "name": "community-harmony-english-en",
+        "status": "present"
+      },
+      {
+        "name": "wash-promotion-english-en",
+        "status": "present"
+      },
+      {
+        "name": "parenthood-en",
+        "status": "present"
+      },
+      {
+        "name": "sgbv-en",
+        "status": "present"
+      },
+      {
+        "name": "getting-to-know-your-body-en",
+        "status": "present"
+      },
+      {
+        "name": "digital-literacy-lesson-in-english-en",
+        "status": "present"
+      },
+      {
+        "name": "entrepreneurship-en",
+        "status": "present"
+      },
+      {
+        "name": "demander-l-asile-en-france-fr",
+        "status": "present"
+      },
+      {
+        "name": "cinema-film-editing-en",
+        "status": "present"
+      },
+      {
+        "name": "developpement-personnel-podcast-changer-ma-vie-fr",
+        "status": "present"
+      },
+      {
+        "name": "children-s-trauma-en",
+        "status": "present"
+      },
+      {
+        "name": "histoire-de-l-art-fr",
+        "status": "present"
+      },
+      {
+        "name": "competences-de-vie-courante-gl-rn",
+        "status": "present"
+      },
+      {
+        "name": "comprendre-et-exprimer-ses-emotions-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "feuilleton-ninde-rtnb-rn",
+        "status": "present"
+      },
+      {
+        "name": "le-monde-commence-par-moi-ihinduka-ry-inyifato-y-abantu-rihera-kuri-jewe-rn",
+        "status": "present"
+      },
+      {
+        "name": "prevenons-le-paludisme-turwanye-malariya-rn",
+        "status": "present"
+      },
+      {
+        "name": "conseils-pour-la-gestion-des-relations-amoureuses-gl-rn",
+        "status": "present"
+      },
+      {
+        "name": "les-filles-et-les-garcons-quelles-differences-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "emission-agashi-igikino-agashi-rn",
+        "status": "present"
+      },
+      {
+        "name": "le-dialogue-entre-parents-et-enfants-sur-la-ssr-ikiyago-hagati-yabavyeyi-n-urwaruka-gl-rn",
+        "status": "present"
+      },
+      {
+        "name": "connaitre-et-aimer-son-corps-kumenya-no-gukunda-umubiri-wawe-fr",
+        "status": "present"
+      },
+      {
+        "name": "hygiene-de-base-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "le-harcelement-ihohoterwa-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "connaitre-et-se-proteger-des-maladies-courantes-et-endemiques-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "l-art-en-afrique-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "la-sante-de-la-femme-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "la-sante-maternelle-amagara-yabavyeyi-gl-rn",
+        "status": "present"
+      },
+      {
+        "name": "l-entreprenariat-au-burundi-gutunganya-imigambi-muburundi-fr",
+        "status": "present"
+      },
+      {
+        "name": "la-sante-sexuelle-et-reproductive-des-adolescents-et-des-jeunes-gl-rn",
+        "status": "present"
+      },
+      {
+        "name": "vivre-avec-le-vih-sida-kubana-n-umugera-wa-sida-rn",
+        "status": "present"
+      },
+      {
+        "name": "se-prote-ger-du-vih-sida-et-des-ist-kwirinda-vih-sida-n-inrwara-zifatira-mubihimba-vyirondoka-rn",
+        "status": "present"
+      },
+      {
+        "name": "les-violences-base-es-sur-le-genre-pre-vention-et-prise-en-charge-amabi-afatiye-kugitsina-rn",
+        "status": "present"
+      },
+      {
+        "name": "prevenir-les-grossesses-non-desirees-et-les-grossesses-precoces-gl-rn",
+        "status": "present"
+      },
+      {
+        "name": "l-exploitation-de-l-homme-et-de-la-femme-gl-rn",
+        "status": "present"
+      },
+      {
+        "name": "la-sante-expliquee-aux-enfants-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "prevention-et-sexualite-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "une-histoire-un-recit-collectif-yaga-inkuru-duhabwa-na-yaga-rn",
+        "status": "present"
+      },
+      {
+        "name": "administration-gestion-comptabilite-gutunganya-ubutunzi-gl-rn",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-methode-talisman-brise-twige-igifaransa-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-b2-twige-igifaransa-uregero-rwa-b2-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "biologie-enfants-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "combattons-les-discriminations-adultes-turwanye-ikumira-abakuze-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "combattons-les-disciminations-enfants-ados-turwanye-ikumira-urwaruka-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "creation-audio-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "creation-d-association-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-violences-sexuelles-expliquees-aux-enfants-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "geographie-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "theater-mime-lessons-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-to-be-an-electrician-en",
+        "status": "present"
+      },
+      {
+        "name": "films-d-animation-muets-fr",
+        "status": "present"
+      },
+      {
+        "name": "covid-19-english-en",
+        "status": "present"
+      },
+      {
+        "name": "menstrual-hygiene-teenagers-and-adults-en",
+        "status": "present"
+      },
+      {
+        "name": "let-s-talk-about-sexuality-adults-en",
+        "status": "present"
+      },
+      {
+        "name": "knowing-his-body-en",
+        "status": "present"
+      },
+      {
+        "name": "diseases-en",
+        "status": "present"
+      },
+      {
+        "name": "histoire-generale-de-l-afrique-par-rfi-et-l-unesco-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-cuisiner-les-desserts-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-cuisiner-les-legumes-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-cuisiner-les-basiques-recettes-et-techniques-fr",
+        "status": "present"
+      },
+      {
+        "name": "aphabetisation-la-methode-abc-fr",
+        "status": "present"
+      },
+      {
+        "name": "aphabetisation-la-methode-def-fr",
+        "status": "present"
+      },
+      {
+        "name": "aphabetisation-ressources-pedagogique-associer-avec-883-fr",
+        "status": "present"
+      },
+      {
+        "name": "origami-pop-up-fr",
+        "status": "present"
+      },
+      {
+        "name": "la-convention-de-geneve-fr",
+        "status": "present"
+      },
+      {
+        "name": "the-dangers-of-alcohol-and-drug-use-en",
+        "status": "present"
+      },
+      {
+        "name": "bien-vivre-ensemble-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "priorite-sante-focus-sur-les-femmes-et-la-maternite-associer-avec-969-fr",
+        "status": "present"
+      },
+      {
+        "name": "priorite-sante-sante-de-l-esprit-associer-avec-968-fr",
+        "status": "present"
+      },
+      {
+        "name": "priorite-sante-sante-du-corps-associer-avec-968-et-969-fr",
+        "status": "present"
+      },
+      {
+        "name": "carpentry-discover-hand-tools-en",
+        "status": "present"
+      },
+      {
+        "name": "carpentry-discover-electric-tools-match-with-971-en",
+        "status": "present"
+      },
+      {
+        "name": "carpentry-projects-and-advices-en",
+        "status": "present"
+      },
+      {
+        "name": "carpentry-an-introduction-to-the-field-en",
+        "status": "present"
+      },
+      {
+        "name": "communication-en",
+        "status": "present"
+      },
+      {
+        "name": "motivation-en",
+        "status": "present"
+      },
+      {
+        "name": "life-skills-en",
+        "status": "present"
+      },
+      {
+        "name": "les-dangers-de-l-alcool-et-des-drogues-ingaruka-mbi-zokunwa-inzoga-nibiyayuramutwe-rn",
+        "status": "present"
+      },
+      {
+        "name": "engagement-et-paix-les-grands-personnages-new-fr",
+        "status": "present"
+      },
+      {
+        "name": "tutoriels-de-coiffure-pour-differents-types-de-cheveux-fr",
+        "status": "present"
+      },
+      {
+        "name": "agriculture-kilimo-la-culture-des-fruits-le-gumes-cereales-e-pices-noix-e-books-sw",
+        "status": "present"
+      },
+      {
+        "name": "jifunze-kiswahili-teach-yourself-kiswahili-e-books-sw",
+        "status": "present"
+      },
+      {
+        "name": "kitabu-watoto-children-s-books-sw",
+        "status": "present"
+      },
+      {
+        "name": "plomberie-tutoriels-videos-et-documentation-fr",
+        "status": "present"
+      },
+      {
+        "name": "focus-covid-l-essentiel-des-connaissances-fr",
+        "status": "present"
+      },
+      {
+        "name": "cps-et-bien-etre-supports-libres-fr",
+        "status": "present"
+      },
+      {
+        "name": "cps-et-bien-etre-outils-cles-en-main-fr",
+        "status": "present"
+      },
+      {
+        "name": "cps-et-bien-etre-fiches-activites-fr",
+        "status": "present"
+      },
+      {
+        "name": "cps-et-bien-etre-l-essentiel-des-connaissances-fr",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-primary-school-e-books-en",
+        "status": "present"
+      },
+      {
+        "name": "agribusiness-et-entreprenariat-en-afrique-reportages-fra",
+        "status": "present"
+      },
+      {
+        "name": "agriculture-gestion-durable-des-terres-fra",
+        "status": "present"
+      },
+      {
+        "name": "couture-debutant-tutoriels-videos-et-guides-fr",
+        "status": "present"
+      },
+      {
+        "name": "couture-wax-tutoriels-video-patron-et-realisation-fr",
+        "status": "present"
+      },
+      {
+        "name": "agriculture-transformation-agro-alimentaire-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-les-bases-pour-commencer-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-debuter-avec-libre-office-fr",
+        "status": "present"
+      },
+      {
+        "name": "icirore-cacu-feuilleton-audio-sur-les-droits-des-enfants-kirundi-rn",
+        "status": "present"
+      },
+      {
+        "name": "danses-traditionnelles-et-chansons-du-burundi-gl-rn",
+        "status": "present"
+      },
+      {
+        "name": "histoire-geographie-et-culture-du-burundi-kahise-ka-uburundi-fr",
+        "status": "present"
+      },
+      {
+        "name": "musique-et-artistes-du-burundi-rn",
+        "status": "present"
+      },
+      {
+        "name": "psychological-support-english-en",
+        "status": "present"
+      },
+      {
+        "name": "ubongo.fr",
+        "status": "present"
+      },
+      {
+        "name": "mondial-tissus.fr",
+        "status": "present"
+      },
+      {
+        "name": "bouquineux.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.fr",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-bsf-echap": {
     "kolibri": {
       "activated": false,
