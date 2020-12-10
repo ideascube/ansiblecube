@@ -24267,6 +24267,514 @@
       "activated": true
     }
   },
+  "idc-bsf-ecofo-demo": {
+    "kolibri": {
+      "activated": false,
+      "language": [],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "arts-plastiques-fr",
+        "status": "present"
+      },
+      {
+        "name": "initiez-vous-a-la-photographie-fr",
+        "status": "present"
+      },
+      {
+        "name": "initiez-vous-a-la-creation-video-fr",
+        "status": "present"
+      },
+      {
+        "name": "films-fr",
+        "status": "present"
+      },
+      {
+        "name": "droits-de-l-enfant-fr",
+        "status": "present"
+      },
+      {
+        "name": "contes-et-dessins-animes-fr",
+        "status": "present"
+      },
+      {
+        "name": "arts-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "comprendre-la-nature-qui-nous-entoure-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-adults-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-teenagers-en",
+        "status": "present"
+      },
+      {
+        "name": "experiences-de-femmes-fr",
+        "status": "present"
+      },
+      {
+        "name": "economie-et-developpement-durable-fr",
+        "status": "present"
+      },
+      {
+        "name": "economie-et-mondialisation-fr",
+        "status": "present"
+      },
+      {
+        "name": "introduction-a-la-biologie-et-a-la-chimie-fr",
+        "status": "present"
+      },
+      {
+        "name": "utilisez-internet-en-toute-securite-fr",
+        "status": "present"
+      },
+      {
+        "name": "protegeons-la-planete-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-moyens-de-contraception-pour-moi-pour-nous-fr",
+        "status": "present"
+      },
+      {
+        "name": "films-et-videos-libres-de-droit-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-tutoriels-pour-utiliser-des-logiciels-fr",
+        "status": "present"
+      },
+      {
+        "name": "pedagogie-scolaire-fr",
+        "status": "present"
+      },
+      {
+        "name": "culture-numerique-fr",
+        "status": "present"
+      },
+      {
+        "name": "s-informer-sur-internet-fr",
+        "status": "present"
+      },
+      {
+        "name": "ecologie-et-developpement-durable-fr",
+        "status": "present"
+      },
+      {
+        "name": "introduction-a-la-physique-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-programmer-en-java-fr",
+        "status": "present"
+      },
+      {
+        "name": "internet-les-autres-et-moi-les-bons-usages-fr",
+        "status": "present"
+      },
+      {
+        "name": "introduction-aux-mathematiques-fr",
+        "status": "present"
+      },
+      {
+        "name": "education-financiere-fr",
+        "status": "present"
+      },
+      {
+        "name": "comprendre-le-rechauffement-climatique-fr",
+        "status": "present"
+      },
+      {
+        "name": "competences-de-vie-courante-gl-rn",
+        "status": "present"
+      },
+      {
+        "name": "comprendre-et-exprimer-ses-emotions-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "le-monde-commence-par-moi-ihinduka-ry-inyifato-y-abantu-rihera-kuri-jewe-rn",
+        "status": "present"
+      },
+      {
+        "name": "prevenons-le-paludisme-turwanye-malariya-rn",
+        "status": "present"
+      },
+      {
+        "name": "conseils-pour-la-gestion-des-relations-amoureuses-gl-rn",
+        "status": "present"
+      },
+      {
+        "name": "les-filles-et-les-garcons-quelles-differences-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "le-dialogue-entre-parents-et-enfants-sur-la-ssr-ikiyago-hagati-yabavyeyi-n-urwaruka-gl-rn",
+        "status": "present"
+      },
+      {
+        "name": "connaitre-et-aimer-son-corps-kumenya-no-gukunda-umubiri-wawe-fr",
+        "status": "present"
+      },
+      {
+        "name": "hygiene-de-base-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "le-harcelement-ihohoterwa-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "connaitre-et-se-proteger-des-maladies-courantes-et-endemiques-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-donner-les-premiers-secours-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "l-art-en-afrique-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "ecriture-et-litterature-francophone-en-afrique-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "la-sante-de-la-femme-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "la-sante-sexuelle-et-reproductive-des-adolescents-et-des-jeunes-gl-rn",
+        "status": "present"
+      },
+      {
+        "name": "se-prote-ger-du-vih-sida-et-des-ist-kwirinda-vih-sida-n-inrwara-zifatira-mubihimba-vyirondoka-rn",
+        "status": "present"
+      },
+      {
+        "name": "les-violences-base-es-sur-le-genre-pre-vention-et-prise-en-charge-amabi-afatiye-kugitsina-rn",
+        "status": "present"
+      },
+      {
+        "name": "prevenir-les-grossesses-non-desirees-et-les-grossesses-precoces-gl-rn",
+        "status": "present"
+      },
+      {
+        "name": "l-exploitation-de-l-homme-et-de-la-femme-gl-rn",
+        "status": "present"
+      },
+      {
+        "name": "la-sante-expliquee-aux-enfants-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "prevention-et-sexualite-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "biologie-enfants-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "combattons-les-disciminations-enfants-ados-turwanye-ikumira-urwaruka-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "creation-audio-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-violences-sexuelles-expliquees-aux-enfants-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "geographie-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "classic-literature-in-english-en",
+        "status": "present"
+      },
+      {
+        "name": "films-d-animation-muets-fr",
+        "status": "present"
+      },
+      {
+        "name": "introduction-a-l-art-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-generale-de-l-afrique-par-rfi-et-l-unesco-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-la-programmation-avec-java-script-a-associer-avec-473-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-la-programmation-avec-python-a-associer-avec-472-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-la-programmation-avec-html5-css3-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-la-programmation-avec-le-langage-c-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-la-programmation-avec-php-fr",
+        "status": "present"
+      },
+      {
+        "name": "entrepreneuriat-numerique-mooc-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-l-antiquite-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-moyen-age-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-epoque-moderne-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-epoque-contemporaine-revolution-fr-a-associe-avec-877-et-878-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-epoque-contemporaine-guerres-mondiales-a-associe-avec-876-et-878-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-epoque-contemporaine-general-a-associe-avec-876-et-877-fr",
+        "status": "present"
+      },
+      {
+        "name": "origami-pop-up-fr",
+        "status": "present"
+      },
+      {
+        "name": "ateliers-manuels-pour-les-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-les-fondements-des-droits-de-l-homme-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-l-internationalisation-des-droits-de-l-homme-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-les-sources-des-droits-de-l-homme-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-la-typologie-des-droits-de-l-homme-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-les-obligations-decoulant-des-droits-de-l-homme-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-les-limites-des-droits-de-l-homme-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-les-mecanismes-de-mise-en-oeuvre-des-droits-de-l-homme-fr",
+        "status": "present"
+      },
+      {
+        "name": "creer-des-bandes-dessinees-fr",
+        "status": "present"
+      },
+      {
+        "name": "pratiquer-la-communication-non-violente-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-pour-comprendre-la-transition-energetique-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-pour-comprendre-l-energie-solaire-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-pour-comprendre-l-energie-eolienne-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-pour-comprendre-l-energie-hydraulique-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-pour-comprendre-les-energies-marines-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-dangers-de-l-alcool-et-des-drogues-ingaruka-mbi-zokunwa-inzoga-nibiyayuramutwe-rn",
+        "status": "present"
+      },
+      {
+        "name": "engagement-et-paix-les-grands-personnages-new-fr",
+        "status": "present"
+      },
+      {
+        "name": "jifunze-kiswahili-teach-yourself-kiswahili-e-books-sw",
+        "status": "present"
+      },
+      {
+        "name": "kitabu-watoto-children-s-books-sw",
+        "status": "present"
+      },
+      {
+        "name": "focus-covid-l-essentiel-des-connaissances-fr",
+        "status": "present"
+      },
+      {
+        "name": "kit-sante-techniques-d-animation-fr",
+        "status": "present"
+      },
+      {
+        "name": "cps-et-bien-etre-supports-libres-fr",
+        "status": "present"
+      },
+      {
+        "name": "cps-et-bien-etre-outils-cles-en-main-fr",
+        "status": "present"
+      },
+      {
+        "name": "cps-et-bien-etre-fiches-activites-fr",
+        "status": "present"
+      },
+      {
+        "name": "cps-et-bien-etre-l-essentiel-des-connaissances-fr",
+        "status": "present"
+      },
+      {
+        "name": "conferences-autour-du-developpement-durable-et-de-l-ecologie-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-excel-cours-niveau-1-basique-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-excel-cours-niveau-2-operationnel-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-excel-cours-niveau-3-avance-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-excel-cours-niveau-4-expert-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-les-bases-pour-commencer-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-debuter-avec-libre-office-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-power-point-cours-niveau-basique-operationnel-et-avance-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-word-cours-niveau-1-basique-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-word-cours-niveau-3-avance-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-word-cours-niveau-4-expert-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-word-cours-niveau-2-operationnel-fr",
+        "status": "present"
+      },
+      {
+        "name": "icirore-cacu-feuilleton-audio-sur-les-droits-des-enfants-kirundi-rn",
+        "status": "present"
+      },
+      {
+        "name": "histoire-geographie-et-culture-du-burundi-kahise-ka-uburundi-fr",
+        "status": "present"
+      },
+      {
+        "name": "universcience-tv.fr",
+        "status": "present"
+      },
+      {
+        "name": "cest-pas-sorcier.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikimooc.fr",
+        "status": "present"
+      },
+      {
+        "name": "gutenberg.fr",
+        "status": "present"
+      },
+      {
+        "name": "bouquineux.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.fr",
+        "status": "present"
+      },
+      {
+        "name": "wiktionary.fr",
+        "status": "present"
+      },
+      {
+        "name": "biologie-tout-compris.fr",
+        "status": "present"
+      },
+      {
+        "name": "maths-et-tiques.fr",
+        "status": "present"
+      },
+      {
+        "name": "micmaths.fr",
+        "status": "present"
+      },
+      {
+        "name": "nota-bene.fr",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-bsf-enabeldemo": {
     "kolibri": {
       "activated": true,
