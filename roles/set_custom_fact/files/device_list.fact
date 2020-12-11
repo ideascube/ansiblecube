@@ -18625,6 +18625,650 @@
       "activated": true
     }
   },
+  "idc-bdi-irc-camps": {
+    "kolibri": {
+      "activated": false,
+      "language": [],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "montez-votre-projet-professionnel-fr",
+        "status": "present"
+      },
+      {
+        "name": "arts-plastiques-fr",
+        "status": "present"
+      },
+      {
+        "name": "initiez-vous-a-la-photographie-fr",
+        "status": "present"
+      },
+      {
+        "name": "initiez-vous-a-la-creation-video-fr",
+        "status": "present"
+      },
+      {
+        "name": "management-fr",
+        "status": "present"
+      },
+      {
+        "name": "marketing-fr",
+        "status": "present"
+      },
+      {
+        "name": "innovation-en-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "creation-d-entreprise-fr",
+        "status": "present"
+      },
+      {
+        "name": "jardinage-et-agriculture-fr",
+        "status": "present"
+      },
+      {
+        "name": "droits-de-l-enfant-fr",
+        "status": "present"
+      },
+      {
+        "name": "contes-et-dessins-animes-fr",
+        "status": "present"
+      },
+      {
+        "name": "comprendre-la-nature-qui-nous-entoure-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-adults-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-teenagers-en",
+        "status": "present"
+      },
+      {
+        "name": "experiences-de-femmes-fr",
+        "status": "present"
+      },
+      {
+        "name": "introduction-a-la-biologie-et-a-la-chimie-fr",
+        "status": "present"
+      },
+      {
+        "name": "kit-de-l-animateur-fr",
+        "status": "present"
+      },
+      {
+        "name": "utilisez-internet-en-toute-securite-fr",
+        "status": "present"
+      },
+      {
+        "name": "bien-etre-comment-me-sentir-mieux-fr",
+        "status": "present"
+      },
+      {
+        "name": "protegeons-la-planete-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-moyens-de-contraception-pour-moi-pour-nous-fr",
+        "status": "present"
+      },
+      {
+        "name": "animated-movies-for-kids-in-swahili-ubongo-kids-sw",
+        "status": "present"
+      },
+      {
+        "name": "films-et-videos-libres-de-droit-fr",
+        "status": "present"
+      },
+      {
+        "name": "l-afrique-en-marche-emission-d-actualites-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "le-talisman-brise-sw-rfi-sw",
+        "status": "present"
+      },
+      {
+        "name": "eco-d-ici-eco-d-ailleurs-emission-d-economie-en-afrique-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "introduction-a-l-electricite-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "fiches-d-activites-play-international-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-tutoriels-pour-utiliser-des-logiciels-fr",
+        "status": "present"
+      },
+      {
+        "name": "electricite-les-bases-de-l-electricite-fr",
+        "status": "present"
+      },
+      {
+        "name": "menuiserie-tutoriels-videos-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "mecanique-automobile-documentation-fr",
+        "status": "present"
+      },
+      {
+        "name": "transformation-agro-alimentaire-en-afrique-reportages-fr",
+        "status": "present"
+      },
+      {
+        "name": "couture-fr",
+        "status": "present"
+      },
+      {
+        "name": "menuiserie-manuels-et-documents-fr",
+        "status": "present"
+      },
+      {
+        "name": "soudure-fr",
+        "status": "present"
+      },
+      {
+        "name": "maconnerie-guides-et-tutoriels-videos-fr",
+        "status": "present"
+      },
+      {
+        "name": "agriculture-generale-fr",
+        "status": "present"
+      },
+      {
+        "name": "menuiserie-fabriquer-des-meubles-avec-des-palettes-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "s-informer-sur-internet-fr",
+        "status": "present"
+      },
+      {
+        "name": "denis-mukwege-fr",
+        "status": "present"
+      },
+      {
+        "name": "internet-les-autres-et-moi-les-bons-usages-fr",
+        "status": "present"
+      },
+      {
+        "name": "education-financiere-fr",
+        "status": "present"
+      },
+      {
+        "name": "africa-riding-fr",
+        "status": "present"
+      },
+      {
+        "name": "demander-l-asile-en-france-fr",
+        "status": "present"
+      },
+      {
+        "name": "developpement-personnel-podcast-changer-ma-vie-fr",
+        "status": "present"
+      },
+      {
+        "name": "competences-de-vie-courante-gl-rn",
+        "status": "present"
+      },
+      {
+        "name": "comprendre-et-exprimer-ses-emotions-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "feuilleton-ninde-rtnb-rn",
+        "status": "present"
+      },
+      {
+        "name": "le-monde-commence-par-moi-ihinduka-ry-inyifato-y-abantu-rihera-kuri-jewe-rn",
+        "status": "present"
+      },
+      {
+        "name": "prevenons-le-paludisme-turwanye-malariya-rn",
+        "status": "present"
+      },
+      {
+        "name": "conseils-pour-la-gestion-des-relations-amoureuses-gl-rn",
+        "status": "present"
+      },
+      {
+        "name": "les-filles-et-les-garcons-quelles-differences-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "emission-agashi-igikino-agashi-rn",
+        "status": "present"
+      },
+      {
+        "name": "le-dialogue-entre-parents-et-enfants-sur-la-ssr-ikiyago-hagati-yabavyeyi-n-urwaruka-gl-rn",
+        "status": "present"
+      },
+      {
+        "name": "connaitre-et-aimer-son-corps-kumenya-no-gukunda-umubiri-wawe-fr",
+        "status": "present"
+      },
+      {
+        "name": "hygiene-de-base-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "le-harcelement-ihohoterwa-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "connaitre-et-se-proteger-des-maladies-courantes-et-endemiques-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-donner-les-premiers-secours-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "ecriture-et-litterature-francophone-en-afrique-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "la-sante-de-la-femme-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "la-planification-familiale-gl-rn",
+        "status": "present"
+      },
+      {
+        "name": "la-sante-maternelle-amagara-yabavyeyi-gl-rn",
+        "status": "present"
+      },
+      {
+        "name": "l-entreprenariat-au-burundi-gutunganya-imigambi-muburundi-fr",
+        "status": "present"
+      },
+      {
+        "name": "la-sante-sexuelle-et-reproductive-des-adolescents-et-des-jeunes-gl-rn",
+        "status": "present"
+      },
+      {
+        "name": "vivre-avec-le-vih-sida-kubana-n-umugera-wa-sida-rn",
+        "status": "present"
+      },
+      {
+        "name": "se-prote-ger-du-vih-sida-et-des-ist-kwirinda-vih-sida-n-inrwara-zifatira-mubihimba-vyirondoka-rn",
+        "status": "present"
+      },
+      {
+        "name": "les-violences-base-es-sur-le-genre-pre-vention-et-prise-en-charge-amabi-afatiye-kugitsina-rn",
+        "status": "present"
+      },
+      {
+        "name": "imbanyi-zitifujwe-nugusama-imbanyi-hataragera-prevenir-grossesses-non-desirees-precoces-gl-rn",
+        "status": "present"
+      },
+      {
+        "name": "l-exploitation-de-l-homme-et-de-la-femme-gl-rn",
+        "status": "present"
+      },
+      {
+        "name": "la-sante-expliquee-aux-enfants-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "prevention-et-sexualite-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "une-histoire-un-recit-collectif-yaga-inkuru-duhabwa-na-yaga-rn",
+        "status": "present"
+      },
+      {
+        "name": "fiches-d-activites-autour-de-la-sante-animation-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "administration-gestion-comptabilite-gutunganya-ubutunzi-gl-rn",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-methode-talisman-brise-twige-igifaransa-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprenez-le-francais-niveau-b2-twige-igifaransa-uregero-rwa-b2-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "biologie-enfants-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "combattons-les-discriminations-adultes-turwanye-ikumira-abakuze-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "combattons-les-disciminations-enfants-ados-turwanye-ikumira-urwaruka-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "creation-audio-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "creation-d-association-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-violences-sexuelles-expliquees-aux-enfants-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "geographie-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "films-d-animation-muets-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-generale-de-l-afrique-par-rfi-et-l-unesco-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-cuisiner-les-desserts-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-cuisiner-plats-du-monde-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-cuisiner-les-legumes-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-cuisiner-les-basiques-recettes-et-techniques-fr",
+        "status": "present"
+      },
+      {
+        "name": "aphabetisation-la-methode-abc-fr",
+        "status": "present"
+      },
+      {
+        "name": "aphabetisation-la-methode-def-fr",
+        "status": "present"
+      },
+      {
+        "name": "aphabetisation-ressources-pedagogique-associer-avec-883-fr",
+        "status": "present"
+      },
+      {
+        "name": "decouverte-des-aliments-pour-les-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "decouverte-des-fruits-pour-les-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "decouverte-des-legumes-pour-les-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "origami-pop-up-fr",
+        "status": "present"
+      },
+      {
+        "name": "ateliers-manuels-pour-les-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "creer-des-bandes-dessinees-fr",
+        "status": "present"
+      },
+      {
+        "name": "pratiquer-la-communication-non-violente-fr",
+        "status": "present"
+      },
+      {
+        "name": "bien-vivre-ensemble-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "priorite-sante-focus-sur-les-femmes-et-la-maternite-associer-avec-969-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-dangers-de-l-alcool-et-des-drogues-ingaruka-mbi-zokunwa-inzoga-nibiyayuramutwe-rn",
+        "status": "present"
+      },
+      {
+        "name": "engagement-et-paix-les-grands-personnages-new-fr",
+        "status": "present"
+      },
+      {
+        "name": "tutoriels-de-coiffure-pour-differents-types-de-cheveux-fr",
+        "status": "present"
+      },
+      {
+        "name": "agriculture-kilimo-la-culture-des-fruits-le-gumes-cereales-e-pices-noix-e-books-sw",
+        "status": "present"
+      },
+      {
+        "name": "elevage-ufugaji-manuels-d-e-levage-des-animaux-sw",
+        "status": "present"
+      },
+      {
+        "name": "jifunze-kiswahili-teach-yourself-kiswahili-e-books-sw",
+        "status": "present"
+      },
+      {
+        "name": "kitabu-watoto-children-s-books-sw",
+        "status": "present"
+      },
+      {
+        "name": "plomberie-tutoriels-videos-et-documentation-fr",
+        "status": "present"
+      },
+      {
+        "name": "focus-covid-l-essentiel-des-connaissances-fr",
+        "status": "present"
+      },
+      {
+        "name": "cps-et-bien-etre-supports-libres-fr",
+        "status": "present"
+      },
+      {
+        "name": "cps-et-bien-etre-outils-cles-en-main-fr",
+        "status": "present"
+      },
+      {
+        "name": "cps-et-bien-etre-fiches-activites-fr",
+        "status": "present"
+      },
+      {
+        "name": "cps-et-bien-etre-l-essentiel-des-connaissances-fr",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-primary-school-e-books-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-maths-and-sciences-primary-school-e-books-sw",
+        "status": "present"
+      },
+      {
+        "name": "programmes-et-manuels-en-approche-par-competences-de-l-etfp-rdc-fr",
+        "status": "present"
+      },
+      {
+        "name": "programmes-nationaux-des-disciplines-des-filie-res-techniques-rdc-fr",
+        "status": "present"
+      },
+      {
+        "name": "programmes-et-guides-nationaux-des-disciplines-scolaires-maternelle-et-primaire-rdc-fr",
+        "status": "present"
+      },
+      {
+        "name": "programmes-et-guides-nationaux-des-disciplines-scolaires-secondaire-rdc-fr",
+        "status": "present"
+      },
+      {
+        "name": "agribusiness-et-entreprenariat-en-afrique-reportages-fra",
+        "status": "present"
+      },
+      {
+        "name": "agriculture-cultiver-les-cereales-ble-mais-riz-sorgho-fra",
+        "status": "present"
+      },
+      {
+        "name": "agriculture-gestion-des-ravageurs-et-maladies-des-cultures-fra",
+        "status": "present"
+      },
+      {
+        "name": "agriculture-gestion-durable-des-terres-fra",
+        "status": "present"
+      },
+      {
+        "name": "agriculture-cultiver-les-fruits-et-les-graines-cafe-sesame-fra",
+        "status": "present"
+      },
+      {
+        "name": "agriculture-cultiver-les-legumes-et-legumineuses-fra",
+        "status": "present"
+      },
+      {
+        "name": "agriculture-cultiver-les-racines-et-les-tubercules-fra",
+        "status": "present"
+      },
+      {
+        "name": "agriculture-engins-agricoles-fra",
+        "status": "present"
+      },
+      {
+        "name": "couture-debutant-tutoriels-videos-et-guides-fr",
+        "status": "present"
+      },
+      {
+        "name": "couture-wax-tutoriels-video-patron-et-realisation-fr",
+        "status": "present"
+      },
+      {
+        "name": "cuisine-recettes-congolaises-en-lingala-tutoriels-videos-ln",
+        "status": "present"
+      },
+      {
+        "name": "agriculture-transformation-agro-alimentaire-fr",
+        "status": "present"
+      },
+      {
+        "name": "elevage-sante-animale-fr",
+        "status": "present"
+      },
+      {
+        "name": "elevage-elever-des-animaux-vaches-chevres-poulets-porcs-lapins-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-excel-cours-niveau-1-basique-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-excel-cours-niveau-2-operationnel-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-excel-cours-niveau-3-avance-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-excel-cours-niveau-4-expert-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-les-bases-pour-commencer-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-debuter-avec-libre-office-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-word-cours-niveau-1-basique-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-word-cours-niveau-3-avance-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-word-cours-niveau-4-expert-fr",
+        "status": "present"
+      },
+      {
+        "name": "mecanique-automobile-tutoriels-videos-fr",
+        "status": "present"
+      },
+      {
+        "name": "pisciculture-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-word-cours-niveau-2-operationnel-fr",
+        "status": "present"
+      },
+      {
+        "name": "icirore-cacu-feuilleton-audio-sur-les-droits-des-enfants-kirundi-rn",
+        "status": "present"
+      },
+      {
+        "name": "danses-traditionnelles-et-chansons-du-burundi-gl-rn",
+        "status": "present"
+      },
+      {
+        "name": "histoire-geographie-et-culture-du-burundi-kahise-ka-uburundi-fr",
+        "status": "present"
+      },
+      {
+        "name": "musique-et-artistes-du-burundi-rn",
+        "status": "present"
+      },
+      {
+        "name": "bouquineux.fr",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.fr",
+        "status": "present"
+      },
+      {
+        "name": "biologie-tout-compris.fr",
+        "status": "present"
+      },
+      {
+        "name": "universcience-tv.fr",
+        "status": "present"
+      },
+      {
+        "name": "micmaths.fr",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-bdi-nturengaho": {
     "kolibri": {
       "activated": false,
