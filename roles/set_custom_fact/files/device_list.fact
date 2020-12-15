@@ -26909,6 +26909,274 @@
       "activated": true
     }
   },
+  "idc-bsf-pme": {
+    "kolibri": {
+      "activated": false,
+      "language": [],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "fiches-d-activites-play-international-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-tutoriels-pour-utiliser-des-logiciels-fr",
+        "status": "present"
+      },
+      {
+        "name": "developpement-personnel-podcast-changer-ma-vie-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-de-l-art-fr",
+        "status": "present"
+      },
+      {
+        "name": "competences-de-vie-courante-gl-rn",
+        "status": "present"
+      },
+      {
+        "name": "le-monde-commence-par-moi-ihinduka-ry-inyifato-y-abantu-rihera-kuri-jewe-rn",
+        "status": "present"
+      },
+      {
+        "name": "les-filles-et-les-garcons-quelles-differences-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "hygiene-de-base-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "le-harcelement-ihohoterwa-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-bases-de-l-informatique-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "l-art-en-afrique-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "la-sante-sexuelle-et-reproductive-des-adolescents-et-des-jeunes-gl-rn",
+        "status": "present"
+      },
+      {
+        "name": "combattons-les-disciminations-enfants-ados-turwanye-ikumira-urwaruka-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-violences-sexuelles-expliquees-aux-enfants-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "films-d-animation-muets-fr",
+        "status": "present"
+      },
+      {
+        "name": "utilisez-internet-en-toute-securite-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "danse-contemporaine-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "handicap-et-sport-fr",
+        "status": "present"
+      },
+      {
+        "name": "la-sante-expliquee-aux-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-generale-de-l-afrique-par-rfi-et-l-unesco-fr",
+        "status": "present"
+      },
+      {
+        "name": "origami-pop-up-fr",
+        "status": "present"
+      },
+      {
+        "name": "ateliers-manuels-pour-les-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "creer-des-bandes-dessinees-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-reconnaitre-a-comprendre-ses-emotions-associer-avec-936-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-gerer-ses-emotions-associer-avec-935-fr",
+        "status": "present"
+      },
+      {
+        "name": "pratiquer-la-communication-non-violente-fr",
+        "status": "present"
+      },
+      {
+        "name": "materiel-pedagogique-les-emotions-expliquees-aux-enfants-associer-avec-700-fr",
+        "status": "present"
+      },
+      {
+        "name": "diversite-culturelle-musiques-et-instruments-411",
+        "status": "present"
+      },
+      {
+        "name": "bien-vivre-ensemble-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "engagement-et-paix-les-grands-personnages-new-fr",
+        "status": "present"
+      },
+      {
+        "name": "kitabu-watoto-children-s-books-sw",
+        "status": "present"
+      },
+      {
+        "name": "focus-covid-en-parler-et-accueillir-la-parole-fr",
+        "status": "present"
+      },
+      {
+        "name": "focus-covid-deconstruire-les-fake-news-fr",
+        "status": "present"
+      },
+      {
+        "name": "focus-covid-l-essentiel-des-connaissances-fr",
+        "status": "present"
+      },
+      {
+        "name": "cps-et-bien-etre-supports-libres-fr",
+        "status": "present"
+      },
+      {
+        "name": "cps-et-bien-etre-outils-cles-en-main-fr",
+        "status": "present"
+      },
+      {
+        "name": "cps-et-bien-etre-fiches-activites-fr",
+        "status": "present"
+      },
+      {
+        "name": "cps-et-bien-etre-l-essentiel-des-connaissances-fr",
+        "status": "present"
+      },
+      {
+        "name": "conferences-autour-du-developpement-durable-et-de-l-ecologie-fr",
+        "status": "present"
+      },
+      {
+        "name": "kit-animation-genre-et-difference-fr",
+        "status": "present"
+      },
+      {
+        "name": "icirore-cacu-feuilleton-audio-sur-les-droits-des-enfants-kirundi-rn",
+        "status": "present"
+      },
+      {
+        "name": "danses-traditionnelles-et-chansons-du-burundi-gl-rn",
+        "status": "present"
+      },
+      {
+        "name": "histoire-geo-fr",
+        "status": "present"
+      },
+      {
+        "name": "destination-francophonie-fr",
+        "status": "present"
+      },
+      {
+        "name": "le-changement-climatique-explique-aux-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprentissage-et-memoire-fr",
+        "status": "present"
+      },
+      {
+        "name": "diversite-culturelle-habitats-et-habitations-fr",
+        "status": "present"
+      },
+      {
+        "name": "diversite-culturelle-langues-et-systemes-d-ecritures-fr",
+        "status": "present"
+      },
+      {
+        "name": "comprendre-le-cerveau-des-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "parentalite-positive-fr",
+        "status": "present"
+      },
+      {
+        "name": "faune-et-flore-dans-le-monde-documentaires-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "patrimonito-et-les-aventures-du-patrimoines-mondial-411",
+        "status": "present"
+      },
+      {
+        "name": "terre-et-vie-documentaires-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "guide-d-utilisation-d-une-tablette-fr",
+        "status": "present"
+      },
+      {
+        "name": "cours-de-hiphop-et-breakdance-fr",
+        "status": "present"
+      },
+      {
+        "name": "ils-ont-ton-age-arte-junior-fr",
+        "status": "present"
+      },
+      {
+        "name": "diversite-culturelle-danses-fr",
+        "status": "present"
+      },
+      {
+        "name": "ubongo.fr",
+        "status": "present"
+      },
+      {
+        "name": "maths-et-tiques.fr",
+        "status": "present"
+      },
+      {
+        "name": "micmaths.fr",
+        "status": "present"
+      },
+      {
+        "name": "nota-bene.fr",
+        "status": "present"
+      },
+      {
+        "name": "gutenberg.fr",
+        "status": "present"
+      },
+      {
+        "name": "bouquineux.fr",
+        "status": "present"
+      },
+      {
+        "name": "astrolabe.fr",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-bsf-recette": {
     "kolibri": {
       "activated": false,
