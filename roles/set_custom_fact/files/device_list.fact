@@ -46009,6 +46009,388 @@
       "activated": true
     }
   },
+  "idc-irq-duhok": {
+    "kolibri": {
+      "activated": true,
+      "language": [
+        "en"
+      ],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "music-in-arabic-ar",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-3d-modelling-with-blender-en",
+        "status": "present"
+      },
+      {
+        "name": "abuse-and-harassment-gbv-ar",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-economics-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-to-business-studies-en",
+        "status": "present"
+      },
+      {
+        "name": "poetry-ar",
+        "status": "present"
+      },
+      {
+        "name": "self-development-ar",
+        "status": "present"
+      },
+      {
+        "name": "sports-ar",
+        "status": "present"
+      },
+      {
+        "name": "motherhood-and-parenting-ar",
+        "status": "present"
+      },
+      {
+        "name": "philosophy-of-language-ar",
+        "status": "present"
+      },
+      {
+        "name": "let-s-speak-english-ar",
+        "status": "present"
+      },
+      {
+        "name": "health-and-diseases-ar",
+        "status": "present"
+      },
+      {
+        "name": "let-s-be-clean-ar",
+        "status": "present"
+      },
+      {
+        "name": "let-s-speak-arabic-ar",
+        "status": "present"
+      },
+      {
+        "name": "learn-guitar-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-photography-en",
+        "status": "present"
+      },
+      {
+        "name": "arabic-alphabet-ar",
+        "status": "present"
+      },
+      {
+        "name": "diy-handcrafts-and-arts-ar",
+        "status": "present"
+      },
+      {
+        "name": "learn-to-know-and-manage-your-feelings-en",
+        "status": "present"
+      },
+      {
+        "name": "drawing-colouring-en",
+        "status": "present"
+      },
+      {
+        "name": "agriculture-gardening-en",
+        "status": "present"
+      },
+      {
+        "name": "cooking-ar",
+        "status": "present"
+      },
+      {
+        "name": "english-for-adults-ar",
+        "status": "present"
+      },
+      {
+        "name": "fitness-for-kids-ar",
+        "status": "present"
+      },
+      {
+        "name": "classical-music-ar",
+        "status": "present"
+      },
+      {
+        "name": "tales-for-kids-ar",
+        "status": "present"
+      },
+      {
+        "name": "leadership-entrepreneurship-business-management-ar",
+        "status": "present"
+      },
+      {
+        "name": "child-protection-ar",
+        "status": "present"
+      },
+      {
+        "name": "economy-ar",
+        "status": "present"
+      },
+      {
+        "name": "novels-for-youth-ar",
+        "status": "present"
+      },
+      {
+        "name": "technology-ar",
+        "status": "present"
+      },
+      {
+        "name": "journalism-ar",
+        "status": "present"
+      },
+      {
+        "name": "women-empowerment-ar",
+        "status": "present"
+      },
+      {
+        "name": "sociology-ar",
+        "status": "present"
+      },
+      {
+        "name": "fozi-mozi-diy-handcrafts-ar",
+        "status": "present"
+      },
+      {
+        "name": "computer-and-it-ar",
+        "status": "present"
+      },
+      {
+        "name": "photography-ar",
+        "status": "present"
+      },
+      {
+        "name": "self-development-managing-a-budget-en-en",
+        "status": "present"
+      },
+      {
+        "name": "simple-musical-instruments-ar",
+        "status": "present"
+      },
+      {
+        "name": "health-and-nutrition-ar",
+        "status": "present"
+      },
+      {
+        "name": "family-and-life-coaching-ar",
+        "status": "present"
+      },
+      {
+        "name": "women-and-girls-empowerment-en",
+        "status": "present"
+      },
+      {
+        "name": "learning-to-read-and-write-level-1-en",
+        "status": "present"
+      },
+      {
+        "name": "learning-to-read-and-write-level-2-en",
+        "status": "present"
+      },
+      {
+        "name": "reading-and-writing-games-en",
+        "status": "present"
+      },
+      {
+        "name": "entrepreneurship-en",
+        "status": "present"
+      },
+      {
+        "name": "educational-videos-arabic-ar",
+        "status": "present"
+      },
+      {
+        "name": "music-lessons-tabla-hamonium-mandoline-en",
+        "status": "present"
+      },
+      {
+        "name": "children-refugee-testimony-and-rights-ar",
+        "status": "present"
+      },
+      {
+        "name": "gimp-graphic-editor-en",
+        "status": "present"
+      },
+      {
+        "name": "communication-en",
+        "status": "present"
+      },
+      {
+        "name": "generating-ideas-en",
+        "status": "present"
+      },
+      {
+        "name": "ice-breakers-energizers-and-team-building-en",
+        "status": "present"
+      },
+      {
+        "name": "motivation-en",
+        "status": "present"
+      },
+      {
+        "name": "life-skills-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-design-en",
+        "status": "present"
+      },
+      {
+        "name": "writing-cv-and-finding-a-job-ar",
+        "status": "present"
+      },
+      {
+        "name": "all-about-a-work-environment-ar",
+        "status": "present"
+      },
+      {
+        "name": "social-cohesion-and-cooperation-ar",
+        "status": "present"
+      },
+      {
+        "name": "coding-ar",
+        "status": "present"
+      },
+      {
+        "name": "body-language-ar",
+        "status": "present"
+      },
+      {
+        "name": "internet-browsing-and-searching-ar",
+        "status": "present"
+      },
+      {
+        "name": "graphic-design-and-film-making-ar",
+        "status": "present"
+      },
+      {
+        "name": "financial-management-and-planning-ar",
+        "status": "present"
+      },
+      {
+        "name": "early-marriage-ar",
+        "status": "present"
+      },
+      {
+        "name": "business-management-and-development-ar",
+        "status": "present"
+      },
+      {
+        "name": "determine-your-skills-your-goals-at-work-ar",
+        "status": "present"
+      },
+      {
+        "name": "gender-inequality-ar",
+        "status": "present"
+      },
+      {
+        "name": "agahdarkirin-raise-awareness-kmr",
+        "status": "present"
+      },
+      {
+        "name": "canda-populer-popular-culture-kmr",
+        "status": "present"
+      },
+      {
+        "name": "dizayna-grafike-graphic-design-kmr",
+        "status": "present"
+      },
+      {
+        "name": "filmcekeri-film-producing-kmr",
+        "status": "present"
+      },
+      {
+        "name": "hinbun-u-pe-vebirina-ziman-learning-and-improving-languages-kmr",
+        "status": "present"
+      },
+      {
+        "name": "huner-arts-kmr",
+        "status": "present"
+      },
+      {
+        "name": "mode-fashion-kmr",
+        "status": "present"
+      },
+      {
+        "name": "perwerdehiya-felsefeye-philosophy-education-kmr",
+        "status": "present"
+      },
+      {
+        "name": "fotografi-photography-kmr",
+        "status": "present"
+      },
+      {
+        "name": "qabiliyeten-dijital-digital-skills-kmr",
+        "status": "present"
+      },
+      {
+        "name": "te-wiqkirina-jinan-women-empowerment-kmr",
+        "status": "present"
+      },
+      {
+        "name": "business-ckb",
+        "status": "present"
+      },
+      {
+        "name": "digital-marketing-ckb",
+        "status": "present"
+      },
+      {
+        "name": "communication-ckb",
+        "status": "present"
+      },
+      {
+        "name": "digital-skils-ckb",
+        "status": "present"
+      },
+      {
+        "name": "music-ckb",
+        "status": "present"
+      },
+      {
+        "name": "career-guidance-ckb",
+        "status": "present"
+      },
+      {
+        "name": "crashcourse.en",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.ar",
+        "status": "present"
+      },
+      {
+        "name": "ted-ed.en",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia.ckb",
+        "status": "present"
+      },
+      {
+        "name": "gutenberg.en",
+        "status": "present"
+      },
+      {
+        "name": "tedtechnology.en",
+        "status": "present"
+      },
+      {
+        "name": "twentyfourhoursinanewsroom",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-maf-matersxm": {
     "kolibri": {
       "activated": false,
