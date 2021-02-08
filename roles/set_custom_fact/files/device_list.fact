@@ -43785,6 +43785,260 @@
       "activated": true
     }
   },
+  "idc-fra-lyc-sxm-21": {
+    "kolibri": {
+      "activated": true,
+      "language": [
+        "fr"
+      ],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "citoyennete-et-politique-fr",
+        "status": "present"
+      },
+      {
+        "name": "connaitre-et-aimer-son-corps-fr",
+        "status": "present"
+      },
+      {
+        "name": "combattons-les-discriminations-adultes-fr",
+        "status": "present"
+      },
+      {
+        "name": "montez-votre-projet-professionnel-fr",
+        "status": "present"
+      },
+      {
+        "name": "comprendre-la-nature-qui-nous-entoure-enfants-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "experiences-de-femmes-fr",
+        "status": "present"
+      },
+      {
+        "name": "utilisez-internet-en-toute-securite-fr",
+        "status": "present"
+      },
+      {
+        "name": "filles-garcons-quelle-place-pour-qui-fr",
+        "status": "present"
+      },
+      {
+        "name": "what-does-addiction-look-like-en",
+        "status": "present"
+      },
+      {
+        "name": "introduction-a-l-electricite-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "being-prepared-in-case-of-a-major-disaster-en",
+        "status": "present"
+      },
+      {
+        "name": "electricite-les-bases-de-l-electricite-fr",
+        "status": "present"
+      },
+      {
+        "name": "menuiserie-tutoriels-videos-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "public-speaking-en",
+        "status": "present"
+      },
+      {
+        "name": "women-and-girls-empowerment-en",
+        "status": "present"
+      },
+      {
+        "name": "geography-discovery-en",
+        "status": "present"
+      },
+      {
+        "name": "qu-est-ce-que-ca-veut-dire-etre-francais-fr",
+        "status": "present"
+      },
+      {
+        "name": "comprendre-le-rechauffement-climatique-fr",
+        "status": "present"
+      },
+      {
+        "name": "decouvre-les-metiers-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-de-l-art-fr",
+        "status": "present"
+      },
+      {
+        "name": "alez-pou-make-kreyol-fr",
+        "status": "present"
+      },
+      {
+        "name": "fauna-and-flora-of-saint-martin-en",
+        "status": "present"
+      },
+      {
+        "name": "culture-et-patrimoine-de-saint-martin-fr",
+        "status": "present"
+      },
+      {
+        "name": "hygiene-et-sante-adulte-sxm-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-cuisiner-les-desserts-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-cuisiner-plats-du-monde-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-cuisiner-les-legumes-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-cuisiner-les-basiques-recettes-et-techniques-fr",
+        "status": "present"
+      },
+      {
+        "name": "le-carnaval-tradition-en-guyane-et-ailleurs-fr",
+        "status": "present"
+      },
+      {
+        "name": "l-esclavage-dans-les-caraibes-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-reconnaitre-a-comprendre-ses-emotions-associer-avec-936-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-gerer-ses-emotions-associer-avec-935-fr",
+        "status": "present"
+      },
+      {
+        "name": "focus-covid-en-parler-et-accueillir-la-parole-fr",
+        "status": "present"
+      },
+      {
+        "name": "focus-covid-deconstruire-les-fake-news-fr",
+        "status": "present"
+      },
+      {
+        "name": "focus-covid-l-essentiel-des-connaissances-fr",
+        "status": "present"
+      },
+      {
+        "name": "vie-affective-et-sexuelle-supports-libres-fr",
+        "status": "present"
+      },
+      {
+        "name": "vie-affective-et-sexuelle-fiches-activites-fr",
+        "status": "present"
+      },
+      {
+        "name": "vie-affective-et-sexuelle-outils-cles-en-main-fr",
+        "status": "present"
+      },
+      {
+        "name": "vie-affective-et-sexuelle-l-essentiel-des-connaissances-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-les-bases-pour-commencer-fr",
+        "status": "present"
+      },
+      {
+        "name": "faune-et-flore-de-saint-martin-fr",
+        "status": "present"
+      },
+      {
+        "name": "history-and-culture-of-saint-martin-en",
+        "status": "present"
+      },
+      {
+        "name": "saint-martin-after-irma-hurricane-en",
+        "status": "present"
+      },
+      {
+        "name": "rencontre-avec-des-professionnels-de-saint-martin-fr",
+        "status": "present"
+      },
+      {
+        "name": "formations-professionnelles-a-saint-martin-fr",
+        "status": "present"
+      },
+      {
+        "name": "carnaval-de-saint-martin-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-de-saint-martin-fr",
+        "status": "present"
+      },
+      {
+        "name": "saint-martin-plan-de-prevention-des-risques-naturels-pprn-fr",
+        "status": "present"
+      },
+      {
+        "name": "saint-martin-l-ouragan-irma-fr",
+        "status": "present"
+      },
+      {
+        "name": "documentaires-longs-formats-fr",
+        "status": "present"
+      },
+      {
+        "name": "info-ou-intox-fr",
+        "status": "present"
+      },
+      {
+        "name": "conseils-pour-l-oral-d-un-examen-fr",
+        "status": "present"
+      },
+      {
+        "name": "bandes-dessinees-a-ecouter-livres-audios-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-cles-des-medias-fr",
+        "status": "present"
+      },
+      {
+        "name": "podcast-ma-vie-d-ado-fr",
+        "status": "present"
+      },
+      {
+        "name": "wikipedia_fr_all",
+        "status": "present"
+      },
+      {
+        "name": "cest-pas-sorcier_fr_all",
+        "status": "present"
+      },
+      {
+        "name": "la_chaine_de_maths_et_tiques",
+        "status": "present"
+      },
+      {
+        "name": "ted_global_issues",
+        "status": "present"
+      },
+      {
+        "name": "teded_en_all",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-fra-min": {
     "kolibri": {
       "activated": false,
