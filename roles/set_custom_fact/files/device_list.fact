@@ -67949,8 +67949,8 @@
     }
   },
   "kb-mdg-faf": {
-    "kalite": {
-      "activated": "True",
+    "kolibri": {
+      "activated": true,
       "language": [
         "fr"
       ],
@@ -67960,14 +67960,6 @@
       {
         "name": "musique-fr",
         "status": "present"
-      },
-      {
-        "name": "nutrition-fr",
-        "status": "absent"
-      },
-      {
-        "name": "histoire-occidentale-fr",
-        "status": "absent"
       },
       {
         "name": "decouvrez-ou-re-decouvrez-la-cuisine-de-differents-pays-fr",
@@ -67986,7 +67978,7 @@
         "status": "present"
       },
       {
-        "name": "arts-plastiques-fr",
+        "name": "arts-plastiques-apprendre-a-dessiner-le-corps-humain-fr",
         "status": "present"
       },
       {
@@ -68078,7 +68070,7 @@
         "status": "present"
       },
       {
-        "name": "sports-enfants-ados-fr",
+        "name": "les-bases-du-sport-enfants-ados-fr",
         "status": "present"
       },
       {
@@ -68106,7 +68098,7 @@
         "status": "present"
       },
       {
-        "name": "biologie-enfants-fr",
+        "name": "la-biologie-pour-les-enfants-fr",
         "status": "present"
       },
       {
@@ -68130,7 +68122,7 @@
         "status": "present"
       },
       {
-        "name": "kit-de-l-animateur-fr",
+        "name": "kit-de-l-animateur-package-redecoupe-a-remplacer-par-kit-de-l-animateur-part-1-to-11-fr",
         "status": "present"
       },
       {
@@ -68258,7 +68250,7 @@
         "status": "present"
       },
       {
-        "name": "introduction-au-do-it-youself-fr",
+        "name": "introduction-au-do-it-yourself-fr",
         "status": "present"
       },
       {
@@ -68278,7 +68270,7 @@
         "status": "present"
       },
       {
-        "name": "orientation-professionnelle-fr",
+        "name": "decouvre-les-metiers-fr",
         "status": "present"
       },
       {
@@ -68298,7 +68290,7 @@
         "status": "present"
       },
       {
-        "name": "classic-literature-in-english-en",
+        "name": "classic-literature-in-english-contient-uniquement-des-epub-en",
         "status": "present"
       },
       {
@@ -68366,19 +68358,19 @@
         "status": "present"
       },
       {
-        "name": "aphabetisation-planches-d-ecriture-associer-avec-886-fr",
+        "name": "alphabetisation-planches-d-ecriture-associer-avec-886-fr",
         "status": "present"
       },
       {
-        "name": "aphabetisation-la-methode-abc-fr",
+        "name": "alphabetisation-la-methode-abc-fr",
         "status": "present"
       },
       {
-        "name": "aphabetisation-la-methode-def-fr",
+        "name": "alphabetisation-la-methode-def-fr",
         "status": "present"
       },
       {
-        "name": "aphabetisation-ressources-pedagogique-associer-avec-883-fr",
+        "name": "alphabetisation-ressources-pedagogique-associer-avec-883-fr",
         "status": "present"
       },
       {
@@ -68386,7 +68378,7 @@
         "status": "present"
       },
       {
-        "name": "origami-pop-up-fr",
+        "name": "arts-plastique-origami-et-pop-up-fr",
         "status": "present"
       },
       {
@@ -68398,7 +68390,7 @@
         "status": "present"
       },
       {
-        "name": "creer-des-bandes-dessinees-fr",
+        "name": "arts-plastique-creer-des-bandes-dessinees-fr",
         "status": "present"
       },
       {
@@ -68466,11 +68458,11 @@
         "status": "present"
       },
       {
-        "name": "agribusiness-et-entreprenariat-en-afrique-reportages-fr",
+        "name": "agribusiness-et-entreprenariat-en-afrique-reportages-fra",
         "status": "present"
       },
       {
-        "name": "agriculture-cultiver-les-legumes-et-legumineuses-fr",
+        "name": "agriculture-cultiver-les-legumes-et-legumineuses-fra",
         "status": "present"
       },
       {
@@ -68554,7 +68546,7 @@
         "status": "present"
       },
       {
-        "name": "le-changement-climatique-explique-aux-enfants-fr",
+        "name": "comprendre-le-changement-climatique-fr",
         "status": "present"
       },
       {
@@ -68574,11 +68566,11 @@
         "status": "present"
       },
       {
-        "name": "gutenberg.fr",
+        "name": "gutenberg_fr_all",
         "status": "present"
       },
       {
-        "name": "wikipedia.fr",
+        "name": "wikipedia_fr_all",
         "status": "present"
       }
     ],
