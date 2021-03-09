@@ -33735,6 +33735,82 @@
     },
     "package_management": [
       {
+        "name": "decouvrez-ou-re-decouvrez-la-cuisine-de-differents-pays-fr",
+        "status": "present"
+      },
+      {
+        "name": "combattons-les-discriminations-adultes-fr",
+        "status": "present"
+      },
+      {
+        "name": "montez-votre-projet-professionnel-fr",
+        "status": "present"
+      },
+      {
+        "name": "initiez-vous-a-la-photographie-fr",
+        "status": "present"
+      },
+      {
+        "name": "comprendre-et-exprimer-ses-emotions-paquet-redecoupe-voir-paquets-935-a-937-fr",
+        "status": "present"
+      },
+      {
+        "name": "initiez-vous-a-la-creation-video-fr",
+        "status": "present"
+      },
+      {
+        "name": "sociologie-du-travail-fr",
+        "status": "present"
+      },
+      {
+        "name": "management-fr",
+        "status": "present"
+      },
+      {
+        "name": "marketing-fr",
+        "status": "present"
+      },
+      {
+        "name": "administration-gestion-comptabilite-fr",
+        "status": "present"
+      },
+      {
+        "name": "innovation-en-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "creation-d-entreprise-fr",
+        "status": "present"
+      },
+      {
+        "name": "economie-fr",
+        "status": "present"
+      },
+      {
+        "name": "jardinage-et-agriculture-fr",
+        "status": "present"
+      },
+      {
+        "name": "prevention-et-sexualite-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "arts-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "geographie-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "combattons-les-discriminations-enfants-ados-fr",
+        "status": "present"
+      },
+      {
         "name": "apprendre-a-donner-les-premiers-secours-fr",
         "status": "present"
       },
@@ -33743,7 +33819,115 @@
         "status": "present"
       },
       {
+        "name": "learn-english-adults-en",
+        "status": "present"
+      },
+      {
+        "name": "learn-english-teenagers-en",
+        "status": "present"
+      },
+      {
+        "name": "nutrition-bien-se-nourrir-fr",
+        "status": "present"
+      },
+      {
+        "name": "experiences-de-femmes-fr",
+        "status": "present"
+      },
+      {
+        "name": "economie-et-developpement-durable-fr",
+        "status": "present"
+      },
+      {
+        "name": "economie-et-mondialisation-fr",
+        "status": "present"
+      },
+      {
+        "name": "introduction-aux-sciences-cognitives-et-aux-neurosciences-fr",
+        "status": "present"
+      },
+      {
+        "name": "utilisez-internet-en-toute-securite-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-moyens-de-contraception-pour-moi-pour-nous-fr",
+        "status": "present"
+      },
+      {
+        "name": "connaitre-et-se-proteger-du-vih-sida-fr",
+        "status": "present"
+      },
+      {
+        "name": "l-afrique-en-marche-emission-d-actualites-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "memoire-d-un-continent-emission-sur-le-patrimoine-africain-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "eco-d-ici-eco-d-ailleurs-emission-d-economie-en-afrique-rfi-fr",
+        "status": "present"
+      },
+      {
+        "name": "le-talisman-brise-ln-rfi-ln",
+        "status": "present"
+      },
+      {
+        "name": "electricite-installer-et-entretenir-des-panneaux-solaires-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "learn-to-code-with-raspberri-pi-en",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-programmer-avec-arduino-et-unity-3d-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-tutoriels-pour-utiliser-des-logiciels-fr",
+        "status": "present"
+      },
+      {
+        "name": "electricite-les-bases-de-l-electricite-fr",
+        "status": "present"
+      },
+      {
+        "name": "bricolage-pour-la-maison-tutoriels-videos-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "menuiserie-fabriquer-des-abris-pour-animaux-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "bricolage-entretenir-mon-appartement-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "menuiserie-apprenez-a-renover-des-meubles-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "bricolage-renover-une-maison-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "bricolage-optimiser-un-petit-espace-sikana-fr",
+        "status": "present"
+      },
+      {
         "name": "menuiserie-tutoriels-videos-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "dessin-technique-enabel-fr",
+        "status": "present"
+      },
+      {
+        "name": "mecanique-automobile-documentation-fr",
         "status": "present"
       },
       {
@@ -33759,7 +33943,31 @@
         "status": "present"
       },
       {
+        "name": "menuiserie-manuels-et-documents-fr",
+        "status": "present"
+      },
+      {
+        "name": "soudure-fr",
+        "status": "present"
+      },
+      {
+        "name": "plomberie-documentation-fr",
+        "status": "present"
+      },
+      {
         "name": "maconnerie-guides-et-tutoriels-videos-fr",
+        "status": "present"
+      },
+      {
+        "name": "agriculture-generale-fr",
+        "status": "present"
+      },
+      {
+        "name": "menuiserie-fabriquer-des-meubles-avec-des-palettes-sikana-fr",
+        "status": "present"
+      },
+      {
+        "name": "s-informer-sur-internet-fr",
         "status": "present"
       },
       {
@@ -33767,7 +33975,19 @@
         "status": "present"
       },
       {
+        "name": "pratiques-et-usages-du-numerique-fr",
+        "status": "present"
+      },
+      {
         "name": "internet-les-autres-et-moi-les-bons-usages-fr",
+        "status": "present"
+      },
+      {
+        "name": "monter-un-laboratoire-d-innovation-publique-fr",
+        "status": "present"
+      },
+      {
+        "name": "how-to-improve-your-english-skills-en",
         "status": "present"
       },
       {
@@ -33775,7 +33995,75 @@
         "status": "present"
       },
       {
+        "name": "ecriture-et-litterature-francophone-en-afrique-gl-fr",
+        "status": "present"
+      },
+      {
+        "name": "classic-literature-in-english-contient-uniquement-des-epub-en",
+        "status": "present"
+      },
+      {
+        "name": "cours-d-electronique-analogique-fr",
+        "status": "present"
+      },
+      {
+        "name": "guides-de-formation-d-animateurs-communautaires-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "la-sante-expliquee-aux-enfants-fr",
+        "status": "present"
+      },
+      {
         "name": "sensibiliser-aux-violences-base-es-sur-le-genre-afrique-fr",
+        "status": "present"
+      },
+      {
+        "name": "introduction-a-l-art-fr",
+        "status": "present"
+      },
+      {
+        "name": "codage-et-programmation-fiches-d-activites-vdc-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-generale-de-l-afrique-par-rfi-et-l-unesco-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-la-programmation-avec-java-script-a-associer-avec-473-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-la-programmation-avec-python-a-associer-avec-472-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-la-programmation-avec-html5-css3-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-la-programmation-avec-le-langage-c-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-la-programmation-avec-php-fr",
+        "status": "present"
+      },
+      {
+        "name": "entrepreneuriat-numerique-mooc-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-cuisiner-les-desserts-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-cuisiner-plats-du-monde-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-cuisiner-les-legumes-fr",
         "status": "present"
       },
       {
@@ -33784,6 +34072,18 @@
       },
       {
         "name": "pratiquer-la-communication-non-violente-fr",
+        "status": "present"
+      },
+      {
+        "name": "priorite-sante-focus-sur-les-femmes-et-la-maternite-associer-avec-969-fr",
+        "status": "present"
+      },
+      {
+        "name": "priorite-sante-sante-de-l-esprit-associer-avec-968-fr",
+        "status": "present"
+      },
+      {
+        "name": "priorite-sante-sante-du-corps-associer-avec-968-et-969-fr",
         "status": "present"
       },
       {
@@ -33807,7 +34107,27 @@
         "status": "present"
       },
       {
+        "name": "modules-video-formation-continue-des-enseignants-du-primaire-4eme-annee-fr",
+        "status": "present"
+      },
+      {
+        "name": "modules-video-formation-continue-des-enseignants-du-primaire-5eme-annee-fr",
+        "status": "present"
+      },
+      {
+        "name": "modules-video-formation-continue-des-enseignants-du-primaire-6eme-annee-fr",
+        "status": "present"
+      },
+      {
         "name": "la-forge-blacksmithing-tutoriels-videos-en",
+        "status": "present"
+      },
+      {
+        "name": "agriculture-kilimo-la-culture-des-fruits-le-gumes-cereales-e-pices-noix-e-books-sw",
+        "status": "present"
+      },
+      {
+        "name": "elevage-ufugaji-manuels-d-e-levage-des-animaux-sw",
         "status": "present"
       },
       {
@@ -33843,6 +34163,10 @@
         "status": "present"
       },
       {
+        "name": "learn-english-primary-school-e-books-en",
+        "status": "present"
+      },
+      {
         "name": "agriculture-ressources-pedagogiques-pour-l-enseignant-rdc-fr",
         "status": "present"
       },
@@ -33871,31 +34195,35 @@
         "status": "present"
       },
       {
-        "name": "agribusiness-et-entreprenariat-en-afrique-reportages-fr",
+        "name": "agribusiness-et-entreprenariat-en-afrique-reportages-fra",
         "status": "present"
       },
       {
-        "name": "agriculture-cultiver-les-cereales-ble-mais-riz-sorgho-fr",
+        "name": "agriculture-cultiver-les-cereales-ble-mais-riz-sorgho-fra",
         "status": "present"
       },
       {
-        "name": "agriculture-gestion-des-ravageurs-et-maladies-des-cultures-fr",
+        "name": "agriculture-gestion-des-ravageurs-et-maladies-des-cultures-fra",
         "status": "present"
       },
       {
-        "name": "agriculture-gestion-durable-des-terres-fr",
+        "name": "agriculture-gestion-durable-des-terres-fra",
         "status": "present"
       },
       {
-        "name": "agriculture-cultiver-les-fruits-et-les-graines-cafe-sesame-fr",
+        "name": "agriculture-cultiver-les-fruits-et-les-graines-cafe-sesame-fra",
         "status": "present"
       },
       {
-        "name": "agriculture-cultiver-les-legumes-et-legumineuses-fr",
+        "name": "agriculture-cultiver-les-legumes-et-legumineuses-fra",
         "status": "present"
       },
       {
-        "name": "agriculture-cultiver-les-racines-et-les-tubercules-fr",
+        "name": "agriculture-cultiver-les-racines-et-les-tubercules-fra",
+        "status": "present"
+      },
+      {
+        "name": "agriculture-engins-agricoles-fra",
         "status": "present"
       },
       {
@@ -33935,7 +34263,23 @@
         "status": "present"
       },
       {
+        "name": "informatique-excel-cours-niveau-3-avance-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-excel-cours-niveau-4-expert-fr",
+        "status": "present"
+      },
+      {
         "name": "informatique-les-bases-pour-commencer-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-debuter-avec-libre-office-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-power-point-cours-niveau-basique-operationnel-et-avance-fr",
         "status": "present"
       },
       {
@@ -33943,7 +34287,23 @@
         "status": "present"
       },
       {
+        "name": "informatique-word-cours-niveau-3-avance-fr",
+        "status": "present"
+      },
+      {
+        "name": "informatique-word-cours-niveau-4-expert-fr",
+        "status": "present"
+      },
+      {
+        "name": "lecons-de-conduite-automobile-tutoriels-videos-fr",
+        "status": "present"
+      },
+      {
         "name": "mecanique-automobile-tutoriels-videos-fr",
+        "status": "present"
+      },
+      {
+        "name": "pisciculture-fr",
         "status": "present"
       },
       {
@@ -33951,19 +34311,23 @@
         "status": "present"
       },
       {
+        "name": "le-harcelement-enfants-ados-fr",
+        "status": "present"
+      },
+      {
         "name": "connaitre-et-se-proteger-des-maladies-courantes-et-endemiques-fr-fr",
         "status": "present"
       },
       {
-        "name": "maths-et-tiques.fr",
+        "name": "mondial_tissus",
         "status": "present"
       },
       {
-        "name": "mondial-tissus.fr",
+        "name": "biologie-tout-compris_fr_all",
         "status": "present"
       },
       {
-        "name": "biologie-tout-compris.fr",
+        "name": "nota_bene",
         "status": "present"
       }
     ],
