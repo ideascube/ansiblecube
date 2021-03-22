@@ -29803,6 +29803,22 @@
       "activated": true
     }
   },
+  "idc-bsf-testpack": {
+    "kolibri": {
+      "activated": false,
+      "language": [],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "conseils-pour-l-oral-d-un-examen-fr",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-bsf-tmtest": {
     "kolibri": {
       "activated": true,
