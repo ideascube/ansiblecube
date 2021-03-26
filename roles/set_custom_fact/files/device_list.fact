@@ -25193,6 +25193,46 @@
       "activated": true
     }
   },
+  "idc-bsf-chihuahua": {
+    "kolibri": {
+      "activated": false,
+      "language": [],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "cuentos-para-ninos-aleman-bajo-menonita-stories-for-children-mennonite-low-german-pdt",
+        "status": "present"
+      },
+      {
+        "name": "cuentos-para-ninos-tepehuan-stories-for-children-tepehuan-pia",
+        "status": "present"
+      },
+      {
+        "name": "cuentos-para-ninos-raramuri-tarahumara-stories-for-children-raramuri-tarahumara-tar",
+        "status": "present"
+      },
+      {
+        "name": "cuentos-para-ninos-espanol-stories-for-children-spanish-es",
+        "status": "present"
+      },
+      {
+        "name": "literatura-para-adolescentes-espanol-literature-for-teenagers-spanish-es",
+        "status": "present"
+      },
+      {
+        "name": "literatura-para-adultos-espanol-literature-for-adults-spanish-es",
+        "status": "present"
+      },
+      {
+        "name": "aprendizaje-a-traves-de-la-lectura-espanol-learning-by-reading-spanish-es",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-bsf-coxbazar": {
     "kolibri": {
       "activated": false,
