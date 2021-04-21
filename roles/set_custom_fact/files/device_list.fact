@@ -42836,6 +42836,132 @@
       "activated": true
     }
   },
+  "idc-fra-crf-mayott": {
+    "kolibri": {
+      "activated": true,
+      "language": [
+        "fr"
+      ],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "citoyennete-et-politique-fr",
+        "status": "present"
+      },
+      {
+        "name": "initiez-vous-a-la-photographie-fr",
+        "status": "present"
+      },
+      {
+        "name": "creation-audio-fr",
+        "status": "present"
+      },
+      {
+        "name": "violences-faites-aux-femmes-fr",
+        "status": "present"
+      },
+      {
+        "name": "films-et-videos-libres-de-droit-fr",
+        "status": "present"
+      },
+      {
+        "name": "comprendre-les-migrations-fr",
+        "status": "present"
+      },
+      {
+        "name": "vie-quotidienne-a-mayotte-fr",
+        "status": "present"
+      },
+      {
+        "name": "comprendre-le-rechauffement-climatique-fr",
+        "status": "present"
+      },
+      {
+        "name": "poesie-et-slam-en-shimaore-swb",
+        "status": "present"
+      },
+      {
+        "name": "decouvre-les-metiers-fr",
+        "status": "present"
+      },
+      {
+        "name": "nouveau-volcan-a-mayotte-fr",
+        "status": "present"
+      },
+      {
+        "name": "multilinguisme-a-mayotte-fr",
+        "status": "present"
+      },
+      {
+        "name": "migrations-a-mayotte-fr",
+        "status": "present"
+      },
+      {
+        "name": "histoire-de-mayotte-et-des-comores-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-violences-sexuelles-expliquees-aux-enfants-fr",
+        "status": "present"
+      },
+      {
+        "name": "violences-sexuelles-sur-adultes-fr",
+        "status": "present"
+      },
+      {
+        "name": "puberte-sexualite-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-emotions-expliquees-aux-enfants-et-ados-associer-avec-938-fr",
+        "status": "present"
+      },
+      {
+        "name": "introduction-aux-droits-adolescent-fr",
+        "status": "present"
+      },
+      {
+        "name": "sensibilisation-perinatalite-et-parentalite-a-mayotte-swb",
+        "status": "present"
+      },
+      {
+        "name": "films-muets-fr",
+        "status": "present"
+      },
+      {
+        "name": "films-d-animation-muets-fr",
+        "status": "present"
+      },
+      {
+        "name": "relations-amoureuses-expliquees-aux-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "engagement-et-paix-les-grands-personnages-fr",
+        "status": "present"
+      },
+      {
+        "name": "figures-d-engagement-fr",
+        "status": "present"
+      },
+      {
+        "name": "specialites-culinaires-mayotte-swb",
+        "status": "present"
+      },
+      {
+        "name": "chababi-project-swb",
+        "status": "present"
+      },
+      {
+        "name": "vikidia_fr",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-fra-dem": {
     "kolibri": {
       "activated": true,
