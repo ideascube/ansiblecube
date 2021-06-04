@@ -68184,10 +68184,6 @@
         "status": "present"
       },
       {
-        "name": "bien-etre-et-communication-au-travail-fr",
-        "status": "present"
-      },
-      {
         "name": "management-fr",
         "status": "present"
       },
@@ -68196,15 +68192,7 @@
         "status": "present"
       },
       {
-        "name": "administration-gestion-comptabilite-fr",
-        "status": "present"
-      },
-      {
         "name": "innovation-en-afrique-fr",
-        "status": "present"
-      },
-      {
-        "name": "creation-d-entreprise-fr",
         "status": "present"
       },
       {
@@ -68220,7 +68208,7 @@
         "status": "present"
       },
       {
-        "name": "jardinage-et-agriculture-fr",
+        "name": "agriculture-methodes-urbaines-et-biologiques-de-culture-irrigation-fertilisation-fr",
         "status": "present"
       },
       {
@@ -68240,10 +68228,6 @@
         "status": "present"
       },
       {
-        "name": "arts-afrique-fr",
-        "status": "present"
-      },
-      {
         "name": "geographie-afrique-fr",
         "status": "present"
       },
@@ -68257,10 +68241,6 @@
       },
       {
         "name": "apprendre-a-donner-les-premiers-secours-fr",
-        "status": "present"
-      },
-      {
-        "name": "cuisine-et-nutrition-enfants-fr",
         "status": "present"
       },
       {
@@ -68332,10 +68312,6 @@
         "status": "present"
       },
       {
-        "name": "decouvrir-et-pratiquer-la-riziculture-fr",
-        "status": "present"
-      },
-      {
         "name": "apprenez-le-francais-niveau-a1-fr",
         "status": "present"
       },
@@ -68357,10 +68333,6 @@
       },
       {
         "name": "apprenez-le-francais-niveau-c1-c2-fr",
-        "status": "present"
-      },
-      {
-        "name": "creation-d-association-fr",
         "status": "present"
       },
       {
@@ -68401,10 +68373,6 @@
       },
       {
         "name": "si-loin-si-proche-rfi-fr",
-        "status": "present"
-      },
-      {
-        "name": "eco-d-ici-eco-d-ailleurs-emission-d-economie-en-afrique-rfi-fr",
         "status": "present"
       },
       {
@@ -68476,10 +68444,6 @@
         "status": "present"
       },
       {
-        "name": "economie-rurale-en-afrique-fr",
-        "status": "present"
-      },
-      {
         "name": "vivre-avec-le-vih-fr",
         "status": "present"
       },
@@ -68493,10 +68457,6 @@
       },
       {
         "name": "utilisez-internet-en-toute-securite-enfants-fr",
-        "status": "present"
-      },
-      {
-        "name": "artisanat-et-recyclage-fr",
         "status": "present"
       },
       {
@@ -68521,14 +68481,6 @@
       },
       {
         "name": "histoire-l-antiquite-fr",
-        "status": "present"
-      },
-      {
-        "name": "histoire-epoque-contemporaine-revolution-fr-a-associe-avec-877-et-878-fr",
-        "status": "present"
-      },
-      {
-        "name": "histoire-epoque-contemporaine-guerres-mondiales-a-associe-avec-876-et-878-fr",
         "status": "present"
       },
       {
@@ -68728,10 +68680,6 @@
         "status": "present"
       },
       {
-        "name": "histoire-geo-fr",
-        "status": "present"
-      },
-      {
         "name": "redaction-d-un-memoire-ou-d-un-rapport-de-stage-fr",
         "status": "present"
       },
@@ -68757,14 +68705,6 @@
       },
       {
         "name": "apprentissage-et-memoire-fr",
-        "status": "present"
-      },
-      {
-        "name": "gutenberg_fr_all",
-        "status": "present"
-      },
-      {
-        "name": "wikipedia_fr_all",
         "status": "present"
       }
     ],
