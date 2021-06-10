@@ -68524,7 +68524,7 @@
         "status": "present"
       },
       {
-        "name": "arts-plastique-origami-et-pop-up-fr",
+        "name": "arts-plastiques-origami-et-pop-up-fr",
         "status": "present"
       },
       {
@@ -68604,7 +68604,7 @@
         "status": "present"
       },
       {
-        "name": "agribusiness-et-entreprenariat-en-afrique-reportages-fra",
+        "name": "agribusiness-et-entrepreneuriat-en-afrique-reportages-fra",
         "status": "present"
       },
       {
@@ -68673,6 +68673,10 @@
       },
       {
         "name": "cartographie-et-geographie-de-madagascar-fr",
+        "status": "present"
+      },
+      {
+        "name": "cultures-et-partrimoine-de-madagascar-fr",
         "status": "present"
       },
       {
