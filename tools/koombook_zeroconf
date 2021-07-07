@@ -46,25 +46,13 @@ if [[ -b /dev/sda && ! -b /dev/sda1 ]]; then
     # Make sure udev rules are deleted for wifi usb dongle
     rm -f /etc/udev/rules.d/70-persistent-net.rules
 
-    macaddress=$( ip a s eth0 | awk ' /link\/ether/ { print $2 } ' )
-    wget http://preseed.cinema.montreuil.wan.bsf-intranet.org/getMyDeviceName?mac=${macaddress} -O /tmp/getMyDeviceName
-
-    deviceName=`cat /tmp/getMyDeviceName | cut -d ";" -f1`
-    timeZone=`cat /tmp/getMyDeviceName | cut -d ";" -f2`
-
-    if [ -z "$deviceName" ]
-    then
-        deviceName="koombook"
-        timeZone="Europe/Paris"
-    fi
-
-    # Disable script 
+    # Disable script
     chmod -x $0
 
-    # Start builMyCube
-    /var/lib/ansible/local/buildMyCube.sh -n "$deviceName" -t "$timeZone"
-
-    wget http://report.bsf-intranet.org/device=$device_hostname/KoomBookFirstInit=Success
+    # Get autodeploy script and run it.
+    wget -q https://raw.githubusercontent.com/ideascube/ansiblecube/TM-autodeploy/tools/start_buildmycube.sh -O /tmp/start_buildmycube.sh
+    chmod +x /tmp/start_buildmycube.sh
+    /tmp/start_buildmycube.sh koombook
 
     reboot
 
