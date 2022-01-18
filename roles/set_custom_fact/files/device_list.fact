@@ -18969,6 +18969,42 @@
       "activated": true
     }
   },
+  "idc-bdi-idb4w-kit": {
+    "kolibri": {
+      "activated": false,
+      "language": [],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "experiences-de-femmes-fr",
+        "status": "present"
+      },
+      {
+        "name": "l-entreprenariat-au-burundi-gutunganya-imigambi-mu-burundi-fr",
+        "status": "present"
+      },
+      {
+        "name": "dianke-feuilleton-audio-rfi-sur-l-engagement-politique-d-une-jeune-femme-senegalaise-fr",
+        "status": "present"
+      },
+      {
+        "name": "leadership-feminin-au-burundi-uburongozi-bw-umukenyezi-mu-burundi-rn",
+        "status": "present"
+      },
+      {
+        "name": "emancipation-de-la-femme-iterambere-ry-umukenyezi-gl-rn",
+        "status": "present"
+      },
+      {
+        "name": "autonomisation-de-la-femme-en-afrique-fr",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-bdi-idcupshif": {
     "kolibri": {
       "activated": false,
