@@ -46177,6 +46177,98 @@
       "activated": true
     }
   },
+  "idc-fra-ukraine": {
+    "kolibri": {
+      "activated": false,
+      "language": [],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "discovering-english-uk",
+        "status": "present"
+      },
+      {
+        "name": "facts-and-stories-about-ukraine-uk",
+        "status": "present"
+      },
+      {
+        "name": "watching-a-film-uk",
+        "status": "present"
+      },
+      {
+        "name": "listening-to-songs-and-singing-uk",
+        "status": "present"
+      },
+      {
+        "name": "watching-and-listening-to-fairy-tales-uk",
+        "status": "present"
+      },
+      {
+        "name": "watching-cartoons-uk",
+        "status": "present"
+      },
+      {
+        "name": "folk-music-uk",
+        "status": "present"
+      },
+      {
+        "name": "contemporary-music-uk",
+        "status": "present"
+      },
+      {
+        "name": "literature-and-language-as-a-science-uk",
+        "status": "present"
+      },
+      {
+        "name": "nature-uk",
+        "status": "present"
+      },
+      {
+        "name": "discovering-geography-uk",
+        "status": "present"
+      },
+      {
+        "name": "discovering-biology-uk",
+        "status": "present"
+      },
+      {
+        "name": "discovering-chemistry-uk",
+        "status": "present"
+      },
+      {
+        "name": "discovering-physics-uk",
+        "status": "present"
+      },
+      {
+        "name": "documentaries-uk",
+        "status": "present"
+      },
+      {
+        "name": "art-uk",
+        "status": "present"
+      },
+      {
+        "name": "my-first-steps-into-art-uk",
+        "status": "present"
+      },
+      {
+        "name": "discovering-the-world-and-the-alphabet-uk",
+        "status": "present"
+      },
+      {
+        "name": "learning-english-uk",
+        "status": "present"
+      },
+      {
+        "name": "about-art-uk",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-fra-whereartho": {
     "kolibri": {
       "activated": false,
