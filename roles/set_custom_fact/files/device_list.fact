@@ -47387,6 +47387,138 @@
       "activated": true
     }
   },
+  "idc-guf-aides": {
+    "kolibri": {
+      "activated": false,
+      "language": [],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "prevention-addictions-alcool-fr",
+        "status": "present"
+      },
+      {
+        "name": "vie-affective-et-sexuelle-fiches-activites-fr",
+        "status": "present"
+      },
+      {
+        "name": "vie-affective-et-sexuelle-outils-cles-en-main-fr",
+        "status": "present"
+      },
+      {
+        "name": "vie-affective-et-sexuelle-l-essentiel-des-connaissances-fr",
+        "status": "present"
+      },
+      {
+        "name": "identite-et-genre-fr",
+        "status": "present"
+      },
+      {
+        "name": "violences-sexuelles-et-consentement-guyane-fr",
+        "status": "present"
+      },
+      {
+        "name": "connaissance-du-vih-de-l-hepatite-c-et-autres-ist-guyane-fr",
+        "status": "present"
+      },
+      {
+        "name": "prevention-des-ist-prep-depistages-guyane-fr",
+        "status": "present"
+      },
+      {
+        "name": "la-contraception-guyane-fr",
+        "status": "present"
+      },
+      {
+        "name": "education-sexuelle-guyane-fr",
+        "status": "present"
+      },
+      {
+        "name": "traitement-du-vih-tasp-guyane-fr",
+        "status": "present"
+      },
+      {
+        "name": "traitement-d-urgence-et-ivg-guyane-fr",
+        "status": "present"
+      },
+      {
+        "name": "discriminations-serologie-vih-guyane-fr",
+        "status": "present"
+      },
+      {
+        "name": "parcours-sante-guyane-fr",
+        "status": "present"
+      },
+      {
+        "name": "reduction-des-risques-produits-et-effets-guyane-fr",
+        "status": "present"
+      },
+      {
+        "name": "possibilite-de-defense-des-droits-quels-sont-mes-droits-fr",
+        "status": "present"
+      },
+      {
+        "name": "reduction-des-risques-outils-de-rdr-guyane-fr",
+        "status": "present"
+      },
+      {
+        "name": "fiches-techniques-d-animation-guyane-fr",
+        "status": "present"
+      },
+      {
+        "name": "droits-au-sejour-guyane-fr",
+        "status": "present"
+      },
+      {
+        "name": "domiciliation-guyane-fr",
+        "status": "present"
+      },
+      {
+        "name": "couverture-medicale-guyane-fr",
+        "status": "present"
+      },
+      {
+        "name": "confidentialite-partage-d-informations-fr",
+        "status": "present"
+      },
+      {
+        "name": "complements-d-informations-rdr-guyane-fr",
+        "status": "present"
+      },
+      {
+        "name": "aides-guyane-fr",
+        "status": "present"
+      },
+      {
+        "name": "drogues-cannabis-quelques-informations-fr",
+        "status": "present"
+      },
+      {
+        "name": "drogues-et-sexe-quels-liens-et-quelles-pratiques-fr",
+        "status": "present"
+      },
+      {
+        "name": "alcool-outils-de-prevention-guyane-fr",
+        "status": "present"
+      },
+      {
+        "name": "traitement-du-vih-observance-therapeutique-guyane-fr",
+        "status": "present"
+      },
+      {
+        "name": "depistage-hiv-l-autotest-guyane-fr",
+        "status": "present"
+      },
+      {
+        "name": "violence-sexisme-guyane-fr",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-guf-terresinte": {
     "kolibri": {
       "activated": false,
