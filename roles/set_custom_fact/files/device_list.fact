@@ -45545,6 +45545,446 @@
       "activated": true
     }
   },
+  "idc-fra-propulsion": {
+    "kolibri": {
+      "activated": false,
+      "language": [],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "connaitre-et-aimer-son-corps-fr",
+        "status": "present"
+      },
+      {
+        "name": "montez-votre-projet-professionnel-fr",
+        "status": "present"
+      },
+      {
+        "name": "arts-plastiques-apprendre-a-dessiner-le-corps-humain-fr",
+        "status": "present"
+      },
+      {
+        "name": "initiez-vous-a-la-photographie-fr",
+        "status": "present"
+      },
+      {
+        "name": "renseignez-vous-sur-les-demarches-administratives-fr",
+        "status": "present"
+      },
+      {
+        "name": "prevention-addictions-alcool-fr",
+        "status": "present"
+      },
+      {
+        "name": "troubles-alimentaires-fr",
+        "status": "present"
+      },
+      {
+        "name": "decouvrez-le-street-art-fr",
+        "status": "present"
+      },
+      {
+        "name": "fiches-d-activites-sante-fr",
+        "status": "present"
+      },
+      {
+        "name": "fle-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-emotions-expliquees-aux-enfants-et-ados-associer-avec-938-fr",
+        "status": "present"
+      },
+      {
+        "name": "podcast-une-sacree-paire-d-ovaires-fr",
+        "status": "present"
+      },
+      {
+        "name": "podcast-les-couilles-sur-la-table-fr",
+        "status": "present"
+      },
+      {
+        "name": "podcast-miroir-miroir-fr",
+        "status": "present"
+      },
+      {
+        "name": "podcast-kiffe-ta-race-fr",
+        "status": "present"
+      },
+      {
+        "name": "developpement-personnel-podcast-changer-ma-vie-fr",
+        "status": "present"
+      },
+      {
+        "name": "preparation-sportive-fr",
+        "status": "present"
+      },
+      {
+        "name": "human-fr",
+        "status": "present"
+      },
+      {
+        "name": "conduire-en-france-fr",
+        "status": "present"
+      },
+      {
+        "name": "vivre-en-france-se-loger-da-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-cuisiner-plats-du-monde-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-cuisiner-les-basiques-recettes-et-techniques-fr",
+        "status": "present"
+      },
+      {
+        "name": "relations-amoureuses-expliquees-aux-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "drogues-et-addictions-fr",
+        "status": "present"
+      },
+      {
+        "name": "tabac-quelques-informations-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-reconnaitre-a-comprendre-ses-emotions-associer-avec-936-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-a-gerer-ses-emotions-associer-avec-935-fr",
+        "status": "present"
+      },
+      {
+        "name": "pratiquer-la-communication-non-violente-fr",
+        "status": "present"
+      },
+      {
+        "name": "bien-vivre-ensemble-ados-fr",
+        "status": "present"
+      },
+      {
+        "name": "cps-et-bien-etre-fiches-activites-fr",
+        "status": "present"
+      },
+      {
+        "name": "cps-et-bien-etre-l-essentiel-des-connaissances-fr",
+        "status": "present"
+      },
+      {
+        "name": "lecons-de-conduite-automobile-tutoriels-videos-fr",
+        "status": "present"
+      },
+      {
+        "name": "gaspillage-alimentaire-fr",
+        "status": "present"
+      },
+      {
+        "name": "acceptation-corporelle-surpoids-et-obesite-fr",
+        "status": "present"
+      },
+      {
+        "name": "beatbox-tutos-pour-apprendre-et-pratiquer-fr",
+        "status": "present"
+      },
+      {
+        "name": "cours-de-zumba-411",
+        "status": "present"
+      },
+      {
+        "name": "cours-de-hip-hop-et-breakdance-fr",
+        "status": "present"
+      },
+      {
+        "name": "sommeil-adolescents-fr",
+        "status": "present"
+      },
+      {
+        "name": "kit-de-l-animateur-part-1-guide-de-l-animateur-ideas-box-bsf-fr",
+        "status": "present"
+      },
+      {
+        "name": "arts-plastiques-dessiner-version-manga-fra",
+        "status": "present"
+      },
+      {
+        "name": "info-ou-intox-education-aux-medias-fr",
+        "status": "present"
+      },
+      {
+        "name": "identite-et-genre-fr",
+        "status": "present"
+      },
+      {
+        "name": "podcast-ma-vie-d-ado-fr",
+        "status": "present"
+      },
+      {
+        "name": "nutrition-bien-se-nourrir-adolescents-fr",
+        "status": "present"
+      },
+      {
+        "name": "fle-niveaux-3-et-4-fos-emploi-fra",
+        "status": "present"
+      },
+      {
+        "name": "fle-alpha-ressources-pour-formateur-fra",
+        "status": "present"
+      },
+      {
+        "name": "seances-de-yoga-fr",
+        "status": "present"
+      },
+      {
+        "name": "ecriture-et-poesie-niveau-2-entrer-dans-l-ecriture-fr",
+        "status": "present"
+      },
+      {
+        "name": "ecriture-et-poesie-niveau-3-ecrire-a-partir-de-ses-5-sens-fr",
+        "status": "present"
+      },
+      {
+        "name": "ecriture-et-poesie-niveau-1-s-initier-a-la-poesie-fr",
+        "status": "present"
+      },
+      {
+        "name": "l-entretien-d-embauche-de-a-a-z-fr",
+        "status": "present"
+      },
+      {
+        "name": "mise-en-page-de-document-indesign-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-fle-niveau-elementaire-a2-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-fle-niveau-intermediaire-b1-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-fle-niveau-debutant-a1-fr",
+        "status": "present"
+      },
+      {
+        "name": "comment-garder-son-emploi-fr",
+        "status": "present"
+      },
+      {
+        "name": "mooc-reussir-sa-vie-professionnelle-fr",
+        "status": "present"
+      },
+      {
+        "name": "fle-films-fr",
+        "status": "present"
+      },
+      {
+        "name": "democratie-participative-fr",
+        "status": "present"
+      },
+      {
+        "name": "securite-routiere-connaissez-vous-les-risques-fr",
+        "status": "present"
+      },
+      {
+        "name": "renforcement-de-la-maitrise-du-francais-regles-d-orthographe-fr",
+        "status": "present"
+      },
+      {
+        "name": "puberte-image-du-corps-ados-jeunes-metropole-fr",
+        "status": "present"
+      },
+      {
+        "name": "egalite-discrimination-genre-representation-stereotypes-ados-jeunes-metropole-fr",
+        "status": "present"
+      },
+      {
+        "name": "apprendre-la-cup-zik-fr",
+        "status": "present"
+      },
+      {
+        "name": "guides-utilisation-du-site-pole-emploi-fr",
+        "status": "present"
+      },
+      {
+        "name": "addictions-produits-fiche-activites-fr",
+        "status": "present"
+      },
+      {
+        "name": "addictions-produits-outils-cles-en-main-fr",
+        "status": "present"
+      },
+      {
+        "name": "gynecologue-sage-femme-deroule-et-examen-de-consultation-fr",
+        "status": "present"
+      },
+      {
+        "name": "medecin-deroule-et-examen-de-consultation-adulte-fr",
+        "status": "present"
+      },
+      {
+        "name": "consultations-et-examens-informations-generales-adulte-fr",
+        "status": "present"
+      },
+      {
+        "name": "offres-de-soins-et-de-services-en-france-adulte-fr",
+        "status": "present"
+      },
+      {
+        "name": "acces-aux-droits-et-aux-soins-fiches-d-activites-fr",
+        "status": "present"
+      },
+      {
+        "name": "systeme-de-sante-france-generalites-fr",
+        "status": "present"
+      },
+      {
+        "name": "les-differents-professionnels-de-sante-quels-sont-leurs-roles-fr",
+        "status": "present"
+      },
+      {
+        "name": "qu-est-ce-que-la-sante-fiches-d-activites-fr",
+        "status": "present"
+      },
+      {
+        "name": "service-civique-fr",
+        "status": "present"
+      },
+      {
+        "name": "creation-video-les-bases-pour-creer-un-film-ou-court-metrage-fr",
+        "status": "present"
+      },
+      {
+        "name": "creation-video-les-bases-pour-faire-des-capsules-videos-fr",
+        "status": "present"
+      },
+      {
+        "name": "arreter-de-fumer-pourquoi-comment-fr",
+        "status": "present"
+      },
+      {
+        "name": "drogues-cannabis-quelques-informations-fr",
+        "status": "present"
+      },
+      {
+        "name": "drogues-le-proto-quelques-informations-fr",
+        "status": "present"
+      },
+      {
+        "name": "drogues-et-sexe-quels-liens-et-quelles-pratiques-fr",
+        "status": "present"
+      },
+      {
+        "name": "culture-numerique-histoires-du-numerique-et-d-internet-fr",
+        "status": "present"
+      },
+      {
+        "name": "droits-d-auteur-et-licences-libres-a-l-ere-du-numerique-fr",
+        "status": "present"
+      },
+      {
+        "name": "education-aux-medias-developper-l-esprit-critique-fr",
+        "status": "present"
+      },
+      {
+        "name": "internet-bonnes-pratiques-de-navigation-ados-adultes-fr",
+        "status": "present"
+      },
+      {
+        "name": "internet-c-est-quoi-comment-ca-marche-fr",
+        "status": "present"
+      },
+      {
+        "name": "internet-cyberharcelement-et-cybersexisme-fr",
+        "status": "present"
+      },
+      {
+        "name": "internet-cybersecurite-tracking-publicitaire-et-phishing-fr",
+        "status": "present"
+      },
+      {
+        "name": "internet-accros-au-smartphone-fr",
+        "status": "present"
+      },
+      {
+        "name": "ordinateur-les-bases-pour-s-en-servir-niveau-2-fr",
+        "status": "present"
+      },
+      {
+        "name": "ordinateur-tout-savoir-sur-les-systemes-d-exploitation-fr",
+        "status": "present"
+      },
+      {
+        "name": "internet-en-contexte-professionnel-fr",
+        "status": "present"
+      },
+      {
+        "name": "citoyennete-numerique-fiches-d-activites-fr",
+        "status": "present"
+      },
+      {
+        "name": "ateliers-medias-et-journalisme-fiches-d-activites-fr",
+        "status": "present"
+      },
+      {
+        "name": "exemples-de-cv-recherche-d-emploi-fr",
+        "status": "present"
+      },
+      {
+        "name": "connaitre-ses-competences-et-les-valoriser-fr",
+        "status": "present"
+      },
+      {
+        "name": "cps-avoir-une-pensee-critique-et-creative-fr",
+        "status": "present"
+      },
+      {
+        "name": "cps-gerer-son-stress-fr",
+        "status": "present"
+      },
+      {
+        "name": "cps-resoudre-les-problemes-et-prendre-des-decisions-fr",
+        "status": "present"
+      },
+      {
+        "name": "cps-se-connaitre-et-construire-sa-confiance-en-soi-fr",
+        "status": "present"
+      },
+      {
+        "name": "faire-son-cv-et-sa-lettre-de-motivation-fr",
+        "status": "present"
+      },
+      {
+        "name": "se-concentrer-se-motiver-perseverer-fr",
+        "status": "present"
+      },
+      {
+        "name": "techniques-de-recherche-d-emploi-fr",
+        "status": "present"
+      },
+      {
+        "name": "fiches-d-activites-world-skills-france-fr",
+        "status": "present"
+      },
+      {
+        "name": "sante-mentale-fr",
+        "status": "present"
+      },
+      {
+        "name": "fiches-d-animation-sur-la-sante-mentale-fr",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-fra-test": {
     "kolibri": {
       "activated": false,
