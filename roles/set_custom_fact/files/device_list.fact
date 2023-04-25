@@ -25229,6 +25229,26 @@
       "activated": true
     }
   },
+  "idc-bsf-asdf": {
+    "kolibri": {
+      "activated": false,
+      "language": [],
+      "version": "0.10.3"
+    },
+    "package_management": [
+      {
+        "name": "creation-d-entreprise-fr",
+        "status": "present"
+      },
+      {
+        "name": "electricite-installer-et-entretenir-des-panneaux-solaires-sikana-fr",
+        "status": "present"
+      }
+    ],
+    "portal": {
+      "activated": true
+    }
+  },
   "idc-bsf-chihuahua": {
     "kolibri": {
       "activated": false,
